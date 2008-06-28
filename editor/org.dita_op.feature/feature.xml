@@ -79,6 +79,7 @@ along with The DITA Open Platform.  If not, see &lt;http://www.gnu.org/licenses/
       <import plugin="org.eclipse.ant.ui"/>
       <import plugin="org.eclipse.jdt.debug.ui"/>
       <import plugin="org.eclipse.jdt.launching"/>
+      <import plugin="org.apache.xerces"/>
    </requires>
 
    <plugin

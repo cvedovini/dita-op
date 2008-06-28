@@ -105,7 +105,7 @@ public class DOSTMainTab extends AbstractLaunchConfigurationTab {
 	/**
 	 * @see org.eclipse.debug.ui.ILaunchConfigurationTab#setDefaults(org.eclipse.debug.core.ILaunchConfigurationWorkingCopy)
 	 */
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings("unchecked") //$NON-NLS-1$
 	public void setDefaults(ILaunchConfigurationWorkingCopy configuration) {
 		configuration.setAttribute(FIRST_EDIT, true);
 		configuration.setAttribute(DOSTParameters.TRANSTYPE,
@@ -141,7 +141,7 @@ public class DOSTMainTab extends AbstractLaunchConfigurationTab {
 	/**
 	 * @see org.eclipse.debug.ui.ILaunchConfigurationTab#performApply(org.eclipse.debug.core.ILaunchConfigurationWorkingCopy)
 	 */
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings("unchecked") //$NON-NLS-1$
 	public void performApply(ILaunchConfigurationWorkingCopy configuration) {
 		String ditamap = ditamapText.getText().trim();
 
@@ -323,7 +323,7 @@ public class DOSTMainTab extends AbstractLaunchConfigurationTab {
 		outputText.setText(output);
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings("unchecked") //$NON-NLS-1$
 	private void updateArguments(ILaunchConfiguration configuration) {
 		Map args = null;
 

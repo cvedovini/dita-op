@@ -59,4 +59,12 @@
             type="org.dita_op.dost.launcher.DOSTLaunchConfigurationType">
       </launchConfigurationTabGroup>
    </extension>
+   <extension
+         point="org.dita_op.dita.dtd.catalogs">
+      <catalog
+            class="org.dita_op.dost.launcher.internal.catalog.DOSTCatalog"
+            id="org.dita_op.dost.launcher.catalog"
+            name="%DOSTCatalog.name">
+      </catalog>
+   </extension>
 </plugin>
