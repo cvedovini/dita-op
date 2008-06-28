@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="about" xml:lang="en-US">
+    <title>About</title>
+    <prolog>
+        <author>claude</author>
+    </prolog>
+    <body>
+        <p>
+            The DITA Open Platform is a free, open-source project which
+            goal is to provide an enterprise platform for the edition,
+            management and processing of DITA documents.
+        </p>
+
+        <section>
+            <title>License</title>
+            <p>
+                The DITA Open Platform is free software: you can
+                redistribute it and/or modify it under the terms of the
+                <xref href="http://www.gnu.org/licenses/"
+                    scope="external">
+                    GNU General Public License
+                </xref>
+                as published by the Free Software Foundation, either
+                version 3 of the License, or (at your option) any later
+                version.
+            </p>
+
+            <p>
+                The DITA Open Platform is distributed in the hope that
+                it will be useful, but WITHOUT ANY WARRANTY; without
+                even the implied warranty of MERCHANTABILITY or FITNESS
+                FOR A PARTICULAR PURPOSE. See the GNU General Public
+                License for more details.
+            </p>
+
+            <p>
+                A copy of the
+                <xref href="http://www.gnu.org/licenses/"
+                    scope="external">
+                    GNU General Public License
+                </xref>
+                is distributed along with The DITA Open Platform.
+            </p>
+        </section>
+
+        <section>
+            <title>Copyright</title>
+            <p>
+                Unless otherwise specified the DITA Open Platform is
+                copyright (C) 2008
+                <xref href="http://vedovini.net/" scope="external">
+                    Claude Vedovini.
+                </xref>
+            </p>
+        </section>
+        <section>
+            <title>Credits</title>
+            <p>
+                This product includes work produced by the following
+                organizations, projects or individuals which is
+                distributed under their own copyrights and license
+                terms.
+            </p>
+            <ul>
+                <li>
+                    The
+                    <xref scope="external"
+                        href="http://www.oasis-open.org/committees/dita">
+                        OASIS DITA Technical Committee.
+                    </xref>
+                </li>
+                <li>
+                    The
+                    <xref scope="external"
+                        href="http://dita-ot.sourceforge.net/">
+                        DITA Open Toolkit Project
+                    </xref>
+                    (under the
+                    <xref scope="external"
+                        href="http://www.opensource.org/licenses/cpl1.0.php">
+                        Common Public License
+                    </xref>
+                    ).
+                </li>
+                <li>
+                    <xref scope="external"
+                        href="http://www.famfamfam.com/">
+                        Mark James
+                    </xref>
+                    (under the
+                    <xref scope="external"
+                        href="http://creativecommons.org/licenses/by/2.5/">
+                        Creative Commons Attribution 2.5 License
+                    </xref>
+                    ).
+                </li>
+            </ul>
+        </section>
+    </body>
+</topic>

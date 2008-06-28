@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd" >
+<task id="toolkit_preferences" xml:lang="en-US">
+    <title>Setting up the DITA Open Toolkit</title>
+    <prolog>
+        <author>claude</author>
+    </prolog>
+    <taskbody>
+        <context>
+            To create DITA-OT launch configurations you first need to
+            specify where the toolkit is installed.
+        </context>
+        <steps>
+            <step>
+                <cmd>
+                    Select the
+                    <menucascade>
+                        <uicontrol>Window</uicontrol>
+                        <uicontrol>Preferences...</uicontrol>
+                    </menucascade>
+                    menu
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Select the
+                    <uicontrol>DITA Open Toolkit</uicontrol>
+                    preference page
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Click on the
+                    <uicontrol>Browse...</uicontrol>
+                    button
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Navigate the folder where your installation of the
+                    DITA-OT is located
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Click the
+                    <uicontrol>Open</uicontrol>
+                    button
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Click the
+                    <uicontrol>OK</uicontrol>
+                    button
+                </cmd>
+            </step>
+        </steps>
+        <result>
+            You can now
+            <xref href="toolkit_launch_configuration.dita">
+                create a DITA-OT launch configuration.
+            </xref>
+        </result>
+    </taskbody>
+</task>

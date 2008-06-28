@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd" >
+<task id="toolkit_launch_configuration" xml:lang="en-US">
+    <title>Creating a DITA Open Toolkit launch configuration</title>
+    <prolog>
+        <author>claude</author>
+    </prolog>
+    <taskbody>
+        <steps>
+            <step>
+                <cmd>
+                    Select the
+                    <menucascade>
+                        <uicontrol>Run</uicontrol>
+                        <uicontrol>External Tools</uicontrol>
+                        <uicontrol>
+                            Open External Tools Dialog...
+                        </uicontrol>
+                    </menucascade>
+                    menu
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Right-click on the
+                    <uicontrol>DITA-OT Build</uicontrol>
+                    category
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Select the
+                    <uicontrol>New</uicontrol>
+                    menu
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Enter a
+                    <userinput>name</userinput>
+                    for your configuration
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Enter a
+                    <userinput>transformation type</userinput>
+                    (xhtml, pdf, etc.)
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Enter the
+                    <userinput>location of the DITA Map</userinput>
+                    you wish to process
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Enter the
+                    <userinput>
+                        location for the generated output
+                    </userinput>
+                </cmd>
+            </step>
+            <step importance="optional">
+                <cmd>
+                    Enter the
+                    <userinput>
+                        location of a ditaval processing profile
+                    </userinput>
+                </cmd>
+            </step>
+            <step importance="optional">
+                <cmd>
+                    Provide additional processing agruments
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Click on the
+                    <uicontrol>Run</uicontrol>
+                    button
+                </cmd>
+            </step>
+        </steps>
+        <result>
+            Once you ran it once, the configuration is available either
+            under the
+            <menucascade>
+                <uicontrol>Run</uicontrol>
+                <uicontrol>External Tools</uicontrol>
+            </menucascade>
+            menu or with the
+            <uicontrol>Run External Tools</uicontrol>
+            button in the tool bar.
+        </result>
+    </taskbody>
+</task>

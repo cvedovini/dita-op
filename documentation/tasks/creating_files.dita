@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd" >
+<task id="creating_files" xml:lang="en-US">
+    <title>Creating DITA Files</title>
+    <prolog>
+        <author>claude</author>
+    </prolog>
+    <taskbody>
+        <steps>
+            <step>
+                <cmd>
+                    Right-click on your DITA Project and select the
+                    <menucascade>
+                        <uicontrol>New</uicontrol>
+                        <uicontrol>Other...</uicontrol>
+                    </menucascade>
+                    menu
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    In the
+                    <uicontrol>DITA</uicontrol>
+                    category choose the type of DITA file you wish to
+                    create
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Click on the
+                    <uicontrol>Next</uicontrol>
+                    button
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Choose a
+                    <userinput>file name</userinput>
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Click on the
+                    <uicontrol>Finish</uicontrol>
+                    button
+                </cmd>
+            </step>
+        </steps>
+        <result>
+            The newly created file is automatically opened in the
+            corresponding editor
+        </result>
+    </taskbody>
+</task>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd" >
+<task id="creating_project" xml:lang="en-US">
+    <title>Creating a DITA Project</title>
+    <prolog>
+        <author>claude</author>
+    </prolog>
+    <taskbody>
+        <steps>
+            <step>
+                <cmd>
+                    Select the
+                    <menucascade>
+                        <uicontrol>File</uicontrol>
+                        <uicontrol>New</uicontrol>
+                        <uicontrol>Project...</uicontrol>
+                    </menucascade>
+                    menu
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    In the
+                    <uicontrol>DITA</uicontrol>
+                    category choose
+                    <uicontrol>DITA Project</uicontrol>
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Click on the
+                    <uicontrol>Next</uicontrol>
+                    button
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Enter your
+                    <userinput>project name</userinput>
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Click on the
+                    <uicontrol>Finish</uicontrol>
+                    button
+                </cmd>
+            </step>
+        </steps>
+        <result>
+            <p>
+                You can then import existing DITA files from your file
+                system,
+                <xref
+                    href="/org.eclipse.platform.doc.user/gettingStarted/qs-31a.htm"
+                    scope="peer">
+                    using the file import wizard or drag and dropping
+                </xref>
+                them from your Windows Explorer window into your DITA
+                project.
+            </p>
+
+            <p>
+                You can also start
+                <xref href="creating_files.dita">
+                    creating new DITA Files
+                </xref>
+                into your DITA Project.
+            </p>
+        </result>
+    </taskbody>
+</task>
