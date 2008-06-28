@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Specialization in processing" />
+<meta name="abstract" content="Specialized processing is not necessary for every specialized element, only for those elements which do not have appropriate default behavior based on their ancestors." />
+<meta name="description" content="Specialized processing is not necessary for every specialized element, only for those elements which do not have appropriate default behavior based on their ancestors." />
+<meta scheme="URI" name="DC.Relation" content="ditaspecialization.html" />
+<meta scheme="URI" name="DC.Relation" content="specdesign.html" />
+<meta scheme="URI" name="DC.Relation" content="usingclass.html" />
+<meta scheme="URI" name="DC.Relation" content="procspecatt.html" />
+<meta scheme="URI" name="DC.Relation" content="foreigncontentproc.html" />
+<meta scheme="URI" name="DC.Relation" content="modintproc.html" />
+<meta scheme="URI" name="DC.Relation" content="customize.html" />
+<meta scheme="URI" name="DC.Relation" content="modularization-css.html" />
+<meta scheme="URI" name="DC.Relation" content="modularization-xslt.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="specproc" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Specialization in processing</title>
+</head>
+<body id="specproc"><a name="specproc"><!-- --></a>
+
+
+<h1 class="topictitle1">Specialization in processing</h1>
+
+
+<div><p>Specialized processing is not necessary for every specialized element,
+only for those elements which do not have appropriate default behavior based
+on their ancestors.</p>
+
+<p>Whether creating a new transform or extending an existing one, there are
+several rules that should be followed to ensure the effectiveness of the transform
+for other specialized types, and also the maintainability and extensibility
+of the transform to accommodate new requirements.</p>
+
+</div>
+
+<div>
+<ol>
+<li class="olchildlink"><a href="usingclass.html">Using the class attribute</a><br />
+Applying an XSLT template based on class attribute values allows a transform to be applied to whole branches of element types, instead of just a single element type.</li>
+<li class="olchildlink"><a href="procspecatt.html">Processing specialized attributes</a><br />
+There are two kinds of specialized attributes: those specialized from props for conditional processing, and those specialized from base for other purposes.</li>
+<li class="olchildlink"><a href="foreigncontentproc.html">Processing foreign content</a><br />
+The default behavior for &lt;foreign&gt; is to try to display the content. If the processor cannot render the content, it may emit a warning. The default processing behavior for &lt;unknown&gt; is to suppress.</li>
+<li class="olchildlink"><a href="modintproc.html">Modularization and integration of processing</a><br />
+Processing should be divided into modules based on the structural types or domains they support, and can be integrated together into transforms or stylesheets in the same way that structural type and domain modules can be integrated into document types.</li>
+<li class="olchildlink"><a href="customize.html">Customization</a><br />
+When you just need a difference in output, you can use DITA customization to override the default output without affecting portability or interchange, and without involving specialization.</li>
+<li class="olchildlink"><a href="modularization-css.html">Modularization in CSS</a><br />
+Stylesheet support in CSS for DITA specializations can be applied using the same principles as for the DTDs or Schemas, resulting in stylesheets that are easy to maintain and that will support any subsequent specialization with a minimum of effort.</li>
+<li class="olchildlink"><a href="modularization-xslt.html">Modularization in XSLT</a><br />
+Stylesheet support in XSLT for DITA specializations can be applied using the same principles as for the DTDs or Schemas, resulting in stylesheets that are easy to maintain and that will support any subsequent specialization with a minimum of effort.</li>
+</ol>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="ditaspecialization.html" title="Specialization is the process by which new designs are created based off existing designs, allowing new kinds of content to be processed using existing processing rules.">DITA specialization</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="specdesign.html" title="Specialization in design enables reuse of design elements, just as specialization in content allows reuse of processing rules. These rules involve the creation and management of markup modules as separate reusable units.">Specialization in design</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

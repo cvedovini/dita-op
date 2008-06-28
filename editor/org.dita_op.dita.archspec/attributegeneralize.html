@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Attribute generalization" />
+<meta name="abstract" content="Attributes specialized from props or base can be generalized using a special attribute generalization syntax. Specialization-aware processes should be able to recognize and process both the specialized and generalized forms of an attribute as being equivalent in their values." />
+<meta name="description" content="Attributes specialized from props or base can be generalized using a special attribute generalization syntax. Specialization-aware processes should be able to recognize and process both the specialized and generalized forms of an attribute as being equivalent in their values." />
+<meta scheme="URI" name="DC.Relation" content="generalize.html" />
+<meta scheme="URI" name="DC.Relation" content="foreigngeneralization.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="attributegeneralize" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Attribute generalization</title>
+</head>
+<body id="attributegeneralize"><a name="attributegeneralize"><!-- --></a>
+
+
+<h1 class="topictitle1">Attribute generalization</h1>
+
+
+<div><p>Attributes specialized from props or base can be generalized using
+a special attribute generalization syntax. Specialization-aware processes
+should be able to recognize and process both the specialized and generalized
+forms of an attribute as being equivalent in their values.</p>
+
+<p>When generalized, specialized attribute values are added to the end of
+their target ancestor attribute, within parentheses preceded by the name of
+the specialized attribute. For each attribute that has been generalized, a
+separate label and parentheses-enclosed set of values is added to the ancestor
+attribute.</p>
+
+<div class="p">For example, given that "jobrole" is an attribute specialized from "person",
+which in turn is specialized from "props":<br /><ul>
+<li>jobrole="programmer" can be generalized to person="jobrole(programmer)"
+or to props="jobrole(programmer)"</li>
+
+<li>props="jobrole(programmer)" can be respecialized to person="jobrole(programmer)"
+or to jobrole="programmer"</li>
+
+</ul>
+</div>
+
+<p>Generalization and respecialization can use the domains attribute to determine
+the ancestry of role, and therefore the validity of person as an intermediate
+target for generalization.</p>
+
+<p>Generalized attributes are typically not expected to be authored or edited
+directly, but to preserve the values of the specialized attributes while the
+document is temporarily in a generalized form.</p>
+
+<p>If a single element contains values for an attribute in more than one syntax,
+that is an error. For example &lt;p person="role(programmer)"
+role="admin"&gt;...&lt;/p&gt; both provide values for the role attribute, but one
+in a generalized syntax and one in a specialized syntax. This is an error
+condition, since it means the document has been only partially generalized,
+or has been generalized and then edited using a specialized document type. </p>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="generalize.html" title="Specialized content can be generalized to any ancestor type. The generalization process can preserve information about the former level of specialization to allow round-tripping between specialized and unspecialized forms of the same content.">Generalization</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="foreigngeneralization.html" title="During generalization, DITA elements are modified based on the class attribute to use the name of an ancestor element. This cannot be done with the contents of a specialized &lt;foreign&gt; element, because the contents are not DITA elements and do not have class attributes.">Foreign generalization</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

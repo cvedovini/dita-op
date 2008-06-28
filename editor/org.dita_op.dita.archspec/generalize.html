@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Generalization" />
+<meta name="abstract" content="Specialized content can be generalized to any ancestor type. The generalization process can preserve information about the former level of specialization to allow round-tripping between specialized and unspecialized forms of the same content." />
+<meta name="description" content="Specialized content can be generalized to any ancestor type. The generalization process can preserve information about the former level of specialization to allow round-tripping between specialized and unspecialized forms of the same content." />
+<meta scheme="URI" name="DC.Relation" content="speccont.html" />
+<meta scheme="URI" name="DC.Relation" content="specvalid.html" />
+<meta scheme="URI" name="DC.Relation" content="attributegeneralize.html" />
+<meta scheme="URI" name="DC.Relation" content="foreigngeneralization.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="generalize" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Generalization</title>
+</head>
+<body id="generalize"><a name="generalize"><!-- --></a>
+
+
+<h1 class="topictitle1">Generalization</h1>
+
+
+<div><p>Specialized content can be generalized to any ancestor type. The
+generalization process can preserve information about the former level of
+specialization to allow round-tripping between specialized and unspecialized
+forms of the same content.</p>
+
+<p>The generalization can either be for the purpose of migration (for example,
+when retiring an unsuccessful specialization) or for temporary round-tripping
+(for example, when moving content through a process that is not specialization
+aware and has only been enabled for instances of the base structural type).
+When generalizing for migration, the class attribute and domains attribute
+should be absent from the generalized instance document so that the default
+values in the general DTD or schema will be used. When generalizing for round-tripping,
+the class attribute and domains attribute should retain the original specialized
+values in the generalized instance document.</p>
+
+<p>Any DITA document can contain a mix of markup from at least one structural
+type and zero or more domains. The structural types and domains allowed in
+a particular document type are defined by the document type shell.</p>
+
+<p>When generalizing the document, the generalizer may choose to leave a structural
+type or domain as-is, or may choose to generalize that type or domain to any
+of its ancestors.</p>
+
+<p>The generalizer can supply the source and target for each generalization:
+for example, generalize from reference to topic. The generalizer can specify
+multiple targets in one pass: for example, generalize from reference to topic
+and from ui-d to topic. When the source and target are not supplied, generalization
+is assumed to be from all structural types to the base (topic or map), and
+no generalization for domains. </p>
+
+<p>The generalizer can also supply the target document type. When the target
+document type is not supplied, the generalized document will not contain a
+DTD or schema reference. At some time in the future it may be possible to
+automatically generate a document type shell and target document type based
+on the class and domains attributes in the generalized document.</p>
+
+<p>The generalization process should be able to handle cases where it is given
+just sources for generalization (in which case the designated source types
+are generalized to topic or map), just targets for generalization (in which
+case all descendants of the target are generalized to that target), or both
+(in which case only the specified descendants of the target are generalized
+to that target).</p>
+
+<p>For each structural type instance, the generalization process checks whether
+the structural type instance is a candidate for generalization, or whether
+it has domains that are candidates for generalization. It is important to
+be selective about which structural type instances to process: if the process
+simply generalizes every element based on its class attribute values, an instruction
+to generalize "reference" to "topic" could leave an APIReference topic with
+an invalid content model, since any elements it reuses from "reference" would
+have been renamed to topic-level equivalents.</p>
+
+<div class="p">The class attribute for the root element of the structural type is checked
+before generalizing structural types:<table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10059">Target and source</th>
+
+<th valign="bottom" align="left" id="N1005F">Source unspecified</th>
+
+<th valign="bottom" align="left" id="N10065">Source specified</th>
+
+</tr>
+
+<tr>
+<td valign="top" id="N10071" headers="N10059"><strong>Target unspecified</strong></td>
+
+<td valign="top" headers="N1005F N10071">Generalize this structural type to its base ancestor</td>
+
+<td valign="top" headers="N10065 N10071">Check whether the root element of the topic type matches a specified
+source; generalize to its base ancestor if it does, otherwise ignore the structural
+type instance unless it has domains to generalize.</td>
+
+</tr>
+
+<tr>
+<td valign="top" id="N10089" headers="N10059"><strong>Target specified</strong></td>
+
+<td valign="top" headers="N1005F N10089">Check whether the class attribute contains the target; generalize
+to the target if it does, otherwise skip the structural type instance unless
+it has domains to generalize.</td>
+
+<td valign="top" headers="N10065 N10089">If the root element matches a specified source but its class attribute
+does not contain the target, emit an error message. If the root element matches
+a specified source and its class attribute does contain the target, generalize
+to the target. Otherwise ignore the structural type instance unless it has
+domains to generalize.</td>
+
+</tr>
+
+</table>
+</div>
+
+<div class="p">The domains attribute for the root element of the structural type is checked
+before generalizing domains:<table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N100AE">Target and source</th>
+
+<th valign="bottom" align="left" id="N100B4">Source unspecified</th>
+
+<th valign="bottom" align="left" id="N100BA">Source specified</th>
+
+</tr>
+
+<tr>
+<td valign="top" id="N100C6" headers="N100AE"><strong>Target unspecified</strong></td>
+
+<td valign="top" headers="N100B4 N100C6">Do not generalize domain specializations in this structural type.</td>
+
+<td valign="top" headers="N100BA N100C6">Check whether the domains attribute lists the specified domain; proceed
+with generalization if it does, otherwise ignore the structural type instance
+unless it is itself a candidate for generalization.</td>
+
+</tr>
+
+<tr>
+<td valign="top" id="N100DE" headers="N100AE"><strong>Target specified</strong></td>
+
+<td valign="top" headers="N100B4 N100DE">Check whether the domains attribute contains the target; generalize
+to the target if it does, otherwise skip the  structural type instance  unless
+it is itself a candidate for generalization.</td>
+
+<td valign="top" headers="N100BA N100DE">If the domains attribute matches a specified source but the domain
+value string does not contain the target, emit an error message. If the domains
+attribute matches a specified source and the domain value string does contain
+the target, generalize to the target. Otherwise ignore the structural type
+instance unless it is itself a candidate for generalization.</td>
+
+</tr>
+
+</table>
+</div>
+
+<div class="p">For each element in a candidate structural type instance:<table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10102">Target and source</th>
+
+<th valign="bottom" align="left" id="N10108">Source unspecified</th>
+
+<th valign="bottom" align="left" id="N1010E">Source specified</th>
+
+</tr>
+
+<tr>
+<td valign="top" id="N1011A" headers="N10102"><strong>Target unspecified</strong></td>
+
+<td valign="top" headers="N10108 N1011A">If the class attribute starts with "-" (part of a structural type)
+rename the element to its base ancestor equivalent. Otherwise ignore it.</td>
+
+<td valign="top" headers="N1010E N1011A">Check whether the last value of the class attribute matches a specified
+source; generalize to its base ancestor if it does, otherwise ignore the element.</td>
+
+</tr>
+
+<tr>
+<td valign="top" id="N10132" headers="N10102"><strong>Target specified</strong></td>
+
+<td valign="top" headers="N10108 N10132">Check whether the class attribute contains the target; rename the
+element to the value associated with the target if it does contain the target,
+otherwise ignore the element.</td>
+
+<td valign="top" headers="N1010E N10132">If the last value in the class attribute matches a specified source
+but the previous values do not include the target, emit an error message.
+If the last value in the class attribute matches a specified source and the
+previous values do include the target,  rename the element to the value associated
+with the target. Otherwise ignore the element.</td>
+
+</tr>
+
+</table>
+When renaming elements during round-trip generalization, the
+generalization process should preserve the values of all attributes. When
+renaming elements during one-way or migration generalization, the process
+should preserve the values of all attributes except the class and domains
+attribute, both of which should be supplied by the target document type.</div>
+
+</div>
+
+<div>
+<ol>
+<li class="olchildlink"><a href="attributegeneralize.html">Attribute generalization</a><br />
+Attributes specialized from props or base can be generalized using a special attribute generalization syntax. Specialization-aware processes should be able to recognize and process both the specialized and generalized forms of an attribute as being equivalent in their values.</li>
+<li class="olchildlink"><a href="foreigngeneralization.html">Foreign generalization</a><br />
+During generalization, DITA elements are modified based on the class attribute to use the name of an ancestor element. This cannot be done with the contents of a specialized &lt;foreign&gt; element, because the contents are not DITA elements and do not have class attributes.</li>
+</ol>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="speccont.html" title="Specialization is expressed in content through the use of two attributes: the class attribute and the domain attribute. These are not typically present in the document instance, but are provided by default values expressed in a DTD or schema.">Specialization in content</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="specvalid.html" title="When you specialize one element from another, or a new attribute from props or base, the new element or attribute must obey certain rules in order to be a valid specialization.">Specialization validity</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

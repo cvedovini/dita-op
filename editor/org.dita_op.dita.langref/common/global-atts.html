@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="%global-atts;" />
+<meta name="abstract" content="Debugging attributes, normally hidden from authoring view." />
+<meta name="description" content="Debugging attributes, normally hidden from authoring view." />
+<meta content="%global-atts, Commonly referenced attribute descriptions" name="DC.subject" />
+<meta content="%global-atts, Commonly referenced attribute descriptions" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/comrfet.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/display-atts.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/id-atts.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="global-atts" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>%global-atts;</title>
+</head>
+<body id="global-atts"><a name="global-atts"><!-- --></a>
+
+
+<h1 class="topictitle1"><span class="keyword">%global-atts;</span></h1>
+
+
+
+<div><p>Debugging attributes, normally hidden from authoring view.</p>
+
+<div class="section"><p>These attributes are intended to store debugging information during
+intermediate processing. One possible implementation is to use <span class="filepath">xtrf</span> (xml-trace-filename)
+to store the original source filename through intermediate processing steps,
+and use <span class="filepath">xtrc</span> ( xml-trace-counter) to store an element
+counter for repositioning authoring tools at the originating element location.
+If values are assigned in this way in the first stage of a processing stream,
+values in these attributes can then be used for error recovery.</p>
+</div>
+
+<div class="section"><p>These attributes are normally hidden from authors and exposed
+only to processing tools or editor macros. Values used in these attributes
+may be implementation-dependent.</p>
+</div>
+
+
+
+<div class="section"><h2 class="sectiontitle">Attributes</h2><a name="global-atts__global-atts_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="global-atts__global-atts_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N100A6" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N100AC" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N100B2" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N100B8" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N100BE" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100A6">xtrf</td>
+
+<td valign="top" headers="N100AC">xml-trace-filename, the original filename</td>
+
+<td valign="top" headers="N100B2">CDATA</td>
+
+<td valign="top" headers="N100B8">#IMPLIED</td>
+
+<td valign="top" headers="N100BE">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100A6">xtrc</td>
+
+<td valign="top" headers="N100AC">xml-trace-counter, an element counter for repositioning editors at
+a known edit location</td>
+
+<td valign="top" headers="N100B2">CDATA</td>
+
+<td valign="top" headers="N100B8">#IMPLIED</td>
+
+<td valign="top" headers="N100BE">No</td>
+
+</tr>
+
+</table>
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/comrfet.html" title="Several parts of a language reference are common between many locations, such as the descriptions for the selection and property attributes of DITA elements. These are described as sets to reduce unnecessary duplication of common information.">Commonly referenced attributes</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../common/display-atts.html" title="Display attributes is a parameter entity declaration in the topic DTD that includes attributes whose values may be used for affecting the display of a topic or its selection by search tools.">%display-atts;</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../common/id-atts.html" title="ID attributes (%id-atts;) is a parameter entity declaration in the topic DTD that includes attributes that enable the naming and referencing of elements in a DITA topic: id and conref.">%id-atts;</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Structural versus domain specialization" />
+<meta name="abstract" content="Structural specialization defines new types of structured information, such as new topic types or new map types. Domain specialization creates new markup that can be useful in multiple structural types, such as new kinds of keywords, tables, or lists, or new attributes such as conditional processing attributes." />
+<meta name="description" content="Structural specialization defines new types of structured information, such as new topic types or new map types. Domain specialization creates new markup that can be useful in multiple structural types, such as new kinds of keywords, tables, or lists, or new attributes such as conditional processing attributes." />
+<meta scheme="URI" name="DC.Relation" content="ditaspecialization.html" />
+<meta scheme="URI" name="DC.Relation" content="whyspec.html" />
+<meta scheme="URI" name="DC.Relation" content="foreigncontentspec.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="infodom" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Structural versus domain specialization</title>
+</head>
+<body id="infodom"><a name="infodom"><!-- --></a>
+
+
+<h1 class="topictitle1">Structural versus domain specialization</h1>
+
+
+<div><p>Structural specialization defines new types of structured information,
+such as new topic types or new map types. Domain specialization creates new
+markup that can be useful in multiple structural types, such as new kinds
+of keywords, tables, or lists, or new attributes such as conditional processing
+attributes.</p>
+
+<p>Structural types define structures for modules of information, such as
+concept or task or reference, which often apply across subject areas (for
+example, a user interface task and a programming task may both consist of
+a series of steps). When new elements are introduced through structural specialization,
+the elements that contain the new elements must be specialized as well; and
+the new container elements must have their containers specialized in turn,
+all the way to the root element for the module (for example, the &lt;topic&gt;
+element or &lt;map&gt; element).</p>
+
+<p>Domains typically define markup for a particular domain or subject area,
+such as programming, or hardware. Domain elements become available wherever
+their ancestor elements are allowed once the domains are integrated with the
+structural specializations in a document type. Domain attributes (based off
+of props or base) become available wherever the props or base attributes are
+allowed.</p>
+
+<p>Both structural specialization hierarchies and domain specialization hierarchies
+are “is a” hierarchies, in object-oriented terms, with each structural type
+or domain being a subclass of its parent. For example, a specialization of
+task is still a task; and a specialization of the programming domain is still
+concerned with programming. </p>
+
+<p>Structural and domain hierarchies must share a common base module in order
+to be integrated together. For example, domains for use across topic types
+must ultimately be specialized off of elements or the specializable attributes
+in &lt;topic&gt;; domains for use across both topic types and map types must
+be specialized off of the elements or specializable attributes that are common
+to both types. </p>
+
+<p>With the exception of the common base modules (topic and map), a domain
+cannot be specialized from a structural type. For example, a domain cannot
+be specialized from elements in &lt;task&gt;, only from the root structural modules
+for &lt;topic&gt; or &lt;map&gt;. This rule ensures that domains can be integrated
+and document types can be generalized predictably. </p>
+
+<p>Elements and attributes created by specialization are scoped by the name
+of the structural type or domain in which they were declared. For structural
+types, the name is the same as the root element: for example, task is the
+name of the structural type whose root element is &lt;task&gt;. For domains,
+the name is not shared with any element, but is assigned by the developer
+of the specialization. By convention, domain names end with "-d" and are kept
+short; for example, ui-d for the user interface domain and pr-d for the programming
+domain. Attribute domains are a special case, typically named after the attribute
+being defined, with the addition of "-a".</p>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="ditaspecialization.html" title="Specialization is the process by which new designs are created based off existing designs, allowing new kinds of content to be processed using existing processing rules.">DITA specialization</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="whyspec.html" title="Specialization can have dramatic benefits for the development of new document architectures.">Why specialization?</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="foreigncontentspec.html" title="Specializing &lt;foreign&gt; or &lt;unknown&gt; elements is an open extension to the DITA Architecture that allows DITA adopters to incorporate new or existing standard vocabularies for non-textual content, like MathML and SVG, as in-line objects.">Specializing foreign or unknown content</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

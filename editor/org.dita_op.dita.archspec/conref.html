@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Content inclusion (conref)" />
+<meta name="abstract" content="The DITA conref attribute provides a mechanism for reuse of content fragments. The conref attribute stores a reference to another element and is processed to replace the referencing element with the referenced element." />
+<meta name="description" content="The DITA conref attribute provides a mechanism for reuse of content fragments. The conref attribute stores a reference to another element and is processed to replace the referencing element with the referenced element." />
+<meta scheme="URI" name="DC.Relation" content="behaviors.html" />
+<meta scheme="URI" name="DC.Relation" content="ditanav.html" />
+<meta scheme="URI" name="DC.Relation" content="condproc.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="conref" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Content inclusion (conref)</title>
+</head>
+<body id="conref"><a name="conref"><!-- --></a>
+
+
+<h1 class="topictitle1">Content inclusion (conref)</h1>
+
+
+<div><p>The DITA conref attribute provides a mechanism for reuse of content
+fragments. The conref attribute stores a reference to another element and
+is processed to replace the referencing element with the referenced element. </p>
+
+<p>The element containing the content reference acts as a placeholder for
+the referenced element. The identifier for the referenced element must be
+either absolute or resolvable in the context of the referencing element. (See <a href="id.html" title="The DITA identity attribute provides mechanisms for identifying content for retrieval or linking. The syntax for referencing IDs is consistent regardless of the referencing mechanism.">IDs and references</a> for the details on identifiers.)</p>
+
+<p>More formally, the DITA conref attribute can be considered a transclusion
+mechanism. In that respect, conref is similar to XInclude as well as HyTime
+value references. DITA differs from these mechanisms, however, by comparing
+the constraints of each context to ensure the ongoing validity of the replacement
+content in its new context. In other words, conref validity does not apply
+simply to the current content at the time of replacement, but to the ranges
+of possible content given the constraints of the two document types. A valid
+conref processor does not allow the resolution of a reuse relationship that
+could be rendered invalid under the rules of either the reused or reusing
+content.</p>
+
+<p> If the referenced element is the same type as the referencing element
+and the list of domains in the referenced topic instance (declared on the
+domains attribute) is the same as or a subset of the list of domains in the
+referencing document, the element set allowed in the referenced element is
+guaranteed to be the same as, or a subset of, the element set allowed in the
+placeholder element. In the preferred approach, a processor resolving a conref
+should tolerate specializations of valid elements and generalize elements
+in the content fragment as needed for the referencing context.</p>
+
+<p>Replacement of the placeholder occurs after parsing of the document but
+prior to any styling or other transformational or presentational operations
+on the full topic.</p>
+
+<p>The target of the conref may be substituted based on build-time or runtime
+conditions. For example, content such as product names or install paths can
+be separated out from topic content since they change when the topic is reused
+by other products; the reusing product can substitute their own targets for
+the conref to allow resolution to their own product name and install paths,
+and so on.</p>
+
+<p>The target of a conref must be within a DITA topic or DITA map (or point
+to the entire topic or map). Fragments of DITA content (such as a document
+containing only a single paragraph) do not contain enough information on their
+own to allow the conref processor to determine the validity of a reference
+to them.</p>
+
+<div class="p">The
+resolved element's attribute specifications can be drawn from both source
+and target elements in the following priority:<br /><ol>
+<li>All attributes as specified on the source element except for attributes
+which specify the value "-dita-use-conref-target"</li>
+
+<li>All attributes as specified on the target element except:<br /><ol type="a">
+<li>The id attribute</li>
+
+<li>Any attribute also specified on the source element such that its specified
+value (on the source element) is not "-dita-use-conref-target"</li>
+
+</ol>
+</li>
+
+<li>The xml:lang attribute has special treatment as described in <a href="xmllang.html" title="Specifies the language (and optionally the locale) of the element content. The intent declared with xml:lang is considered to apply to all attributes and content of the element where it is specified, unless overridden with an instance of xml:lang on another element within that content. When no xml:lang value is supplied, the processor should assume a default value.">The xml:lang attribute</a>.</li>
+
+</ol>
+</div>
+
+<p>The only time the resolved element would include an attribute whose specified
+value is "-dita-use-conref-target" is when  the  target element had that attribute
+specified with the "-dita-use-conref-target" value  and the source element
+either had no specification for  that attribute or had it specified with the
+"-dita-use-conref-target" value. If the final resolved element (after the
+complete resolution of any  conref chain) has an attribute with the "-dita-use-conref-target"
+value, that should be treated as equivalent to having that attribute  unspecified.</p>
+
+<p>A given attribute value on the resolved element comes in its entirety from
+either the source or target: the attribute values of the  target and source
+for a given attribute are never additive, even if the property (such as the
+audience type) takes a list of values.</p>
+
+<p>If the target element has a conref attribute specified, the above rules
+should be applied recursively with the resolved element from one  source/target
+combination becoming  one of the two  elements participating in  the next
+source/target combination. The result should preserve without generalization
+all elements that are valid in the originating context, even if they are not
+valid in an intermediate context. For example, if topicA and topicC allow
+highlighting, and topicB does not, then a content reference chain of topicA-&gt;topicB-&gt;topicC
+should preserve any highlighting elements in the referenced content. The result
+is the same as if the conref pairs are resolved recursively starting from
+the source element. </p>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="behaviors.html" title="Several common DITA processing behaviors are driven by attributes, including navigation, content reuse, and conditional processing.">DITA processing</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="ditanav.html" title="The following behaviors support the creation of reader navigation to or across DITA topics.">Navigation behaviors</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="condproc.html" title="Conditional processing, also known as profiling, is the filtering or flagging of information based on processing-time criteria.">Conditional processing (profiling)</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

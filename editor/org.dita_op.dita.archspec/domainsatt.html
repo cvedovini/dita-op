@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="The domains attribute" />
+<meta name="abstract" content="The domains attribute lists the names of the domains in use by the current document type, and the ancestry for each domain. The domains attribute is declared on the root element for each topic type." />
+<meta name="description" content="The domains attribute lists the names of the domains in use by the current document type, and the ancestry for each domain. The domains attribute is declared on the root element for each topic type." />
+<meta scheme="URI" name="DC.Relation" content="speccont.html" />
+<meta scheme="URI" name="DC.Relation" content="classattdef.html" />
+<meta scheme="URI" name="DC.Relation" content="specvalid.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="domainsatt" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>The domains attribute</title>
+</head>
+<body id="domainsatt"><a name="domainsatt"><!-- --></a>
+
+
+<h1 class="topictitle1">The domains attribute</h1>
+
+
+<div><p>The domains attribute lists the names of the domains in use by
+the current document type, and the ancestry for each domain. The domains attribute
+is declared on the root element for each topic type.</p>
+
+<p>Each domain in use contributes a string in parentheses that gives the names
+of each ancestor domain plus the name of the contributing domain. Within each
+set of parentheses, the domain and its ancestry should be listed starting
+with the most distant ancestor (the root type off of which the domain hierarchy
+is based) and finishing with the name of the domain in use.</p>
+
+<div class="example"><h2 class="sectiontitle">Example: task with three domains</h2><pre class="codeblock">&lt;task id="mytask" class="- topic/topic task/task " 
+	domains="(topic ui-d) (topic sw-d) (topic pr-d cpp-d)"&gt;
+...
+&lt;/task&gt;</pre>
+In this example, the task allows the use of tags for
+describing user interfaces (ui-d), software (sw-d), and also C++ programming
+(cpp-d).</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="speccont.html" title="Specialization is expressed in content through the use of two attributes: the class attribute and the domain attribute. These are not typically present in the document instance, but are provided by default values expressed in a DTD or schema.">Specialization in content</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="classattdef.html" title="The class attribute has a particular syntax that must be followed for it to be processed correctly.">Class attribute syntax</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="specvalid.html" title="When you specialize one element from another, or a new attribute from props or base, the new element or attribute must obey certain rules in order to be a valid specialization.">Specialization validity</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

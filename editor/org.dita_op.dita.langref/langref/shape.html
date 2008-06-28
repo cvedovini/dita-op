@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="shape" />
+<meta name="abstract" content="The shape element defines the shape of a linkable area in an imagemap." />
+<meta name="description" content="The shape element defines the shape of a linkable area in an imagemap." />
+<meta content="shape, Utilities" name="DC.subject" />
+<meta content="shape, Utilities" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/ut-d.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/coords.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="shape" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>shape</title>
+</head>
+<body id="shape"><a name="shape"><!-- --></a>
+
+
+<h1 class="topictitle1">shape</h1>
+
+
+
+<div><p>The shape element defines the shape of a linkable area in an imagemap.</p>
+
+<div class="section"><div class="p">The shape element supports these values: <dl>
+<dt class="dlterm">rect</dt>
+
+<dd>Define a rectangular region. If you leave the shape element blank, this
+is assumed.</dd>
+
+
+<dt class="dlterm">circle</dt>
+
+<dd>Define a circular region.</dd>
+
+
+<dt class="dlterm">poly</dt>
+
+<dd>Define a polygonal region.</dd>
+
+
+<dt class="dlterm">default</dt>
+
+<dd>Indicates the entire diagram. </dd>
+
+</dl>
+</div>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Example</h2><pre class="pre">&lt;area&gt;
+ &lt;shape&gt;rect&lt;/shape&gt;
+ &lt;coords&gt;54,1,117,60&lt;/coords&gt;
+ &lt;xref href="d1-s2.dita"&gt;&lt;/xref&gt;
+&lt;/area&gt;</pre>
+</div>
+
+<div class="example" />
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100E9" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100EE" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100F8" headers="N100E9"><strong>ditabase, topic, task, reference, concept, glossary</strong></td>
+<td valign="top" headers="N100EE N100F8"> ( text data ) </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N10117" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N1011C" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N10126" headers="N10117"><strong>ditabase, topic, task, concept, reference, glossary</strong></td>
+<td valign="top" headers="N1011C N10126"><a href="../common/../langref/area.html" title="The area element supports the basic functionality of the HTML image map markup.">area</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>+ topic/keyword ut-d/shape </p>
+</div>
+
+<div class="section" id="shape__attrs"><a name="shape__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="shape__shape_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="shape__shape_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10161" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N10167" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N1016D" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N10173" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N10179" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10161">translate</td>
+
+<td valign="top" headers="N10167">Indicates whether the content of the element should be translated
+or not. Setting to "yes" will override the default. The DITA architectural specification contains a list of each OASIS DITA
+element and its common processing default for the translate value; because this
+element uses an actual default, it will always be treated as translate="no" unless
+overridden as described.</td>
+
+<td valign="top" headers="N1016D">yes | no | <a href="../common/ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">-dita-use-conref-target</a></td>
+
+<td valign="top" headers="N10173">"no"</td>
+
+<td valign="top" headers="N10179"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10161">xml:lang</td>
+
+<td valign="top" headers="N10167">Specifies the language of the element content. When no xml:lang value
+is supplied, the default value of English is assumed. For example, if there
+is a note element with the attribute xml:lang set to the value "es,"
+then the label on the note, which normally appears as "Note" will now
+appear in Spanish as "Nota." The allowed xml:lang values are
+based on 
+RFC 4646 Tags for Identifying Languages (see <a href="http://www.w3.org/International/articles/language-tags/" target="_blank">W3C:
+Language tags in HTML and XML</a>).</td>
+
+<td valign="top" headers="N1016D">NMTOKEN</td>
+
+<td valign="top" headers="N10173"><span>#IMPLIED</span></td>
+
+<td valign="top" headers="N10179">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10161">dir</td>
+
+<td valign="top" headers="N10167">Specifies the directionality of text: left-to-right (ltr, the processing
+default) or right-to-left (rtl). See the DITA Architectural Specification
+for best practices related to this attribute, and other aspects of DITA and translation.</td>
+
+<td valign="top" headers="N1016D">(ltr | rtl | lro | rlo | <a href="../common/ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">-dita-use-conref-target</a>)</td>
+
+<td valign="top" headers="N10173">#IMPLIED</td>
+
+<td valign="top" headers="N10179">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10161">%id-atts; (id, conref)</td>
+
+<td valign="top" headers="N10167">A set of related attributes, described at <a href="../common/id-atts.html" title="ID attributes (%id-atts;) is a parameter entity declaration in the topic DTD that includes attributes that enable the naming and referencing of elements in a DITA topic: id and conref.">%id-atts;</a></td>
+
+<td valign="top" headers="N1016D">parameter entity</td>
+
+<td valign="top" headers="N10173">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10179">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10161">%select-atts; (props, base, platform, product, audience, otherprops,
+importance, rev, status)</td>
+
+<td valign="top" headers="N10167">A set of related attributes, described at <a href="../common/select-atts.html" title="Attributes that support both filtering and flagging include props , platform , product , audience , and otherprops . Attribute base is a generic attribute that is available for specialization; it can be specialized for values that have a simple value syntax like the filter attributes, but is not itself a filtering or flagging attribute. Attribute rev only lets you flag information that matches a run-time parameter. Attribute importance provides a range of values for applications to use as needed. The %select-atts; entity also includes additional entities that allow it to include specializations of the props and base attribute. See the DITA Architectural Specification for more information on filtering or flagging with attributes, as well as for information on specialization the base and props attributes.">%select-atts;</a></td>
+
+<td valign="top" headers="N1016D">parameter entity</td>
+
+<td valign="top" headers="N10173">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10179">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10161">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N10167">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N1016D">parameter entity</td>
+
+<td valign="top" headers="N10173">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10179">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10161">class, outputclass, keyref</td>
+
+<td valign="top" headers="N10167">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N1016D">&#xA0;</td>
+<td valign="top" headers="N10173">&#xA0;</td>
+<td valign="top" headers="N10179">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/ut-d.html" title="The utilities domain elements represent common features of a language that may not necessarily be semantic, such as image maps.">Utilities elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/coords.html" title="The coords element specifies the coordinates of the linkable region in an imagemap area.">coords</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

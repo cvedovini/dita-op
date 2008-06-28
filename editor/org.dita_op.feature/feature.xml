@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (C) 2008 Claude Vedovini <http://vedovini.net/>.
+    
+    This file is part of the DITA Open Platform <http://www.dita-op.org/>.
+
+    The DITA Open Platform is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    The DITA Open Platform is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with The DITA Open Platform.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<feature
+      id="org.dita_op.feature"
+      label="%Feature-Name"
+      version="1.0.0.qualifier"
+      provider-name="%Feature-Vendor">
+
+   <description url="http://www.dita-op.org/">
+      The DITA Open Platform is a free, open-source project which goal
+is to provide an enterprise platform for the edition, management
+and processing of DITA documents.
+   </description>
+
+   <copyright url="http://www.dita-op.org/about">
+      Copyright (C) 2008 Claude Vedovini &lt;http://vedovini.net/&gt;.
+CREDITS
+This product includes work produced by the following organizations,
+projects or individuals 
+which is distributed under their own copyrights and license terms:
+- The OASIS DITA Technical Committee &lt;http://www.oasis-open.org/committees/dita&gt;.
+- The DITA Open Toolkit Project &lt;http://dita-ot.sourceforge.net/&gt;
+under the Common Public License &lt;http://www.opensource.org/licenses/cpl1.0.php&gt;.
+- Mark James &lt;http://www.famfamfam.com/&gt; under the Creative Commons
+Attribution 2.5 License &lt;http://creativecommons.org/licenses/by/2.5/&gt;
+   </copyright>
+
+   <license url="http://www.dita-op.org/about">
+      This software is part of the DITA Open Platform &lt;http://www.dita-op.org/&gt;.
+The DITA Open Platform is free software: you can redistribute
+it and/or modify it under the terms of the GNU General Public
+License as published by the Free Software Foundation, either
+version 3 of the License, or (at your option) any later version.
+The DITA Open Platform is distributed in the hope that it will
+be useful, but WITHOUT ANY WARRANTY; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with The DITA Open Platform.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+   </license>
+
+   <url>
+      <update label="DITA Open Platform" url="http://www.dita-op.org/updatesite"/>
+   </url>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.wst.xml.core"/>
+      <import plugin="org.eclipse.wst.xml.ui"/>
+      <import plugin="org.eclipse.wst.sse.core"/>
+      <import plugin="org.eclipse.wst.sse.ui"/>
+      <import plugin="org.eclipse.wst.common.uriresolver"/>
+      <import plugin="org.eclipse.ui.forms"/>
+      <import plugin="org.eclipse.core.variables"/>
+      <import plugin="org.eclipse.ant.core"/>
+      <import plugin="org.eclipse.ui.externaltools"/>
+      <import plugin="org.eclipse.debug.ui"/>
+      <import plugin="org.eclipse.ant.ui"/>
+      <import plugin="org.eclipse.jdt.debug.ui"/>
+      <import plugin="org.eclipse.jdt.launching"/>
+   </requires>
+
+   <plugin
+         id="org.dita_op.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.dita_op.dita.archspec"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.dita_op.dita.dtd"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.dita_op.dita.langref"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.dita_op.dost.launcher"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

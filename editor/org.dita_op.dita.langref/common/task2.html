@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="Task elements" />
+<meta name="abstract" content="Task topics answer &quot;How do I?&quot; questions, and have a well-defined structure that describes how to complete a procedure to accomplish a specific goal. Use the task topic to describe the steps of a particular task, or to provide an overview of a higher-level task. The task topic includes sections for describing the context, prerequisites, actual steps, expected results, example, and expected next steps for a task. For more details on when to use task and other information types, please refer to the DITA architectural specification." />
+<meta name="description" content="Task topics answer &quot;How do I?&quot; questions, and have a well-defined structure that describes how to complete a procedure to accomplish a specific goal. Use the task topic to describe the steps of a particular task, or to provide an overview of a higher-level task. The task topic includes sections for describing the context, prerequisites, actual steps, expected results, example, and expected next steps for a task. For more details on when to use task and other information types, please refer to the DITA architectural specification." />
+<meta content="Task elements" name="DC.subject" />
+<meta content="Task elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/reference2.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/glossary2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/task.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/taskbody.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/prereq.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/context.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/steps.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/steps-unordered.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/step.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/cmd.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/info.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/substeps.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/substep.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/stepxmp.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/choicetable.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/chhead.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/choptionhd.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/chdeschd.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/chrow.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/choption.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/chdesc.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/choices.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/choice.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/stepresult.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/tutorialinfo.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/result.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/postreq.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="task2" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Task elements</title>
+</head>
+<body id="task2"><a name="task2"><!-- --></a>
+
+
+<h1 class="topictitle1">Task elements</h1>
+
+
+
+<div><p>Task topics answer "How do I?" questions,
+and have a well-defined structure that describes how to complete a procedure
+to accomplish a specific goal. Use the task topic to describe the steps of
+a particular task, or to provide an overview of a higher-level task. The task
+topic includes sections for describing the context, prerequisites, actual
+steps, expected results, example, and expected next steps for a task. For
+more details on when to use task and other information types, please refer
+to the DITA architectural specification.</p>
+</div>
+
+<div>
+<ol>
+<li class="olchildlink"><a href="../langref/task.html">task</a><br />
+The &lt;task&gt; element is the top-level element for a task topic. Tasks are the main building blocks for task-oriented user assistance. They generally provide step-by-step instructions that will enable a user to perform a task. A task answers the question of "how to?" by telling the user precisely what to do and the order in which to do it. Tasks have the same high-level structure as other topics, with a title, short description and body.</li>
+<li class="olchildlink"><a href="../langref/taskbody.html">taskbody</a><br />
+The &lt;taskbody&gt; element is the main body-level element inside a task topic. A task body has a very specific structure, with the following elements in this order: &lt;prereq&gt;, &lt;context&gt;, &lt;steps&gt;, &lt;result&gt;, &lt;example&gt; and &lt;postreq&gt;. Each of the body sections are optional.</li>
+<li class="olchildlink"><a href="../langref/prereq.html">prereq</a><br />
+The pre-requisite (&lt;prereq&gt;) section of a task should document things the user needs to know or do before starting the current task. Prerequisite links will be placed in a list after the related-links section; on output the &lt;prereq&gt; links from the related-links section are added to the &lt;prereq&gt; section.</li>
+<li class="olchildlink"><a href="../langref/context.html">context</a><br />
+The &lt;context&gt; section of a task provides background information for the task. This information helps the user understand what the purpose of the task is and what they will gain by completing the task. This section should be brief and does not replace or recreate a concept topic on the same subject, although the context section may include some conceptual information.</li>
+<li class="olchildlink"><a href="../langref/steps.html">steps</a><br />
+The &lt;steps&gt; section of a task provides the main content of the task topic. The task is described as a series of steps that the user must follow to accomplish the task. One or more &lt;steps&gt; elements is required inside the &lt;steps&gt; section.</li>
+<li class="olchildlink"><a href="../langref/steps-unordered.html">steps-unordered</a><br />
+Like the &lt;steps&gt; element, the &lt;steps-unordered&gt; section of a task provides the main content of the task topic, but particularly for cases in which the order of steps may vary from one situation to another. One or more steps is required inside the &lt;steps-unordered&gt; section.</li>
+<li class="olchildlink"><a href="../langref/step.html">step</a><br />
+The &lt;step&gt; element represents an action that a user must follow to accomplish a task. Each step in a task must contain a command &lt;cmd&gt; element which describes the particular action the user must do to accomplish the overall task. The step element can also contain information &lt;info&gt;, substeps &lt;substeps&gt;, tutorial information &lt;tutorialinfo&gt;, a step example &lt;stepxmp&gt;, choices &lt;choices&gt; or a stepresult &lt;stepresult&gt;, although these are optional.</li>
+<li class="olchildlink"><a href="../langref/cmd.html">cmd</a><br />
+The command (&lt;cmd&gt;) element is required as the first element inside a &lt;step&gt;. It provides the active voice instruction to the user for completing the step, and should not be more than one sentence. If the step needs additional explanation, this can follow the &lt;cmd&gt; element inside an &lt;info &gt; element.</li>
+<li class="olchildlink"><a href="../langref/info.html">info</a><br />
+The information element (&lt;info&gt;) occurs inside a &lt;step&gt; element to provide additional information about the step.</li>
+<li class="olchildlink"><a href="../langref/substeps.html">substeps</a><br />
+The &lt;substeps&gt; element allows you to break a step down into a series of separate actions, and should be used only if necessary. Try to describe the steps of a task in a single level of steps. If you need to use more than one level of substep nesting, you should probably rewrite the task to simplify it.</li>
+<li class="olchildlink"><a href="../langref/substep.html">substep</a><br />
+A &lt;substep&gt; element has the same structure as a &lt;step&gt;, except that it does not allow lists of choices or substeps within it, in order to prevent unlimited nesting of steps.</li>
+<li class="olchildlink"><a href="../langref/stepxmp.html">stepxmp</a><br />
+The step example (&lt;stepxmp&gt;) element is used to illustrate a step of a task. The example can be a couple of words, or an entire paragraph.</li>
+<li class="olchildlink"><a href="../langref/choicetable.html">choicetable</a><br />
+The &lt;choicetable&gt; element contains a series of optional choices available within a step of a task.</li>
+<li class="olchildlink"><a href="../langref/chhead.html">chhead</a><br />
+The &lt;chhead&gt; element is a container inside the &lt;choicetable&gt; element that provides specific heading text to override the default Options and Description headings. The &lt;chhead&gt; element contains both a &lt;choptionhd&gt; and &lt;chdeschd&gt; element as a pair.</li>
+<li class="olchildlink"><a href="../langref/choptionhd.html">choptionhd</a><br />
+The &lt;choptionhd&gt; element provides a specific label for the list of options that a user chooses from to accomplish a step. The default label for options is Option.</li>
+<li class="olchildlink"><a href="../langref/chdeschd.html">chdeschd</a><br />
+The &lt;chdeschd&gt; option provides a specific label for the list of descriptions of options that a user must choose to accomplish a step of a task. The default label overridden by &lt;chdeschd&gt; is Description.</li>
+<li class="olchildlink"><a href="../langref/chrow.html">chrow</a><br />
+The &lt;chrow&gt; element is a container inside the &lt;choicetable&gt; element. The &lt;chrow&gt; element contains both a &lt;choption&gt; and &lt;chdesc&gt; element as a pair.</li>
+<li class="olchildlink"><a href="../langref/choption.html">choption</a><br />
+The &lt;choption&gt; element describes an option that a user could choose to accomplish a step of a task. In a user interface, for example, this might be the name of radio button.</li>
+<li class="olchildlink"><a href="../langref/chdesc.html">chdesc</a><br />
+The &lt;chdesc&gt; element is a description of an option that a user chooses while performing a step to accomplish a task. It explains why the user would choose that option, and might explain the result of the choice when it is not immediately obvious.</li>
+<li class="olchildlink"><a href="../langref/choices.html">choices</a><br />
+The &lt;choices&gt; element contains a list of &lt;choice&gt; elements. It is used when the user will need to choose one of several actions while performing the steps of a task.</li>
+<li class="olchildlink"><a href="../langref/choice.html">choice</a><br />
+Each &lt;choice&gt; element describes one way that the user could accomplish the current step.</li>
+<li class="olchildlink"><a href="../langref/stepresult.html">stepresult</a><br />
+The &lt;stepresult&gt; element provides information on the expected outcome of a step. If a user interface is being documented, the outcome could describe a dialog box opening, or the appearance of a progress indicator. Step results are useful to assure a user that they are on track, but should not be used for every step, as this quickly becomes tedious.</li>
+<li class="olchildlink"><a href="../langref/tutorialinfo.html">tutorialinfo</a><br />
+The tutorial info (&lt;tutorialinfo&gt;) element contains additional information that is useful when the task is part of a tutorial.</li>
+<li class="olchildlink"><a href="../langref/result.html">result</a><br />
+The &lt;result&gt; element describes the expected outcome for the task as a whole.</li>
+<li class="olchildlink"><a href="../langref/postreq.html">postreq</a><br />
+The &lt;postreq&gt; element describes steps or tasks that the user should do after the successful completion of the current task. It is often supported by links to the next task or tasks in the &lt;related-links&gt; section.</li>
+</ol>
+
+<div class="familylinks">
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../common/reference2.html" title="Use the reference elements to describe regular features of sets of things, most commonly the commands in a programming language. However, this format is also suitable for recipes, bibliographies, catalogues, and similar collections of structured descriptive prose. For more details on when to use reference and other information types, please refer to the DITA architectural specification.">Reference elements</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../common/glossary2.html" title="Use the glossentry topic type to define glossary terms. Each glossentry topic should define a single sense of a term. The current OASIS glossentry type is an initial implementation intended to support minimal terminology information; more terminology management capabilities may be added in future releases.">Glossentry elements</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

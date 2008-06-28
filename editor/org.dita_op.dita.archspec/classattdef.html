@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Class attribute syntax" />
+<meta name="abstract" content="The class attribute has a particular syntax that must be followed for it to be processed correctly." />
+<meta name="description" content="The class attribute has a particular syntax that must be followed for it to be processed correctly." />
+<meta scheme="URI" name="DC.Relation" content="speccont.html" />
+<meta scheme="URI" name="DC.Relation" content="classatt.html" />
+<meta scheme="URI" name="DC.Relation" content="domainsatt.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="classattdef" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Class attribute syntax</title>
+</head>
+<body id="classattdef"><a name="classattdef"><!-- --></a>
+
+
+<h1 class="topictitle1">Class attribute syntax</h1>
+
+
+<div><p>The class attribute has a particular syntax that must be followed
+for it to be processed correctly.</p>
+
+<p>Every element must have a class attribute. The class attribute starts with
+a "-" if it is declared in a structural module, or a "+" if it is declared
+in a domain module. After the starting token are one or more blank-delimited
+values, ending with a blank. Each value has two parts: the first part identifies
+a specialization module, for example a topic type or domain name, and the
+second part (after a / ) identifies an element type. Structural names are
+taken from the root element for the topic type or map type. Domain names are
+defined in the domain module.</p>
+
+<p>Typically, the class attribute value should be declared as a default attribute
+value in the  DTD or schema rather than directly in the document instance.
+The class attribute should not be modified by the author. </p>
+
+<div class="p"><div class="fignone"><span class="figcap">Figure 1. Example structural type element with class attribute</span>
+<pre class="codeblock">&lt;appstep class="- topic/li task/step bctask/appstep "&gt;A specialized step&lt;/appstep&gt;</pre>
+
+</div>
+<div class="fignone"><span class="figcap">Figure 2. Example domain element with class attribute</span>
+<pre class="codeblock">&lt;wintitle class="+ topic/keyword ui-d/wintitle "&gt;A specialized keyword&lt;/wintitle&gt;</pre>
+
+</div>
+</div>
+
+<p>When the class attribute is declared in the DTD or schema, it must be declared
+with a default value. In order to support generalization round-tripping (generalizing
+specialized content into a generic form and then returning it to the specialized
+form) the default value must not be fixed. This allows the generalization
+process to overwrite the default values in a general document type with specialized
+values taken from the document being generalized.</p>
+
+<div class="p">When a specialized type declares new elements, it must provide a class
+ attribute for the new element. The class attribute must include a mapping
+ for every structural type or domain in the specialized type's ancestry, even
+those in  which no element renaming occurred. The mapping should start with
+the value for the base type (for example topic or map),  and finish with the
+current element type. <div class="fignone"><span class="figcap">Figure 3. Example attribute with intermediate value</span>
+<pre class="codeblock">&lt;windowname class="- topic/kwd task/<strong>kwd</strong> guitask/windowname "&gt;</pre>
+
+</div>
+Intermediate values are necessary so that generalizing and specializing
+transforms can map  values simply and accurately. For example, if task/kwd
+was missing as a  value, and a user decided to generalize this guitask up
+to a task topic, then the  transform would have to guess whether to map to
+kwd (appropriate if task  is more general than guitask, which it is) or leave
+as windowname (appropriate if task  were more specialized, which it isn't).
+By always providing mappings for  more general values, we can then apply the
+simple rule that missing  mappings must by default be to more specialized
+values than the one we are generalizing to, which means the  last value in
+the list is appropriate. For example, when specializing to &lt;task&gt;, if a &lt;p&gt;
+element has no target value for &lt;task&gt;, we can safely assume that &lt;p&gt;
+does not specialize from &lt;task&gt; and should not be generalized.</div>
+
+<p>While this example is trivial, more  complicated hierarchies (say, five
+levels deep, with renaming occurring at  two and four only) make explicit
+intermediate values essential.</p>
+
+<p>A specialized type does not need to change the class attribute for  elements
+that it does not specialize, but simply reuses by reference from  more generic
+levels. For example, since task, bctask, and guitask use the  p element without
+specializing it, they don't need to declare mappings for  it. </p>
+
+<p>A specialized type only declares class attributes for the elements that
+it  uniquely declares. It does not need to declare class attributes for  elements
+that it reuses or inherits.</p>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="speccont.html" title="Specialization is expressed in content through the use of two attributes: the class attribute and the domain attribute. These are not typically present in the document instance, but are provided by default values expressed in a DTD or schema.">Specialization in content</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="classatt.html" title="Each element declared in the DITA architecture has a class attribute. This attribute provides a mapping between the element's current name and its more general equivalents. The more specialized the element type, the longer its class attribute value.">The class attribute</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="domainsatt.html" title="The domains attribute lists the names of the domains in use by the current document type, and the ancestry for each domain. The domains attribute is declared on the root element for each topic type.">The domains attribute</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

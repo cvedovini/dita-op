@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="The xml:lang attribute" />
+<meta name="abstract" content="Specifies the language (and optionally the locale) of the element content. The intent declared with xml:lang is considered to apply to all attributes and content of the element where it is specified, unless overridden with an instance of xml:lang on another element within that content. When no xml:lang value is supplied, the processor should assume a default value." />
+<meta name="description" content="Specifies the language (and optionally the locale) of the element content. The intent declared with xml:lang is considered to apply to all attributes and content of the element where it is specified, unless overridden with an instance of xml:lang on another element within that content. When no xml:lang value is supplied, the processor should assume a default value." />
+<meta scheme="URI" name="DC.Relation" content="translation.html" />
+<meta scheme="URI" name="DC.Relation" content="diratt.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="xmllang" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>The xml:lang attribute</title>
+</head>
+<body id="xmllang"><a name="xmllang"><!-- --></a>
+
+
+<h1 class="topictitle1">The xml:lang attribute</h1>
+
+
+<div><p>Specifies the language (and optionally the locale) of the element
+content. The intent declared with xml:lang is considered to apply to all attributes
+and content of the element where it is specified, unless overridden with an
+instance of xml:lang on another element within that content. When no xml:lang
+value is supplied, the processor should assume a default value. </p>
+
+<div class="section">This attribute must be set to a language identifier, as defined by
+IETF RFC 4646 (<a href="http://www.ietf.org/rfc/rfc4646.txt" target="_blank">http://www.ietf.org/rfc/rfc4646.txt</a>) or successor. </div>
+
+<div class="section"><h2 class="sectiontitle">Recommended usage</h2><p>For a DITA document that contains
+a single language, the highest level element containing content should always
+set the xml:lang attribute to the language (and optionally the locale) that
+applies to the document. Since the dita element does not support the xml:lang
+element, the highest level element that should set the xml:lang attribute
+is the topic element (or derivatives at the same level). </p>
+<p>For a DITA
+document that contains more than one language, the highest level element should
+always set the xml:lang attribute to the primary language (and optionally
+the locale) that applies to the document. Wherever an alternate language occurs
+in the document, the element containing the text or structure in the alternate
+language should set the xml:lang attribute appropriately. The above way of
+overriding the default document language applies to both block and inline
+elements that use the alternate language. </p>
+<p>Using markup to identify
+language is strongly recommended to make the document as portable as possible.
+In addition, the marked-up document can be read and understood by humans.
+Finally, when updating the document, the boundaries of each language are clear,
+which makes it much easier for the author to update the document. </p>
+<p>Applications
+should ensure every highest level topic element and the root map element explicitly
+assign the xml:lang attribute.</p>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Usage in maps</h2><p>The xml:lang attribute can be specified
+on the map element. The expected language inheritance behavior on the map
+is similar to that on the topic. That is, the primary language for the map
+should be set on the map element (or assumed by the application if not explicitly
+set), and should remain in effect for all children unless a child specifies
+a different value for xml:lang. </p>
+<p>If the xml:lang value on a topicref
+does not match the xml:lang value on a topic, the value on the topic takes
+precedence. </p>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Usage with the conref attribute</h2><p>When conref is used
+to include content from one topic in another topic, the xml:lang value must
+be obtained from the topic being included. If the included content does not
+explicitly set xml:lang, the processor must obtain the xml:lang value from
+the nearest parent of the included content. If the included content does not
+have a parent element that sets xml:lang, the application should default to
+the same value used for topics that do not set the xml:lang attribute. </p>
+<p>This
+behavior is shown in the following example, where the xml:lang value of the
+included note is obtained from its ancestor section element (id="qqwwee")
+that sets xml:lang. In this example, the xml:lang value applied to the note
+whose id is "mynote" is "fr". </p>
+<pre class="codeblock">****************installingAcme.xml*********************
+&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE dita PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd"&gt;
+&lt;dita&gt;
+    &lt;topic id="topic_3FD87D" xml:lang="en"&gt;
+        &lt;title&gt;Installing Acme&lt;/title&gt;
+        &lt;shortdesc&gt;Step by step details on how to install Acme&lt;/shortdesc&gt;
+        &lt;body&gt;
+            &lt;p id="p_60A72"&gt;Welcome message goes here&lt;/p&gt;
+            &lt;section id="section_C25"&gt;
+                &lt;title&gt;Before you begin&lt;/title&gt;
+                &lt;p id="p_E57324D"&gt;Special notes when installing Acme in
+                    France:&lt;/p&gt;
+                &lt;note id="mynote" conref="warningsAcme.xml#topic_warnings/frenchwarnings"&gt;&lt;/note&gt;
+            &lt;/section&gt;
+        &lt;/body&gt;
+    &lt;/topic&gt;
+&lt;/dita&gt;
+*******************************************
+
+
+****************warningsAcme.dita*********************
+&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE dita PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd"&gt;
+&lt;dita&gt;
+    &lt;topic id="topic_warnings"&gt;
+        &lt;title&gt;Warnings&lt;/title&gt;
+        &lt;shortdesc&gt;warnings in all languages&lt;/shortdesc&gt;
+        &lt;body&gt;
+            &lt;section id="qqwwee" xml:lang="fr"&gt;
+                &lt;title&gt;French warnings&lt;/title&gt;
+                &lt;p id="p_F2A"&gt;These are our French warnings.&lt;/p&gt;
+                &lt;note id="frenchwarnings"&gt;Note in French!&lt;/note&gt;
+            &lt;/section&gt;
+            &lt;section xml:lang="en" id="aassdd"&gt;
+                &lt;title&gt;English warnings&lt;/title&gt;
+                &lt;p id="p_5F961"&gt;These are our English warnings.&lt;/p&gt;
+                &lt;note id="englishwarnings"&gt;Note in English!&lt;/note&gt;
+            &lt;/section&gt;
+        &lt;/body&gt;
+    &lt;/topic&gt;
+&lt;/dita&gt;
+*************************************
+</pre>
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="translation.html" title="DITA has specific capabilities for preparing content for translation and working with multilingual content, including the xml:lang attribute, the dir attribute, and the translate attribute.">Translation</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="diratt.html" title="While most languages are written in text where characters flow from left to right, Hebrew and many Arabic languages are written from right to left. In some languages, including Hebrew and Arabic, numbers and other content is written left to right. Also, a multilingual document containing, for example, English and Hebrew, contains some text that flows left to right and other text that flows right to left.">The dir attribute</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

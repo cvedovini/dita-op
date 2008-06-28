@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="Table elements" />
+<meta scheme="URI" name="DC.Relation" content="../common/body2.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/prolog2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/table.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/tgroup.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/colspec.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/thead.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/tbody.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/row.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/entry.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/simpletable.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/sthead.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/strow.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/stentry.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="table2" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Table elements</title>
+</head>
+<body id="table2"><a name="table2"><!-- --></a>
+
+
+<h1 class="topictitle1">Table elements</h1>
+
+<div>
+<div class="section">          <p>DITA topics support two types of tables. One is the
+most common table format used in industry, the &lt;<span class="apiname">CALS table</span>&gt;
+(or more recently known also as the Oasis Table Exchange Model). The CALS
+table supports the spanning of multiple rows or columns for special layout
+or organizational needs, and provides a wide variety of controls over the
+display properties of the data and even the table structure itself.          </p>
+          <p>The other table structure in
+DITA is called &lt;<span class="apiname">simpletable</span>&gt;. As the name implies,
+it is structurally less sophisticated than the CALS table, and can be used
+as a very simple, regular table for which close control of formatting is not
+as important. However, the main advantage of simpletable is for describing
+lists of data with regular headings, such as telephone directory listings,
+display adapter configuration data, or API properties. </p>
+ 
+              </div>
+
+</div>
+
+<div>
+<ol>
+<li class="olchildlink"><a href="../langref/table.html">table</a><br />
+The &lt;table&gt; element organizes arbitrarily complex relationships of tabular information. This standard table markup allows column or row spanning and table captions or descriptions. An optional title allowed inside the table element provides a caption to describe the table.</li>
+<li class="olchildlink"><a href="../langref/tgroup.html">tgroup</a><br />
+The &lt;tgroup&gt; element in a table contains column, row, spanning, header and footer specifications, and the body (&lt;tbody&gt;) of the table.</li>
+<li class="olchildlink"><a href="../langref/colspec.html">colspec</a><br />
+The &lt;colspec&gt; element contains a column specification for a table, including assigning a column name and number, cell content alignment, and column width.</li>
+<li class="olchildlink"><a href="../langref/thead.html">thead</a><br />
+The table header (&lt;thead&gt;) element precedes the table body (&lt;tbody&gt;) element in a complex table.</li>
+<li class="olchildlink"><a href="../langref/tbody.html">tbody</a><br />
+The &lt;tbody&gt; element contains the rows in a table.</li>
+<li class="olchildlink"><a href="../langref/row.html">row</a><br />
+The &lt;row&gt; element contains a single row in a table &lt;tgroup&gt;.</li>
+<li class="olchildlink"><a href="../langref/entry.html">entry</a><br />
+The &lt;entry&gt; element defines a single cell in a table.</li>
+<li class="olchildlink"><a href="../langref/simpletable.html">simpletable</a><br />
+The &lt;simpletable&gt; element is used for tables that are regular in structure and do not need a caption. Choose the simple table element when you want to show information in regular rows and columns. For example, multi-column tabular data such as phone directory listings or parts lists are good candidates for simpletable. Another good use of simpletable is for information that seems to beg for a "three-part definition list"—just use the keycol attribute to indicate which column represents the "key" or term-like column of your structure.</li>
+<li class="olchildlink"><a href="../langref/sthead.html">sthead</a><br />
+The simpletable header (&lt;sthead&gt;) element contains the table's header row. The header row is optional in a simple table.</li>
+<li class="olchildlink"><a href="../langref/strow.html">strow</a><br />
+The &lt;simpletable&gt; row (&lt;strow&gt;) element specifies a row in a simple table.</li>
+<li class="olchildlink"><a href="../langref/stentry.html">stentry</a><br />
+The simpletable entry (&lt;stentry&gt;) element represents a single table cell, like &lt;entry&gt; in &lt;table&gt;. You can place any number of stentry cells in either an &lt;sthead&gt; element (for headings) or &lt;strow&gt; element (for rows of data).</li>
+</ol>
+
+<div class="familylinks">
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../common/body2.html">Body elements</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../common/prolog2.html" title="The prolog elements represent the metadata associated with a document. Most of the metadata in a topic prolog can also be authored in a DITA map, in the map's &lt;topicmeta&gt; element.">Prolog elements</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

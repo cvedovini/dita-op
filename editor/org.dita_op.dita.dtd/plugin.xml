@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!--
+    Copyright (C) 2008 Claude Vedovini <http://vedovini.net/>.
+    
+	This file is part of the DITA Open Platform <http://www.dita-op.org/>.
+	
+	The DITA Open Platform is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+	
+	The DITA Open Platform is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	
+	You should have received a copy of the GNU General Public License
+	along with The DITA Open Platform.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<plugin>
+	<extension point="org.eclipse.wst.xml.core.catalogContributions">
+		<catalogContribution
+			id="org.dita_op.dita.catalogContribution">
+			<public id="org.dita_op.dita.dtd.map"
+				publicId="-//OASIS//DTD DITA Map//EN" uri="dtd/map.dtd"
+				webURL="http://docs.oasis-open.org/dita/v1.1/CD01/dtd/map.dtd" />
+			<public id="org.dita_op.dita.dtd.bookmap"
+				publicId="-//OASIS//DTD DITA BookMap//EN" uri="dtd/bookmap.dtd"
+				webURL="http://docs.oasis-open.org/dita/v1.1/CD01/dtd/bookmap.dtd" />
+			<public id="org.dita_op.dita.dtd.topic"
+				publicId="-//OASIS//DTD DITA Topic//EN" uri="dtd/topic.dtd"
+				webURL="http://docs.oasis-open.org/dita/v1.1/CD01/dtd/topic.dtd" />
+			<public id="org.dita_op.dita.dtd.concept"
+				publicId="-//OASIS//DTD DITA Concept//EN" uri="dtd/concept.dtd"
+				webURL="http://docs.oasis-open.org/dita/v1.1/CD01/dtd/concept.dtd" />
+			<public id="org.dita_op.dita.dtd.task"
+				publicId="-//OASIS//DTD DITA Task//EN" uri="dtd/task.dtd"
+				webURL="http://docs.oasis-open.org/dita/v1.1/CD01/dtd/task.dtd" />
+			<public id="org.dita_op.dita.dtd.reference"
+				publicId="-//OASIS//DTD DITA Reference//EN" uri="dtd/reference.dtd"
+				webURL="http://docs.oasis-open.org/dita/v1.1/CD01/dtd/reference.dtd" />
+	        <system id="org.dita_op.dita.dtd.ditaval"
+	            systemId="ditaval.dtd"
+	            uri="dtd/ditaval.dtd" />
+		</catalogContribution>
+	</extension>
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type base-type="org.eclipse.core.runtime.xml"
+			id="org.dita_op.dita" name="%DITAContentType.name">
+		</content-type>
+		<content-type base-type="org.dita_op.dita"
+			file-extensions="dita" id="org.dita_op.dita.topic"
+			name="%TopicContentType.name">
+		</content-type>
+		<content-type base-type="org.dita_op.dita"
+			file-extensions="ditamap" id="org.dita_op.dita.map"
+			name="%MapContentType.name">
+		</content-type>
+      <content-type
+            base-type="org.dita_op.dita"
+            file-extensions="ditaval"
+            id="org.dita_op.dita.processingProfile"
+            name="%ProcessingProfileContentType.name">
+      </content-type>
+	</extension>
+</plugin>

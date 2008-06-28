@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="Reference elements" />
+<meta name="abstract" content="Use the reference elements to describe regular features of sets of things, most commonly the commands in a programming language. However, this format is also suitable for recipes, bibliographies, catalogues, and similar collections of structured descriptive prose. For more details on when to use reference and other information types, please refer to the DITA architectural specification." />
+<meta name="description" content="Use the reference elements to describe regular features of sets of things, most commonly the commands in a programming language. However, this format is also suitable for recipes, bibliographies, catalogues, and similar collections of structured descriptive prose. For more details on when to use reference and other information types, please refer to the DITA architectural specification." />
+<meta content="Reference elements" name="DC.subject" />
+<meta content="Reference elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/concept2.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/task2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/reference.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/refbody.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/refsyn.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/properties.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/prophead.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/proptypehd.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/propvaluehd.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/propdeschd.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/property.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/proptype.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/propvalue.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/propdesc.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="reference2" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Reference elements</title>
+</head>
+<body id="reference2"><a name="reference2"><!-- --></a>
+
+
+<h1 class="topictitle1">Reference elements</h1>
+
+
+
+<div><p>Use the reference elements to describe regular features
+of sets of things, most commonly the commands in a programming language. However,
+this format is also suitable for recipes, bibliographies, catalogues,
+and similar collections of structured descriptive prose. For more details
+on when to use reference and other information types, please refer to the
+DITA architectural specification.</p>
+</div>
+
+<div>
+<ol>
+<li class="olchildlink"><a href="../langref/reference.html">reference</a><br />
+The &lt;reference&gt; element defines a top-level container for a reference topic. Reference topics document programming constructs or facts about a product. Examples of reference topics include language elements, class descriptions, commands, functions, statements, protocols, types, declarators, operands, and API information, which provide quick access to facts, but no explanation of concepts or procedures. Reference topics have the same high-level structure as any other topic type, with a title, short description, and body. Within the body, reference topics are typically organized into one or more sections, property lists, and tables. The reference topic type provides general rules that apply to all kinds of reference information, using elements like &lt;refsyn&gt; for syntax or signatures, and &lt;properties&gt; for lists of properties and values.</li>
+<li class="olchildlink"><a href="../langref/refbody.html">refbody</a><br />
+The &lt;refbody&gt; element is a container for the main content of the reference topic. Reference topics limit the body structure to tables (both simple and standard), property lists, syntax sections, and generic sections and examples, in any sequence or number.</li>
+<li class="olchildlink"><a href="../langref/refsyn.html">refsyn</a><br />
+The &lt;refsyn&gt; element is a special section inside a reference topic. The section often contains syntax or signature content (for example, a command-line utility's calling syntax, or an API's signature). The &lt;refsyn&gt; contains a brief, possibly diagrammatic description of the subject's interface or high-level structure.</li>
+<li class="olchildlink"><a href="../langref/properties.html">properties</a><br />
+The &lt;properties&gt; element gives a list of properties for the subject of the current topic, for example whether a class is public or protected. Each property can include the type, value, and a description. The typical rendering is usually in a table-like format. To represent multiple values for a type, just create additional property elements and use only the &lt;propvalue&gt; element (and &lt;propdesc&gt; when needed) for each successive value.</li>
+<li class="olchildlink"><a href="../langref/prophead.html">prophead</a><br />
+The prophead element supports regular headings for the properties element.</li>
+<li class="olchildlink"><a href="../langref/proptypehd.html">proptypehd</a><br />
+The proptypehd element supports regular headings for the type column of a properties table.</li>
+<li class="olchildlink"><a href="../langref/propvaluehd.html">propvaluehd</a><br />
+The propvaluehd element supports regular headings for the value column of a properties table.</li>
+<li class="olchildlink"><a href="../langref/propdeschd.html">propdeschd</a><br />
+The propdeschd element supports regular headings for the description column of a properties table.</li>
+<li class="olchildlink"><a href="../langref/property.html">property</a><br />
+The &lt;property&gt; element represents a property of the current topic's subject. For example, if the current topic is a class, the property might show that the class is protected rather than public. It contains three optional elements: type, value, and description.</li>
+<li class="olchildlink"><a href="../langref/proptype.html">proptype</a><br />
+The proptype element describes the type of property.</li>
+<li class="olchildlink"><a href="../langref/propvalue.html">propvalue</a><br />
+The &lt;propvalue&gt; element indicates the value or values for the current property type. You can put values in separate rows if they need separate descriptions, and just leave the &lt;proptype&gt; element blank.</li>
+<li class="olchildlink"><a href="../langref/propdesc.html">propdesc</a><br />
+The &lt;propdesc&gt; element is used to provide a short description of the property type and its listed values (or just the value).</li>
+</ol>
+
+<div class="familylinks">
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../common/concept2.html" title="DITA concept topics answer &quot;What is...&quot; questions. Use the concept topic to introduce the background or overview information for tasks or reference topics. The concept topic has the restriction that following a section or example, only other sections or examples are permitted as content. For more details on when to use concept and other information types, please refer to the DITA architectural specification.">Concept elements</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../common/task2.html" title="Task topics answer &quot;How do I?&quot; questions, and have a well-defined structure that describes how to complete a procedure to accomplish a specific goal. Use the task topic to describe the steps of a particular task, or to provide an overview of a higher-level task. The task topic includes sections for describing the context, prerequisites, actual steps, expected results, example, and expected next steps for a task. For more details on when to use task and other information types, please refer to the DITA architectural specification.">Task elements</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="organizationinfo" />
+<meta name="abstract" content="The &lt;organizationinfo&gt; element contains detailed information about an authoring organization." />
+<meta name="description" content="The &lt;organizationinfo&gt; element contains detailed information about an authoring organization." />
+<meta content="organizationinfo, xNAL" name="DC.subject" />
+<meta content="organizationinfo, xNAL" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/xnal-d.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/namedetails.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/organizationname.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="organizationinfo" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>organizationinfo</title>
+</head>
+<body id="organizationinfo"><a name="organizationinfo"><!-- --></a>
+
+
+<h1 class="topictitle1">organizationinfo</h1>
+
+
+
+<div><p>The &lt;organizationinfo&gt; element contains detailed information
+about an authoring organization. </p>
+
+<div class="example"><pre class="pre">&lt;organizationinfo&gt;
+ &lt;namedetails&gt;
+  &lt;organizationnamedetails&gt;
+   &lt;organizationname&gt;WizardWorks, Inc.&lt;/organizationname&gt;
+   &lt;otherinfo&gt;'Best wizard in Oz'&lt;/otherinfo&gt;
+  &lt;organizationnamedetails&gt;
+ &lt;/namedetails&gt;
+ &lt;addressdetails&gt;
+  &lt;thoroughfare&gt;123 Yellow Brick Road&lt;/thoroughfare&gt;
+  &lt;locality&gt;Emerald City&lt;/locality&gt;
+  &lt;administrativearea&gt;Kansas&lt;/administrativearea&gt;
+  &lt;country&gt;USA&lt;/country&gt;
+ &lt;/addressdetails&gt;
+ &lt;contactnumbers&gt;&lt;contactnumber&gt;123-555-4678&lt;/contactnumber&gt;&lt;/contactnumbers&gt;
+ &lt;emailaddresses&gt;&lt;emailaddress&gt;wizard@example.org&lt;/emailaddress&gt;&lt;/emailaddresses&gt;
+ &lt;urls&gt;&lt;url&gt;www.wizardworks.example.org&lt;/url&gt;&lt;/urls&gt;
+&lt;/organizationinfo&gt;</pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N1008D" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N10092" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N1009C" headers="N1008D"><strong>bookmap</strong></td>
+<td valign="top" headers="N10092 N1009C"> ( (
+<a href="../common/../langref/namedetails.html" title="The &lt;namedetails&gt; element contains information about the name of the author or the authoring organization.">namedetails</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/addressdetails.html" title="The &lt;addressdetails&gt; element contains information about the address of the author or authoring group.">addressdetails</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/contactnumbers.html" title="The &lt;contactnumbers&gt; element contains a list of telephone and fax numbers.">contactnumbers</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/emailaddresses.html" title="The &lt;emailaddress&gt; element contains a list of e-mail addresses.">emailaddresses</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/urls.html" title="The &lt;urls&gt; element contains a list of Uniform Resource Locators (URLs).">urls</a>) <em> (optional) </em>) </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N10110" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N10115" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N1011F" headers="N10110"><strong>bookmap</strong></td>
+<td valign="top" headers="N10115 N1011F"><a href="../common/../langref/authorinformation.html" title="The &lt;authorinformation&gt; element contains detailed information about the author or authoring organization.">authorinformation</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>+ topic/data xnal-d/organizationinfo </p>
+</div>
+
+<div class="section" id="organizationinfo__attrs"><a name="organizationinfo__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="organizationinfo__organizationinfo_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="organizationinfo__organizationinfo_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N1015A" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N10160" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N10166" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N1016C" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N10172" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1015A">name</td>
+
+<td valign="top" headers="N10160">Defines a unique name for the
+object.</td>
+
+<td valign="top" headers="N10166">CDATA</td>
+
+<td valign="top" headers="N1016C">#IMPLIED</td>
+
+<td valign="top" headers="N10172">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1015A">datatype</td>
+
+<td valign="top" headers="N10160">Describes the type of data contained in the value attribute or within
+the data element. A typical use of datatype will be the identifying URI for
+an XML Schema datatype.</td>
+
+<td valign="top" headers="N10166">CDATA</td>
+
+<td valign="top" headers="N1016C">#IMPLIED</td>
+
+<td valign="top" headers="N10172">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1015A">value</td>
+
+<td valign="top" headers="N10160">Specifies the value of a run-time parameter specified by the name
+attribute.</td>
+
+<td valign="top" headers="N10166">CDATA</td>
+
+<td valign="top" headers="N1016C">#IMPLIED</td>
+
+<td valign="top" headers="N10172">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1015A">href</td>
+
+<td valign="top" headers="N10160">A hyperlink to an external Web page (URL) or other non-DITA resource,
+or to another DITA topic in the same file or in another file. The format attribute
+identifies the format of the target. Non-DITA targets use standard URL syntax.
+DITA topics are targetted as follows:<pre class="pre">Target elsewhere in the same file:
+  href="#topicid"
+First topic in different file:
+  href="filename.dita"
+Specific topic in different file:
+  href="filename.dita#topicid"</pre>
+<p>If the URL contains an ampersand
+character, the ampersand symbol (&amp;amp;) should be used to indicate that
+character</p>
+</td>
+
+<td valign="top" headers="N10166">CDATA</td>
+
+<td valign="top" headers="N1016C">#IMPLIED</td>
+
+<td valign="top" headers="N10172"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1015A">format</td>
+
+<td valign="top" headers="N10160">The format attribute identifies the format of the resource being
+cross referenced. See <a href="../common/theformatattribute.html" title="The format attribute identifies the format of the resource being cross referenced. The processing default for format is dita. If no value is specified, but the attribute is specified on an ancestor within a map or within the related-links section, the value will inherit from the closest ancestor.">The format attribute</a> for details
+on supported values.</td>
+
+<td valign="top" headers="N10166">CDATA</td>
+
+<td valign="top" headers="N1016C">#IMPLIED</td>
+
+<td valign="top" headers="N10172">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1015A">type</td>
+
+<td valign="top" headers="N10160">Describes the target of a cross-reference. See <a href="../common/thetypeattribute.html" title="The type attribute is most often used on linking elements to describe the target of a cross-reference. It is also used on the note element to describe the type of the current note, and on several other elements for varying purposes.">The type attribute</a> for
+detailed information on supported values and processing implications.</td>
+
+<td valign="top" headers="N10166">CDATA</td>
+
+<td valign="top" headers="N1016C">#IMPLIED (Processed as if the target were of type "topic", or inherited from an ancestor)</td>
+
+<td valign="top" headers="N10172"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1015A">scope</td>
+
+<td valign="top" headers="N10160">The scope attribute identifies the closeness of the relationship
+between the current document and the target resource. <br /><ul>
+<li>Set scope to <samp class="codeph">local</samp> when the resource is part of the current
+set of content.</li>
+
+<li> Set scope to <samp class="codeph">peer</samp> when the resource is part of the current
+set of content but is not accessible at build time.</li>
+
+<li> Set scope to <samp class="codeph">external</samp> when the resource is not part
+of the current information set and should open in a new browser window.</li>
+
+<li>See <a href="../common/ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">Using the -dita-use-conref-target value</a> for more information
+on -dita-use-conref-target.</li>
+
+</ul>
+ The processing default is <samp class="codeph">local</samp>.  <span>If no value is
+specified, but the attribute is specified on an ancestor within a map or within
+the related-links section, the value will inherit from the closest ancestor.</span></td>
+
+<td valign="top" headers="N10166">(local | peer | external | -dita-use-conref-target)</td>
+
+<td valign="top" headers="N1016C">#IMPLIED</td>
+
+<td valign="top" headers="N10172"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1015A">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N10160">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N10166">parameter entity</td>
+
+<td valign="top" headers="N1016C">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10172">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1015A">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N10160">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N10166">parameter entity</td>
+
+<td valign="top" headers="N1016C">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10172">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1015A">class, outputclass</td>
+
+<td valign="top" headers="N10160">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N10166">&#xA0;</td>
+<td valign="top" headers="N1016C">&#xA0;</td>
+<td valign="top" headers="N10172">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/xnal-d.html" title="The xNAL domain elements represent a subset of the Extensible Name and Address Standard. The domain can be included in any topic type or map, although the implementations provided by OASIS only include it in the bookmap specialization. It is used to encode information about the author or authors of DITA information.">xNAL domain elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/namedetails.html" title="The &lt;namedetails&gt; element contains information about the name of the author or the authoring organization.">namedetails</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/organizationname.html" title="The &lt;organizationname&gt; element contains name information about the authoring organization.">organizationname</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

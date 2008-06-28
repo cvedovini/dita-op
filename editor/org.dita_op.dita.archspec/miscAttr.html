@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Miscellaneous Attributes" />
+<meta name="abstract" content="DITA has several elements for supporting translation and for providing additional classification or typing of a specific element." />
+<meta name="description" content="DITA has several elements for supporting translation and for providing additional classification or typing of a specific element." />
+<meta scheme="URI" name="DC.Relation" content="commonatt.html" />
+<meta scheme="URI" name="DC.Relation" content="metadataAttr.html" />
+<meta scheme="URI" name="DC.Relation" content="archAttr.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="miscAttr" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Miscellaneous Attributes</title>
+</head>
+<body id="miscAttr"><a name="miscAttr"><!-- --></a>
+
+
+<h1 class="topictitle1">Miscellaneous Attributes</h1>
+
+
+<div><p>DITA has several elements for supporting translation and for providing
+additional classification or typing of a specific element.</p>
+
+<p>Miscellaneous attributes of DITA elements include the following:</p>
+
+<dl>
+<dt class="dlterm">xml:lang</dt>
+
+<dd>The xml:lang attribute's behavior is described in detail in the XML specification: <a href="http://www.w3.org/TR/REC-xml/#sec-lang-tag" target="_blank">http://www.w3.org/TR/REC-xml/#sec-lang-tag</a> The
+attribute identifies a language by means of the standard language and country
+codes (as described in <a href="http://www.ietf.org/rfc/rfc4646.txt" target="_blank">RFC
+4646</a>). For instance, French Canadian would be identified
+by the value <samp class="codeph">fr-ca</samp>. As is usual, the language applies to
+the contained content and attributes of the current element and contained
+elements, other than fragments that declare a different language.</dd>
+
+
+<dt class="dlterm">translate</dt>
+
+<dd>Determines whether the element requires translation. A default value may
+be inferred from the element type: for example, &lt;apiname&gt; may be untranslated
+by default, whereas &lt;p&gt; may be translated by default. A list of suggested
+defaults is provided in <a href="elementsMerged.html" title="This contains a list of all current TC-approved elements, divided up by module. It describes which are usually block elements and which are usually inline, and lists which elements should typically be translated by default.">All elements with translation properties</a>.</dd>
+
+
+<dt class="dlterm">dir</dt>
+
+<dd>Determines the direction in which the content should be read.</dd>
+
+
+<dt class="dlterm">outputclass</dt>
+
+<dd>The outputclass attribute provides a label on one or more element instances,
+typically to specify a role or other semantic distinction. As the outputclass
+attribute doesn't provide a formal type declaration or the structural consistency
+of specialization, it should be used sparingly, often only as a temporary
+measure while a specialization is developed. For example, &lt;uicontrol&gt; elements
+that define button labels could be distinguished by adding an outputclass: <samp class="codeph">&lt;uicontrol
+outputclass="button"&gt;Cancel&lt;/uicontrol&gt;</samp>. The outputclass value
+could be used to trigger XSLT or CSS rules, as well as providing a mapping
+to be used for future migration to a more specialized set of UI elements.</dd>
+
+
+<dt class="dlterm">base</dt>
+
+<dd>A generic attribute that has no specific purpose, but is intended to act
+as a base for specialized attributes that have a simple value syntax like
+the conditional processing attributes (one or more alphanumeric values separated
+by whitespace).</dd>
+
+</dl>
+
+<p>The attributes @xml:lang, @translate, and @dir are described in more detail
+in <a href="translation.html" title="DITA has specific capabilities for preparing content for translation and working with multilingual content, including the xml:lang attribute, the dir attribute, and the translate attribute.">Translation</a>.</p>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="commonatt.html" title="The following attributes are common across most DITA elements.">Common attributes</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="metadataAttr.html" title="The metadata attributes express qualifications on the content. These qualifications can be used to modify the processing of the content.">Metadata attributes</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="archAttr.html" title="DITA provides some attributes to provide type information to processors instead of qualifications or properties of content.">Architectural attributes</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

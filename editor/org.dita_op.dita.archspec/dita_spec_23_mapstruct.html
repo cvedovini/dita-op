@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="DITA map structure" />
+<meta name="abstract" content="Maps organize topics into hierarchies, tables, and groups, and have special elements for referencing other maps." />
+<meta name="description" content="Maps organize topics into hierarchies, tables, and groups, and have special elements for referencing other maps." />
+<meta scheme="URI" name="DC.Relation" content="dita_spec_23_maps.html" />
+<meta scheme="URI" name="DC.Relation" content="dita_spec_23_common.html" />
+<meta scheme="URI" name="DC.Relation" content="dita_spec_23_mapmod.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="dita_spec_23_mapstruct" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>DITA map structure</title>
+</head>
+<body id="dita_spec_23_mapstruct"><a name="dita_spec_23_mapstruct"><!-- --></a>
+
+
+<h1 class="topictitle1">DITA map structure</h1>
+
+
+<div><p>Maps organize topics into hierarchies, tables, and groups, and
+have special elements for referencing other maps.</p>
+
+<p>topicref elements
+are the basic elements of a map. A topicref can point to a DITA topic, map,
+or to any other resource that can be processed or linked to. They can also
+have a title, short description, and the same kinds of prolog-level metadata
+available in topics.</p>
+
+<p>topicref elements can be nested to create a hierarchy, which can be used
+to define print output, online navigation, and parent/child links. The topichead
+element can be used for nodes in the hierarchy that provide containers without
+equivalent topics: they are equivalent to topicref elements with a navtitle
+but no href or equivalent referencing attribute.</p>
+
+<p>Relationship tables are defined with the reltable element. Relationship
+tables can be used to define relationships among the topics in different cells
+of the same row. In a relationship table, the columns define common attributes
+or metadata for the topics in that column. The rows define relationships,
+with each cell representing a different role in the relationship. For example,
+a table with different columns for concepts, tasks, and reference topics could
+be used to define the relationship between a task and the topics that support
+it.</p>
+
+<p>Both hierarchies and tables can be annotated using the collection-type
+attribute to define sets of siblings that are part of a particular kind of
+collection, for example a set of choices, a sequence, or a family. These collection-types
+can affect link generation, and may be interpreted differently for different
+outputs.</p>
+
+<p>Groups or collections outside of a hierarchy or table can be defined with
+the topicgroup element, which is equivalent to a topicref with no referencing
+attributes or titles. Groups can be combined with hierarchies and tables,
+for example by including a group within a table cell or within a set of siblings
+in a hierarchy.</p>
+
+<p>Most elements in the map, including the map itself, can contain metadata,
+which typically applies to the element and its descendants, as described in <a href="dita_spec_23_mapinher.html" title="Some of the attributes and metadata in a map can be inherited based on the structures in the map.">Inheritance of attributes and metadata in maps</a>.</p>
+
+<div class="example"><h2 class="sectiontitle">Example of a simple map with a relationship table</h2><pre class="codeblock">&lt;map&gt;
+&lt;reltable&gt;
+  &lt;relheader&gt;
+    &lt;relcolspec type="concept"/&gt;
+    &lt;relcolspec type="task"/&gt;
+    &lt;relcolspec type="reference"/&gt;
+  &lt;/relheader&gt;
+  &lt;relrow&gt;
+    &lt;relcell&gt;
+      &lt;topicref href="A.dita"/&gt;
+    &lt;/relcell&gt;
+    &lt;relcell&gt;
+      &lt;topicref href="B.dita"/&gt;
+    &lt;/relcell&gt;
+    &lt;relcell&gt;
+      &lt;topicref href="C1.dita"/&gt;
+      &lt;topicref href="C2.dita"/&gt;
+    &lt;/relcell&gt;
+  &lt;/relrow&gt;
+&lt;/reltable&gt;
+&lt;/map&gt;</pre>
+<table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10075">type="concept"</th>
+
+<th valign="bottom" align="left" id="N1007B">type="task"</th>
+
+<th valign="bottom" align="left" id="N10081">type="reference"</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10075">A</td>
+
+<td valign="top" headers="N1007B">B</td>
+
+<td valign="top" headers="N10081"><p>C1<br />
+C2</p>
+</td>
+
+</tr>
+
+</table>
+<dl>
+<dt class="dlterm">A</dt>
+
+<dd>links to B, C1, C2</dd>
+
+
+<dt class="dlterm">B</dt>
+
+<dd>links to A, C1, C2</dd>
+
+
+<dt class="dlterm">C1, C2</dt>
+
+<dd>link to A, B</dd>
+
+</dl>
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="dita_spec_23_maps.html" title="Maps organize topics for output to a specific deliverable, including generating navigation files and links to related topics.">DITA maps</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="dita_spec_23_common.html" title="DITA maps have many of the same common attributes as DITA content, but also have some additional ones for controlling the way relationships are interpreted for different output purposes.">Common DITA map attributes and metadata</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="dita_spec_23_mapmod.html" title="Maps have the same module structure as topics, and share some of the same modules for defining metadata.">DITA map modules</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

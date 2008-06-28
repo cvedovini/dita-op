@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="bookabstract" />
+<meta name="abstract" content="The &lt;bookabstract&gt; element references a topic used within a bookmap as a brief summary of book content, generally output as part of the book's front matter. It is used to help the reader quickly evaluate the book's purpose" />
+<meta name="description" content="The &lt;bookabstract&gt; element references a topic used within a bookmap as a brief summary of book content, generally output as part of the book's front matter. It is used to help the reader quickly evaluate the book's purpose" />
+<meta content="abstract, Bookmap elements" name="DC.subject" />
+<meta content="abstract, Bookmap elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/about-bookmap.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/bibliolist.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/booklibrary.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="bookabstract" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>bookabstract</title>
+</head>
+<body id="bookabstract"><a name="bookabstract"><!-- --></a>
+
+
+<h1 class="topictitle1">bookabstract</h1>
+
+
+
+<div><p>The &lt;bookabstract&gt; element references a topic used within a <span class="keyword">bookmap</span> as
+a brief summary of book content, generally output as part of the book's front
+matter. It is used to help the reader quickly evaluate the book's purpose</p>
+
+<div class="section" />
+
+<div class="example" />
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N1009C" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100A1" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100AB" headers="N1009C"><strong>bookmap</strong></td>
+<td valign="top" headers="N100A1 N100AB"> no content </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100CA" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100CF" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N100D9" headers="N100CA"><strong>bookmap</strong></td>
+<td valign="top" headers="N100CF N100D9"><a href="../common/../langref/frontmatter.html" title="The &lt;frontmatter&gt; element contains the material that precedes the main body of a document. It may include items such as an abstract, a preface, and various types of book lists such as a &lt;toc&gt;, &lt;tablelist&gt;, or &lt;figurelist&gt;.">frontmatter</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- map/topicref bookmap/bookabstract </p>
+</div>
+
+<div class="section" id="bookabstract__attrs"><a name="bookabstract__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2>
+<a name="bookabstract__bookabstract_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="bookabstract__bookabstract_attr" border="1" class="simpletableborder">
+<tr><th valign="bottom" align="left" id="N10113" width="25%">Name</th>
+<th valign="bottom" align="left" id="N10118" width="37.5%">Description</th>
+<th valign="bottom" align="left" id="N1011D" width="12.5%">Data Type</th>
+<th valign="bottom" align="left" id="N10122" width="12.5%">Default Value</th>
+<th valign="bottom" align="left" id="N10127" width="12.5%">Required?</th>
+</tr>
+
+<tr>
+<td valign="top" headers="N10113">navtitle</td>
+
+<td valign="top" headers="N10118">Specifies the title of the topic as it will appear in navigation
+or tables of contents generated from the map.</td>
+
+<td valign="top" headers="N1011D">CDATA</td>
+
+<td valign="top" headers="N10122">#IMPLIED</td>
+
+<td valign="top" headers="N10127">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10113">href</td>
+
+<td valign="top" headers="N10118">A hyperlink to an external Web page (URL) or other non-DITA resource,
+or to another DITA topic in the same file or in another file. The format attribute
+identifies the format of the target. Non-DITA targets use standard URL syntax.
+DITA topics are targetted as follows:<pre class="pre">Target elsewhere in the same file:
+  href="#topicid"
+First topic in different file:
+  href="filename.dita"
+Specific topic in different file:
+  href="filename.dita#topicid"</pre>
+<p>If the URL contains an ampersand
+character, the ampersand symbol (&amp;amp;) should be used to indicate that
+character</p>
+</td>
+
+<td valign="top" headers="N1011D">CDATA</td>
+
+<td valign="top" headers="N10122">#IMPLIED</td>
+
+<td valign="top" headers="N10127"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10113">copy-to</td>
+
+<td valign="top" headers="N10118">Use the copy-to attribute on the &lt;<span class="keyword">topicref</span>&gt;
+element to provide a different file name for a particular instance of the
+topic in the map (for example, to separate out the different versions of the
+topic, rather than combining them on output). The links and navigation associated
+with that instance will point to a copy of the topic with the file name you
+specified. <p>Use the &lt;<span class="keyword">linktext</span>&gt; and &lt;<span class="keyword">shortdesc</span>&gt;
+in the &lt;<span class="keyword">topicref</span>&gt;'s &lt;<span class="keyword">topicmeta</span>&gt;
+to provide a unique name and short description for the new copy.</p>
+</td>
+
+<td valign="top" headers="N1011D">CDATA</td>
+
+<td valign="top" headers="N10122">#IMPLIED</td>
+
+<td valign="top" headers="N10127"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10113">%topicref-atts; (collection-type, type, scope, locktitle, format,
+linking, toc, print, search, chunk)</td>
+
+<td valign="top" headers="N10118">A set of related attributes. See <a href="../common/topicref-atts.html" title="The %topicref-atts; parameter entity represents a group of attributes used in numerous map elements, such as map, topicref, relcolspec, relcell, topichead, and topicgroup. The set is identical to those in the topicref-atts-no-toc attribute set, except that %topicref-atts; does not provide a default for the toc attribute.">%topicref-atts; and %topicref-atts-no-toc;</a>.</td>
+
+<td valign="top" headers="N1011D">parameter entity</td>
+
+<td valign="top" headers="N10122">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10127">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10113">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N10118">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N1011D">parameter entity</td>
+
+<td valign="top" headers="N10122">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10127">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10113">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N10118">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N1011D">parameter entity</td>
+
+<td valign="top" headers="N10122">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10127">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10113">class, outputclass, keyref</td>
+
+<td valign="top" headers="N10118">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N1011D">&#xA0;</td>
+<td valign="top" headers="N10122">&#xA0;</td>
+<td valign="top" headers="N10127">&#xA0;</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/about-bookmap.html" title="The Bookmap specialization of ditamap supports standard book production for collections of DITA topics. The bookmap specialization includes many elements">Bookmap content elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/bibliolist.html" title="The &lt;bibliolist&gt; element references a list of bibliographic entries within the book. It indicates to the processing software that the author wants a bibliography, containing links to related books, articles, published papers, or other types of material, generated at the particular location.">bibliolist</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/booklibrary.html" title="The &lt;booklibrary&gt; element contains the library information for a book. Library entries contain information about the series, library, or collection of documents to which the book belongs.">booklibrary</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

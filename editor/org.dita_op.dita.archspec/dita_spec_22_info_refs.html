@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Reference" />
+<meta name="abstract" content="Reference topics describe regular features of a subject or product, such as commands in a programming language." />
+<meta name="description" content="Reference topics describe regular features of a subject or product, such as commands in a programming language." />
+<meta scheme="URI" name="DC.Relation" content="topicover.html" />
+<meta scheme="URI" name="DC.Relation" content="dita_spec_22_info_tasks.html" />
+<meta scheme="URI" name="DC.Relation" content="glossaryArch.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="dita_spec_21_info_refs" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Reference</title>
+</head>
+<body id="dita_spec_21_info_refs"><a name="dita_spec_21_info_refs"><!-- --></a>
+
+
+<h1 class="topictitle1">Reference</h1>
+
+
+<div><p>Reference topics describe regular features of a subject or product,
+such as commands in a programming language.</p>
+
+<div class="section"><h2 class="sectiontitle">Why reference?</h2><p>In technical information, reference
+topics are often used to cover subjects such as the commands in a programming
+language. Reference topics can hold anything that has regular content, such
+as ingredients for food recipes, bibliographic lists, catalogues, and the
+like. Reference topics provide quick access to facts. Information needed for
+deeper understanding of a reference topic or to perform related procedures
+should be provided in a concept or task topic.</p>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Reference structure</h2><p>The &lt;reference&gt; element is
+the top-level element for a reference topic. Every reference topic contains
+a &lt;title&gt; and a &lt;refbody&gt; and optional  &lt;titlealts&gt;, &lt;shortdesc&gt;
+or &lt;abstract&gt;, &lt;prolog&gt;, &lt;related-links&gt;, and nested topics.</p>
+<p>The &lt;refbody&gt;
+element holds the main content of the reference topic. Reference topics limit
+the body structure to tables (both simple and standard), property lists, syntax
+sections, and generic sections and examples. </p>
+<p>All of the elements of &lt;refbody&gt;
+are optional and may appear in any sequence and number. </p>
+<dl>
+<dt class="dlterm">&lt;section&gt;</dt>
+
+<dd>Represents an organizational division in a reference topic. Sections organize
+subsets of information within a larger topic. You can only include a simple
+list of peer sections in a topic; sections cannot be nested. A section may
+have an optional title.</dd>
+
+
+<dt class="dlterm">&lt;refsyn&gt;</dt>
+
+<dd>Contains syntax or signature content (for example, a command-line utility's
+calling syntax, or an API's signature). The &lt;refsyn&gt; contains a brief,
+possibly diagrammatic description of the subject's interface or high-level
+structure.</dd>
+
+
+<dt class="dlterm">&lt;example&gt;</dt>
+
+<dd>Provides containing examples that illustrate or support the current topic.
+The &lt;example&gt; element has the same content model as &lt;section&gt;. </dd>
+
+
+<dt class="dlterm">&lt;table&gt;</dt>
+
+<dd>Organizes information according into a tabular  rows and columns structure.
+Table markup also allows for more complex structures, including spanning rows
+and columns, as well as table captions. </dd>
+
+
+<dt class="dlterm">&lt;simpletable&gt;</dt>
+
+<dd>Holds information in regular rows and columns and does not allow for a
+caption.  </dd>
+
+
+<dt class="dlterm">&lt;properties&gt;</dt>
+
+<dd>Lists properties and their types, values, and descriptions.</dd>
+
+</dl>
+</div>
+
+<div class="example">Here’s an example of a reference topic.<pre class="pre">
+&lt;reference id="boldproperty"&gt;
+&lt;title&gt;Bold property&lt;/title&gt;
+&lt;shortdesc&gt;(Read-write) Whether to use a bold font for the specified
+text string.&lt;/shortdesc&gt;
+&lt;refbody&gt;
+  &lt;refsyn&gt;
+    &lt;synph&gt;
+      &lt;var&gt;object&lt;/var&gt;&lt;delim&gt;.&lt;/delim&gt;&lt;kwd&gt;Font&lt;/kwd&gt;&lt;delim&gt;.&lt;/delim&gt;
+      &lt;kwd&gt;Bold&lt;/kwd&gt;&lt;delim&gt; = &lt;/delim&gt;&lt;var&gt;trueorfalse&lt;/var&gt;
+    &lt;/synph&gt;
+  &lt;/refsyn&gt;
+  &lt;properties&gt;
+    &lt;property&gt;
+      &lt;proptype&gt;Data type&lt;/proptype&gt;
+      &lt;propvalue&gt;Boolean&lt;/propvalue&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+      &lt;proptype&gt;Legal values&lt;/proptype&gt;
+      &lt;propvalue&gt;True (1) or False (0)&lt;/propvalue&gt;
+    &lt;/property&gt;
+  &lt;/properties&gt;
+&lt;/refbody&gt;
+&lt;/reference&gt;
+</pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Modules</h2><br /><ul class="simple">
+<li>reference.mod (DTD)</li>
+
+<li>referenceMod.xsd, referenceGrp.xsd (Schema)</li>
+
+</ul>
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="topicover.html" title="DITA topics are the basic units of DITA content. Each topic should be organized around a single subject. Topics may be of different types, such as task or reference, or may be generic, that is, without a specific type.">DITA topics</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="dita_spec_22_info_tasks.html" title="Task topics answer &quot;How do I?&quot; questions, and have a well-defined structure that describes how to complete a procedure to accomplish a specific goal.">Tasks</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="glossaryArch.html" title="Each DITA glossary topic defines a single sense of one term. Besides identifying the term and providing a definition, the topic can identify related terms.">Glossary</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

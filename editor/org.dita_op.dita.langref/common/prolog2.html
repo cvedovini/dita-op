@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="Prolog elements" />
+<meta name="abstract" content="The prolog elements represent the metadata associated with a document. Most of the metadata in a topic prolog can also be authored in a DITA map, in the map's &lt;topicmeta&gt; element." />
+<meta name="description" content="The prolog elements represent the metadata associated with a document. Most of the metadata in a topic prolog can also be authored in a DITA map, in the map's &lt;topicmeta&gt; element." />
+<meta content="Prolog elements" name="DC.subject" />
+<meta content="Prolog elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/table2.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/relatedl.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/prolog.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/audience.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/author.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/brand.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/category.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/component.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/copyright.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/copyrholder.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/copyryear.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/created.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/critdates.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/featnum.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/keywords.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/metadata.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/othermeta.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/permissions.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/platform.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/prodinfo.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/prodname.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/prognum.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/publisher.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/resourceid.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/revised.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/series.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/source.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/vrmlist.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/vrm.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="prolog2" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Prolog elements</title>
+</head>
+<body id="prolog2"><a name="prolog2"><!-- --></a>
+
+
+<h1 class="topictitle1">Prolog elements</h1>
+
+
+
+<div><p>The prolog elements represent the metadata associated with a document.
+Most of the metadata in a topic prolog can also be authored in a DITA map,
+in the map's &lt;topicmeta&gt; element.</p>
+
+<div class="section">          <p>The primary types of information that you can store
+in the prolog include:</p>
+<br /><ul>
+<li>author</li>
+
+<li>copyright information</li>
+
+<li>critical tracking dates</li>
+
+<li>permissions for use/management of the content</li>
+
+<li>Key words and index terms related to the topic</li>
+
+<li>extensive metadata about the content of the document</li>
+
+<li>a resourceid that allows a topic to be associated with external resources
+such as linking to programming components as contextual help</li>
+
+</ul>
+</div>
+
+</div>
+
+<div>
+<ol>
+<li class="olchildlink"><a href="../langref/prolog.html">prolog</a><br />
+The &lt;prolog&gt; element contains information about the topic as an whole (for example, author information or subject category) that is either entered by the author or machine-maintained. Much of the metadata inside the &lt;prolog&gt; will not be displayed with the topic on output, but may be used by processes that generate search indexes or customize navigation.</li>
+<li class="olchildlink"><a href="../langref/audience.html">audience</a><br />
+The &lt;audience&gt; metadata element indicates, through the value of its type attribute, the intended audience for a topic. Since a topic can have multiple audiences, you can include multiple audience elements. For each audience you specify, you can identify the high-level task (job) they are trying to accomplish and the level of experience (experiencelevel) expected. The audience element may be used to provide a more detailed definition of values used throughout the map or topic on the audience attribute.</li>
+<li class="olchildlink"><a href="../langref/author.html">author</a><br />
+The &lt;author&gt; metadata element contains the name of the topic's author.</li>
+<li class="olchildlink"><a href="../langref/brand.html">brand</a><br />
+The &lt;brand&gt; element indicates the manufacturer or brand associated with the product described by the parent &lt;prodinfo&gt; element.</li>
+<li class="olchildlink"><a href="../langref/category.html">category</a><br />
+The &lt;category&gt; element can represent any category by which a topic might be classified for retrieval or navigation; for example, the categories could be used to group topics in a generated navigation bar. Topics can belong to multiple categories.</li>
+<li class="olchildlink"><a href="../langref/component.html">component</a><br />
+The &lt;component&gt; element describes the component of the product that this topic is concerned with. For example, a product might be made up of many components, each of which is installable separately. Components might also be shared by several products so that the same component is available for installation with many products. An implementation may (but need not) use this identification to check cross-component dependencies when some components are installed, but not others. An implementation may also (but need not) use the identification make sure that topics are hidden, removed, or flagged in some way when the component they describe isn't installed.</li>
+<li class="olchildlink"><a href="../langref/copyright.html">copyright</a><br />
+The &lt;copyright&gt; element is used for a single copyright entry. It includes the copyright years and the copyright holder. Multiple &lt;copyright&gt; statements are allowed.</li>
+<li class="olchildlink"><a href="../langref/copyrholder.html">copyrholder</a><br />
+The copyright holder (&lt;copyrholder&gt;) element names the entity that holds legal rights to the material contained in the topic.</li>
+<li class="olchildlink"><a href="../langref/copyryear.html">copyryear</a><br />
+The &lt;copyryear&gt; element contains the copyright year as specified by the year attribute.</li>
+<li class="olchildlink"><a href="../langref/created.html">created</a><br />
+The &lt;created&gt; element specifies the document creation date using the date attribute.</li>
+<li class="olchildlink"><a href="../langref/critdates.html">critdates</a><br />
+The &lt;critdates&gt; element contains the critical dates in a document life cycle, such as the creation date and multiple revision dates.</li>
+<li class="olchildlink"><a href="../langref/featnum.html">featnum</a><br />
+The &lt;featnum&gt; element contains the feature number of a product in the metadata.</li>
+<li class="olchildlink"><a href="../langref/keywords.html">keywords</a><br />
+The &lt;keywords&gt; element contains a list of key words (using &lt;indexterm&gt; or &lt;keyword&gt; markup) that can be used by a search engine.</li>
+<li class="olchildlink"><a href="../langref/metadata.html">metadata</a><br />
+The &lt;metadata&gt; section of the prolog contains information about a topic such as audience and product information. Metadata can be used by computational processes to select particular topics or to prepare search indexes or to customize navigation. Elements inside of &lt;metadata&gt; provide information about the content and subject of a topic; prolog elements outside of &lt;metadata&gt; provide lifecycle information for the content unit (such as the author or copyright), which are unrelated to the subject.</li>
+<li class="olchildlink"><a href="../langref/othermeta.html">othermeta</a><br />
+The &lt;othermeta&gt; element can be used to identify properties not otherwise included in &lt;metadata&gt; and assign name/content values to those properties. The name attribute identifies the property and the content attribute specifies the property's value. The values in this attribute are output as HTML metadata elements, and have no defined meaning for other possible outputs such as PDF.</li>
+<li class="olchildlink"><a href="../langref/permissions.html">permissions</a><br />
+The &lt;permissions&gt; prolog element can indicate any preferred controls for access to a topic. Topics can be filtered based on the permissions element. This capability depends on your output formatting process.</li>
+<li class="olchildlink"><a href="../langref/platform.html">platform</a><br />
+The &lt;platform&gt; metadata element contains a description of the operating system and/or hardware related to the product being described by the &lt;prodinfo&gt; element. The platform element may be used to provide a more detailed definition of values used throughout the map or topic on the platform attribute.</li>
+<li class="olchildlink"><a href="../langref/prodinfo.html">prodinfo</a><br />
+The &lt;prodinfo&gt; metadata element in the prolog contains information about the product or products that are the subject matter of the current topic. The prodinfo element may be used to provide a more detailed definition of values used throughout the map or topic on the product attribute.</li>
+<li class="olchildlink"><a href="../langref/prodname.html">prodname</a><br />
+The &lt;prodname&gt; metadata element contains the name of the product that is supported by the information in this topic.</li>
+<li class="olchildlink"><a href="../langref/prognum.html">prognum</a><br />
+The &lt;prognum&gt; metadata element identifies the program number of the associated program product. This is typically an order number or a product tracking code that could be replaced by an order number when a product completes development.</li>
+<li class="olchildlink"><a href="../langref/publisher.html">publisher</a><br />
+The &lt;publisher&gt; metadata element contains the name of the person, company, or organization responsible for making the content or subject of the topic available.</li>
+<li class="olchildlink"><a href="../langref/resourceid.html">resourceid</a><br />
+The &lt;resourceid&gt; element provides an identifier for applications that require them in a particular format, when the normal id attribute of the topic can't be used. Each resourceid entry should be unique. It is one of the metadata elements that can be included within the prolog of a topic, along with document tracking and product information, etc. The element has no content, but takes an id attribute and an appname attribute.</li>
+<li class="olchildlink"><a href="../langref/revised.html">revised</a><br />
+The &lt;revised&gt; element in the prolog is used to maintain tracking dates that are important in a topic development cycle, such as the last modification date, the original availability date, and the expiration date.</li>
+<li class="olchildlink"><a href="../langref/series.html">series</a><br />
+The &lt;series&gt; metadata element contains information about the product series that the topic supports.</li>
+<li class="olchildlink"><a href="../langref/source.html">source</a><br />
+The &lt;source&gt; element contains a reference to a resource from which the present topic is derived, either completely or in part. The element can contain a description of the resource; the href reference can be a string or a URL that points to it.</li>
+<li class="olchildlink"><a href="../langref/vrmlist.html">vrmlist</a><br />
+The &lt;vrmlist&gt; element contains a set of &lt;vrm&gt; elements for logging the version, release, and modification information for multiple products or versions of products to which the topic applies.</li>
+<li class="olchildlink"><a href="../langref/vrm.html">vrm</a><br />
+The vrm empty element contains information about a single product's version, modification, and release, to which the current topic applies.</li>
+</ol>
+
+<div class="familylinks">
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../common/table2.html">Table elements</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../common/relatedl.html" title="The related-links section of DITA topics is a special structure that supports the navigational rules from a topic to its related neighbor topics.">Related links elements</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

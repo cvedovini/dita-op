@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="bookmap" />
+<meta name="abstract" content="The &lt;bookmap&gt; element is a map file used to organize DITA content into a traditional book format." />
+<meta name="description" content="The &lt;bookmap&gt; element is a map file used to organize DITA content into a traditional book format." />
+<meta content="bookmap, Bookmap elements" name="DC.subject" />
+<meta content="bookmap, Bookmap elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/about-bookmap.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/abbrevlist.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="bookmap" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>bookmap</title>
+</head>
+<body id="bookmap"><a name="bookmap"><!-- --></a>
+
+
+<h1 class="topictitle1">bookmap</h1>
+
+
+
+<div><p>The &lt;bookmap&gt; element is a map file used to organize DITA
+content into a traditional book format. </p>
+
+<div class="section"><p>The &lt;bookmap&gt; element is used to define a map which describes
+the relationships among a set of DITA topics intended to be configured as
+a traditional book. Bookmaps consist of references to topics organized as
+book content. The topic references therefore are labeled according to the
+book components they point to, such as booktitle, frontmatter, chapter, appendix,
+etc. </p>
+<p>The containing element for a bookmap is the &lt;bookmap&gt; element,
+which can take title, id, conref, and anchorref attributes. Within the bookmap,
+use the various book components and subcomponents to add and organize references
+to the topics comprising the book. You can use the bookmap element to set
+default attribute values for all topic references in the map. </p>
+</div>
+
+<div class="example" />
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N10095" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N1009A" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100A4" headers="N10095"><strong>bookmap</strong></td>
+<td valign="top" headers="N1009A N100A4"> ( ( (
+<a href="../common/../langref/title.html" title="The &lt;title&gt; element contains a heading or label for the main parts of a topic, including the topic as a whole, its sections and examples, and its labelled content, such as figures and tables. Beginning with DITA 1.1, the element may also be used to provide a title for a map.">title</a>)  or  (
+<a href="../common/../langref/booktitle.html" title="The &lt;booktitle&gt; element contains the title information for a book. , including &lt;booklibrary&gt; data, a &lt;maintitle&gt; and subtitle (&lt;titlealt&gt;) as required.">booktitle</a>) ) <em> (optional) </em> then  (
+<a href="../common/../langref/bookmeta.html" title="The &lt;bookmeta&gt; element contains information about the book that is not considered book content, such as copyright information, author information, and any classifications.">bookmeta</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/frontmatter.html" title="The &lt;frontmatter&gt; element contains the material that precedes the main body of a document. It may include items such as an abstract, a preface, and various types of book lists such as a &lt;toc&gt;, &lt;tablelist&gt;, or &lt;figurelist&gt;.">frontmatter</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/chapter.html" title="The &lt;chapter&gt; element references a topic as a chapter within a book.">chapter</a>) <em> (any number) </em> then  (
+<a href="../common/../langref/part.html" title="The &lt;part&gt; element references a part topic for the book. A new part is started. Use &lt;part&gt; to divide a document's chapters into logical groupings. For example, in a document that contains both guide and reference information, you can define two parts, one containing the guide information and the other containing the reference information.">part</a>) <em> (any number) </em> then  (
+<a href="../common/../langref/appendix.html" title="The &lt;appendix&gt; element references a topic as a appendix within a book.">appendix</a>) <em> (any number) </em> then  (
+<a href="../common/../langref/backmatter.html" title="The &lt;backmatter&gt; element contains the material that follows the main body of a document and any appendixes. It may include items such as a colophon, legal notices, and various types of book lists such as a glossary or an index.">backmatter</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/reltable.html" title="The relationship table (&lt;reltable&gt;) defines relationships between topics, based on the familiar table model of rows (&lt;relrow&gt;), columns (&lt;relheader&gt;), and cells (&lt;relcell&gt;). The &lt;relcell&gt; elements can contain &lt;topicref&gt; elements, which are then related to other &lt;topicref&gt; elements in the same row (although not necessarily in the same cell). By default, the contents of a &lt;reltable&gt; element are not output for navigation or TOC purposes, and are used only to define relationships that can be expressed as topic-to-topic links.">reltable</a>) <em> (any number) </em>) </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N1018E" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N10193" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N1019D" headers="N1018E"><strong>&#xA0;</strong></td>
+<td valign="top" headers="N10193 N1019D">&#xA0;</td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- map/map bookmap/bookmap </p>
+</div>
+
+<div class="section" id="bookmap__attrs"><a name="bookmap__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="bookmap__bookmap_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="bookmap__bookmap_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N101CD" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N101D3" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N101D9" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N101DF" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N101E5" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101CD">id</td>
+
+<td valign="top" headers="N101D3">An anchor point. This ID is the target for references by href and
+conref attributes, and for external applications that refer to DITA content.</td>
+
+<td valign="top" headers="N101D9">NMTOKEN</td>
+
+<td valign="top" headers="N101DF">#IMPLIED</td>
+
+<td valign="top" headers="N101E5">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101CD">conref </td>
+
+<td valign="top" headers="N101D3">This attribute is used to reference an ID on a map that can be reused.
+See <a href="../common/theconrefattribute.html" title="This attribute is used to reference an ID on content that can be reused. It allows reuse of DITA components from phrases to topics, as well as maps and pieces of maps.">The conref attribute</a> for examples and details
+about the syntax.</td>
+
+<td valign="top" headers="N101D9">CDATA</td>
+
+<td valign="top" headers="N101DF">#IMPLIED</td>
+
+<td valign="top" headers="N101E5"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101CD">anchorref</td>
+
+<td valign="top" headers="N101D3">Identifies a location within another map file where this map will
+be anchored (added at runtime, using Eclipse navigation integration). For
+example, <samp class="codeph">anchorref="map1.ditamap/a1"</samp> causes this
+map to be pulled into the location of the anchor point a1 in the other map1.ditamap.</td>
+
+<td valign="top" headers="N101D9">CDATA</td>
+
+<td valign="top" headers="N101DF">#IMPLIED</td>
+
+<td valign="top" headers="N101E5">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101CD">xmlns:ditaarch</td>
+
+<td valign="top" headers="N101D3">Declares the default DITA namespace.</td>
+
+<td valign="top" headers="N101D9">CDATA</td>
+
+<td valign="top" headers="N101DF">#FIXED http://dita.oasis-open.org/architecture/2005/</td>
+
+<td valign="top" headers="N101E5">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101CD">DITAArchVersion</td>
+
+<td valign="top" headers="N101D3">Designates the version of the architecture that is in use.</td>
+
+<td valign="top" headers="N101D9">CDATA</td>
+
+<td valign="top" headers="N101DF"><span class="q">"1.1"</span> (version dependent; will increase)</td>
+
+<td valign="top" headers="N101E5">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101CD">domains</td>
+
+<td valign="top" headers="N101D3">Indicates the specialized domains that are included in the DTD or
+Schema.</td>
+
+<td valign="top" headers="N101D9">CDATA</td>
+
+<td valign="top" headers="N101DF">(map mapgroup-d) (topic indexing-d) (topic xnal-d)</td>
+
+<td valign="top" headers="N101E5">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101CD">%topicref-atts; (collection-type, type, scope, locktitle, format,
+linking, toc, print, search, chunk)</td>
+
+<td valign="top" headers="N101D3">A set of related attributes. See <a href="../common/topicref-atts.html" title="The %topicref-atts; parameter entity represents a group of attributes used in numerous map elements, such as map, topicref, relcolspec, relcell, topichead, and topicgroup. The set is identical to those in the topicref-atts-no-toc attribute set, except that %topicref-atts; does not provide a default for the toc attribute.">%topicref-atts; and %topicref-atts-no-toc;</a>.</td>
+
+<td valign="top" headers="N101D9">parameter entity</td>
+
+<td valign="top" headers="N101DF">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N101E5">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101CD">%select-atts; (props, base, platform, product, audience, otherprops,
+importance, rev, status)</td>
+
+<td valign="top" headers="N101D3">A set of related attributes, described at <a href="../common/select-atts.html" title="Attributes that support both filtering and flagging include props , platform , product , audience , and otherprops . Attribute base is a generic attribute that is available for specialization; it can be specialized for values that have a simple value syntax like the filter attributes, but is not itself a filtering or flagging attribute. Attribute rev only lets you flag information that matches a run-time parameter. Attribute importance provides a range of values for applications to use as needed. The %select-atts; entity also includes additional entities that allow it to include specializations of the props and base attribute. See the DITA Architectural Specification for more information on filtering or flagging with attributes, as well as for information on specialization the base and props attributes.">%select-atts;</a></td>
+
+<td valign="top" headers="N101D9">parameter entity</td>
+
+<td valign="top" headers="N101DF">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N101E5">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101CD">%localization-atts; (translate, xml:lang, dir)</td>
+
+<td valign="top" headers="N101D3"> A set of related attributes, described at <a href="../common/localization-atts.html" title="Localization attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%localization-atts;</a>.
+</td>
+
+<td valign="top" headers="N101D9">parameter entity</td>
+
+<td valign="top" headers="N101DF">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N101E5">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101CD">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N101D3">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N101D9">parameter entity</td>
+
+<td valign="top" headers="N101DF">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N101E5">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101CD">class, outputclass</td>
+
+<td valign="top" headers="N101D3">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N101D9">&#xA0;</td>
+<td valign="top" headers="N101DF">&#xA0;</td>
+<td valign="top" headers="N101E5">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/about-bookmap.html" title="The Bookmap specialization of ditamap supports standard book production for collections of DITA topics. The bookmap specialization includes many elements">Bookmap content elements</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/abbrevlist.html" title="The &lt;abbrevlist&gt; element references a list of abbreviations. It indicates to the processing software that the author wants an abbreviation list generated at the particular location.">abbrevlist</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

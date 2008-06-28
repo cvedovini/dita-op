@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="permissions" />
+<meta name="abstract" content="The &lt;permissions&gt; prolog element can indicate any preferred controls for access to a topic. Topics can be filtered based on the permissions element. This capability depends on your output formatting process." />
+<meta name="description" content="The &lt;permissions&gt; prolog element can indicate any preferred controls for access to a topic. Topics can be filtered based on the permissions element. This capability depends on your output formatting process." />
+<meta content="permissions, Prolog elements" name="DC.subject" />
+<meta content="permissions, Prolog elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/prolog2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/othermeta.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/platform.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="permissions" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>permissions</title>
+</head>
+<body id="permissions"><a name="permissions"><!-- --></a>
+
+
+<h1 class="topictitle1">permissions</h1>
+
+
+
+<div><p>The &lt;<span class="keyword">permissions</span>&gt; prolog element can indicate
+any preferred controls for access to a topic. Topics can be filtered based
+on the permissions element. This capability depends on your output formatting
+process.</p>
+
+<div class="example"><h2 class="sectiontitle">Example</h2><pre class="codeblock">&lt;prolog&gt;
+&lt;permissions view="entitled"/&gt;
+...</pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N10097" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N1009C" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100A6" headers="N10097"><strong>ditabase, topic, task, reference, concept, glossary, map, bookmap</strong></td>
+<td valign="top" headers="N1009C N100A6"> no content </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100C5" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100CA" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N100D4" headers="N100C5"><strong>ditabase, topic, task, concept, reference</strong></td>
+<td valign="top" headers="N100CA N100D4"><a href="../common/../langref/prolog.html" title="The &lt;prolog&gt; element contains information about the topic as an whole (for example, author information or subject category) that is either entered by the author or machine-maintained. Much of the metadata inside the &lt;prolog&gt; will not be displayed with the topic on output, but may be used by processes that generate search indexes or customize navigation.">prolog</a></td>
+</tr>
+
+<tr><td valign="top" id="N100F8" headers="N100C5"><strong>bookmap</strong></td>
+<td valign="top" headers="N100CA N100F8"><a href="../common/../langref/topicmeta.html" title="The &lt;topicmeta&gt; element defines the metadata that applies to a topic when it appears in a map, and to the other topics in the map that are contained by the same element that contains the &lt;topicmeta&gt; element. When creating links, it can also be used to override the title and short description of the topic. In addition, it can be used to add index entries to referenced content using the &lt;keywords&gt; element.">topicmeta</a>, <a href="../common/../langref/bookmeta.html" title="The &lt;bookmeta&gt; element contains information about the book that is not considered book content, such as copyright information, author information, and any classifications.">bookmeta</a></td>
+</tr>
+
+<tr><td valign="top" id="N10127" headers="N100C5"><strong>map</strong></td>
+<td valign="top" headers="N100CA N10127"><a href="../common/../langref/topicmeta.html" title="The &lt;topicmeta&gt; element defines the metadata that applies to a topic when it appears in a map, and to the other topics in the map that are contained by the same element that contains the &lt;topicmeta&gt; element. When creating links, it can also be used to override the title and short description of the topic. In addition, it can be used to add index entries to referenced content using the &lt;keywords&gt; element.">topicmeta</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- topic/permissions </p>
+</div>
+
+<div class="section" id="permissions__attrs"><a name="permissions__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="permissions__permissions_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="permissions__permissions_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N1016E" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N10174" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N1017A" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N10180" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N10186" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1016E">view</td>
+
+<td valign="top" headers="N10174">Defines the classifications of viewers allowed to view the document.
+Allowable values are:<dl>
+<dt class="dlterm">internal</dt>
+
+<dd>For internal use only.</dd>
+
+
+<dt class="dlterm">classified</dt>
+
+<dd>For a certain group, only.</dd>
+
+
+<dt class="dlterm">all</dt>
+
+<dd>The world.</dd>
+
+
+<dt class="dlterm">entitled</dt>
+
+<dd>Special folks, only.</dd>
+
+
+<dt class="dlterm">-dita-use-conref-target</dt>
+
+<dd>See <a href="../common/ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">Using the -dita-use-conref-target value</a> for more information.</dd>
+
+</dl>
+</td>
+
+<td valign="top" headers="N1017A">(internal | classified | all | entitled | -dita-use-conref-target)</td>
+
+<td valign="top" headers="N10180">#IMPLIED</td>
+
+<td valign="top" headers="N10186">Yes</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1016E">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N10174">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N1017A">parameter entity</td>
+
+<td valign="top" headers="N10180">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10186">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1016E">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N10174">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N1017A">parameter entity</td>
+
+<td valign="top" headers="N10180">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10186">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1016E">class</td>
+
+<td valign="top" headers="N10174">A common attribute described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N1017A">&#xA0;</td>
+<td valign="top" headers="N10180">&#xA0;</td>
+<td valign="top" headers="N10186">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/prolog2.html" title="The prolog elements represent the metadata associated with a document. Most of the metadata in a topic prolog can also be authored in a DITA map, in the map's &lt;topicmeta&gt; element.">Prolog elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/othermeta.html" title="The &lt;othermeta&gt; element can be used to identify properties not otherwise included in &lt;metadata&gt; and assign name/content values to those properties. The name attribute identifies the property and the content attribute specifies the property's value. The values in this attribute are output as HTML metadata elements, and have no defined meaning for other possible outputs such as PDF.">othermeta</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/platform.html" title="The &lt;platform&gt; metadata element contains a description of the operating system and/or hardware related to the product being described by the &lt;prodinfo&gt; element. The platform element may be used to provide a more detailed definition of values used throughout the map or topic on the platform attribute.">platform</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

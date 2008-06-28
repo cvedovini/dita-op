@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="created" />
+<meta name="abstract" content="The &lt;created&gt; element specifies the document creation date using the date attribute." />
+<meta name="description" content="The &lt;created&gt; element specifies the document creation date using the date attribute." />
+<meta content="created, Prolog elements" name="DC.subject" />
+<meta content="created, Prolog elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/prolog2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/copyryear.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/critdates.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="created" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>created</title>
+</head>
+<body id="created"><a name="created"><!-- --></a>
+
+
+<h1 class="topictitle1">created</h1>
+
+
+
+<div><p>The &lt;<span class="keyword">created</span>&gt; element specifies the document
+creation date using the <em><span class="keyword">date</span></em> attribute.</p>
+
+<div class="example"><h2 class="sectiontitle">Example</h2><pre class="codeblock">&lt;prolog&gt;
+ &lt;critdates&gt;
+  &lt;created date="2001-06-12"&gt;&lt;/created&gt;
+  &lt;revised golive="2001-08-20"&gt;&lt;/revised&gt;
+ &lt;/critdates&gt;
+&lt;/prolog&gt;</pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100A1" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100A6" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100B0" headers="N100A1"><strong>ditabase, topic, task, reference, concept, glossary, map, bookmap</strong></td>
+<td valign="top" headers="N100A6 N100B0"> no content </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100CF" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100D4" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N100DE" headers="N100CF"><strong>bookmap, map, ditabase, topic, task, concept, reference, glossary</strong></td>
+<td valign="top" headers="N100D4 N100DE"><a href="../common/../langref/critdates.html" title="The &lt;critdates&gt; element contains the critical dates in a document life cycle, such as the creation date and multiple revision dates.">critdates</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- topic/created </p>
+</div>
+
+<div class="section" id="created__attrs"><a name="created__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="created__created_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="created__created_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N1011F" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N10125" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N1012B" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N10131" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N10137" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1011F">date</td>
+
+<td valign="top" headers="N10125">The document creation date. Enter the date as YYYY-MM-DD where YYYY
+is the year, MM is the month from 01 to 12, and DD is the day from 01-31.
+See <a href="http://www.cl.cam.ac.uk/~mgk25/iso-time.html" target="_blank">A Summary of the International Standard Date and Time Notation</a> for
+background.</td>
+
+<td valign="top" headers="N1012B">CDATA</td>
+
+<td valign="top" headers="N10131">#IMPLIED</td>
+
+<td valign="top" headers="N10137">Yes</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1011F">golive</td>
+
+<td valign="top" headers="N10125">The publication or general availability (GA) date, entered as YYYY-MM-DD,
+where YYYY is the year, MM is the month from 01 to 12, and DD is the day from
+01-31.</td>
+
+<td valign="top" headers="N1012B">CDATA</td>
+
+<td valign="top" headers="N10131">#IMPLIED</td>
+
+<td valign="top" headers="N10137">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1011F">expiry</td>
+
+<td valign="top" headers="N10125">The date when the information should be retired or refreshed, entered
+as YYYY-MM-DD, where YYYY is the year, MM is the month from 01 to 12, and
+DD is the day from 01-31.</td>
+
+<td valign="top" headers="N1012B">CDATA</td>
+
+<td valign="top" headers="N10131">#IMPLIED</td>
+
+<td valign="top" headers="N10137">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1011F">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N10125">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N1012B">parameter entity</td>
+
+<td valign="top" headers="N10131">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10137">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1011F">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N10125">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N1012B">parameter entity</td>
+
+<td valign="top" headers="N10131">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10137">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1011F">class</td>
+
+<td valign="top" headers="N10125">A common attribute described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N1012B">&#xA0;</td>
+<td valign="top" headers="N10131">&#xA0;</td>
+<td valign="top" headers="N10137">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/prolog2.html" title="The prolog elements represent the metadata associated with a document. Most of the metadata in a topic prolog can also be authored in a DITA map, in the map's &lt;topicmeta&gt; element.">Prolog elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/copyryear.html" title="The &lt;copyryear&gt; element contains the copyright year as specified by the year attribute.">copyryear</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/critdates.html" title="The &lt;critdates&gt; element contains the critical dates in a document life cycle, such as the creation date and multiple revision dates.">critdates</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

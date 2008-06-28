@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="anchor" />
+<meta name="abstract" content="The &lt;anchor&gt; element is used for runtime integration of navigation. It provides an integration point that another map can point to in order to insert its navigation into the current navigation tree. For those familiar with Eclipse help systems, this serves the same purpose as the &lt;anchor&gt; element in that system. It may not be supported for all output formats." />
+<meta name="description" content="The &lt;anchor&gt; element is used for runtime integration of navigation. It provides an integration point that another map can point to in order to insert its navigation into the current navigation tree. For those familiar with Eclipse help systems, this serves the same purpose as the &lt;anchor&gt; element in that system. It may not be supported for all output formats." />
+<meta content="anchor, map reference anchor point, Map elements" name="DC.subject" />
+<meta content="anchor, map reference anchor point, Map elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/map2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/map.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/navref.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="anchor" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>anchor</title>
+</head>
+<body id="anchor"><a name="anchor"><!-- --></a>
+
+
+<h1 class="topictitle1">anchor</h1>
+
+
+
+<div><p>The &lt;<span class="keyword">anchor</span>&gt; element
+is used for runtime integration of navigation. It provides an integration
+point that another map can point to in order to insert its navigation into
+the current navigation tree.  For those familiar with Eclipse help systems, this serves the same purpose
+as the &lt;anchor&gt; element in that system. It may not be supported for all
+output formats.</p>
+
+<div class="section">For build-time integration, you can use the conref attribute on an
+element inside the map (for example, a topicref) to pull in content from a
+matching element (for example, another topicref) in another map.</div>
+
+<div class="example"><h2 class="sectiontitle">Example</h2>In this example, an anchor is defined with
+an ID of "a1". This ID can be referenced by the anchorref attribute on another
+map's map element.<pre class="codeblock">&lt;map title="MyComponent tasks"&gt;
+ &lt;topicref navtitle="Start here" href="start.dita" toc="yes"&gt;
+  &lt;navref mapref="othermap2.ditamap"/&gt;
+  &lt;navref mapref="othermap3.ditamap"/&gt;
+  &lt;anchor id="a1"/&gt;
+ &lt;/topicref&gt;
+&lt;/map&gt;</pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100A4" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100A9" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100B3" headers="N100A4"><strong>map, bookmap</strong></td>
+<td valign="top" headers="N100A9 N100B3"> no content </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100D2" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100D7" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N100E1" headers="N100D2"><strong>bookmap, map</strong></td>
+<td valign="top" headers="N100D7 N100E1"><a href="../common/../langref/map.html" title="The &lt;map&gt; element is used to define a map which describes the relationships among a set of resources, such as DITA topics. Maps consist of references to topics and other resources organized into hierarchies, groups, and tables. Maps provide a way to express these relationships in a single common format that can be used for different outputs.">map</a>, <a href="../common/../langref/topicref.html" title="The &lt;topicref&gt; element identifies a topic (such as a concept, task, or reference) or other resource. A &lt;topicref&gt; can contain other&lt;topicref&gt; elements, allowing you to express navigation or table-of-contents hierarchies, as well as implying relationships between the containing &lt;topicref&gt; and its children. You can set the collection-type of a container &lt;topicref&gt; to determine how its children are related to each other. You can also express relationships among &lt;topicref&gt;s using group and table structures (using &lt;topicgroup&gt; and &lt;reltable&gt;). Relationships end up expressed as links in the output (with each participant in a relationship having links to the other participants by default).">topicref</a>, <a href="../common/../langref/topichead.html" title="The &lt;topichead&gt; element provides a title-only entry in a navigation map, as an alternative to the fully-linked title provided by the &lt;topicref&gt; element.">topichead</a>, <a href="../common/../langref/topicgroup.html" title="The &lt;topicgroup&gt; element is for creating groups of &lt;topicref&gt; elements without affecting the hierarchy, as opposed to nested &lt;topicref&gt; elements within a &lt;topicref&gt;, which does imply a structural hierarchy. It is typically used outside a hierarchy to identify groups for linking without affecting the resulting toc/navigation output.">topicgroup</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- map/anchor </p>
+</div>
+
+<div class="section" id="anchor__attrs"><a name="anchor__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="anchor__anchor_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="anchor__anchor_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10197" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N1019D" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N101A3" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N101A9" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N101AF" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10197">id</td>
+
+<td valign="top" headers="N1019D">Provides an integration
+point that another map may reference in order to insert its navigation into
+the current navigation tree. The anchorref attribute on a map may be used
+to reference this attribute.</td>
+
+<td valign="top" headers="N101A3">NMTOKEN</td>
+
+<td valign="top" headers="N101A9">#REQUIRED</td>
+
+<td valign="top" headers="N101AF">Yes</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10197">conref </td>
+
+<td valign="top" headers="N1019D">This attribute is used to reference an ID on content that can be
+reused. See <a href="../common/theconrefattribute.html" title="This attribute is used to reference an ID on content that can be reused. It allows reuse of DITA components from phrases to topics, as well as maps and pieces of maps.">The conref attribute</a> for examples and
+details about the syntax.</td>
+
+<td valign="top" headers="N101A3">CDATA</td>
+
+<td valign="top" headers="N101A9">#IMPLIED</td>
+
+<td valign="top" headers="N101AF"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10197">%select-atts; (props, base, platform, product, audience, otherprops,
+importance, rev, status)</td>
+
+<td valign="top" headers="N1019D">A set of related attributes, described at <a href="../common/select-atts.html" title="Attributes that support both filtering and flagging include props , platform , product , audience , and otherprops . Attribute base is a generic attribute that is available for specialization; it can be specialized for values that have a simple value syntax like the filter attributes, but is not itself a filtering or flagging attribute. Attribute rev only lets you flag information that matches a run-time parameter. Attribute importance provides a range of values for applications to use as needed. The %select-atts; entity also includes additional entities that allow it to include specializations of the props and base attribute. See the DITA Architectural Specification for more information on filtering or flagging with attributes, as well as for information on specialization the base and props attributes.">%select-atts;</a></td>
+
+<td valign="top" headers="N101A3">parameter entity</td>
+
+<td valign="top" headers="N101A9">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N101AF">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10197">%localization-atts; (translate, xml:lang, dir)</td>
+
+<td valign="top" headers="N1019D"> A set of related attributes, described at <a href="../common/localization-atts.html" title="Localization attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%localization-atts;</a>.
+</td>
+
+<td valign="top" headers="N101A3">parameter entity</td>
+
+<td valign="top" headers="N101A9">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N101AF">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10197">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N1019D">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N101A3">parameter entity</td>
+
+<td valign="top" headers="N101A9">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N101AF">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10197">class, outputclass</td>
+
+<td valign="top" headers="N1019D">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N101A3">&#xA0;</td>
+<td valign="top" headers="N101A9">&#xA0;</td>
+<td valign="top" headers="N101AF">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/map2.html">Map elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/map.html" title="The &lt;map&gt; element is used to define a map which describes the relationships among a set of resources, such as DITA topics. Maps consist of references to topics and other resources organized into hierarchies, groups, and tables. Maps provide a way to express these relationships in a single common format that can be used for different outputs.">map</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/navref.html" title="The &lt;navref&gt; represents a pointer to another map which should be preserved as a transcluding link rather than resolved. Output formats that support such linking will integrate the target when displaying the referencing map to an end user.">navref</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

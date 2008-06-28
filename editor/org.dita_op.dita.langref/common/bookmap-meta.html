@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Bookmap metadata elements" />
+<meta name="abstract" content="The Bookmap specialization of ditamap supports standard book production for collections of DITA topics. This section contains the metadata elements used by bookmap to store book related metadata." />
+<meta name="description" content="The Bookmap specialization of ditamap supports standard book production for collections of DITA topics. This section contains the metadata elements used by bookmap to store book related metadata." />
+<meta scheme="URI" name="DC.Relation" content="../common/about-bookmap.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/xnal-d.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/bookmeta.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/approved.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/bookchangehistory.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/bookevent.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/bookeventtype.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/bookid.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/booknumber.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/bookowner.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/bookpartno.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/bookrestriction.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/bookrights.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/completed.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/copyrfirst.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/copyrlast.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/day.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/edited.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/edition.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/isbn.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/maintainer.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/month.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/organization.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/person.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/printlocation.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/published.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/publisherinformation.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/publishtype.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/reviewed.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/revisionid.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/started.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/summary.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/tested.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/volume.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/year.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="bookmap-meta" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Bookmap metadata elements</title>
+</head>
+<body id="bookmap-meta"><a name="bookmap-meta"><!-- --></a>
+
+
+<h1 class="topictitle1">Bookmap metadata elements</h1>
+
+
+<div><p>The Bookmap specialization of ditamap supports standard book production
+for collections of DITA topics. This section contains the metadata elements
+used by bookmap to store book related metadata.</p>
+
+<div class="note"><span class="notetitle">Note:</span> The OASIS document type for the bookmap specialization includes the
+xNAL domain specialization for describing the author or authors of a document.
+All elements that appear in that domain (the authorinformation element and
+all of its descendants) are described in the xNAL domain section, rather than
+in this bookmap metadata section.</div>
+
+</div>
+
+<div>
+<ol>
+<li class="olchildlink"><a href="../langref/bookmeta.html">bookmeta</a><br />
+The &lt;bookmeta&gt; element contains information about the book that is not considered book content, such as copyright information, author information, and any classifications.</li>
+<li class="olchildlink"><a href="../langref/approved.html">approved</a><br />
+The &lt;approved&gt; element contains information about when and by whom the book was approved during its publication history.</li>
+<li class="olchildlink"><a href="../langref/bookchangehistory.html">bookchangehistory</a><br />
+The &lt;bookchangehistory&gt; element contains information about the history of the book's creation and publishing lifecycle, who wrote, reviewed, edited, and tested the book, and when these events took place.</li>
+<li class="olchildlink"><a href="../langref/bookevent.html">bookevent</a><br />
+The &lt;bookevent&gt; element indicates a general event in the publication history of a book. This is an appropriate element for specialization if the current set of specific book event types, that is, review, edit, test or approval, does not meed your needs.</li>
+<li class="olchildlink"><a href="../langref/bookeventtype.html">bookeventtype</a><br />
+The &lt;bookeventtype&gt; element indicates the specific nature of a &lt;bookevent&gt;, such as updated, indexed, or deprecated. The required name attribute indicates the event's type.</li>
+<li class="olchildlink"><a href="../langref/bookid.html">bookid</a><br />
+The &lt;bookid&gt; element contains the publisher's identification information for the book, such as part number, edition number and ISBN number.</li>
+<li class="olchildlink"><a href="../langref/booknumber.html">booknumber</a><br />
+The &lt;booknumber&gt; element contains the book's form number, such as SC21-1920.</li>
+<li class="olchildlink"><a href="../langref/bookowner.html">bookowner</a><br />
+The &lt;bookowner&gt; element contains the owner of the copyright.</li>
+<li class="olchildlink"><a href="../langref/bookpartno.html">bookpartno</a><br />
+The &lt;bookpartno&gt; element contains the book's part number; such as 99F1234. This is generally the number that the publisher uses to identify the book for tracking purposes.</li>
+<li class="olchildlink"><a href="../langref/bookrestriction.html">bookrestriction</a><br />
+The &lt;bookrestriction&gt; element indicates whether the book is classified, or restricted in some way. The value attribute indicates the restrictions; this may be a string like "All Rights Reserved," representing the publisher's copyright restrictions.</li>
+<li class="olchildlink"><a href="../langref/bookrights.html">bookrights</a><br />
+The &lt;bookrights&gt; element contains the information about the legal rights associated with the book, including copyright dates and owners.</li>
+<li class="olchildlink"><a href="../langref/completed.html">completed</a><br />
+The &lt;completed&gt; element indicates a completion date for some type of book event, such as a review, editing, or testing.</li>
+<li class="olchildlink"><a href="../langref/copyrfirst.html">copyrfirst</a><br />
+The &lt;copyfirst&gt; element contains the first copyright year within a multiyear copyright statement.</li>
+<li class="olchildlink"><a href="../langref/copyrlast.html">copyrlast</a><br />
+The &lt;copylast&gt; element contains the last copyright year within a multiyear copyright statement.</li>
+<li class="olchildlink"><a href="../langref/day.html">day</a><br />
+The &lt;day&gt; element denotes a day of the month.</li>
+<li class="olchildlink"><a href="../langref/edited.html">edited</a><br />
+The &lt;edited&gt; element contains information about when and by whom the book was edited during its publication history.</li>
+<li class="olchildlink"><a href="../langref/edition.html">edition</a><br />
+The &lt;edition&gt; element contains the edition number information, such as First Edition, or Third Edition, used by a publisher to identify a book.</li>
+<li class="olchildlink"><a href="../langref/isbn.html">isbn</a><br />
+The &lt;isbn&gt; element contains the book's International Standard Book Number (ISBN).</li>
+<li class="olchildlink"><a href="../langref/maintainer.html">maintainer</a><br />
+The &lt;maintainer&gt; element contains information about who maiintains the document; this can be an organization or a person.</li>
+<li class="olchildlink"><a href="../langref/month.html">month</a><br />
+The &lt;month&gt; element denotes a month of the year.</li>
+<li class="olchildlink"><a href="../langref/organization.html">organization</a><br />
+The &lt;organization&gt; element contains the name of an organization. Note that unlike &lt;organizationname&gt;, the &lt;organization&gt; element is not restricted to usage within &lt;authorinformation&gt;; it does not have to contain the name of an authoring organization.</li>
+<li class="olchildlink"><a href="../langref/person.html">person</a><br />
+The &lt;person&gt; element contains information about the name of a person. Note that unlike the &lt;personname&gt; element, the &lt;person&gt; element is not restricted to describing the names of authors.</li>
+<li class="olchildlink"><a href="../langref/printlocation.html">printlocation</a><br />
+The &lt;printlocation&gt; element indicates the location where the book was printed. Customarily, the content is restricted to the name of the country.</li>
+<li class="olchildlink"><a href="../langref/published.html">published</a><br />
+The &lt;published&gt; element contains information about the person or organization publishing the book, the dates when it was started and completed, and any special restrictions associated with it.</li>
+<li class="olchildlink"><a href="../langref/publisherinformation.html">publisherinformation</a><br />
+The &lt;publisherinformation&gt; contains information about what group or person published the book, where it was published, and certain details about its publication history. Other publication history information is found in the &lt;bookchangehistory&gt; element.</li>
+<li class="olchildlink"><a href="../langref/publishtype.html">publishtype</a><br />
+The &lt;publishtype&gt; element indicates whether the book is generally available or is restricted in some way. The value attribute indicates the restrictions.</li>
+<li class="olchildlink"><a href="../langref/reviewed.html">reviewed</a><br />
+The &lt;reviewed&gt; element contains information about when and by whom the book was reviewed during its publication history.</li>
+<li class="olchildlink"><a href="../langref/revisionid.html">revisionid</a><br />
+The &lt;revisionid&gt; element indicates the revision number or revision ID of the book. The processing implementation determines how the level is displayed. Common methods include using a dash, for example "-01". or a period, such as ".01".</li>
+<li class="olchildlink"><a href="../langref/started.html">started</a><br />
+The &lt;started&gt; element indicates a start date for some type of book event, such as a review, editing, or testing.</li>
+<li class="olchildlink"><a href="../langref/summary.html">summary</a><br />
+The &lt;summary&gt; element contains a text summary associated with a book event (such as &lt;approved&gt; or &lt;reviewed&gt;) or with the list of copyrights for the book.</li>
+<li class="olchildlink"><a href="../langref/tested.html">tested</a><br />
+The &lt;tested&gt; element contains information about when and by whom the book was tested during its publication history.</li>
+<li class="olchildlink"><a href="../langref/volume.html">volume</a><br />
+The &lt;volume&gt; element contains the book's volume number, such as Volume 2.</li>
+<li class="olchildlink"><a href="../langref/year.html">year</a><br />
+The &lt;year&gt; element denotes a year.</li>
+</ol>
+
+<div class="familylinks">
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../common/about-bookmap.html" title="The Bookmap specialization of ditamap supports standard book production for collections of DITA topics. The bookmap specialization includes many elements">Bookmap content elements</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../common/xnal-d.html" title="The xNAL domain elements represent a subset of the Extensible Name and Address Standard. The domain can be included in any topic type or map, although the implementations provided by OASIS only include it in the bookmap specialization. It is used to encode information about the author or authors of DITA information.">xNAL domain elements</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

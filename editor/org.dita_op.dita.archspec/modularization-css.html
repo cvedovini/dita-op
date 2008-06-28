@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Modularization in CSS" />
+<meta name="abstract" content="Stylesheet support in CSS for DITA specializations can be applied using the same principles as for the DTDs or Schemas, resulting in stylesheets that are easy to maintain and that will support any subsequent specialization with a minimum of effort." />
+<meta name="description" content="Stylesheet support in CSS for DITA specializations can be applied using the same principles as for the DTDs or Schemas, resulting in stylesheets that are easy to maintain and that will support any subsequent specialization with a minimum of effort." />
+<meta scheme="URI" name="DC.Relation" content="specproc.html" />
+<meta scheme="URI" name="DC.Relation" content="customize.html" />
+<meta scheme="URI" name="DC.Relation" content="modularization-xslt.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="mod-css" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Modularization in CSS</title>
+</head>
+<body id="mod-css"><a name="mod-css"><!-- --></a>
+
+
+<h1 class="topictitle1">Modularization in CSS</h1>
+
+
+<div><p>Stylesheet support in CSS for DITA specializations can be applied
+using the same principles as for the DTDs or Schemas, resulting in stylesheets
+that are easy to maintain and that will support any subsequent specialization
+with a minimum of effort.</p>
+
+<div class="section"><h2 class="sectiontitle">Specification of module definition</h2>              <p>A
+specialization-aware property for CSS has this form of selector: </p>
+    
+  <pre class="pre">*[class~="topic\/section"]   {
+  margin-top: 12pt;
+  display: block;
+}</pre>
+       <p>The CSS selector that associates the style to the element
+does not use a literal match to the element name. Instead, based on an element
+having the defaulted value <samp class="codeph">class="- topic/section reference/refsyn "</samp> (for
+example) this rule will trigger on the <span class="q">"topic/section"</span> value (or <span class="q">"word"</span>)
+and perform the associated styling or transform, regardless of what the actual
+element name is.</p>
+       <p>Note that the attribute string must contain
+an escape character for the <span class="q">"/"</span> character which is otherwise not valid
+in a CSS selector.</p>
+       <p>The selector pattern in this example effectively
+reads, in CSS terminology, "Selects any element with a class attribute
+that contains the word topic\/section."</p>
+<p>Not all CSS systems can
+match based on values that are not physically present in the instance document.
+Since the class attribute values in DITA are typically provided by default
+declarations in the DTD or schema, not all CSS systems can match directly
+on DITA source. </p>
+<p>When direct specialization-aware matches are not possible,
+alternatives include normalization (preprocessing the DITA source to push
+values from the DTD or schema directly into the instance) or the use of element-name-based
+rules.</p>
+<p>Element-name-based rules will not be specialization-aware. Your
+calling-stylesheet will have to import each additional stylesheet required
+by the scope of specialized topics and vocabularies, each explicitly defined
+using element-name selectors. In this scheme, unsupported new elements will
+have no rendering properties associated, whereas in the specialization-aware
+systems such elements can fall back to a rule that triggers off a previously-supported
+value in the class attribute string.</p>
+           </div>
+
+<div class="section"><h2 class="sectiontitle">Assembly rules for CSS</h2>              <p>CSS supports
+specialization similarly to XSLT. This document describes a best practice
+for naming and populating CSS stylesheets that follow the specialization design
+pattern for DITA DTDs and Schemas. Although this practice is not required
+in order to implement CSS support for DITA, following the practice will make
+subsequent specializations off the pattern to be done with minimal work, and
+the files should be correspondingly easier to maintain.</p>
+      
+      <p>To support a newly-specialized DITA DTD or Schema that has been specialization-enabled
+with unique class attribute values, create a module that will contain ONLY
+the rules required for the uniquely new elements in the specialization. This
+is similar to the mod files that declare the unique elements in the specialization.
+The name of this module should be the same as the root name for the specialization
+module. In the case of DITA's reference DTD, the element declarations
+are in reference.mod and the corresponding delta rules for CSS are in reference.css.</p>
+ 
+     <p>Next, create an <span class="q">"override"</span>CSS stylesheet that starts off with
+the @import instruction, naming the CSS file used by this specialization's
+parent DTD. This import picks up support for all elements that are common
+with the parent DTD. Then add another @import instruction in sequence, naming
+the CSS delta module that you created previously. Then copy in the CSS rules
+for any previously defined support that need to be associated to the new element
+names, and rename the selectors as needed to the new specialized values for
+each new element. These added CSS rules are deltas for the new stylesheet,
+much as specialized DTDs build on previous DTDs by adding delta element definitions.
+This technique approximates the <span class="q">"fall-through"</span> support for what would
+normally happen if the class attribute actually could map to the root class.</p>
+ 
+     <p>Finally, if necessary, modify the behaviors of any of these new, delta
+CSS rules. Because this process reuses a great deal of previous behaviors,
+the time spent supporting the delta changes is minimal.</p>
+       <p>To use
+a specialization-enabled CSS stylesheet with a specialized DITA topic, simply
+associate it to the topic using either the W3C defined stylesheet link processing
+instruction or by following configuration rules for your editor or browser.</p>
+ 
+        </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="specproc.html" title="Specialized processing is not necessary for every specialized element, only for those elements which do not have appropriate default behavior based on their ancestors.">Specialization in processing</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="customize.html" title="When you just need a difference in output, you can use DITA customization to override the default output without affecting portability or interchange, and without involving specialization.">Customization</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="modularization-xslt.html" title="Stylesheet support in XSLT for DITA specializations can be applied using the same principles as for the DTDs or Schemas, resulting in stylesheets that are easy to maintain and that will support any subsequent specialization with a minimum of effort.">Modularization in XSLT</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="synblk" />
+<meta name="abstract" content="The syntax block (&lt;synblk&gt;) element organizes small pieces of a syntax definition into a larger piece. The syntax block element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information." />
+<meta name="description" content="The syntax block (&lt;synblk&gt;) element organizes small pieces of a syntax definition into a larger piece. The syntax block element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information." />
+<meta content="synblk (syntax block), Programming elements" name="DC.subject" />
+<meta content="synblk (syntax block), Programming elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/pr-d.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/fragref.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/synnote.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="synblk" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>synblk</title>
+</head>
+<body id="synblk"><a name="synblk"><!-- --></a>
+
+
+<h1 class="topictitle1">synblk</h1>
+
+
+
+<div><p>The syntax block (&lt;<span class="keyword">synblk</span>&gt;) element organizes
+small pieces of a syntax definition into a larger piece. The syntax block
+element is part of the DITA programming domain, a special set of DITA elements
+designed to document programming tasks, concepts and reference information.</p>
+
+<div class="example"><h2 class="sectiontitle">Example</h2><pre class="pre"><strong>&lt;synblk&gt;</strong>
+&lt;groupseq&gt;&lt;kwd&gt;this&lt;/kwd&gt;&lt;sep&gt;-&lt;/sep&gt;&lt;kwd&gt;is&lt;/kwd&gt;&lt;sep&gt;-&lt;/sep&gt;&lt;kwd&gt;a&lt;/kwd&gt;
+&lt;sep&gt;-&lt;/sep&gt;&lt;var&gt;test&lt;/var&gt;&lt;/groupseq&gt;
+<strong>&lt;/synblk&gt;</strong>        </pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100A1" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100A6" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100B0" headers="N100A1"><strong>ditabase, topic, task, reference, concept, glossary</strong></td>
+<td valign="top" headers="N100A6 N100B0"> ( (
+<a href="../common/../langref/title.html" title="The &lt;title&gt; element contains a heading or label for the main parts of a topic, including the topic as a whole, its sections and examples, and its labelled content, such as figures and tables. Beginning with DITA 1.1, the element may also be used to provide a title for a map.">title</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/groupseq.html" title="The &lt;groupseq&gt; element is part of the subset of elements that define syntax diagrams in DITA. A group is a logical set of pieces of syntax that go together. Within the syntax definition, groups of keywords, delimiters and other syntax units act as a combined unit, and they occur in a specific sequence, as delimited by the &lt;groupseq&gt; element. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">groupseq</a> or 
+<a href="../common/../langref/groupchoice.html" title="The &lt;groupchoice&gt; element is part of the subset of elements that define syntax diagrams in DITA. A group is a logical set of pieces of syntax that go together. A group choice specifies that the user must make a choice about which part of the syntax to use. Groups are often nested. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">groupchoice</a> or 
+<a href="../common/../langref/groupcomp.html" title="The &lt;groupcomp&gt; element is part of the subset of elements that define syntax diagrams in DITA. A group is a logical set of pieces of syntax that go together. The group composite means that the items that make up the syntax diagram will be formatted close together rather than being separated by a horizontal or vertical line, which is the usual formatting method. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">groupcomp</a> or 
+<a href="../common/../langref/fragref.html" title="The fragment reference (&lt;fragref&gt;) element provides a logical reference to a syntax definition fragment so that you can reference a syntax fragment multiple times, or pull a large section of syntax out of line for easier reading. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">fragref</a> or 
+<a href="../common/../langref/fragment.html" title="Within a syntax definition, a &lt;fragment&gt; is a labeled subpart of the syntax. The &lt;fragment&gt; element allows breaking out logical chunks of a large syntax diagram into named fragments. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">fragment</a> or 
+<a href="../common/../langref/synnote.html" title="The syntax note (&lt;synnote&gt;) element contains a note (similar to a footnote) within a syntax definition group or fragment. The syntax note explains aspects of the syntax that cannot be expressed in the markup itself. The note will appear at the bottom of the syntax diagram instead of at the bottom of the page. The syntax block element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">synnote</a> or 
+<a href="../common/../langref/synnoteref.html" title="The syntax note (&lt;synnoteref&gt;) reference element references a syntax note element (&lt;synnote&gt;) that has already been defined elsewhere in the syntax diagram. The same notation can be used in more than one syntax definition. The syntax note reference element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">synnoteref</a>) <em> (any number) </em>) </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N10177" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N1017C" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N10186" headers="N10177"><strong>ditabase, topic, task, concept, reference, glossary</strong></td>
+<td valign="top" headers="N1017C N10186"><a href="../common/../langref/syntaxdiagram.html" title="The syntax diagram (&lt;syntaxdiagram&gt;) element is the main container for all the syntax elements that make up a syntax definition. The syntax diagram represents the syntax of a statement from a computer language, or a command, function call or programming language statement. Traditionally, the syntax diagram is formatted with railroad tracks that connect the units of the syntax together, but this presentation may differ depending on the output media. The syntax diagram element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">syntaxdiagram</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>+ topic/figgroup pr-d/synblk </p>
+</div>
+
+<div class="section" id="synblk__attrs"><a name="synblk__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="synblk__synblk_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="synblk__synblk_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N101CD" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N101D3" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N101D9" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N101DF" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N101E5" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101CD">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N101D3">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N101D9">parameter entity</td>
+
+<td valign="top" headers="N101DF">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N101E5">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101CD">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N101D3">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N101D9">parameter entity</td>
+
+<td valign="top" headers="N101DF">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N101E5">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101CD">class, outputclass</td>
+
+<td valign="top" headers="N101D3">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N101D9">&#xA0;</td>
+<td valign="top" headers="N101DF">&#xA0;</td>
+<td valign="top" headers="N101E5">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/pr-d.html" title="The programming domains elements are used to define the syntax and to give examples of programming languages.">Programming elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/fragref.html" title="The fragment reference (&lt;fragref&gt;) element provides a logical reference to a syntax definition fragment so that you can reference a syntax fragment multiple times, or pull a large section of syntax out of line for easier reading. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">fragref</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/synnote.html" title="The syntax note (&lt;synnote&gt;) element contains a note (similar to a footnote) within a syntax definition group or fragment. The syntax note explains aspects of the syntax that cannot be expressed in the markup itself. The note will appear at the bottom of the syntax diagram instead of at the bottom of the page. The syntax block element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">synnote</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

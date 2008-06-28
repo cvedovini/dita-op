@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="linklist" />
+<meta name="abstract" content="The &lt;linklist&gt; element defines an author-arranged group of links. Within &lt;linklist&gt;, the organization of links on final output is in the same order as originally authored in the DITA topic." />
+<meta name="description" content="The &lt;linklist&gt; element defines an author-arranged group of links. Within &lt;linklist&gt;, the organization of links on final output is in the same order as originally authored in the DITA topic." />
+<meta content="linklist, Related Links elements" name="DC.subject" />
+<meta content="linklist, Related Links elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/relatedl.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/link.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/linkpool.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="linklist" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>linklist</title>
+</head>
+<body id="linklist"><a name="linklist"><!-- --></a>
+
+
+<h1 class="topictitle1">linklist</h1>
+
+
+
+<div><p>The &lt;<span class="keyword">linklist</span>&gt; element defines an author-arranged
+group of links. Within &lt;<span class="keyword">linklist</span>&gt;, the organization
+of links on final output is in the same order as originally authored in the
+DITA topic.</p>
+
+<div class="section"><p>There are two ways to organize related information links: add
+them all in no particular order, using the &lt;<span class="keyword">linkpool</span>&gt;
+or &lt;<span class="keyword">related-links</span>&gt; elements, and let the output formatting
+processor sort them; or pre-group them using one or more &lt;<span class="keyword">linklist</span>&gt;
+elements. When you pre-group them using &lt;<span class="keyword">linklist</span>&gt;,
+then the order of the links as you created them is preserved during the output
+formatting process.</p>
+<p>Attributes set on &lt;<span class="keyword">linklist</span>&gt;
+are inherited by its descendants. For example, if you've got a &lt;<span class="keyword">linklist</span>&gt;
+that contains all external links, you can set <em><span class="keyword">scope="external"</span></em> on
+that outer&lt;<span class="keyword">linklist</span>&gt; element and leave it off the
+contained links.</p>
+</div>
+
+<div class="example" />
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100D5" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100DA" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100E4" headers="N100D5"><strong>ditabase, topic, task, reference, concept, glossary</strong></td>
+<td valign="top" headers="N100DA N100E4"> ( (
+<a href="../common/../langref/title.html" title="The &lt;title&gt; element contains a heading or label for the main parts of a topic, including the topic as a whole, its sections and examples, and its labelled content, such as figures and tables. Beginning with DITA 1.1, the element may also be used to provide a title for a map.">title</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/desc.html" title="The &lt;desc&gt; element contains the description of the current element. A description should provide more information than the title. This is its behavior in fig/table/linklist, for example. In xref/link, it provides a description of the target; processors that support it may choose to display this as hover help. In object, it contains alternate content for use when in contexts that cannot display the object.">desc</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/linklist.html" title="The &lt;linklist&gt; element defines an author-arranged group of links. Within &lt;linklist&gt;, the organization of links on final output is in the same order as originally authored in the DITA topic.">linklist</a> or 
+<a href="../common/../langref/link.html" title="The &lt;link&gt; element defines a relationship to another topic. Links represent the types and roles of topics in a web of information, and therefore represent navigational links within that web. Links are typically sorted on output based on their attributes. The optional container elements for link (&lt;linkpool&gt; and &lt;linklist&gt;) allow authors to define groups with common attributes, or to preserve the authored sequence of links on output. Links placed in a &lt;linkpool&gt; may be rearranged for display purposes (combined with other local or map-based links); links in a &lt;linklist&gt; should be displayed in the order they are defined. Refer to those elements for additional explanation.">link</a>) <em> (any number) </em> then  (
+<a href="../common/../langref/linkinfo.html" title="The &lt;linkinfo&gt; element allows you to place a descriptive paragraph following a list of links in a &lt;linklist&gt; element.">linkinfo</a>) <em> (optional) </em>) </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N10185" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N1018A" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N10194" headers="N10185"><strong>ditabase, topic, task, concept, reference, glossary</strong></td>
+<td valign="top" headers="N1018A N10194"><a href="../common/../langref/related-links.html" title="The related information links of a topic (&lt;related-links&gt; element) are stored in a special section following the body of the topic. After a topic is processed into it final output form, the related links are usually displayed at the end of the topic, although some Web-based help systems might display them in a separate navigation frame.">related-links</a>, <a href="../common/../langref/linklist.html" title="The &lt;linklist&gt; element defines an author-arranged group of links. Within &lt;linklist&gt;, the organization of links on final output is in the same order as originally authored in the DITA topic.">linklist</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- topic/linklist </p>
+</div>
+
+<div class="section" id="linklist__attrs"><a name="linklist__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="linklist__linklist_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="linklist__linklist_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N101EC" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N101F2" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N101F8" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N101FE" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N10204" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101EC">collection-type</td>
+
+<td valign="top" headers="N101F2">Collection types describe how links relate to each other. A family
+collection represents a tight grouping in which each of the referenced topics
+not only relates to the current topic but also relate to each other. Sequence
+indicates that the order of the child topics is significant; output processors
+will typically link between them in order. Unordered indicates that the order
+is not significant. Choice indicates that one of the children should be selected.
+If no value is specified, processors should treat the default as "unordered",
+although no default is specified in the DTD. See <a href="../common/ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">this
+topic</a> for more information on the conref value.<p>Usage of the collection-type attribute on &lt;reltable&gt; and
+&lt;relcolspec&gt; is currently undefined, and reserved for future use.</p>
+</td>
+
+<td valign="top" headers="N101F8">(unordered | sequence | choice | family | -dita-use-conref-target)</td>
+
+<td valign="top" headers="N101FE">#IMPLIED</td>
+
+<td valign="top" headers="N10204"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101EC">duplicates</td>
+
+<td valign="top" headers="N101F2">Specifies whether or not duplicate links will be filtered out of
+a linklist. Allowable values are: "yes" (allow duplicate links),
+or "no" (filter out duplicate links). In general, duplicate links
+in linklists are preserved.. Note that links are regarded as duplicates only
+if their content plus all attributes match. </td>
+
+<td valign="top" headers="N101F8">#IMPLIED</td>
+
+<td valign="top" headers="N101FE">The attribute value is currently ignored, but should default to yes
+for links in linklists and no for all other links.</td>
+
+<td valign="top" headers="N10204">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101EC">mapkeyref</td>
+
+<td valign="top" headers="N101F2">Identifies the map, if any, from which the contained links are derived.
+This value is automatically generated by the same process that creates the
+links from the map, as a way to identify which map the links came from. If
+the &lt;<span class="keyword">linklist</span>&gt; or &lt;<span class="keyword">linkpool</span>&gt;
+is manually created by the author, there is no need to use this attribute.</td>
+
+<td valign="top" headers="N101F8">CDATA</td>
+
+<td valign="top" headers="N101FE">#IMPLIED</td>
+
+<td valign="top" headers="N10204"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101EC">type</td>
+
+<td valign="top" headers="N101F2">Describes the target of a cross-reference. See <a href="../common/thetypeattribute.html" title="The type attribute is most often used on linking elements to describe the target of a cross-reference. It is also used on the note element to describe the type of the current note, and on several other elements for varying purposes.">The type attribute</a> for
+detailed information on supported values and processing implications.</td>
+
+<td valign="top" headers="N101F8">CDATA</td>
+
+<td valign="top" headers="N101FE">#IMPLIED (Processed as if the target were of type "topic", or inherited from an ancestor)</td>
+
+<td valign="top" headers="N10204"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101EC">role</td>
+
+<td valign="top" headers="N101F2"><span id="linklist__N91D48"><a name="linklist__N91D48"><!-- --></a>The role attribute defines the role the
+target topic plays in relationship with the current topic. For example, in
+a parent/child relationship, the role would be "parent" when the
+target is the parent of the current topic, and "child" when the
+target is the child of the current topic. This structure could be used to
+sort and classify links at display time. </span> See <a href="../common/theroleattribute.html" title="The role attribute defines the role the target topic plays in relationship with the current topic. For example, in a parent/child relationship, the role would be &quot;parent&quot; when the target is the parent of the current topic, and &quot;child&quot; when the target is the child of the current topic. This structure could be used to sort and classify links at display time.">The role attribute</a> for
+information on supported values.</td>
+
+<td valign="top" headers="N101F8">(parent | child | sibling | friend | next | previous | cousin | ancestor
+| descendant | <em>               <span class="keyword">sample | external | [deprecated]</span> 
+           </em> other | -dita-use-conref-target)</td>
+
+<td valign="top" headers="N101FE">#IMPLIED</td>
+
+<td valign="top" headers="N10204">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101EC">otherrole</td>
+
+<td valign="top" headers="N101F2">Indicates an alternate role. This value is used when the role attribute
+is set to other.</td>
+
+<td valign="top" headers="N101F8">CDATA</td>
+
+<td valign="top" headers="N101FE">#IMPLIED</td>
+
+<td valign="top" headers="N10204">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101EC">spectitle</td>
+
+<td valign="top" headers="N101F2">The specialized title attribute allows architects of specialized
+types to define a fixed or default title for a specialized element. Not intended
+for direct use by authors.</td>
+
+<td valign="top" headers="N101F8">CDATA</td>
+
+<td valign="top" headers="N101FE">#IMPLIED</td>
+
+<td valign="top" headers="N10204">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101EC">format</td>
+
+<td valign="top" headers="N101F2">The format attribute identifies the format of the resource being
+cross referenced. See <a href="../common/theformatattribute.html" title="The format attribute identifies the format of the resource being cross referenced. The processing default for format is dita. If no value is specified, but the attribute is specified on an ancestor within a map or within the related-links section, the value will inherit from the closest ancestor.">The format attribute</a> for details
+on supported values.</td>
+
+<td valign="top" headers="N101F8">CDATA</td>
+
+<td valign="top" headers="N101FE">#IMPLIED</td>
+
+<td valign="top" headers="N10204">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101EC">scope</td>
+
+<td valign="top" headers="N101F2">The scope attribute identifies the closeness of the relationship
+between the current document and the target resource. <br /><ul>
+<li>Set scope to <samp class="codeph">local</samp> when the resource is part of the current
+set of content.</li>
+
+<li> Set scope to <samp class="codeph">peer</samp> when the resource is part of the current
+set of content but is not accessible at build time.</li>
+
+<li> Set scope to <samp class="codeph">external</samp> when the resource is not part
+of the current information set and should open in a new browser window.</li>
+
+<li>See <a href="../common/ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">Using the -dita-use-conref-target value</a> for more information
+on -dita-use-conref-target.</li>
+
+</ul>
+ The processing default is <samp class="codeph">local</samp>.  <span>If no value is
+specified, but the attribute is specified on an ancestor within a map or within
+the related-links section, the value will inherit from the closest ancestor.</span></td>
+
+<td valign="top" headers="N101F8">(local | peer | external | -dita-use-conref-target)</td>
+
+<td valign="top" headers="N101FE">#IMPLIED</td>
+
+<td valign="top" headers="N10204"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101EC">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N101F2">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N101F8">parameter entity</td>
+
+<td valign="top" headers="N101FE">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10204">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101EC">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N101F2">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N101F8">parameter entity</td>
+
+<td valign="top" headers="N101FE">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10204">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101EC">class, outputclass</td>
+
+<td valign="top" headers="N101F2">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N101F8">&#xA0;</td>
+<td valign="top" headers="N101FE">&#xA0;</td>
+<td valign="top" headers="N10204">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/relatedl.html" title="The related-links section of DITA topics is a special structure that supports the navigational rules from a topic to its related neighbor topics.">Related links elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/link.html" title="The &lt;link&gt; element defines a relationship to another topic. Links represent the types and roles of topics in a web of information, and therefore represent navigational links within that web. Links are typically sorted on output based on their attributes. The optional container elements for link (&lt;linkpool&gt; and &lt;linklist&gt;) allow authors to define groups with common attributes, or to preserve the authored sequence of links on output. Links placed in a &lt;linkpool&gt; may be rearranged for display purposes (combined with other local or map-based links); links in a &lt;linklist&gt; should be displayed in the order they are defined. Refer to those elements for additional explanation.">link</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/linkpool.html" title="The &lt;linkpool&gt; element defines a group of links that have common characteristics, such as type or audience or source. When links are not in a &lt;linklist&gt; (that is, they are in &lt;related-links&gt; or &lt;linkpool&gt; elements), the organization of links on final output is determined by the output process, not by the order that the links actually occur in the DITA topic.">linkpool</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

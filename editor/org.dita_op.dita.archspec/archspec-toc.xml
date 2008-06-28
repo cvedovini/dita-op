@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="DITA Architectural Specification v1.1" topic="ditaspec.html">
+<topic label="About the DITA 1.1 Specification" href="ditaspec.html"/>
+<topic label="An introduction to DITA" href="ditaintro.html">
+<topic label="Definitions and background concepts" href="definitions.html">
+<topic label="Basic concepts" href="conover.html"/>
+<topic label="Terminology" href="terminology.html"/>
+</topic>
+<topic label="Naming conventions and file extensions" href="fileext.html"/>
+<topic label="DTD organization" href="dtdorganization.html"/>
+<topic label="XML Schema organization" href="schemaorganization.html"/>
+</topic>
+<topic label="DITA markup" href="ditamarkup.html">
+<topic label="DITA topics" href="topicover.html">
+<topic label="What are topics?" href="topics.html"/>
+<topic label="Why topics?" href="dita_spec_22_topics_why.html"/>
+<topic label="Information typing" href="infotypes.html"/>
+<topic label="Transitional text" href="transitionaltext.html"/>
+<topic label="Generic topics" href="generictopics.html">
+<topic label="Topic structure" href="dita_spec_22_topics_structure.html"/>
+<topic label="Topic content" href="topiccontent.html"/>
+<topic label="Topic modules" href="topicmodules.html"/>
+</topic>
+<topic label="Concepts" href="dita_spec_22_info_concepts.html"/>
+<topic label="Tasks" href="dita_spec_22_info_tasks.html"/>
+<topic label="Reference" href="dita_spec_22_info_refs.html"/>
+<topic label="Glossary" href="glossaryArch.html"/>
+<topic label="Topic domains" href="dita_spec_22_domains.html"/>
+</topic>
+<topic label="DITA maps" href="dita_spec_23_maps.html">
+<topic label="What are maps?" href="maps.html"/>
+<topic label="Why DITA maps?" href="dita_spec_23_whymaps.html"/>
+<topic label="Common DITA map attributes and metadata" href="dita_spec_23_common.html"/>
+<topic label="DITA map structure" href="dita_spec_23_mapstruct.html"/>
+<topic label="DITA map modules" href="dita_spec_23_mapmod.html"/>
+<topic label="Inheritance of attributes and metadata in maps" href="dita_spec_23_mapinher.html"/>
+<topic label="Bookmap" href="HowToUse.html"/>
+<topic label="Map domains" href="mapdomains.html">
+<topic label="The xNAL domain" href="xNALDomain.html"/>
+</topic>
+</topic>
+<topic label="Metadata elements and common attributes" href="commonmeta.html">
+<topic label="Common metadata elements" href="commonelements.html">
+<topic label="Publication metadata elements" href="pubMetaElem.html"/>
+<topic label="Management metadata elements" href="mgmtMetaElem.html"/>
+<topic label="Metadata qualification elements" href="metaQualElem.html"/>
+</topic>
+<topic label="Common attributes" href="commonatt.html">
+<topic label="Identifier and content referencing attributes" href="idconref.html"/>
+<topic label="Metadata attributes" href="metadataAttr.html"/>
+<topic label="Miscellaneous Attributes" href="miscAttr.html"/>
+<topic label="Architectural attributes" href="archAttr.html"/>
+</topic>
+<topic label="Topic properties in topics and maps" href="topicMapMeta.html">
+<topic label="Metadata inheritance between maps and topics" href="topicmetainheritance.html"/>
+</topic>
+</topic>
+</topic>
+<topic label="DITA processing" href="behaviors.html">
+<topic label="IDs and references" href="id.html"/>
+<topic label="Navigation behaviors" href="ditanav.html"/>
+<topic label="Content inclusion (conref)" href="conref.html"/>
+<topic label="Conditional processing (profiling)" href="condproc.html"/>
+<topic label="Chunking" href="chunking.html"/>
+<topic label="Translation" href="translation.html">
+<topic label="The xml:lang attribute" href="xmllang.html"/>
+<topic label="The dir attribute" href="diratt.html"/>
+<topic label="All elements with translation properties" href="elementsMerged.html"/>
+</topic>
+</topic>
+<topic label="DITA specialization" href="ditaspecialization.html">
+<topic label="What is specialization?" href="specialize.html"/>
+<topic label="Why specialization?" href="whyspec.html"/>
+<topic label="Structural versus domain specialization" href="infodom.html"/>
+<topic label="Specializing foreign or unknown content" href="foreigncontentspec.html"/>
+<topic label="Data extensibility" href="dataextend.html"/>
+<topic label="Limits of specialization" href="speclimits.html"/>
+<topic label="Specialization in content" href="speccont.html">
+<topic label="Why specialization in content?" href="whyspeccont.html"/>
+<topic label="Specialization of attributes" href="attspecialization.html"/>
+<topic label="The class attribute" href="classatt.html"/>
+<topic label="Class attribute syntax" href="classattdef.html"/>
+<topic label="The domains attribute" href="domainsatt.html"/>
+<topic label="Specialization validity" href="specvalid.html"/>
+<topic label="Generalization" href="generalize.html">
+<topic label="Attribute generalization" href="attributegeneralize.html"/>
+<topic label="Foreign generalization" href="foreigngeneralization.html"/>
+</topic>
+</topic>
+<topic label="Specialization in design" href="specdesign.html">
+<topic label="Why specialization in design?" href="whyspecdes.html"/>
+<topic label="Modularization and integration of design" href="modint.html"/>
+<topic label="Integration" href="integrate.html"/>
+<topic label="Modularization in DTDs" href="dtdmod.html"/>
+<topic label="Modularization in schemas" href="schemamod.html"/>
+</topic>
+<topic label="Specialization in processing" href="specproc.html">
+<topic label="Using the class attribute" href="usingclass.html"/>
+<topic label="Processing specialized attributes" href="procspecatt.html"/>
+<topic label="Processing foreign content" href="foreigncontentproc.html"/>
+<topic label="Modularization and integration of processing" href="modintproc.html"/>
+<topic label="Customization" href="customize.html"/>
+<topic label="Modularization in CSS" href="modularization-css.html"/>
+<topic label="Modularization in XSLT" href="modularization-xslt.html"/>
+</topic>
+</topic>
+</toc>

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="DTD organization" />
+<meta name="abstract" content="The OASIS DITA document types are implemented with a set of DTD modules. Some of these modules are used by every DITA document type; others are only used by topics or by maps, and some are only used in specific specializations." />
+<meta name="description" content="The OASIS DITA document types are implemented with a set of DTD modules. Some of these modules are used by every DITA document type; others are only used by topics or by maps, and some are only used in specific specializations." />
+<meta scheme="URI" name="DC.Relation" content="ditaintro.html" />
+<meta scheme="URI" name="DC.Relation" content="fileext.html" />
+<meta scheme="URI" name="DC.Relation" content="schemaorganization.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="dtdorganization" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>DTD organization</title>
+</head>
+<body id="dtdorganization"><a name="dtdorganization"><!-- --></a>
+
+
+<h1 class="topictitle1">DTD organization</h1>
+
+
+<div><p>The OASIS DITA document types are implemented with a set of DTD
+modules. Some of these modules are used by every DITA document type; others
+are only used by topics or by maps, and some are only used in specific specializations.</p>
+
+<div class="section"><h2 class="sectiontitle">DTDs versus Modules</h2><p>A significant feature of the
+DITA implementation is that it places more importance on the modules than
+on the actual DTD. All element and attribute type declarations are made in
+modules, which are then integrated into a document type using a document type
+shell. Implementors are free to create new DTDs that reorganize the modules,
+introduce new modules, or remove modules as appropriate. For example, the
+standard topic DTD from OASIS includes all of the standard topic domains;
+in addition, while the default topic DTD allows topics to nest, it is not
+possible to include concepts. A new DTD can change one or both of these features
+and still be valid; the DTD may add or remove domains, and it may allow topic
+to nest concepts, or allow authoring of different types at the same level,
+as in the ditabase document type. When creating a new or changing an existing
+DTD, users should remember to give the new or changed DTD a new public ID,
+so that various DITA tools will not confuse the new DTD with the default OASIS
+version.</p>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Description of DITA Modules</h2><p>Each specialization
+requires one or more modules to define elements for that specialization. Any
+DTD that makes use of a specialization must include the modules for that specialization.</p>
+<p>In
+addition to the modules specific to a specialization, there are several files
+that are used by every DITA DTD. These are included in the base topic or map
+modules, so they do not need to be referenced in the DTD – they are already
+included simply by including the topic or map module.</p>
+<p>The tables below
+describe each of the DTD modules that come with the OASIS DITA standard.</p>
+
+<div class="tablenoborder"><table summary="" cellspacing="0" cellpadding="4" frame="border" border="1" rules="all"><caption><span class="tablecap">Table 1. Description of topic and its specialization
+modules</span></caption>
+<thead align="left">
+<tr valign="bottom">
+<th class="cellrowborder" valign="bottom" id="N100A2">Common module file</th>
+
+<th class="cellrowborder" valign="bottom" id="N100A9">Purpose</th>
+
+<th class="cellrowborder" valign="bottom" id="N100B0">Used within DTD</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+<tr>
+<td class="cellrowborder" valign="top" headers="N100A2 ">topic.mod</td>
+
+<td class="cellrowborder" valign="top" headers="N100A9 ">Define all elements that may be used within the base
+topic type.</td>
+
+<td class="cellrowborder" valign="top" headers="N100B0 ">Must be included in any topic-based DITA DTD.</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" headers="N100A2 ">concept.mod</td>
+
+<td class="cellrowborder" valign="top" headers="N100A9 ">Define elements used within the concept specialization.</td>
+
+<td class="cellrowborder" valign="top" headers="N100B0 ">concept.dtd, ditabase.dtd</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" headers="N100A2 ">glossary.mod</td>
+
+<td class="cellrowborder" valign="top" headers="N100A9 ">Define elements used within the glossary specialization</td>
+
+<td class="cellrowborder" valign="top" headers="N100B0 ">glossary.dtd, ditabase.dtd</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" headers="N100A2 ">reference.mod</td>
+
+<td class="cellrowborder" valign="top" headers="N100A9 ">Define elements used within the reference specialization.</td>
+
+<td class="cellrowborder" valign="top" headers="N100B0 ">reference.dtd, ditabase.dtd</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" headers="N100A2 ">task.mod</td>
+
+<td class="cellrowborder" valign="top" headers="N100A9 ">Define elements used within the task specialization.</td>
+
+<td class="cellrowborder" valign="top" headers="N100B0 ">task.dtd, ditabase.dtd</td>
+
+</tr>
+
+</tbody>
+
+</table>
+</div>
+
+<div class="tablenoborder"><table summary="" cellspacing="0" cellpadding="4" frame="border" border="1" rules="all"><caption><span class="tablecap">Table 2. Description of map and its specialization modules</span></caption>
+<thead align="left">
+<tr valign="bottom">
+<th class="cellrowborder" valign="bottom" id="N10171">Common module file</th>
+
+<th class="cellrowborder" valign="bottom" id="N10178">Purpose</th>
+
+<th class="cellrowborder" valign="bottom" id="N1017F">Used within DTD</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+<tr>
+<td class="cellrowborder" valign="top" headers="N10171 ">map.mod</td>
+
+<td class="cellrowborder" valign="top" headers="N10178 ">Define all elements that may be used within the base
+map type.</td>
+
+<td class="cellrowborder" valign="top" headers="N1017F ">Must be included in any map-based DITA DTD.</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" headers="N10171 ">bookmap.mod</td>
+
+<td class="cellrowborder" valign="top" headers="N10178 ">Define elements used within the bookmap specialization.</td>
+
+<td class="cellrowborder" valign="top" headers="N1017F ">bookmap.dtd</td>
+
+</tr>
+
+</tbody>
+
+</table>
+</div>
+
+<div class="tablenoborder"><table summary="" cellspacing="0" cellpadding="4" frame="border" border="1" rules="all"><caption><span class="tablecap">Table 3. Description of domain modules</span></caption>
+<thead align="left">
+<tr valign="bottom">
+<th class="cellrowborder" valign="bottom" id="N101EF">Common module file</th>
+
+<th class="cellrowborder" valign="bottom" id="N101F6">Purpose</th>
+
+<th class="cellrowborder" valign="bottom" id="N101FD">Used within DTD</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+<tr>
+<td class="cellrowborder" valign="top" headers="N101EF ">indexingDomain.ent, indexingDomain.mod</td>
+
+<td class="cellrowborder" valign="top" headers="N101F6 ">Define entities and elements used by the indexing domain.</td>
+
+<td class="cellrowborder" valign="top" headers="N101FD ">bookmap.dtd, concept.dtd, ditabase.dtd, glossary.dtd,
+map.dtd reference.dtd, task.dtd, topic.dtd</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" headers="N101EF ">highlightDomain.ent, highlightDomain.mod</td>
+
+<td class="cellrowborder" valign="top" headers="N101F6 ">Define entities and elements used by the highlighting
+domain.</td>
+
+<td class="cellrowborder" valign="top" headers="N101FD ">concept.dtd, ditabase.dtd, glossary.dtd, reference.dtd,
+task.dtd, topic.dtd</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" headers="N101EF ">programmingDomain.ent, programmingDomain.ent</td>
+
+<td class="cellrowborder" valign="top" headers="N101F6 ">Define entities and elements used by the programming
+domain.</td>
+
+<td class="cellrowborder" valign="top" headers="N101FD ">concept.dtd, ditabase.dtd, glossary.dtd, reference.dtd,
+task.dtd, topic.dtd</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" headers="N101EF ">softwareDomain.ent, softwareDomain.mod</td>
+
+<td class="cellrowborder" valign="top" headers="N101F6 ">Define entities and elements used by the software domain.</td>
+
+<td class="cellrowborder" valign="top" headers="N101FD ">concept.dtd, ditabase.dtd, glossary.dtd, reference.dtd,
+task.dtd, topic.dtd</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" headers="N101EF ">uiDomain.ent, uiDomain.mod</td>
+
+<td class="cellrowborder" valign="top" headers="N101F6 ">Define entities and elements used by the user interface
+domain.</td>
+
+<td class="cellrowborder" valign="top" headers="N101FD ">concept.dtd, ditabase.dtd, glossary.dtd, reference.dtd,
+task.dtd, topic.dtd</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" headers="N101EF ">utilitiesDomain.ent, utilitiesDomain.mod</td>
+
+<td class="cellrowborder" valign="top" headers="N101F6 ">Define entities and elements used by the utilities domain.</td>
+
+<td class="cellrowborder" valign="top" headers="N101FD ">concept.dtd, ditabase.dtd, glossary.dtd, reference.dtd,
+task.dtd, topic.dtd</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" headers="N101EF ">mapGroup.ent, mapGroup.mod</td>
+
+<td class="cellrowborder" valign="top" headers="N101F6 ">Define entities and elements used by the map group domain.</td>
+
+<td class="cellrowborder" valign="top" headers="N101FD ">map.dtd, bookmap.dtd</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" headers="N101EF ">xnalDomain.ent, xnalDomain.mod</td>
+
+<td class="cellrowborder" valign="top" headers="N101F6 ">Define entities and elements used by the XNAL domain.</td>
+
+<td class="cellrowborder" valign="top" headers="N101FD ">bookmap.dtd</td>
+
+</tr>
+
+</tbody>
+
+</table>
+</div>
+
+<div class="tablenoborder"><table summary="" cellspacing="0" cellpadding="4" frame="border" border="1" rules="all"><caption><span class="tablecap">Table 4. Description of other common modules used by the files
+above</span></caption>
+<thead align="left">
+<tr valign="bottom">
+<th class="cellrowborder" valign="bottom" id="N1030F">Common module file</th>
+
+<th class="cellrowborder" valign="bottom" id="N10316">Purpose</th>
+
+<th class="cellrowborder" valign="bottom" id="N1031D">Used within module</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+<tr>
+<td class="cellrowborder" valign="top" headers="N1030F ">commonElements.ent, commonElements.mod</td>
+
+<td class="cellrowborder" valign="top" headers="N10316 ">Define all content elements that may appear in both
+maps and topics.</td>
+
+<td class="cellrowborder" valign="top" headers="N1031D ">topic.mod, map.mod (this makes it a part of any DITA
+DTD)</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" headers="N1030F ">metaDecl.mod</td>
+
+<td class="cellrowborder" valign="top" headers="N10316 ">Define meta elements that may appear in both maps and
+topics</td>
+
+<td class="cellrowborder" valign="top" headers="N1031D ">topic.mod, map.mod (this makes it a part of any DITA
+DTD)</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" headers="N1030F ">tblDecl.mod</td>
+
+<td class="cellrowborder" valign="top" headers="N10316 ">Defines the complex tables used within DITA, based on
+the OASIS Exchange Table model.</td>
+
+<td class="cellrowborder" valign="top" headers="N1031D ">commonElements.mod (this makes it a part of any DITA
+DTD)</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" headers="N1030F ">topicDefn.ent</td>
+
+<td class="cellrowborder" valign="top" headers="N10316 ">Defines entities used within the topic module.</td>
+
+<td class="cellrowborder" valign="top" headers="N1031D ">topic.mod (this makes it a part of any topic-based DITA
+DTD)</td>
+
+</tr>
+
+</tbody>
+
+</table>
+</div>
+</div>
+
+</div>
+
+
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="ditaintro.html" title="DITA is an architecture for creating topic-oriented, information-typed content that can be reused and single-sourced in a variety of ways. It is also an architecture for creating new topic types and describing new information domains based on existing types and domains.">An introduction to DITA</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="fileext.html" title="The following naming conventions and file extensions are in use by DITA.">Naming conventions and file extensions</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="schemaorganization.html" title="The OASIS DITA document types are implemented with a set of schema modules. Some of these modules are used by every DITA schema document; others are only used by topics or by maps, and some are only used in specific specializations.">XML Schema organization</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

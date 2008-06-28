@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Architectural attributes" />
+<meta name="abstract" content="DITA provides some attributes to provide type information to processors instead of qualifications or properties of content." />
+<meta name="description" content="DITA provides some attributes to provide type information to processors instead of qualifications or properties of content." />
+<meta scheme="URI" name="DC.Relation" content="commonatt.html" />
+<meta scheme="URI" name="DC.Relation" content="miscAttr.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="archAttr" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Architectural attributes</title>
+</head>
+<body id="archAttr"><a name="archAttr"><!-- --></a>
+
+
+<h1 class="topictitle1">Architectural attributes</h1>
+
+
+<div><p>DITA provides some attributes to provide type information to processors
+instead of qualifications or properties of content.</p>
+
+<p>Ordinarily, architectural attributes don't appear in the source files for
+document instances. Instead, architectural attributes appear in document instances
+through defaults set in the DTD or Schema declaration. This practice ensures
+that the creation of document instances cannot produce invalid values for
+the architectural attributes. These attributes are as follows:</p>
+
+<dl>
+<dt class="dlterm">class</dt>
+
+<dd>This attribute identifies the specialization module for the element type
+as well as the ancestor element types and the specialization modules to which
+they belong. Every DITA element has a class attribute.</dd>
+
+
+<dt class="dlterm">domains</dt>
+
+<dd>This attribute identifies the domain specialization modules used in a
+topic and, for each domains module, its module dependencies. Every topic and
+map element has a domains attribute.</dd>
+
+
+<dt class="dlterm">DITAArchVersion</dt>
+
+<dd>This attribute identifies the version of the DITA architecture used by
+the DTD or schema. Every topic and map element has a DITAArchVersion
+attribute. The attribute is declared in a DITA namespace to allow namespace-sensitive
+tools to detect DITA markup.</dd>
+
+</dl>
+
+<p>To make the document instance usable without the DTD or Schema declaration,
+a normalization process can instill the architectural attributes in the document
+instance.</p>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="commonatt.html" title="The following attributes are common across most DITA elements.">Common attributes</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="miscAttr.html" title="DITA has several elements for supporting translation and for providing additional classification or typing of a specific element.">Miscellaneous Attributes</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

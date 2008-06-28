@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="step" />
+<meta name="abstract" content="The &lt;step&gt; element represents an action that a user must follow to accomplish a task. Each step in a task must contain a command &lt;cmd&gt; element which describes the particular action the user must do to accomplish the overall task. The step element can also contain information &lt;info&gt;, substeps &lt;substeps&gt;, tutorial information &lt;tutorialinfo&gt;, a step example &lt;stepxmp&gt;, choices &lt;choices&gt; or a stepresult &lt;stepresult&gt;, although these are optional." />
+<meta name="description" content="The &lt;step&gt; element represents an action that a user must follow to accomplish a task. Each step in a task must contain a command &lt;cmd&gt; element which describes the particular action the user must do to accomplish the overall task. The step element can also contain information &lt;info&gt;, substeps &lt;substeps&gt;, tutorial information &lt;tutorialinfo&gt;, a step example &lt;stepxmp&gt;, choices &lt;choices&gt; or a stepresult &lt;stepresult&gt;, although these are optional." />
+<meta content="step, Task elements" name="DC.subject" />
+<meta content="step, Task elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/task2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/steps-unordered.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/cmd.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="step" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>step</title>
+</head>
+<body id="step"><a name="step"><!-- --></a>
+
+
+<h1 class="topictitle1">step</h1>
+
+
+
+<div><p>The &lt;<span class="keyword">step</span>&gt; element represents an action
+that a user must follow to accomplish a task. Each step in a task must contain
+a command &lt;<span class="keyword">cmd</span>&gt; element which describes the particular
+action the user must do to accomplish the overall task. The step element can
+also contain information &lt;<span class="keyword">info</span>&gt;, substeps &lt;<span class="keyword">substeps</span>&gt;,
+tutorial information &lt;<span class="keyword">tutorialinfo</span>&gt;, a step example &lt;<span class="keyword">stepxmp</span>&gt;,
+choices &lt;<span class="keyword">choices</span>&gt; or a stepresult &lt;<span class="keyword">stepresult</span>&gt;,
+although these are optional.</p>
+
+<div class="example"><h2 class="sectiontitle">Example</h2><pre class="codeblock">&lt;task id="sqlj"&gt;
+&lt;title&gt;Creating an SQLJ file&lt;/title&gt;
+&lt;taskbody&gt;
+&lt;context&gt;Once you have set up SQLJ, you need to create a new SQLJ file.
+&lt;/context&gt;
+&lt;steps&gt;
+&lt;step&gt;
+ &lt;cmd&gt;Select &lt;menucascade&gt;&lt;uicontrol&gt;File&lt;/uicontrol&gt;&lt;uicontrol&gt;New&lt;/uicontrol&gt;&lt;/menucascade&gt;.&lt;/cmd&gt;
+ &lt;info&gt;New files are created with default values based on a standard template.&lt;/info&gt;
+&lt;/step&gt;
+&lt;/steps&gt;
+&lt;/taskbody&gt;
+&lt;/task&gt;</pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100C0" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100C5" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100CF" headers="N100C0"><strong>ditabase, task</strong></td>
+<td valign="top" headers="N100C5 N100CF"> (
+<a href="../common/../langref/cmd.html" title="The command (&lt;cmd&gt;) element is required as the first element inside a &lt;step&gt;. It provides the active voice instruction to the user for completing the step, and should not be more than one sentence. If the step needs additional explanation, this can follow the &lt;cmd&gt; element inside an &lt;info &gt; element.">cmd</a> then  (
+<a href="../common/../langref/info.html" title="The information element (&lt;info&gt;) occurs inside a &lt;step&gt; element to provide additional information about the step.">info</a> or 
+<a href="../common/../langref/substeps.html" title="The &lt;substeps&gt; element allows you to break a step down into a series of separate actions, and should be used only if necessary. Try to describe the steps of a task in a single level of steps. If you need to use more than one level of substep nesting, you should probably rewrite the task to simplify it.">substeps</a> or 
+<a href="../common/../langref/tutorialinfo.html" title="The tutorial info (&lt;tutorialinfo&gt;) element contains additional information that is useful when the task is part of a tutorial.">tutorialinfo</a> or 
+<a href="../common/../langref/stepxmp.html" title="The step example (&lt;stepxmp&gt;) element is used to illustrate a step of a task. The example can be a couple of words, or an entire paragraph.">stepxmp</a> or 
+<a href="../common/../langref/choicetable.html" title="The &lt;choicetable&gt; element contains a series of optional choices available within a step of a task.">choicetable</a> or 
+<a href="../common/../langref/choices.html" title="The &lt;choices&gt; element contains a list of &lt;choice&gt; elements. It is used when the user will need to choose one of several actions while performing the steps of a task.">choices</a>) <em> (any number) </em> then  (
+<a href="../common/../langref/stepresult.html" title="The &lt;stepresult&gt; element provides information on the expected outcome of a step. If a user interface is being documented, the outcome could describe a dialog box opening, or the appearance of a progress indicator. Step results are useful to assure a user that they are on track, but should not be used for every step, as this quickly becomes tedious.">stepresult</a>) <em> (optional) </em>) </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N101A0" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N101A5" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N101AF" headers="N101A0"><strong>ditabase, task</strong></td>
+<td valign="top" headers="N101A5 N101AF"><a href="../common/../langref/steps.html" title="The &lt;steps&gt; section of a task provides the main content of the task topic. The task is described as a series of steps that the user must follow to accomplish the task. One or more &lt;steps&gt; elements is required inside the &lt;steps&gt; section.">steps</a>, <a href="../common/../langref/steps-unordered.html" title="Like the &lt;steps&gt; element, the &lt;steps-unordered&gt; section of a task provides the main content of the task topic, but particularly for cases in which the order of steps may vary from one situation to another. One or more steps is required inside the &lt;steps-unordered&gt; section.">steps-unordered</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- topic/li task/step </p>
+</div>
+
+<div class="section" id="step__attrs"><a name="step__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="step__step_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="step__step_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10219" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N1021F" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N10225" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N1022B" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N10231" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10219">importance</td>
+
+<td valign="top" headers="N1021F">Describes whether the current step or substep is optional or required.
+Output processors may (but need not) highlight steps that are optional or required.</td>
+
+<td valign="top" headers="N10225">optional | required | -dita-use-conref-target</td>
+
+<td valign="top" headers="N1022B">#IMPLIED</td>
+
+<td valign="top" headers="N10231"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10219">props</td>
+
+<td valign="top" headers="N1021F">Root attribute from which new metadata attributes can be specialized.
+<span>This is a property attribute
+which supports conditional processing for filtering or flagging.</span> <span>If no value is
+specified, but the attribute is specified on an ancestor within a map or within
+the related-links section, the value will inherit from the closest ancestor.</span>
+<span>The attribute takes a space delimited set of
+values. However, when acting as a container for generalized attributes, the
+content model will be more complex; that model is documented in the "attribute
+generalization" section of the DITA architectural specification.</span></td>
+
+<td valign="top" headers="N10225">CDATA</td>
+
+<td valign="top" headers="N1022B">#IMPLIED</td>
+
+<td valign="top" headers="N10231">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10219">base</td>
+
+<td valign="top" headers="N1021F">A generic attribute that has no specific purpose, but is intended
+to act as a base for specialized attributes that have a simple value syntax
+like the conditional processing attributes (one or more alphanumeric values
+separated by whitespace). <span>The attribute takes a space delimited set of
+values. However, when acting as a container for generalized attributes, the
+content model will be more complex; that model is documented in the "attribute
+generalization" section of the DITA architectural specification.</span></td>
+
+<td valign="top" headers="N10225">CDATA</td>
+
+<td valign="top" headers="N1022B">#IMPLIED</td>
+
+<td valign="top" headers="N10231">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10219">platform</td>
+
+<td valign="top" headers="N1021F">Indicates operating system and hardware. <span>This is a property attribute
+which supports conditional processing for filtering or flagging.</span> <span>If no value is
+specified, but the attribute is specified on an ancestor within a map or within
+the related-links section, the value will inherit from the closest ancestor.</span>
+<span>The attribute takes a space delimited set
+of values.</span></td>
+
+<td valign="top" headers="N10225">CDATA</td>
+
+<td valign="top" headers="N1022B"> #IMPLIED</td>
+
+<td valign="top" headers="N10231">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10219">product</td>
+
+<td valign="top" headers="N1021F">Contains the name of the product to which the topic applies. <span>This is a property attribute
+which supports conditional processing for filtering or flagging.</span>
+<span>If no value is
+specified, but the attribute is specified on an ancestor within a map or within
+the related-links section, the value will inherit from the closest ancestor.</span> <span>The attribute takes a space delimited set
+of values.</span></td>
+
+<td valign="top" headers="N10225">CDATA</td>
+
+<td valign="top" headers="N1022B"> #IMPLIED</td>
+
+<td valign="top" headers="N10231"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10219">audience</td>
+
+<td valign="top" headers="N1021F">Indicates the intended audience for the element.
+<span>This is a property attribute
+which supports conditional processing for filtering or flagging.</span> <span>If no value is
+specified, but the attribute is specified on an ancestor within a map or within
+the related-links section, the value will inherit from the closest ancestor.</span>
+<span>The attribute takes a space delimited set
+of values.</span></td>
+
+<td valign="top" headers="N10225">CDATA </td>
+
+<td valign="top" headers="N1022B">#IMPLIED</td>
+
+<td valign="top" headers="N10231">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10219">otherprops</td>
+
+<td valign="top" headers="N1021F">This attribute can be used for any other properties that might be
+needed to describe an audience, or to provide selection criteria for the
+element. <span>This is a property attribute
+which supports conditional processing for filtering or flagging.</span> <span>If no value is
+specified, but the attribute is specified on an ancestor within a map or within
+the related-links section, the value will inherit from the closest ancestor.</span>
+<span>The attribute takes a space delimited set
+of values.</span></td>
+
+<td valign="top" headers="N10225">CDATA</td>
+
+<td valign="top" headers="N1022B"> #IMPLIED</td>
+
+<td valign="top" headers="N10231">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10219">rev</td>
+
+<td valign="top" headers="N1021F">Indicates revision level of an element. It is useful for flagging
+outputs based on revision.  <span>If no value is
+specified, but the attribute is specified on an ancestor within a map or within
+the related-links section, the value will inherit from the closest ancestor.</span></td>
+
+<td valign="top" headers="N10225">CDATA </td>
+
+<td valign="top" headers="N1022B">#IMPLIED</td>
+
+<td valign="top" headers="N10231">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10219">status</td>
+
+<td valign="top" headers="N1021F">The status of the current element. </td>
+
+<td valign="top" headers="N10225">new | changed | deleted | unchanged | -dita-use-conref-target</td>
+
+<td valign="top" headers="N1022B">#IMPLIED</td>
+
+<td valign="top" headers="N10231">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10219">%id-atts; (id, conref)</td>
+
+<td valign="top" headers="N1021F">A set of related attributes, described at <a href="../common/id-atts.html" title="ID attributes (%id-atts;) is a parameter entity declaration in the topic DTD that includes attributes that enable the naming and referencing of elements in a DITA topic: id and conref.">%id-atts;</a></td>
+
+<td valign="top" headers="N10225">parameter entity</td>
+
+<td valign="top" headers="N1022B">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10231">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10219">%localization-atts; (translate, xml:lang, dir)</td>
+
+<td valign="top" headers="N1021F"> A set of related attributes, described at <a href="../common/localization-atts.html" title="Localization attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%localization-atts;</a>.
+</td>
+
+<td valign="top" headers="N10225">parameter entity</td>
+
+<td valign="top" headers="N1022B">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10231">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10219">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N1021F">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N10225">parameter entity</td>
+
+<td valign="top" headers="N1022B">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10231">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10219">class, outputclass</td>
+
+<td valign="top" headers="N1021F">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N10225">&#xA0;</td>
+<td valign="top" headers="N1022B">&#xA0;</td>
+<td valign="top" headers="N10231">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/task2.html" title="Task topics answer &quot;How do I?&quot; questions, and have a well-defined structure that describes how to complete a procedure to accomplish a specific goal. Use the task topic to describe the steps of a particular task, or to provide an overview of a higher-level task. The task topic includes sections for describing the context, prerequisites, actual steps, expected results, example, and expected next steps for a task. For more details on when to use task and other information types, please refer to the DITA architectural specification.">Task elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/steps-unordered.html" title="Like the &lt;steps&gt; element, the &lt;steps-unordered&gt; section of a task provides the main content of the task topic, but particularly for cases in which the order of steps may vary from one situation to another. One or more steps is required inside the &lt;steps-unordered&gt; section.">steps-unordered</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/cmd.html" title="The command (&lt;cmd&gt;) element is required as the first element inside a &lt;step&gt;. It provides the active voice instruction to the user for completing the step, and should not be more than one sentence. If the step needs additional explanation, this can follow the &lt;cmd&gt; element inside an &lt;info &gt; element.">cmd</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

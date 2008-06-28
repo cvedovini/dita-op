@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="related-links" />
+<meta name="abstract" content="The related information links of a topic (&lt;related-links&gt; element) are stored in a special section following the body of the topic. After a topic is processed into it final output form, the related links are usually displayed at the end of the topic, although some Web-based help systems might display them in a separate navigation frame." />
+<meta name="description" content="The related information links of a topic (&lt;related-links&gt; element) are stored in a special section following the body of the topic. After a topic is processed into it final output form, the related links are usually displayed at the end of the topic, although some Web-based help systems might display them in a separate navigation frame." />
+<meta content="related-links, Topic elements, Related Links" name="DC.subject" />
+<meta content="related-links, Topic elements, Related Links" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/topic2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/example.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="related-links" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>related-links</title>
+</head>
+<body id="related-links"><a name="related-links"><!-- --></a>
+
+
+<h1 class="topictitle1">related-links</h1>
+
+
+
+<div><p>The related information links of a topic (&lt;<span class="keyword">related-links</span>&gt;
+element) are stored in a special section following the body of the topic.
+After a topic is processed into it final output form, the related links are
+usually displayed at the end of the topic, although some Web-based help systems
+might display them in a separate navigation frame.</p>
+
+<div class="section">       <div class="note"><span class="notetitle">Processing notes:</span>          <br /><ol>
+<li>Prerequisite links are an exception (that is, in which <em><span class="keyword">importance</span>="required"</em> and
+the role is compatible–not ancestor/parent/child/descendant/next). Implementations
+may (but need not) sort these after the &lt;<span class="keyword">shortdesc</span>&gt;
+(all topics) or after the &lt;<span class="keyword">prereq</span>&gt; section (for tasks).</li>
+
+<li>PDF output typically ignores hierarchical links, for example ancestor/parent/child/descendant/next/previous/sibling,
+although it may include some child links to produce summaries at the start
+of chapters.</li>
+
+<li>Links not in a &lt;<span class="keyword">linklist</span>&gt; will be sorted on output
+based on type, role, and importance.</li>
+
+<li>The value of the <em>               <span class="keyword">format</span>         
+   </em> attribute defaults to <span class="q">"dita"</span> unless the attribute <em><span class="keyword">scope</span>="external",</em> when
+format is assumed to be not-dita.</li>
+
+</ol>
+       </div>
+     </div>
+
+<div class="example" />
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100FE" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N10103" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N1010D" headers="N100FE"><strong>ditabase, topic, task, reference, concept, glossary</strong></td>
+<td valign="top" headers="N10103 N1010D"> (
+<a href="../common/../langref/link.html" title="The &lt;link&gt; element defines a relationship to another topic. Links represent the types and roles of topics in a web of information, and therefore represent navigational links within that web. Links are typically sorted on output based on their attributes. The optional container elements for link (&lt;linkpool&gt; and &lt;linklist&gt;) allow authors to define groups with common attributes, or to preserve the authored sequence of links on output. Links placed in a &lt;linkpool&gt; may be rearranged for display purposes (combined with other local or map-based links); links in a &lt;linklist&gt; should be displayed in the order they are defined. Refer to those elements for additional explanation.">link</a> or 
+<a href="../common/../langref/linklist.html" title="The &lt;linklist&gt; element defines an author-arranged group of links. Within &lt;linklist&gt;, the organization of links on final output is in the same order as originally authored in the DITA topic.">linklist</a> or 
+<a href="../common/../langref/linkpool.html" title="The &lt;linkpool&gt; element defines a group of links that have common characteristics, such as type or audience or source. When links are not in a &lt;linklist&gt; (that is, they are in &lt;related-links&gt; or &lt;linkpool&gt; elements), the organization of links on final output is determined by the output process, not by the order that the links actually occur in the DITA topic.">linkpool</a>) <em> (one or more) </em></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N1016F" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N10174" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N1017E" headers="N1016F"><strong>ditabase</strong></td>
+<td valign="top" headers="N10174 N1017E"><a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a>, <a href="../common/../langref/concept.html" title="The &lt;concept&gt; element is the top-level element for a topic that answers the question what is? Concepts provide background information that users must know before they can successfully work with a product or interface. Often, a concept is an extended definition of a major abstraction such as a process or function. It might also have an example or a graphic, but generally the structure of a concept is fairly simple.">concept</a>, <a href="../common/../langref/task.html" title="The &lt;task&gt; element is the top-level element for a task topic. Tasks are the main building blocks for task-oriented user assistance. They generally provide step-by-step instructions that will enable a user to perform a task. A task answers the question of &quot;how to?&quot; by telling the user precisely what to do and the order in which to do it. Tasks have the same high-level structure as other topics, with a title, short description and body.">task</a>, <a href="../common/../langref/reference.html" title="The &lt;reference&gt; element defines a top-level container for a reference topic. Reference topics document programming constructs or facts about a product. Examples of reference topics include language elements, class descriptions, commands, functions, statements, protocols, types, declarators, operands, and API information, which provide quick access to facts, but no explanation of concepts or procedures. Reference topics have the same high-level structure as any other topic type, with a title, short description, and body. Within the body, reference topics are typically organized into one or more sections, property lists, and tables. The reference topic type provides general rules that apply to all kinds of reference information, using elements like &lt;refsyn&gt; for syntax or signatures, and &lt;properties&gt; for lists of properties and values.">reference</a>, <a href="../common/../langref/glossentry.html" title="The &lt;glossentry&gt; element defines a single sense of a glossary term. The expected book processing is to sort and group the glossary entries based on the localized term so a back-of-the-book glossary can contain a collated list of terms with the definitions of the senses of the terms indented under the terms. The glossary can have a different organization in different languages depending on the translation of the terms. One possible online processing is to associate a hotspot for mentions of terms in &lt;term&gt; elements and display the definition on hover or click. Glossary entries for different term senses can be reused independently of one another.">glossentry</a></td>
+</tr>
+
+<tr><td valign="top" id="N10212" headers="N1016F"><strong>topic</strong></td>
+<td valign="top" headers="N10174 N10212"><a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a></td>
+</tr>
+
+<tr><td valign="top" id="N10248" headers="N1016F"><strong>task</strong></td>
+<td valign="top" headers="N10174 N10248"><a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a>, <a href="../common/../langref/task.html" title="The &lt;task&gt; element is the top-level element for a task topic. Tasks are the main building blocks for task-oriented user assistance. They generally provide step-by-step instructions that will enable a user to perform a task. A task answers the question of &quot;how to?&quot; by telling the user precisely what to do and the order in which to do it. Tasks have the same high-level structure as other topics, with a title, short description and body.">task</a></td>
+</tr>
+
+<tr><td valign="top" id="N1028F" headers="N1016F"><strong>concept</strong></td>
+<td valign="top" headers="N10174 N1028F"><a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a>, <a href="../common/../langref/concept.html" title="The &lt;concept&gt; element is the top-level element for a topic that answers the question what is? Concepts provide background information that users must know before they can successfully work with a product or interface. Often, a concept is an extended definition of a major abstraction such as a process or function. It might also have an example or a graphic, but generally the structure of a concept is fairly simple.">concept</a></td>
+</tr>
+
+<tr><td valign="top" id="N102DE" headers="N1016F"><strong>reference</strong></td>
+<td valign="top" headers="N10174 N102DE"><a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a>, <a href="../common/../langref/reference.html" title="The &lt;reference&gt; element defines a top-level container for a reference topic. Reference topics document programming constructs or facts about a product. Examples of reference topics include language elements, class descriptions, commands, functions, statements, protocols, types, declarators, operands, and API information, which provide quick access to facts, but no explanation of concepts or procedures. Reference topics have the same high-level structure as any other topic type, with a title, short description, and body. Within the body, reference topics are typically organized into one or more sections, property lists, and tables. The reference topic type provides general rules that apply to all kinds of reference information, using elements like &lt;refsyn&gt; for syntax or signatures, and &lt;properties&gt; for lists of properties and values.">reference</a></td>
+</tr>
+
+<tr><td valign="top" id="N10331" headers="N1016F"><strong>glossary</strong></td>
+<td valign="top" headers="N10174 N10331"><a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a>, <a href="../common/../langref/concept.html" title="The &lt;concept&gt; element is the top-level element for a topic that answers the question what is? Concepts provide background information that users must know before they can successfully work with a product or interface. Often, a concept is an extended definition of a major abstraction such as a process or function. It might also have an example or a graphic, but generally the structure of a concept is fairly simple.">concept</a>, <a href="../common/../langref/glossentry.html" title="The &lt;glossentry&gt; element defines a single sense of a glossary term. The expected book processing is to sort and group the glossary entries based on the localized term so a back-of-the-book glossary can contain a collated list of terms with the definitions of the senses of the terms indented under the terms. The glossary can have a different organization in different languages depending on the translation of the terms. One possible online processing is to associate a hotspot for mentions of terms in &lt;term&gt; elements and display the definition on hover or click. Glossary entries for different term senses can be reused independently of one another.">glossentry</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- topic/related-links </p>
+</div>
+
+<div class="section" id="related-links__attrs"><a name="related-links__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2>              <a name="related-links__related-links_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="related-links__related-links_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N103BB" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N103C1" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N103C7" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N103CD" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N103D3" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N103BB">type</td>
+
+<td valign="top" headers="N103C1">Describes the target of a cross-reference. See <a href="../common/thetypeattribute.html" title="The type attribute is most often used on linking elements to describe the target of a cross-reference. It is also used on the note element to describe the type of the current note, and on several other elements for varying purposes.">The type attribute</a> for
+detailed information on supported values and processing implications.</td>
+
+<td valign="top" headers="N103C7">CDATA</td>
+
+<td valign="top" headers="N103CD">#IMPLIED (Processed as if the target were of type "topic", or inherited from an ancestor)</td>
+
+<td valign="top" headers="N103D3"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N103BB">role</td>
+
+<td valign="top" headers="N103C1"><span id="related-links__N91D48"><a name="related-links__N91D48"><!-- --></a>The role attribute defines the role the
+target topic plays in relationship with the current topic. For example, in
+a parent/child relationship, the role would be "parent" when the
+target is the parent of the current topic, and "child" when the
+target is the child of the current topic. This structure could be used to
+sort and classify links at display time. </span> See <a href="../common/theroleattribute.html" title="The role attribute defines the role the target topic plays in relationship with the current topic. For example, in a parent/child relationship, the role would be &quot;parent&quot; when the target is the parent of the current topic, and &quot;child&quot; when the target is the child of the current topic. This structure could be used to sort and classify links at display time.">The role attribute</a> for
+information on supported values.</td>
+
+<td valign="top" headers="N103C7">(parent | child | sibling | friend | next | previous | cousin | ancestor
+| descendant | <em>               <span class="keyword">sample | external | [deprecated]</span> 
+           </em> other | -dita-use-conref-target)</td>
+
+<td valign="top" headers="N103CD">#IMPLIED</td>
+
+<td valign="top" headers="N103D3">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N103BB">otherrole</td>
+
+<td valign="top" headers="N103C1">Indicates an alternate role. This value is used when the role attribute
+is set to other.</td>
+
+<td valign="top" headers="N103C7">CDATA</td>
+
+<td valign="top" headers="N103CD">#IMPLIED</td>
+
+<td valign="top" headers="N103D3">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N103BB">format</td>
+
+<td valign="top" headers="N103C1">The format attribute identifies the format of the resource being
+cross referenced. See <a href="../common/theformatattribute.html" title="The format attribute identifies the format of the resource being cross referenced. The processing default for format is dita. If no value is specified, but the attribute is specified on an ancestor within a map or within the related-links section, the value will inherit from the closest ancestor.">The format attribute</a> for details
+on supported values.</td>
+
+<td valign="top" headers="N103C7">CDATA</td>
+
+<td valign="top" headers="N103CD">#IMPLIED</td>
+
+<td valign="top" headers="N103D3">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N103BB">scope</td>
+
+<td valign="top" headers="N103C1">The scope attribute identifies the closeness of the relationship
+between the current document and the target resource. <br /><ul>
+<li>Set scope to <samp class="codeph">local</samp> when the resource is part of the current
+set of content.</li>
+
+<li> Set scope to <samp class="codeph">peer</samp> when the resource is part of the current
+set of content but is not accessible at build time.</li>
+
+<li> Set scope to <samp class="codeph">external</samp> when the resource is not part
+of the current information set and should open in a new browser window.</li>
+
+<li>See <a href="../common/ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">Using the -dita-use-conref-target value</a> for more information
+on -dita-use-conref-target.</li>
+
+</ul>
+ The processing default is <samp class="codeph">local</samp>.  <span>If no value is
+specified, but the attribute is specified on an ancestor within a map or within
+the related-links section, the value will inherit from the closest ancestor.</span></td>
+
+<td valign="top" headers="N103C7">(local | peer | external | -dita-use-conref-target)</td>
+
+<td valign="top" headers="N103CD">#IMPLIED</td>
+
+<td valign="top" headers="N103D3"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N103BB">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N103C1">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N103C7">parameter entity</td>
+
+<td valign="top" headers="N103CD">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N103D3">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N103BB">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N103C1">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N103C7">parameter entity</td>
+
+<td valign="top" headers="N103CD">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N103D3">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N103BB">class, outputclass</td>
+
+<td valign="top" headers="N103C1">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N103C7">&#xA0;</td>
+<td valign="top" headers="N103CD">&#xA0;</td>
+<td valign="top" headers="N103D3">&#xA0;</td>
+
+</tr>
+
+</table>
+     </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/topic2.html" title="Use the generic topic structure for untyped topics. While much of the DITA architecture is built upon generic topics, it is generally better to use more specific information types (such as concept, task, or reference) when they are available. For an answer to the question &quot;What are topics?&quot; and more details on when to use different information types, please refer to the DITA architectural specification.">Topic elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/example.html" title="The &lt;example&gt; element is a section with the specific role of containing examples that illustrate or support the current topic. The &lt;example&gt; element has the same content model as &lt;section&gt;.">example</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

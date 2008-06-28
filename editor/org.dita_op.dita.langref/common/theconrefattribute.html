@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="The conref attribute" />
+<meta name="abstract" content="This attribute is used to reference an ID on content that can be reused. It allows reuse of DITA components from phrases to topics, as well as maps and pieces of maps." />
+<meta name="description" content="This attribute is used to reference an ID on content that can be reused. It allows reuse of DITA components from phrases to topics, as well as maps and pieces of maps." />
+<meta scheme="URI" name="DC.Relation" content="../common/complexattributedefinitions.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/thetypeattribute.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/ditauseconreftarget.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="theconrefattribute" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>The conref attribute</title>
+</head>
+<body id="theconrefattribute"><a name="theconrefattribute"><!-- --></a>
+
+
+<h1 class="topictitle1">The conref attribute</h1>
+
+
+<div><p>This attribute is used to reference an ID on content that can be
+reused. It allows reuse of DITA components from phrases to topics, as well
+as maps and pieces of maps.</p>
+
+<div class="section">Full details on how to resolve the conref attribute can be found
+in the DITA Architectural specification. This topic primarily includes information
+on the actual syntax required when using the conref attribute. <div class="note"><span class="notetitle">Note:</span> When
+using the conref attribute on an element, the content of that element is ignored.
+For example, if a phrase is marked up like this:<pre class="codeblock">&lt;ph conref="#topic/ph"&gt;Something&lt;/ph&gt;</pre>
+ the
+word "Something" will be replaced by the target of the conref.</div>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Using conref to refer to a topic</h2><p>The conref
+attribute may be specified on a topic element to pull in another topic. For
+example, you could create a series of topics in a composite (ditabase) document
+or nested context for authoring convenience and then reference
+each topic individually into a new target location. During output processing,
+a lookup process will pull the contents of the first topic into the calling
+topic markup that has the conref attribute.</p>
+<p>The conref value follows
+the same conventions as HTML for normal file links. To refer to target content
+in a different file, put the full URL of that topic before the # character.</p>
+<pre class="pre">Target elsewhere in the same file: 
+  conref="#topicid"
+First topic in different file: 
+  conref="filename.xml"
+Specific topic in different file: 
+  conref="filename.xml#topicid"</pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Using conref to refer to an element within a topic</h2><p>The
+conref attribute also allows you to reuse content within a topic. For example,
+you could create a &lt;note&gt; in a topic and then reference its ID (using
+conref) from a &lt;note&gt; in another topic. This allows the content of the
+note to be used in both locations.</p>
+<p>The value of conref is a URI that
+includes (or consists entirely of) a  fragment identifier consisting a number
+sign ('#') followed by the ID of the topic that contains the element that
+is the target of the content reference, a slash ("/"), and  the ID of the
+target element. If the URI consists of only a fragment  identifier, the target
+element must be in the same XML document as the  reference.</p>
+<pre class="pre">Local target: 
+  conref="#topicid/elementid"
+In different file: 
+  conref="filename.xml#topicid/elementid"</pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Using conref to refer to an element within a map</h2><p>Within
+a map, the conref attribute references an equivalent element in  the same
+map or another map. The value of conref is a URI that includes (or consists
+ entirely of) a fragment identifier consisting of the number sign ('#') followed
+by the ID of the target  element. If the URI consists of only a fragment identifier,
+the target  element must be in the same XML document as the reference.</p>
+<p>Note
+that if the conref attribute is used on the map element itself, the attribute
+may only point to a complete map in another file or resource.</p>
+<pre class="pre">Local target:
+  conref="#elementID"
+In different file:
+  conref="othermap.ditamap#elementID"</pre>
+</div>
+
+</div>
+
+<div>
+<ul class="ullinks">
+<li class="ulchildlink"><strong><a href="../common/ditauseconreftarget.html">Using the -dita-use-conref-target value</a></strong><br />
+The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of "-dita-use-conref-target" should also be pulled in from the target.</li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/complexattributedefinitions.html" title="Several DITA attributes require more explanation than can fit in a single table cell. Those attributes are collected here.">Complex attribute definitions</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../common/thetypeattribute.html" title="The type attribute is most often used on linking elements to describe the target of a cross-reference. It is also used on the note element to describe the type of the current note, and on several other elements for varying purposes.">The type attribute</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

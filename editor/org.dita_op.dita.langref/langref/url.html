@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="url" />
+<meta name="abstract" content="The &lt;url&gt; element contains a Uniform Resource Locator (URL)." />
+<meta name="description" content="The &lt;url&gt; element contains a Uniform Resource Locator (URL)." />
+<meta content="xNAL, url" name="DC.subject" />
+<meta content="xNAL, url" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/xnal-d.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/thoroughfare.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/urls.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="url" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>url</title>
+</head>
+<body id="url"><a name="url"><!-- --></a>
+
+
+<h1 class="topictitle1">url</h1>
+
+
+
+<div><p>The &lt;url&gt; element contains a Uniform Resource Locator (URL). </p>
+
+<div class="example"><pre class="pre">&lt;organizationinfo&gt;
+ &lt;namedetails&gt;
+  &lt;organizationnamedetails&gt;
+   &lt;organizationname&gt;WizardWorks, Inc.&lt;/organizationname&gt;
+   &lt;otherinfo&gt;'Best wizard in Oz'&lt;/otherinfo&gt;
+  &lt;organizationnamedetails&gt;
+ &lt;/namedetails&gt;
+ &lt;addressdetails&gt;
+  &lt;thoroughfare&gt;123 Yellow Brick Road&lt;/thoroughfare&gt;
+  &lt;locality&gt;Emerald City&lt;/locality&gt;
+  &lt;administrativearea&gt;Kansas&lt;/administrativearea&gt;
+  &lt;country&gt;USA&lt;/country&gt;
+ &lt;/addressdetails&gt;
+ &lt;contactnumbers&gt;&lt;contactnumber&gt;123-555-4678&lt;/contactnumber&gt;&lt;/contactnumbers&gt;
+ &lt;emailaddresses&gt;&lt;emailaddress&gt;wizard@example.org&lt;/emailaddress&gt;&lt;/emailaddresses&gt;
+ <strong>&lt;urls&gt;&lt;url&gt;www.wizardworks.example.org&lt;/url&gt;&lt;/urls&gt;</strong>
+&lt;/organizationinfo&gt;</pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N10093" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N10098" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100A2" headers="N10093"><strong>bookmap</strong></td>
+<td valign="top" headers="N10098 N100A2"> (
+ text data  or <a href="../common/../langref/keyword.html" title="The &lt;keyword&gt; element identifies a keyword or token, such as a single value from an enumerated list, the name of a command or parameter, product name, or a lookup key for a message.">keyword</a> or <a href="../common/../langref/term.html" title="The &lt;term&gt; element identifies words that may have or require extended definitions or explanations. In future development of DITA, for example, terms might provide associative linking to matching glossary entries.">term</a> or <a href="../common/../langref/data.html" title="The &lt;data&gt; element represents a property within a DITA topic or map. While the &lt;data&gt; element can be used directly to capture properties, it is particularly useful as a basis for specialization. Default processing treats the property values as an unknown kind of metadata, but custom processing can match the name attribute or specialized element to format properties as sidebars or other adornments or to harvest properties for automated processing.">data</a> or <a href="../common/../langref/data-about.html" title="The &lt;data-about&gt; element identifies the subject of a property when the subject isn't associated with the context in which the property is specified. The property itself is expressed by the &lt;data&gt; element. The &lt;data-about&gt; element handles exception cases where a property must be expressed somewhere other than inside the actual subject of the property. The &lt;data-about&gt; element is particularly useful as a basis for specialization in combination with the &lt;data&gt; element.">data-about</a> or <a href="../common/../langref/foreign.html" title="The &lt;foreign&gt; element is an open extension that allows information architects to incorporate existing standard vocabularies for non-textual content. like MathML and SVG, as inline objects. If &lt;foreign&gt; contains more than one alternative content element, they will all be processed. Specialization of &lt;foreign&gt; should be implemented as a domain, but for those looking for more control over the content can implement foreign vocabulary as an element specialization.">foreign</a> or <a href="../common/../langref/unknown.html" title="The &lt;unknown&gt; element is an open extension that allows information architects to incorporate xml fragments that do not necessarily fit into an existing DITA use case. The base processing for &lt;unknown&gt; is to suppress unless otherwise instructed.">unknown</a>) <em> (any number) </em></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N10144" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N10149" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N10153" headers="N10144"><strong>bookmap</strong></td>
+<td valign="top" headers="N10149 N10153"><a href="../common/../langref/urls.html" title="The &lt;urls&gt; element contains a list of Uniform Resource Locators (URLs).">urls</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>+ topic/data xnal-d/url </p>
+</div>
+
+<div class="section" id="url__attrs"><a name="url__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="url__url_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="url__url_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N1018E" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N10194" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N1019A" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N101A0" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N101A6" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1018E">name</td>
+
+<td valign="top" headers="N10194">Defines a unique name for the
+object.</td>
+
+<td valign="top" headers="N1019A">CDATA</td>
+
+<td valign="top" headers="N101A0">#IMPLIED</td>
+
+<td valign="top" headers="N101A6">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1018E">datatype</td>
+
+<td valign="top" headers="N10194">Describes the type of data contained in the value attribute or within
+the data element. A typical use of datatype will be the identifying URI for
+an XML Schema datatype.</td>
+
+<td valign="top" headers="N1019A">CDATA</td>
+
+<td valign="top" headers="N101A0">#IMPLIED</td>
+
+<td valign="top" headers="N101A6">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1018E">value</td>
+
+<td valign="top" headers="N10194">Specifies the value of a run-time parameter specified by the name
+attribute.</td>
+
+<td valign="top" headers="N1019A">CDATA</td>
+
+<td valign="top" headers="N101A0">#IMPLIED</td>
+
+<td valign="top" headers="N101A6">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1018E">href</td>
+
+<td valign="top" headers="N10194">A hyperlink to an external Web page (URL) or other non-DITA resource,
+or to another DITA topic in the same file or in another file. The format attribute
+identifies the format of the target. Non-DITA targets use standard URL syntax.
+DITA topics are targetted as follows:<pre class="pre">Target elsewhere in the same file:
+  href="#topicid"
+First topic in different file:
+  href="filename.dita"
+Specific topic in different file:
+  href="filename.dita#topicid"</pre>
+<p>If the URL contains an ampersand
+character, the ampersand symbol (&amp;amp;) should be used to indicate that
+character</p>
+</td>
+
+<td valign="top" headers="N1019A">CDATA</td>
+
+<td valign="top" headers="N101A0">#IMPLIED</td>
+
+<td valign="top" headers="N101A6"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1018E">format</td>
+
+<td valign="top" headers="N10194">The format attribute identifies the format of the resource being
+cross referenced. See <a href="../common/theformatattribute.html" title="The format attribute identifies the format of the resource being cross referenced. The processing default for format is dita. If no value is specified, but the attribute is specified on an ancestor within a map or within the related-links section, the value will inherit from the closest ancestor.">The format attribute</a> for details
+on supported values.</td>
+
+<td valign="top" headers="N1019A">CDATA</td>
+
+<td valign="top" headers="N101A0">#IMPLIED</td>
+
+<td valign="top" headers="N101A6">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1018E">type</td>
+
+<td valign="top" headers="N10194">Describes the target of a cross-reference. See <a href="../common/thetypeattribute.html" title="The type attribute is most often used on linking elements to describe the target of a cross-reference. It is also used on the note element to describe the type of the current note, and on several other elements for varying purposes.">The type attribute</a> for
+detailed information on supported values and processing implications.</td>
+
+<td valign="top" headers="N1019A">CDATA</td>
+
+<td valign="top" headers="N101A0">#IMPLIED (Processed as if the target were of type "topic", or inherited from an ancestor)</td>
+
+<td valign="top" headers="N101A6"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1018E">scope</td>
+
+<td valign="top" headers="N10194">The scope attribute identifies the closeness of the relationship
+between the current document and the target resource. <br /><ul>
+<li>Set scope to <samp class="codeph">local</samp> when the resource is part of the current
+set of content.</li>
+
+<li> Set scope to <samp class="codeph">peer</samp> when the resource is part of the current
+set of content but is not accessible at build time.</li>
+
+<li> Set scope to <samp class="codeph">external</samp> when the resource is not part
+of the current information set and should open in a new browser window.</li>
+
+<li>See <a href="../common/ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">Using the -dita-use-conref-target value</a> for more information
+on -dita-use-conref-target.</li>
+
+</ul>
+ The processing default is <samp class="codeph">local</samp>.  <span>If no value is
+specified, but the attribute is specified on an ancestor within a map or within
+the related-links section, the value will inherit from the closest ancestor.</span></td>
+
+<td valign="top" headers="N1019A">(local | peer | external | -dita-use-conref-target)</td>
+
+<td valign="top" headers="N101A0">#IMPLIED</td>
+
+<td valign="top" headers="N101A6"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1018E">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N10194">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N1019A">parameter entity</td>
+
+<td valign="top" headers="N101A0">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N101A6">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1018E">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N10194">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N1019A">parameter entity</td>
+
+<td valign="top" headers="N101A0">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N101A6">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1018E">class, outputclass</td>
+
+<td valign="top" headers="N10194">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N1019A">&#xA0;</td>
+<td valign="top" headers="N101A0">&#xA0;</td>
+<td valign="top" headers="N101A6">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/xnal-d.html" title="The xNAL domain elements represent a subset of the Extensible Name and Address Standard. The domain can be included in any topic type or map, although the implementations provided by OASIS only include it in the bookmap specialization. It is used to encode information about the author or authors of DITA information.">xNAL domain elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/thoroughfare.html" title="The &lt;thoroughfare&gt; element contains information about the thoroughfare - for example, the street, avenue, or boulevard - on which an address is located.">thoroughfare</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/urls.html" title="The &lt;urls&gt; element contains a list of Uniform Resource Locators (URLs).">urls</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

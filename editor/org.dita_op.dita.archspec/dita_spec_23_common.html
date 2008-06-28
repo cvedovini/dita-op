@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Common DITA map attributes and metadata" />
+<meta name="abstract" content="DITA maps have many of the same common attributes as DITA content, but also have some additional ones for controlling the way relationships are interpreted for different output purposes." />
+<meta name="description" content="DITA maps have many of the same common attributes as DITA content, but also have some additional ones for controlling the way relationships are interpreted for different output purposes." />
+<meta scheme="URI" name="DC.Relation" content="dita_spec_23_maps.html" />
+<meta scheme="URI" name="DC.Relation" content="dita_spec_23_whymaps.html" />
+<meta scheme="URI" name="DC.Relation" content="dita_spec_23_mapstruct.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="dita_spec_23_common" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Common DITA map attributes and metadata</title>
+</head>
+<body id="dita_spec_23_common"><a name="dita_spec_23_common"><!-- --></a>
+
+
+<h1 class="topictitle1">Common DITA map attributes and metadata</h1>
+
+
+<div><p>DITA maps have many of the same common attributes as DITA content,
+but also have some additional ones for controlling the way relationships are
+interpreted for different output purposes.</p>
+
+<p>Because DITA maps may encode structures that are wholly or partially specific
+to a particular medium or kind of output (for example, hyperlinked web pages
+or printed books), DITA maps contain attributes to help processors interpret
+the map for each kind of output. These attributes (such as print and toc)
+are not available in DITA content: individual topics, once separated from
+the high-level structures and dependencies associated with a particular kind
+of output, should be entirely reusable across multiple media.</p>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="dita_spec_23_maps.html" title="Maps organize topics for output to a specific deliverable, including generating navigation files and links to related topics.">DITA maps</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="dita_spec_23_whymaps.html" title="Maps allow scalable reuse of content across multiple contexts. They can be used by information architects, writers, and publishers to plan, develop, and deliver content.">Why DITA maps?</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="dita_spec_23_mapstruct.html" title="Maps organize topics into hierarchies, tables, and groups, and have special elements for referencing other maps.">DITA map structure</a></div>
+</div>
+</div>
+<div class="nested1" id="linkatt"><a name="linkatt"><!-- --></a>
+<h2 class="topictitle2">Linking attributes</h2>
+
+
+<div><p>The collection-type and linking attributes affect how related links
+are generated for topics described in the map. </p>
+
+<div class="section"><h3 class="sectiontitle">collection-type</h3>The collection-type attribute indicates
+how a particular set of sibling topicrefs relate to each other. The collection-type
+attribute is set on the container element for the sibling topicrefs. The collection-type
+value can indicate whether to generate links among the siblings, and what
+kind of links to generate (for example, next and previous links for a sequence,
+or sibling links for a family). The collection-type attribute can also indicate
+how the parent topic should link to its children (for example, showing the
+child links as a numbered list when the collection-type is sequence).Where
+the collection-type attribute is available on elements that cannot directly
+contain topicrefs (such as reltable and relcolspec), the behavior
+of the attribute is reserved for future use.</div>
+
+<div class="section"><h3 class="sectiontitle">linking</h3><div class="p">By
+default, relationships between topics in a map are reciprocal: children link
+to parents and vice versa; next and previous topics in a sequence link to
+each other; topics in a family link to their siblings; topics in table cells
+of the same row in a relationship table link to each other. This default behavior
+can be modified using the linking attribute, which lets a topic modify how
+it participates in a relationship:<br /><ul>
+<li> A topic reference with linking="none" does not exist in the map for the
+purposes of calculating links</li>
+
+<li>linking="sourceonly" means that the topic will link to its related topics
+but not vice versa</li>
+
+<li>linking="targetonly" means that the related topics will link to it, but
+not vice versa</li>
+
+<li>linking="normal" is the default, and means that linking will be reciprocal
+(the topic will link to related topics, and they will link back to it)</li>
+
+</ul>
+You can also create links directly in a topic using the &lt;xref&gt; or &lt;link&gt;
+elements, but in many cases map-based linking is preferable, because links
+in topics create dependencies between topics that can hinder reuse.</div>
+<div class="p"><div class="fignone"><span class="figcap">Figure 1. Simple linking example</span>
+
+<pre class="codeblock">&lt;topicref href="A.dita" collection-type="sequence"&gt;
+  &lt;topicref href="A1.dita"/&gt;
+  &lt;topicref href="A2.dita"/&gt;
+&lt;/topicref&gt;
+&lt;reltable&gt;
+  &lt;relrow&gt;
+    &lt;relcell&gt;A.dita&lt;/relcell&gt;
+    &lt;relcell&gt;B.dita&lt;/relcell&gt;
+  &lt;/relrow&gt;
+&lt;/reltable&gt;</pre>
+
+<dl>
+<dt class="dlterm">A</dt>
+
+<dd>links to A1, A2 as children</dd>
+
+<dd class="ddexpand">links to B as related</dd>
+
+
+<dt class="dlterm">A1</dt>
+
+<dd>links to A as a parent</dd>
+
+<dd class="ddexpand">links to A2 as next in the sequence</dd>
+
+
+<dt class="dlterm">A2</dt>
+
+<dd>links to A as a parent</dd>
+
+<dd class="ddexpand">links to A1 as previous in the sequence</dd>
+
+
+<dt class="dlterm">B</dt>
+
+<dd>links to A as related</dd>
+
+</dl>
+
+</div>
+<div class="fignone"><span class="figcap">Figure 2. Linking example with the linking attribute</span>
+<pre class="codeblock">&lt;topicref href="A.dita" collection-type="sequence"&gt;
+  &lt;topicref href="B.dita" linking="none"/&gt;
+  &lt;topicref href="A1.dita"/&gt;
+  &lt;topicref href="A2.dita"/&gt;
+&lt;/topicref&gt;
+&lt;reltable&gt;
+  &lt;relrow&gt;
+    &lt;relcell&gt;A.dita&lt;/relcell&gt;
+    &lt;relcell linking="sourceonly"&gt;B.dita&lt;/relcell&gt;
+  &lt;/relrow&gt;
+&lt;/reltable&gt;</pre>
+
+<dl>
+<dt class="dlterm">A</dt>
+
+<dd>links to A1, A2 as children</dd>
+
+<dd class="ddexpand">(no links to B as a child, no links to B as related)</dd>
+
+
+<dt class="dlterm">A1</dt>
+
+<dd>links to A as a parent</dd>
+
+<dd class="ddexpand">links to A2 as next in the sequence</dd>
+
+<dd class="ddexpand">(no links to B as previous)</dd>
+
+
+<dt class="dlterm">A2</dt>
+
+<dd>links to A as a parent</dd>
+
+<dd class="ddexpand">links to A1 as previous in the sequence</dd>
+
+
+<dt class="dlterm">B</dt>
+
+<dd>links to A as related</dd>
+
+</dl>
+
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="nested1" xml:lang="en-us" id="mediachunkatt"><a name="mediachunkatt"><!-- --></a>
+<h2 class="topictitle2">Navigation, media, and chunking attributes</h2>
+
+
+<div><p>There are standard attributes available for identifying output-media-specific
+content and for rechunking topics.</p>
+
+<div class="section"><h3 class="sectiontitle">toc, navtitle, locktitle</h3>Authors can exclude entries
+from navigation output (such as an online table of contents, or a Web site
+map) using the toc attribute. By default, hierarchies are included in navigation
+output, and tables are excluded. <p>Authors can provide a shorter version
+of the title for use in the navigation using the navtitle attribute. By default
+the navtitle attribute is ignored, and used only to help the author keep track
+of the target topic's title. The locktitle attribute can be set to ensure
+that the navtitle takes effect and overrides any title values in the target
+topic, or defined elsewhere in the topic reference metadata.</p>
+</div>
+
+<div class="section"><h3 class="sectiontitle">print, search</h3>You can set attributes on a topic to
+indicate whether it should be included in printed output and search indexes.</div>
+
+<div class="section"><h3 class="sectiontitle">chunk</h3>When a set of topics is transformed using a map,
+multi-topic files can be broken into smaller files, and multiple individual
+topics can be combined into a single larger file, using the chunk attribute.
+There is no default value for the chunk attribute, but a default for an entire
+map may be established by setting the chunk attribute on the map element or
+a specialization. For a detailed description of the chunk attribute and its
+usage see <a href="chunking.html" title="Content may be chunked (divided or merged into new output documents) in different ways for the purposes of authoring, for delivering content, and for navigation. For example, something best authored as a set of separate topics may need to be delivered as a single Web page. A map author can use the chunk attribute to split up single documents into component topics or combine multiple topics into a single document as part of output processing.">Chunking</a>.</div>
+
+<div class="section"><h3 class="sectiontitle">copy-to</h3>When a set of topics is transformed using a
+map, duplicate topic versions can be created using the copy-to attribute.
+The copied topic will have a new file name or location as provided in the
+copy-to attribute, and the map can override the default title and shortdesc
+for this particular copy by providing values for them in the map using the
+topicref's navtitle and shortdesc. For information on how the copyto attribute
+can be used with the chunk attribute see <a href="chunking.html" title="Content may be chunked (divided or merged into new output documents) in different ways for the purposes of authoring, for delivering content, and for navigation. For example, something best authored as a set of separate topics may need to be delivered as a single Web page. A map author can use the chunk attribute to split up single documents into component topics or combine multiple topics into a single document as part of output processing.">Chunking</a>.</div>
+
+</div>
+
+</div>
+
+<div class="nested1" xml:lang="en-us" id="sharedatt"><a name="sharedatt"><!-- --></a>
+<h2 class="topictitle2">Shared attributes</h2>
+
+
+<div><p>DITA maps use the same metadata and reuse attributes that DITA
+topics use.</p>
+
+<div class="p"><br /><ul>
+<li>product, platform, audience, otherprops, rev, status, importance, xml:lang,
+translate</li>
+
+<li>id, conref</li>
+
+<li>props, base</li>
+
+</ul>
+DITA maps also use many of the same attributes that are used with link
+or xref elements in DITA content:<br /><ul>
+<li>format, scope, href, keyref, type, query</li>
+
+</ul>
+</div>
+
+<p>When new attributes are specialized off of props or base as a domain, they
+may be incorporated into both map and topic structural types.</p>
+
+</div>
+
+</div>
+
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

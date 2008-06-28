@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="colspec" />
+<meta name="abstract" content="The &lt;colspec&gt; element contains a column specification for a table, including assigning a column name and number, cell content alignment, and column width." />
+<meta name="description" content="The &lt;colspec&gt; element contains a column specification for a table, including assigning a column name and number, cell content alignment, and column width." />
+<meta content="colspec, Table elements" name="DC.subject" />
+<meta content="colspec, Table elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/table2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/tgroup.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/thead.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="colspec" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>colspec</title>
+</head>
+<body id="colspec"><a name="colspec"><!-- --></a>
+
+
+<h1 class="topictitle1">colspec</h1>
+
+
+
+<div><p>The &lt;<span class="keyword">colspec</span>&gt; element contains a column
+specification for a table, including assigning a column name and number, cell
+content alignment, and column width.</p>
+
+<div class="example"><h2 class="sectiontitle">Example</h2>See <a href="table.html" title="The &lt;table&gt; element organizes arbitrarily complex relationships of tabular information. This standard table markup allows column or row spanning and table captions or descriptions. An optional title allowed inside the table element provides a caption to describe the table.">table</a>.</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100A3" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100A8" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100B2" headers="N100A3"><strong>ditabase, topic, task, reference, concept, glossary, map, bookmap</strong></td>
+<td valign="top" headers="N100A8 N100B2"> no content </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100D1" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100D6" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N100E0" headers="N100D1"><strong>bookmap, map, ditabase, topic, task, concept, reference, glossary</strong></td>
+<td valign="top" headers="N100D6 N100E0"><a href="../common/../langref/tgroup.html" title="The &lt;tgroup&gt; element in a table contains column, row, spanning, header and footer specifications, and the body (&lt;tbody&gt;) of the table.">tgroup</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- topic/colspec </p>
+</div>
+
+<div class="section" id="colspec__attrs"><a name="colspec__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="colspec__colspec_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="colspec__colspec_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10127" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N1012D" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N10133" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N10139" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N1013F" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10127">colnum</td>
+
+<td valign="top" headers="N1012D">Indicates the number of a column in the table, counting from the
+first logical column to the last column.</td>
+
+<td valign="top" headers="N10133">NMTOKEN</td>
+
+<td valign="top" headers="N10139">#IMPLIED</td>
+
+<td valign="top" headers="N1013F">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10127">colname</td>
+
+<td valign="top" headers="N1012D">Specifies the table column name in which an entry is found.</td>
+
+<td valign="top" headers="N10133">NMTOKEN</td>
+
+<td valign="top" headers="N10139">#IMPLIED</td>
+
+<td valign="top" headers="N1013F">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10127">colwidth</td>
+
+<td valign="top" headers="N1012D">Describes the column width.</td>
+
+<td valign="top" headers="N10133">CDATA</td>
+
+<td valign="top" headers="N10139">#IMPLIED</td>
+
+<td valign="top" headers="N1013F">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10127">colsep</td>
+
+<td valign="top" headers="N1012D">Column separator. A value of 0 indicates no separators; 1 indicates
+separators.</td>
+
+<td valign="top" headers="N10133">NMTOKEN</td>
+
+<td valign="top" headers="N10139">#IMPLIED</td>
+
+<td valign="top" headers="N1013F">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10127">rowsep</td>
+
+<td valign="top" headers="N1012D">Row separator. A value of 0 indicates no separators; 1 indicates
+separators.</td>
+
+<td valign="top" headers="N10133">NMTOKEN</td>
+
+<td valign="top" headers="N10139">#IMPLIED</td>
+
+<td valign="top" headers="N1013F">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10127">align</td>
+
+<td valign="top" headers="N1012D">Describes the alignment of text in a table column. Allowable values
+are:<dl>
+<dt class="dlterm">left</dt>
+
+<dd>Indicates left alignment of the text.</dd>
+
+
+<dt class="dlterm">right</dt>
+
+<dd>Indicates right alignment of the text.</dd>
+
+
+<dt class="dlterm">center</dt>
+
+<dd>Indicates center alignment of the text.</dd>
+
+
+<dt class="dlterm">justify</dt>
+
+<dd>Justifies the contents to both the left and the right.</dd>
+
+
+<dt class="dlterm"><a name="colspec__N90527"><!-- --></a>-dita-use-conref-target</dt>
+
+<dd>See <a href="../common/ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">Using the -dita-use-conref-target value</a> for more information.</dd>
+
+</dl>
+</td>
+
+<td valign="top" headers="N10133">(left | right | center | justify | char | -dita-use-conref-target)</td>
+
+<td valign="top" headers="N10139">#IMPLIED</td>
+
+<td valign="top" headers="N1013F">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10127">char</td>
+
+<td valign="top" headers="N1012D">alignment character <p>Default source for entry elements starting
+in this column. If character alignment is specified, the value is the single
+alignment character source for any implied char values for entry immediately
+in this column. A value of "" (the null string) means there is no
+aligning character.</p>
+</td>
+
+<td valign="top" headers="N10133">CDATA</td>
+
+<td valign="top" headers="N10139">#IMPLIED</td>
+
+<td valign="top" headers="N1013F">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10127">charoff</td>
+
+<td valign="top" headers="N1012D">horizontal offset of alignment character when align=char <p>Default
+source for entry elements starting in this column. For character alignment
+on an entry in the column, horizontal character offset is the percent of the
+current column width to the left of the (left edge of the) alignment character.</p>
+<p>This
+value should be number, greater than 0 and less than or equal to 100.</p>
+</td>
+
+<td valign="top" headers="N10133">NMTOKEN</td>
+
+<td valign="top" headers="N10139">#IMPLIED</td>
+
+<td valign="top" headers="N1013F">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10127">base</td>
+
+<td valign="top" headers="N1012D">A generic attribute that has no specific purpose, but is intended
+to act as a base for specialized attributes that have a simple value syntax
+like the conditional processing attributes (one or more alphanumeric values
+separated by whitespace). <span>The attribute takes a space delimited set of
+values. However, when acting as a container for generalized attributes, the
+content model will be more complex; that model is documented in the "attribute
+generalization" section of the DITA architectural specification.</span></td>
+
+<td valign="top" headers="N10133">CDATA</td>
+
+<td valign="top" headers="N10139">#IMPLIED</td>
+
+<td valign="top" headers="N1013F">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10127">%id-atts; (id, conref)</td>
+
+<td valign="top" headers="N1012D">A set of related attributes, described at <a href="../common/id-atts.html" title="ID attributes (%id-atts;) is a parameter entity declaration in the topic DTD that includes attributes that enable the naming and referencing of elements in a DITA topic: id and conref.">%id-atts;</a></td>
+
+<td valign="top" headers="N10133">parameter entity</td>
+
+<td valign="top" headers="N10139">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1013F">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10127">%localization-atts; (translate, xml:lang, dir)</td>
+
+<td valign="top" headers="N1012D"> A set of related attributes, described at <a href="../common/localization-atts.html" title="Localization attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%localization-atts;</a>.
+</td>
+
+<td valign="top" headers="N10133">parameter entity</td>
+
+<td valign="top" headers="N10139">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1013F">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10127">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N1012D">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N10133">parameter entity</td>
+
+<td valign="top" headers="N10139">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1013F">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10127">class</td>
+
+<td valign="top" headers="N1012D">A common attribute described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N10133">&#xA0;</td>
+<td valign="top" headers="N10139">&#xA0;</td>
+<td valign="top" headers="N1013F">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/table2.html">Table elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/tgroup.html" title="The &lt;tgroup&gt; element in a table contains column, row, spanning, header and footer specifications, and the body (&lt;tbody&gt;) of the table.">tgroup</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/thead.html" title="The table header (&lt;thead&gt;) element precedes the table body (&lt;tbody&gt;) element in a complex table.">thead</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

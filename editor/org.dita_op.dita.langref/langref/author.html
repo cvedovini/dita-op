@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="author" />
+<meta name="abstract" content="The &lt;author&gt; metadata element contains the name of the topic's author." />
+<meta name="description" content="The &lt;author&gt; metadata element contains the name of the topic's author." />
+<meta content="author, topic author, Prolog elements" name="DC.subject" />
+<meta content="author, topic author, Prolog elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/prolog2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/audience.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/brand.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="author" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>author</title>
+</head>
+<body id="author"><a name="author"><!-- --></a>
+
+
+<h1 class="topictitle1">author</h1>
+
+
+
+<div><p>The &lt;<span class="keyword">author</span>&gt; metadata element contains
+the name of the topic's author. </p>
+
+<div class="example"><h2 class="sectiontitle">Example</h2><pre class="codeblock">&lt;prolog&gt;
+&lt;author type="creator"&gt;Jane Roe&lt;/author&gt;
+&lt;author type="contributor"&gt;John Doe&lt;/author&gt;
+&lt;/prolog&gt;</pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N1009D" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100A2" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100AC" headers="N1009D"><strong>ditabase, topic, task, reference, concept</strong></td>
+<td valign="top" headers="N100A2 N100AC"> (
+ text data  or <a href="../common/../langref/keyword.html" title="The &lt;keyword&gt; element identifies a keyword or token, such as a single value from an enumerated list, the name of a command or parameter, product name, or a lookup key for a message.">keyword</a> or <a href="../common/../langref/option.html" title="The &lt;option&gt; element describes an option that can be used to modify a command (or something else, like a configuration). This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">option</a> or <a href="../common/../langref/parmname.html" title="When referencing the name of an application programming interface parameter within the text flow of your topic, use the parameter name (&lt;parmname&gt;) element to markup the parameter. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">parmname</a> or <a href="../common/../langref/apiname.html" title="The &lt;apiname&gt; element provides the name of an application programming interface (API) such as a Java class name or method name. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">apiname</a> or <a href="../common/../langref/cmdname.html" title="The command name (&lt;cmdname&gt;) element specifies the name of a command when it is part of a software discussion. This element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">cmdname</a> or <a href="../common/../langref/msgnum.html" title="The message number (&lt;msgnum&gt;) element contains the number of a message produced by an application or program. This element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">msgnum</a> or <a href="../common/../langref/varname.html" title="The variable name (&lt;varname&gt;) element defines a variable that must be supplied to a software application. The variable name element is very similar to the variable (var) element, but variable name is used outside of syntax diagrams. This element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">varname</a> or <a href="../common/../langref/wintitle.html" title="The window title &lt;wintitle&gt; element can be used to mark up names of windows or dialogs, or other user interface elements at the same level of grouping, including wizard titles, wizard page titles, and window pane titles. This element is part of the DITA user interface domain, a special set of DITA elements designed to document user interface tasks, concepts and reference information.">wintitle</a> or <a href="../common/../langref/term.html" title="The &lt;term&gt; element identifies words that may have or require extended definitions or explanations. In future development of DITA, for example, terms might provide associative linking to matching glossary entries.">term</a> or <a href="../common/../langref/data.html" title="The &lt;data&gt; element represents a property within a DITA topic or map. While the &lt;data&gt; element can be used directly to capture properties, it is particularly useful as a basis for specialization. Default processing treats the property values as an unknown kind of metadata, but custom processing can match the name attribute or specialized element to format properties as sidebars or other adornments or to harvest properties for automated processing.">data</a> or <a href="../common/../langref/data-about.html" title="The &lt;data-about&gt; element identifies the subject of a property when the subject isn't associated with the context in which the property is specified. The property itself is expressed by the &lt;data&gt; element. The &lt;data-about&gt; element handles exception cases where a property must be expressed somewhere other than inside the actual subject of the property. The &lt;data-about&gt; element is particularly useful as a basis for specialization in combination with the &lt;data&gt; element.">data-about</a> or <a href="../common/../langref/foreign.html" title="The &lt;foreign&gt; element is an open extension that allows information architects to incorporate existing standard vocabularies for non-textual content. like MathML and SVG, as inline objects. If &lt;foreign&gt; contains more than one alternative content element, they will all be processed. Specialization of &lt;foreign&gt; should be implemented as a domain, but for those looking for more control over the content can implement foreign vocabulary as an element specialization.">foreign</a> or <a href="../common/../langref/unknown.html" title="The &lt;unknown&gt; element is an open extension that allows information architects to incorporate xml fragments that do not necessarily fit into an existing DITA use case. The base processing for &lt;unknown&gt; is to suppress unless otherwise instructed.">unknown</a>) <em> (any number) </em></td>
+</tr>
+
+<tr><td valign="top" id="N101AF" headers="N1009D"><strong>map, bookmap</strong></td>
+<td valign="top" headers="N100A2 N101AF"> (
+ text data  or <a href="../common/../langref/keyword.html" title="The &lt;keyword&gt; element identifies a keyword or token, such as a single value from an enumerated list, the name of a command or parameter, product name, or a lookup key for a message.">keyword</a> or <a href="../common/../langref/term.html" title="The &lt;term&gt; element identifies words that may have or require extended definitions or explanations. In future development of DITA, for example, terms might provide associative linking to matching glossary entries.">term</a> or <a href="../common/../langref/data.html" title="The &lt;data&gt; element represents a property within a DITA topic or map. While the &lt;data&gt; element can be used directly to capture properties, it is particularly useful as a basis for specialization. Default processing treats the property values as an unknown kind of metadata, but custom processing can match the name attribute or specialized element to format properties as sidebars or other adornments or to harvest properties for automated processing.">data</a> or <a href="../common/../langref/data-about.html" title="The &lt;data-about&gt; element identifies the subject of a property when the subject isn't associated with the context in which the property is specified. The property itself is expressed by the &lt;data&gt; element. The &lt;data-about&gt; element handles exception cases where a property must be expressed somewhere other than inside the actual subject of the property. The &lt;data-about&gt; element is particularly useful as a basis for specialization in combination with the &lt;data&gt; element.">data-about</a> or <a href="../common/../langref/foreign.html" title="The &lt;foreign&gt; element is an open extension that allows information architects to incorporate existing standard vocabularies for non-textual content. like MathML and SVG, as inline objects. If &lt;foreign&gt; contains more than one alternative content element, they will all be processed. Specialization of &lt;foreign&gt; should be implemented as a domain, but for those looking for more control over the content can implement foreign vocabulary as an element specialization.">foreign</a> or <a href="../common/../langref/unknown.html" title="The &lt;unknown&gt; element is an open extension that allows information architects to incorporate xml fragments that do not necessarily fit into an existing DITA use case. The base processing for &lt;unknown&gt; is to suppress unless otherwise instructed.">unknown</a>) <em> (any number) </em></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N10251" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N10256" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N10260" headers="N10251"><strong>ditabase, topic, task, concept, reference</strong></td>
+<td valign="top" headers="N10256 N10260"><a href="../common/../langref/prolog.html" title="The &lt;prolog&gt; element contains information about the topic as an whole (for example, author information or subject category) that is either entered by the author or machine-maintained. Much of the metadata inside the &lt;prolog&gt; will not be displayed with the topic on output, but may be used by processes that generate search indexes or customize navigation.">prolog</a></td>
+</tr>
+
+<tr><td valign="top" id="N10284" headers="N10251"><strong>bookmap</strong></td>
+<td valign="top" headers="N10256 N10284"><a href="../common/../langref/topicmeta.html" title="The &lt;topicmeta&gt; element defines the metadata that applies to a topic when it appears in a map, and to the other topics in the map that are contained by the same element that contains the &lt;topicmeta&gt; element. When creating links, it can also be used to override the title and short description of the topic. In addition, it can be used to add index entries to referenced content using the &lt;keywords&gt; element.">topicmeta</a>, <a href="../common/../langref/bookmeta.html" title="The &lt;bookmeta&gt; element contains information about the book that is not considered book content, such as copyright information, author information, and any classifications.">bookmeta</a></td>
+</tr>
+
+<tr><td valign="top" id="N102B3" headers="N10251"><strong>map</strong></td>
+<td valign="top" headers="N10256 N102B3"><a href="../common/../langref/topicmeta.html" title="The &lt;topicmeta&gt; element defines the metadata that applies to a topic when it appears in a map, and to the other topics in the map that are contained by the same element that contains the &lt;topicmeta&gt; element. When creating links, it can also be used to override the title and short description of the topic. In addition, it can be used to add index entries to referenced content using the &lt;keywords&gt; element.">topicmeta</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- topic/author </p>
+</div>
+
+<div class="section" id="author__attrs"><a name="author__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="author__author_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="author__author_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N102FA" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N10300" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N10306" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N1030C" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N10312" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N102FA">href</td>
+
+<td valign="top" headers="N10300">A hyperlink to an external Web page (URL) or other non-DITA resource,
+or to another DITA topic in the same file or in another file. The format attribute
+identifies the format of the target. Non-DITA targets use standard URL syntax.
+DITA topics are targetted as follows:<pre class="pre">Target elsewhere in the same file:
+  href="#topicid"
+First topic in different file:
+  href="filename.dita"
+Specific topic in different file:
+  href="filename.dita#topicid"</pre>
+<p>If the URL contains an ampersand
+character, the ampersand symbol (&amp;amp;) should be used to indicate that
+character</p>
+</td>
+
+<td valign="top" headers="N10306">CDATA</td>
+
+<td valign="top" headers="N1030C">#IMPLIED</td>
+
+<td valign="top" headers="N10312"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N102FA">type</td>
+
+<td valign="top" headers="N10300">Indicates the primary author of the content. <span>Note that this differs from the type
+attribute on many other DITA elements.</span> Allowable values are:<dl>
+
+<dt class="dlterm">creator</dt>
+
+<dd>The primary or original author of the content.</dd>
+
+
+<dt class="dlterm">contributor</dt>
+
+<dd>An additional author who is not primary.</dd>
+
+
+<dt class="dlterm">-dita-use-conref-target</dt>
+
+<dd>See <a href="../common/ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">Using the -dita-use-conref-target value</a> for more information.</dd>
+
+</dl>
+</td>
+
+<td valign="top" headers="N10306">(creator | contributor | -dita-use-conref-target)</td>
+
+<td valign="top" headers="N1030C">#IMPLIED</td>
+
+<td valign="top" headers="N10312"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N102FA">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N10300">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N10306">parameter entity</td>
+
+<td valign="top" headers="N1030C">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10312">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N102FA">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N10300">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N10306">parameter entity</td>
+
+<td valign="top" headers="N1030C">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10312">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N102FA">class, keyref</td>
+
+<td valign="top" headers="N10300">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N10306">&#xA0;</td>
+<td valign="top" headers="N1030C">&#xA0;</td>
+<td valign="top" headers="N10312">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/prolog2.html" title="The prolog elements represent the metadata associated with a document. Most of the metadata in a topic prolog can also be authored in a DITA map, in the map's &lt;topicmeta&gt; element.">Prolog elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/audience.html" title="The &lt;audience&gt; metadata element indicates, through the value of its type attribute, the intended audience for a topic. Since a topic can have multiple audiences, you can include multiple audience elements. For each audience you specify, you can identify the high-level task (job) they are trying to accomplish and the level of experience (experiencelevel) expected. The audience element may be used to provide a more detailed definition of values used throughout the map or topic on the audience attribute.">audience</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/brand.html" title="The &lt;brand&gt; element indicates the manufacturer or brand associated with the product described by the parent &lt;prodinfo&gt; element.">brand</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="revised" />
+<meta name="abstract" content="The &lt;revised&gt; element in the prolog is used to maintain tracking dates that are important in a topic development cycle, such as the last modification date, the original availability date, and the expiration date." />
+<meta name="description" content="The &lt;revised&gt; element in the prolog is used to maintain tracking dates that are important in a topic development cycle, such as the last modification date, the original availability date, and the expiration date." />
+<meta content="revised, Prolog elements" name="DC.subject" />
+<meta content="revised, Prolog elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/prolog2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/resourceid.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/series.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="revised" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>revised</title>
+</head>
+<body id="revised"><a name="revised"><!-- --></a>
+
+
+<h1 class="topictitle1">revised</h1>
+
+
+
+<div><p>The &lt;<span class="keyword">revised</span>&gt; element in the prolog is
+used to maintain tracking dates that are important in a topic development
+cycle, such as the last modification date, the original availability date,
+and the expiration date.</p>
+
+<div class="example"><h2 class="sectiontitle">Example</h2><pre class="codeblock">&lt;prolog&gt;
+ &lt;critdates&gt;
+  &lt;created date="1/1/1999" golive="2/15/1999" expiry="9/9/9999"/&gt;
+  &lt;revised modified="3/3/2003" golive="2/3/2002" expiry="9/9/9999"/&gt;
+ &lt;/critdates&gt;
+&lt;/prolog&gt;</pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N10097" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N1009C" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100A6" headers="N10097"><strong>ditabase, topic, task, reference, concept, glossary, map, bookmap</strong></td>
+<td valign="top" headers="N1009C N100A6"> no content </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100C5" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100CA" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N100D4" headers="N100C5"><strong>bookmap, map, ditabase, topic, task, concept, reference, glossary</strong></td>
+<td valign="top" headers="N100CA N100D4"><a href="../common/../langref/critdates.html" title="The &lt;critdates&gt; element contains the critical dates in a document life cycle, such as the creation date and multiple revision dates.">critdates</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- topic/revised </p>
+</div>
+
+<div class="section" id="revised__attrs"><a name="revised__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="revised__revised_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="revised__revised_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10115" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N1011B" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N10121" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N10127" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N1012D" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10115">modified</td>
+
+<td valign="top" headers="N1011B">The last modification date, entered as YYYY-MM-DD, where YYYY is
+the year, MM is the month from 01 to 12, and DD is the day from 01-31.</td>
+
+<td valign="top" headers="N10121">CDATA</td>
+
+<td valign="top" headers="N10127">#REQUIRED</td>
+
+<td valign="top" headers="N1012D">Yes</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10115">golive</td>
+
+<td valign="top" headers="N1011B">The publication or general availability (GA) date, entered as YYYY-MM-DD,
+where YYYY is the year, MM is the month from 01 to 12, and DD is the day from
+01-31.</td>
+
+<td valign="top" headers="N10121">CDATA</td>
+
+<td valign="top" headers="N10127">#IMPLIED</td>
+
+<td valign="top" headers="N1012D">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10115">expiry</td>
+
+<td valign="top" headers="N1011B">The date when the information should be retired or refreshed, entered
+as YYYY-MM-DD, where YYYY is the year, MM is the month from 01 to 12, and
+DD is the day from 01-31.</td>
+
+<td valign="top" headers="N10121">CDATA</td>
+
+<td valign="top" headers="N10127">#IMPLIED</td>
+
+<td valign="top" headers="N1012D">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10115">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N1011B">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N10121">parameter entity</td>
+
+<td valign="top" headers="N10127">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1012D">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10115">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N1011B">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N10121">parameter entity</td>
+
+<td valign="top" headers="N10127">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1012D">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10115">class</td>
+
+<td valign="top" headers="N1011B">A common attribute described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N10121">&#xA0;</td>
+<td valign="top" headers="N10127">&#xA0;</td>
+<td valign="top" headers="N1012D">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/prolog2.html" title="The prolog elements represent the metadata associated with a document. Most of the metadata in a topic prolog can also be authored in a DITA map, in the map's &lt;topicmeta&gt; element.">Prolog elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/resourceid.html" title="The &lt;resourceid&gt; element provides an identifier for applications that require them in a particular format, when the normal id attribute of the topic can't be used. Each resourceid entry should be unique. It is one of the metadata elements that can be included within the prolog of a topic, along with document tracking and product information, etc. The element has no content, but takes an id attribute and an appname attribute.">resourceid</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/series.html" title="The &lt;series&gt; metadata element contains information about the product series that the topic supports.">series</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

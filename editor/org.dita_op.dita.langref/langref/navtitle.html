@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="navtitle" />
+<meta name="abstract" content="The navigation title (&lt;navtitle&gt;) element is one of a set of alternate titles that can be included inside the &lt;titlealts&gt; element. This navigation title may differ from the first level heading that shows in the main browser window. Use &lt;navtitle&gt; when the actual title of the topic isn't appropriate for use in navigation panes or online contents (for example, because the actual title is too long)." />
+<meta name="description" content="The navigation title (&lt;navtitle&gt;) element is one of a set of alternate titles that can be included inside the &lt;titlealts&gt; element. This navigation title may differ from the first level heading that shows in the main browser window. Use &lt;navtitle&gt; when the actual title of the topic isn't appropriate for use in navigation panes or online contents (for example, because the actual title is too long)." />
+<meta content="navtitle, Topic elements" name="DC.subject" />
+<meta content="navtitle, Topic elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/topic2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/titlealts.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/searchtitle.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="navtitle" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>navtitle</title>
+</head>
+<body id="navtitle"><a name="navtitle"><!-- --></a>
+
+
+<h1 class="topictitle1">navtitle</h1>
+
+
+
+<div><p>The navigation title (&lt;<span class="keyword">navtitle</span>&gt;) element
+is one of a set of alternate titles that can be included inside the &lt;<span class="keyword">titlealts</span>&gt;
+element. This navigation title may differ from the first level heading that
+shows in the main browser window. Use &lt;<span class="keyword">navtitle</span>&gt;
+when the actual title of the topic isn't appropriate for use in navigation
+panes or online contents (for example, because the actual title is too long).</p>
+
+<div class="example"><h2 class="sectiontitle">Example</h2><pre class="codeblock">&lt;task id=progexample"&gt;
+ &lt;title&gt;Publishing a DITA information set in PDF&lt;/title&gt;
+  &lt;titlealts&gt;&lt;navtitle&gt;Publishing in PDF&lt;/navtitle&gt;&lt;/titlealts&gt;
+ &lt;taskbody&gt; . . . &lt;/taskbody&gt;
+&lt;/task&gt;</pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100A3" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100A8" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100B2" headers="N100A3"><strong>ditabase, topic, task, reference, concept, glossary</strong></td>
+<td valign="top" headers="N100A8 N100B2"> (
+ text data  or <a href="../common/../langref/keyword.html" title="The &lt;keyword&gt; element identifies a keyword or token, such as a single value from an enumerated list, the name of a command or parameter, product name, or a lookup key for a message.">keyword</a> or <a href="../common/../langref/option.html" title="The &lt;option&gt; element describes an option that can be used to modify a command (or something else, like a configuration). This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">option</a> or <a href="../common/../langref/parmname.html" title="When referencing the name of an application programming interface parameter within the text flow of your topic, use the parameter name (&lt;parmname&gt;) element to markup the parameter. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">parmname</a> or <a href="../common/../langref/apiname.html" title="The &lt;apiname&gt; element provides the name of an application programming interface (API) such as a Java class name or method name. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">apiname</a> or <a href="../common/../langref/cmdname.html" title="The command name (&lt;cmdname&gt;) element specifies the name of a command when it is part of a software discussion. This element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">cmdname</a> or <a href="../common/../langref/msgnum.html" title="The message number (&lt;msgnum&gt;) element contains the number of a message produced by an application or program. This element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">msgnum</a> or <a href="../common/../langref/varname.html" title="The variable name (&lt;varname&gt;) element defines a variable that must be supplied to a software application. The variable name element is very similar to the variable (var) element, but variable name is used outside of syntax diagrams. This element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">varname</a> or <a href="../common/../langref/wintitle.html" title="The window title &lt;wintitle&gt; element can be used to mark up names of windows or dialogs, or other user interface elements at the same level of grouping, including wizard titles, wizard page titles, and window pane titles. This element is part of the DITA user interface domain, a special set of DITA elements designed to document user interface tasks, concepts and reference information.">wintitle</a> or <a href="../common/../langref/term.html" title="The &lt;term&gt; element identifies words that may have or require extended definitions or explanations. In future development of DITA, for example, terms might provide associative linking to matching glossary entries.">term</a> or <a href="../common/../langref/data.html" title="The &lt;data&gt; element represents a property within a DITA topic or map. While the &lt;data&gt; element can be used directly to capture properties, it is particularly useful as a basis for specialization. Default processing treats the property values as an unknown kind of metadata, but custom processing can match the name attribute or specialized element to format properties as sidebars or other adornments or to harvest properties for automated processing.">data</a> or <a href="../common/../langref/data-about.html" title="The &lt;data-about&gt; element identifies the subject of a property when the subject isn't associated with the context in which the property is specified. The property itself is expressed by the &lt;data&gt; element. The &lt;data-about&gt; element handles exception cases where a property must be expressed somewhere other than inside the actual subject of the property. The &lt;data-about&gt; element is particularly useful as a basis for specialization in combination with the &lt;data&gt; element.">data-about</a> or <a href="../common/../langref/foreign.html" title="The &lt;foreign&gt; element is an open extension that allows information architects to incorporate existing standard vocabularies for non-textual content. like MathML and SVG, as inline objects. If &lt;foreign&gt; contains more than one alternative content element, they will all be processed. Specialization of &lt;foreign&gt; should be implemented as a domain, but for those looking for more control over the content can implement foreign vocabulary as an element specialization.">foreign</a> or <a href="../common/../langref/unknown.html" title="The &lt;unknown&gt; element is an open extension that allows information architects to incorporate xml fragments that do not necessarily fit into an existing DITA use case. The base processing for &lt;unknown&gt; is to suppress unless otherwise instructed.">unknown</a>) <em> (any number) </em></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N101C5" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N101CA" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N101D4" headers="N101C5"><strong>ditabase, topic, task, concept, reference, glossary</strong></td>
+<td valign="top" headers="N101CA N101D4"><a href="../common/../langref/titlealts.html" title="The alternate title element (&lt;titlealts&gt;) is optional, but can occur after the topic title. Two elements can be inserted as sub-elements of &lt;titlealts&gt;: navigation title &lt;navtitle&gt; and search title &lt;searchtitle&gt;.">titlealts</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- topic/navtitle </p>
+</div>
+
+<div class="section" id="navtitle__attrs"><a name="navtitle__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="navtitle__navtitle_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="navtitle__navtitle_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10227" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N1022D" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N10233" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N10239" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N1023F" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10227">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N1022D">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N10233">parameter entity</td>
+
+<td valign="top" headers="N10239">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1023F">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10227">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N1022D">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N10233">parameter entity</td>
+
+<td valign="top" headers="N10239">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1023F">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10227">class</td>
+
+<td valign="top" headers="N1022D">A common attribute described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N10233">&#xA0;</td>
+<td valign="top" headers="N10239">&#xA0;</td>
+<td valign="top" headers="N1023F">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/topic2.html" title="Use the generic topic structure for untyped topics. While much of the DITA architecture is built upon generic topics, it is generally better to use more specific information types (such as concept, task, or reference) when they are available. For an answer to the question &quot;What are topics?&quot; and more details on when to use different information types, please refer to the DITA architectural specification.">Topic elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/titlealts.html" title="The alternate title element (&lt;titlealts&gt;) is optional, but can occur after the topic title. Two elements can be inserted as sub-elements of &lt;titlealts&gt;: navigation title &lt;navtitle&gt; and search title &lt;searchtitle&gt;.">titlealts</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/searchtitle.html" title="When your DITA topic is transformed to XHTML, the &lt;searchtitle&gt; element is used to create a title element at the top of the resulting HTML file. This title is normally used in search result summaries by some search engines, such as that in Eclipse (http://eclipse.org); if not set, the XHTML's title element defaults to the source topic's title content (which may not be as well optimized for search summaries)">searchtitle</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="coords" />
+<meta name="abstract" content="The coords element specifies the coordinates of the linkable region in an imagemap area." />
+<meta name="description" content="The coords element specifies the coordinates of the linkable region in an imagemap area." />
+<meta content="coords, Utilities elements" name="DC.subject" />
+<meta content="coords, Utilities elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/ut-d.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/area.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/shape.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="coords" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>coords</title>
+</head>
+<body id="coords"><a name="coords"><!-- --></a>
+
+
+<h1 class="topictitle1">coords</h1>
+
+
+
+<div><p>The coords element specifies the coordinates of the linkable region
+in an imagemap area.</p>
+
+<div class="section"><div class="p">The element defines the starting point and size of that area.
+It uses the following data for the appropriate shapes: <dl>
+<dt class="dlterm"><strong>Shape</strong></dt>
+
+<dd><strong>Data format</strong></dd>
+
+
+<dt class="dlterm">rect</dt>
+
+<dd>left-x, top-y, right-x, bottom-y</dd>
+
+
+<dt class="dlterm">circle</dt>
+
+<dd>center-x, center-y, radius</dd>
+
+
+<dt class="dlterm">poly</dt>
+
+<dd> x1, y1, x2, y2, ..., xN, yN. The first x and y coordinate pair and the
+last should be the same to close the polygon. </dd>
+
+</dl>
+</div>
+<p>Pixels are recommended; they appear to work with all
+browsers.</p>
+<div class="note"><span class="notetitle">Note:</span> The behavior of image maps will depend on the browser on
+which they are rendered. </div>
+<p>This element contains text data representing
+HTML coordinate data for image maps. The syntax of the coordinate data depends
+on the shape described by the coordinates.</p>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Example</h2><pre class="pre">&lt;area&gt;
+ &lt;shape&gt;rect&lt;/shape&gt;
+ &lt;coords&gt;54,1,117,60&lt;/coords&gt;
+ &lt;xref href="d1-s2.dita"&gt;&lt;/xref&gt;
+&lt;/area&gt;</pre>
+</div>
+
+<div class="example" />
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100FF" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N10104" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N1010E" headers="N100FF"><strong>ditabase, topic, task, reference, concept, glossary</strong></td>
+<td valign="top" headers="N10104 N1010E"> (
+ text data  or <a href="../common/../langref/keyword.html" title="The &lt;keyword&gt; element identifies a keyword or token, such as a single value from an enumerated list, the name of a command or parameter, product name, or a lookup key for a message.">keyword</a> or <a href="../common/../langref/option.html" title="The &lt;option&gt; element describes an option that can be used to modify a command (or something else, like a configuration). This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">option</a> or <a href="../common/../langref/parmname.html" title="When referencing the name of an application programming interface parameter within the text flow of your topic, use the parameter name (&lt;parmname&gt;) element to markup the parameter. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">parmname</a> or <a href="../common/../langref/apiname.html" title="The &lt;apiname&gt; element provides the name of an application programming interface (API) such as a Java class name or method name. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">apiname</a> or <a href="../common/../langref/cmdname.html" title="The command name (&lt;cmdname&gt;) element specifies the name of a command when it is part of a software discussion. This element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">cmdname</a> or <a href="../common/../langref/msgnum.html" title="The message number (&lt;msgnum&gt;) element contains the number of a message produced by an application or program. This element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">msgnum</a> or <a href="../common/../langref/varname.html" title="The variable name (&lt;varname&gt;) element defines a variable that must be supplied to a software application. The variable name element is very similar to the variable (var) element, but variable name is used outside of syntax diagrams. This element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">varname</a> or <a href="../common/../langref/wintitle.html" title="The window title &lt;wintitle&gt; element can be used to mark up names of windows or dialogs, or other user interface elements at the same level of grouping, including wizard titles, wizard page titles, and window pane titles. This element is part of the DITA user interface domain, a special set of DITA elements designed to document user interface tasks, concepts and reference information.">wintitle</a> or <a href="../common/../langref/term.html" title="The &lt;term&gt; element identifies words that may have or require extended definitions or explanations. In future development of DITA, for example, terms might provide associative linking to matching glossary entries.">term</a> or <a href="../common/../langref/data.html" title="The &lt;data&gt; element represents a property within a DITA topic or map. While the &lt;data&gt; element can be used directly to capture properties, it is particularly useful as a basis for specialization. Default processing treats the property values as an unknown kind of metadata, but custom processing can match the name attribute or specialized element to format properties as sidebars or other adornments or to harvest properties for automated processing.">data</a> or <a href="../common/../langref/data-about.html" title="The &lt;data-about&gt; element identifies the subject of a property when the subject isn't associated with the context in which the property is specified. The property itself is expressed by the &lt;data&gt; element. The &lt;data-about&gt; element handles exception cases where a property must be expressed somewhere other than inside the actual subject of the property. The &lt;data-about&gt; element is particularly useful as a basis for specialization in combination with the &lt;data&gt; element.">data-about</a> or <a href="../common/../langref/foreign.html" title="The &lt;foreign&gt; element is an open extension that allows information architects to incorporate existing standard vocabularies for non-textual content. like MathML and SVG, as inline objects. If &lt;foreign&gt; contains more than one alternative content element, they will all be processed. Specialization of &lt;foreign&gt; should be implemented as a domain, but for those looking for more control over the content can implement foreign vocabulary as an element specialization.">foreign</a> or <a href="../common/../langref/unknown.html" title="The &lt;unknown&gt; element is an open extension that allows information architects to incorporate xml fragments that do not necessarily fit into an existing DITA use case. The base processing for &lt;unknown&gt; is to suppress unless otherwise instructed.">unknown</a>) <em> (any number) </em></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N10221" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N10226" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N10230" headers="N10221"><strong>ditabase, topic, task, concept, reference, glossary</strong></td>
+<td valign="top" headers="N10226 N10230"><a href="../common/../langref/area.html" title="The area element supports the basic functionality of the HTML image map markup.">area</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>+ topic/ph ut-d/coords </p>
+</div>
+
+<div class="section" id="coords__attrs"><a name="coords__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="coords__coords_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="coords__coords_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N1026B" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N10271" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N10277" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N1027D" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N10283" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1026B">translate</td>
+
+<td valign="top" headers="N10271">Indicates whether the content of the element should be translated
+or not. Setting to "yes" will override the default. The DITA architectural specification contains a list of each OASIS DITA
+element and its common processing default for the translate value; because this
+element uses an actual default, it will always be treated as translate="no" unless
+overridden as described.</td>
+
+<td valign="top" headers="N10277">yes | no | <a href="../common/ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">-dita-use-conref-target</a></td>
+
+<td valign="top" headers="N1027D">"no"</td>
+
+<td valign="top" headers="N10283"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1026B">xml:lang</td>
+
+<td valign="top" headers="N10271">Specifies the language of the element content. When no xml:lang value
+is supplied, the default value of English is assumed. For example, if there
+is a note element with the attribute xml:lang set to the value "es,"
+then the label on the note, which normally appears as "Note" will now
+appear in Spanish as "Nota." The allowed xml:lang values are
+based on 
+RFC 4646 Tags for Identifying Languages (see <a href="http://www.w3.org/International/articles/language-tags/" target="_blank">W3C:
+Language tags in HTML and XML</a>).</td>
+
+<td valign="top" headers="N10277">NMTOKEN</td>
+
+<td valign="top" headers="N1027D"><span>#IMPLIED</span></td>
+
+<td valign="top" headers="N10283">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1026B">dir</td>
+
+<td valign="top" headers="N10271">Specifies the directionality of text: left-to-right (ltr, the processing
+default) or right-to-left (rtl). See the DITA Architectural Specification
+for best practices related to this attribute, and other aspects of DITA and translation.</td>
+
+<td valign="top" headers="N10277">(ltr | rtl | lro | rlo | <a href="../common/ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">-dita-use-conref-target</a>)</td>
+
+<td valign="top" headers="N1027D">#IMPLIED</td>
+
+<td valign="top" headers="N10283">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1026B">%id-atts; (id, conref)</td>
+
+<td valign="top" headers="N10271">A set of related attributes, described at <a href="../common/id-atts.html" title="ID attributes (%id-atts;) is a parameter entity declaration in the topic DTD that includes attributes that enable the naming and referencing of elements in a DITA topic: id and conref.">%id-atts;</a></td>
+
+<td valign="top" headers="N10277">parameter entity</td>
+
+<td valign="top" headers="N1027D">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10283">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1026B">%select-atts; (props, base, platform, product, audience, otherprops,
+importance, rev, status)</td>
+
+<td valign="top" headers="N10271">A set of related attributes, described at <a href="../common/select-atts.html" title="Attributes that support both filtering and flagging include props , platform , product , audience , and otherprops . Attribute base is a generic attribute that is available for specialization; it can be specialized for values that have a simple value syntax like the filter attributes, but is not itself a filtering or flagging attribute. Attribute rev only lets you flag information that matches a run-time parameter. Attribute importance provides a range of values for applications to use as needed. The %select-atts; entity also includes additional entities that allow it to include specializations of the props and base attribute. See the DITA Architectural Specification for more information on filtering or flagging with attributes, as well as for information on specialization the base and props attributes.">%select-atts;</a></td>
+
+<td valign="top" headers="N10277">parameter entity</td>
+
+<td valign="top" headers="N1027D">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10283">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1026B">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N10271">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N10277">parameter entity</td>
+
+<td valign="top" headers="N1027D">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10283">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1026B">class, outputclass, keyref</td>
+
+<td valign="top" headers="N10271">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N10277">&#xA0;</td>
+<td valign="top" headers="N1027D">&#xA0;</td>
+<td valign="top" headers="N10283">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/ut-d.html" title="The utilities domain elements represent common features of a language that may not necessarily be semantic, such as image maps.">Utilities elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/area.html" title="The area element supports the basic functionality of the HTML image map markup.">area</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/shape.html" title="The shape element defines the shape of a linkable area in an imagemap.">shape</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Tasks" />
+<meta name="abstract" content="Task topics answer &quot;How do I?&quot; questions, and have a well-defined structure that describes how to complete a procedure to accomplish a specific goal." />
+<meta name="description" content="Task topics answer &quot;How do I?&quot; questions, and have a well-defined structure that describes how to complete a procedure to accomplish a specific goal." />
+<meta scheme="URI" name="DC.Relation" content="topicover.html" />
+<meta scheme="URI" name="DC.Relation" content="dita_spec_22_info_concepts.html" />
+<meta scheme="URI" name="DC.Relation" content="dita_spec_22_info_refs.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="dita_spec_2_1_info_tasks" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Tasks</title>
+</head>
+<body id="dita_spec_2_1_info_tasks"><a name="dita_spec_2_1_info_tasks"><!-- --></a>
+
+
+<h1 class="topictitle1">Tasks</h1>
+
+
+<div><p>Task topics answer "How do I?" questions, and have a well-defined
+structure that describes how to complete a procedure to accomplish a specific
+goal.</p>
+
+<div class="section"><h2 class="sectiontitle">Why tasks?</h2><p>Tasks are the essential building blocks
+for providing procedure information. A task topic answers the "How do I?"
+question by providing precise step-by-step instructions detailing what to
+do and the order in which to do it. The task topic includes sections for describing
+the context, prerequisites, expected results, and other aspects of a task. </p>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Task structure</h2><p>The &lt;task&gt; element is the top-level
+element for a task topic. Every task topic contains a &lt;title&gt; and a &lt;taskbody&gt;
+and optional  &lt;titlealts&gt;, &lt;shortdesc&gt; or &lt;abstract&gt;, &lt;prolog&gt;, &lt;related-links&gt;,
+and nested topics.</p>
+<p>The &lt;taskbody&gt; element is the main
+body-level element inside a task topic. A task body has a very specific structure,
+with the following elements in this order: &lt;prereq&gt;, &lt;context&gt;, &lt;steps&gt;, &lt;result, &lt;example&gt;
+and &lt;postreq&gt;. Each of the body sections is optional.</p>
+<dl>
+<dt class="dlterm">&lt;prereq&gt;</dt>
+
+<dd>Describes information needed before starting the current task.</dd>
+
+
+<dt class="dlterm">&lt;context&gt;</dt>
+
+<dd>Provides background information for the task. This information helps the
+user understand what the purpose of the task is and what they will gain by
+completing the task. This section should be brief and does not replace or
+recreate a concept topic on the same subject, although the context section
+may include some conceptual information.</dd>
+
+
+<dt class="dlterm">&lt;steps&gt;</dt>
+
+<dd>Provides the main content of the task topic. A task consists of a series
+of steps that accomplish the task. The &lt;steps&gt; section must have one or
+more &lt;step&gt; elements, which provide the specifics about each step in in
+the task.<p>The &lt;step&gt; element represents an action that a user must follow
+to accomplish a task. Each step in a task must contain a command &lt;cmd&gt;
+element which describes the particular action the user must do to accomplish
+the overall task. The step element can also contain information &lt;info&gt;,
+substeps &lt;substeps&gt;, tutorial information &lt;tutorialinfo&gt;, a step example &lt;stepxmp&gt;,
+choices &lt;choices&gt; or a stepresult &lt;stepresult&gt;, although these are optional.</p>
+</dd>
+
+
+<dt class="dlterm">&lt;result&gt;</dt>
+
+<dd>Describes the expected outcome for the task as a whole. </dd>
+
+
+<dt class="dlterm">&lt;example&gt;</dt>
+
+<dd>Provides an example that illustrates or supports the task. </dd>
+
+
+<dt class="dlterm">&lt;postreq&gt;</dt>
+
+<dd>Describes steps or tasks that the user should do after the successful
+completion of the current task. It is often supported by links to the next
+task or tasks in the &lt;related-links&gt; section.</dd>
+
+</dl>
+</div>
+
+<div class="example">Here’s an example of a task topic.<pre class="pre">&lt;task id="ertx"&gt;
+ &lt;title&gt;Creating an ERTX file&lt;/title&gt;
+ &lt;taskbody&gt;
+  &lt;context&gt;Each morning before breakfast you need to 
+create a fresh ERTX file.&lt;/context&gt;
+  &lt;steps&gt;
+   &lt;step&gt;&lt;cmd&gt;Start ERTX.&lt;/cmd&gt;&lt;/step&gt;
+   &lt;step&gt;&lt;cmd&gt;Click New ERTX File.&lt;/cmd&gt;&lt;/step&gt;
+  &lt;/steps&gt;
+  &lt;result&gt;You now have your ERTX file for today!&lt;/result&gt;
+ &lt;/taskbody&gt;
+&lt;/task&gt;
+</pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Modules</h2><br /><ul class="simple">
+<li>task.mod (DTD)</li>
+
+<li>taskMod.xsd, taskGrp.xsd (Schema)</li>
+
+</ul>
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="topicover.html" title="DITA topics are the basic units of DITA content. Each topic should be organized around a single subject. Topics may be of different types, such as task or reference, or may be generic, that is, without a specific type.">DITA topics</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="dita_spec_22_info_concepts.html" title="DITA concept topics answer &quot;What is...&quot; questions. They include a body-level element with a basic topic structure, including sections and examples.">Concepts</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="dita_spec_22_info_refs.html" title="Reference topics describe regular features of a subject or product, such as commands in a programming language.">Reference</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

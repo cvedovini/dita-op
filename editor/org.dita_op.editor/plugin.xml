@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!--
+    Copyright (C) 2008 Claude Vedovini <http://vedovini.net/>.
+    
+    This file is part of the DITA Open Platform <http://www.dita-op.org/>.
+
+    The DITA Open Platform is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    The DITA Open Platform is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with The DITA Open Platform.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<plugin>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="org.dita_op.editor.internal.ui.editors.TopicEditor"
+			contributorClass="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorActionBarContributor"
+            default="true"
+            icon="$nl$/icons/page_code.png"
+            id="org.dita_op.editor.TopicEditor"
+            name="%TopicEditor.name">
+         <contentTypeBinding
+               contentTypeId="org.dita_op.dita.topic">
+         </contentTypeBinding>
+      </editor>
+      <editor
+			class="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart"
+			contributorClass="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorActionBarContributor"
+            default="true"
+            icon="$nl$/icons/book.png"
+            id="org.dita_op.editor.MapEditor"
+            name="%MapEditor.name">
+         <contentTypeBinding
+               contentTypeId="org.dita_op.dita.map">
+         </contentTypeBinding>
+      </editor>
+      <editor
+			class="org.dita_op.editor.internal.ui.editors.ProfileEditor"
+			contributorClass="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorActionBarContributor"
+            default="true"
+            icon="$nl$/icons/page_gear.png"
+            id="org.dita_op.editor.ProfileEditor"
+            name="%ProfileEditor.name">
+         <contentTypeBinding
+               contentTypeId="org.dita_op.dita.processingProfile">
+         </contentTypeBinding>
+      </editor>
+   </extension>
+   <extension
+         id="DITAFileValidator"
+         name="DITA File Validator"
+         point="org.eclipse.core.resources.builders">
+      <builder
+            hasNature="true">
+         <run
+               class="org.dita_op.editor.internal.builders.DITAFileValidator">
+         </run>
+      </builder>
+   </extension>
+   <extension
+         id="DITAProjectNature"
+         name="DITA Project Nature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="org.dita_op.editor.internal.DITAProjectNature">
+         </run>
+      </runtime>
+      <builder
+            id="org.dita_op.editor.DITAFileValidator">
+      </builder>
+   </extension>
+   <extension
+         id="DITAProblem"
+         name="DITA Problem"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.core.resources.problemmarker">
+      </super>
+      <persistent
+            value="true">
+      </persistent>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors.templates">
+      <template
+            autoinsert="true"
+            contextTypeId="xml_all"
+            description="%MapTemplate.description"
+            icon="$nl$/icons/book.png"
+            id="org.dita_op.editor.template.map"
+            name="%MapTemplate.name">
+         <pattern><![CDATA[<?xml version="1.0" encoding="${encoding}"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd" >
+<map xml:lang="${lang}">
+	<title>${cursor}</title>
+	<topicmeta>
+		<author>${user}</author>
+	</topicmeta>
+</map>]]></pattern>
+      </template>
+      <template
+            autoinsert="true"
+            contextTypeId="xml_all"
+            description="%BookmapTemplate.description"
+            icon="$nl$/icons/book.png"
+            id="org.dita_op.editor.template.bookmap"
+            name="%BookmapTemplate.name">
+         <pattern><![CDATA[<?xml version="1.0" encoding="${encoding}"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd" >
+<bookmap xml:lang="${lang}">
+	<title>${cursor}</title>
+	<bookmeta>
+		<author>${user}</author>
+	</bookmeta>
+</bookmap>]]></pattern>
+      </template>
+     <template
+            autoinsert="true"
+            contextTypeId="xml_all"
+            description="%TopicTemplate.description"
+            icon="$nl$/icons/page_code.png"
+            id="org.dita_op.editor.template.topic"
+            name="%TopicTemplate.name">
+         <pattern><![CDATA[<?xml version="1.0" encoding="${encoding}"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="${id}" xml:lang="${lang}">
+	<title>${cursor}</title>
+	<prolog>
+		<author>${user}</author>
+	</prolog>
+	<body></body>
+</topic>]]></pattern>
+      </template>
+      <template
+            autoinsert="true"
+            contextTypeId="xml_all"
+            description="%ConceptTemplate.description"
+            icon="$nl$/icons/page_code.png"
+            id="org.dita_op.editor.template.concept"
+            name="%ConceptTemplate.name">
+         <pattern><![CDATA[<?xml version="1.0" encoding="${encoding}"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="${id}" xml:lang="${lang}">
+	<title>${cursor}</title>
+	<prolog>
+		<author>${user}</author>
+	</prolog>
+	<conbody></conbody>
+</concept>]]></pattern>
+      </template>
+      <template
+            autoinsert="true"
+            contextTypeId="xml_all"
+            description="%TaskTemplate.description"
+            icon="$nl$/icons/page_code.png"
+            id="org.dita_op.editor.template.task"
+            name="%TaskTemplate.name">
+         <pattern><![CDATA[<?xml version="1.0" encoding="${encoding}"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd" >
+<task id="${id}" xml:lang="${lang}">
+	<title>${cursor}</title>
+	<prolog>
+		<author>${user}</author>
+	</prolog>
+	<taskbody></taskbody>
+</task>]]></pattern>
+      </template>
+      <template
+            autoinsert="true"
+            contextTypeId="xml_all"
+            description="%ReferenceTemplate.description"
+            icon="$nl$/icons/page_code.png"
+            id="org.dita_op.editor.template.reference"
+            name="%ReferenceTemplate.name">
+         <pattern><![CDATA[<?xml version="1.0" encoding="${encoding}"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd" >
+<reference id="${id}" xml:lang="${lang}">
+	<title>${cursor}</title>
+	<prolog>
+		<author>${user}</author>
+	</prolog>
+	<refbody></refbody>
+</reference>]]></pattern>
+      </template>
+      <resolver
+            class="org.dita_op.editor.internal.ui.templates.LocaleVariableResolver"
+            contextTypeId="xml_all"
+            description="%LocaleResolver.description"
+            name="%LocaleResolver.name"
+            type="lang">
+      </resolver>
+      <resolver
+            class="org.dita_op.editor.internal.ui.templates.IdVariableResolver"
+            contextTypeId="xml_all"
+            description="%IdResolver.description"
+            name="%IdResolver.name"
+            type="id">
+      </resolver>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="org.dita_op.editor.wizards"
+            name="%DITAWizardsCategory.name">
+      </category>
+      <wizard
+            category="org.dita_op.editor.wizards"
+            class="org.dita_op.editor.internal.ui.wizards.DITAProjectWizard"
+            icon="$nl$/icons/book.png"
+            id="org.dita_op.editor.DITAProjectWizard"
+            name="%ProjectWizard.name"
+            project="true">
+      </wizard>
+      <wizard
+            category="org.dita_op.editor.wizards"
+            class="org.dita_op.editor.internal.ui.wizards.TopicWizard"
+            icon="icons/page_code.png"
+            id="org.dita_op.editor.wizards.TopicWizard"
+            name="%TopicWizard.name">
+      </wizard>
+      <wizard
+            category="org.dita_op.editor.wizards"
+            class="org.dita_op.editor.internal.ui.wizards.ConceptWizard"
+            icon="icons/page_code.png"
+            id="org.dita_op.editor.wizards.ConceptWizard"
+            name="%ConceptWizard.name">
+      </wizard>
+      <wizard
+            category="org.dita_op.editor.wizards"
+            class="org.dita_op.editor.internal.ui.wizards.TaskWizard"
+            icon="icons/page_code.png"
+            id="org.dita_op.editor.wizards.TaskWizard"
+            name="%TaskWizard.name">
+      </wizard>
+      <wizard
+            category="org.dita_op.editor.wizards"
+            class="org.dita_op.editor.internal.ui.wizards.ReferenceWizard"
+            icon="icons/page_code.png"
+            id="org.dita_op.editor.wizards.ReferenceWizard"
+            name="%ReferenceWizard.name">
+      </wizard>
+      <wizard
+            category="org.dita_op.editor.wizards"
+            class="org.dita_op.editor.internal.ui.wizards.MapWizard"
+            icon="icons/book.png"
+            id="org.dita_op.editor.wizards.MapWizard"
+            name="%MapWizard.name">
+      </wizard>
+      <wizard
+            category="org.dita_op.editor.wizards"
+            class="org.dita_op.editor.internal.ui.wizards.BookmapWizard"
+            icon="icons/book.png"
+            id="org.dita_op.editor.wizards.BookmapWizard"
+            name="%BookmapWizard.name">
+      </wizard>
+      <wizard
+            category="org.dita_op.editor.wizards"
+            class="org.dita_op.editor.internal.ui.wizards.ProfileWizard"
+            icon="icons/page_gear.png"
+            id="org.dita_op.editor.wizards.ProfileWizard"
+            name="%ProfileWizard.name">
+      </wizard>
+   </extension>
+
+</plugin>

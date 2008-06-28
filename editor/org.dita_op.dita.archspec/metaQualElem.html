@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Metadata qualification elements" />
+<meta name="abstract" content="These elements can be used to provide additional information about a topic, and may be used in conjunction with conditional processing attributes to provide more information about the attribute values." />
+<meta name="description" content="These elements can be used to provide additional information about a topic, and may be used in conjunction with conditional processing attributes to provide more information about the attribute values." />
+<meta scheme="URI" name="DC.Relation" content="commonelements.html" />
+<meta scheme="URI" name="DC.Relation" content="mgmtMetaElem.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="metaQualElem" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Metadata qualification elements</title>
+</head>
+<body id="metaQualElem"><a name="metaQualElem"><!-- --></a>
+
+
+<h1 class="topictitle1">Metadata qualification elements</h1>
+
+
+<div><p>These elements can be used to provide additional information about
+a topic, and may be used in conjunction with conditional processing attributes
+to provide more information about the attribute values.</p>
+
+<p>The
+metadata elements apply to an entire topic, and can also be used in a map
+to apply metadata to multiple topics at a time. Metadata elements can expand
+on the values used in metadata attributes. (See <a href="metadataAttr.html" title="The metadata attributes express qualifications on the content. These qualifications can be used to modify the processing of the content.">metadata
+attributes</a>.) For example, the audience element in a topic's prolog
+can define an audience in terms of type, job, and experience level, and give
+it a name; when there is content within the topic's body that applies only
+to that audience, that content can identify its audience by the same name
+used in the prolog.</p>
+
+<p>When metadata is expressed in a map, it supplements any metadata expressed
+in the topics it references. When metadata in a map and a topic conflict (for
+example, both define a publisher), by default the value in the map takes precedence,
+on the assumption that the author of the map has more knowledge of the reusing
+context than the author of the topic.</p>
+
+<dl>
+<dt class="dlterm">audience</dt>
+
+<dd>The type, job, experience level, and other characteristics of the reader
+for the topic. Many of these characteristics have enumerated values, but the
+enumeration can be extended through associated attributes. For instance, the
+audience type enumeration can be extended through an othertype attribute.
+The audience element can provide more information about a value used by an
+audience attribute.</dd>
+
+
+<dt class="dlterm">category</dt>
+
+<dd>A classification of the topic content. Such classifications are likely
+to come from an enumerated or hierarchical set. This element is equivalent
+to both Dublin Core Coverage and Dublin Core Subject.</dd>
+
+
+<dt class="dlterm">keywords</dt>
+
+<dd>Terms from a controlled or uncontrolled subject vocabulary that apply
+to the topic. </dd>
+
+
+<dt class="dlterm">prodinfo</dt>
+
+<dd>The definition of the product or platform for the topic. The prodinfo
+element can provide more information about values used by the product and
+platform attributes.</dd>
+
+
+<dt class="dlterm">othermeta</dt>
+
+<dd>A name-value pair specifying other metadata about the topic.</dd>
+
+
+<dt class="dlterm">data</dt>
+
+<dd>Additional data or metadata about the topic or map, or elements in the
+topic or map; allows for more complex metadata using nested values. Primarily
+used as the base for specialized metadata structures.</dd>
+
+</dl>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="commonelements.html" title="The following metadata elements occur in both maps and topic prologs.">Common metadata elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="mgmtMetaElem.html" title="These elements provide a basis for managing the publication process for topics.">Management metadata elements</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

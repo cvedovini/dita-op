@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="The format attribute" />
+<meta name="abstract" content="The format attribute identifies the format of the resource being cross referenced. The processing default for format is dita. If no value is specified, but the attribute is specified on an ancestor within a map or within the related-links section, the value will inherit from the closest ancestor." />
+<meta name="description" content="The format attribute identifies the format of the resource being cross referenced. The processing default for format is dita. If no value is specified, but the attribute is specified on an ancestor within a map or within the related-links section, the value will inherit from the closest ancestor." />
+<meta scheme="URI" name="DC.Relation" content="../common/complexattributedefinitions.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/thetypeattribute.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/theroleattribute.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="theformatattribute" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>The format attribute</title>
+</head>
+<body id="theformatattribute"><a name="theformatattribute"><!-- --></a>
+
+
+<h1 class="topictitle1">The format attribute</h1>
+
+
+<div><p>The format attribute identifies the format of the resource being
+cross referenced. The processing default for format is <span class="q">"dita"</span>. <span>If no value is
+specified, but the attribute is specified on an ancestor within a map or within
+the related-links section, the value will inherit from the closest ancestor.</span></p>
+
+<div class="section"><h2 class="sectiontitle">Using the format attribute</h2><p>Possible values for this
+attribute include:</p>
+<dl>
+<dt class="dlterm">dita</dt>
+
+<dd>The destination uses DITA topic markup, or markup specialized from a DITA
+topic. Unless otherwise specified, the corresponding default type will be
+treated as "topic."</dd>
+
+
+<dt class="dlterm">html</dt>
+
+<dd>The format of the linked-to resource is HTML or XHTML.</dd>
+
+
+<dt class="dlterm">pdf</dt>
+
+<dd>The format of the linked-to resource is PDF (opens a new window).</dd>
+
+
+<dt class="dlterm">ditamap</dt>
+
+<dd>The linked-to resource is a DITA map. It represents a referenced hierarchy
+at a position within referencing hierarchy, and a referenced relationship
+table included outside the referencing hierarchy</dd>
+
+
+<dt class="dlterm">(no value)</dt>
+
+<dd>Processors default to "dita"</dd>
+
+</dl>
+<p>For other formats, you can use the file extension without
+the "." (for example, in a link to file "readme.txt",
+use "txt" as the value).</p>
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/complexattributedefinitions.html" title="Several DITA attributes require more explanation than can fit in a single table cell. Those attributes are collected here.">Complex attribute definitions</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../common/thetypeattribute.html" title="The type attribute is most often used on linking elements to describe the target of a cross-reference. It is also used on the note element to describe the type of the current note, and on several other elements for varying purposes.">The type attribute</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../common/theroleattribute.html" title="The role attribute defines the role the target topic plays in relationship with the current topic. For example, in a parent/child relationship, the role would be &quot;parent&quot; when the target is the parent of the current topic, and &quot;child&quot; when the target is the child of the current topic. This structure could be used to sort and classify links at display time.">The role attribute</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

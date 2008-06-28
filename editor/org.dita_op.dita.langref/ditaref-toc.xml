@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="DITA Language Specification v1.1" topic="common/overview.html">
+<topic label="Introduction" href="common/overview.html"/>
+<topic label="Topic elements" href="common/topic2.html">
+<topic label="topic" href="langref/topic.html"/>
+<topic label="title" href="langref/title.html"/>
+<topic label="titlealts" href="langref/titlealts.html"/>
+<topic label="navtitle" href="langref/navtitle.html"/>
+<topic label="searchtitle" href="langref/searchtitle.html"/>
+<topic label="abstract" href="langref/abstract.html"/>
+<topic label="shortdesc" href="langref/shortdesc.html"/>
+<topic label="body" href="langref/body.html"/>
+<topic label="section" href="langref/section.html"/>
+<topic label="example" href="langref/example.html"/>
+<topic label="related-links" href="langref/related-links.html"/>
+</topic>
+<topic label="Concept elements" href="common/concept2.html">
+<topic label="concept" href="langref/concept.html"/>
+<topic label="conbody" href="langref/conbody.html"/>
+</topic>
+<topic label="Reference elements" href="common/reference2.html">
+<topic label="reference" href="langref/reference.html"/>
+<topic label="refbody" href="langref/refbody.html"/>
+<topic label="refsyn" href="langref/refsyn.html"/>
+<topic label="properties" href="langref/properties.html"/>
+<topic label="prophead" href="langref/prophead.html"/>
+<topic label="proptypehd" href="langref/proptypehd.html"/>
+<topic label="propvaluehd" href="langref/propvaluehd.html"/>
+<topic label="propdeschd" href="langref/propdeschd.html"/>
+<topic label="property" href="langref/property.html"/>
+<topic label="proptype" href="langref/proptype.html"/>
+<topic label="propvalue" href="langref/propvalue.html"/>
+<topic label="propdesc" href="langref/propdesc.html"/>
+</topic>
+<topic label="Task elements" href="common/task2.html">
+<topic label="task" href="langref/task.html"/>
+<topic label="taskbody" href="langref/taskbody.html"/>
+<topic label="prereq" href="langref/prereq.html"/>
+<topic label="context" href="langref/context.html"/>
+<topic label="steps" href="langref/steps.html"/>
+<topic label="steps-unordered" href="langref/steps-unordered.html"/>
+<topic label="step" href="langref/step.html"/>
+<topic label="cmd" href="langref/cmd.html"/>
+<topic label="info" href="langref/info.html"/>
+<topic label="substeps" href="langref/substeps.html"/>
+<topic label="substep" href="langref/substep.html"/>
+<topic label="stepxmp" href="langref/stepxmp.html"/>
+<topic label="choicetable" href="langref/choicetable.html"/>
+<topic label="chhead" href="langref/chhead.html"/>
+<topic label="choptionhd" href="langref/choptionhd.html"/>
+<topic label="chdeschd" href="langref/chdeschd.html"/>
+<topic label="chrow" href="langref/chrow.html"/>
+<topic label="choption" href="langref/choption.html"/>
+<topic label="chdesc" href="langref/chdesc.html"/>
+<topic label="choices" href="langref/choices.html"/>
+<topic label="choice" href="langref/choice.html"/>
+<topic label="stepresult" href="langref/stepresult.html"/>
+<topic label="tutorialinfo" href="langref/tutorialinfo.html"/>
+<topic label="result" href="langref/result.html"/>
+<topic label="postreq" href="langref/postreq.html"/>
+</topic>
+<topic label="Glossentry elements" href="common/glossary2.html">
+<topic label="glossentry" href="langref/glossentry.html"/>
+<topic label="glossdef" href="langref/glossdef.html"/>
+<topic label="glossterm" href="langref/glossterm.html"/>
+</topic>
+<topic label="Body elements" href="common/body2.html">
+<topic label="p" href="langref/p.html"/>
+<topic label="note" href="langref/note.html"/>
+<topic label="ph" href="langref/ph.html"/>
+<topic label="keyword" href="langref/keyword.html"/>
+<topic label="xref" href="langref/xref.html"/>
+<topic label="ol" href="langref/ol.html"/>
+<topic label="ul" href="langref/ul.html"/>
+<topic label="li" href="langref/li.html"/>
+<topic label="sl" href="langref/sl.html"/>
+<topic label="sli" href="langref/sli.html"/>
+<topic label="dl" href="langref/dl.html"/>
+<topic label="dlhead" href="langref/dlhead.html"/>
+<topic label="dthd" href="langref/dthd.html"/>
+<topic label="ddhd" href="langref/ddhd.html"/>
+<topic label="dlentry" href="langref/dlentry.html"/>
+<topic label="dt" href="langref/dt.html"/>
+<topic label="dd" href="langref/dd.html"/>
+<topic label="fig" href="langref/fig.html"/>
+<topic label="figgroup" href="langref/figgroup.html"/>
+<topic label="desc" href="langref/desc.html"/>
+<topic label="image" href="langref/image.html"/>
+<topic label="alt" href="langref/alt.html"/>
+<topic label="object" href="langref/object.html"/>
+<topic label="param" href="langref/param.html"/>
+<topic label="pre" href="langref/pre.html"/>
+<topic label="lines" href="langref/lines.html"/>
+<topic label="cite" href="langref/cite.html"/>
+<topic label="lq" href="langref/lq.html"/>
+<topic label="q" href="langref/q.html"/>
+</topic>
+<topic label="Table elements" href="common/table2.html">
+<topic label="table" href="langref/table.html"/>
+<topic label="tgroup" href="langref/tgroup.html"/>
+<topic label="colspec" href="langref/colspec.html"/>
+<topic label="thead" href="langref/thead.html"/>
+<topic label="tbody" href="langref/tbody.html"/>
+<topic label="row" href="langref/row.html"/>
+<topic label="entry" href="langref/entry.html"/>
+<topic label="simpletable" href="langref/simpletable.html"/>
+<topic label="sthead" href="langref/sthead.html"/>
+<topic label="strow" href="langref/strow.html"/>
+<topic label="stentry" href="langref/stentry.html"/>
+</topic>
+<topic label="Prolog elements" href="common/prolog2.html">
+<topic label="prolog" href="langref/prolog.html"/>
+<topic label="audience" href="langref/audience.html"/>
+<topic label="author" href="langref/author.html"/>
+<topic label="brand" href="langref/brand.html"/>
+<topic label="category" href="langref/category.html"/>
+<topic label="component" href="langref/component.html"/>
+<topic label="copyright" href="langref/copyright.html"/>
+<topic label="copyrholder" href="langref/copyrholder.html"/>
+<topic label="copyryear" href="langref/copyryear.html"/>
+<topic label="created" href="langref/created.html"/>
+<topic label="critdates" href="langref/critdates.html"/>
+<topic label="featnum" href="langref/featnum.html"/>
+<topic label="keywords" href="langref/keywords.html"/>
+<topic label="metadata" href="langref/metadata.html"/>
+<topic label="othermeta" href="langref/othermeta.html"/>
+<topic label="permissions" href="langref/permissions.html"/>
+<topic label="platform" href="langref/platform.html"/>
+<topic label="prodinfo" href="langref/prodinfo.html"/>
+<topic label="prodname" href="langref/prodname.html"/>
+<topic label="prognum" href="langref/prognum.html"/>
+<topic label="publisher" href="langref/publisher.html"/>
+<topic label="resourceid" href="langref/resourceid.html"/>
+<topic label="revised" href="langref/revised.html"/>
+<topic label="series" href="langref/series.html"/>
+<topic label="source" href="langref/source.html"/>
+<topic label="vrmlist" href="langref/vrmlist.html"/>
+<topic label="vrm" href="langref/vrm.html"/>
+</topic>
+<topic label="Related links elements" href="common/relatedl.html">
+<topic label="link" href="langref/link.html"/>
+<topic label="linklist" href="langref/linklist.html"/>
+<topic label="linkpool" href="langref/linkpool.html"/>
+<topic label="linktext" href="langref/linktext.html"/>
+<topic label="linkinfo" href="langref/linkinfo.html"/>
+</topic>
+<topic label="Miscellaneous elements" href="common/valid.html">
+<topic label="dita" href="langref/dita.html"/>
+<topic label="draft-comment" href="langref/draft-comment.html"/>
+<topic label="fn" href="langref/fn.html"/>
+<topic label="indexterm" href="langref/indexterm.html"/>
+<topic label="indextermref" href="langref/indextermref.html"/>
+<topic label="index-base" href="langref/index-base.html"/>
+<topic label="tm" href="langref/tm.html"/>
+<topic label="data-about" href="langref/data-about.html"/>
+<topic label="data" href="langref/data.html"/>
+<topic label="foreign" href="langref/foreign.html"/>
+<topic label="unknown" href="langref/unknown.html"/>
+</topic>
+<topic label="Specialization elements" href="common/special.html">
+<topic label="itemgroup" href="langref/itemgroup.html"/>
+<topic label="no-topic-nesting" href="langref/no-topic-nesting.html"/>
+<topic label="required-cleanup" href="langref/required-cleanup.html"/>
+<topic label="state" href="langref/state.html"/>
+<topic label="term" href="langref/term.html"/>
+<topic label="boolean" href="langref/boolean.html"/>
+</topic>
+<topic label="Typographic elements" href="common/hi-d.html">
+<topic label="b" href="langref/b.html"/>
+<topic label="i" href="langref/i.html"/>
+<topic label="u" href="langref/u.html"/>
+<topic label="tt" href="langref/tt.html"/>
+<topic label="sup" href="langref/sup.html"/>
+<topic label="sub" href="langref/sub.html"/>
+</topic>
+<topic label="Programming elements" href="common/pr-d.html">
+<topic label="apiname" href="langref/apiname.html"/>
+<topic label="codeblock" href="langref/codeblock.html"/>
+<topic label="codeph" href="langref/codeph.html"/>
+<topic label="option" href="langref/option.html"/>
+<topic label="parmname" href="langref/parmname.html"/>
+<topic label="parml" href="langref/parml.html"/>
+<topic label="plentry" href="langref/plentry.html"/>
+<topic label="pt" href="langref/pt.html"/>
+<topic label="pd" href="langref/pd.html"/>
+<topic label="synph" href="langref/synph.html"/>
+<topic label="syntaxdiagram" href="langref/syntaxdiagram.html"/>
+<topic label="groupseq" href="langref/groupseq.html"/>
+<topic label="groupchoice" href="langref/groupchoice.html"/>
+<topic label="groupcomp" href="langref/groupcomp.html"/>
+<topic label="fragment" href="langref/fragment.html"/>
+<topic label="fragref" href="langref/fragref.html"/>
+<topic label="synblk" href="langref/synblk.html"/>
+<topic label="synnote" href="langref/synnote.html"/>
+<topic label="synnoteref" href="langref/synnoteref.html"/>
+<topic label="kwd" href="langref/kwd.html"/>
+<topic label="var" href="langref/var.html"/>
+<topic label="oper" href="langref/oper.html"/>
+<topic label="delim" href="langref/delim.html"/>
+<topic label="sep" href="langref/sep.html"/>
+<topic label="repsep" href="langref/repsep.html"/>
+</topic>
+<topic label="Software elements" href="common/sw-d.html">
+<topic label="msgph" href="langref/msgph.html"/>
+<topic label="msgblock" href="langref/msgblock.html"/>
+<topic label="msgnum" href="langref/msgnum.html"/>
+<topic label="cmdname" href="langref/cmdname.html"/>
+<topic label="varname" href="langref/varname.html"/>
+<topic label="filepath" href="langref/filepath.html"/>
+<topic label="userinput" href="langref/userinput.html"/>
+<topic label="systemoutput" href="langref/systemoutput.html"/>
+</topic>
+<topic label="User interface elements" href="common/ui-d.html">
+<topic label="uicontrol" href="langref/uicontrol.html"/>
+<topic label="wintitle" href="langref/wintitle.html"/>
+<topic label="menucascade" href="langref/menucascade.html"/>
+<topic label="shortcut" href="langref/shortcut.html"/>
+<topic label="screen" href="langref/screen.html"/>
+</topic>
+<topic label="Utilities elements" href="common/ut-d.html">
+<topic label="imagemap" href="langref/imagemap.html"/>
+<topic label="area" href="langref/area.html"/>
+<topic label="coords" href="langref/coords.html"/>
+<topic label="shape" href="langref/shape.html"/>
+</topic>
+<topic label="Indexing group elements" href="common/indexing-d.html">
+<topic label="index-see" href="langref/index-see.html"/>
+<topic label="index-see-also" href="langref/index-see-also.html"/>
+<topic label="index-sort-as" href="langref/index-sort-as.html"/>
+</topic>
+<topic label="Map elements" href="common/map2.html">
+<topic label="map" href="langref/map.html"/>
+<topic label="anchor" href="langref/anchor.html"/>
+<topic label="navref" href="langref/navref.html"/>
+<topic label="reltable" href="langref/reltable.html"/>
+<topic label="relrow" href="langref/relrow.html"/>
+<topic label="relcell" href="langref/relcell.html"/>
+<topic label="relheader" href="langref/relheader.html"/>
+<topic label="relcolspec" href="langref/relcolspec.html"/>
+<topic label="topicmeta" href="langref/topicmeta.html"/>
+<topic label="topicref" href="langref/topicref.html"/>
+</topic>
+<topic label="Map group elements" href="common/mapgroup-d.html">
+<topic label="topicgroup" href="langref/topicgroup.html"/>
+<topic label="topichead" href="langref/topichead.html"/>
+</topic>
+<topic label="Bookmap content elements" href="common/about-bookmap.html">
+<topic label="bookmap" href="langref/bookmap.html"/>
+<topic label="abbrevlist" href="langref/abbrevlist.html"/>
+<topic label="amendments" href="langref/amendments.html"/>
+<topic label="appendix" href="langref/appendix.html"/>
+<topic label="backmatter" href="langref/backmatter.html"/>
+<topic label="bibliolist" href="langref/bibliolist.html"/>
+<topic label="bookabstract" href="langref/bookabstract.html"/>
+<topic label="booklibrary" href="langref/booklibrary.html"/>
+<topic label="booklist" href="langref/booklist.html"/>
+<topic label="booklists" href="langref/booklists.html"/>
+<topic label="booktitle" href="langref/booktitle.html"/>
+<topic label="booktitlealt" href="langref/booktitlealt.html"/>
+<topic label="chapter" href="langref/chapter.html"/>
+<topic label="colophon" href="langref/colophon.html"/>
+<topic label="dedication" href="langref/dedication.html"/>
+<topic label="draftintro" href="langref/draftintro.html"/>
+<topic label="figurelist" href="langref/figurelist.html"/>
+<topic label="frontmatter" href="langref/frontmatter.html"/>
+<topic label="glossarylist" href="langref/glossarylist.html"/>
+<topic label="indexlist" href="langref/indexlist.html"/>
+<topic label="mainbooktitle" href="langref/mainbooktitle.html"/>
+<topic label="notices" href="langref/notices.html"/>
+<topic label="part" href="langref/part.html"/>
+<topic label="preface" href="langref/preface.html"/>
+<topic label="tablelist" href="langref/tablelist.html"/>
+<topic label="toc" href="langref/toc.html"/>
+<topic label="trademarklist" href="langref/trademarklist.html"/>
+</topic>
+<topic label="Bookmap metadata elements" href="common/bookmap-meta.html">
+<topic label="bookmeta" href="langref/bookmeta.html"/>
+<topic label="approved" href="langref/approved.html"/>
+<topic label="bookchangehistory" href="langref/bookchangehistory.html"/>
+<topic label="bookevent" href="langref/bookevent.html"/>
+<topic label="bookeventtype" href="langref/bookeventtype.html"/>
+<topic label="bookid" href="langref/bookid.html"/>
+<topic label="booknumber" href="langref/booknumber.html"/>
+<topic label="bookowner" href="langref/bookowner.html"/>
+<topic label="bookpartno" href="langref/bookpartno.html"/>
+<topic label="bookrestriction" href="langref/bookrestriction.html"/>
+<topic label="bookrights" href="langref/bookrights.html"/>
+<topic label="completed" href="langref/completed.html"/>
+<topic label="copyrfirst" href="langref/copyrfirst.html"/>
+<topic label="copyrlast" href="langref/copyrlast.html"/>
+<topic label="day" href="langref/day.html"/>
+<topic label="edited" href="langref/edited.html"/>
+<topic label="edition" href="langref/edition.html"/>
+<topic label="isbn" href="langref/isbn.html"/>
+<topic label="maintainer" href="langref/maintainer.html"/>
+<topic label="month" href="langref/month.html"/>
+<topic label="organization" href="langref/organization.html"/>
+<topic label="person" href="langref/person.html"/>
+<topic label="printlocation" href="langref/printlocation.html"/>
+<topic label="published" href="langref/published.html"/>
+<topic label="publisherinformation" href="langref/publisherinformation.html"/>
+<topic label="publishtype" href="langref/publishtype.html"/>
+<topic label="reviewed" href="langref/reviewed.html"/>
+<topic label="revisionid" href="langref/revisionid.html"/>
+<topic label="started" href="langref/started.html"/>
+<topic label="summary" href="langref/summary.html"/>
+<topic label="tested" href="langref/tested.html"/>
+<topic label="volume" href="langref/volume.html"/>
+<topic label="year" href="langref/year.html"/>
+</topic>
+<topic label="xNAL domain elements" href="common/xnal-d.html">
+<topic label="xNAL usage guidelines" href="common/xnaldetails.html"/>
+<topic label="authorinformation" href="langref/authorinformation.html"/>
+<topic label="addressdetails" href="langref/addressdetails.html"/>
+<topic label="administrativearea" href="langref/administrativearea.html"/>
+<topic label="contactnumber" href="langref/contactnumber.html"/>
+<topic label="contactnumbers" href="langref/contactnumbers.html"/>
+<topic label="country" href="langref/country.html"/>
+<topic label="emailaddress" href="langref/emailaddress.html"/>
+<topic label="emailaddresses" href="langref/emailaddresses.html"/>
+<topic label="firstname" href="langref/firstname.html"/>
+<topic label="generationidentifier" href="langref/generationidentifier.html"/>
+<topic label="honorific" href="langref/honorific.html"/>
+<topic label="lastname" href="langref/lastname.html"/>
+<topic label="locality" href="langref/locality.html"/>
+<topic label="localityname" href="langref/localityname.html"/>
+<topic label="middlename" href="langref/middlename.html"/>
+<topic label="namedetails" href="langref/namedetails.html"/>
+<topic label="organizationinfo" href="langref/organizationinfo.html"/>
+<topic label="organizationname" href="langref/organizationname.html"/>
+<topic label="organizationnamedetails" href="langref/organizationnamedetails.html"/>
+<topic label="otherinfo" href="langref/otherinfo.html"/>
+<topic label="personinfo" href="langref/personinfo.html"/>
+<topic label="personname" href="langref/personname.html"/>
+<topic label="postalcode" href="langref/postalcode.html"/>
+<topic label="thoroughfare" href="langref/thoroughfare.html"/>
+<topic label="url" href="langref/url.html"/>
+<topic label="urls" href="langref/urls.html"/>
+</topic>
+<topic label="DITAVAL elements" href="common/about-ditaval.html">
+<topic label="val" href="langref/ditaval-val.html"/>
+<topic label="style-conflict" href="langref/ditaval-style-conflict.html"/>
+<topic label="prop" href="langref/ditaval-prop.html"/>
+<topic label="revprop" href="langref/ditaval-revprop.html"/>
+<topic label="startflag" href="langref/ditaval-startflag.html"/>
+<topic label="endflag" href="langref/ditaval-endflag.html"/>
+<topic label="alt-text" href="langref/ditaval-alt-text.html"/>
+</topic>
+<topic label="Commonly referenced attributes" href="common/comrfet.html">
+<topic label="%display-atts;" href="common/display-atts.html"/>
+<topic label="%global-atts;" href="common/global-atts.html"/>
+<topic label="%id-atts;" href="common/id-atts.html"/>
+<topic label="%rel-atts;" href="common/rel-atts.html"/>
+<topic label="%select-atts;" href="common/select-atts.html"/>
+<topic label="%localization-atts;" href="common/localization-atts.html"/>
+<topic label="%univ-atts;" href="common/univ-atts.html"/>
+<topic label="%topicref-atts; and %topicref-atts-no-toc;" href="common/topicref-atts.html"/>
+<topic label="Other common DITA attributes" href="common/othercommon.html"/>
+<topic label="Complex attribute definitions" href="common/complexattributedefinitions.html">
+<topic label="The conref attribute" href="common/theconrefattribute.html">
+<topic label="Using the -dita-use-conref-target value" href="common/ditauseconreftarget.html"/>
+</topic>
+<topic label="The type attribute" href="common/thetypeattribute.html"/>
+<topic label="The format attribute" href="common/theformatattribute.html"/>
+<topic label="The role attribute" href="common/theroleattribute.html"/>
+</topic>
+</topic>
+<topic label="Alphabetical listing of DITA elements" href="common/alphalist.html"/>
+</toc>

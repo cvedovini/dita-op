@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="taskbody" />
+<meta name="abstract" content="The &lt;taskbody&gt; element is the main body-level element inside a task topic. A task body has a very specific structure, with the following elements in this order: &lt;prereq&gt;, &lt;context&gt;, &lt;steps&gt;, &lt;result&gt;, &lt;example&gt; and &lt;postreq&gt;. Each of the body sections are optional." />
+<meta name="description" content="The &lt;taskbody&gt; element is the main body-level element inside a task topic. A task body has a very specific structure, with the following elements in this order: &lt;prereq&gt;, &lt;context&gt;, &lt;steps&gt;, &lt;result&gt;, &lt;example&gt; and &lt;postreq&gt;. Each of the body sections are optional." />
+<meta content="taskbody, Task elements" name="DC.subject" />
+<meta content="taskbody, Task elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/task2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/task.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/prereq.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="taskbody" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>taskbody</title>
+</head>
+<body id="taskbody"><a name="taskbody"><!-- --></a>
+
+
+<h1 class="topictitle1">taskbody</h1>
+
+
+
+<div><p>The &lt;<span class="keyword">taskbody</span>&gt; element is the main body-level
+element inside a task topic. A task body has a very specific structure, with
+the following elements in this order: &lt;<span class="keyword">prereq</span>&gt;, &lt;<span class="keyword">context</span>&gt;, &lt;<span class="keyword">steps</span>&gt;, &lt;<span class="keyword">result</span>&gt;, &lt;<span class="keyword">example</span>&gt; and &lt;<span class="keyword">postreq</span>&gt;.
+Each of the body sections are optional.</p>
+
+<div class="example"><h2 class="sectiontitle">Example</h2>See <a href="task.html" title="The &lt;task&gt; element is the top-level element for a task topic. Tasks are the main building blocks for task-oriented user assistance. They generally provide step-by-step instructions that will enable a user to perform a task. A task answers the question of &quot;how to?&quot; by telling the user precisely what to do and the order in which to do it. Tasks have the same high-level structure as other topics, with a title, short description and body.">task</a>.</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100C7" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100CC" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100D6" headers="N100C7"><strong>ditabase, task</strong></td>
+<td valign="top" headers="N100CC N100D6"> ( (
+<a href="../common/../langref/prereq.html" title="The pre-requisite (&lt;prereq&gt;) section of a task should document things the user needs to know or do before starting the current task. Prerequisite links will be placed in a list after the related-links section; on output the &lt;prereq&gt; links from the related-links section are added to the &lt;prereq&gt; section.">prereq</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/context.html" title="The &lt;context&gt; section of a task provides background information for the task. This information helps the user understand what the purpose of the task is and what they will gain by completing the task. This section should be brief and does not replace or recreate a concept topic on the same subject, although the context section may include some conceptual information.">context</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/steps.html" title="The &lt;steps&gt; section of a task provides the main content of the task topic. The task is described as a series of steps that the user must follow to accomplish the task. One or more &lt;steps&gt; elements is required inside the &lt;steps&gt; section.">steps</a> or 
+<a href="../common/../langref/steps-unordered.html" title="Like the &lt;steps&gt; element, the &lt;steps-unordered&gt; section of a task provides the main content of the task topic, but particularly for cases in which the order of steps may vary from one situation to another. One or more steps is required inside the &lt;steps-unordered&gt; section.">steps-unordered</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/result.html" title="The &lt;result&gt; element describes the expected outcome for the task as a whole.">result</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/example.html" title="The &lt;example&gt; element is a section with the specific role of containing examples that illustrate or support the current topic. The &lt;example&gt; element has the same content model as &lt;section&gt;.">example</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/postreq.html" title="The &lt;postreq&gt; element describes steps or tasks that the user should do after the successful completion of the current task. It is often supported by links to the next task or tasks in the &lt;related-links&gt; section.">postreq</a>) <em> (optional) </em>) </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N101C6" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N101CB" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N101D5" headers="N101C6"><strong>ditabase, task</strong></td>
+<td valign="top" headers="N101CB N101D5"><a href="../common/../langref/task.html" title="The &lt;task&gt; element is the top-level element for a task topic. Tasks are the main building blocks for task-oriented user assistance. They generally provide step-by-step instructions that will enable a user to perform a task. A task answers the question of &quot;how to?&quot; by telling the user precisely what to do and the order in which to do it. Tasks have the same high-level structure as other topics, with a title, short description and body.">task</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- topic/body task/taskbody </p>
+</div>
+
+<div class="section" id="taskbody__attrs"><a name="taskbody__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="taskbody__taskbody_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="taskbody__taskbody_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10216" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N1021C" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N10222" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N10228" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N1022E" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10216">base</td>
+
+<td valign="top" headers="N1021C">A generic attribute that has no specific purpose, but is intended
+to act as a base for specialized attributes that have a simple value syntax
+like the conditional processing attributes (one or more alphanumeric values
+separated by whitespace). <span>The attribute takes a space delimited set of
+values. However, when acting as a container for generalized attributes, the
+content model will be more complex; that model is documented in the "attribute
+generalization" section of the DITA architectural specification.</span></td>
+
+<td valign="top" headers="N10222">CDATA</td>
+
+<td valign="top" headers="N10228">#IMPLIED</td>
+
+<td valign="top" headers="N1022E">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10216">%id-atts; (id, conref)</td>
+
+<td valign="top" headers="N1021C">A set of related attributes, described at <a href="../common/id-atts.html" title="ID attributes (%id-atts;) is a parameter entity declaration in the topic DTD that includes attributes that enable the naming and referencing of elements in a DITA topic: id and conref.">%id-atts;</a></td>
+
+<td valign="top" headers="N10222">parameter entity</td>
+
+<td valign="top" headers="N10228">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1022E">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10216">%localization-atts; (translate, xml:lang, dir)</td>
+
+<td valign="top" headers="N1021C"> A set of related attributes, described at <a href="../common/localization-atts.html" title="Localization attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%localization-atts;</a>.
+</td>
+
+<td valign="top" headers="N10222">parameter entity</td>
+
+<td valign="top" headers="N10228">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1022E">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10216">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N1021C">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N10222">parameter entity</td>
+
+<td valign="top" headers="N10228">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1022E">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10216">class, outputclass</td>
+
+<td valign="top" headers="N1021C">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N10222">&#xA0;</td>
+<td valign="top" headers="N10228">&#xA0;</td>
+<td valign="top" headers="N1022E">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/task2.html" title="Task topics answer &quot;How do I?&quot; questions, and have a well-defined structure that describes how to complete a procedure to accomplish a specific goal. Use the task topic to describe the steps of a particular task, or to provide an overview of a higher-level task. The task topic includes sections for describing the context, prerequisites, actual steps, expected results, example, and expected next steps for a task. For more details on when to use task and other information types, please refer to the DITA architectural specification.">Task elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/task.html" title="The &lt;task&gt; element is the top-level element for a task topic. Tasks are the main building blocks for task-oriented user assistance. They generally provide step-by-step instructions that will enable a user to perform a task. A task answers the question of &quot;how to?&quot; by telling the user precisely what to do and the order in which to do it. Tasks have the same high-level structure as other topics, with a title, short description and body.">task</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/prereq.html" title="The pre-requisite (&lt;prereq&gt;) section of a task should document things the user needs to know or do before starting the current task. Prerequisite links will be placed in a list after the related-links section; on output the &lt;prereq&gt; links from the related-links section are added to the &lt;prereq&gt; section.">prereq</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

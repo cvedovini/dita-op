@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="%topicref-atts; and %topicref-atts-no-toc;" />
+<meta name="abstract" content="The %topicref-atts; parameter entity represents a group of attributes used in numerous map elements, such as map, topicref, relcolspec, relcell, topichead, and topicgroup. The set is identical to those in the topicref-atts-no-toc attribute set, except that %topicref-atts; does not provide a default for the toc attribute." />
+<meta name="description" content="The %topicref-atts; parameter entity represents a group of attributes used in numerous map elements, such as map, topicref, relcolspec, relcell, topichead, and topicgroup. The set is identical to those in the topicref-atts-no-toc attribute set, except that %topicref-atts; does not provide a default for the toc attribute." />
+<meta content="%topicref-atts, %topicref-atts-no-toc, Commonly referenced attribute descriptions" name="DC.subject" />
+<meta content="%topicref-atts, %topicref-atts-no-toc, Commonly referenced attribute descriptions" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/comrfet.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/univ-atts.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/othercommon.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="topicref-atts" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>%topicref-atts; and %topicref-atts-no-toc;</title>
+</head>
+<body id="topicref-atts"><a name="topicref-atts"><!-- --></a>
+
+
+<h1 class="topictitle1"><span class="keyword">%topicref-atts; and %topicref-atts-no-toc;</span></h1>
+
+
+
+<div><p>The %topicref-atts; parameter entity represents a group
+of attributes used in numerous map elements, such as map, topicref, relcolspec,
+relcell, topichead, and topicgroup. The set is identical to those in the <span class="keyword">topicref-atts-no-toc</span> attribute
+set, except that %topicref-atts; does not provide a default for the toc attribute.</p>
+
+
+
+<div class="section"><h2 class="sectiontitle">Attributes</h2><p>The table below represents the topicref-atts
+attribute set. For elements that use topicref-atts-no-toc, such as &lt;<span class="keyword">reltable</span>&gt;,
+the toc attribute has a default of "no".</p>
+<a name="topicref-atts__topicref-atts_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="topicref-atts__topicref-atts_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N100A2" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N100A8" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N100AE" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N100B4" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N100BA" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100A2">collection-type</td>
+
+<td valign="top" headers="N100A8">Collection types describe how links relate to each other. A family
+collection represents a tight grouping in which each of the referenced topics
+not only relates to the current topic but also relate to each other. Sequence
+indicates that the order of the child topics is significant; output processors
+will typically link between them in order. Unordered indicates that the order
+is not significant. Choice indicates that one of the children should be selected.
+If no value is specified, processors should treat the default as "unordered",
+although no default is specified in the DTD. See <a href="ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">this
+topic</a> for more information on the conref value.<p>Usage of the collection-type attribute on &lt;reltable&gt; and
+&lt;relcolspec&gt; is currently undefined, and reserved for future use.</p>
+</td>
+
+<td valign="top" headers="N100AE">(unordered | sequence | choice | family | -dita-use-conref-target)</td>
+
+<td valign="top" headers="N100B4">#IMPLIED</td>
+
+<td valign="top" headers="N100BA"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100A2">type</td>
+
+<td valign="top" headers="N100A8">Describes the target of a cross-reference. See <a href="thetypeattribute.html" title="The type attribute is most often used on linking elements to describe the target of a cross-reference. It is also used on the note element to describe the type of the current note, and on several other elements for varying purposes.">The type attribute</a> for
+detailed information on supported values and processing implications.</td>
+
+<td valign="top" headers="N100AE">CDATA</td>
+
+<td valign="top" headers="N100B4">#IMPLIED (Processed as if the target were of type "topic", or inherited from an ancestor)</td>
+
+<td valign="top" headers="N100BA"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100A2">scope</td>
+
+<td valign="top" headers="N100A8">The scope attribute identifies the closeness of the relationship
+between the current document and the target resource. <br /><ul>
+<li>Set scope to <samp class="codeph">local</samp> when the resource is part of the current
+set of content.</li>
+
+<li> Set scope to <samp class="codeph">peer</samp> when the resource is part of the current
+set of content but is not accessible at build time.</li>
+
+<li> Set scope to <samp class="codeph">external</samp> when the resource is not part
+of the current information set and should open in a new browser window.</li>
+
+<li>See <a href="ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">Using the -dita-use-conref-target value</a> for more information
+on -dita-use-conref-target.</li>
+
+</ul>
+ The processing default is <samp class="codeph">local</samp>.  <span>If no value is
+specified, but the attribute is specified on an ancestor within a map or within
+the related-links section, the value will inherit from the closest ancestor.</span></td>
+
+<td valign="top" headers="N100AE">(local | peer | external | -dita-use-conref-target)</td>
+
+<td valign="top" headers="N100B4">#IMPLIED</td>
+
+<td valign="top" headers="N100BA"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100A2">locktitle</td>
+
+<td valign="top" headers="N100A8">This attribute makes sure the <em>               <span class="keyword">navtitle</span> 
+           </em> attribute is used if it is present; if <em>               <span class="keyword">locktitle</span> 
+           </em> isn't set to <span class="q">"yes"</span>, the <em>               <span class="keyword">navtitle</span> 
+           </em> attribute is ignored and text is retrieved from the target<dl>
+
+<dt class="dlterm">yes</dt>
+
+<dd>The navtitle in the map is used.</dd>
+
+
+<dt class="dlterm">no</dt>
+
+<dd>Default. The navtitle or title of the topic is used.</dd>
+
+
+<dt class="dlterm">-dita-use-conref-target</dt>
+
+<dd>See <a href="ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">Using the -dita-use-conref-target value</a> for more information.</dd>
+
+</dl>
+</td>
+
+<td valign="top" headers="N100AE">(yes | no | -dita-use-conref-target)</td>
+
+<td valign="top" headers="N100B4">#IMPLIED</td>
+
+<td valign="top" headers="N100BA">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100A2">format</td>
+
+<td valign="top" headers="N100A8">The format attribute identifies the format of the resource being
+cross referenced. See <a href="theformatattribute.html" title="The format attribute identifies the format of the resource being cross referenced. The processing default for format is dita. If no value is specified, but the attribute is specified on an ancestor within a map or within the related-links section, the value will inherit from the closest ancestor.">The format attribute</a> for details
+on supported values.</td>
+
+<td valign="top" headers="N100AE">CDATA</td>
+
+<td valign="top" headers="N100B4">#IMPLIED</td>
+
+<td valign="top" headers="N100BA">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100A2">linking</td>
+
+<td valign="top" headers="N100A8">Defines some specific linking characteristics of a topic's current
+location in the map. <span>If the value is not
+specified locally, but it specified on an ancestor, it will inherit the value of on the ancestor.</span><dl>
+<dt class="dlterm">targetonly</dt>
+
+<dd>A topic can only be linked to and cannot link to other topics.</dd>
+
+
+<dt class="dlterm">sourceonly</dt>
+
+<dd>A topic cannot be linked to but can link to other topics.</dd>
+
+
+<dt class="dlterm">normal</dt>
+
+<dd>A topic can be linked to and can link to other topics. Use this to override
+the linking value of a parent topic.</dd>
+
+
+<dt class="dlterm">none</dt>
+
+<dd>A topic cannot be linked to or link to other topics.</dd>
+
+
+<dt class="dlterm">-dita-use-conref-target</dt>
+
+<dd>See <a href="ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">Using the -dita-use-conref-target value</a> for more information.</dd>
+
+</dl>
+</td>
+
+<td valign="top" headers="N100AE">(targetonly | sourceonly | normal | none | -dita-use-conref-target)</td>
+
+<td valign="top" headers="N100B4">#IMPLIED</td>
+
+<td valign="top" headers="N100BA">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100A2">toc</td>
+
+<td valign="top" headers="N100A8">Specifies whether a topic appears in the table of contents (toc). <span id="topicref-atts__N52153"><a name="topicref-atts__N52153"><!-- --></a>If the value is not
+specified locally, but it specified on an ancestor, it will inherit the value of on the ancestor.</span></td>
+
+<td valign="top" headers="N100AE">(yes | no | <a href="ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">-dita-use-conref-target</a>)</td>
+
+<td valign="top" headers="N100B4">#IMPLIED</td>
+
+<td valign="top" headers="N100BA">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100A2">print</td>
+
+<td valign="top" headers="N100A8">Specifies whether the topic should be included in a portable document
+format (PDF) file. <span>If the value is not
+specified locally, but it specified on an ancestor, it will inherit the value of on the ancestor.</span><dl>
+<dt class="dlterm">yes</dt>
+
+<dd>Include the topic in a PDF file.</dd>
+
+
+<dt class="dlterm">no</dt>
+
+<dd>Do not include the topic in a PDF file.</dd>
+
+
+<dt class="dlterm">printonly</dt>
+
+<dd>Directs processing to skip the parent topic for non-print outputs of map.</dd>
+
+
+<dt class="dlterm">-dita-use-conref-target</dt>
+
+<dd>See <a href="ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">Using the -dita-use-conref-target value</a> for more information.</dd>
+
+</dl>
+</td>
+
+<td valign="top" headers="N100AE">(yes | no | printonly | -dita-use-conref-target)</td>
+
+<td valign="top" headers="N100B4">#IMPLIED</td>
+
+<td valign="top" headers="N100BA">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100A2">search</td>
+
+<td valign="top" headers="N100A8">Describes whether the target is available for searching. <span>If the value is not
+specified locally, but it specified on an ancestor, it will inherit the value of on the ancestor.</span><dl>
+<dt class="dlterm">yes</dt>
+
+<dd />
+
+
+<dt class="dlterm">no</dt>
+
+<dd />
+
+
+<dt class="dlterm"><a href="ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">-dita-use-conref-target</a></dt>
+
+<dd />
+
+</dl>
+</td>
+
+<td valign="top" headers="N100AE">(yes | no | -dita-use-conref-target)</td>
+
+<td valign="top" headers="N100B4">#IMPLIED</td>
+
+<td valign="top" headers="N100BA">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100A2">chunk</td>
+
+<td valign="top" headers="N100A8">When a set of topics is transformed using a map, the
+chunk attribute allows multi-topic documents to be broken into smaller files,
+and multiple individual topics to be combined into larger combined documents.
+<p>For a detailed description of the chunk attribute and its usage see the
+section on Chunking in Chapter 4 of the DITA 1.1 Architectural Specification.</p>
+</td>
+
+<td valign="top" headers="N100AE">CDATA</td>
+
+<td valign="top" headers="N100B4">#IMPLIED</td>
+
+<td valign="top" headers="N100BA">No</td>
+
+</tr>
+
+</table>
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/comrfet.html" title="Several parts of a language reference are common between many locations, such as the descriptions for the selection and property attributes of DITA elements. These are described as sets to reduce unnecessary duplication of common information.">Commonly referenced attributes</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="IDs and references" />
+<meta name="abstract" content="The DITA identity attribute provides mechanisms for identifying content for retrieval or linking. The syntax for referencing IDs is consistent regardless of the referencing mechanism." />
+<meta name="description" content="The DITA identity attribute provides mechanisms for identifying content for retrieval or linking. The syntax for referencing IDs is consistent regardless of the referencing mechanism." />
+<meta scheme="URI" name="DC.Relation" content="behaviors.html" />
+<meta scheme="URI" name="DC.Relation" content="ditanav.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="id" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>IDs and references</title>
+</head>
+<body id="id"><a name="id"><!-- --></a>
+
+
+<h1 class="topictitle1">IDs and references</h1>
+
+
+<div><p>The DITA identity attribute provides mechanisms for identifying
+content for retrieval or linking. The syntax for referencing IDs is consistent
+regardless of the referencing mechanism.</p>
+
+<p>The id attribute assigns a unique identifier to an element so the element
+can be referenced. The scope of uniqueness for the id attribute depends on
+the role of the element within the DITA architecture:</p>
+
+<dl>
+<dt class="dlterm">Topic IDs</dt>
+
+<dd>Because topics are the basic units of information within DITA, the id
+attribute for the topic must be unique within the document instance. <p>A
+topic architecture assembles topics into a deliverable by reference. To ensure
+that topics can be referenced, the id attribute is required on the topic element. </p>
+<p>The
+complete identifier for a topic consists of the combination of the URI for
+the document instance, a separating hash character, and the topic id (as in <samp class="codeph">http://some.org/some/directory/topicfile.xml#topicid</samp>).
+URIs are described in RFC 2396. As is typical with URIs, a relative URI can
+be used as the identifier for the document instance so long as it is resolvable
+in the referencing context. For instance, within a file system directory,
+the filename of the document instance suffices (as in <samp class="codeph">some/directory/topicfile.xml#topicid</samp>).
+Within the same document, the topic id alone suffices (as in <samp class="codeph">#topicid</samp>).
+Where the topic element is the root element of the document instance, contexts
+outside the document instance may omit the topic id when referring to the
+topic element (as in <samp class="codeph">topicfile.xml</samp>). If the target contains
+multiple peer topics organized by a &lt;dita&gt; element (as in the ditabase
+document type), then the reference is resolved to the first topic in the target,
+except in the case of topicrefs being resolved as inclusion directives (for
+example during PDF output), in which case the entire target file is included,
+regardless of whether a specific topic is targeted.</p>
+<p>The topic id can be referenced by
+other elements, including topicrefs, links, xrefs, or conrefs to the topic,
+as well as being used as part of references to the topic content.</p>
+<p>The
+id attribute for DITA topics is of type ID in XML, and so must be unique within
+the document instance.</p>
+</dd>
+
+
+<dt class="dlterm">Element IDs within a topic</dt>
+
+<dd>Because topic content is always contained within a topic, the id attribute
+for a topic content element must be unique only within the one topic that
+immediately contains it. This approach ensures maintainable references to
+content because the identifier remains valid so long as the document instance,
+topic, and content exist. The position of the content within the topic and
+the position of the topic within the document instance can change without
+invalidating the content identifier. In addition, this approach avoids the
+need to rewrite topic content ids to avoid naming collisions when aggregating
+topics. <p>The id is optional
+and need be added only to make the content referenceable.</p>
+<p>The complete
+identifier for topic content consists of the combination of the complete identifier
+for the topic, a separating solidus (/), and the topic content id (as in <samp class="codeph">http://some.org/some/directory/topicfile.xml#topicid/contentid</samp>). As noted before, the topic identifier portion can use a relative URI for
+the document instance in contexts where the relative URI can be resolved (as
+in <samp class="codeph">some/directory/topicfile.xml#topicid/contentid</samp>).</p>
+<p>The
+containing topic id must always be included when referencing an element id.
+Otherwise, a reference to another topic couldn't be distinguished from a reference
+to an element within the same topic. For references within the same document
+instance, the identifier for the document instance can be omitted altogether
+(as in <samp class="codeph">#topicid/contentid</samp>).</p>
+<p>The id attribute for elements
+within DITA topics is not of type ID and is not required to be unique within
+a document, although it should be unique within the topic.</p>
+</dd>
+
+
+<dt class="dlterm">Map IDs and element IDs within a map</dt>
+
+<dd>For a map, the id of an element should be unique within the document instance.
+This approach ensures that these elements can be referenced outside the map
+without qualification by the map id. <p>For the anchor element, which exists
+only to identify a position within a map as a target for references, the id
+attribute is required. For the other elements, the id attribute is optional.</p>
+<p>The
+complete identifier for a map element consists of the combination of the absolute
+URI for the map document instance and the element id (as in <samp class="codeph">http://some.org/some/directory/mapfile.xml#topicrefid</samp>). </p>
+<p>The
+id attributes for maps and anchors are of type ID and are required to be unique
+within the document instance. The id attributes for other elements in map
+are not of type ID and are not required to be unique.</p>
+</dd>
+
+</dl>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="behaviors.html" title="Several common DITA processing behaviors are driven by attributes, including navigation, content reuse, and conditional processing.">DITA processing</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="ditanav.html" title="The following behaviors support the creation of reader navigation to or across DITA topics.">Navigation behaviors</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

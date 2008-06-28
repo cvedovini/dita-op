@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="%rel-atts;" />
+<meta name="abstract" content="Relational attributes (&lt;%rel-atts;&gt;) is a parameter entity declaration in the topic DTD that includes attributes whose values may be used for representing navigational relationships. These attributes occur only on elements that represent relationships between topics." />
+<meta name="description" content="Relational attributes (&lt;%rel-atts;&gt;) is a parameter entity declaration in the topic DTD that includes attributes whose values may be used for representing navigational relationships. These attributes occur only on elements that represent relationships between topics." />
+<meta content="%rel-atts, Commonly referenced attribute descriptions" name="DC.subject" />
+<meta content="%rel-atts, Commonly referenced attribute descriptions" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/comrfet.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/id-atts.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/select-atts.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="rel-atts" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>%rel-atts;</title>
+</head>
+<body id="rel-atts"><a name="rel-atts"><!-- --></a>
+
+
+<h1 class="topictitle1"><span class="keyword">%rel-atts;</span></h1>
+
+
+
+<div><p>Relational attributes (&lt;<span class="keyword">%rel-atts;</span>&gt;) is a
+parameter entity declaration in the topic DTD that includes attributes whose
+values may be used for representing navigational relationships. These attributes
+occur only on elements that represent relationships between topics.</p>
+
+
+
+<div class="section"><h2 class="sectiontitle">Attributes</h2><a name="rel-atts__rel-atts_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="rel-atts__rel-atts_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N1008C" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N10092" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N10098" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N1009E" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N100A4" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1008C">type</td>
+
+<td valign="top" headers="N10092">Describes the target of a cross-reference. See <a href="thetypeattribute.html" title="The type attribute is most often used on linking elements to describe the target of a cross-reference. It is also used on the note element to describe the type of the current note, and on several other elements for varying purposes.">The type attribute</a> for
+detailed information on supported values and processing implications.</td>
+
+<td valign="top" headers="N10098">CDATA</td>
+
+<td valign="top" headers="N1009E">#IMPLIED (Processed as if the target were of type "topic", or inherited from an ancestor)</td>
+
+<td valign="top" headers="N100A4"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1008C">role</td>
+
+<td valign="top" headers="N10092"><span id="rel-atts__N51D48"><a name="rel-atts__N51D48"><!-- --></a>The role attribute defines the role the
+target topic plays in relationship with the current topic. For example, in
+a parent/child relationship, the role would be "parent" when the
+target is the parent of the current topic, and "child" when the
+target is the child of the current topic. This structure could be used to
+sort and classify links at display time. </span> See <a href="theroleattribute.html" title="The role attribute defines the role the target topic plays in relationship with the current topic. For example, in a parent/child relationship, the role would be &quot;parent&quot; when the target is the parent of the current topic, and &quot;child&quot; when the target is the child of the current topic. This structure could be used to sort and classify links at display time.">The role attribute</a> for
+information on supported values.</td>
+
+<td valign="top" headers="N10098">(parent | child | sibling | friend | next | previous | cousin | ancestor
+| descendant | <em>               <span class="keyword">sample | external | [deprecated]</span> 
+           </em> other | -dita-use-conref-target)</td>
+
+<td valign="top" headers="N1009E">#IMPLIED</td>
+
+<td valign="top" headers="N100A4">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1008C">otherrole</td>
+
+<td valign="top" headers="N10092">Indicates an alternate role. This value is used when the role attribute
+is set to other.</td>
+
+<td valign="top" headers="N10098">CDATA</td>
+
+<td valign="top" headers="N1009E">#IMPLIED</td>
+
+<td valign="top" headers="N100A4">No</td>
+
+</tr>
+
+</table>
+</div>
+
+<div class="example">          <p>The %rel-atts; parameter entity is used within the DITA
+DTDs as a common definition for attributes available to elements that represent
+topic-to-topic relationships. Some typical examples include:</p>
+          <pre class="pre">&lt;link type="task" role="child" href="how2uninst.dita" scope="local"/&gt;</pre>
+ 
+     </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/comrfet.html" title="Several parts of a language reference are common between many locations, such as the descriptions for the selection and property attributes of DITA elements. These are described as sets to reduce unnecessary duplication of common information.">Commonly referenced attributes</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../common/id-atts.html" title="ID attributes (%id-atts;) is a parameter entity declaration in the topic DTD that includes attributes that enable the naming and referencing of elements in a DITA topic: id and conref.">%id-atts;</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../common/select-atts.html" title="Attributes that support both filtering and flagging include props , platform , product , audience , and otherprops . Attribute base is a generic attribute that is available for specialization; it can be specialized for values that have a simple value syntax like the filter attributes, but is not itself a filtering or flagging attribute. Attribute rev only lets you flag information that matches a run-time parameter. Attribute importance provides a range of values for applications to use as needed. The %select-atts; entity also includes additional entities that allow it to include specializations of the props and base attribute. See the DITA Architectural Specification for more information on filtering or flagging with attributes, as well as for information on specialization the base and props attributes.">%select-atts;</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="object" />
+<meta name="abstract" content="DITA's &lt;object&gt; element corresponds to the HTML &lt;object&gt; element." />
+<meta name="description" content="DITA's &lt;object&gt; element corresponds to the HTML &lt;object&gt; element." />
+<meta content="object, Body elements" name="DC.subject" />
+<meta content="object, Body elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/body2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/alt.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/param.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="object" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>object</title>
+</head>
+<body id="object"><a name="object"><!-- --></a>
+
+
+<h1 class="topictitle1">object</h1>
+
+
+
+<div><p>DITA's &lt;<span class="keyword">object</span>&gt; element corresponds to
+the HTML &lt;<span class="keyword">object</span>&gt; element.</p>
+
+<div class="section"><p>The &lt;<span class="keyword">object</span>&gt; element allows authors to
+include animated images, applets, plug-ins, ActiveX controls, video clips,
+and other multimedia objects in a topic for rendering after transformation
+to HTML.</p>
+<p>To support Flash animations and movies, the value <span class="filepath">swflash.cab</span> is
+checked in the codebase attribute. That enables the OBJECT tag in the HTML
+to display Flash objects in Intenet Explorer. The enable these to display
+in browsers such as NetScape and FireFox, an EMBED tag is also added to the
+HTML. Note that while the Embed tag is required to display these objects,
+the Embed tag is not in the XHTML 1.0 Transitional tag set.</p>
+</div>
+
+<div class="example"><h2 class="sectiontitle">Example</h2>Output processors may need to modify data to
+enable compatible function across various browsers, so these examples are
+only representative:<pre class="pre">&lt;p&gt;Cutting the keys from the system unit:&lt;/p&gt;
+&lt;object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://download.macromedia.com/pub/shockwave/cabs/
+flash/swflash.cab#version=6,0,0,0"
+ data="cutkey370.swf"
+ type="application/x-shockwave-flash"
+ height="280"
+ width="370"
+ id="cutkey370"&gt;
+ &lt;desc&gt;A description of the task&lt;/desc&gt;
+ &lt;param name="movie" value="cutkey370.swf"/&gt;
+ &lt;param name="quality" value="high"/&gt;
+ &lt;param name="bgcolor" value="#FFFFFF"/&gt;
+&lt;/object&gt;
+</pre>
+<pre class="pre">&lt;p&gt;What's EIM?&lt;/p&gt;
+&lt;object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://download.macromedia.com/pub/shockwave/cabs/
+flash/swflash.cab#version=6,0,0,0"
+ data="eim.swf"
+ height="400"
+ width="500"
+ id="eim"&gt;
+ &lt;desc&gt;Some great, glorious info&lt;/desc&gt;
+ &lt;param name="movie" value="eim.swf"/&gt;
+ &lt;param name="quality" value="high"/&gt;
+ &lt;param name="bgcolor" value="#FFFFFF"/&gt;
+ &lt;param name="pluginspace"
+ value="http://www.macromedia.com/go/getflashplayer"/&gt;
+&lt;/object&gt;</pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100BB" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100C0" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100CA" headers="N100BB"><strong>ditabase, topic, task, reference, concept, glossary, map, bookmap</strong></td>
+<td valign="top" headers="N100C0 N100CA"> ( (
+<a href="../common/../langref/desc.html" title="The &lt;desc&gt; element contains the description of the current element. A description should provide more information than the title. This is its behavior in fig/table/linklist, for example. In xref/link, it provides a description of the target; processors that support it may choose to display this as hover help. In object, it contains alternate content for use when in contexts that cannot display the object.">desc</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/param.html" title="The parameter (&lt;param&gt;) element specifies a set of values that may be required by an &lt;object&gt; at runtime. Any number of &lt;param&gt; elements may appear in the content of an object in any order, but must be placed at the start of the content of the enclosing object. This element is comparable to the XHMTL &lt;param&gt; element.">param</a>) <em> (any number) </em> then  (
+<a href="../common/../langref/foreign.html" title="The &lt;foreign&gt; element is an open extension that allows information architects to incorporate existing standard vocabularies for non-textual content. like MathML and SVG, as inline objects. If &lt;foreign&gt; contains more than one alternative content element, they will all be processed. Specialization of &lt;foreign&gt; should be implemented as a domain, but for those looking for more control over the content can implement foreign vocabulary as an element specialization.">foreign</a> or <a href="../common/../langref/unknown.html" title="The &lt;unknown&gt; element is an open extension that allows information architects to incorporate xml fragments that do not necessarily fit into an existing DITA use case. The base processing for &lt;unknown&gt; is to suppress unless otherwise instructed.">unknown</a>) <em> (any number) </em>) </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N10145" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N1014A" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N10154" headers="N10145"><strong>ditabase</strong></td>
+<td valign="top" headers="N1014A N10154"><a href="../common/../langref/data.html" title="The &lt;data&gt; element represents a property within a DITA topic or map. While the &lt;data&gt; element can be used directly to capture properties, it is particularly useful as a basis for specialization. Default processing treats the property values as an unknown kind of metadata, but custom processing can match the name attribute or specialized element to format properties as sidebars or other adornments or to harvest properties for automated processing.">data</a>, <a href="../common/../langref/p.html" title="A paragraph element (&lt;p&gt;) is a block of text containing a single main idea.">p</a>, <a href="../common/../langref/note.html" title="A &lt;note&gt; element contains information, differentiated from the main text, which expands on or calls attention to a particular point.">note</a>, <a href="../common/../langref/lq.html" title="The long quote (&lt;lq&gt;) element indicates content quoted from another source. Use the quote element &lt;q&gt; for short, inline quotations, and long quote &lt;lq&gt; for quotations that are too long for inline use, following normal guidelines for quoting other sources. You can store a URL to the source of the quotation in the href attribute; the href value may point to a DITA topic.">lq</a>, <a href="../common/../langref/li.html" title="A list (&lt;li&gt;) item is a single item in an ordered &lt;ol&gt; or unordered &lt;ul&gt; list. When a DITA topic is formatted for output, numbers and alpha characters are usually output with list items in ordered lists, while bullets and dashes are usually output with list items in unordered lists.">li</a>, <a href="../common/../langref/itemgroup.html" title="The &lt;itemgroup&gt; element is reserved for use in specializations of DITA. As a container element, it can be used to sub-divide or organize elements that occur inside a list item, definition, or parameter definition.">itemgroup</a>, <a href="../common/../langref/dd.html" title="The definition description (&lt;dd&gt;) element contains the description of a term in a definition list entry.">dd</a>, <a href="../common/../langref/fig.html" title="The figure (&lt;fig&gt;) element is a display context (sometimes called an exhibit) with an optional title for a wide variety of content. Most commonly, the figure element contains an image element (a graphic or artwork), but it can contain several kinds of text objects as well. A title is placed inside the figure element to provide a caption to describe the content.">fig</a>, <a href="../common/../langref/stentry.html" title="The simpletable entry (&lt;stentry&gt;) element represents a single table cell, like &lt;entry&gt; in &lt;table&gt;. You can place any number of stentry cells in either an &lt;sthead&gt; element (for headings) or &lt;strow&gt; element (for rows of data).">stentry</a>, <a href="../common/../langref/draft-comment.html" title="The &lt;draft-comment&gt; element allows simple review and discussion of topic contents within the marked-up content. Use the &lt;draft-comment&gt; element to ask a question or make a comment that you would like others to review. To indicate the source of the draft comment or the status of the comment, use the author, time or disposition attributes.">draft-comment</a>, <a href="../common/../langref/fn.html" title="Use footnote (&lt;fn&gt;) to annotate text with notes that are not appropriate for inclusion in line or to indicate the source for facts or other material used in the text.">fn</a>, <a href="../common/../langref/entry.html" title="The &lt;entry&gt; element defines a single cell in a table.">entry</a>, <a href="../common/../langref/abstract.html" title="The abstract element occurs between the topic title and the topic body, as the initial content of a topic. It can contain paragraph-level content as well as one or more shortdesc elements which can be used for providing link previews or summaries. The &lt;abstract&gt; element cannot be overridden by maps, but its contained &lt;shortdesc&gt; elements can be, for the purpose of creating link summaries or previews.">abstract</a>, <a href="../common/../langref/body.html" title="The &lt;body&gt; element is the container for the main content of a &lt;topic&gt;.">body</a>, <a href="../common/../langref/section.html" title="The &lt;section&gt; element represents an organizational division in a topic. Sections are used to organize subsets of information that are directly related to the topic. For example, the titles Reference Syntax, Example and Properties might represent section-level discourse within a topic about a command-line process—the content in each section relates uniquely to the subject of that topic. Multiple sections within a single topic do not represent a hierarchy, but rather peer divisions of that topic. Sections cannot be nested. A section may have an optional title.">section</a>, <a href="../common/../langref/example.html" title="The &lt;example&gt; element is a section with the specific role of containing examples that illustrate or support the current topic. The &lt;example&gt; element has the same content model as &lt;section&gt;.">example</a>, <a href="../common/../langref/conbody.html" title="The &lt;conbody&gt; element is the main body-level element for a concept. Like the &lt;body&gt; element of a general &lt;topic&gt;, &lt;conbody&gt; allows paragraphs, lists, and other elements as well as sections and examples. But &lt;conbody&gt; has a constraint that a section or an example can be followed only by other sections or examples.">conbody</a>, <a href="../common/../langref/prereq.html" title="The pre-requisite (&lt;prereq&gt;) section of a task should document things the user needs to know or do before starting the current task. Prerequisite links will be placed in a list after the related-links section; on output the &lt;prereq&gt; links from the related-links section are added to the &lt;prereq&gt; section.">prereq</a>, <a href="../common/../langref/context.html" title="The &lt;context&gt; section of a task provides background information for the task. This information helps the user understand what the purpose of the task is and what they will gain by completing the task. This section should be brief and does not replace or recreate a concept topic on the same subject, although the context section may include some conceptual information.">context</a>, <a href="../common/../langref/info.html" title="The information element (&lt;info&gt;) occurs inside a &lt;step&gt; element to provide additional information about the step.">info</a>, <a href="../common/../langref/tutorialinfo.html" title="The tutorial info (&lt;tutorialinfo&gt;) element contains additional information that is useful when the task is part of a tutorial.">tutorialinfo</a>, <a href="../common/../langref/stepxmp.html" title="The step example (&lt;stepxmp&gt;) element is used to illustrate a step of a task. The example can be a couple of words, or an entire paragraph.">stepxmp</a>, <a href="../common/../langref/choice.html" title="Each &lt;choice&gt; element describes one way that the user could accomplish the current step.">choice</a>, <a href="../common/../langref/choptionhd.html" title="The &lt;choptionhd&gt; element provides a specific label for the list of options that a user chooses from to accomplish a step. The default label for options is Option.">choptionhd</a>, <a href="../common/../langref/chdeschd.html" title="The &lt;chdeschd&gt; option provides a specific label for the list of descriptions of options that a user must choose to accomplish a step of a task. The default label overridden by &lt;chdeschd&gt; is Description.">chdeschd</a>, <a href="../common/../langref/choption.html" title="The &lt;choption&gt; element describes an option that a user could choose to accomplish a step of a task. In a user interface, for example, this might be the name of radio button.">choption</a>, <a href="../common/../langref/chdesc.html" title="The &lt;chdesc&gt; element is a description of an option that a user chooses while performing a step to accomplish a task. It explains why the user would choose that option, and might explain the result of the choice when it is not immediately obvious.">chdesc</a>, <a href="../common/../langref/stepresult.html" title="The &lt;stepresult&gt; element provides information on the expected outcome of a step. If a user interface is being documented, the outcome could describe a dialog box opening, or the appearance of a progress indicator. Step results are useful to assure a user that they are on track, but should not be used for every step, as this quickly becomes tedious.">stepresult</a>, <a href="../common/../langref/result.html" title="The &lt;result&gt; element describes the expected outcome for the task as a whole.">result</a>, <a href="../common/../langref/postreq.html" title="The &lt;postreq&gt; element describes steps or tasks that the user should do after the successful completion of the current task. It is often supported by links to the next task or tasks in the &lt;related-links&gt; section.">postreq</a>, <a href="../common/../langref/refsyn.html" title="The &lt;refsyn&gt; element is a special section inside a reference topic. The section often contains syntax or signature content (for example, a command-line utility's calling syntax, or an API's signature). The &lt;refsyn&gt; contains a brief, possibly diagrammatic description of the subject's interface or high-level structure.">refsyn</a>, <a href="../common/../langref/proptypehd.html" title="The proptypehd element supports regular headings for the type column of a properties table.">proptypehd</a>, <a href="../common/../langref/propvaluehd.html" title="The propvaluehd element supports regular headings for the value column of a properties table.">propvaluehd</a>, <a href="../common/../langref/propdeschd.html" title="The propdeschd element supports regular headings for the description column of a properties table.">propdeschd</a>, <a href="../common/../langref/glossdef.html" title="The &lt;glossdef&gt; element specifies the definition of one sense of a term. If a term has multiple senses, create a separate &lt;glossentry&gt; topic to define each sense.">glossdef</a>, <a href="../common/../langref/pd.html" title="A parameter definition, within a parameter list entry, is enclosed by the &lt;pd&gt; element. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">pd</a></td>
+</tr>
+
+<tr><td valign="top" id="N1043B" headers="N10145"><strong>topic</strong></td>
+<td valign="top" headers="N1014A N1043B"><a href="../common/../langref/data.html" title="The &lt;data&gt; element represents a property within a DITA topic or map. While the &lt;data&gt; element can be used directly to capture properties, it is particularly useful as a basis for specialization. Default processing treats the property values as an unknown kind of metadata, but custom processing can match the name attribute or specialized element to format properties as sidebars or other adornments or to harvest properties for automated processing.">data</a>, <a href="../common/../langref/p.html" title="A paragraph element (&lt;p&gt;) is a block of text containing a single main idea.">p</a>, <a href="../common/../langref/note.html" title="A &lt;note&gt; element contains information, differentiated from the main text, which expands on or calls attention to a particular point.">note</a>, <a href="../common/../langref/lq.html" title="The long quote (&lt;lq&gt;) element indicates content quoted from another source. Use the quote element &lt;q&gt; for short, inline quotations, and long quote &lt;lq&gt; for quotations that are too long for inline use, following normal guidelines for quoting other sources. You can store a URL to the source of the quotation in the href attribute; the href value may point to a DITA topic.">lq</a>, <a href="../common/../langref/li.html" title="A list (&lt;li&gt;) item is a single item in an ordered &lt;ol&gt; or unordered &lt;ul&gt; list. When a DITA topic is formatted for output, numbers and alpha characters are usually output with list items in ordered lists, while bullets and dashes are usually output with list items in unordered lists.">li</a>, <a href="../common/../langref/itemgroup.html" title="The &lt;itemgroup&gt; element is reserved for use in specializations of DITA. As a container element, it can be used to sub-divide or organize elements that occur inside a list item, definition, or parameter definition.">itemgroup</a>, <a href="../common/../langref/dd.html" title="The definition description (&lt;dd&gt;) element contains the description of a term in a definition list entry.">dd</a>, <a href="../common/../langref/fig.html" title="The figure (&lt;fig&gt;) element is a display context (sometimes called an exhibit) with an optional title for a wide variety of content. Most commonly, the figure element contains an image element (a graphic or artwork), but it can contain several kinds of text objects as well. A title is placed inside the figure element to provide a caption to describe the content.">fig</a>, <a href="../common/../langref/stentry.html" title="The simpletable entry (&lt;stentry&gt;) element represents a single table cell, like &lt;entry&gt; in &lt;table&gt;. You can place any number of stentry cells in either an &lt;sthead&gt; element (for headings) or &lt;strow&gt; element (for rows of data).">stentry</a>, <a href="../common/../langref/draft-comment.html" title="The &lt;draft-comment&gt; element allows simple review and discussion of topic contents within the marked-up content. Use the &lt;draft-comment&gt; element to ask a question or make a comment that you would like others to review. To indicate the source of the draft comment or the status of the comment, use the author, time or disposition attributes.">draft-comment</a>, <a href="../common/../langref/fn.html" title="Use footnote (&lt;fn&gt;) to annotate text with notes that are not appropriate for inclusion in line or to indicate the source for facts or other material used in the text.">fn</a>, <a href="../common/../langref/entry.html" title="The &lt;entry&gt; element defines a single cell in a table.">entry</a>, <a href="../common/../langref/abstract.html" title="The abstract element occurs between the topic title and the topic body, as the initial content of a topic. It can contain paragraph-level content as well as one or more shortdesc elements which can be used for providing link previews or summaries. The &lt;abstract&gt; element cannot be overridden by maps, but its contained &lt;shortdesc&gt; elements can be, for the purpose of creating link summaries or previews.">abstract</a>, <a href="../common/../langref/body.html" title="The &lt;body&gt; element is the container for the main content of a &lt;topic&gt;.">body</a>, <a href="../common/../langref/section.html" title="The &lt;section&gt; element represents an organizational division in a topic. Sections are used to organize subsets of information that are directly related to the topic. For example, the titles Reference Syntax, Example and Properties might represent section-level discourse within a topic about a command-line process—the content in each section relates uniquely to the subject of that topic. Multiple sections within a single topic do not represent a hierarchy, but rather peer divisions of that topic. Sections cannot be nested. A section may have an optional title.">section</a>, <a href="../common/../langref/example.html" title="The &lt;example&gt; element is a section with the specific role of containing examples that illustrate or support the current topic. The &lt;example&gt; element has the same content model as &lt;section&gt;.">example</a>, <a href="../common/../langref/pd.html" title="A parameter definition, within a parameter list entry, is enclosed by the &lt;pd&gt; element. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">pd</a></td>
+</tr>
+
+<tr><td valign="top" id="N105AF" headers="N10145"><strong>task</strong></td>
+<td valign="top" headers="N1014A N105AF"><a href="../common/../langref/data.html" title="The &lt;data&gt; element represents a property within a DITA topic or map. While the &lt;data&gt; element can be used directly to capture properties, it is particularly useful as a basis for specialization. Default processing treats the property values as an unknown kind of metadata, but custom processing can match the name attribute or specialized element to format properties as sidebars or other adornments or to harvest properties for automated processing.">data</a>, <a href="../common/../langref/p.html" title="A paragraph element (&lt;p&gt;) is a block of text containing a single main idea.">p</a>, <a href="../common/../langref/note.html" title="A &lt;note&gt; element contains information, differentiated from the main text, which expands on or calls attention to a particular point.">note</a>, <a href="../common/../langref/lq.html" title="The long quote (&lt;lq&gt;) element indicates content quoted from another source. Use the quote element &lt;q&gt; for short, inline quotations, and long quote &lt;lq&gt; for quotations that are too long for inline use, following normal guidelines for quoting other sources. You can store a URL to the source of the quotation in the href attribute; the href value may point to a DITA topic.">lq</a>, <a href="../common/../langref/li.html" title="A list (&lt;li&gt;) item is a single item in an ordered &lt;ol&gt; or unordered &lt;ul&gt; list. When a DITA topic is formatted for output, numbers and alpha characters are usually output with list items in ordered lists, while bullets and dashes are usually output with list items in unordered lists.">li</a>, <a href="../common/../langref/itemgroup.html" title="The &lt;itemgroup&gt; element is reserved for use in specializations of DITA. As a container element, it can be used to sub-divide or organize elements that occur inside a list item, definition, or parameter definition.">itemgroup</a>, <a href="../common/../langref/dd.html" title="The definition description (&lt;dd&gt;) element contains the description of a term in a definition list entry.">dd</a>, <a href="../common/../langref/fig.html" title="The figure (&lt;fig&gt;) element is a display context (sometimes called an exhibit) with an optional title for a wide variety of content. Most commonly, the figure element contains an image element (a graphic or artwork), but it can contain several kinds of text objects as well. A title is placed inside the figure element to provide a caption to describe the content.">fig</a>, <a href="../common/../langref/stentry.html" title="The simpletable entry (&lt;stentry&gt;) element represents a single table cell, like &lt;entry&gt; in &lt;table&gt;. You can place any number of stentry cells in either an &lt;sthead&gt; element (for headings) or &lt;strow&gt; element (for rows of data).">stentry</a>, <a href="../common/../langref/draft-comment.html" title="The &lt;draft-comment&gt; element allows simple review and discussion of topic contents within the marked-up content. Use the &lt;draft-comment&gt; element to ask a question or make a comment that you would like others to review. To indicate the source of the draft comment or the status of the comment, use the author, time or disposition attributes.">draft-comment</a>, <a href="../common/../langref/fn.html" title="Use footnote (&lt;fn&gt;) to annotate text with notes that are not appropriate for inclusion in line or to indicate the source for facts or other material used in the text.">fn</a>, <a href="../common/../langref/entry.html" title="The &lt;entry&gt; element defines a single cell in a table.">entry</a>, <a href="../common/../langref/abstract.html" title="The abstract element occurs between the topic title and the topic body, as the initial content of a topic. It can contain paragraph-level content as well as one or more shortdesc elements which can be used for providing link previews or summaries. The &lt;abstract&gt; element cannot be overridden by maps, but its contained &lt;shortdesc&gt; elements can be, for the purpose of creating link summaries or previews.">abstract</a>, <a href="../common/../langref/body.html" title="The &lt;body&gt; element is the container for the main content of a &lt;topic&gt;.">body</a>, <a href="../common/../langref/section.html" title="The &lt;section&gt; element represents an organizational division in a topic. Sections are used to organize subsets of information that are directly related to the topic. For example, the titles Reference Syntax, Example and Properties might represent section-level discourse within a topic about a command-line process—the content in each section relates uniquely to the subject of that topic. Multiple sections within a single topic do not represent a hierarchy, but rather peer divisions of that topic. Sections cannot be nested. A section may have an optional title.">section</a>, <a href="../common/../langref/example.html" title="The &lt;example&gt; element is a section with the specific role of containing examples that illustrate or support the current topic. The &lt;example&gt; element has the same content model as &lt;section&gt;.">example</a>, <a href="../common/../langref/prereq.html" title="The pre-requisite (&lt;prereq&gt;) section of a task should document things the user needs to know or do before starting the current task. Prerequisite links will be placed in a list after the related-links section; on output the &lt;prereq&gt; links from the related-links section are added to the &lt;prereq&gt; section.">prereq</a>, <a href="../common/../langref/context.html" title="The &lt;context&gt; section of a task provides background information for the task. This information helps the user understand what the purpose of the task is and what they will gain by completing the task. This section should be brief and does not replace or recreate a concept topic on the same subject, although the context section may include some conceptual information.">context</a>, <a href="../common/../langref/info.html" title="The information element (&lt;info&gt;) occurs inside a &lt;step&gt; element to provide additional information about the step.">info</a>, <a href="../common/../langref/tutorialinfo.html" title="The tutorial info (&lt;tutorialinfo&gt;) element contains additional information that is useful when the task is part of a tutorial.">tutorialinfo</a>, <a href="../common/../langref/stepxmp.html" title="The step example (&lt;stepxmp&gt;) element is used to illustrate a step of a task. The example can be a couple of words, or an entire paragraph.">stepxmp</a>, <a href="../common/../langref/choice.html" title="Each &lt;choice&gt; element describes one way that the user could accomplish the current step.">choice</a>, <a href="../common/../langref/choptionhd.html" title="The &lt;choptionhd&gt; element provides a specific label for the list of options that a user chooses from to accomplish a step. The default label for options is Option.">choptionhd</a>, <a href="../common/../langref/chdeschd.html" title="The &lt;chdeschd&gt; option provides a specific label for the list of descriptions of options that a user must choose to accomplish a step of a task. The default label overridden by &lt;chdeschd&gt; is Description.">chdeschd</a>, <a href="../common/../langref/choption.html" title="The &lt;choption&gt; element describes an option that a user could choose to accomplish a step of a task. In a user interface, for example, this might be the name of radio button.">choption</a>, <a href="../common/../langref/chdesc.html" title="The &lt;chdesc&gt; element is a description of an option that a user chooses while performing a step to accomplish a task. It explains why the user would choose that option, and might explain the result of the choice when it is not immediately obvious.">chdesc</a>, <a href="../common/../langref/stepresult.html" title="The &lt;stepresult&gt; element provides information on the expected outcome of a step. If a user interface is being documented, the outcome could describe a dialog box opening, or the appearance of a progress indicator. Step results are useful to assure a user that they are on track, but should not be used for every step, as this quickly becomes tedious.">stepresult</a>, <a href="../common/../langref/result.html" title="The &lt;result&gt; element describes the expected outcome for the task as a whole.">result</a>, <a href="../common/../langref/postreq.html" title="The &lt;postreq&gt; element describes steps or tasks that the user should do after the successful completion of the current task. It is often supported by links to the next task or tasks in the &lt;related-links&gt; section.">postreq</a>, <a href="../common/../langref/pd.html" title="A parameter definition, within a parameter list entry, is enclosed by the &lt;pd&gt; element. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">pd</a></td>
+</tr>
+
+<tr><td valign="top" id="N1082A" headers="N10145"><strong>concept</strong></td>
+<td valign="top" headers="N1014A N1082A"><a href="../common/../langref/data.html" title="The &lt;data&gt; element represents a property within a DITA topic or map. While the &lt;data&gt; element can be used directly to capture properties, it is particularly useful as a basis for specialization. Default processing treats the property values as an unknown kind of metadata, but custom processing can match the name attribute or specialized element to format properties as sidebars or other adornments or to harvest properties for automated processing.">data</a>, <a href="../common/../langref/p.html" title="A paragraph element (&lt;p&gt;) is a block of text containing a single main idea.">p</a>, <a href="../common/../langref/note.html" title="A &lt;note&gt; element contains information, differentiated from the main text, which expands on or calls attention to a particular point.">note</a>, <a href="../common/../langref/lq.html" title="The long quote (&lt;lq&gt;) element indicates content quoted from another source. Use the quote element &lt;q&gt; for short, inline quotations, and long quote &lt;lq&gt; for quotations that are too long for inline use, following normal guidelines for quoting other sources. You can store a URL to the source of the quotation in the href attribute; the href value may point to a DITA topic.">lq</a>, <a href="../common/../langref/li.html" title="A list (&lt;li&gt;) item is a single item in an ordered &lt;ol&gt; or unordered &lt;ul&gt; list. When a DITA topic is formatted for output, numbers and alpha characters are usually output with list items in ordered lists, while bullets and dashes are usually output with list items in unordered lists.">li</a>, <a href="../common/../langref/itemgroup.html" title="The &lt;itemgroup&gt; element is reserved for use in specializations of DITA. As a container element, it can be used to sub-divide or organize elements that occur inside a list item, definition, or parameter definition.">itemgroup</a>, <a href="../common/../langref/dd.html" title="The definition description (&lt;dd&gt;) element contains the description of a term in a definition list entry.">dd</a>, <a href="../common/../langref/fig.html" title="The figure (&lt;fig&gt;) element is a display context (sometimes called an exhibit) with an optional title for a wide variety of content. Most commonly, the figure element contains an image element (a graphic or artwork), but it can contain several kinds of text objects as well. A title is placed inside the figure element to provide a caption to describe the content.">fig</a>, <a href="../common/../langref/stentry.html" title="The simpletable entry (&lt;stentry&gt;) element represents a single table cell, like &lt;entry&gt; in &lt;table&gt;. You can place any number of stentry cells in either an &lt;sthead&gt; element (for headings) or &lt;strow&gt; element (for rows of data).">stentry</a>, <a href="../common/../langref/draft-comment.html" title="The &lt;draft-comment&gt; element allows simple review and discussion of topic contents within the marked-up content. Use the &lt;draft-comment&gt; element to ask a question or make a comment that you would like others to review. To indicate the source of the draft comment or the status of the comment, use the author, time or disposition attributes.">draft-comment</a>, <a href="../common/../langref/fn.html" title="Use footnote (&lt;fn&gt;) to annotate text with notes that are not appropriate for inclusion in line or to indicate the source for facts or other material used in the text.">fn</a>, <a href="../common/../langref/entry.html" title="The &lt;entry&gt; element defines a single cell in a table.">entry</a>, <a href="../common/../langref/abstract.html" title="The abstract element occurs between the topic title and the topic body, as the initial content of a topic. It can contain paragraph-level content as well as one or more shortdesc elements which can be used for providing link previews or summaries. The &lt;abstract&gt; element cannot be overridden by maps, but its contained &lt;shortdesc&gt; elements can be, for the purpose of creating link summaries or previews.">abstract</a>, <a href="../common/../langref/body.html" title="The &lt;body&gt; element is the container for the main content of a &lt;topic&gt;.">body</a>, <a href="../common/../langref/section.html" title="The &lt;section&gt; element represents an organizational division in a topic. Sections are used to organize subsets of information that are directly related to the topic. For example, the titles Reference Syntax, Example and Properties might represent section-level discourse within a topic about a command-line process—the content in each section relates uniquely to the subject of that topic. Multiple sections within a single topic do not represent a hierarchy, but rather peer divisions of that topic. Sections cannot be nested. A section may have an optional title.">section</a>, <a href="../common/../langref/example.html" title="The &lt;example&gt; element is a section with the specific role of containing examples that illustrate or support the current topic. The &lt;example&gt; element has the same content model as &lt;section&gt;.">example</a>, <a href="../common/../langref/conbody.html" title="The &lt;conbody&gt; element is the main body-level element for a concept. Like the &lt;body&gt; element of a general &lt;topic&gt;, &lt;conbody&gt; allows paragraphs, lists, and other elements as well as sections and examples. But &lt;conbody&gt; has a constraint that a section or an example can be followed only by other sections or examples.">conbody</a>, <a href="../common/../langref/pd.html" title="A parameter definition, within a parameter list entry, is enclosed by the &lt;pd&gt; element. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">pd</a></td>
+</tr>
+
+<tr><td valign="top" id="N109BB" headers="N10145"><strong>reference</strong></td>
+<td valign="top" headers="N1014A N109BB"><a href="../common/../langref/data.html" title="The &lt;data&gt; element represents a property within a DITA topic or map. While the &lt;data&gt; element can be used directly to capture properties, it is particularly useful as a basis for specialization. Default processing treats the property values as an unknown kind of metadata, but custom processing can match the name attribute or specialized element to format properties as sidebars or other adornments or to harvest properties for automated processing.">data</a>, <a href="../common/../langref/p.html" title="A paragraph element (&lt;p&gt;) is a block of text containing a single main idea.">p</a>, <a href="../common/../langref/note.html" title="A &lt;note&gt; element contains information, differentiated from the main text, which expands on or calls attention to a particular point.">note</a>, <a href="../common/../langref/lq.html" title="The long quote (&lt;lq&gt;) element indicates content quoted from another source. Use the quote element &lt;q&gt; for short, inline quotations, and long quote &lt;lq&gt; for quotations that are too long for inline use, following normal guidelines for quoting other sources. You can store a URL to the source of the quotation in the href attribute; the href value may point to a DITA topic.">lq</a>, <a href="../common/../langref/li.html" title="A list (&lt;li&gt;) item is a single item in an ordered &lt;ol&gt; or unordered &lt;ul&gt; list. When a DITA topic is formatted for output, numbers and alpha characters are usually output with list items in ordered lists, while bullets and dashes are usually output with list items in unordered lists.">li</a>, <a href="../common/../langref/itemgroup.html" title="The &lt;itemgroup&gt; element is reserved for use in specializations of DITA. As a container element, it can be used to sub-divide or organize elements that occur inside a list item, definition, or parameter definition.">itemgroup</a>, <a href="../common/../langref/dd.html" title="The definition description (&lt;dd&gt;) element contains the description of a term in a definition list entry.">dd</a>, <a href="../common/../langref/fig.html" title="The figure (&lt;fig&gt;) element is a display context (sometimes called an exhibit) with an optional title for a wide variety of content. Most commonly, the figure element contains an image element (a graphic or artwork), but it can contain several kinds of text objects as well. A title is placed inside the figure element to provide a caption to describe the content.">fig</a>, <a href="../common/../langref/stentry.html" title="The simpletable entry (&lt;stentry&gt;) element represents a single table cell, like &lt;entry&gt; in &lt;table&gt;. You can place any number of stentry cells in either an &lt;sthead&gt; element (for headings) or &lt;strow&gt; element (for rows of data).">stentry</a>, <a href="../common/../langref/draft-comment.html" title="The &lt;draft-comment&gt; element allows simple review and discussion of topic contents within the marked-up content. Use the &lt;draft-comment&gt; element to ask a question or make a comment that you would like others to review. To indicate the source of the draft comment or the status of the comment, use the author, time or disposition attributes.">draft-comment</a>, <a href="../common/../langref/fn.html" title="Use footnote (&lt;fn&gt;) to annotate text with notes that are not appropriate for inclusion in line or to indicate the source for facts or other material used in the text.">fn</a>, <a href="../common/../langref/entry.html" title="The &lt;entry&gt; element defines a single cell in a table.">entry</a>, <a href="../common/../langref/abstract.html" title="The abstract element occurs between the topic title and the topic body, as the initial content of a topic. It can contain paragraph-level content as well as one or more shortdesc elements which can be used for providing link previews or summaries. The &lt;abstract&gt; element cannot be overridden by maps, but its contained &lt;shortdesc&gt; elements can be, for the purpose of creating link summaries or previews.">abstract</a>, <a href="../common/../langref/body.html" title="The &lt;body&gt; element is the container for the main content of a &lt;topic&gt;.">body</a>, <a href="../common/../langref/section.html" title="The &lt;section&gt; element represents an organizational division in a topic. Sections are used to organize subsets of information that are directly related to the topic. For example, the titles Reference Syntax, Example and Properties might represent section-level discourse within a topic about a command-line process—the content in each section relates uniquely to the subject of that topic. Multiple sections within a single topic do not represent a hierarchy, but rather peer divisions of that topic. Sections cannot be nested. A section may have an optional title.">section</a>, <a href="../common/../langref/example.html" title="The &lt;example&gt; element is a section with the specific role of containing examples that illustrate or support the current topic. The &lt;example&gt; element has the same content model as &lt;section&gt;.">example</a>, <a href="../common/../langref/refsyn.html" title="The &lt;refsyn&gt; element is a special section inside a reference topic. The section often contains syntax or signature content (for example, a command-line utility's calling syntax, or an API's signature). The &lt;refsyn&gt; contains a brief, possibly diagrammatic description of the subject's interface or high-level structure.">refsyn</a>, <a href="../common/../langref/proptypehd.html" title="The proptypehd element supports regular headings for the type column of a properties table.">proptypehd</a>, <a href="../common/../langref/propvaluehd.html" title="The propvaluehd element supports regular headings for the value column of a properties table.">propvaluehd</a>, <a href="../common/../langref/propdeschd.html" title="The propdeschd element supports regular headings for the description column of a properties table.">propdeschd</a>, <a href="../common/../langref/pd.html" title="A parameter definition, within a parameter list entry, is enclosed by the &lt;pd&gt; element. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">pd</a></td>
+</tr>
+
+<tr><td valign="top" id="N10B67" headers="N10145"><strong>map, bookmap</strong></td>
+<td valign="top" headers="N1014A N10B67"><a href="../common/../langref/data.html" title="The &lt;data&gt; element represents a property within a DITA topic or map. While the &lt;data&gt; element can be used directly to capture properties, it is particularly useful as a basis for specialization. Default processing treats the property values as an unknown kind of metadata, but custom processing can match the name attribute or specialized element to format properties as sidebars or other adornments or to harvest properties for automated processing.">data</a>, <a href="../common/../langref/p.html" title="A paragraph element (&lt;p&gt;) is a block of text containing a single main idea.">p</a>, <a href="../common/../langref/note.html" title="A &lt;note&gt; element contains information, differentiated from the main text, which expands on or calls attention to a particular point.">note</a>, <a href="../common/../langref/lq.html" title="The long quote (&lt;lq&gt;) element indicates content quoted from another source. Use the quote element &lt;q&gt; for short, inline quotations, and long quote &lt;lq&gt; for quotations that are too long for inline use, following normal guidelines for quoting other sources. You can store a URL to the source of the quotation in the href attribute; the href value may point to a DITA topic.">lq</a>, <a href="../common/../langref/li.html" title="A list (&lt;li&gt;) item is a single item in an ordered &lt;ol&gt; or unordered &lt;ul&gt; list. When a DITA topic is formatted for output, numbers and alpha characters are usually output with list items in ordered lists, while bullets and dashes are usually output with list items in unordered lists.">li</a>, <a href="../common/../langref/itemgroup.html" title="The &lt;itemgroup&gt; element is reserved for use in specializations of DITA. As a container element, it can be used to sub-divide or organize elements that occur inside a list item, definition, or parameter definition.">itemgroup</a>, <a href="../common/../langref/dd.html" title="The definition description (&lt;dd&gt;) element contains the description of a term in a definition list entry.">dd</a>, <a href="../common/../langref/fig.html" title="The figure (&lt;fig&gt;) element is a display context (sometimes called an exhibit) with an optional title for a wide variety of content. Most commonly, the figure element contains an image element (a graphic or artwork), but it can contain several kinds of text objects as well. A title is placed inside the figure element to provide a caption to describe the content.">fig</a>, <a href="../common/../langref/stentry.html" title="The simpletable entry (&lt;stentry&gt;) element represents a single table cell, like &lt;entry&gt; in &lt;table&gt;. You can place any number of stentry cells in either an &lt;sthead&gt; element (for headings) or &lt;strow&gt; element (for rows of data).">stentry</a>, <a href="../common/../langref/draft-comment.html" title="The &lt;draft-comment&gt; element allows simple review and discussion of topic contents within the marked-up content. Use the &lt;draft-comment&gt; element to ask a question or make a comment that you would like others to review. To indicate the source of the draft comment or the status of the comment, use the author, time or disposition attributes.">draft-comment</a>, <a href="../common/../langref/fn.html" title="Use footnote (&lt;fn&gt;) to annotate text with notes that are not appropriate for inclusion in line or to indicate the source for facts or other material used in the text.">fn</a>, <a href="../common/../langref/entry.html" title="The &lt;entry&gt; element defines a single cell in a table.">entry</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- topic/object </p>
+</div>
+
+<div class="section" id="object__attrs"><a name="object__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2>
+<a name="object__object_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="object__object_attr" border="1" class="simpletableborder">
+<tr><th valign="bottom" align="left" id="N10C8A" width="25%">Name</th>
+<th valign="bottom" align="left" id="N10C8F" width="37.5%">Description</th>
+<th valign="bottom" align="left" id="N10C94" width="12.5%">Data Type</th>
+<th valign="bottom" align="left" id="N10C99" width="12.5%">Default Value</th>
+<th valign="bottom" align="left" id="N10C9E" width="12.5%">Required?</th>
+</tr>
+
+<tr>
+<td valign="top" headers="N10C8A">declare</td>
+
+<td valign="top" headers="N10C8F">When this attribute is set to declare, the current object definition
+is a declaration only. The object must be instantiated by a later nested object
+definition referring to this declaration.</td>
+
+<td valign="top" headers="N10C94">declare</td>
+
+<td valign="top" headers="N10C99">#IMPLIED</td>
+
+<td valign="top" headers="N10C9E">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10C8A">classid</td>
+
+<td valign="top" headers="N10C8F">Contains a URL that specifies the location of an object's implementation.
+It can be used together with the data attribute which is specified relative
+to the value of the codebase attribute.</td>
+
+<td valign="top" headers="N10C94">CDATA</td>
+
+<td valign="top" headers="N10C99">#IMPLIED</td>
+
+<td valign="top" headers="N10C9E">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10C8A">codebase</td>
+
+<td valign="top" headers="N10C8F">Specifies the base path (a URL) used for resolving the URL values
+given for classid, data, and archive attributes. If codebase is not set, the
+default is the base URL of the current document.</td>
+
+<td valign="top" headers="N10C94">CDATA</td>
+
+<td valign="top" headers="N10C99">#IMPLIED</td>
+
+<td valign="top" headers="N10C9E">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10C8A">data</td>
+
+<td valign="top" headers="N10C8F">Contains a reference to the location of an object's data. If
+this attribute is a URL, it is specified relative to the value of the codebase
+attribute. If this attribute is set, the type attribute should also be set.</td>
+
+<td valign="top" headers="N10C94">CDATA</td>
+
+<td valign="top" headers="N10C99">#IMPLIED</td>
+
+<td valign="top" headers="N10C9E"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10C8A">type</td>
+
+<td valign="top" headers="N10C8F">Indicates the content type for the data specified by the data attribute.
+This attribute should be set when the data attribute is set to avoid loading
+unsupported content types. <span>Note that this differs from the type
+attribute on many other DITA elements.</span></td>
+
+<td valign="top" headers="N10C94">CDATA</td>
+
+<td valign="top" headers="N10C99">#IMPLIED (No default type)</td>
+
+<td valign="top" headers="N10C9E"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10C8A">codetype</td>
+
+<td valign="top" headers="N10C8F">Indicates the content type for the data specified by the classid
+attribute. This attribute should be set when the classid attribute is set
+to avoid loading unsupported content types. If this attribute value is not
+set, the default is the value of the type attribute.</td>
+
+<td valign="top" headers="N10C94">CDATA</td>
+
+<td valign="top" headers="N10C99">#IMPLIED</td>
+
+<td valign="top" headers="N10C9E">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10C8A">archive</td>
+
+<td valign="top" headers="N10C8F">Specifies a space-separated list of URLs indicating resources needed
+by the object. These resources may include those URLs specified by the classid
+and data attributes. Preloading these resources usually results in faster
+loadtimes for objects. The URLs in the list should be relative to the URL
+specified in the codebase attribute.</td>
+
+<td valign="top" headers="N10C94">CDATA</td>
+
+<td valign="top" headers="N10C99">#IMPLIED</td>
+
+<td valign="top" headers="N10C9E">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10C8A">standby</td>
+
+<td valign="top" headers="N10C8F">Contains a message to be displayed while an object is loading.</td>
+
+<td valign="top" headers="N10C94">CDATA</td>
+
+<td valign="top" headers="N10C99">#IMPLIED</td>
+
+<td valign="top" headers="N10C9E">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10C8A">height</td>
+
+<td valign="top" headers="N10C8F">Indicates the vertical dimension for the resulting object
+display. If necessary, the object is scaled to the specified
+size. <span>The value of this attribute is a real number optionally
+following by a unit of measure from the set of pc, pt, px, in,
+cm, mm, em (picas, points, pixels, inches, centimeters,
+millimeters, and ems respectively).  The default unit is px
+(pixels). Possible values include: "5", "5in", and "10.5cm".</span> If a height value is specified and no width value is specified,
+the width will be scaled by the same factor as the height.
+<span>If both a height value and width value are specified, some
+implementations may not be able to scale the two directions
+by a different factor and may therefore ignore one of the
+two values.</span></td>
+
+<td valign="top" headers="N10C94">NMTOKEN</td>
+
+<td valign="top" headers="N10C99">#IMPLIED</td>
+
+<td valign="top" headers="N10C9E">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10C8A">width</td>
+
+<td valign="top" headers="N10C8F">Indicates the horizontal dimension for the resulting object
+display. If necessary, the object is scaled to the specified
+size. <span>The value of this attribute is a real number optionally
+following by a unit of measure from the set of pc, pt, px, in,
+cm, mm, em (picas, points, pixels, inches, centimeters,
+millimeters, and ems respectively).  The default unit is px
+(pixels). Possible values include: "5", "5in", and "10.5cm".</span> If a width value is specified and no height value is specified,
+the height will be scaled by the same factor as the
+width. <span>If both a height value and width value are specified, some
+implementations may not be able to scale the two directions
+by a different factor and may therefore ignore one of the
+two values.</span></td>
+
+<td valign="top" headers="N10C94">NMTOKEN</td>
+
+<td valign="top" headers="N10C99">#IMPLIED</td>
+
+<td valign="top" headers="N10C9E">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10C8A">usemap</td>
+
+<td valign="top" headers="N10C8F">Indicates that a client-side image map is to be used. An image map
+specifies active geometric regions of an included object and assigns a link
+to each region. When a link is selected, a document may be retrieved or a
+program may run on the server.</td>
+
+<td valign="top" headers="N10C94">CDATA</td>
+
+<td valign="top" headers="N10C99">#IMPLIED</td>
+
+<td valign="top" headers="N10C9E"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10C8A">name</td>
+
+<td valign="top" headers="N10C8F">Defines a unique name for the
+object.</td>
+
+<td valign="top" headers="N10C94">CDATA</td>
+
+<td valign="top" headers="N10C99">#IMPLIED</td>
+
+<td valign="top" headers="N10C9E">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10C8A">tabindex</td>
+
+<td valign="top" headers="N10C8F">Position the object in tabbing order.</td>
+
+<td valign="top" headers="N10C94">NMTOKEN</td>
+
+<td valign="top" headers="N10C99">#IMPLIED</td>
+
+<td valign="top" headers="N10C9E">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10C8A">longdescref</td>
+
+<td valign="top" headers="N10C8F">A reference to a textual description of the graphic or object. This
+attribute supports creating accessible content. It uses standard href syntax.
+This may be a reference to another DITA topic, or to a non-DITA description. For examples
+of how this attribute is used in output, see this this topic on
+<a href="http://www.w3.org/TR/WCAG10-HTML-TECHS/#long-descriptions" target="_blank">long descriptions</a>.</td>
+
+<td valign="top" headers="N10C94">CDATA</td>
+
+<td valign="top" headers="N10C99">#IMPLIED</td>
+
+<td valign="top" headers="N10C9E">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10C8A">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N10C8F">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N10C94">parameter entity</td>
+
+<td valign="top" headers="N10C99">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10C9E">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10C8A">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N10C8F">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N10C94">parameter entity</td>
+
+<td valign="top" headers="N10C99">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10C9E">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10C8A">class, outputclass</td>
+
+<td valign="top" headers="N10C8F">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N10C94">&#xA0;</td>
+<td valign="top" headers="N10C99">&#xA0;</td>
+<td valign="top" headers="N10C9E">&#xA0;</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/body2.html">Body elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/alt.html" title="The alt element provides alternate text for an image. It is equivalent to the alt attribute on the image element; the attribute is deprecated, so the alt element should be used instead. As an element, alt provides direct text entry within an XML editor and is more easily accessed than an attribute for translation.">alt</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/param.html" title="The parameter (&lt;param&gt;) element specifies a set of values that may be required by an &lt;object&gt; at runtime. Any number of &lt;param&gt; elements may appear in the content of an object in any order, but must be placed at the start of the content of the enclosing object. This element is comparable to the XHMTL &lt;param&gt; element.">param</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

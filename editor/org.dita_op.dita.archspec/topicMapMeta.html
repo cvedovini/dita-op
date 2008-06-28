@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Topic properties in topics and maps" />
+<meta name="abstract" content="The properties of a topic (including metadata attributes and metadata elements) can be specified in the topic itself or in references to the topic within maps." />
+<meta name="description" content="The properties of a topic (including metadata attributes and metadata elements) can be specified in the topic itself or in references to the topic within maps." />
+<meta scheme="URI" name="DC.Relation" content="commonmeta.html" />
+<meta scheme="URI" name="DC.Relation" content="commonatt.html" />
+<meta scheme="URI" name="DC.Relation" content="topicmetainheritance.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="topicMapMeta" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Topic properties in topics and maps</title>
+</head>
+<body id="topicMapMeta"><a name="topicMapMeta"><!-- --></a>
+
+
+<h1 class="topictitle1">Topic properties in topics and maps</h1>
+
+
+<div><p>The properties of a topic (including metadata attributes and metadata
+elements) can be specified in the topic itself or in references to the topic
+within maps.</p>
+
+<p>Within a topic, properties can be expressed using <a href="metadataAttr.html" title="The metadata attributes express qualifications on the content. These qualifications can be used to modify the processing of the content.">metadata
+attributes</a> on the topic element or using <a href="pubMetaElem.html" title="These elements provide standard information about the topic as a publication.">publication</a>, <a href="mgmtMetaElem.html" title="These elements provide a basis for managing the publication process for topics.">management</a>, or <a href="metaQualElem.html" title="These elements can be used to provide additional information about a topic, and may be used in conjunction with conditional processing attributes to provide more information about the attribute values.">metadata</a> elements
+in the topic prolog. </p>
+
+<p>DITA offers users three levels at which to apply topic properties. Topic
+attributes and metadata elements can be defined within the topic itself. Properties
+can also be set as attributes or subelements of a topicref that points to
+the topic. In addition, properties can be set on container or ancestor elements
+of the topicref within the map. Because the topics in a branch of the navigation
+hierarchy typically have some common subjects or properties, this is a convenient
+mechanism to set properties for a set of topics.</p>
+
+<p>If a property is set in both the map and topic, the map properties are
+additive if the property (such as the audience type) takes a list of values.
+If, instead, the property (such as the importance) takes a single value, the
+map property overrides the topic property. </p>
+
+<div class="example"><h2 class="sectiontitle">Example of audience metadata in prolog and body</h2><p>Prolog
+metadata elements can provide more information about values used in metadata
+attributes on content. However, prolog metadata and attribute metadata can
+also be used and expressed independently. The coordination shown here is possible
+but is not required.</p>
+<pre class="codeblock">&lt;prolog&gt;
+  &lt;metadata&gt;
+    &lt;audience name="AdminNovice"
+              type="administrator"
+              job="customizing"
+              experiencelevel="novice"&gt;
+
+  &lt;/metadata&gt;
+&lt;/prolog&gt;
+....
+&lt;p audience="AdminNovice ProgrammerExp"&gt;This paragraph applies to both 
+novice administrators and expert programmers&lt;/p&gt;</pre>
+<p>In the preceding
+example, the attribute value "AdminNovice" is associated with the audience
+element with the same name, which gives authors and processes more information
+about the audience in question: in this case, that the "AdminNovice" audience
+is administrators who are customizing and are new at it.</p>
+</div>
+
+</div>
+
+<div>
+<ul class="ullinks">
+<li class="ulchildlink"><strong><a href="topicmetainheritance.html">Metadata inheritance between maps and topics</a></strong><br />
+The topicmeta element in maps contains numerous elements for the declaration of metadata. In general, specifying metadata in a topicmeta element is equivalent to specifying it in the topic, while allowing that topic to be reused in other maps where the metadata does not apply. Many items in the metadata also cascade to nested topic references within the map.</li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="commonmeta.html" title="The same metadata elements and many of the same attributes are available in both DITA topic types and DITA map types. The sharing of metadata elements allows the metadata assigned to a topic when it is created to be supplemented or overridden when the topic is included in a collection. The sharing of attributes allows processing behaviors, such as content reuse and conditional processing, to be implemented consistently across both maps and topics.">Metadata elements and common attributes</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="commonatt.html" title="The following attributes are common across most DITA elements.">Common attributes</a></div>
+</div>
+</div>
+<div class="nested1" xml:lang="en-us" id="sharedmeta"><a name="sharedmeta"><!-- --></a>
+<h2 class="topictitle2">Shared metadata elements, and the lockmeta attribute</h2>
+
+
+<div><p>You can associate topic metadata with a topic or branch of topics
+in a map. By default metadata in the map supplements or overrides metadata
+in the topic. If the lockmeta attribute is set to "no", then the metadata
+in the map will not take precedence over the metadata in the topic, and conflicts
+will be resolved in favor of the topic.</p>
+
+<p>In a map,
+metadata elements are authored within a &lt;topicmeta&gt; element, which associates
+metadata with the &lt;topicref&gt; or other element that contains it, plus the
+other children of that element. For example, &lt;topicmeta&gt; in a &lt;relcolspec&gt;
+can associate metadata with all the topics referenced in a &lt;reltable&gt; column. </p>
+
+<p>The metadata elements in a map are the same as those in a topic, although
+they may be in a different order. The map metadata also includes a short description
+and alternate titles, which can override their equivalents in the content.
+In sum, the map can override or supplement everything about a topic except
+its content (in the topic's body element) and primary title.</p>
+
+</div>
+
+</div>
+
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="Topic elements" />
+<meta name="abstract" content="Use the generic topic structure for untyped topics. While much of the DITA architecture is built upon generic topics, it is generally better to use more specific information types (such as concept, task, or reference) when they are available. For an answer to the question &quot;What are topics?&quot; and more details on when to use different information types, please refer to the DITA architectural specification." />
+<meta name="description" content="Use the generic topic structure for untyped topics. While much of the DITA architecture is built upon generic topics, it is generally better to use more specific information types (such as concept, task, or reference) when they are available. For an answer to the question &quot;What are topics?&quot; and more details on when to use different information types, please refer to the DITA architectural specification." />
+<meta content="Topic elements" name="DC.subject" />
+<meta content="Topic elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/overview.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/concept2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/topic.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/title.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/titlealts.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/navtitle.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/searchtitle.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/abstract.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/shortdesc.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/body.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/section.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/example.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/related-links.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="topic2" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Topic elements</title>
+</head>
+<body id="topic2"><a name="topic2"><!-- --></a>
+
+
+<h1 class="topictitle1">Topic elements</h1>
+
+
+
+<div><p>Use the generic topic structure for untyped
+topics. While much of the DITA architecture is built upon generic topics,
+it is generally better to use more specific information types (such as concept,
+task, or reference) when they are available. For an answer to the question
+"What are topics?" and more details on when to use different information types,
+please refer to the DITA architectural specification.</p>
+</div>
+
+<div>
+<ol>
+<li class="olchildlink"><a href="../langref/topic.html">topic</a><br />
+The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.</li>
+<li class="olchildlink"><a href="../langref/title.html">title</a><br />
+The &lt;title&gt; element contains a heading or label for the main parts of a topic, including the topic as a whole, its sections and examples, and its labelled content, such as figures and tables. Beginning with DITA 1.1, the element may also be used to provide a title for a map.</li>
+<li class="olchildlink"><a href="../langref/titlealts.html">titlealts</a><br />
+The alternate title element (&lt;titlealts&gt;) is optional, but can occur after the topic title. Two elements can be inserted as sub-elements of &lt;titlealts&gt;: navigation title &lt;navtitle&gt; and search title &lt;searchtitle&gt;.</li>
+<li class="olchildlink"><a href="../langref/navtitle.html">navtitle</a><br />
+The navigation title (&lt;navtitle&gt;) element is one of a set of alternate titles that can be included inside the &lt;titlealts&gt; element. This navigation title may differ from the first level heading that shows in the main browser window. Use &lt;navtitle&gt; when the actual title of the topic isn't appropriate for use in navigation panes or online contents (for example, because the actual title is too long).</li>
+<li class="olchildlink"><a href="../langref/searchtitle.html">searchtitle</a><br />
+When your DITA topic is transformed to XHTML, the &lt;searchtitle&gt; element is used to create a title element at the top of the resulting HTML file. This title is normally used in search result summaries by some search engines, such as that in Eclipse (http://eclipse.org); if not set, the XHTML's title element defaults to the source topic's title content (which may not be as well optimized for search summaries)</li>
+<li class="olchildlink"><a href="../langref/abstract.html">abstract</a><br />
+The abstract element occurs between the topic title and the topic body, as the initial content of a topic. It can contain paragraph-level content as well as one or more shortdesc elements which can be used for providing link previews or summaries. The &lt;abstract&gt; element cannot be overridden by maps, but its contained &lt;shortdesc&gt; elements can be, for the purpose of creating link summaries or previews.</li>
+<li class="olchildlink"><a href="../langref/shortdesc.html">shortdesc</a><br />
+The short description (&lt;shortdesc&gt;) element occurs between the topic title and the topic body, as the initial paragraph-like content of a topic, or it can be embedded in an abstract element. The short description, which represents the purpose or theme of the topic, is also intended to be used as a link preview and for searching. When used within a DITA map, the short description of the &lt;topicref&gt; can be used to override the short description in the topic.</li>
+<li class="olchildlink"><a href="../langref/body.html">body</a><br />
+The &lt;body&gt; element is the container for the main content of a &lt;topic&gt;.</li>
+<li class="olchildlink"><a href="../langref/section.html">section</a><br />
+The &lt;section&gt; element represents an organizational division in a topic. Sections are used to organize subsets of information that are directly related to the topic. For example, the titles Reference Syntax, Example and Properties might represent section-level discourse within a topic about a command-line process—the content in each section relates uniquely to the subject of that topic. Multiple sections within a single topic do not represent a hierarchy, but rather peer divisions of that topic. Sections cannot be nested. A section may have an optional title.</li>
+<li class="olchildlink"><a href="../langref/example.html">example</a><br />
+The &lt;example&gt; element is a section with the specific role of containing examples that illustrate or support the current topic. The &lt;example&gt; element has the same content model as &lt;section&gt;.</li>
+<li class="olchildlink"><a href="../langref/related-links.html">related-links</a><br />
+The related information links of a topic (&lt;related-links&gt; element) are stored in a special section following the body of the topic. After a topic is processed into it final output form, the related links are usually displayed at the end of the topic, although some Web-based help systems might display them in a separate navigation frame.</li>
+</ol>
+
+<div class="familylinks">
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../common/overview.html" title="The design of the Darwin Information Typing Architecture (DITA) is based on deriving multiple information types, or topic types, from a common, generic topic. This language reference describes the elements that comprise the topic DTD and its initial, information-typed descendents: concept, reference, task, and glossentry. It also describes the DITA map DTD and its current specialization (bookmap), as well as various topic and map based DITA domains.">Introduction</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../common/concept2.html" title="DITA concept topics answer &quot;What is...&quot; questions. Use the concept topic to introduce the background or overview information for tasks or reference topics. The concept topic has the restriction that following a section or example, only other sections or examples are permitted as content. For more details on when to use concept and other information types, please refer to the DITA architectural specification.">Concept elements</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

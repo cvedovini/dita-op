@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Chunking" />
+<meta name="abstract" content="Content may be chunked (divided or merged into new output documents) in different ways for the purposes of authoring, for delivering content, and for navigation. For example, something best authored as a set of separate topics may need to be delivered as a single Web page. A map author can use the chunk attribute to split up single documents into component topics or combine multiple topics into a single document as part of output processing." />
+<meta name="description" content="Content may be chunked (divided or merged into new output documents) in different ways for the purposes of authoring, for delivering content, and for navigation. For example, something best authored as a set of separate topics may need to be delivered as a single Web page. A map author can use the chunk attribute to split up single documents into component topics or combine multiple topics into a single document as part of output processing." />
+<meta scheme="URI" name="DC.Relation" content="behaviors.html" />
+<meta scheme="URI" name="DC.Relation" content="condproc.html" />
+<meta scheme="URI" name="DC.Relation" content="translation.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="chunking" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Chunking</title>
+</head>
+<body id="chunking"><a name="chunking"><!-- --></a>
+
+
+<h1 class="topictitle1">Chunking</h1>
+
+
+<div><p>Content may be chunked (divided or merged into new output documents)
+in different ways for the purposes of authoring, for delivering content, and
+for navigation. For example, something best authored as a set of separate
+topics may need to be delivered as a single Web page. A map author can use
+the chunk attribute to split up single documents into component topics or
+combine multiple topics into a single document as part of output processing. </p>
+
+<div class="example"><h2 class="sectiontitle">Examples of use</h2>       <p>Here
+are some examples of potential uses of the chunk attribute:</p>
+       <dl>
+
+<dt class="dlterm">Reuse of a nested topic</dt>
+
+<dd>A content provider creates a set of topics as a single document. A reuser
+wants to incorporate only one of the nested topics from the document. The
+reuse can reference the nested topic from a DITA map, using the chunk attribute
+to specify that the topic should be produced in its own document.</dd>
+
+
+<dt class="dlterm">Identification of a set of topics as a unit</dt>
+
+<dd>A curriculum developer wants to compose a lesson for a SCORM LMS (Learning
+Management System) from a set of topics without constraining reuse of those
+topics. The LMS can save and restore the learner’s progress through the lesson
+if the lesson is identified as a referenceable unit. The curriculum developer
+defines the collection of topics with a DITA map, using the chunk attribute
+to identify the learning module as a unit before generating the SCORM manifest. </dd>
+
+</dl>
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="behaviors.html" title="Several common DITA processing behaviors are driven by attributes, including navigation, content reuse, and conditional processing.">DITA processing</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="condproc.html" title="Conditional processing, also known as profiling, is the filtering or flagging of information based on processing-time criteria.">Conditional processing (profiling)</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="translation.html" title="DITA has specific capabilities for preparing content for translation and working with multilingual content, including the xml:lang attribute, the dir attribute, and the translate attribute.">Translation</a></div>
+</div>
+</div>
+<div class="nested1" xml:lang="en-us" id="usageofthechunkattribute"><a name="usageofthechunkattribute"><!-- --></a>
+<h2 class="topictitle2">Usage of the chunk attribute</h2>
+
+
+<div><p>When a set of topics is transformed for output using a map, the
+map author may use the chunk attribute to override whatever default chunking
+behavior applies. The chunk attribute allows the map author to request that
+multi-topic documents be broken into multiple documents, and that multiple
+individual topics be combined into a single document.  </p>
+
+<p>Chunking is necessarily output transformation specific with chunked output
+required for some and not supported for other types of output.  Chunking is
+also implementation specific with some implementations supporting some, but
+not all, chunking methods, or adding new implementation specific chunking
+methods to the standard methods described in this specification. </p>
+
+<div class="p">The value of the chunk attribute consists of one or more space delimited
+tokens: <dl>
+<dt class="dlterm">by–topic</dt>
+
+<dd>When the chunk attribute value includes the “by–topic” token, a chunking
+policy is established for the current topicref element where a separate output
+chunk is produced for the target topic and each of its descendants. The policy
+only applies for a chunk action of the current element (for example, to-content),
+except when it is set on the map element, when the “by-topic” policy is established
+for the entire map. </dd>
+
+
+<dt class="dlterm">by–document </dt>
+
+<dd>When the chunk attribute value includes the “by–document” token, a chunking
+policy is established for the current topicref element where a single output
+chunk is produced for the referenced document. The policy only applies for
+a chunk action of the current element (for example, to-content), except when
+it is set on the map element, when the “by-document” policy is established
+for the entire map. </dd>
+
+
+<dt class="dlterm">select–topic</dt>
+
+<dd>When the chunk attribute value includes the “select–topic” token, an individual
+topic, without any other topics (ancestors, descendents, or peers) from within
+the same document, is selected. The value is ignored when the element it is
+specified on does not point to a topic.</dd>
+
+
+<dt class="dlterm">select–document</dt>
+
+<dd>When the chunk attribute value includes the “select–document” token, the
+content for the referenced topic, as well as any other topics (ancestors,
+descendents, or peers) contained within the same document are selected. The
+value is ignored when the element it is specified on does not point to a topic.</dd>
+
+
+<dt class="dlterm">select–branch</dt>
+
+<dd>When the chunk attribute value includes the “select–branch” token, an
+individual topic as well as any nested topics it contains are selected. The
+value is ignored when the element it is specified on does not point to a topic.</dd>
+
+
+<dt class="dlterm">to–content</dt>
+
+<dd>When the chunk attribute value includes the “to–content” token, processing
+generates a new chunk of content. When specified on the map element, creates
+a single document that contains all the topics referenced by the map.</dd>
+
+
+<dt class="dlterm">to–navigation</dt>
+
+<dd>When the chunk attribute value includes the “to–navigation” token, processing
+generates new chunk of navigation (toc, related-links). When specified on
+the map element, creates a single navigation chunk with the entire contents
+of the map.</dd>
+
+</dl>
+Note that the set of select­–xxxxx token values are only useful
+when addressing a topic in a document that contains multiple topics. </div>
+
+<p>Some tokens or combinations of tokens may not be appropriate for all output
+types. When unsupported or conflicting tokens are encountered during output
+processing, warning or error messages should be produced.  Recovery from such
+conflicts or other errors is implementation dependent. </p>
+
+<p>There is no default value for the chunk attribute and the chunk attribute
+does not inherit values from container elements. A default by-xxx policy for
+an entire map may be established by setting the chunk attribute on the map
+element. </p>
+
+<p>When no chunk attribute values are given, chunking behavior is implementation
+dependent and may vary for different implementations.  When variations of
+this sort are not desired, a default for the entire map may be established
+by including a chunk attribute value on the map element. </p>
+
+<p>When creating new documents via chunk processing, the storage object name
+or identifier (if relevant) is taken from the copyto  attribute if set, otherwise
+the root name is taken from the id attribute  if the by-topic policy is in
+effect and from the name of the referenced  document if the by-document policy
+is in effect.</p>
+
+<div class="example"><h3 class="sectiontitle">Examples </h3><div class="p">Given several single topic documents,
+parent1.dita, parent2.dita, …, child1.dita, child2.dita, …, grandchild1.dita,
+grandchild2.dita containing topics with ids P1, P2, …, C1, C2, …, GC1, GC2,
+…., several nested topic documents, nested1.dita, nested2.dita, …, each containing
+two topics, parent topics with ids N1, N2, … and child topics with ids N1a,
+N2a, …  nested within the parent, and ditabase.dita with the following contents: <pre class="codeblock">&lt;dita&gt; 
+   &lt;topic id="X"/&gt; 
+   &lt;topic id="Y"&gt; 
+      &lt;topic id="Y1"&gt; 
+         &lt;topic id="Y1a"/&gt; 
+      &lt;/topic&gt; 
+      &lt;topic id="Y2"/&gt; 
+   &lt;/topic&gt; 
+   &lt;topic id="Z"&gt; 
+      &lt;topic id="Z1"/&gt; 
+   &lt;/topic&gt; 
+&lt;/dita&gt; </pre>
+</div>
+<div class="p">map1.ditamap: <pre class="codeblock">&lt;map chunk="by-document"&gt; 
+   &lt;topicref href="parent1.dita" chunk="to-content"&gt; 
+      &lt;topicref href="ditabase.dita#Y1" 
+         chunk="select-topic"/&gt; 
+   &lt;/topicref&gt; 
+&lt;/map&gt; </pre>
+Produces a single output document, parent1.xxxx containing
+topic P1 with topic Y1, but not topic Y1a nested in it. </div>
+<div class="p">map2.ditamap: <pre class="codeblock">&lt;map chunk="by-document"&gt; 
+   &lt;topicref href="parent1.dita" chunk="to-content"&gt; 
+      &lt;topicref href="ditabase.dita" 
+         chunk="select-branch"/&gt; 
+   &lt;/topicref&gt; 
+&lt;/map&gt; </pre>
+Produces a single output document, parent1.xxxx containing
+topic P1, topic Y1 nested within topic P1, and topic Y1a nested within Y1. </div>
+<div class="p">map3.ditamap:<pre class="codeblock">&lt;map chunk="by-topic"&gt; 
+   &lt;topicref href="parent1.dita" chunk="to-content"&gt; 
+      &lt;topicref href="ditabase.dita#Y1" 
+         chunk="select-document"/&gt; 
+   &lt;/topicref&gt; 
+&lt;/map&gt; </pre>
+Produces a single output document, P1.xxxx, containing
+topic P1 and topics X, Y, and Z together with their children nested within
+topic P1. </div>
+<div class="p">map4.ditamap:<pre class="codeblock">&lt;map chunk="by-document"&gt; 
+   &lt;topicref href="parent1.dita" copyto="parentchunk"&gt; 
+      &lt;topicref href="nested1.dita" chunk="select-branch"/&gt; 
+   &lt;/topicref&gt; 
+ &lt;/map&gt; </pre>
+Produces a single output document named parentchunk.xxxx
+containing topic P1 with topic N1 nested within P1 and topic N1a nested within
+N1. </div>
+<div class="p">map5.ditamap:<pre class="codeblock">&lt;map chunk="by-document"&gt; 
+   &lt;topicref href="parent1.dita" 
+      chunk="to-content" copyto="parentchunk"&gt; 
+      &lt;topicref href="child1.dita" chunk="select-branch"/&gt; 
+      &lt;topicref href="child2.dita" 
+         chunk="to-content select-branch" 
+         copyto="child2chunk"&gt; 
+         &lt;topicref href="grandchild2.dita"/&gt; 
+      &lt;/topicref&gt; 
+      &lt;topicref href="child3.dita"&gt; 
+         &lt;topicref href="grandchild3.dita" 
+            chunk="select-branch"/&gt; 
+      &lt;/topicref&gt; 
+   &lt;/topicref&gt; 
+ &lt;/map&gt; </pre>
+Produces two output documents: the P1, C1, C3, and
+GC3 topics in parentchunk.xxxx, and the C2 and GC2 topics in child2chunk.xxx. </div>
+<div class="p">map6.ditamap:<pre class="codeblock">&lt;map&gt; 
+   &lt;topicref href="nested1.dita#N1" copyto="nestedchunk" 
+     chunk="to-content select-topic"/&gt; 
+&lt;/map&gt; </pre>
+Produces a single output document, nestedchunk.xxxx,
+which contains topic N1 with no topics nested within. </div>
+<div class="p">map7.ditamap:<pre class="codeblock">&lt;map&gt; 
+   &lt;topichead navtitle="How to do lots of things" 
+      chunk="to-navigation"&gt; 
+       &lt;topicref href="parent1.dita" 
+             navtitle="How to set up a web server"&gt; 
+          &lt;topicref href="child1.dita" 
+             chunk="select-branch"/&gt; 
+          ... 
+          &lt;/topicref&gt; 
+       &lt;topicref href="parent2.dita" 
+             navtitle="How to ensure database security"&gt; 
+          &lt;topicref href="child2.dita" 
+             chunk="select-branch"/&gt; 
+              ... 
+          &lt;/topicref&gt; 
+         ... 
+   &lt;/topicref&gt; 
+&lt;/map&gt; 
+  </pre>
+Produces two navigation chunks, one for P1, C1, … and a second
+for P2, C2, …. </div>
+<p>The above example identifies a “how to” for setting
+up a product as a single unit. The “how to” might be provided both as navigable
+HTML pages and as a printable PDF attached to the root HTML page. </p>
+</div>
+
+<div class="section"><h3 class="sectiontitle">Implementation specific tokens and future considerations </h3>Additional
+chunk tokens may be added to the DITA Standard in the future. Additional implementation
+specific tokens may be defined as well. To avoid name conflicts between implementations
+or with future additions to the standard, implementation specific tokens should
+consist of a prefix that gives the name or an abbreviation for the implementation
+followed by a colon followed by the chunking method name.  For example:  “acme:level2”
+could be a token for the Acme DITA Toolkit that requests the “level2” chunking
+method. </div>
+
+</div>
+
+</div>
+
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

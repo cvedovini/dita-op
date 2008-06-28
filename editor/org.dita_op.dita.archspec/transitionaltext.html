@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Transitional text" />
+<meta name="abstract" content="Most writers are familiar with narrative writing, in which writers provide transitions that lead a reader from one section to the next (like &quot;Next, we will consider...&quot; or &quot;Having completed the previous tasks,...&quot;). The topic-oriented paradigm incorporated in DITA's design--and implicit in the bookmap model derived from DITA maps--favors a writing style that minimizes the use of such narrative filler between topics." />
+<meta name="description" content="Most writers are familiar with narrative writing, in which writers provide transitions that lead a reader from one section to the next (like &quot;Next, we will consider...&quot; or &quot;Having completed the previous tasks,...&quot;). The topic-oriented paradigm incorporated in DITA's design--and implicit in the bookmap model derived from DITA maps--favors a writing style that minimizes the use of such narrative filler between topics." />
+<meta scheme="URI" name="DC.Relation" content="topicover.html" />
+<meta scheme="URI" name="DC.Relation" content="infotypes.html" />
+<meta scheme="URI" name="DC.Relation" content="generictopics.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="concept-1" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Transitional text</title>
+</head>
+<body id="concept-1"><a name="concept-1"><!-- --></a>
+
+
+<h1 class="topictitle1">Transitional text</h1>
+
+
+<div><p>Most writers are familiar with narrative writing, in which writers
+provide transitions that lead a reader from one section to the next (like "Next,
+we will consider..." or "Having completed the previous tasks,...").
+The topic-oriented paradigm incorporated in DITA's design--and implicit
+in the bookmap model derived from DITA maps--favors a writing style that minimizes
+the use of such narrative filler between topics.</p>
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="topicover.html" title="DITA topics are the basic units of DITA content. Each topic should be organized around a single subject. Topics may be of different types, such as task or reference, or may be generic, that is, without a specific type.">DITA topics</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="infotypes.html" title="Information typing is the practice of identifying types of topics that contain distinct kinds information, such as concepts, tasks, and reference information. Topics that answer different kinds of questions can be categorized as different information types. The base topic types provided by DITA provide a usable starter set that can be adopted for immediate authoring.">Information typing</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="generictopics.html" title="The generic or unspecialized topic type provides the base for other specialized topic types, and also provides a place to author content that does not belong in existing specialized types.">Generic topics</a></div>
+</div>
+</div>
+<div class="nested1" id="whytopicorientation"><a name="whytopicorientation"><!-- --></a>
+<h2 class="topictitle2">Why topic orientation in writing?</h2>
+
+
+<div><p>Topic-oriented writing is a disciplined approach to writing that
+emphasizes modularity and reuse of concise units of information--topics. A
+topic is enough information to fully convey an idea or task in one reading.
+Well-written topics can be reused in many contexts, as long as writers are
+careful about a few things.</p>
+
+<div class="section"><h3 class="sectiontitle">Conciseness and appropriateness</h3>                  <p>Readers
+who are trying to quickly learn or do something will appreciate if that information
+is written in a clear pattern that is easy to follow and contains only the
+information they need to complete that task or grasp a fact. Recipes, encyclopedia
+entries, car repair procedures--all are informational units that serve up
+a uniquely focused unit of information that someone has consulted. Typically,
+anything before or after in the sequence of the document is not of interest--the
+topic contains everything pertinent to the reason the reader looked up the
+topic in the first place.</p>
+       </div>
+
+<div class="section"><h3 class="sectiontitle">Locational independence</h3>                  <p>A well-written
+topic is reusable in other context if it is <span class="q">"context free,"</span> meaning that
+it can be inserted into a new document without revision of its content to
+refer to a changed context. This is where the issue of transitional text is
+perhaps most obvious to writers who are new to topic orientation. Phrases
+like "As we considered earlier..." or "Now that you have completed
+the initial step..." are likely to make little sense if a topic is reused
+in a new context in which those preliminary conditions are different or perhaps
+no longer existent. A well-written topic will read appropriately in any new
+context because the writing style within it does not lead the reader outside
+of the topic.</p>
+       </div>
+
+<div class="section"><h3 class="sectiontitle">Navigational independence</h3>                  <p>Most
+HTML web pages are a mixture of both content and navigation, with the contained
+links representing the web of reading sequences and choices that a reader
+can make as he or she navigates through a web site. A standalone topic obviously
+should not have any navigation within it that would need to be changed if
+the topic were used in a different context. The DITA design supports this
+separation of navigation from topics through the use of ditamaps, which represent
+how topics should be organized for particular information deliverables. However,
+it is still tempting for writers to want to provide links within the content
+of a topic that allow a reader to consult external resources. DITA does not
+prohibit such linking, and in fact the markup allows writers to indicate that
+such links are external--choosing them opens a new browser window rather than
+taking the reader on a navigational tangent. A well-written DITA topic generally
+eschews internal linking to other topics within the document set--these are
+best supported through the map, which allows the topics to be used in any
+context without internal revision.</p>
+       </div>
+
+</div>
+
+</div>
+
+<div class="nested1" id="transtextworkarounds"><a name="transtextworkarounds"><!-- --></a>
+<h2 class="topictitle2">Transitional text workarounds</h2>
+
+
+<div><p>Topic orientation does not mean that transitions can't be
+authored in DITA. The key to providing both locational independence and intentional
+sequences is the adroit use of DITA markup features.</p>
+
+<p>For DITA 1.1, the print attribute on the topicref element of a ditamap
+now allows a new value of <span class="q">"printonly,"</span> which directs processing to skip
+such a topic if the map is instead being output to an online format, for which
+transitions are not necessary. A topic designated as printonly can be written
+in whatever style an author feels necessary to let the topic serve as a transitional
+topic in the flow of printed information. A DITA topic can be as minimal as
+just a title, so you can craft your transitional topic to have just as much
+information as necessary for this output-specific nonce.</p>
+
+<p>Another strategy that you can use to insert transitional sequences into
+a map of topics is the use of conditionality to include or exclude the content
+of shortdescs or of paragraphs at the end of a topic. With rigor among your
+team, this can be made to work, but it is not as general as the printonly
+approach--if you share your conditionally marked topics with other business
+partners or teams, you will have to instruct them on the proper runtime settings
+to enable those conditions to be honored the way you intended. The printonly
+method works generally for everyone who inherits maps that reference transitional
+topics.<span /></p>
+
+</div>
+
+</div>
+
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

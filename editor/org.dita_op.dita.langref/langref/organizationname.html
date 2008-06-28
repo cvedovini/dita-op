@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="organizationname" />
+<meta name="abstract" content="The &lt;organizationname&gt; element contains name information about the authoring organization." />
+<meta name="description" content="The &lt;organizationname&gt; element contains name information about the authoring organization." />
+<meta content="organizationname, xNAL" name="DC.subject" />
+<meta content="organizationname, xNAL" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/xnal-d.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/organizationinfo.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/organizationnamedetails.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="organizationname" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>organizationname</title>
+</head>
+<body id="organizationname"><a name="organizationname"><!-- --></a>
+
+
+<h1 class="topictitle1">organizationname</h1>
+
+
+
+<div><p>The &lt;organizationname&gt; element contains name information
+about the authoring organization. </p>
+
+<div class="example"><pre class="pre">&lt;organizationinfo&gt;
+ &lt;namedetails&gt;
+  &lt;organizationnamedetails&gt;
+   <strong>&lt;organizationname&gt;WizardWorks, Inc.&lt;/organizationname&gt;</strong>
+   &lt;otherinfo&gt;'Best wizard in Oz'&lt;/otherinfo&gt;
+  &lt;organizationnamedetails&gt;
+ &lt;/namedetails&gt;
+ &lt;addressdetails&gt;
+  &lt;thoroughfare&gt;123 Yellow Brick Road&lt;/thoroughfare&gt;
+  &lt;locality&gt;Emerald City&lt;/locality&gt;
+  &lt;administrativearea&gt;Kansas&lt;/administrativearea&gt;
+  &lt;country&gt;USA&lt;/country&gt;
+ &lt;/addressdetails&gt;
+ &lt;contactnumbers&gt;&lt;contactnumber&gt;123-555-4678&lt;/contactnumber&gt;&lt;/contactnumbers&gt;
+ &lt;emailaddresses&gt;&lt;emailaddress&gt;wizard@example.org&lt;/emailaddress&gt;&lt;/emailaddresses&gt;
+ &lt;urls&gt;&lt;url&gt;www.wizardworks.example.org&lt;/url&gt;&lt;/urls&gt;
+&lt;/organizationinfo&gt;</pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N10093" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N10098" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100A2" headers="N10093"><strong>bookmap</strong></td>
+<td valign="top" headers="N10098 N100A2"> (
+ text data  or <a href="../common/../langref/ph.html" title="The phrase (&lt;ph&gt;) element is used to organize content for reuse or conditional processing (for example, when part of a paragraph applies to a particular audience). It can be used by specializations of DITA to create semantic markup for content at the phrase level, which then allows (but does not require) specific processing or formatting.">ph</a> or <a href="../common/../langref/term.html" title="The &lt;term&gt; element identifies words that may have or require extended definitions or explanations. In future development of DITA, for example, terms might provide associative linking to matching glossary entries.">term</a> or <a href="../common/../langref/xref.html" title="Use the cross-reference (&lt;xref&gt;) element to link to a different location within the current topic, or a different topic within the same help system, or to external sources, such as Web pages, or to a location in another topic. The href attribute on the &lt;xref&gt; element provides the location of the target.">xref</a> or <a href="../common/../langref/cite.html" title="The &lt;cite&gt; element is used when you need a bibliographic citation that refers to a book or article. It specifically identifies the title of the resource.">cite</a> or <a href="../common/../langref/q.html" title="A quotation element (&lt;q&gt;) indicates content quoted from another source. This element is used for short quotes which are displayed inline. Use the long quote element (&lt;lq&gt;) for quotations that should be set off from the surrounding text.">q</a> or <a href="../common/../langref/boolean.html" title="The &lt;boolean&gt; element is used to express one of two opposite values, such as yes or no, on or off, true or false, high or low, and so forth. The element itself is empty; the value of the element is stored in its state attribute, and the semantic associated with the value is typically in a specialized name derived from this element.">boolean</a> or <a href="../common/../langref/state.html" title="The &lt;state&gt; element specifies a name/value pair whenever it is necessary to represent a named state that has a variable value. The element is primarily intended for use in specializations to represent specific states (like logic circuit states, chemical reaction states, airplane instrumentation states, and so forth).">state</a> or <a href="../common/../langref/keyword.html" title="The &lt;keyword&gt; element identifies a keyword or token, such as a single value from an enumerated list, the name of a command or parameter, product name, or a lookup key for a message.">keyword</a> or <a href="../common/../langref/tm.html" title="The trademark (&lt;tm&gt;) element in DITA is used to markup and identify a term or phrase that is trademarked. Trademarks include registered trademarks, service marks, slogans and logos.">tm</a> or <a href="../common/../langref/image.html" title="Include artwork or images in a DITA topic by using the &lt;image&gt; element. The &lt;image&gt; element has optional attributes that indicate whether the placement of the included graphic or artwork should be inline (like a button or icon) or on a separate line for a larger image. There are also optional attributes that indicate the size to which the included graphic or artwork should be scaled. An href attribute is required on the image element, as this attribute creates a pointer to the image, and allows the output formatting processor to bring the image into the text flow. To make the intent of the image more accessible for users using screen readers or text-only readers, always include a description of the image's content in the alt element.">image</a> or <a href="../common/../langref/draft-comment.html" title="The &lt;draft-comment&gt; element allows simple review and discussion of topic contents within the marked-up content. Use the &lt;draft-comment&gt; element to ask a question or make a comment that you would like others to review. To indicate the source of the draft comment or the status of the comment, use the author, time or disposition attributes.">draft-comment</a> or <a href="../common/../langref/required-cleanup.html" title="A &lt;required-cleanup&gt; element is used as a placeholder for migrated elements that cannot be appropriately tagged without manual intervention. As the element name implies, the intent for authors is to clean up the contained material and eventually get rid of the &lt;required-cleanup&gt; element. Authors should not insert this element into documents.">required-cleanup</a> or <a href="../common/../langref/fn.html" title="Use footnote (&lt;fn&gt;) to annotate text with notes that are not appropriate for inclusion in line or to indicate the source for facts or other material used in the text.">fn</a> or <a href="../common/../langref/indextermref.html" title="This element is not completely defined, and is reserved for future use.">indextermref</a> or <a href="../common/../langref/indexterm.html" title="An &lt;indexterm&gt; element allows the author to indicate that a certain word or phrase should produce an index entry in the generated index.">indexterm</a> or <a href="../common/../langref/data.html" title="The &lt;data&gt; element represents a property within a DITA topic or map. While the &lt;data&gt; element can be used directly to capture properties, it is particularly useful as a basis for specialization. Default processing treats the property values as an unknown kind of metadata, but custom processing can match the name attribute or specialized element to format properties as sidebars or other adornments or to harvest properties for automated processing.">data</a> or <a href="../common/../langref/data-about.html" title="The &lt;data-about&gt; element identifies the subject of a property when the subject isn't associated with the context in which the property is specified. The property itself is expressed by the &lt;data&gt; element. The &lt;data-about&gt; element handles exception cases where a property must be expressed somewhere other than inside the actual subject of the property. The &lt;data-about&gt; element is particularly useful as a basis for specialization in combination with the &lt;data&gt; element.">data-about</a> or <a href="../common/../langref/foreign.html" title="The &lt;foreign&gt; element is an open extension that allows information architects to incorporate existing standard vocabularies for non-textual content. like MathML and SVG, as inline objects. If &lt;foreign&gt; contains more than one alternative content element, they will all be processed. Specialization of &lt;foreign&gt; should be implemented as a domain, but for those looking for more control over the content can implement foreign vocabulary as an element specialization.">foreign</a> or <a href="../common/../langref/unknown.html" title="The &lt;unknown&gt; element is an open extension that allows information architects to incorporate xml fragments that do not necessarily fit into an existing DITA use case. The base processing for &lt;unknown&gt; is to suppress unless otherwise instructed.">unknown</a>) <em> (any number) </em></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N1024A" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N1024F" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N10259" headers="N1024A"><strong>bookmap</strong></td>
+<td valign="top" headers="N1024F N10259"><a href="../common/../langref/organizationnamedetails.html" title="The &lt;organizationnamedetails&gt; element contains information about the name of an authoring organization.">organizationnamedetails</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>+ topic/ph xnal-d/organizationname </p>
+</div>
+
+<div class="section" id="organizationname__attrs"><a name="organizationname__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="organizationname__organizationname_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="organizationname__organizationname_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10294" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N1029A" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N102A0" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N102A6" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N102AC" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10294">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N1029A">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N102A0">parameter entity</td>
+
+<td valign="top" headers="N102A6">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N102AC">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10294">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N1029A">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N102A0">parameter entity</td>
+
+<td valign="top" headers="N102A6">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N102AC">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10294">class, outputclass, keyref</td>
+
+<td valign="top" headers="N1029A">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N102A0">&#xA0;</td>
+<td valign="top" headers="N102A6">&#xA0;</td>
+<td valign="top" headers="N102AC">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/xnal-d.html" title="The xNAL domain elements represent a subset of the Extensible Name and Address Standard. The domain can be included in any topic type or map, although the implementations provided by OASIS only include it in the bookmap specialization. It is used to encode information about the author or authors of DITA information.">xNAL domain elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/organizationinfo.html" title="The &lt;organizationinfo&gt; element contains detailed information about an authoring organization.">organizationinfo</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/organizationnamedetails.html" title="The &lt;organizationnamedetails&gt; element contains information about the name of an authoring organization.">organizationnamedetails</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="Introduction" />
+<meta name="abstract" content="The design of the Darwin Information Typing Architecture (DITA) is based on deriving multiple information types, or topic types, from a common, generic topic. This language reference describes the elements that comprise the topic DTD and its initial, information-typed descendents: concept, reference, task, and glossentry. It also describes the DITA map DTD and its current specialization (bookmap), as well as various topic and map based DITA domains." />
+<meta name="description" content="The design of the Darwin Information Typing Architecture (DITA) is based on deriving multiple information types, or topic types, from a common, generic topic. This language reference describes the elements that comprise the topic DTD and its initial, information-typed descendents: concept, reference, task, and glossentry. It also describes the DITA map DTD and its current specialization (bookmap), as well as various topic and map based DITA domains." />
+<meta content="DITA Language Reference overview, Overview" name="DC.subject" />
+<meta content="DITA Language Reference overview, Overview" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/topic2.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="langrefintro" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Introduction</title>
+</head>
+<body id="langrefintro"><a name="langrefintro"><!-- --></a>
+
+
+<h1 class="topictitle1">Introduction</h1>
+
+
+
+<div><p>The design of the Darwin Information Typing Architecture (DITA)
+is based on deriving multiple information types, or topic types, from a common,
+generic topic. This language reference describes the elements that comprise
+the topic DTD and its initial, information-typed descendents: concept, reference,
+task, and glossentry. It also describes the DITA map DTD and its current specialization
+(bookmap), as well as various topic and map based DITA domains.</p>
+
+<div class="section"><p>This specification describes specific details of each element
+in the OASIS DITA language. The separate DITA Architectural Specification
+includes detailed information about DITA specialization, when to use each
+topic type, how topics and maps interact, details of complex behaviors such
+as conref and conditional processing, and many other best practices for working
+with DITA.</p>
+<p>The elements that make up the DITA design represent a set
+of different authoring concerns, each of which is grouped into its own chapter.
+Major sections include:</p>
+<br /><ul>
+<li>The main components of a topic, concept, reference, task, document,</li>
+
+<li>The main components of a glossentry document (new for DITA 1.1),</li>
+
+<li>The common elements available for creating content within the body of
+a topic,</li>
+
+<li>The elements that make up the two types of tables in DITA,</li>
+
+<li>The elements contained in the prolog of a topic (many of these also appear
+in the topicmeta in a map),</li>
+
+<li>The elements contained in the related-links part of a topic,</li>
+
+<li>Elements that appear in many contexts, but do not fit into specific categories,</li>
+
+<li>Elements that are available for further specialization,</li>
+
+<li>Domain specializations of topic elements that represent different subject
+domains,</li>
+
+<li>Elements that make up a DITA map, followed by the "mapgroup" domain specialization,</li>
+
+<li>The bookmap specialization (new for DITA 1.1),</li>
+
+<li>The xNAL domain for describing author information (based on the extensible
+Name and Address Language standard, and also new for DITA 1.1),</li>
+
+<li>The DITAVAL DTD for flagging and filtering content (formalized for DITA
+1.1),</li>
+
+<li>and commonly referenced descriptions</li>
+
+</ul>
+<p>In addition to glossentry topics, bookmap, the xNAL domain, and the
+formalized DITAVAL format, DITA 1.1 also includes a new indexing domain, clarifications
+to the image and object elements, new props and base attributes for attribute
+specialization, and several new elements:</p>
+<br /><ul>
+<li>abstract</li>
+
+<li>data and data-about</li>
+
+<li>foreign and unknown</li>
+
+<li>index-base</li>
+
+</ul>
+<p>DITA 1.1 includes a new "dir" attribute to aid in localization. This
+attribute, along with other localization attributes, is now available on nearly
+every DITA element. In addition, common metadata and id attributes that were
+available on many elements in DITA 1.0 are now available on nearly every element.</p>
+     </div>
+
+<div class="section"><h2 class="sectiontitle">Terminology</h2><p> The key words “MUST”, “MUST NOT”,
+“REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”,
+and “OPTIONAL” are to be interpreted as described in [<a href="file:///C:/DITA-OT1.3.1/plugins/oasisDocs/out/langref/ditaref-type.html#rfc2119" target="_blank">RFC2119</a>].</p>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Normative References</h2><dl>
+<dt class="dlterm"> [RFC2119]</dt>
+
+<dd>S. Bradner, Key words for use in RFCs to Indicate Requirement Levels, <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">http://www.ietf.org/rfc/rfc2119.txt</a>,
+IETF RFC 2119, March 1997.</dd>
+
+</dl>
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="nextlink"><strong>Next topic:</strong> <a href="../common/topic2.html" title="Use the generic topic structure for untyped topics. While much of the DITA architecture is built upon generic topics, it is generally better to use more specific information types (such as concept, task, or reference) when they are available. For an answer to the question &quot;What are topics?&quot; and more details on when to use different information types, please refer to the DITA architectural specification.">Topic elements</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="param" />
+<meta name="abstract" content="The parameter (&lt;param&gt;) element specifies a set of values that may be required by an &lt;object&gt; at runtime. Any number of &lt;param&gt; elements may appear in the content of an object in any order, but must be placed at the start of the content of the enclosing object. This element is comparable to the XHMTL &lt;param&gt; element." />
+<meta name="description" content="The parameter (&lt;param&gt;) element specifies a set of values that may be required by an &lt;object&gt; at runtime. Any number of &lt;param&gt; elements may appear in the content of an object in any order, but must be placed at the start of the content of the enclosing object. This element is comparable to the XHMTL &lt;param&gt; element." />
+<meta content="param, Body elements" name="DC.subject" />
+<meta content="param, Body elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/body2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/object.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/pre.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="param" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>param</title>
+</head>
+<body id="param"><a name="param"><!-- --></a>
+
+
+<h1 class="topictitle1">param</h1>
+
+
+
+<div><p>The parameter (&lt;<span class="keyword">param</span>&gt;) element specifies
+a set of values that may be required by an &lt;<span class="keyword">object</span>&gt;
+at runtime. Any number of &lt;<span class="keyword">param</span>&gt; elements may appear
+in the content of an object in any order, but must be placed at the start
+of the content of the enclosing object. This element is comparable to the
+XHMTL &lt;<span class="keyword">param</span>&gt; element. </p>
+
+<div class="example"><h2 class="sectiontitle">Example</h2> See <a href="object.html" title="DITA's &lt;object&gt; element corresponds to the HTML &lt;object&gt; element.">object</a>.</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100B7" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100BC" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100C6" headers="N100B7"><strong>ditabase, topic, task, reference, concept, glossary, map, bookmap</strong></td>
+<td valign="top" headers="N100BC N100C6"> no content </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100E5" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100EA" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N100F4" headers="N100E5"><strong>bookmap, map, ditabase, topic, task, concept, reference, glossary</strong></td>
+<td valign="top" headers="N100EA N100F4"><a href="../common/../langref/object.html" title="DITA's &lt;object&gt; element corresponds to the HTML &lt;object&gt; element.">object</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- topic/param </p>
+</div>
+
+<div class="section" id="param__attrs"><a name="param__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2>
+<a name="param__param_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="param__param_attr" border="1" class="simpletableborder">
+<tr><th valign="bottom" align="left" id="N1013A" width="25%">Name</th>
+<th valign="bottom" align="left" id="N1013F" width="37.5%">Description</th>
+<th valign="bottom" align="left" id="N10144" width="12.5%">Data Type</th>
+<th valign="bottom" align="left" id="N10149" width="12.5%">Default Value</th>
+<th valign="bottom" align="left" id="N1014E" width="12.5%">Required?</th>
+</tr>
+
+<tr>
+<td valign="top" headers="N1013A">name</td>
+
+<td valign="top" headers="N1013F">The name of the parameter.</td>
+
+<td valign="top" headers="N10144">CDATA</td>
+
+<td valign="top" headers="N10149">#REQUIRED</td>
+
+<td valign="top" headers="N1014E">Yes</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1013A">value</td>
+
+<td valign="top" headers="N1013F">Specifies the value of a run-time parameter specified by the name
+attribute.</td>
+
+<td valign="top" headers="N10144">CDATA</td>
+
+<td valign="top" headers="N10149">#IMPLIED</td>
+
+<td valign="top" headers="N1014E">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1013A">valuetype</td>
+
+<td valign="top" headers="N1013F">Specifies the type of the value attribute. Allowed values are: <dl>
+
+<dt class="dlterm">data</dt>
+
+<dd>A value of data means that the value will be evaluated and passed to the
+object's implementation as a string. </dd>
+
+
+<dt class="dlterm">ref</dt>
+
+<dd>A value of ref indicates that the value of valuetype is a URL that designates
+a resource where run-time values are stored. This allows support tools to
+identify URLs that are given as parameters.</dd>
+
+
+<dt class="dlterm">object</dt>
+
+<dd>A value of object indicates that the value of valuetype is an identifier
+that refers to an object declaration in the document. The identifier must
+be the value of the ID attribute set for the declared object element.</dd>
+
+</dl>
+</td>
+
+<td valign="top" headers="N10144">CDATA</td>
+
+<td valign="top" headers="N10149">#IMPLIED</td>
+
+<td valign="top" headers="N1014E">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1013A">type</td>
+
+<td valign="top" headers="N1013F">This attribute specifies the content type of the resource designated
+by the value attribute only in the case where <var class="varname">valuetype</var> is
+set to <span class="q">"ref"</span>. This attribute specifies for the user agent the type of
+values that will be found at the URI designated by value. <span>Note that this differs from the type
+attribute on many other DITA elements.</span></td>
+
+<td valign="top" headers="N10144">CDATA</td>
+
+<td valign="top" headers="N10149">#IMPLIED (No default type)</td>
+
+<td valign="top" headers="N1014E">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1013A">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N1013F">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N10144">parameter entity</td>
+
+<td valign="top" headers="N10149">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1014E">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1013A">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N1013F">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N10144">parameter entity</td>
+
+<td valign="top" headers="N10149">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1014E">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1013A">class</td>
+
+<td valign="top" headers="N1013F">A common attribute described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N10144">&#xA0;</td>
+<td valign="top" headers="N10149">&#xA0;</td>
+<td valign="top" headers="N1014E">&#xA0;</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/body2.html">Body elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/object.html" title="DITA's &lt;object&gt; element corresponds to the HTML &lt;object&gt; element.">object</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/pre.html" title="The preformatted element (&lt;pre&gt;) preserves line breaks and spaces entered manually by the author in the content of the element, and also presents the content in a monospaced type font (depending on your output formatting processor). Do not use &lt;pre&gt; when a more semantically specific element is appropriate, such as &lt;codeblock&gt;.">pre</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

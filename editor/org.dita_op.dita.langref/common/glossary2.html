@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="Glossentry elements" />
+<meta name="abstract" content="Use the glossentry topic type to define glossary terms. Each glossentry topic should define a single sense of a term. The current OASIS glossentry type is an initial implementation intended to support minimal terminology information; more terminology management capabilities may be added in future releases." />
+<meta name="description" content="Use the glossentry topic type to define glossary terms. Each glossentry topic should define a single sense of a term. The current OASIS glossentry type is an initial implementation intended to support minimal terminology information; more terminology management capabilities may be added in future releases." />
+<meta content="Glossentry elements" name="DC.subject" />
+<meta content="Glossentry elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/task2.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/body2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/glossentry.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/glossdef.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/glossterm.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="glossary2" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Glossentry elements</title>
+</head>
+<body id="glossary2"><a name="glossary2"><!-- --></a>
+
+
+<h1 class="topictitle1">Glossentry elements</h1>
+
+
+
+<div><p>Use the glossentry topic type to define glossary terms. Each glossentry
+topic should define a single sense of a term. The current OASIS glossentry
+type is an initial implementation intended to support minimal
+terminology information; more terminology management capabilities may be added
+in future releases.</p>
+</div>
+
+<div>
+<ol>
+<li class="olchildlink"><a href="../langref/glossentry.html">glossentry</a><br />
+The &lt;glossentry&gt; element defines a single sense of a glossary term. The expected book processing is to sort and group the glossary entries based on the localized term so a back-of-the-book glossary can contain a collated list of terms with the definitions of the senses of the terms indented under the terms. The glossary can have a different organization in different languages depending on the translation of the terms. One possible online processing is to associate a hotspot for mentions of terms in &lt;term&gt; elements and display the definition on hover or click. Glossary entries for different term senses can be reused independently of one another.</li>
+<li class="olchildlink"><a href="../langref/glossdef.html">glossdef</a><br />
+The &lt;glossdef&gt; element specifies the definition of one sense of a term. If a term has multiple senses, create a separate &lt;glossentry&gt; topic to define each sense.</li>
+<li class="olchildlink"><a href="../langref/glossterm.html">glossterm</a><br />
+The &lt;glossterm&gt; element specifies the preferred term associated with a definition of a sense. If the same term has multiple senses, create a separate &lt;glossentry&gt; topic for each sense.</li>
+</ol>
+
+<div class="familylinks">
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../common/task2.html" title="Task topics answer &quot;How do I?&quot; questions, and have a well-defined structure that describes how to complete a procedure to accomplish a specific goal. Use the task topic to describe the steps of a particular task, or to provide an overview of a higher-level task. The task topic includes sections for describing the context, prerequisites, actual steps, expected results, example, and expected next steps for a task. For more details on when to use task and other information types, please refer to the DITA architectural specification.">Task elements</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../common/body2.html">Body elements</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

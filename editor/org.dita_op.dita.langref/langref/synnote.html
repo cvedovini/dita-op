@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="synnote" />
+<meta name="abstract" content="The syntax note (&lt;synnote&gt;) element contains a note (similar to a footnote) within a syntax definition group or fragment. The syntax note explains aspects of the syntax that cannot be expressed in the markup itself. The note will appear at the bottom of the syntax diagram instead of at the bottom of the page. The syntax block element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information." />
+<meta name="description" content="The syntax note (&lt;synnote&gt;) element contains a note (similar to a footnote) within a syntax definition group or fragment. The syntax note explains aspects of the syntax that cannot be expressed in the markup itself. The note will appear at the bottom of the syntax diagram instead of at the bottom of the page. The syntax block element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information." />
+<meta content="synnote (syntax note), Programming elements" name="DC.subject" />
+<meta content="synnote (syntax note), Programming elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/pr-d.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/synblk.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/synnoteref.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="synnote" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>synnote</title>
+</head>
+<body id="synnote"><a name="synnote"><!-- --></a>
+
+
+<h1 class="topictitle1">synnote</h1>
+
+
+
+<div><p>The syntax note (&lt;<span class="keyword">synnote</span>&gt;) element contains
+a note (similar to a footnote) within a syntax definition group or fragment.
+The syntax note explains aspects of the syntax that cannot be expressed in
+the markup itself. The note will appear at the bottom of the syntax diagram
+instead of at the bottom of the page. The syntax block element is part of
+the DITA programming domain, a special set of DITA elements designed to document
+programming tasks, concepts and reference information.</p>
+
+<div class="example"><h2 class="sectiontitle">Example</h2><pre class="pre">&lt;groupcomp&gt;&lt;var&gt;one&lt;/var&gt;&lt;var&gt;two&lt;/var&gt;&lt;var&gt;three&lt;/var&gt;&lt;/groupcomp&gt;
+<strong>&lt;synnote&gt;</strong>My first syntax note.<strong>&lt;/synnote&gt;</strong>         </pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100A2" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100A7" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100B1" headers="N100A2"><strong>ditabase, topic, task, reference, concept, glossary</strong></td>
+<td valign="top" headers="N100A7 N100B1"> ( text data  or 
+<a href="../common/../langref/ph.html" title="The phrase (&lt;ph&gt;) element is used to organize content for reuse or conditional processing (for example, when part of a paragraph applies to a particular audience). It can be used by specializations of DITA to create semantic markup for content at the phrase level, which then allows (but does not require) specific processing or formatting.">ph</a> or <a href="../common/../langref/codeph.html" title="The code phrase (&lt;codeph&gt;) element represents a snippet of code within the main flow of text. The code phrase is displayed in a monospaced font for emphasis. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">codeph</a> or <a href="../common/../langref/synph.html" title="The syntax phrase (&lt;synph&gt;) element is a container for syntax definition elements. It is used when a complete syntax diagram is not needed, but some of the syntax elements, such as kwd, oper, delim, are used within the text flow of the topic content. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">synph</a> or <a href="../common/../langref/filepath.html" title="The &lt;filepath&gt; element indicates the name and optionally the location of a referenced file by specifying the directory containing the file, and other directories that may precede it in the system hierarchy. This element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">filepath</a> or <a href="../common/../langref/msgph.html" title="The message phrase (&lt;msgph&gt;) element contains the text content of a message produced by an application or program. It can also contain the variable name (varname) element to illustrate where variable text content can occur in the message. This element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">msgph</a> or <a href="../common/../langref/userinput.html" title="The user input (&lt;userinput&gt;) element represens the text a user should input in response to a program or system prompt. This element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">userinput</a> or <a href="../common/../langref/systemoutput.html" title="The system output (&lt;systemoutput&gt;) element represents computer output or responses to a command or situation. A generalized element, it represents any kind of output from the computer, so the author may wish to choose more specific markup, such as msgph, for messages from the application. The system output element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">systemoutput</a> or <a href="../common/../langref/b.html" title="The bold (&lt;b&gt;) element is used to apply bold highlighting to the content of the element. Use this element only when there is not some other more proper element. For example, for specific items such as GUI controls, use the &lt;uicontrol&gt; element. This element is part of the DITA highlighting domain.">b</a> or <a href="../common/../langref/u.html" title="The underline (&lt;u&gt;) element is used to apply underline highlighting to the content of the element. Use this element only when there is not some other more proper element. For example, for specific items such as GUI controls, use the &lt;uicontrol&gt; element. This element is part of the DITA highlighting domain.">u</a> or <a href="../common/../langref/i.html" title="The italic (&lt;i&gt;) element is used to apply italic highlighting to the content of the element. Use this element only when there is not some other more proper element. For example, for specific items such as GUI controls, use the &lt;uicontrol&gt; element. This element is part of the DITA highlighting domain.">i</a> or <a href="../common/../langref/tt.html" title="The teletype (&lt;tt&gt;) element is used to apply monospaced highlighting to the content of the element. Use this element only when there is not some other more proper element. For example, for specific items such as GUI controls, use the &lt;uicontrol&gt; element. This element is part of the DITA highlighting domain.">tt</a> or <a href="../common/../langref/sup.html" title="The superscript (&lt;sup&gt;) element indicates that text should be superscripted, or vertically raised in relationship to the surrounding text. Superscripts are usually a smaller font than the surrounding text. Use this element only when there is not some other more proper tag. This element is part of the DITA highlighting domain.">sup</a> or <a href="../common/../langref/sub.html" title="A subscript (&lt;sub&gt;) indicates that text should be subscripted, or placed lower in relationship to the surrounding text. Subscripted text is often a smaller font than the surrounding text. Formatting may vary depending on your output process. This element is part of the DITA highlighting domain.">sub</a> or <a href="../common/../langref/uicontrol.html" title="The user interface control (&lt;uicontrol&gt;) element is used to mark up names of buttons, entry fields, menu items, or other objects that allow the user to control the interface. Use the &lt;uicontrol&gt; element inside a &lt;menucascade&gt; element to identify a sequence of menu choices in a nested menu, such as File &gt; New. This element is part of the DITA user interface domain, a special set of DITA elements designed to document user interface tasks, concepts and reference information.">uicontrol</a> or <a href="../common/../langref/menucascade.html" title="The &lt;menucascade&gt; element is used to document a series of menu choices. The &lt;menucascade&gt; element contains one or more user interface control (&lt;uicontrol&gt;) elements, for example: Start &gt; Programs &gt; Accessories &gt; Notepad. If there is more than one &lt;uicontrol&gt; element, the formatter shows connecting characters between the menu items to represent the menu cascade. This element is part of the DITA user interface domain, a special set of DITA elements designed to document user interface tasks, concepts and reference information.">menucascade</a> or <a href="../common/../langref/term.html" title="The &lt;term&gt; element identifies words that may have or require extended definitions or explanations. In future development of DITA, for example, terms might provide associative linking to matching glossary entries.">term</a> or <a href="../common/../langref/xref.html" title="Use the cross-reference (&lt;xref&gt;) element to link to a different location within the current topic, or a different topic within the same help system, or to external sources, such as Web pages, or to a location in another topic. The href attribute on the &lt;xref&gt; element provides the location of the target.">xref</a> or <a href="../common/../langref/cite.html" title="The &lt;cite&gt; element is used when you need a bibliographic citation that refers to a book or article. It specifically identifies the title of the resource.">cite</a> or <a href="../common/../langref/q.html" title="A quotation element (&lt;q&gt;) indicates content quoted from another source. This element is used for short quotes which are displayed inline. Use the long quote element (&lt;lq&gt;) for quotations that should be set off from the surrounding text.">q</a> or <a href="../common/../langref/boolean.html" title="The &lt;boolean&gt; element is used to express one of two opposite values, such as yes or no, on or off, true or false, high or low, and so forth. The element itself is empty; the value of the element is stored in its state attribute, and the semantic associated with the value is typically in a specialized name derived from this element.">boolean</a> or <a href="../common/../langref/state.html" title="The &lt;state&gt; element specifies a name/value pair whenever it is necessary to represent a named state that has a variable value. The element is primarily intended for use in specializations to represent specific states (like logic circuit states, chemical reaction states, airplane instrumentation states, and so forth).">state</a> or <a href="../common/../langref/keyword.html" title="The &lt;keyword&gt; element identifies a keyword or token, such as a single value from an enumerated list, the name of a command or parameter, product name, or a lookup key for a message.">keyword</a> or <a href="../common/../langref/option.html" title="The &lt;option&gt; element describes an option that can be used to modify a command (or something else, like a configuration). This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">option</a> or <a href="../common/../langref/parmname.html" title="When referencing the name of an application programming interface parameter within the text flow of your topic, use the parameter name (&lt;parmname&gt;) element to markup the parameter. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">parmname</a> or <a href="../common/../langref/apiname.html" title="The &lt;apiname&gt; element provides the name of an application programming interface (API) such as a Java class name or method name. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">apiname</a> or <a href="../common/../langref/cmdname.html" title="The command name (&lt;cmdname&gt;) element specifies the name of a command when it is part of a software discussion. This element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">cmdname</a> or <a href="../common/../langref/msgnum.html" title="The message number (&lt;msgnum&gt;) element contains the number of a message produced by an application or program. This element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">msgnum</a> or <a href="../common/../langref/varname.html" title="The variable name (&lt;varname&gt;) element defines a variable that must be supplied to a software application. The variable name element is very similar to the variable (var) element, but variable name is used outside of syntax diagrams. This element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">varname</a> or <a href="../common/../langref/wintitle.html" title="The window title &lt;wintitle&gt; element can be used to mark up names of windows or dialogs, or other user interface elements at the same level of grouping, including wizard titles, wizard page titles, and window pane titles. This element is part of the DITA user interface domain, a special set of DITA elements designed to document user interface tasks, concepts and reference information.">wintitle</a> or <a href="../common/../langref/tm.html" title="The trademark (&lt;tm&gt;) element in DITA is used to markup and identify a term or phrase that is trademarked. Trademarks include registered trademarks, service marks, slogans and logos.">tm</a>) <em> (any number) </em></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N1032F" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N10334" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N1033E" headers="N1032F"><strong>ditabase, topic, task, concept, reference, glossary</strong></td>
+<td valign="top" headers="N10334 N1033E"><a href="../common/../langref/syntaxdiagram.html" title="The syntax diagram (&lt;syntaxdiagram&gt;) element is the main container for all the syntax elements that make up a syntax definition. The syntax diagram represents the syntax of a statement from a computer language, or a command, function call or programming language statement. Traditionally, the syntax diagram is formatted with railroad tracks that connect the units of the syntax together, but this presentation may differ depending on the output media. The syntax diagram element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">syntaxdiagram</a>, <a href="../common/../langref/synblk.html" title="The syntax block (&lt;synblk&gt;) element organizes small pieces of a syntax definition into a larger piece. The syntax block element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">synblk</a>, <a href="../common/../langref/groupseq.html" title="The &lt;groupseq&gt; element is part of the subset of elements that define syntax diagrams in DITA. A group is a logical set of pieces of syntax that go together. Within the syntax definition, groups of keywords, delimiters and other syntax units act as a combined unit, and they occur in a specific sequence, as delimited by the &lt;groupseq&gt; element. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">groupseq</a>, <a href="../common/../langref/groupchoice.html" title="The &lt;groupchoice&gt; element is part of the subset of elements that define syntax diagrams in DITA. A group is a logical set of pieces of syntax that go together. A group choice specifies that the user must make a choice about which part of the syntax to use. Groups are often nested. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">groupchoice</a>, <a href="../common/../langref/groupcomp.html" title="The &lt;groupcomp&gt; element is part of the subset of elements that define syntax diagrams in DITA. A group is a logical set of pieces of syntax that go together. The group composite means that the items that make up the syntax diagram will be formatted close together rather than being separated by a horizontal or vertical line, which is the usual formatting method. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">groupcomp</a>, <a href="../common/../langref/fragment.html" title="Within a syntax definition, a &lt;fragment&gt; is a labeled subpart of the syntax. The &lt;fragment&gt; element allows breaking out logical chunks of a large syntax diagram into named fragments. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">fragment</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>+ topic/fn pr-d/synnote </p>
+</div>
+
+<div class="section" id="synnote__attrs"><a name="synnote__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="synnote__synnote_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="synnote__synnote_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N103E6" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N103EC" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N103F2" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N103F8" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N103FE" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N103E6">callout</td>
+
+<td valign="top" headers="N103EC">Specifies what character is used for the footnote link, for example
+a number or an alpha character. The attribute may also specify a short string
+of characters. When no callout value is specified, footnotes are numbered.</td>
+
+<td valign="top" headers="N103F2">CDATA</td>
+
+<td valign="top" headers="N103F8">#IMPLIED</td>
+
+<td valign="top" headers="N103FE">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N103E6">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N103EC">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N103F2">parameter entity</td>
+
+<td valign="top" headers="N103F8">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N103FE">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N103E6">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N103EC">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N103F2">parameter entity</td>
+
+<td valign="top" headers="N103F8">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N103FE">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N103E6">class, outputclass</td>
+
+<td valign="top" headers="N103EC">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N103F2">&#xA0;</td>
+<td valign="top" headers="N103F8">&#xA0;</td>
+<td valign="top" headers="N103FE">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/pr-d.html" title="The programming domains elements are used to define the syntax and to give examples of programming languages.">Programming elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/synblk.html" title="The syntax block (&lt;synblk&gt;) element organizes small pieces of a syntax definition into a larger piece. The syntax block element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">synblk</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/synnoteref.html" title="The syntax note (&lt;synnoteref&gt;) reference element references a syntax note element (&lt;synnote&gt;) that has already been defined elsewhere in the syntax diagram. The same notation can be used in more than one syntax definition. The syntax note reference element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">synnoteref</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

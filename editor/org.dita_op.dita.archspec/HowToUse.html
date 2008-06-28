@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Bookmap" />
+<meta name="abstract" content="The bookmap specialization of DITA's standard DITA map allows you to organize your DITA topics into a collection that can be printed as a book or other paged layout." />
+<meta name="description" content="The bookmap specialization of DITA's standard DITA map allows you to organize your DITA topics into a collection that can be printed as a book or other paged layout." />
+<meta scheme="URI" name="DC.Relation" content="dita_spec_23_maps.html" />
+<meta scheme="URI" name="DC.Relation" content="dita_spec_23_mapinher.html" />
+<meta scheme="URI" name="DC.Relation" content="mapdomains.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="concept-1" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Bookmap</title>
+</head>
+<body id="concept-1"><a name="concept-1"><!-- --></a>
+
+
+<h1 class="topictitle1">Bookmap</h1>
+
+
+<div><p>The bookmap specialization of DITA's standard DITA map allows
+you to organize your DITA topics into a collection that can be printed as
+a book or other paged layout.</p>
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="dita_spec_23_maps.html" title="Maps organize topics for output to a specific deliverable, including generating navigation files and links to related topics.">DITA maps</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="dita_spec_23_mapinher.html" title="Some of the attributes and metadata in a map can be inherited based on the structures in the map.">Inheritance of attributes and metadata in maps</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="mapdomains.html" title="The following domains provide expanded functionality for map document types that incorporate them.">Map domains</a></div>
+</div>
+</div>
+<div class="nested1" id="whyusebookmap"><a name="whyusebookmap"><!-- --></a>
+<h2 class="topictitle2">Why use a bookmap?</h2>
+
+
+<div><p>The OASIS bookmap application of DITA allows you to produce your
+DITA topics and even whole DITA maps as the content of a formally defined
+book. This allows you to produce not only maps for online deliverables, but
+also PDFs with the same content, replete with covers, formal notices and frontmatter,
+and so forth.</p>
+</div>
+
+</div>
+
+<div class="nested1" id="whatisbookamp"><a name="whatisbookamp"><!-- --></a>
+<h2 class="topictitle2">What is a bookmap?</h2>
+
+
+<div><p>A bookmap is a special kind of DITA map that defines the major
+structures and setup information for producing maps of information as a book.</p>
+
+<p>A typical DITA map might have a title and then a set of topicrefs, in a
+sequence, in a hierarchy, or both, that define the structure by which topics
+are to be viewed as a complete information deliverable. A DITA map does not
+have structures to specifically designate how topics are to be treated as
+chapters, preface content, or even for constructing a cover or special content
+(such as edition notice boilerplate). To enable DITA content to be viewed
+in a more booklike manner, you need a context that represents all the special
+processing that might be invested on producing a map or set of maps as a book.
+That is the role of DITA's bookmap specialization.</p>
+
+<p>A bookmap has the following specialized major structures:</p>
+
+<br /><ul>
+<li>An optional title or booktitle (which itself can have substructure for
+complex titles)</li>
+
+<li>Optional bookmeta (all the information about the book--its owners, authors,
+publishing data, and so forth)</li>
+
+<li>Optional frontmatter (the usual preface and introductory topics in a book
+prior to the gist of the book, and also including booklists--containers for
+special collections of information in a book)</li>
+
+<li>Any number of chapters or parts (which can contain chapters)</li>
+
+<li>Any number of appendix topics</li>
+
+<li>Optional backmatter (often for special notices or supplementary information,
+and also for booklists)</li>
+
+<li>Any number of reltables, as in a typical map.</li>
+
+</ul>
+
+<p />
+
+</div>
+
+<div class="nested2" id="whatisinbookmeta"><a name="whatisinbookmeta"><!-- --></a>
+<h3 class="topictitle3">What is bookmeta?</h3>
+
+
+<div><p>Bookmeta is a specialization of the topicmeta element in a DITA
+map. It has specialized content for holding information about a particular
+book represented by the bookmap.</p>
+</div>
+
+</div>
+
+<div class="nested2" id="whatisabooklist"><a name="whatisabooklist"><!-- --></a>
+<h3 class="topictitle3">What are booklists?</h3>
+
+
+<div><p>A booklist is a specialized topicref that indicates a collection
+of information from the content of a book. Sets of &lt;<span class="keyword">booklist</span>&gt;
+elements (or elements derived from booklist) are contained in the &lt;<span class="keyword">booklists</span>&gt;
+element.</p>
+
+<p>A common kind of booklist is the Table of Contents. If you wish, you can
+define a completely new collection such as a Table of Footnotes and provide
+either a pre-populated topic with that content, or provide processing that
+will collect and insert that topical content during the book processing.</p>
+
+<p>Specific booklist elements are provided in the OASIS bookmap for:</p>
+
+<br /><ul>
+<li>toc--the usual Table of Contents (commonly located in the frontmatter
+booklists)</li>
+
+<li>figurelist--a list of figures</li>
+
+<li>tablelist--a list of tables</li>
+
+<li>abbrevlist--a list of abbreviations</li>
+
+<li>trademarklist--a list of trademarks</li>
+
+<li>bibliolist--a list of bibliographic references</li>
+
+<li>glossarylist--a list of glossary terms and definitions</li>
+
+<li>indexlist--an index (commonly located in the backmatter booklists)</li>
+
+<li>booklist--reference any other topic that contains booklist-like material,
+or specialize the element to represent a collection that will be gathered
+by new override processing.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="nested2" id="whatsinfrontmatter"><a name="whatsinfrontmatter"><!-- --></a>
+<h3 class="topictitle3">What is in frontmatter?</h3>
+
+
+<div><p>Front matter of a book typically contains prefaces, instructions,
+or other introductory material prior to the actual content of a book.</p>
+
+<p>Specific
+frontmatter elements include any number of:</p>
+
+<br /><ul>
+<li>booklists--collections of book parts, like ToC</li>
+
+<li>notices--edition notices, safety notices, terms and conditions, and so
+forth</li>
+
+<li>dedication--to my forebearing significant other...</li>
+
+<li>colophon--how the book was produced</li>
+
+<li>bookabstract--handy for search tools and registry into tracking/workflow
+systems</li>
+
+<li>draftintro--special content for reviewers</li>
+
+<li>preface--an introduction or introductory statement</li>
+
+<li>topicref--extensible placeholder for any topic</li>
+
+<li>topichead--as in a DITA map, this element allows grouping with a navigation
+title</li>
+
+<li>topicgroup--as in DITA map, this element allows grouping without a navigation
+title.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="nested2" id="whatisbackmatter"><a name="whatisbackmatter"><!-- --></a>
+<h3 class="topictitle3">What is in backmatter?</h3>
+
+
+<div><p>Back matter of a book typically contains closing information that
+follows the main content of a book.</p>
+
+<p>Specific backmatter elements include any number of:</p>
+
+<br /><ul>
+<li>booklists--collections of book parts, like the index</li>
+
+<li>notices--edition notices, safety notices, terms and conditions, and so
+forth</li>
+
+<li>dedication--to my first grade teacher...</li>
+
+<li>colophon--how the book was produced</li>
+
+<li>amendments--points to a list of amendments or updates to the book</li>
+
+<li>topicref--extensible placeholder for any topic</li>
+
+<li>topichead--as in a DITA map, this element allows grouping with a title</li>
+
+<li>topicgroup--as in DITA map, this element allows grouping without a title.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="nested1" id="howtousebookmap"><a name="howtousebookmap"><!-- --></a>
+<h2 class="topictitle2">How is a bookmap authored and produced?</h2>
+
+
+<div><p>As a specialization of DITA map, the DITA bookmap will be supported
+by default like a typical DITA map in DITA-aware editors and processing tools.</p>
+
+<p>With appropriate style and functional overrides, XML editors can display
+a DITA bookmap just as they would the XML structure for other book-supporting
+DTDs, and specialized DITA processing or DITA bookmaps will exploit the book
+metadata and book features in high quality paged output.</p>
+
+<p>For example, you might have a DITA map that represents the hierarchy you
+intend for a particular Web deliverable of your DITA topics. Now you wish
+to also produce that map as a formal book to be packaged along with your boxed
+product. You can open a new bookmap instance and define a title for the book,
+indicate any required publisher information in the bookmeta area, link in
+a preface, indicate whether you want a table of figures along with the table
+of contents, and finally create a chapter element that references your existing
+DITA map. You have created a complete book deliverable, at least in a simplistic
+manner. The design of bookmap allows you to refine your deliverable and even
+make the book version of the map have content that is specific to the book
+version, versus the Web version.</p>
+
+<div class="example"><h3 class="sectiontitle">Example</h3>                  <pre class="pre">&lt;bookmap id="taskbook"&gt;
+  &lt;booktitle&gt;
+    &lt;mainbooktitle&gt;Product tasks&lt;/mainbooktitle&gt;
+    &lt;booktitlealt&gt;Tasks and what they do&lt;/booktitlealt&gt;
+  &lt;/booktitle&gt;
+  &lt;bookmeta&gt;
+    &lt;author&gt;John Doe&lt;/author&gt;
+    &lt;bookrights&gt;
+      &lt;copyrfirst&gt;
+        &lt;year&gt;2006&lt;/year&gt;
+      &lt;/copyrfirst&gt;
+      &lt;bookowner&gt;
+        &lt;person href="janedoe.xml"&gt;Jane Doe&lt;/person&gt;
+      &lt;/bookowner&gt;
+    &lt;/bookrights&gt;
+  &lt;/bookmeta&gt;
+  &lt;frontmatter&gt;
+    &lt;preface/&gt;
+  &lt;/frontmatter&gt;
+  &lt;chapter format="ditamap" href="installing.ditamap"/&gt;
+  &lt;chapter href="configuring.xml"/&gt;
+  &lt;chapter href="maintaining.xml"&gt;
+    &lt;topicref href="maintainstorage.xml"/&gt;
+    &lt;topicref href="maintainserver.xml"/&gt;
+    &lt;topicref href="maintaindatabase.xml"/&gt;
+  &lt;/chapter&gt;
+  &lt;appendix href="task_appendix.xml"/&gt;
+&lt;/bookmap&gt;</pre>
+ 
+     </div>
+
+</div>
+
+</div>
+
+<div class="nested1" id="dita_spec_intro_bookmap_modules"><a name="dita_spec_intro_bookmap_modules"><!-- --></a>
+<h2 class="topictitle2">Modules</h2>
+
+<div>
+<p>DTD:</p>
+
+<pre class="pre">bookmap.dtd
+bookmap.mod
+</pre>
+
+<p>Schema:</p>
+
+<pre class="pre">bookmap.xsd
+bookmapGrp.xsd
+bookmapMod.xsd</pre>
+
+</div>
+
+</div>
+
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

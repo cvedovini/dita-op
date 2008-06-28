@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="relheader" />
+<meta name="abstract" content="The &lt;relheader&gt; element is a row of column definitions (&lt;relcolspec&gt; elements) in a relationship table. Each table can have only one set of column definitions." />
+<meta name="description" content="The &lt;relheader&gt; element is a row of column definitions (&lt;relcolspec&gt; elements) in a relationship table. Each table can have only one set of column definitions." />
+<meta content="relheader, Map elements" name="DC.subject" />
+<meta content="relheader, Map elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/map2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/relcell.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/relcolspec.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="relheader" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>relheader</title>
+</head>
+<body id="relheader"><a name="relheader"><!-- --></a>
+
+
+<h1 class="topictitle1">relheader</h1>
+
+
+
+<div><p>The &lt;<span class="keyword">relheader</span>&gt; element is a row of column
+definitions (&lt;<span class="keyword">relcolspec</span>&gt; elements) in a relationship
+table. Each table can have only one set of column definitions.</p>
+
+<div class="example"><h2 class="sectiontitle">Example</h2>See <a href="reltable.html" title="The relationship table (&lt;reltable&gt;) defines relationships between topics, based on the familiar table model of rows (&lt;relrow&gt;), columns (&lt;relheader&gt;), and cells (&lt;relcell&gt;). The &lt;relcell&gt; elements can contain &lt;topicref&gt; elements, which are then related to other &lt;topicref&gt; elements in the same row (although not necessarily in the same cell). By default, the contents of a &lt;reltable&gt; element are not output for navigation or TOC purposes, and are used only to define relationships that can be expressed as topic-to-topic links.">reltable</a>.</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100D3" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100D8" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100E2" headers="N100D3"><strong>map, bookmap</strong></td>
+<td valign="top" headers="N100D8 N100E2"> (
+<a href="../common/../langref/relcolspec.html" title="A column definition in the relationship table. You can use &lt;relcolspec&gt; column definitions to set defaults for the attributes of &lt;topicref&gt; elements in the column. For example, you can set type=&quot;concept&quot; to treat all untyped &lt;topicref&gt; elements in the column as concepts.">relcolspec</a>) <em> (one or more) </em></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N10123" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N10128" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N10132" headers="N10123"><strong>bookmap, map</strong></td>
+<td valign="top" headers="N10128 N10132"><a href="../common/../langref/reltable.html" title="The relationship table (&lt;reltable&gt;) defines relationships between topics, based on the familiar table model of rows (&lt;relrow&gt;), columns (&lt;relheader&gt;), and cells (&lt;relcell&gt;). The &lt;relcell&gt; elements can contain &lt;topicref&gt; elements, which are then related to other &lt;topicref&gt; elements in the same row (although not necessarily in the same cell). By default, the contents of a &lt;reltable&gt; element are not output for navigation or TOC purposes, and are used only to define relationships that can be expressed as topic-to-topic links.">reltable</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- map/relheader </p>
+</div>
+
+<div class="section" id="relheader__attrs"><a name="relheader__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="relheader__relheader_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="relheader__relheader_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N1019D" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N101A3" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N101A9" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N101AF" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N101B5" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1019D">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N101A3">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N101A9">parameter entity</td>
+
+<td valign="top" headers="N101AF">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N101B5">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1019D">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N101A3">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N101A9">parameter entity</td>
+
+<td valign="top" headers="N101AF">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N101B5">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1019D">class</td>
+
+<td valign="top" headers="N101A3">A common attribute described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N101A9">&#xA0;</td>
+<td valign="top" headers="N101AF">&#xA0;</td>
+<td valign="top" headers="N101B5">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/map2.html">Map elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/relcell.html" title="A &lt;relcell&gt; element is a cell in the relationship table. The &lt;topicref&gt; elements it contains will be related to topicrefs in other cells of the same row. By default, topicrefs in the same cell are not related to each other, unless you change the relcell's collection-type attribute to indicate that they are related.">relcell</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/relcolspec.html" title="A column definition in the relationship table. You can use &lt;relcolspec&gt; column definitions to set defaults for the attributes of &lt;topicref&gt; elements in the column. For example, you can set type=&quot;concept&quot; to treat all untyped &lt;topicref&gt; elements in the column as concepts.">relcolspec</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

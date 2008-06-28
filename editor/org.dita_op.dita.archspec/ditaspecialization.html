@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="topic" name="DC.Type" />
+<meta name="DC.Title" content="DITA specialization" />
+<meta name="abstract" content="Specialization is the process by which new designs are created based off existing designs, allowing new kinds of content to be processed using existing processing rules." />
+<meta name="description" content="Specialization is the process by which new designs are created based off existing designs, allowing new kinds of content to be processed using existing processing rules." />
+<meta scheme="URI" name="DC.Relation" content="behaviors.html" />
+<meta scheme="URI" name="DC.Relation" content="specialize.html" />
+<meta scheme="URI" name="DC.Relation" content="whyspec.html" />
+<meta scheme="URI" name="DC.Relation" content="infodom.html" />
+<meta scheme="URI" name="DC.Relation" content="foreigncontentspec.html" />
+<meta scheme="URI" name="DC.Relation" content="dataextend.html" />
+<meta scheme="URI" name="DC.Relation" content="speclimits.html" />
+<meta scheme="URI" name="DC.Relation" content="speccont.html" />
+<meta scheme="URI" name="DC.Relation" content="specdesign.html" />
+<meta scheme="URI" name="DC.Relation" content="specproc.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="ditaspecialization" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>DITA specialization</title>
+</head>
+<body id="ditaspecialization"><a name="ditaspecialization"><!-- --></a>
+
+
+<h1 class="topictitle1">DITA specialization</h1>
+
+
+<div><p>Specialization is the process by which new designs are created
+based off existing designs, allowing new kinds of content to be processed
+using existing processing rules.</p>
+
+<p>Specialization provides a way to reconcile the needs for centralized management
+of major architecture and design with the needs for localized management of
+group-specific and content-specific guidelines and behaviors. Specialization
+allows multiple definitions of content and output to co-exist, related through
+a hierarchy of types and transforms. This hierarchy lets general transforms
+know how to deal with new, specific content, and it lets specialized transforms
+reuse logic from the general transforms. As a result, any content can be processed
+by any transform, as long as both content and transform are specialization-compliant,
+and part of the same hierarchy.  Specializers get the benefit of specific
+solutions, but also get the benefit of common standards and shared resources.</p>
+
+<table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10030">Content</th>
+
+<th valign="bottom" align="left" id="N10036">Processing</th>
+
+<th valign="bottom" align="left" id="N1003C">Result</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10030">Unspecialized</td>
+
+<td valign="top" headers="N10036">Unspecialized</td>
+
+<td valign="top" headers="N1003C">Base processing, expected output</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10030">Unspecialized</td>
+
+<td valign="top" headers="N10036">Specialized</td>
+
+<td valign="top" headers="N1003C">Base processing, specialized overrides are ignored, expected output</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10030">Specialized</td>
+
+<td valign="top" headers="N10036">Unspecialized</td>
+
+<td valign="top" headers="N1003C">Base processing, specialized content treated as general, output may
+fall short of expectations</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10030">Specialized</td>
+
+<td valign="top" headers="N10036">Specialized</td>
+
+<td valign="top" headers="N1003C">Specialized processing, expected output</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10030">Specialized</td>
+
+<td valign="top" headers="N10036">Differently specialized</td>
+
+<td valign="top" headers="N1003C">Some specialized processing, specialized content treated as nearest
+common denominator, output may fall short of expectations</td>
+
+</tr>
+
+</table>
+
+<p>The following topics provide an overview of specialization, some recommendations
+for use, and detailed rules for its mechanisms.</p>
+
+</div>
+
+<div>
+<ol>
+<li class="olchildlink"><a href="specialize.html">What is specialization?</a><br />
+Specialization allows you to define new kinds of information (new structural types or new domains of information), while reusing as much of existing design and code as possible, and minimizing or eliminating the costs of interchange, migration, and maintenance.</li>
+<li class="olchildlink"><a href="whyspec.html">Why specialization?</a><br />
+Specialization can have dramatic benefits for the development of new document architectures.</li>
+<li class="olchildlink"><a href="infodom.html">Structural versus domain specialization</a><br />
+Structural specialization defines new types of structured information, such as new topic types or new map types. Domain specialization creates new markup that can be useful in multiple structural types, such as new kinds of keywords, tables, or lists, or new attributes such as conditional processing attributes.</li>
+<li class="olchildlink"><a href="foreigncontentspec.html">Specializing foreign or unknown content</a><br />
+Specializing &lt;foreign&gt; or &lt;unknown&gt; elements is an open extension to the DITA Architecture that allows DITA adopters to incorporate new or existing standard vocabularies for non-textual content, like MathML and SVG, as in-line objects.</li>
+<li class="olchildlink"><a href="dataextend.html">Data extensibility</a><br />
+The &lt;data&gt; element represents properties ranging from simple values to complex structures. Processes can harvest the &lt;data&gt; element for automated manipulation or to format data associated with the body flow. The &lt;data&gt; element is primarily intended for use in creating specializations.</li>
+<li class="olchildlink"><a href="speclimits.html">Limits of specialization</a><br />
+There are times when a new structural or domain type appears not to fit into the existing hierarchy, based on the semantics of the existing types and the restrictions of the specialization process. In these cases there are a variety of options to consider.</li>
+<li class="olchildlink"><a href="speccont.html">Specialization in content</a><br />
+Specialization is expressed in content through the use of two attributes: the class attribute and the domain attribute. These are not typically present in the document instance, but are provided by default values expressed in a DTD or schema.</li>
+<li class="olchildlink"><a href="specdesign.html">Specialization in design</a><br />
+Specialization in design enables reuse of design elements, just as specialization in content allows reuse of processing rules. These rules involve the creation and management of markup modules as separate reusable units.</li>
+<li class="olchildlink"><a href="specproc.html">Specialization in processing</a><br />
+Specialized processing is not necessary for every specialized element, only for those elements which do not have appropriate default behavior based on their ancestors.</li>
+</ol>
+
+<div class="familylinks">
+<div class="previouslink"><strong>Previous topic:</strong> <a href="behaviors.html" title="Several common DITA processing behaviors are driven by attributes, including navigation, content reuse, and conditional processing.">DITA processing</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

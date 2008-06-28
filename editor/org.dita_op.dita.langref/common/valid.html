@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="Miscellaneous elements" />
+<meta scheme="URI" name="DC.Relation" content="../common/relatedl.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/special.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/dita.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/draft-comment.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/fn.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/indexterm.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/indextermref.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/index-base.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/tm.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/data-about.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/data.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/foreign.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/unknown.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="valid" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Miscellaneous elements</title>
+</head>
+<body id="valid"><a name="valid"><!-- --></a>
+
+
+   <h1 class="topictitle1">Miscellaneous elements</h1>
+
+   <div>
+      <div class="section">
+         <p>Most DITA elements represent discourse, or information that is placed exactly
+as entered. However, there are also types of information that are usually
+authored in context with a thought or issue, but upon output, the content
+might be relocated, suppressed, or used only for purposes such as inline annotations
+for drafts. These elements include footnotes, index entries, draft comments,
+and special cleanup containers that can hold migrated data that still needs
+a writer's intervention to get into the right place.
+         </p>
+
+      </div>
+
+   </div>
+
+<div>
+<ol>
+<li class="olchildlink"><a href="../langref/dita.html">dita</a><br />
+The &lt;dita&gt; element provides a top-level container for multiple topics when you create documents using the ditabase document type. The &lt;dita&gt; element lets you create any sequence of concept, task, and reference topics, and the ditabase document type lets you further nest these topic types inside each other. The &lt;dita&gt; element has no particular output implications; it simply allows you to create multiple topics of different types at the same level in a single document.</li>
+<li class="olchildlink"><a href="../langref/draft-comment.html">draft-comment</a><br />
+The &lt;draft-comment&gt; element allows simple review and discussion of topic contents within the marked-up content. Use the &lt;draft-comment&gt; element to ask a question or make a comment that you would like others to review. To indicate the source of the draft comment or the status of the comment, use the author, time or disposition attributes.</li>
+<li class="olchildlink"><a href="../langref/fn.html">fn</a><br />
+Use footnote (&lt;fn&gt;) to annotate text with notes that are not appropriate for inclusion in line or to indicate the source for facts or other material used in the text.</li>
+<li class="olchildlink"><a href="../langref/indexterm.html">indexterm</a><br />
+An &lt;indexterm&gt; element allows the author to indicate that a certain word or phrase should produce an index entry in the generated index.</li>
+<li class="olchildlink"><a href="../langref/indextermref.html">indextermref</a><br />
+This element is not completely defined, and is reserved for future use.</li>
+<li class="olchildlink"><a href="../langref/index-base.html">index-base</a><br />
+The &lt;index-base&gt; element allows indexing extensions to be added by specializing off this element. It does not in itself have any meaning and should be ignored in processing.</li>
+<li class="olchildlink"><a href="../langref/tm.html">tm</a><br />
+The trademark (&lt;tm&gt;) element in DITA is used to markup and identify a term or phrase that is trademarked. Trademarks include registered trademarks, service marks, slogans and logos.</li>
+<li class="olchildlink"><a href="../langref/data-about.html">data-about</a><br />
+The &lt;data-about&gt; element identifies the subject of a property when the subject isn't associated with the context in which the property is specified. The property itself is expressed by the &lt;data&gt; element. The &lt;data-about&gt; element handles exception cases where a property must be expressed somewhere other than inside the actual subject of the property. The &lt;data-about&gt; element is particularly useful as a basis for specialization in combination with the &lt;data&gt; element.</li>
+<li class="olchildlink"><a href="../langref/data.html">data</a><br />
+The &lt;data&gt; element represents a property within a DITA topic or map. While the &lt;data&gt; element can be used directly to capture properties, it is particularly useful as a basis for specialization. Default processing treats the property values as an unknown kind of metadata, but custom processing can match the name attribute or specialized element to format properties as sidebars or other adornments or to harvest properties for automated processing.</li>
+<li class="olchildlink"><a href="../langref/foreign.html">foreign</a><br />
+The &lt;foreign&gt; element is an open extension that allows information architects to incorporate existing standard vocabularies for non-textual content. like MathML and SVG, as inline objects. If &lt;foreign&gt; contains more than one alternative content element, they will all be processed. Specialization of &lt;foreign&gt; should be implemented as a domain, but for those looking for more control over the content can implement foreign vocabulary as an element specialization.</li>
+<li class="olchildlink"><a href="../langref/unknown.html">unknown</a><br />
+The &lt;unknown&gt; element is an open extension that allows information architects to incorporate xml fragments that do not necessarily fit into an existing DITA use case. The base processing for &lt;unknown&gt; is to suppress unless otherwise instructed.</li>
+</ol>
+
+<div class="familylinks">
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../common/relatedl.html" title="The related-links section of DITA topics is a special structure that supports the navigational rules from a topic to its related neighbor topics.">Related links elements</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../common/special.html">Specialization elements</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

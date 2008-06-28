@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="Other common DITA attributes" />
+<meta name="abstract" content="The following attributes are not part of an entity group but are common to many elements." />
+<meta name="description" content="The following attributes are not part of an entity group but are common to many elements." />
+<meta scheme="URI" name="DC.Relation" content="../common/comrfet.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/topicref-atts.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/complexattributedefinitions.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="othercommon" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Other common DITA attributes</title>
+</head>
+<body id="othercommon"><a name="othercommon"><!-- --></a>
+
+
+<h1 class="topictitle1">Other common DITA attributes</h1>
+
+
+<div><p>The following attributes are not part of an entity group but are
+common to many elements.</p>
+
+<div class="section"><a name="othercommon__topicref-atts-no-toc_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="othercommon__topicref-atts-no-toc_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10060" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N10066" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N1006C" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N10072" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N10078" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10060">class</td>
+
+<td valign="top" headers="N10066"><em><span class="keyword">Not for use by authors. If an editor displays class attribute
+values, do not edit them.</span></em> The class attribute supports specialization.
+Its predefined values allow DITA tools to work correctly with ranges of related
+content. In a generalized DITA document the class attribute value in the generalized instance may differ from the default value for the class attribute for the element as given in the DTD
+or schema.</td>
+
+<td valign="top" headers="N1006C">CDATA</td>
+
+<td valign="top" headers="N10072"><em>Default value differs for each element</em></td>
+
+<td valign="top" headers="N10078"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10060">outputclass</td>
+
+<td valign="top" headers="N10066">Names a role that the element is playing. The role must be consistent
+with the basic semantic and expectations for the element. In particular, the
+outputclass attribute can be used for styling during output processing; HTML
+output will typically preserve outputclass for CSS processing.</td>
+
+<td valign="top" headers="N1006C">CDATA</td>
+
+<td valign="top" headers="N10072">#IMPLIED</td>
+
+<td valign="top" headers="N10078">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10060">keyref</td>
+
+<td valign="top" headers="N10066">The keyref attribute is reserved for future use. The OASIS DITA Technical
+Committee expects to finish designing this attribute in the next release of
+the DITA standard.</td>
+
+<td valign="top" headers="N1006C">NMTOKEN</td>
+
+<td valign="top" headers="N10072">#IMPLIED</td>
+
+<td valign="top" headers="N10078">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10060">xml:space</td>
+
+<td valign="top" headers="N10066">This attribute is provided on &lt;<span class="keyword">pre</span>&gt;, &lt;<span class="keyword">lines</span>&gt;,
+and on elements specialized from them. It ensures that parsers in editors
+and transforms respect the line-end characters that are part of the data in
+those elements. It is intended to be part of the default properties of these
+elements, and not for authors to change or delete.</td>
+
+<td valign="top" headers="N1006C">(preserve)</td>
+
+<td valign="top" headers="N10072">#FIXED 'preserve'</td>
+
+<td valign="top" headers="N10078"> Yes </td>
+
+</tr>
+
+</table>
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/comrfet.html" title="Several parts of a language reference are common between many locations, such as the descriptions for the selection and property attributes of DITA elements. These are described as sets to reduce unnecessary duplication of common information.">Commonly referenced attributes</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../common/topicref-atts.html" title="The %topicref-atts; parameter entity represents a group of attributes used in numerous map elements, such as map, topicref, relcolspec, relcell, topichead, and topicgroup. The set is identical to those in the topicref-atts-no-toc attribute set, except that %topicref-atts; does not provide a default for the toc attribute.">%topicref-atts; and %topicref-atts-no-toc;</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../common/complexattributedefinitions.html" title="Several DITA attributes require more explanation than can fit in a single table cell. Those attributes are collected here.">Complex attribute definitions</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Modularization in DTDs" />
+<meta name="abstract" content="To support extensibility and pluggability, DITA requires that a DTD implementation of structural and domain specialization modules conform to well-defined design patterns." />
+<meta name="description" content="To support extensibility and pluggability, DITA requires that a DTD implementation of structural and domain specialization modules conform to well-defined design patterns." />
+<meta scheme="URI" name="DC.Relation" content="specdesign.html" />
+<meta scheme="URI" name="DC.Relation" content="integrate.html" />
+<meta scheme="URI" name="DC.Relation" content="schemamod.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="mod_dtd" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Modularization in DTDs</title>
+</head>
+<body id="mod_dtd"><a name="mod_dtd"><!-- --></a>
+
+
+<h1 class="topictitle1">Modularization in DTDs</h1>
+
+
+<div><p>To support extensibility and pluggability, DITA requires that a
+DTD implementation of structural and domain specialization modules conform
+to well-defined design patterns.</p>
+
+<p>This section describes those design patterns. These design patterns realize
+the specialization architecture with the capabilities and within the limitations
+of the DTD grammar.</p>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="specdesign.html" title="Specialization in design enables reuse of design elements, just as specialization in content allows reuse of processing rules. These rules involve the creation and management of markup modules as separate reusable units.">Specialization in design</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="integrate.html" title="Each domain specialization or structural specialization has its own design module. These modules can be combined to create many different document types. The process of creating a new document type from a specific combination of modules is called integration.">Integration</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="schemamod.html" title="To support extensibility and pluggability, DITA requires that an XML schema implementation of structural and domain specialization modules conform to well-defined design patterns.">Modularization in schemas</a></div>
+</div>
+</div>
+<div class="nested1" xml:lang="en-us" id="topicpattern"><a name="topicpattern"><!-- --></a>
+<h2 class="topictitle2">Structural specialization pattern</h2>
+
+<div>
+<p>Each structural type must be defined in a separate DTD module with a name
+consisting of the topic element name and the <span class="filepath">mod</span> extension.
+To see an example, look at the <span class="filepath">concepts.mod</span> module for
+the concept topic type. </p>
+
+<p>The structural type module must conform to the following design pattern. </p>
+
+<dl>
+<dt class="dlterm">Default element entities</dt>
+
+<dd>Each element defined in the module must have a corresponding entity whose
+default value is the name of the element. The following example comes from
+the definition for the concept topic.<pre class="codeblock">&lt;!ENTITY % conbody "conbody"&gt;</pre>
+<p>The
+document type shell can predefine an element entity to add domain specialized
+elements into every context in which the base element occurs.</p>
+</dd>
+
+
+<dt class="dlterm">Default included domains entity</dt>
+
+<dd>The module must define the <samp class="codeph">included-domains</samp> entity with
+a default empty that is empty as in the following example:<pre class="codeblock">&lt;!ENTITY included-domains ""&gt;</pre>
+<p>The
+document type shell can predefine the <samp class="codeph">included-domains</samp> entity
+to list domains added to the document type.</p>
+</dd>
+
+
+<dt class="dlterm">Default nested topics entity</dt>
+
+<dd>Topic type modules must define an info-types entity that is named with
+a prefix of the topic element name and a suffix of <samp class="codeph">-info-types.</samp> This
+entity can default to a list of element entities if the topic has default
+subordinate topics. If the topic doesn't have default subordinate topics,
+the entity can default to the value of the <samp class="codeph">info-types</samp> entity
+as in the following example:<pre class="codeblock">&lt;!ENTITY % concept-info-types "%info-types;"&gt;</pre>
+<p>The
+document type shell can then control how topics are allowed to nest by redefining
+the <var class="varname">topictype</var>-info-types entity for each topic type, or
+quickly create common nesting rules by redefining the main info-types entity.</p>
+</dd>
+
+
+<dt class="dlterm">Structural type's root element content model</dt>
+
+<dd>As with all specializations, the root element of a structural specialization
+must have a content model that restricts or conserves the content model of
+the element it specializes. In addition, for topic types, the last position
+in the content model must be the nested topics entity as in the following
+example:<pre class="codeblock">&lt;!ELEMENT concept        ((%title;), (%titlealts;)?, (%shortdesc;)?,
+        (%prolog;)?, (%conbody;), (%related-links;)?, 
+        (%concept-info-types;)* )&gt;</pre>
+</dd>
+
+
+<dt class="dlterm">Attributes</dt>
+
+<dd>As with all specializations, the root element's attributes must restrict
+or conserve the attributes of the element it specializes. In particular, the
+topic must set the <samp class="codeph">DITAArchVersion</samp> attribute to the <samp class="codeph">DITAArchVersion</samp> entity
+and the <samp class="codeph">domains</samp> attribute to the <samp class="codeph">included-domains</samp> entity.<pre class="codeblock">&lt;!ATTLIST concept         id ID #REQUIRED
+                          ...
+                          DITAArchVersion CDATA "&amp;DITAArchVersion;"
+                          domains CDATA "&amp;included-domains;"
+&gt;
+</pre>
+<p>These attributes give processes a reliable way to check
+the architecture version and look up the list of domains available in the
+document type.</p>
+</dd>
+
+
+<dt class="dlterm">Element and attribute definitions</dt>
+
+<dd>The module defines every specialized element used as substructure within
+the topic. The specialized elements must follow the rules of the architecture
+in defining content models and attributes. Content models must use element
+entities instead of literal element names.<p>In particular, the module defines
+a class attribute for every specialized element. The class attribute must
+include the value of the class attribute of the base element and append the
+element name qualified by the topic element name with at least one leading
+and trailing space. The class attribute for an element introduces by a structural
+specialization must start with a minus sign.</p>
+</dd>
+
+</dl>
+
+</div>
+
+</div>
+
+<div class="nested1" xml:lang="en-us" id="domainpattern"><a name="domainpattern"><!-- --></a>
+<h2 class="topictitle2">Domain specialization pattern</h2>
+
+<div>
+<p>Each domain specialization must have two files:</p>
+
+<br /><ul>
+<li>A DTD entity declaration file with a name consisting of the domain name
+and the <span class="filepath">ent</span> extension. </li>
+
+<li>A DTD definition module with a name consisting of the domain name and
+the <span class="filepath">mod</span> extension. </li>
+
+</ul>
+
+<p>To see an example, look at the <span class="filepath">highlightDomain.ent</span> and <span class="filepath">highlightDomain.mod</span> files. </p>
+
+<div class="section"><h3 class="sectiontitle">Domain entity declaration file</h3><p>The domain entity
+declaration file must conform to the following design pattern:</p>
+<dl>
+<dt class="dlterm">Element extension entity</dt>
+
+<dd>The declaration file must define an entity for each element extended by
+the domain. The contents of the entity must be the list of specialized elements
+for the extended element. The name of the entity has a prefix of the abbreviation
+for the domain and an extension of the name of the extended element. In the
+following example, the highlight domain (abbreviated as <samp class="codeph">hi-d</samp>)
+extends the <samp class="codeph">ph</samp> element.<pre class="codeblock">&lt;!ENTITY % hi-d-ph "b | u | i | tt | sup | sub"&gt;</pre>
+</dd>
+
+
+<dt class="dlterm">Domain declaration entity</dt>
+
+<dd>The declaration file must define one entity for the document type shell
+to register the domain. The name of the entity has a prefix of the abbreviation
+for the domain and an <samp class="codeph">att</samp> extension. The value of the entity
+must list the dependencies of the domain module in order of dependency from
+left to right within enclosing parentheses, starting with the topic module
+and listing domain dependencies using their abbreviations (including the defining
+domain as the last item in the list). The following example declares the dependency
+of the highlight domain on the base topic module. <pre class="codeblock">&lt;!ENTITY hi-d-att "(topic hi-d)"&gt;</pre>
+</dd>
+
+</dl>
+</div>
+
+<div class="section"><h3 class="sectiontitle">Domain definition module</h3><p>The domain definition module
+conforms to the following design pattern:</p>
+<dl>
+<dt class="dlterm">Default element entities</dt>
+
+<dd>As in a topic module, the domain definition module must declare a default
+entity for each element defined by the domain so that other domains can extend
+the elements.<pre class="codeblock">&lt;!ENTITY % b "b"&gt;</pre>
+</dd>
+
+
+<dt class="dlterm">Element and attribute definitions</dt>
+
+<dd>As in a topic module, the domain definition module must define each specialized
+element and its attributes. As with any specialization, the domain element
+must restrict the base element. The class attribute of the domain element
+must start with a plus sign but, otherwise, follows the same rules as the
+class attribute for an element introduced by a topic specialization. </dd>
+
+</dl>
+</div>
+
+</div>
+
+</div>
+
+<div class="nested1" id="attdomain"><a name="attdomain"><!-- --></a>
+<h2 class="topictitle2">Attribute domain specialization pattern</h2>
+
+
+<div><p>The attribute domain pattern is a special case of the domain specialization
+pattern, which allows the creation of new attributes specialized from the
+props or base attribute.</p>
+
+<div class="p">Create one module entity file per attribute, for example newAttDomain.ent.
+Each module should contain the following:<dl>
+<dt class="dlterm">Attribute extension entity</dt>
+
+<dd>The entity which holds the actual declaration of the attribute in entity
+form. This entity can then be used in document type shells to add the new
+attribute. For example: <pre class="codeblock">&lt;!ENTITY % newAtt-d-attribute "new   CDATA #IMPLIED"&gt;</pre>
+</dd>
+
+
+<dt class="dlterm">Domain declaration entity</dt>
+
+<dd>The entity which holds the name of the attribute domain in entity form.
+This entity can then be used in document type shells to signal the availability
+of the attribute to DITA-aware processes. It uses the same syntax as a regular
+domain declaration entity but with the addition of a leading "a" to signal
+that it is in attribute domain. For example: <pre class="codeblock">&lt;!ENTITY newAtt-d-att       "a(props new)"  &gt;</pre>
+</dd>
+
+</dl>
+</div>
+
+</div>
+
+</div>
+
+<div class="nested1" xml:lang="en-us" id="doctype"><a name="doctype"><!-- --></a>
+<h2 class="topictitle2">Document type shell pattern</h2>
+
+<div>
+<p>The document type shell must conform to the following design pattern. To
+see an example, look at the <span class="filepath">concepts.dtd</span> module for the
+concept document type. </p>
+
+<dl>
+<dt class="dlterm">Domain entity inclusions</dt>
+
+<dd>The document type shell starts by including the domain entity declaration
+files. The entity for the domain declaration consists of the domain name prefix
+with the <samp class="codeph">dec</samp> suffix, as in the following examples:<pre class="codeblock">&lt;!ENTITY % hi-d-dec PUBLIC
+    "-//OASIS//ENTITIES DITA Highlight Domain//EN" "highlightDomain.ent"&gt;
+    %hi-d-dec;
+&lt;!ENTITY % newAtt-d-dec PUBLIC
+    "-//My Company//ENTITIES new Attribute Domain//EN" "newAttDomain.ent"&gt;
+    %newAtt-d-dec;
+</pre>
+</dd>
+
+
+<dt class="dlterm">Element extension redefinitions</dt>
+
+<dd>For each element extended by one or more domains, the document type shell
+redefines the entity for the element to a list of alternatives including the
+literal name of the element and the element extension entity from each domain
+that is providing specializations. <pre class="codeblock">&lt;!ENTITY % pre
+    "pre     | %pr-d-pre;     | %sw-d-pre;     | %ui-d-pre;"&gt;</pre>
+</dd>
+
+<dd class="ddexpand">For each attribute extended by one or more domains, the document type
+shell redefines the entity for the attribute to a list of alternatives including
+the literal name of the attribute and the attribute extension entity from
+each domain that is providing specializations. Attributes can only be specialized
+from props or base in DITA 1.1.<pre class="codeblock">&lt;!ENTITY % props-attribute-extensions
+        "%newAtt-d-attribute; 
+         %othernewAtt-d-attribute;"&gt;
+&lt;!ENTITY % base-attribute-extensions
+        "%newfrombaseAtt-d-attribute; 
+         %othernewfrombaseAtt-d-attribute;"&gt;
+</pre>
+</dd>
+
+
+<dt class="dlterm">Topic nesting redefinitions</dt>
+
+<dd>For each topic type, the document type shell can control nesting of subtopics
+by redefining the nested topics entity to the literal element name for any
+of the topics included in the document type. The document type shell can also
+simply define the <samp class="codeph">info-types</samp> entity to set the default for
+most topic types. Here is an example:<pre class="codeblock">&lt;!ENTITY % concept-info-types "concept"&gt;</pre>
+</dd>
+
+
+<dt class="dlterm">Domain declaration redefinition</dt>
+
+<dd>The document type shell redefines the <samp class="codeph">included-domains</samp> entity
+to list the domains included in the document type as in the following example:<pre class="codeblock">&lt;!ENTITY included-domains
+    "&amp;ui-d-att; &amp;hi-d-att; &amp;pr-d-att; &amp;sw-d-att; &amp;ut-d-att; &amp;newAtt-d-att"&gt;</pre>
+</dd>
+
+
+<dt class="dlterm">Structural definition inclusions</dt>
+
+<dd>The document type shell includes the definitions for the structural type
+modules used in the document type. The entity for the structural definition
+consists of the structural type's name with the <samp class="codeph">type</samp> suffix,
+as in the following example:<pre class="codeblock">&lt;!ENTITY % topic-type PUBLIC
+    "-//OASIS//ELEMENTS DITA Topic//EN" "topic.mod"&gt;
+    %topic-type;
+</pre>
+</dd>
+
+
+<dt class="dlterm">Domain definition inclusions</dt>
+
+<dd>The document type shell includes the domain definitions for the domains
+used in the document type. The entity for the domain definition consists of
+the domain name prefix with the <samp class="codeph">def</samp> suffix, as in the following
+example:<pre class="codeblock">&lt;!ENTITY % hi-d-def PUBLIC
+    "-//OASIS//ELEMENTS DITA Highlight Domain//EN" "highlightDomain.mod"&gt;
+    %hi-d-def;
+</pre>
+There are no domain definition files for attribute domains.</dd>
+
+</dl>
+
+</div>
+
+</div>
+
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>
