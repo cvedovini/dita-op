@@ -24,6 +24,8 @@ import java.io.IOException;
 import org.apache.xerces.util.XMLCatalogResolver;
 import org.dita_op.dost.launcher.internal.Activator;
 import org.dita_op.dost.launcher.internal.DOSTParameters;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
@@ -102,6 +104,9 @@ public class DOSTCatalog implements EntityResolver2 {
 			catalog.setCatalogList(new String[] { uri.toString() });
 			return catalog;
 		} else {
+			IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID,
+					"Could not find DOST Catalog: " + catalogFile);
+			Activator.getDefault().getLog().log(status);
 			return null;
 		}
 	}
