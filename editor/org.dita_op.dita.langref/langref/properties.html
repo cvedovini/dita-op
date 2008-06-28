@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="properties" />
+<meta name="abstract" content="The &lt;properties&gt; element gives a list of properties for the subject of the current topic, for example whether a class is public or protected. Each property can include the type, value, and a description. The typical rendering is usually in a table-like format. To represent multiple values for a type, just create additional property elements and use only the &lt;propvalue&gt; element (and &lt;propdesc&gt; when needed) for each successive value." />
+<meta name="description" content="The &lt;properties&gt; element gives a list of properties for the subject of the current topic, for example whether a class is public or protected. Each property can include the type, value, and a description. The typical rendering is usually in a table-like format. To represent multiple values for a type, just create additional property elements and use only the &lt;propvalue&gt; element (and &lt;propdesc&gt; when needed) for each successive value." />
+<meta content="properties, Reference elements" name="DC.subject" />
+<meta content="properties, Reference elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/reference2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/refsyn.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/prophead.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="properties" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>properties</title>
+</head>
+<body id="properties"><a name="properties"><!-- --></a>
+
+
+<h1 class="topictitle1">properties</h1>
+
+
+
+<div><p>The &lt;<span class="keyword">properties</span>&gt; element gives a list
+of properties for the subject of the current topic, for example whether a
+class is public or protected. Each property can include the type, value, and
+a description. The typical rendering is usually in a table-like format. To
+represent multiple values for a type, just create additional property elements
+and use only the &lt;<span class="keyword">propvalue</span>&gt; element (and &lt;<span class="keyword">propdesc</span>&gt;
+when needed) for each successive value.</p>
+
+<div class="example"><pre class="pre">&lt;properties&gt;
+  &lt;prophead&gt;
+		&lt;proptypehd&gt;Visual Element&lt;/proptypehd&gt;
+		&lt;propvaluehd&gt;Value&lt;/propvaluehd&gt;
+		&lt;propdeschd&gt;Implication&lt;/propdeschd&gt;
+  &lt;property&gt;
+    &lt;proptype&gt;color&lt;/proptype&gt;
+    &lt;propvalue&gt;red&lt;/propvalue&gt;
+    &lt;propdesc&gt;depicts anger&lt;/propdesc&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+    &lt;propvalue&gt;green&lt;/propvalue&gt;
+    &lt;propdesc&gt;depicts permission&lt;/propdesc&gt;
+  &lt;/property&gt;
+&lt;/properties&gt;         </pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N1009E" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100A3" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100AD" headers="N1009E"><strong>ditabase, reference</strong></td>
+<td valign="top" headers="N100A3 N100AD"> ( (
+<a href="../common/../langref/prophead.html" title="The prophead element supports regular headings for the properties element.">prophead</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/property.html" title="The &lt;property&gt; element represents a property of the current topic's subject. For example, if the current topic is a class, the property might show that the class is protected rather than public. It contains three optional elements: type, value, and description.">property</a>) <em> (one or more) </em>) </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100F4" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100F9" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N10103" headers="N100F4"><strong>ditabase, reference</strong></td>
+<td valign="top" headers="N100F9 N10103"><a href="../common/../langref/refbody.html" title="The &lt;refbody&gt; element is a container for the main content of the reference topic. Reference topics limit the body structure to tables (both simple and standard), property lists, syntax sections, and generic sections and examples, in any sequence or number.">refbody</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- topic/simpletable reference/properties </p>
+</div>
+
+<div class="section" id="properties__attrs"><a name="properties__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="properties__properties_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="properties__properties_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10144" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N1014A" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N10150" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N10156" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N1015C" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10144">relcolwidth</td>
+
+<td valign="top" headers="N1014A">A relative value to specify the width of a column in relationship
+to the width of the other columns. The values are totaled and made a percent.
+For example: <pre class="codeblock">relcolwidth="1* 2* 3*"</pre>
+ causes
+widths of 16.7%, 33.3%, and 66.7%. <pre class="codeblock">relcolwidth="90* 150*"</pre>
+ causes
+width of 37.5% and 62.5%.</td>
+
+<td valign="top" headers="N10150">CDATA</td>
+
+<td valign="top" headers="N10156">#IMPLIED</td>
+
+<td valign="top" headers="N1015C">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10144">keycol</td>
+
+<td valign="top" headers="N1014A">Defines the column that will be used for row headings. No value indicates
+no key column. When present, the numerical value causes the specified column
+to be highlighted as a vertical header.</td>
+
+<td valign="top" headers="N10150">NMTOKEN</td>
+
+<td valign="top" headers="N10156">#IMPLIED</td>
+
+<td valign="top" headers="N1015C">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10144">refcols</td>
+
+<td valign="top" headers="N1014A">Designates columns that contain references, and are candidates for
+automated linking. Columns are identified by a space-delimited list of numbers
+(for example: <samp class="codeph">1 3</samp>).</td>
+
+<td valign="top" headers="N10150">NMTOKENS</td>
+
+<td valign="top" headers="N10156">#IMPLIED</td>
+
+<td valign="top" headers="N1015C"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10144">spectitle</td>
+
+<td valign="top" headers="N1014A">The specialized title attribute allows architects of specialized
+types to define a fixed or default title for a specialized element. Not intended
+for direct use by authors.</td>
+
+<td valign="top" headers="N10150">CDATA</td>
+
+<td valign="top" headers="N10156">#IMPLIED</td>
+
+<td valign="top" headers="N1015C">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10144">%display-atts; (scale, frame, expanse)</td>
+
+<td valign="top" headers="N1014A">A set of related attributes, described at <a href="../common/display-atts.html" title="Display attributes is a parameter entity declaration in the topic DTD that includes attributes whose values may be used for affecting the display of a topic or its selection by search tools.">%display-atts;</a></td>
+
+<td valign="top" headers="N10150">parameter entity</td>
+
+<td valign="top" headers="N10156">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1015C">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10144">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N1014A">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N10150">parameter entity</td>
+
+<td valign="top" headers="N10156">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1015C">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10144">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N1014A">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N10150">parameter entity</td>
+
+<td valign="top" headers="N10156">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1015C">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10144">class, outputclass</td>
+
+<td valign="top" headers="N1014A">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N10150">&#xA0;</td>
+<td valign="top" headers="N10156">&#xA0;</td>
+<td valign="top" headers="N1015C">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/reference2.html" title="Use the reference elements to describe regular features of sets of things, most commonly the commands in a programming language. However, this format is also suitable for recipes, bibliographies, catalogues, and similar collections of structured descriptive prose. For more details on when to use reference and other information types, please refer to the DITA architectural specification.">Reference elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/refsyn.html" title="The &lt;refsyn&gt; element is a special section inside a reference topic. The section often contains syntax or signature content (for example, a command-line utility's calling syntax, or an API's signature). The &lt;refsyn&gt; contains a brief, possibly diagrammatic description of the subject's interface or high-level structure.">refsyn</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/prophead.html" title="The prophead element supports regular headings for the properties element.">prophead</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

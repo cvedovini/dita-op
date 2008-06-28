@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Specialization validity" />
+<meta name="abstract" content="When you specialize one element from another, or a new attribute from props or base, the new element or attribute must obey certain rules in order to be a valid specialization." />
+<meta name="description" content="When you specialize one element from another, or a new attribute from props or base, the new element or attribute must obey certain rules in order to be a valid specialization." />
+<meta scheme="URI" name="DC.Relation" content="speccont.html" />
+<meta scheme="URI" name="DC.Relation" content="domainsatt.html" />
+<meta scheme="URI" name="DC.Relation" content="generalize.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="specvalid" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Specialization validity</title>
+</head>
+<body id="specvalid"><a name="specvalid"><!-- --></a>
+
+
+<h1 class="topictitle1">Specialization validity</h1>
+
+
+<div><p>When you specialize one element from another, or a new attribute
+from props or base, the new element or attribute must obey certain rules in
+order to be a valid specialization.</p>
+
+<br /><ul>
+<li>A new element must have a content model that is equivalent to or more
+restrictive than its parent.</li>
+
+<li>A new element must have attributes that are equivalent to or a subset
+of the attributes of its parent.</li>
+
+<li>A new element's attributes must have values or value ranges that are equivalent
+to or a subset of the parent's attributes' values or value ranges.</li>
+
+<li>A new element must have a properly formed class attribute.</li>
+
+<li>A new attribute must be specialized from props or base, following the
+rules for attribute domain specialization.</li>
+
+<li>A new attribute's values must conform to the rules for conditional
+processing values, that is, alphanumeric space-delimited values, except when
+in generalized form, when the values should conform to the rules for attribute
+generalization.</li>
+
+</ul>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="speccont.html" title="Specialization is expressed in content through the use of two attributes: the class attribute and the domain attribute. These are not typically present in the document instance, but are provided by default values expressed in a DTD or schema.">Specialization in content</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="domainsatt.html" title="The domains attribute lists the names of the domains in use by the current document type, and the ancestry for each domain. The domains attribute is declared on the root element for each topic type.">The domains attribute</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="generalize.html" title="Specialized content can be generalized to any ancestor type. The generalization process can preserve information about the former level of specialization to allow round-tripping between specialized and unspecialized forms of the same content.">Generalization</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

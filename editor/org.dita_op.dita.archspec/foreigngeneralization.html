@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="Foreign generalization" />
+<meta name="abstract" content="During generalization, DITA elements are modified based on the class attribute to use the name of an ancestor element. This cannot be done with the contents of a specialized &lt;foreign&gt; element, because the contents are not DITA elements and do not have class attributes." />
+<meta name="description" content="During generalization, DITA elements are modified based on the class attribute to use the name of an ancestor element. This cannot be done with the contents of a specialized &lt;foreign&gt; element, because the contents are not DITA elements and do not have class attributes." />
+<meta scheme="URI" name="DC.Relation" content="generalize.html" />
+<meta scheme="URI" name="DC.Relation" content="attributegeneralize.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="foreigngeneralization" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Foreign generalization</title>
+</head>
+<body id="foreigngeneralization"><a name="foreigngeneralization"><!-- --></a>
+
+
+<h1 class="topictitle1">Foreign generalization</h1>
+
+
+<div><p>During generalization, DITA elements are modified based on the
+class attribute to use the name of an ancestor element. This cannot be done
+with the contents of a specialized &lt;foreign&gt; element, because the contents
+are not DITA elements and do not have class attributes.</p>
+
+<div class="section"><p>Instead, only the specialized foreign element itself should be
+generalized with normal rules. The contents of the foreign element should
+be exported to a separate file, and replaced in-line with an &lt;object&gt; element.
+The object element should point to the generated file using its data attribute.
+The type attribute on the object element should be set to "DITA-foreign".</p>
+<p>The
+object element is already allowed within the &lt;foreign&gt; element. If it is
+present during generalization, it should not be exported to the separate file.
+The original object element should not be modified unless required by the
+ordinary rules of generalization. That object element is used for alternate
+content in publishing systems that cannot display the foreign content.</p>
+<p>A
+foreign content element may contain several main elements, apart from the
+alternate content. To accommodate this, the exported content should have a
+root &lt;foreign&gt; element.</p>
+<p>The name of the exported file should start
+with "dita-generalized-" in order to help users recognize the origin of the
+generated files. It is recommended that the file name also contain the topic
+ID, specialization type, and element ID or generated identifier. For example,
+the first mathml object in topic "topicid" might be named "dita-generalized-topicid-mathml1.xml".</p>
+</div>
+
+<div class="example"><h2 class="sectiontitle">Example: Simple object generalization</h2><p>For example,
+a DITA document may contain a specialization of &lt;foreign&gt; for MathML. It
+could look like this:</p>
+<pre class="codeblock">&lt;mathml class="+ topic/foreign mathml/mathml "&gt;
+  &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;
+    &lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;
+  &lt;/math&gt;
+  &lt;object&gt;&lt;desc&gt;X plus three&lt;/desc&gt;&lt;/object&gt;
+&lt;/mathml&gt;</pre>
+<p>The mathml container, which is a normal DITA element,
+should be generalized using normal rules. The &lt;math&gt; element, which is
+not a DITA element, will be exported to another file. The &lt;object&gt; element
+will remain:</p>
+<pre class="codeblock">&lt;foreign class="+ topic/foreign mathml/mathml "&gt;
+  &lt;object data="dita-generalized-topicid_mathml1.xml" type="DITA-foreign"/&gt;
+  &lt;object&gt;&lt;desc&gt;X plus three&lt;/desc&gt;&lt;/object&gt;
+&lt;/foreign&gt;
+
+Contents of dita-generalized-topicid_mathml1.xml:
+&lt;foreign class="+ topic/foreign mathml/mathml "&gt;
+  &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;
+    &lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;
+  &lt;/math&gt;
+&lt;/foreign&gt;</pre>
+</div>
+
+<div class="example"><h2 class="sectiontitle">Example: Multiple object generalization</h2><p>An object
+might also contain multiple object elements:</p>
+<pre class="codeblock">&lt;mathml class="+ topic/foreign mathml/mathml "&gt;
+  &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;
+    &lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;
+  &lt;/math&gt;
+  &lt;object&gt;&lt;desc&gt;X plus three&lt;/desc&gt;&lt;/object&gt;
+  &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;
+    &lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;-&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;
+  &lt;/math&gt;
+&lt;/mathml&gt;</pre>
+<p>The mathml container, which is a normal
+DITA element, should be generalized using normal rules. A file should generated
+for each set of elements bounded by the container and any existing object
+elements. In this case, two files will be generated, and two new object elements
+added to the source:</p>
+<pre class="codeblock">&lt;foreign class="+ topic/foreign mathml/mathml "&gt;
+  &lt;object data="dita-generalized-topicid_mathml1.xml" type="DITA-foreign"/&gt;
+  &lt;object&gt;&lt;desc&gt;X plus three&lt;/desc&gt;&lt;/object&gt;
+  &lt;object data="dita-generalized-topicid_mathml2.xml" type="DITA-foreign"/&gt;
+&lt;/foreign&gt;
+
+Contents of dita-generalized-topicid_mathml1.xml:
+&lt;foreign class="+ topic/foreign mathml/mathml "&gt;
+  &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;
+    &lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;
+  &lt;/math&gt;
+&lt;/foreign&gt;
+
+Contents of dita-generalized-topicid_mathml2.xml:
+&lt;foreign class="+ topic/foreign mathml/mathml "&gt;
+  &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;
+    &lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;-&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;
+  &lt;/math&gt;
+&lt;/foreign&gt;</pre>
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="generalize.html" title="Specialized content can be generalized to any ancestor type. The generalization process can preserve information about the former level of specialization to allow round-tripping between specialized and unspecialized forms of the same content.">Generalization</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="attributegeneralize.html" title="Attributes specialized from props or base can be generalized using a special attribute generalization syntax. Specialization-aware processes should be able to recognize and process both the specialized and generalized forms of an attribute as being equivalent in their values.">Attribute generalization</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

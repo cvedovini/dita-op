@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="DITAVAL elements" />
+<meta name="abstract" content="You can create a conditional processing profile to identify which values you want to conditionally process for a particular output, build, or other purpose. The profile has the extension .ditaval to identify it to conditional processing systems." />
+<meta name="description" content="You can create a conditional processing profile to identify which values you want to conditionally process for a particular output, build, or other purpose. The profile has the extension .ditaval to identify it to conditional processing systems." />
+<meta content="DITAVAL elements, Filtering, Flagging, Revisions" name="DC.subject" />
+<meta content="DITAVAL elements, Filtering, Flagging, Revisions" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/xnal-d.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/comrfet.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/ditaval-val.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/ditaval-style-conflict.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/ditaval-prop.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/ditaval-revprop.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/ditaval-startflag.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/ditaval-endflag.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/ditaval-alt-text.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="ditaval" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>DITAVAL elements</title>
+</head>
+<body id="ditaval"><a name="ditaval"><!-- --></a>
+
+
+<h1 class="topictitle1">DITAVAL elements</h1>
+
+
+
+<div><p>You can create a conditional processing profile to identify which
+values you want to conditionally process for a particular output, build, or
+other purpose. The profile has the extension .ditaval to identify it to conditional
+processing systems.</p>
+
+<p>The .ditaval format has several elements: val, the root element, can contain
+a style-conflict element followed by prop or revprop elements; the prop and
+revprop elements can contain startflag and endflag elements; and the startflag
+and endflag elements can contain alt-text elements.</p>
+
+<div class="section"><h2 class="sectiontitle">Notes on ditaval messages</h2><p>It is recommended but
+not required that conditional processing code provide a report of any attribute
+values encountered in content that do not have an explicit action associated
+with them.</p>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Note on ditaval flagging of images</h2><p>If an image in
+DITA content becomes flagged using a background color, the color should be
+represented as a thick border.  If a foreground color is expressed, it should
+be represented as a  thin border.</p>
+</div>
+
+</div>
+
+<div>
+<ol>
+<li class="olchildlink"><a href="../langref/ditaval-val.html">val</a><br />
+&lt;val&gt; is the root element of a ditaval file.</li>
+<li class="olchildlink"><a href="../langref/ditaval-style-conflict.html">style-conflict</a><br />
+The style-conflict element declares behavior to be used when one or more flagging methods collide on a single content element.</li>
+<li class="olchildlink"><a href="../langref/ditaval-prop.html">prop</a><br />
+Identifies an attribute, and usually values in the attribute, to take an action on. The attribute must be a conditional processing attribute: platform, product, audience, props. and otheprops; or a specialization of the props attribute. There can be at most one occurrence of a "prop" element with no attribute specified (setting a default action for every prop element), at most one for each attribute with no value specified (setting the default action for a specific attribute), and at most one with each attribute value specification (to avoid conflicting actions for the same attribute value).</li>
+<li class="olchildlink"><a href="../langref/ditaval-revprop.html">revprop</a><br />
+Identifies a value in the rev attribute that should be flagged in some manner. Unlike the other conditional processing attributes, which can be used for both filtering and flagging, the rev attribute can only be used for flagging. There can be at most one occurrence of a "revprop" element for each attribute value specification (to avoid conflicting actions for the same attribute value).</li>
+<li class="olchildlink"><a href="../langref/ditaval-startflag.html">startflag</a><br />
+The startflag takes an optional image reference and an optional alt-text element for identifying the beginning of flagged content. If an image is specified, the specified image will be used to flag the beginning of the content, with the alt-text contents as alternative text. If alt-text is specified without an image, that text will be used to flag the content instead of an image. If no image and no alt-text are specified, then this element has no defined purpose. The startflag element is allowed inside either prop or revprop.</li>
+<li class="olchildlink"><a href="../langref/ditaval-endflag.html">endflag</a><br />
+The endflag takes an optional image reference and an optional alt-text element for identifying the end of flagged content. If an image is specified, the specified image will be used to flag the end of the content, with the alt-text contents as alternative text. If alt-text is specified without an image, that text will be used to flag the content instead of an image. If no image and no alt-text are specified, then this element has no defined purpose. The endflag element is allowed inside either prop or revprop.</li>
+<li class="olchildlink"><a href="../langref/ditaval-alt-text.html">alt-text</a><br />
+An element allowed inside either startflag or endflag to provide alternate text for an image, when the imageref attribute sets an image to be used for flagging. The default alternate text for revprop start of change is a localized translation of "Start of change". The default alternate text for revprop end of change is a localized translation of "End of change".</li>
+</ol>
+
+<div class="familylinks">
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../common/xnal-d.html" title="The xNAL domain elements represent a subset of the Extensible Name and Address Standard. The domain can be included in any topic type or map, although the implementations provided by OASIS only include it in the bookmap specialization. It is used to encode information about the author or authors of DITA information.">xNAL domain elements</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../common/comrfet.html" title="Several parts of a language reference are common between many locations, such as the descriptions for the selection and property attributes of DITA elements. These are described as sets to reduce unnecessary duplication of common information.">Commonly referenced attributes</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

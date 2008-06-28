@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="published" />
+<meta name="abstract" content="The &lt;published&gt; element contains information about the person or organization publishing the book, the dates when it was started and completed, and any special restrictions associated with it." />
+<meta name="description" content="The &lt;published&gt; element contains information about the person or organization publishing the book, the dates when it was started and completed, and any special restrictions associated with it." />
+<meta content="Bookmap elements, published" name="DC.subject" />
+<meta content="Bookmap elements, published" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/bookmap-meta.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/printlocation.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/publisherinformation.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="published" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>published</title>
+</head>
+<body id="published"><a name="published"><!-- --></a>
+
+
+<h1 class="topictitle1">published</h1>
+
+
+
+<div><p>The &lt;published&gt; element contains information about the person
+or organization publishing the book, the dates when it was started and completed,
+and any special restrictions associated with it. </p>
+
+<div class="example" />
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N10086" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N1008B" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N10095" headers="N10086"><strong>bookmap</strong></td>
+<td valign="top" headers="N1008B N10095"> ( ( (
+<a href="../common/../langref/person.html" title="The &lt;person&gt; element contains information about the name of a person. Note that unlike the &lt;personname&gt; element, the &lt;person&gt; element is not restricted to describing the names of authors.">person</a>)  or  (
+<a href="../common/../langref/organization.html" title="The &lt;organization&gt; element contains the name of an organization. Note that unlike &lt;organizationname&gt;, the &lt;organization&gt; element is not restricted to usage within &lt;authorinformation&gt;; it does not have to contain the name of an authoring organization.">organization</a>) ) <em> (any number) </em> then  (
+<a href="../common/../langref/publishtype.html" title="The &lt;publishtype&gt; element indicates whether the book is generally available or is restricted in some way. The value attribute indicates the restrictions.">publishtype</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/revisionid.html" title="The &lt;revisionid&gt; element indicates the revision number or revision ID of the book. The processing implementation determines how the level is displayed. Common methods include using a dash, for example &quot;-01&quot;. or a period, such as &quot;.01&quot;.">revisionid</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/started.html" title="The &lt;started&gt; element indicates a start date for some type of book event, such as a review, editing, or testing.">started</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/completed.html" title="The &lt;completed&gt; element indicates a completion date for some type of book event, such as a review, editing, or testing.">completed</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/summary.html" title="The &lt;summary&gt; element contains a text summary associated with a book event (such as &lt;approved&gt; or &lt;reviewed&gt;) or with the list of copyrights for the book.">summary</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/data.html" title="The &lt;data&gt; element represents a property within a DITA topic or map. While the &lt;data&gt; element can be used directly to capture properties, it is particularly useful as a basis for specialization. Default processing treats the property values as an unknown kind of metadata, but custom processing can match the name attribute or specialized element to format properties as sidebars or other adornments or to harvest properties for automated processing.">data</a>) <em> (any number) </em>) </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N1014E" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N10153" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N1015D" headers="N1014E"><strong>bookmap</strong></td>
+<td valign="top" headers="N10153 N1015D"><a href="../common/../langref/publisherinformation.html" title="The &lt;publisherinformation&gt; contains information about what group or person published the book, where it was published, and certain details about its publication history. Other publication history information is found in the &lt;bookchangehistory&gt; element.">publisherinformation</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- topic/data bookmap/published </p>
+</div>
+
+<div class="section" id="published__attrs"><a name="published__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="published__published_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="published__published_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10198" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N1019E" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N101A4" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N101AA" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N101B0" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10198">name</td>
+
+<td valign="top" headers="N1019E">Defines a unique name for the
+object.</td>
+
+<td valign="top" headers="N101A4">CDATA</td>
+
+<td valign="top" headers="N101AA">#IMPLIED</td>
+
+<td valign="top" headers="N101B0">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10198">datatype</td>
+
+<td valign="top" headers="N1019E">Describes the type of data contained in the value attribute or within
+the data element. A typical use of datatype will be the identifying URI for
+an XML Schema datatype.</td>
+
+<td valign="top" headers="N101A4">CDATA</td>
+
+<td valign="top" headers="N101AA">#IMPLIED</td>
+
+<td valign="top" headers="N101B0">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10198">value</td>
+
+<td valign="top" headers="N1019E">Specifies the value of a run-time parameter specified by the name
+attribute.</td>
+
+<td valign="top" headers="N101A4">CDATA</td>
+
+<td valign="top" headers="N101AA">#IMPLIED</td>
+
+<td valign="top" headers="N101B0">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10198">href</td>
+
+<td valign="top" headers="N1019E">A hyperlink to an external Web page (URL) or other non-DITA resource,
+or to another DITA topic in the same file or in another file. The format attribute
+identifies the format of the target. Non-DITA targets use standard URL syntax.
+DITA topics are targetted as follows:<pre class="pre">Target elsewhere in the same file:
+  href="#topicid"
+First topic in different file:
+  href="filename.dita"
+Specific topic in different file:
+  href="filename.dita#topicid"</pre>
+<p>If the URL contains an ampersand
+character, the ampersand symbol (&amp;amp;) should be used to indicate that
+character</p>
+</td>
+
+<td valign="top" headers="N101A4">CDATA</td>
+
+<td valign="top" headers="N101AA">#IMPLIED</td>
+
+<td valign="top" headers="N101B0"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10198">format</td>
+
+<td valign="top" headers="N1019E">The format attribute identifies the format of the resource being
+cross referenced. See <a href="../common/theformatattribute.html" title="The format attribute identifies the format of the resource being cross referenced. The processing default for format is dita. If no value is specified, but the attribute is specified on an ancestor within a map or within the related-links section, the value will inherit from the closest ancestor.">The format attribute</a> for details
+on supported values.</td>
+
+<td valign="top" headers="N101A4">CDATA</td>
+
+<td valign="top" headers="N101AA">#IMPLIED</td>
+
+<td valign="top" headers="N101B0">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10198">type</td>
+
+<td valign="top" headers="N1019E">Describes the target of a cross-reference. See <a href="../common/thetypeattribute.html" title="The type attribute is most often used on linking elements to describe the target of a cross-reference. It is also used on the note element to describe the type of the current note, and on several other elements for varying purposes.">The type attribute</a> for
+detailed information on supported values and processing implications.</td>
+
+<td valign="top" headers="N101A4">CDATA</td>
+
+<td valign="top" headers="N101AA">#IMPLIED (Processed as if the target were of type "topic", or inherited from an ancestor)</td>
+
+<td valign="top" headers="N101B0"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10198">scope</td>
+
+<td valign="top" headers="N1019E">The scope attribute identifies the closeness of the relationship
+between the current document and the target resource. <br /><ul>
+<li>Set scope to <samp class="codeph">local</samp> when the resource is part of the current
+set of content.</li>
+
+<li> Set scope to <samp class="codeph">peer</samp> when the resource is part of the current
+set of content but is not accessible at build time.</li>
+
+<li> Set scope to <samp class="codeph">external</samp> when the resource is not part
+of the current information set and should open in a new browser window.</li>
+
+<li>See <a href="../common/ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">Using the -dita-use-conref-target value</a> for more information
+on -dita-use-conref-target.</li>
+
+</ul>
+ The processing default is <samp class="codeph">local</samp>.  <span>If no value is
+specified, but the attribute is specified on an ancestor within a map or within
+the related-links section, the value will inherit from the closest ancestor.</span></td>
+
+<td valign="top" headers="N101A4">(local | peer | external | -dita-use-conref-target)</td>
+
+<td valign="top" headers="N101AA">#IMPLIED</td>
+
+<td valign="top" headers="N101B0"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10198">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N1019E">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N101A4">parameter entity</td>
+
+<td valign="top" headers="N101AA">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N101B0">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10198">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N1019E">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N101A4">parameter entity</td>
+
+<td valign="top" headers="N101AA">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N101B0">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10198">class, outputclass</td>
+
+<td valign="top" headers="N1019E">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N101A4">&#xA0;</td>
+<td valign="top" headers="N101AA">&#xA0;</td>
+<td valign="top" headers="N101B0">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/bookmap-meta.html" title="The Bookmap specialization of ditamap supports standard book production for collections of DITA topics. This section contains the metadata elements used by bookmap to store book related metadata.">Bookmap metadata elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/printlocation.html" title="The &lt;printlocation&gt; element indicates the location where the book was printed. Customarily, the content is restricted to the name of the country.">printlocation</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/publisherinformation.html" title="The &lt;publisherinformation&gt; contains information about what group or person published the book, where it was published, and certain details about its publication history. Other publication history information is found in the &lt;bookchangehistory&gt; element.">publisherinformation</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

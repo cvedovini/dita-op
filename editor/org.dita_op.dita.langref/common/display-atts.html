@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="%display-atts;" />
+<meta name="abstract" content="Display attributes is a parameter entity declaration in the topic DTD that includes attributes whose values may be used for affecting the display of a topic or its selection by search tools." />
+<meta name="description" content="Display attributes is a parameter entity declaration in the topic DTD that includes attributes whose values may be used for affecting the display of a topic or its selection by search tools." />
+<meta content="%display-atts, C" name="DC.subject" />
+<meta content="%display-atts, C" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/comrfet.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/global-atts.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="display-atts" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>%display-atts;</title>
+</head>
+<body id="display-atts"><a name="display-atts"><!-- --></a>
+
+
+<h1 class="topictitle1"><span class="keyword">%display-atts;</span></h1>
+
+
+
+<div><p>Display attributes is a parameter entity declaration in the topic
+DTD that includes attributes whose values may be used for affecting the display
+of a topic or its selection by search tools.</p>
+
+
+
+
+
+<div class="section"><h2 class="sectiontitle">Attributes</h2><a name="display-atts__display-atts_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="display-atts__display-atts_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10087" width="14.285714285714286%">Name</th>
+
+<th valign="bottom" align="left" id="N1008D" width="42.85714285714286%">Description</th>
+
+<th valign="bottom" align="left" id="N10093" width="14.285714285714286%">Data Type</th>
+
+<th valign="bottom" align="left" id="N10099" width="14.285714285714286%">Default Value</th>
+
+<th valign="bottom" align="left" id="N1009F" width="14.285714285714286%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10087">scale</td>
+
+<td valign="top" headers="N1008D">Specifies a percentage, selected from an enumerated list, that is
+used to resize fonts in relation to the normal text size. <span>This
+attribute is primarily useful for print-oriented display.</span><p>The scale
+attribute provides an acknowledged style-based property directly on DITA elements.
+For the table and fig elements, the intent of the property is to allow authors
+to adjust font sizes on the content of the containing element, primarily for
+print accomodation. An image in these contexts is to be scaled only by its
+own direct scale property. If not specifically scaled, such an image is unchanged
+by the scale property of its parent table or fig.</p>
+</td>
+
+<td valign="top" headers="N10093">(50 | 60 | 70 | 80 | 90 | 100 | 110 | 120 | 140 | 160 | 180 | 200
+| <a href="ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">-dita-use-conref-target</a>)</td>
+
+<td valign="top" headers="N10099">#IMPLIED</td>
+
+<td valign="top" headers="N1009F"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10087">frame</td>
+
+<td valign="top" headers="N1008D">Specifies which portion of a border should surround the element.
+Allowable values are:<dl>
+<dt class="dlterm">top</dt>
+
+<dd>Draw a line before the element</dd>
+
+
+<dt class="dlterm">bottom</dt>
+
+<dd>Draw a line after the element</dd>
+
+
+<dt class="dlterm">topbot</dt>
+
+<dd>Draw a line both before and after the element</dd>
+
+
+<dt class="dlterm">all</dt>
+
+<dd>Draw a box around the element</dd>
+
+
+<dt class="dlterm">sides</dt>
+
+<dd>Draw a line at each side of the element</dd>
+
+
+<dt class="dlterm">none</dt>
+
+<dd>Don't draw any lines around this element</dd>
+
+
+<dt class="dlterm">-dita-use-conref-target</dt>
+
+<dd>See <a href="ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">Using the -dita-use-conref-target value</a> for more information.</dd>
+
+</dl>
+<p><span>Some DITA processors or output
+formats may not be able to support all values.</span></p>
+</td>
+
+<td valign="top" headers="N10093">(top | bottom | topbot | all | sides | none | -dita-use-conref-target)</td>
+
+<td valign="top" headers="N10099">#IMPLIED</td>
+
+<td valign="top" headers="N1009F">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10087">expanse</td>
+
+<td valign="top" headers="N1008D">Determines the horizontal placement of the element. <p>Allowable
+values are: "page" places the element on the left page margin; "column"
+aligns the element with the current column margin; "textline" aligns
+the element with the left margin of the current text line and takes indention
+into account.</p>
+<p>See <a href="ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">Using the -dita-use-conref-target value</a> for
+more information on the conref value.</p>
+<p>For non-paginated output, such
+as XHTML, some values may not be supported.</p>
+<p id="display-atts__N50C58"><a name="display-atts__N50C58"><!-- --></a>In DITA tables, in place of the expanse attribute used by other DITA elements, the pgwide attribute is
+used in order to conform with the OASIS Exchange Table Model. This attribute has a similar semantic
+(1=page width; 0=resize to galley or column).</p>
+</td>
+
+<td valign="top" headers="N10093"> (page | column | textline | -dita-use-conref-target) </td>
+
+<td valign="top" headers="N10099">#IMPLIED</td>
+
+<td valign="top" headers="N1009F">No</td>
+
+</tr>
+
+</table>
+</div>
+
+<div class="example"><h2 class="sectiontitle">Example</h2>          <p>The %display-atts; parameter entity
+is used within the DITA dtds as a common definition for attributes that affect
+presentation of certain elements. Not all of these capabilities have been
+provided yet for DITA topic processing. A typical example might be:</p>
+  
+        <pre class="codeblock">&lt;codeblock scale="90" frame="topbot" expanse="page"&gt;
+/* a long sample program */
+Do forever
+  Say "Hello, World"
+End
+&lt;/codeblock&gt;</pre>
+       </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/comrfet.html" title="Several parts of a language reference are common between many locations, such as the descriptions for the selection and property attributes of DITA elements. These are described as sets to reduce unnecessary duplication of common information.">Commonly referenced attributes</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

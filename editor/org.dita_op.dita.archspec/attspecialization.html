@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Specialization of attributes" />
+<meta name="abstract" content="When creating a structural specialization, you can limit the contents of existing attributes on your new elements; you can also create new attributes through domain specialization based off of the props attribute (for conditional processing) or the base attribute (for other simple token attributes)." />
+<meta name="description" content="When creating a structural specialization, you can limit the contents of existing attributes on your new elements; you can also create new attributes through domain specialization based off of the props attribute (for conditional processing) or the base attribute (for other simple token attributes)." />
+<meta scheme="URI" name="DC.Relation" content="speccont.html" />
+<meta scheme="URI" name="DC.Relation" content="whyspeccont.html" />
+<meta scheme="URI" name="DC.Relation" content="classatt.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="attspecialization" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Specialization of attributes</title>
+</head>
+<body id="attspecialization"><a name="attspecialization"><!-- --></a>
+
+
+<h1 class="topictitle1">Specialization of attributes</h1>
+
+
+<div><p>When creating a structural specialization, you can limit the contents
+of existing attributes on your new elements; you can also create new attributes
+through domain specialization based off of the props attribute (for conditional
+processing) or the base attribute (for other simple token attributes).</p>
+
+<p>Domain attribute specialization allows DITA document type developers to
+incorporate new conditional processing attributes that can be used for filtering
+and flagging, or new attributes with no existing equivalent that can be managed
+and generalized in the same way as conditional processing attributes. </p>
+
+<div class="p">The new attributes need to be based off of either props or base:<br /><ul>
+<li>Attributes specialized from props are identified as conditional processing
+attributes</li>
+
+<li>Attributes specialized from base have no existing behavior associated
+with them</li>
+
+<li>Values in specialized attributes should be preserved during generalization
+and respecialization</li>
+
+<li>While generalized, the attribute values should still be understandable
+by both general and specialized behaviors, and be treated as equivalent to
+their specialized form. For example, conditional filtering should
+work the same way on specialized attributes and on generalized attributes.</li>
+
+</ul>
+</div>
+
+<p>Because there is a strong possibility that the existing conditional processing
+attributes (audience, platform, product, and otherprops) will be moved into
+a domain based off of props in the future, structural specializations are
+discouraged from limiting the values in those attributes.</p>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="speccont.html" title="Specialization is expressed in content through the use of two attributes: the class attribute and the domain attribute. These are not typically present in the document instance, but are provided by default values expressed in a DTD or schema.">Specialization in content</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="whyspeccont.html" title="Specialization attributes let processes and tools know what set of rules your markup conforms to. This allows reuse of tools and processes for unfamiliar markup.">Why specialization in content?</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="classatt.html" title="Each element declared in the DITA architecture has a class attribute. This attribute provides a mapping between the element's current name and its more general equivalents. The more specialized the element type, the longer its class attribute value.">The class attribute</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

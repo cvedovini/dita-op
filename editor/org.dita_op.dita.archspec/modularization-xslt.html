@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Modularization in XSLT" />
+<meta name="abstract" content="Stylesheet support in XSLT for DITA specializations can be applied using the same principles as for the DTDs or Schemas, resulting in stylesheets that are easy to maintain and that will support any subsequent specialization with a minimum of effort." />
+<meta name="description" content="Stylesheet support in XSLT for DITA specializations can be applied using the same principles as for the DTDs or Schemas, resulting in stylesheets that are easy to maintain and that will support any subsequent specialization with a minimum of effort." />
+<meta scheme="URI" name="DC.Relation" content="specproc.html" />
+<meta scheme="URI" name="DC.Relation" content="modularization-css.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="mod-xslt" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Modularization in XSLT</title>
+</head>
+<body id="mod-xslt"><a name="mod-xslt"><!-- --></a>
+
+
+<h1 class="topictitle1">Modularization in XSLT</h1>
+
+
+<div><p>Stylesheet support in XSLT for DITA specializations can be applied
+using the same principles as for the DTDs or Schemas, resulting in stylesheets
+that are easy to maintain and that will support any subsequent specialization
+with a minimum of effort.</p>
+
+<div class="section"><h2 class="sectiontitle">Specification of module definition</h2>              <p>A
+specialization-aware template for XSLT has this form of match pattern: </p>
+ 
+     <pre class="pre">&lt;xsl:template match="*[contains(@class,' topic/section ')]"&gt;
+  &lt;div&gt;
+    &lt;xsl:apply-templates/&gt;
+  &lt;/div&gt;
+&lt;/xsl:template&gt;</pre>
+       <p>The XSLT match statement that associates
+the style to the element does not use a literal match to the element name.
+Instead, based on an element having the defaulted value <samp class="codeph">class="-
+topic/section reference/refsyn "</samp> (for example) this rule will
+trigger on the <span class="q">" topic/section "</span> value (note the required space delimiters
+in the match string) and perform the associated template actions, regardless
+of what the actual element name is.</p>
+       <p>The XPath pattern in this
+example effectively reads, "Selects any element whose class attribute
+contains the space-delimited substring <span class="q">"topic/section"</span>."</p>
+   
+ </div>
+
+<div class="section"><h2 class="sectiontitle">Assembly rules for XSLT</h2>              <p>XSLT pattern
+matching is the basis for DITA's specialization-aware processing. As
+such, the base XSLT stylesheet for a DITA topic should minimally support any
+specialization, no matter how far removed in generations from the archetype
+topic.</p>
+       <p>To support a newly-specialized DITA DTD or Schema that
+has been specialization-enabled with unique class attribute values, create
+a module that will contain ONLY the templates required for the uniquely new
+elements in the specialization. This is similar to the mod files that declare
+the unique elements in the specialization. The name of this module should
+be the same as the root name for the specialization module. In the case of
+DITA's reference DTD, the element declarations are in reference.mod and
+the corresponding delta rules for XSLT are in reference.xsl.</p>
+       <p>Next,
+create an <span class="q">"override"</span>XSLT stylesheet that starts off with the xsl:import
+instruction, naming the XSLT file used by this specialization's parent
+DTD. This import picks up support for all elements that are common with the
+parent DTD. Then add another xsl:import instruction in sequence, naming the
+XSLT delta module that you created previously. Additionally you can add imports
+for any domain-specific templates that need to be applied with this shell.
+Then copy in the XSLT templates for any previously defined support that needs
+to be associated <em>uniquely</em> to the new element names, and rename the
+match pattern strings as needed to the new specialized values for each new
+element. These added XSLT templates are deltas for the new stylesheet, much
+as specialized DTDs build on previous DTDs by adding delta element definitions.
+For XSLT support, you only need to define templates if you need new behavior
+or if you need to modify the behavior of an ancestor element's processing.</p>
+ 
+     <p>Because this process reuses a great deal of previous behaviors, the
+time spent supporting the delta changes is minimal.</p>
+       <p>To use a
+specialization-enabled XSLT stylesheet with a specialized DITA topic, simply
+associate it to the topic using either the W3C defined stylesheet link processing
+instruction or by following configuration rules for your processing tools
+(usually an XSLT processing utility such as saxon or xsltproc).</p>
+     
+    </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="specproc.html" title="Specialized processing is not necessary for every specialized element, only for those elements which do not have appropriate default behavior based on their ancestors.">Specialization in processing</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="modularization-css.html" title="Stylesheet support in CSS for DITA specializations can be applied using the same principles as for the DTDs or Schemas, resulting in stylesheets that are easy to maintain and that will support any subsequent specialization with a minimum of effort.">Modularization in CSS</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

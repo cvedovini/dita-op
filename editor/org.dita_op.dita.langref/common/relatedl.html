@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="Related links elements" />
+<meta name="abstract" content="The related-links section of DITA topics is a special structure that supports the navigational rules from a topic to its related neighbor topics." />
+<meta name="description" content="The related-links section of DITA topics is a special structure that supports the navigational rules from a topic to its related neighbor topics." />
+<meta content="Related Links elements" name="DC.subject" />
+<meta content="Related Links elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/prolog2.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/valid.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/link.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/linklist.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/linkpool.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/linktext.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/linkinfo.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="relatedl" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Related links elements</title>
+</head>
+<body id="relatedl"><a name="relatedl"><!-- --></a>
+
+
+<h1 class="topictitle1">Related links elements</h1>
+
+
+
+<div><p>The related-links section of DITA topics is a special structure
+that supports the navigational rules from a topic to its related neighbor
+topics.</p>
+
+<div class="section"><p>Links are different from cross-references in that cross-references
+occur only within the body of a topic and can target any element in this or
+other topics; links only represent topic-to-topic connections, or connections
+to non-DITA-topic resources. Links are located after the body of a topic,
+in the <a href="../langref/related-links.html" title="The related information links of a topic (&lt;related-links&gt; element) are stored in a special section following the body of the topic. After a topic is processed into it final output form, the related links are usually displayed at the end of the topic, although some Web-based help systems might display them in a separate navigation frame.">related-links</a> element.</p>
+<p>Related
+links can also be managed indirectly using DITA maps, which provide a more
+efficient way to manage links as an aspect of the collection of topics rather
+than as embedded pointers in each topic. </p>
+</div>
+
+</div>
+
+<div>
+<ol>
+<li class="olchildlink"><a href="../langref/link.html">link</a><br />
+The &lt;link&gt; element defines a relationship to another topic. Links represent the types and roles of topics in a web of information, and therefore represent navigational links within that web. Links are typically sorted on output based on their attributes. The optional container elements for link (&lt;linkpool&gt; and &lt;linklist&gt;) allow authors to define groups with common attributes, or to preserve the authored sequence of links on output. Links placed in a &lt;linkpool&gt; may be rearranged for display purposes (combined with other local or map-based links); links in a &lt;linklist&gt; should be displayed in the order they are defined. Refer to those elements for additional explanation.</li>
+<li class="olchildlink"><a href="../langref/linklist.html">linklist</a><br />
+The &lt;linklist&gt; element defines an author-arranged group of links. Within &lt;linklist&gt;, the organization of links on final output is in the same order as originally authored in the DITA topic.</li>
+<li class="olchildlink"><a href="../langref/linkpool.html">linkpool</a><br />
+The &lt;linkpool&gt; element defines a group of links that have common characteristics, such as type or audience or source. When links are not in a &lt;linklist&gt; (that is, they are in &lt;related-links&gt; or &lt;linkpool&gt; elements), the organization of links on final output is determined by the output process, not by the order that the links actually occur in the DITA topic.</li>
+<li class="olchildlink"><a href="../langref/linktext.html">linktext</a><br />
+The &lt;linktext&gt; element provides the literal label or line of text for a link. In most cases, the text of a link can be resolved during processing by cross reference with the target resource. Use the &lt;linktext&gt; element only when the target cannot be reached, such as when it is a peer or external link, or the target is local but not in DITA format. When used inside a topic, it will be used as the text for the specified link; when used within a map, it will be used as the text for generated links that point to the specified topic.</li>
+<li class="olchildlink"><a href="../langref/linkinfo.html">linkinfo</a><br />
+The &lt;linkinfo&gt; element allows you to place a descriptive paragraph following a list of links in a &lt;linklist&gt; element.</li>
+</ol>
+
+<div class="familylinks">
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../common/prolog2.html" title="The prolog elements represent the metadata associated with a document. Most of the metadata in a topic prolog can also be authored in a DITA map, in the map's &lt;topicmeta&gt; element.">Prolog elements</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../common/valid.html">Miscellaneous elements</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

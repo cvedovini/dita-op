@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="chhead" />
+<meta name="abstract" content="The &lt;chhead&gt; element is a container inside the &lt;choicetable&gt; element that provides specific heading text to override the default Options and Description headings. The &lt;chhead&gt; element contains both a &lt;choptionhd&gt; and &lt;chdeschd&gt; element as a pair." />
+<meta name="description" content="The &lt;chhead&gt; element is a container inside the &lt;choicetable&gt; element that provides specific heading text to override the default Options and Description headings. The &lt;chhead&gt; element contains both a &lt;choptionhd&gt; and &lt;chdeschd&gt; element as a pair." />
+<meta content="chhead (choicetable heading), Task elements, chhead" name="DC.subject" />
+<meta content="chhead (choicetable heading), Task elements, chhead" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/task2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/choicetable.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/choptionhd.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="chhead" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>chhead</title>
+</head>
+<body id="chhead"><a name="chhead"><!-- --></a>
+
+
+<h1 class="topictitle1">chhead</h1>
+
+
+
+<div><p>The &lt;<span class="keyword">chhead</span>&gt; element is a container inside
+the &lt;<span class="keyword">choicetable</span>&gt; element that provides specific
+heading text to override the default <strong>Options</strong> and <strong>Description</strong> headings.
+The &lt;<span class="keyword">chhead</span>&gt; element contains both a &lt;<span class="keyword">choptionhd</span>&gt;
+and &lt;<span class="keyword">chdeschd</span>&gt; element as a pair.</p>
+
+<div class="example"><h2 class="sectiontitle">Example</h2><pre class="pre">&lt;step&gt;&lt;cmd&gt;Then this&lt;/cmd&gt;
+ &lt;substeps&gt;
+  &lt;substep importance="optional"&gt;&lt;cmd&gt;which is done by doing this&lt;/cmd&gt;&lt;/substep&gt;
+  &lt;substep importance="required"&gt;&lt;cmd&gt;and then this.&lt;/cmd&gt;&lt;/substep&gt;
+ &lt;/substeps&gt;
+ &lt;choicetable&gt;
+  <strong>&lt;chhead&gt;</strong>
+   &lt;choptionhd&gt;Do something&lt;/choptionhd&gt;
+   &lt;chdeschd&gt;Or Else this&lt;/chdeschd&gt;
+  <strong>&lt;/chhead&gt;</strong>
+  &lt;chrow&gt;&lt;choption&gt;Do this&lt;/choption&gt;
+     &lt;chdesc&gt;and this will happen&lt;/chdesc&gt;&lt;/chrow&gt;
+  &lt;chrow&gt;&lt;choption&gt;Do that&lt;/choption&gt;
+     &lt;chdesc&gt;and that will happen&lt;/chdesc&gt;&lt;/chrow&gt;
+ &lt;/choicetable&gt;
+&lt;/step&gt;
+</pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100C6" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100CB" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100D5" headers="N100C6"><strong>ditabase, task</strong></td>
+<td valign="top" headers="N100CB N100D5"> ( (
+<a href="../common/../langref/choptionhd.html" title="The &lt;choptionhd&gt; element provides a specific label for the list of options that a user chooses from to accomplish a step. The default label for options is Option.">choptionhd</a>)  then  (
+<a href="../common/../langref/chdeschd.html" title="The &lt;chdeschd&gt; option provides a specific label for the list of descriptions of options that a user must choose to accomplish a step of a task. The default label overridden by &lt;chdeschd&gt; is Description.">chdeschd</a>) ) </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N10128" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N1012D" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N10137" headers="N10128"><strong>ditabase, task</strong></td>
+<td valign="top" headers="N1012D N10137"><a href="../common/../langref/choicetable.html" title="The &lt;choicetable&gt; element contains a series of optional choices available within a step of a task.">choicetable</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- topic/sthead task/chhead </p>
+</div>
+
+<div class="section" id="chhead__attrs"><a name="chhead__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="chhead__chhead_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="chhead__chhead_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10178" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N1017E" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N10184" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N1018A" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N10190" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10178">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N1017E">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N10184">parameter entity</td>
+
+<td valign="top" headers="N1018A">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10190">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10178">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N1017E">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N10184">parameter entity</td>
+
+<td valign="top" headers="N1018A">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10190">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10178">class, outputclass</td>
+
+<td valign="top" headers="N1017E">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N10184">&#xA0;</td>
+<td valign="top" headers="N1018A">&#xA0;</td>
+<td valign="top" headers="N10190">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/task2.html" title="Task topics answer &quot;How do I?&quot; questions, and have a well-defined structure that describes how to complete a procedure to accomplish a specific goal. Use the task topic to describe the steps of a particular task, or to provide an overview of a higher-level task. The task topic includes sections for describing the context, prerequisites, actual steps, expected results, example, and expected next steps for a task. For more details on when to use task and other information types, please refer to the DITA architectural specification.">Task elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/choicetable.html" title="The &lt;choicetable&gt; element contains a series of optional choices available within a step of a task.">choicetable</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/choptionhd.html" title="The &lt;choptionhd&gt; element provides a specific label for the list of options that a user chooses from to accomplish a step. The default label for options is Option.">choptionhd</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

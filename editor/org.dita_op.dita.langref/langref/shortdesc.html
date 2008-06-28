@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="shortdesc" />
+<meta name="abstract" content="The short description (&lt;shortdesc&gt;) element occurs between the topic title and the topic body, as the initial paragraph-like content of a topic, or it can be embedded in an abstract element. The short description, which represents the purpose or theme of the topic, is also intended to be used as a link preview and for searching. When used within a DITA map, the short description of the &lt;topicref&gt; can be used to override the short description in the topic." />
+<meta name="description" content="The short description (&lt;shortdesc&gt;) element occurs between the topic title and the topic body, as the initial paragraph-like content of a topic, or it can be embedded in an abstract element. The short description, which represents the purpose or theme of the topic, is also intended to be used as a link preview and for searching. When used within a DITA map, the short description of the &lt;topicref&gt; can be used to override the short description in the topic." />
+<meta content="shortdesc, Topic elements, Map elements, short description" name="DC.subject" />
+<meta content="shortdesc, Topic elements, Map elements, short description" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/topic2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/abstract.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/body.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="shortdesc" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>shortdesc</title>
+</head>
+<body id="shortdesc"><a name="shortdesc"><!-- --></a>
+
+
+<h1 class="topictitle1">shortdesc</h1>
+
+
+
+<div><p>The short description (&lt;<span class="keyword">shortdesc</span>&gt;) element
+occurs between the topic title and the topic body, as the initial paragraph-like
+content of a topic, or it can be embedded in an abstract element. The short
+description, which represents the purpose or theme of the topic, is also intended
+to be used as a link preview and for searching. When used within a DITA map,
+the short description of the &lt;topicref&gt; can be used to override the short
+description in the topic.</p>
+
+<div class="section"><p>Use the &lt;shortdesc&gt; element when the first paragraph of topic
+content is simple enough to be suitable for use as a link preview or for summaries.
+Otherwise use the &lt;abstract&gt; element instead to provide richer content
+around the &lt;shortdesc&gt;. See the <a href="abstract.html" title="The abstract element occurs between the topic title and the topic body, as the initial content of a topic. It can contain paragraph-level content as well as one or more shortdesc elements which can be used for providing link previews or summaries. The &lt;abstract&gt; element cannot be overridden by maps, but its contained &lt;shortdesc&gt; elements can be, for the purpose of creating link summaries or previews.">abstract</a> description
+for more details on the behavior of shortdesc in an abstract.</p>
+<p>While
+inclusion of the &lt;shortdesc&gt; element is not mandated by DITA or the
+tools, it is recommended that topics contain this element. In cases where
+a topic contains only one paragraph, then it is preferable to include this
+text in the &lt;shortdesc&gt; and leave the topic body empty. </p>
+ <p>The short description should
+be a single, concise paragraph containing one or two sentences of no more
+than 50 words.</p>
+
+<div class="tablenoborder"><table summary="" cellspacing="0" cellpadding="4" frame="hsides" border="1" rules="rows">
+<thead align="left">
+<tr>
+<th class="firstcol" valign="top" width="22.33502538071066%" id="N100C5">Type</th>
+
+<th class="row-nocellborder" valign="top" width="77.66497461928934%" id="N100CD">Recommended content</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+<tr>
+<th class="firstcol" valign="top" width="22.33502538071066%" id="N100E1" headers="N100C5 ">Task</th>
+
+<td class="row-nocellborder" valign="top" width="77.66497461928934%" headers="N100E1 N100CD ">                 <p>The short description
+should explain what the task information helps users accomplish, the benefits
+of the task, or the purpose of the task. Do not simply repeat the title. Try
+to include information that will help users understand when the task is appropriate
+or why the task is necessary. Avoid stating the obvious, such as <span class="q">"You can
+use XYZ to do A"</span> as the only statement in the short description for Task
+A. In some cases, add more information about why the task is beneficial.</p>
+ 
+               <p>Do not use sentence fragments.
+Use complete sentences. Avoid starting short descriptions with phrases such
+as <span class="q">"This topic describes . . . ."</span> or <span class="q">"This topic is about . . . ."</span></p>
+ 
+             </td>
+
+</tr>
+
+<tr>
+<th class="firstcol" valign="top" width="22.33502538071066%" id="N10112" headers="N100C5 ">Concept</th>
+
+<td class="row-nocellborder" valign="top" width="77.66497461928934%" headers="N10112 N100CD ">                 <p>Introduce the concept
+and provide a concise answer to the question "What is this?" and in some cases
+"Why do I care about this?" If the concept is unfamiliar, you can start with
+a brief definition. Avoid using the short description to lead in or build
+up to a topic. The short description paragraph should contain the main point
+of the conceptual topic. The concept short description should clearly apply
+to a concept. Avoid turning the concept topic into a task. Do not simply repeat
+the title.</p>
+ 
+               <p>Do not use sentence fragments.
+Use complete sentences. Avoid starting short descriptions with phrases such
+as <span class="q">"This topic describes . . . ."</span> or <span class="q">"This topic is about . . . ."</span></p>
+ 
+             </td>
+
+</tr>
+
+<tr>
+<th class="firstcol" valign="top" width="22.33502538071066%" id="N1013D" headers="N100C5 ">Reference</th>
+
+<td class="row-nocellborder" valign="top" width="77.66497461928934%" headers="N1013D N100CD ">                 <p>Briefly describe what
+the reference item does, what it is, or what it is used for.</p>
+ 
+               <p>In most cases, use a complete
+sentence. You can use a sentence fragment only for a topic that is very short,
+such as an API topic and each of its subtopics. Use consistent phrasing across
+libraries and information centers so that your information can be seamlessly
+integrated with another product's information.</p>
+ 
+             </td>
+
+</tr>
+
+</tbody>
+
+</table>
+</div>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N1016F" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N10174" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N1017E" headers="N1016F"><strong>ditabase, topic, task, reference, concept</strong></td>
+<td valign="top" headers="N10174 N1017E"> (
+ text data  or <a href="../common/../langref/ph.html" title="The phrase (&lt;ph&gt;) element is used to organize content for reuse or conditional processing (for example, when part of a paragraph applies to a particular audience). It can be used by specializations of DITA to create semantic markup for content at the phrase level, which then allows (but does not require) specific processing or formatting.">ph</a> or <a href="../common/../langref/codeph.html" title="The code phrase (&lt;codeph&gt;) element represents a snippet of code within the main flow of text. The code phrase is displayed in a monospaced font for emphasis. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">codeph</a> or <a href="../common/../langref/synph.html" title="The syntax phrase (&lt;synph&gt;) element is a container for syntax definition elements. It is used when a complete syntax diagram is not needed, but some of the syntax elements, such as kwd, oper, delim, are used within the text flow of the topic content. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">synph</a> or <a href="../common/../langref/filepath.html" title="The &lt;filepath&gt; element indicates the name and optionally the location of a referenced file by specifying the directory containing the file, and other directories that may precede it in the system hierarchy. This element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">filepath</a> or <a href="../common/../langref/msgph.html" title="The message phrase (&lt;msgph&gt;) element contains the text content of a message produced by an application or program. It can also contain the variable name (varname) element to illustrate where variable text content can occur in the message. This element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">msgph</a> or <a href="../common/../langref/userinput.html" title="The user input (&lt;userinput&gt;) element represens the text a user should input in response to a program or system prompt. This element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">userinput</a> or <a href="../common/../langref/systemoutput.html" title="The system output (&lt;systemoutput&gt;) element represents computer output or responses to a command or situation. A generalized element, it represents any kind of output from the computer, so the author may wish to choose more specific markup, such as msgph, for messages from the application. The system output element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">systemoutput</a> or <a href="../common/../langref/b.html" title="The bold (&lt;b&gt;) element is used to apply bold highlighting to the content of the element. Use this element only when there is not some other more proper element. For example, for specific items such as GUI controls, use the &lt;uicontrol&gt; element. This element is part of the DITA highlighting domain.">b</a> or <a href="../common/../langref/u.html" title="The underline (&lt;u&gt;) element is used to apply underline highlighting to the content of the element. Use this element only when there is not some other more proper element. For example, for specific items such as GUI controls, use the &lt;uicontrol&gt; element. This element is part of the DITA highlighting domain.">u</a> or <a href="../common/../langref/i.html" title="The italic (&lt;i&gt;) element is used to apply italic highlighting to the content of the element. Use this element only when there is not some other more proper element. For example, for specific items such as GUI controls, use the &lt;uicontrol&gt; element. This element is part of the DITA highlighting domain.">i</a> or <a href="../common/../langref/tt.html" title="The teletype (&lt;tt&gt;) element is used to apply monospaced highlighting to the content of the element. Use this element only when there is not some other more proper element. For example, for specific items such as GUI controls, use the &lt;uicontrol&gt; element. This element is part of the DITA highlighting domain.">tt</a> or <a href="../common/../langref/sup.html" title="The superscript (&lt;sup&gt;) element indicates that text should be superscripted, or vertically raised in relationship to the surrounding text. Superscripts are usually a smaller font than the surrounding text. Use this element only when there is not some other more proper tag. This element is part of the DITA highlighting domain.">sup</a> or <a href="../common/../langref/sub.html" title="A subscript (&lt;sub&gt;) indicates that text should be subscripted, or placed lower in relationship to the surrounding text. Subscripted text is often a smaller font than the surrounding text. Formatting may vary depending on your output process. This element is part of the DITA highlighting domain.">sub</a> or <a href="../common/../langref/uicontrol.html" title="The user interface control (&lt;uicontrol&gt;) element is used to mark up names of buttons, entry fields, menu items, or other objects that allow the user to control the interface. Use the &lt;uicontrol&gt; element inside a &lt;menucascade&gt; element to identify a sequence of menu choices in a nested menu, such as File &gt; New. This element is part of the DITA user interface domain, a special set of DITA elements designed to document user interface tasks, concepts and reference information.">uicontrol</a> or <a href="../common/../langref/menucascade.html" title="The &lt;menucascade&gt; element is used to document a series of menu choices. The &lt;menucascade&gt; element contains one or more user interface control (&lt;uicontrol&gt;) elements, for example: Start &gt; Programs &gt; Accessories &gt; Notepad. If there is more than one &lt;uicontrol&gt; element, the formatter shows connecting characters between the menu items to represent the menu cascade. This element is part of the DITA user interface domain, a special set of DITA elements designed to document user interface tasks, concepts and reference information.">menucascade</a> or <a href="../common/../langref/term.html" title="The &lt;term&gt; element identifies words that may have or require extended definitions or explanations. In future development of DITA, for example, terms might provide associative linking to matching glossary entries.">term</a> or <a href="../common/../langref/q.html" title="A quotation element (&lt;q&gt;) indicates content quoted from another source. This element is used for short quotes which are displayed inline. Use the long quote element (&lt;lq&gt;) for quotations that should be set off from the surrounding text.">q</a> or <a href="../common/../langref/boolean.html" title="The &lt;boolean&gt; element is used to express one of two opposite values, such as yes or no, on or off, true or false, high or low, and so forth. The element itself is empty; the value of the element is stored in its state attribute, and the semantic associated with the value is typically in a specialized name derived from this element.">boolean</a> or <a href="../common/../langref/state.html" title="The &lt;state&gt; element specifies a name/value pair whenever it is necessary to represent a named state that has a variable value. The element is primarily intended for use in specializations to represent specific states (like logic circuit states, chemical reaction states, airplane instrumentation states, and so forth).">state</a> or <a href="../common/../langref/keyword.html" title="The &lt;keyword&gt; element identifies a keyword or token, such as a single value from an enumerated list, the name of a command or parameter, product name, or a lookup key for a message.">keyword</a> or <a href="../common/../langref/option.html" title="The &lt;option&gt; element describes an option that can be used to modify a command (or something else, like a configuration). This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">option</a> or <a href="../common/../langref/parmname.html" title="When referencing the name of an application programming interface parameter within the text flow of your topic, use the parameter name (&lt;parmname&gt;) element to markup the parameter. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">parmname</a> or <a href="../common/../langref/apiname.html" title="The &lt;apiname&gt; element provides the name of an application programming interface (API) such as a Java class name or method name. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">apiname</a> or <a href="../common/../langref/cmdname.html" title="The command name (&lt;cmdname&gt;) element specifies the name of a command when it is part of a software discussion. This element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">cmdname</a> or <a href="../common/../langref/msgnum.html" title="The message number (&lt;msgnum&gt;) element contains the number of a message produced by an application or program. This element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">msgnum</a> or <a href="../common/../langref/varname.html" title="The variable name (&lt;varname&gt;) element defines a variable that must be supplied to a software application. The variable name element is very similar to the variable (var) element, but variable name is used outside of syntax diagrams. This element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">varname</a> or <a href="../common/../langref/wintitle.html" title="The window title &lt;wintitle&gt; element can be used to mark up names of windows or dialogs, or other user interface elements at the same level of grouping, including wizard titles, wizard page titles, and window pane titles. This element is part of the DITA user interface domain, a special set of DITA elements designed to document user interface tasks, concepts and reference information.">wintitle</a> or <a href="../common/../langref/tm.html" title="The trademark (&lt;tm&gt;) element in DITA is used to markup and identify a term or phrase that is trademarked. Trademarks include registered trademarks, service marks, slogans and logos.">tm</a> or <a href="../common/../langref/image.html" title="Include artwork or images in a DITA topic by using the &lt;image&gt; element. The &lt;image&gt; element has optional attributes that indicate whether the placement of the included graphic or artwork should be inline (like a button or icon) or on a separate line for a larger image. There are also optional attributes that indicate the size to which the included graphic or artwork should be scaled. An href attribute is required on the image element, as this attribute creates a pointer to the image, and allows the output formatting processor to bring the image into the text flow. To make the intent of the image more accessible for users using screen readers or text-only readers, always include a description of the image's content in the alt element.">image</a> or <a href="../common/../langref/data.html" title="The &lt;data&gt; element represents a property within a DITA topic or map. While the &lt;data&gt; element can be used directly to capture properties, it is particularly useful as a basis for specialization. Default processing treats the property values as an unknown kind of metadata, but custom processing can match the name attribute or specialized element to format properties as sidebars or other adornments or to harvest properties for automated processing.">data</a> or <a href="../common/../langref/data-about.html" title="The &lt;data-about&gt; element identifies the subject of a property when the subject isn't associated with the context in which the property is specified. The property itself is expressed by the &lt;data&gt; element. The &lt;data-about&gt; element handles exception cases where a property must be expressed somewhere other than inside the actual subject of the property. The &lt;data-about&gt; element is particularly useful as a basis for specialization in combination with the &lt;data&gt; element.">data-about</a> or <a href="../common/../langref/foreign.html" title="The &lt;foreign&gt; element is an open extension that allows information architects to incorporate existing standard vocabularies for non-textual content. like MathML and SVG, as inline objects. If &lt;foreign&gt; contains more than one alternative content element, they will all be processed. Specialization of &lt;foreign&gt; should be implemented as a domain, but for those looking for more control over the content can implement foreign vocabulary as an element specialization.">foreign</a> or <a href="../common/../langref/unknown.html" title="The &lt;unknown&gt; element is an open extension that allows information architects to incorporate xml fragments that do not necessarily fit into an existing DITA use case. The base processing for &lt;unknown&gt; is to suppress unless otherwise instructed.">unknown</a>) <em> (any number) </em></td>
+</tr>
+
+<tr><td valign="top" id="N1043B" headers="N1016F"><strong>map, bookmap</strong></td>
+<td valign="top" headers="N10174 N1043B"> (
+ text data  or <a href="../common/../langref/ph.html" title="The phrase (&lt;ph&gt;) element is used to organize content for reuse or conditional processing (for example, when part of a paragraph applies to a particular audience). It can be used by specializations of DITA to create semantic markup for content at the phrase level, which then allows (but does not require) specific processing or formatting.">ph</a> or <a href="../common/../langref/term.html" title="The &lt;term&gt; element identifies words that may have or require extended definitions or explanations. In future development of DITA, for example, terms might provide associative linking to matching glossary entries.">term</a> or <a href="../common/../langref/q.html" title="A quotation element (&lt;q&gt;) indicates content quoted from another source. This element is used for short quotes which are displayed inline. Use the long quote element (&lt;lq&gt;) for quotations that should be set off from the surrounding text.">q</a> or <a href="../common/../langref/boolean.html" title="The &lt;boolean&gt; element is used to express one of two opposite values, such as yes or no, on or off, true or false, high or low, and so forth. The element itself is empty; the value of the element is stored in its state attribute, and the semantic associated with the value is typically in a specialized name derived from this element.">boolean</a> or <a href="../common/../langref/state.html" title="The &lt;state&gt; element specifies a name/value pair whenever it is necessary to represent a named state that has a variable value. The element is primarily intended for use in specializations to represent specific states (like logic circuit states, chemical reaction states, airplane instrumentation states, and so forth).">state</a> or <a href="../common/../langref/keyword.html" title="The &lt;keyword&gt; element identifies a keyword or token, such as a single value from an enumerated list, the name of a command or parameter, product name, or a lookup key for a message.">keyword</a> or <a href="../common/../langref/tm.html" title="The trademark (&lt;tm&gt;) element in DITA is used to markup and identify a term or phrase that is trademarked. Trademarks include registered trademarks, service marks, slogans and logos.">tm</a> or <a href="../common/../langref/image.html" title="Include artwork or images in a DITA topic by using the &lt;image&gt; element. The &lt;image&gt; element has optional attributes that indicate whether the placement of the included graphic or artwork should be inline (like a button or icon) or on a separate line for a larger image. There are also optional attributes that indicate the size to which the included graphic or artwork should be scaled. An href attribute is required on the image element, as this attribute creates a pointer to the image, and allows the output formatting processor to bring the image into the text flow. To make the intent of the image more accessible for users using screen readers or text-only readers, always include a description of the image's content in the alt element.">image</a> or <a href="../common/../langref/data.html" title="The &lt;data&gt; element represents a property within a DITA topic or map. While the &lt;data&gt; element can be used directly to capture properties, it is particularly useful as a basis for specialization. Default processing treats the property values as an unknown kind of metadata, but custom processing can match the name attribute or specialized element to format properties as sidebars or other adornments or to harvest properties for automated processing.">data</a> or <a href="../common/../langref/data-about.html" title="The &lt;data-about&gt; element identifies the subject of a property when the subject isn't associated with the context in which the property is specified. The property itself is expressed by the &lt;data&gt; element. The &lt;data-about&gt; element handles exception cases where a property must be expressed somewhere other than inside the actual subject of the property. The &lt;data-about&gt; element is particularly useful as a basis for specialization in combination with the &lt;data&gt; element.">data-about</a> or <a href="../common/../langref/foreign.html" title="The &lt;foreign&gt; element is an open extension that allows information architects to incorporate existing standard vocabularies for non-textual content. like MathML and SVG, as inline objects. If &lt;foreign&gt; contains more than one alternative content element, they will all be processed. Specialization of &lt;foreign&gt; should be implemented as a domain, but for those looking for more control over the content can implement foreign vocabulary as an element specialization.">foreign</a> or <a href="../common/../langref/unknown.html" title="The &lt;unknown&gt; element is an open extension that allows information architects to incorporate xml fragments that do not necessarily fit into an existing DITA use case. The base processing for &lt;unknown&gt; is to suppress unless otherwise instructed.">unknown</a>) <em> (any number) </em></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N1055B" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N10560" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N1056A" headers="N1055B"><strong>bookmap</strong></td>
+<td valign="top" headers="N10560 N1056A"><a href="../common/../langref/topicmeta.html" title="The &lt;topicmeta&gt; element defines the metadata that applies to a topic when it appears in a map, and to the other topics in the map that are contained by the same element that contains the &lt;topicmeta&gt; element. When creating links, it can also be used to override the title and short description of the topic. In addition, it can be used to add index entries to referenced content using the &lt;keywords&gt; element.">topicmeta</a>, <a href="../common/../langref/bookmeta.html" title="The &lt;bookmeta&gt; element contains information about the book that is not considered book content, such as copyright information, author information, and any classifications.">bookmeta</a></td>
+</tr>
+
+<tr><td valign="top" id="N10599" headers="N1055B"><strong>map</strong></td>
+<td valign="top" headers="N10560 N10599"><a href="../common/../langref/topicmeta.html" title="The &lt;topicmeta&gt; element defines the metadata that applies to a topic when it appears in a map, and to the other topics in the map that are contained by the same element that contains the &lt;topicmeta&gt; element. When creating links, it can also be used to override the title and short description of the topic. In addition, it can be used to add index entries to referenced content using the &lt;keywords&gt; element.">topicmeta</a></td>
+</tr>
+
+<tr><td valign="top" id="N105BD" headers="N1055B"><strong>ditabase</strong></td>
+<td valign="top" headers="N10560 N105BD"><a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a>, <a href="../common/../langref/abstract.html" title="The abstract element occurs between the topic title and the topic body, as the initial content of a topic. It can contain paragraph-level content as well as one or more shortdesc elements which can be used for providing link previews or summaries. The &lt;abstract&gt; element cannot be overridden by maps, but its contained &lt;shortdesc&gt; elements can be, for the purpose of creating link summaries or previews.">abstract</a>, <a href="../common/../langref/concept.html" title="The &lt;concept&gt; element is the top-level element for a topic that answers the question what is? Concepts provide background information that users must know before they can successfully work with a product or interface. Often, a concept is an extended definition of a major abstraction such as a process or function. It might also have an example or a graphic, but generally the structure of a concept is fairly simple.">concept</a>, <a href="../common/../langref/task.html" title="The &lt;task&gt; element is the top-level element for a task topic. Tasks are the main building blocks for task-oriented user assistance. They generally provide step-by-step instructions that will enable a user to perform a task. A task answers the question of &quot;how to?&quot; by telling the user precisely what to do and the order in which to do it. Tasks have the same high-level structure as other topics, with a title, short description and body.">task</a>, <a href="../common/../langref/reference.html" title="The &lt;reference&gt; element defines a top-level container for a reference topic. Reference topics document programming constructs or facts about a product. Examples of reference topics include language elements, class descriptions, commands, functions, statements, protocols, types, declarators, operands, and API information, which provide quick access to facts, but no explanation of concepts or procedures. Reference topics have the same high-level structure as any other topic type, with a title, short description, and body. Within the body, reference topics are typically organized into one or more sections, property lists, and tables. The reference topic type provides general rules that apply to all kinds of reference information, using elements like &lt;refsyn&gt; for syntax or signatures, and &lt;properties&gt; for lists of properties and values.">reference</a>, <a href="../common/../langref/glossdef.html" title="The &lt;glossdef&gt; element specifies the definition of one sense of a term. If a term has multiple senses, create a separate &lt;glossentry&gt; topic to define each sense.">glossdef</a></td>
+</tr>
+
+<tr><td valign="top" id="N1065C" headers="N1055B"><strong>topic</strong></td>
+<td valign="top" headers="N10560 N1065C"><a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a>, <a href="../common/../langref/abstract.html" title="The abstract element occurs between the topic title and the topic body, as the initial content of a topic. It can contain paragraph-level content as well as one or more shortdesc elements which can be used for providing link previews or summaries. The &lt;abstract&gt; element cannot be overridden by maps, but its contained &lt;shortdesc&gt; elements can be, for the purpose of creating link summaries or previews.">abstract</a></td>
+</tr>
+
+<tr><td valign="top" id="N1069D" headers="N1055B"><strong>task</strong></td>
+<td valign="top" headers="N10560 N1069D"><a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a>, <a href="../common/../langref/abstract.html" title="The abstract element occurs between the topic title and the topic body, as the initial content of a topic. It can contain paragraph-level content as well as one or more shortdesc elements which can be used for providing link previews or summaries. The &lt;abstract&gt; element cannot be overridden by maps, but its contained &lt;shortdesc&gt; elements can be, for the purpose of creating link summaries or previews.">abstract</a>, <a href="../common/../langref/task.html" title="The &lt;task&gt; element is the top-level element for a task topic. Tasks are the main building blocks for task-oriented user assistance. They generally provide step-by-step instructions that will enable a user to perform a task. A task answers the question of &quot;how to?&quot; by telling the user precisely what to do and the order in which to do it. Tasks have the same high-level structure as other topics, with a title, short description and body.">task</a></td>
+</tr>
+
+<tr><td valign="top" id="N106EF" headers="N1055B"><strong>concept</strong></td>
+<td valign="top" headers="N10560 N106EF"><a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a>, <a href="../common/../langref/abstract.html" title="The abstract element occurs between the topic title and the topic body, as the initial content of a topic. It can contain paragraph-level content as well as one or more shortdesc elements which can be used for providing link previews or summaries. The &lt;abstract&gt; element cannot be overridden by maps, but its contained &lt;shortdesc&gt; elements can be, for the purpose of creating link summaries or previews.">abstract</a>, <a href="../common/../langref/concept.html" title="The &lt;concept&gt; element is the top-level element for a topic that answers the question what is? Concepts provide background information that users must know before they can successfully work with a product or interface. Often, a concept is an extended definition of a major abstraction such as a process or function. It might also have an example or a graphic, but generally the structure of a concept is fairly simple.">concept</a></td>
+</tr>
+
+<tr><td valign="top" id="N10749" headers="N1055B"><strong>reference</strong></td>
+<td valign="top" headers="N10560 N10749"><a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a>, <a href="../common/../langref/abstract.html" title="The abstract element occurs between the topic title and the topic body, as the initial content of a topic. It can contain paragraph-level content as well as one or more shortdesc elements which can be used for providing link previews or summaries. The &lt;abstract&gt; element cannot be overridden by maps, but its contained &lt;shortdesc&gt; elements can be, for the purpose of creating link summaries or previews.">abstract</a>, <a href="../common/../langref/reference.html" title="The &lt;reference&gt; element defines a top-level container for a reference topic. Reference topics document programming constructs or facts about a product. Examples of reference topics include language elements, class descriptions, commands, functions, statements, protocols, types, declarators, operands, and API information, which provide quick access to facts, but no explanation of concepts or procedures. Reference topics have the same high-level structure as any other topic type, with a title, short description, and body. Within the body, reference topics are typically organized into one or more sections, property lists, and tables. The reference topic type provides general rules that apply to all kinds of reference information, using elements like &lt;refsyn&gt; for syntax or signatures, and &lt;properties&gt; for lists of properties and values.">reference</a></td>
+</tr>
+
+<tr><td valign="top" id="N107A7" headers="N1055B"><strong>glossary</strong></td>
+<td valign="top" headers="N10560 N107A7"><a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a>, <a href="../common/../langref/abstract.html" title="The abstract element occurs between the topic title and the topic body, as the initial content of a topic. It can contain paragraph-level content as well as one or more shortdesc elements which can be used for providing link previews or summaries. The &lt;abstract&gt; element cannot be overridden by maps, but its contained &lt;shortdesc&gt; elements can be, for the purpose of creating link summaries or previews.">abstract</a>, <a href="../common/../langref/concept.html" title="The &lt;concept&gt; element is the top-level element for a topic that answers the question what is? Concepts provide background information that users must know before they can successfully work with a product or interface. Often, a concept is an extended definition of a major abstraction such as a process or function. It might also have an example or a graphic, but generally the structure of a concept is fairly simple.">concept</a>, <a href="../common/../langref/glossdef.html" title="The &lt;glossdef&gt; element specifies the definition of one sense of a term. If a term has multiple senses, create a separate &lt;glossentry&gt; topic to define each sense.">glossdef</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>"- topic/shortdesc " when used in topics, and "- map/shortdesc " when used in maps.</p>
+</div>
+
+<div class="section" id="shortdesc__attrs"><a name="shortdesc__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2>              <a name="shortdesc__shortdesc_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="shortdesc__shortdesc_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N1083C" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N10842" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N10848" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N1084E" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N10854" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1083C">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N10842">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N10848">parameter entity</td>
+
+<td valign="top" headers="N1084E">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10854">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1083C">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N10842">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N10848">parameter entity</td>
+
+<td valign="top" headers="N1084E">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10854">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1083C">class, outputclass</td>
+
+<td valign="top" headers="N10842">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N10848">&#xA0;</td>
+<td valign="top" headers="N1084E">&#xA0;</td>
+<td valign="top" headers="N10854">&#xA0;</td>
+
+</tr>
+
+</table>
+     </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/topic2.html" title="Use the generic topic structure for untyped topics. While much of the DITA architecture is built upon generic topics, it is generally better to use more specific information types (such as concept, task, or reference) when they are available. For an answer to the question &quot;What are topics?&quot; and more details on when to use different information types, please refer to the DITA architectural specification.">Topic elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/abstract.html" title="The abstract element occurs between the topic title and the topic body, as the initial content of a topic. It can contain paragraph-level content as well as one or more shortdesc elements which can be used for providing link previews or summaries. The &lt;abstract&gt; element cannot be overridden by maps, but its contained &lt;shortdesc&gt; elements can be, for the purpose of creating link summaries or previews.">abstract</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/body.html" title="The &lt;body&gt; element is the container for the main content of a &lt;topic&gt;.">body</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

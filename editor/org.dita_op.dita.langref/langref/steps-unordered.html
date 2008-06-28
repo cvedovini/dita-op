@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="steps-unordered" />
+<meta name="abstract" content="Like the &lt;steps&gt; element, the &lt;steps-unordered&gt; section of a task provides the main content of the task topic, but particularly for cases in which the order of steps may vary from one situation to another. One or more steps is required inside the &lt;steps-unordered&gt; section." />
+<meta name="description" content="Like the &lt;steps&gt; element, the &lt;steps-unordered&gt; section of a task provides the main content of the task topic, but particularly for cases in which the order of steps may vary from one situation to another. One or more steps is required inside the &lt;steps-unordered&gt; section." />
+<meta content="steps, Task elements" name="DC.subject" />
+<meta content="steps, Task elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/task2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/steps.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/step.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="steps-unordered" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>steps-unordered</title>
+</head>
+<body id="steps-unordered"><a name="steps-unordered"><!-- --></a>
+
+
+<h1 class="topictitle1">steps-unordered</h1>
+
+
+
+<div><p>Like the &lt;<span class="keyword">steps</span>&gt; element, the &lt;<span class="keyword">steps-unordered</span>&gt;
+section of a task provides the main content of the task topic, but particularly
+for cases in which the order of steps may vary from one situation to another.
+One or more steps is required inside the &lt;<span class="keyword">steps-unordered</span>&gt;
+section.</p>
+
+<div class="section"><p>Two or more steps appear as an unordered list. A single step appears
+as a paragraph. If all of the contained steps are simple (that is, have no
+more than a &lt;cmd&gt; element each) then the list should default to compact.
+Otherwise it should be formatted as uncompact (with blank lines between each
+step on output).</p>
+</div>
+
+<div class="example"><h2 class="sectiontitle">Example</h2><pre class="codeblock">&lt;task id="sqlj"&gt;
+ &lt;title&gt;Creating an SQLJ file&lt;/title&gt;
+ &lt;taskbody&gt;
+  &lt;context&gt;Once you have set up SQLJ, you need to create a new SQLJ file.&lt;/context&gt;
+  &lt;steps-unordered&gt;
+   &lt;step&gt;&lt;cmd&gt;In a text editor, create a new file.&lt;/cmd&gt;&lt;/step&gt;
+  &lt;/steps-unordered&gt;
+ &lt;/taskbody&gt;
+&lt;/task&gt;</pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100AD" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100B2" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100BC" headers="N100AD"><strong>ditabase, task</strong></td>
+<td valign="top" headers="N100B2 N100BC"> ( (
+<a href="../common/../langref/step.html" title="The &lt;step&gt; element represents an action that a user must follow to accomplish a task. Each step in a task must contain a command &lt;cmd&gt; element which describes the particular action the user must do to accomplish the overall task. The step element can also contain information &lt;info&gt;, substeps &lt;substeps&gt;, tutorial information &lt;tutorialinfo&gt;, a step example &lt;stepxmp&gt;, choices &lt;choices&gt; or a stepresult &lt;stepresult&gt;, although these are optional.">step</a>) <em> (one or more) </em>) </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N1011C" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N10121" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N1012B" headers="N1011C"><strong>ditabase, task</strong></td>
+<td valign="top" headers="N10121 N1012B"><a href="../common/../langref/taskbody.html" title="The &lt;taskbody&gt; element is the main body-level element inside a task topic. A task body has a very specific structure, with the following elements in this order: &lt;prereq&gt;, &lt;context&gt;, &lt;steps&gt;, &lt;result&gt;, &lt;example&gt; and &lt;postreq&gt;. Each of the body sections are optional.">taskbody</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- topic/ul task/steps-unordered </p>
+</div>
+
+<div class="section" id="steps-unordered__attrs"><a name="steps-unordered__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="steps-unordered__steps-unordered_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="steps-unordered__steps-unordered_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10190" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N10196" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N1019C" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N101A2" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N101A8" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10190">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N10196">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N1019C">parameter entity</td>
+
+<td valign="top" headers="N101A2">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N101A8">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10190">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N10196">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N1019C">parameter entity</td>
+
+<td valign="top" headers="N101A2">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N101A8">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10190">class, outputclass</td>
+
+<td valign="top" headers="N10196">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N1019C">&#xA0;</td>
+<td valign="top" headers="N101A2">&#xA0;</td>
+<td valign="top" headers="N101A8">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/task2.html" title="Task topics answer &quot;How do I?&quot; questions, and have a well-defined structure that describes how to complete a procedure to accomplish a specific goal. Use the task topic to describe the steps of a particular task, or to provide an overview of a higher-level task. The task topic includes sections for describing the context, prerequisites, actual steps, expected results, example, and expected next steps for a task. For more details on when to use task and other information types, please refer to the DITA architectural specification.">Task elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/steps.html" title="The &lt;steps&gt; section of a task provides the main content of the task topic. The task is described as a series of steps that the user must follow to accomplish the task. One or more &lt;steps&gt; elements is required inside the &lt;steps&gt; section.">steps</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/step.html" title="The &lt;step&gt; element represents an action that a user must follow to accomplish a task. Each step in a task must contain a command &lt;cmd&gt; element which describes the particular action the user must do to accomplish the overall task. The step element can also contain information &lt;info&gt;, substeps &lt;substeps&gt;, tutorial information &lt;tutorialinfo&gt;, a step example &lt;stepxmp&gt;, choices &lt;choices&gt; or a stepresult &lt;stepresult&gt;, although these are optional.">step</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

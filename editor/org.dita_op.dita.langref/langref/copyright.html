@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="copyright" />
+<meta name="abstract" content="The &lt;copyright&gt; element is used for a single copyright entry. It includes the copyright years and the copyright holder. Multiple &lt;copyright&gt; statements are allowed." />
+<meta name="description" content="The &lt;copyright&gt; element is used for a single copyright entry. It includes the copyright years and the copyright holder. Multiple &lt;copyright&gt; statements are allowed." />
+<meta content="copyright, Prolog elements" name="DC.subject" />
+<meta content="copyright, Prolog elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/prolog2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/component.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/copyrholder.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="copyright" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>copyright</title>
+</head>
+<body id="copyright"><a name="copyright"><!-- --></a>
+
+
+<h1 class="topictitle1">copyright</h1>
+
+
+
+<div><p>The &lt;<span class="keyword">copyright</span>&gt; element is used for a
+single copyright entry. It includes the copyright years and the copyright
+holder.  Multiple &lt;<span class="keyword">copyright</span>&gt; statements are allowed.</p>
+
+<div class="example"><h2 class="sectiontitle">Example</h2><pre class="codeblock">&lt;prolog&gt;
+&lt;copyright&gt;
+&lt;copyryear year="2001-04-12"&gt;&lt;/copyryear&gt;
+&lt;copyrholder&gt;IBM&lt;/copyrholder&gt;
+&lt;/copyright&gt;
+&lt;copyright type=secondary&gt;
+&lt;copyryear year="2002-03-03&gt;&lt;/copyryear&gt;
+&lt;copyrholder&gt;Schweetones Publishing, Inc.&lt;/copyrholder&gt;
+&lt;/copyright&gt;
+&lt;/prolog&gt;</pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N1009D" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100A2" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100AC" headers="N1009D"><strong>ditabase, topic, task, reference, concept, glossary, map, bookmap</strong></td>
+<td valign="top" headers="N100A2 N100AC"> ( (
+<a href="../common/../langref/copyryear.html" title="The &lt;copyryear&gt; element contains the copyright year as specified by the year attribute.">copyryear</a>) <em> (one or more) </em> then 
+<a href="../common/../langref/copyrholder.html" title="The copyright holder (&lt;copyrholder&gt;) element names the entity that holds legal rights to the material contained in the topic.">copyrholder</a>) </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100FD" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N10102" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N1010C" headers="N100FD"><strong>ditabase, topic, task, concept, reference</strong></td>
+<td valign="top" headers="N10102 N1010C"><a href="../common/../langref/prolog.html" title="The &lt;prolog&gt; element contains information about the topic as an whole (for example, author information or subject category) that is either entered by the author or machine-maintained. Much of the metadata inside the &lt;prolog&gt; will not be displayed with the topic on output, but may be used by processes that generate search indexes or customize navigation.">prolog</a></td>
+</tr>
+
+<tr><td valign="top" id="N10130" headers="N100FD"><strong>map, bookmap</strong></td>
+<td valign="top" headers="N10102 N10130"><a href="../common/../langref/topicmeta.html" title="The &lt;topicmeta&gt; element defines the metadata that applies to a topic when it appears in a map, and to the other topics in the map that are contained by the same element that contains the &lt;topicmeta&gt; element. When creating links, it can also be used to override the title and short description of the topic. In addition, it can be used to add index entries to referenced content using the &lt;keywords&gt; element.">topicmeta</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- topic/copyright </p>
+</div>
+
+<div class="section" id="copyright__attrs"><a name="copyright__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="copyright__copyright_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="copyright__copyright_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10177" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N1017D" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N10183" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N10189" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N1018F" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10177">type</td>
+
+<td valign="top" headers="N1017D">Indicates the legal status of the copyright holder. <span>Note that this differs from the type
+attribute on many other DITA elements.</span> Allowable values
+are:<dl>
+<dt class="dlterm">primary</dt>
+
+<dd>The copyright holder with first claim on the copyright</dd>
+
+
+<dt class="dlterm">secondary</dt>
+
+<dd>An additional copyright holder who is not primary</dd>
+
+
+<dt class="dlterm">-dita-use-conref-target</dt>
+
+<dd>See <a href="../common/ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">Using the -dita-use-conref-target value</a> for more information.</dd>
+
+</dl>
+</td>
+
+<td valign="top" headers="N10183">(primary | secondary | -dita-use-conref-target)</td>
+
+<td valign="top" headers="N10189">#IMPLIED</td>
+
+<td valign="top" headers="N1018F"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10177">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N1017D">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N10183">parameter entity</td>
+
+<td valign="top" headers="N10189">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1018F">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10177">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N1017D">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N10183">parameter entity</td>
+
+<td valign="top" headers="N10189">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1018F">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10177">class</td>
+
+<td valign="top" headers="N1017D">A common attribute described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N10183">&#xA0;</td>
+<td valign="top" headers="N10189">&#xA0;</td>
+<td valign="top" headers="N1018F">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/prolog2.html" title="The prolog elements represent the metadata associated with a document. Most of the metadata in a topic prolog can also be authored in a DITA map, in the map's &lt;topicmeta&gt; element.">Prolog elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/component.html" title="The &lt;component&gt; element describes the component of the product that this topic is concerned with. For example, a product might be made up of many components, each of which is installable separately. Components might also be shared by several products so that the same component is available for installation with many products. An implementation may (but need not) use this identification to check cross-component dependencies when some components are installed, but not others. An implementation may also (but need not) use the identification make sure that topics are hidden, removed, or flagged in some way when the component they describe isn't installed.">component</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/copyrholder.html" title="The copyright holder (&lt;copyrholder&gt;) element names the entity that holds legal rights to the material contained in the topic.">copyrholder</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

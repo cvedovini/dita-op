@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="Specialization elements" />
+<meta scheme="URI" name="DC.Relation" content="../common/valid.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/hi-d.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/itemgroup.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/no-topic-nesting.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/required-cleanup.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/state.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/term.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/boolean.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="special" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Specialization elements</title>
+</head>
+<body id="special"><a name="special"><!-- --></a>
+
+
+   <h1 class="topictitle1">Specialization elements</h1>
+
+   <div>
+      <div class="section">
+         <p>Several DITA elements exist either for architectural reasons
+or for support of specialized markup yet to be designed. Although there is
+little need to use these elements unless you are directed to, some of them,
+such as &lt;<span class="apiname">state</span>&gt;, can be used if your content
+makes use of these semantic distinctions. A discussion of signals on a gate
+of an integrated logic circuit, for example, might use the state element to
+represent either on or off conditions of that gate.
+         </p>
+
+      </div>
+
+   </div>
+
+<div>
+<ol>
+<li class="olchildlink"><a href="../langref/itemgroup.html">itemgroup</a><br />
+The &lt;itemgroup&gt; element is reserved for use in specializations of DITA. As a container element, it can be used to sub-divide or organize elements that occur inside a list item, definition, or parameter definition.</li>
+<li class="olchildlink"><a href="../langref/no-topic-nesting.html">no-topic-nesting</a><br />
+The &lt;no-topic-nesting&gt; element is a placeholder in the DITA architecture. It is not actually used by the default DITA document types; it is for use only when creating a validly customized document type where the information designer wants to eliminate the ability to nest topics. Not intended for use by authors, and has no associated output processing.</li>
+<li class="olchildlink"><a href="../langref/required-cleanup.html">required-cleanup</a><br />
+A &lt;required-cleanup&gt; element is used as a placeholder for migrated elements that cannot be appropriately tagged without manual intervention. As the element name implies, the intent for authors is to clean up the contained material and eventually get rid of the &lt;required-cleanup&gt; element. Authors should not insert this element into documents.</li>
+<li class="olchildlink"><a href="../langref/state.html">state</a><br />
+The &lt;state&gt; element specifies a name/value pair whenever it is necessary to represent a named state that has a variable value. The element is primarily intended for use in specializations to represent specific states (like logic circuit states, chemical reaction states, airplane instrumentation states, and so forth).</li>
+<li class="olchildlink"><a href="../langref/term.html">term</a><br />
+The &lt;term&gt; element identifies words that may have or require extended definitions or explanations. In future development of DITA, for example, terms might provide associative linking to matching glossary entries.</li>
+<li class="olchildlink"><a href="../langref/boolean.html">boolean</a><br />
+The &lt;boolean&gt; element is used to express one of two opposite values, such as yes or no, on or off, true or false, high or low, and so forth. The element itself is empty; the value of the element is stored in its state attribute, and the semantic associated with the value is typically in a specialized name derived from this element.</li>
+</ol>
+
+<div class="familylinks">
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../common/valid.html">Miscellaneous elements</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../common/hi-d.html" title="The typographic elements are used to highlight text with styles (such as bold, italic, and monospace). Never use these elements when a semantically specific element is available. These elements are not intended for use by specializers, and are intended solely for use by authors when no semantically appropriate element is available and a formatting effect is required.">Typographic elements</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

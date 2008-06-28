@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="row" />
+<meta name="abstract" content="The &lt;row&gt; element contains a single row in a table &lt;tgroup&gt;." />
+<meta name="description" content="The &lt;row&gt; element contains a single row in a table &lt;tgroup&gt;." />
+<meta content="row, Table elements" name="DC.subject" />
+<meta content="row, Table elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/table2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/tbody.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/entry.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="row" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>row</title>
+</head>
+<body id="row"><a name="row"><!-- --></a>
+
+
+<h1 class="topictitle1">row</h1>
+
+
+
+<div><p>The &lt;<span class="keyword">row</span>&gt; element contains a single row
+in a table &lt;<span class="keyword">tgroup</span>&gt;.</p>
+
+<div class="example"><h2 class="sectiontitle">Example</h2>See <a href="table.html" title="The &lt;table&gt; element organizes arbitrarily complex relationships of tabular information. This standard table markup allows column or row spanning and table captions or descriptions. An optional title allowed inside the table element provides a caption to describe the table.">table</a>.</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100A9" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100AE" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100B8" headers="N100A9"><strong>ditabase, topic, task, reference, concept, glossary, map, bookmap</strong></td>
+<td valign="top" headers="N100AE N100B8"> (
+ (<a href="../common/../langref/entry.html" title="The &lt;entry&gt; element defines a single cell in a table.">entry</a>) <em> (one or more) </em>) </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100EE" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100F3" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N100FD" headers="N100EE"><strong>bookmap, map, ditabase, topic, task, concept, reference, glossary</strong></td>
+<td valign="top" headers="N100F3 N100FD"><a href="../common/../langref/thead.html" title="The table header (&lt;thead&gt;) element precedes the table body (&lt;tbody&gt;) element in a complex table.">thead</a>, <a href="../common/../langref/tbody.html" title="The &lt;tbody&gt; element contains the rows in a table.">tbody</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- topic/row </p>
+</div>
+
+<div class="section" id="row__attrs"><a name="row__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="row__row_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="row__row_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10155" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N1015B" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N10161" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N10167" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N1016D" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10155">rowsep</td>
+
+<td valign="top" headers="N1015B">Row separator. A value of 0 indicates no separators; 1 indicates
+separators.</td>
+
+<td valign="top" headers="N10161">NMTOKEN</td>
+
+<td valign="top" headers="N10167">#IMPLIED</td>
+
+<td valign="top" headers="N1016D">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10155">valign</td>
+
+<td valign="top" headers="N1015B">Indicates the vertical alignment of text in a table entry (cell).
+Allowable values are:<dl>
+<dt class="dlterm">top</dt>
+
+<dd>Align the text to the top of the table entry (cell).</dd>
+
+
+<dt class="dlterm">bottom</dt>
+
+<dd>Align the text to the bottom of the table entry (cell).</dd>
+
+
+<dt class="dlterm">middle</dt>
+
+<dd>Align the text to the middle of the table entry (cell).</dd>
+
+
+<dt class="dlterm">-dita-use-conref-target</dt>
+
+<dd>See <a href="../common/ditauseconreftarget.html" title="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target.">Using the -dita-use-conref-target value</a> for more information.</dd>
+
+</dl>
+</td>
+
+<td valign="top" headers="N10161">(top | bottom | middle | -dita-use-conref-target)</td>
+
+<td valign="top" headers="N10167">#IMPLIED</td>
+
+<td valign="top" headers="N1016D">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10155">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N1015B">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N10161">parameter entity</td>
+
+<td valign="top" headers="N10167">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1016D">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10155">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N1015B">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N10161">parameter entity</td>
+
+<td valign="top" headers="N10167">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1016D">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10155">class, outputclass</td>
+
+<td valign="top" headers="N1015B">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N10161">&#xA0;</td>
+<td valign="top" headers="N10167">&#xA0;</td>
+<td valign="top" headers="N1016D">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/table2.html">Table elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/tbody.html" title="The &lt;tbody&gt; element contains the rows in a table.">tbody</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/entry.html" title="The &lt;entry&gt; element defines a single cell in a table.">entry</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

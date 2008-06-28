@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="topic" name="DC.Type" />
+<meta name="DC.Title" content="Integration" />
+<meta name="abstract" content="Each domain specialization or structural specialization has its own design module. These modules can be combined to create many different document types. The process of creating a new document type from a specific combination of modules is called integration." />
+<meta name="description" content="Each domain specialization or structural specialization has its own design module. These modules can be combined to create many different document types. The process of creating a new document type from a specific combination of modules is called integration." />
+<meta scheme="URI" name="DC.Relation" content="specdesign.html" />
+<meta scheme="URI" name="DC.Relation" content="modint.html" />
+<meta scheme="URI" name="DC.Relation" content="dtdmod.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="integrate" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Integration</title>
+</head>
+<body id="integrate"><a name="integrate"><!-- --></a>
+
+
+<h1 class="topictitle1">Integration</h1>
+
+
+<div><p>Each domain specialization or structural specialization has its
+own design module. These modules can be combined to create many different
+document types. The process of creating a new document type from a specific
+combination of modules is called integration. </p>
+
+<p>Integration is accomplished using a document type shell, which defines
+the modules to be integrated and how they will be integrated. Integration
+defines both what topic types and domains will be allowed in the document
+type, and how the topic types will be allowed to nest.</p>
+
+<p>The module for a specific type should contain only the declarations for
+elements and attributes that are unique to that type, and should
+not embed any other modules. The shell should contain no markup declarations,
+and should directly reference all the modules it requires. Nesting shells
+or nesting modules (having shells that embed other shells, or modules that
+embed other modules) is discouraged since it adds complexity and may break
+some tools. Sharing between document types should be accomplished through
+shared modules, not through direct reference to any other document type. Dependencies
+between modules should be satisfied by the integrating shell, not through
+the module itself.</p>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="specdesign.html" title="Specialization in design enables reuse of design elements, just as specialization in content allows reuse of processing rules. These rules involve the creation and management of markup modules as separate reusable units.">Specialization in design</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="modint.html" title="Specialization hierarchies are implemented as sets of module files that declare the markup and entities that are unique to each specialization. The modules must be integrated into a document type before they can be used.">Modularization and integration of design</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="dtdmod.html" title="To support extensibility and pluggability, DITA requires that a DTD implementation of structural and domain specialization modules conform to well-defined design patterns.">Modularization in DTDs</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

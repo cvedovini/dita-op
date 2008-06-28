@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="%select-atts;" />
+<meta name="abstract" content="Attributes that support both filtering and flagging include props , platform , product , audience , and otherprops . Attribute base is a generic attribute that is available for specialization; it can be specialized for values that have a simple value syntax like the filter attributes, but is not itself a filtering or flagging attribute. Attribute rev only lets you flag information that matches a run-time parameter. Attribute importance provides a range of values for applications to use as needed. The %select-atts; entity also includes additional entities that allow it to include specializations of the props and base attribute. See the DITA Architectural Specification for more information on filtering or flagging with attributes, as well as for information on specialization the base and props attributes." />
+<meta name="description" content="Attributes that support both filtering and flagging include props , platform , product , audience , and otherprops . Attribute base is a generic attribute that is available for specialization; it can be specialized for values that have a simple value syntax like the filter attributes, but is not itself a filtering or flagging attribute. Attribute rev only lets you flag information that matches a run-time parameter. Attribute importance provides a range of values for applications to use as needed. The %select-atts; entity also includes additional entities that allow it to include specializations of the props and base attribute. See the DITA Architectural Specification for more information on filtering or flagging with attributes, as well as for information on specialization the base and props attributes." />
+<meta content="%select-atts, Commonly referenced attribute descriptions" name="DC.subject" />
+<meta content="%select-atts, Commonly referenced attribute descriptions" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/comrfet.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/rel-atts.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/localization-atts.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="select-atts" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>%select-atts;</title>
+</head>
+<body id="select-atts"><a name="select-atts"><!-- --></a>
+
+
+<h1 class="topictitle1">     <span class="keyword">%select-atts;</span>   </h1>
+
+
+
+<div><p>Attributes that support both filtering and flagging include <em> 
+     <span class="keyword">props</span>     </em>, <em>       <span class="keyword">platform</span> 
+   </em>, <em>       <span class="keyword">product</span>     </em>, <em>       <span class="keyword">audience</span> 
+   </em>, and <em>       <span class="keyword">otherprops</span>     </em>. Attribute <em> 
+     <span class="keyword">base</span>     </em> is a generic attribute that is available
+for specialization; it can be specialized for values that have a simple value
+syntax like the filter attributes, but is not itself a filtering or flagging
+attribute. Attribute <em>       <span class="keyword">rev</span>     </em> only lets you
+flag information that matches a run-time parameter. Attribute <em>       <span class="keyword">importance</span> 
+   </em> provides a range of values for applications to use as needed. The <span class="keyword">%select-atts;</span> entity
+also includes additional entities that allow it to include specializations
+of the props and base attribute. See the DITA Architectural Specification
+for more information on filtering or flagging with attributes, as well as
+for information on specialization the base and props attributes.</p>
+
+
+
+<div class="section"><h2 class="sectiontitle">Attributes</h2>              <a name="select-atts__selectatts"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="select-atts__selectatts" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N100F1" width="20%">Name</th>
+
+<th valign="bottom" align="left" id="N100F7" width="40%">Description</th>
+
+<th valign="bottom" align="left" id="N100FD" width="13.333333333333334%">Data Type</th>
+
+<th valign="bottom" align="left" id="N10103" width="13.333333333333334%">Default Value</th>
+
+<th valign="bottom" align="left" id="N10109" width="13.333333333333334%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100F1">props</td>
+
+<td valign="top" headers="N100F7">Root attribute from which new metadata attributes can be specialized.
+<span>This is a property attribute
+which supports conditional processing for filtering or flagging.</span> <span>If no value is
+specified, but the attribute is specified on an ancestor within a map or within
+the related-links section, the value will inherit from the closest ancestor.</span>
+<span>The attribute takes a space delimited set of
+values. However, when acting as a container for generalized attributes, the
+content model will be more complex; that model is documented in the "attribute
+generalization" section of the DITA architectural specification.</span></td>
+
+<td valign="top" headers="N100FD">CDATA</td>
+
+<td valign="top" headers="N10103">#IMPLIED</td>
+
+<td valign="top" headers="N10109">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100F1">base</td>
+
+<td valign="top" headers="N100F7">A generic attribute that has no specific purpose, but is intended
+to act as a base for specialized attributes that have a simple value syntax
+like the conditional processing attributes (one or more alphanumeric values
+separated by whitespace). <span>The attribute takes a space delimited set of
+values. However, when acting as a container for generalized attributes, the
+content model will be more complex; that model is documented in the "attribute
+generalization" section of the DITA architectural specification.</span></td>
+
+<td valign="top" headers="N100FD">CDATA</td>
+
+<td valign="top" headers="N10103">#IMPLIED</td>
+
+<td valign="top" headers="N10109">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100F1">platform</td>
+
+<td valign="top" headers="N100F7">Indicates operating system and hardware. <span>This is a property attribute
+which supports conditional processing for filtering or flagging.</span> <span>If no value is
+specified, but the attribute is specified on an ancestor within a map or within
+the related-links section, the value will inherit from the closest ancestor.</span>
+<span>The attribute takes a space delimited set
+of values.</span></td>
+
+<td valign="top" headers="N100FD">CDATA</td>
+
+<td valign="top" headers="N10103"> #IMPLIED</td>
+
+<td valign="top" headers="N10109">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100F1">product</td>
+
+<td valign="top" headers="N100F7">Contains the name of the product to which the topic applies. <span>This is a property attribute
+which supports conditional processing for filtering or flagging.</span>
+<span>If no value is
+specified, but the attribute is specified on an ancestor within a map or within
+the related-links section, the value will inherit from the closest ancestor.</span> <span>The attribute takes a space delimited set
+of values.</span></td>
+
+<td valign="top" headers="N100FD">CDATA</td>
+
+<td valign="top" headers="N10103"> #IMPLIED</td>
+
+<td valign="top" headers="N10109"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100F1">audience</td>
+
+<td valign="top" headers="N100F7">Indicates the intended audience for the element.
+<span>This is a property attribute
+which supports conditional processing for filtering or flagging.</span> <span>If no value is
+specified, but the attribute is specified on an ancestor within a map or within
+the related-links section, the value will inherit from the closest ancestor.</span>
+<span>The attribute takes a space delimited set
+of values.</span></td>
+
+<td valign="top" headers="N100FD">CDATA </td>
+
+<td valign="top" headers="N10103">#IMPLIED</td>
+
+<td valign="top" headers="N10109">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100F1">otherprops</td>
+
+<td valign="top" headers="N100F7">This attribute can be used for any other properties that might be
+needed to describe an audience, or to provide selection criteria for the
+element. <span>This is a property attribute
+which supports conditional processing for filtering or flagging.</span> <span>If no value is
+specified, but the attribute is specified on an ancestor within a map or within
+the related-links section, the value will inherit from the closest ancestor.</span>
+<span>The attribute takes a space delimited set
+of values.</span></td>
+
+<td valign="top" headers="N100FD">CDATA</td>
+
+<td valign="top" headers="N10103"> #IMPLIED</td>
+
+<td valign="top" headers="N10109">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100F1">importance</td>
+
+<td valign="top" headers="N100F7">A range of values that describe an importance or priority attributed
+to an element. For example, in steps of a task, the attribute indicates whether
+a step is optional or required. </td>
+
+<td valign="top" headers="N100FD">obsolete | deprecated | optional | default | low | normal | high
+| recommended | required | urgent | -dita-use-conref-target</td>
+
+<td valign="top" headers="N10103">#IMPLIED</td>
+
+<td valign="top" headers="N10109"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100F1">rev</td>
+
+<td valign="top" headers="N100F7">Indicates revision level of an element. It is useful for flagging
+outputs based on revision.  <span>If no value is
+specified, but the attribute is specified on an ancestor within a map or within
+the related-links section, the value will inherit from the closest ancestor.</span></td>
+
+<td valign="top" headers="N100FD">CDATA </td>
+
+<td valign="top" headers="N10103">#IMPLIED</td>
+
+<td valign="top" headers="N10109">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100F1">status</td>
+
+<td valign="top" headers="N100F7">The status of the current element. </td>
+
+<td valign="top" headers="N100FD">new | changed | deleted | unchanged | -dita-use-conref-target</td>
+
+<td valign="top" headers="N10103">#IMPLIED</td>
+
+<td valign="top" headers="N10109">No</td>
+
+</tr>
+
+</table>
+     </div>
+
+<div class="example"><h2 class="sectiontitle">Example</h2><p>The %select-atts; parameter entity is used
+within the DITA DTDs as a common definition for attributes available to most
+elements for you to enable the content for improved retrievability or for
+selection. Some typical examples include:</p>
+<pre class="codeblock">The &lt;keyword platform="Linux"&gt;chmod&lt;/keyword&gt; command...
+&lt;ph product="WhiteknuckleHandsoap"&gt;Amalgamated Cleansers get the grime!&lt;/ph&gt;
+&lt;msgph audience="programmer administrator"&gt;Divide by -1 error.&lt;/msgph&gt;
+&lt;ph otherprops="java"&gt;When using Java, use the 
+  &lt;apiname&gt;com.ibm.obscureclass&lt;/apiname&gt; to calculate the value.&lt;/ph&gt;
+&lt;p importance="recommended" rev="3.2"&gt;Update anti-virus software often.&lt;/p&gt;</pre>
+ Note
+that, aside from those with pre-defined values, these attributes allow multiple
+values. For example, the audience attribute in the example indicates that
+the message is of interest to both programmers and administrators.</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/comrfet.html" title="Several parts of a language reference are common between many locations, such as the descriptions for the selection and property attributes of DITA elements. These are described as sets to reduce unnecessary duplication of common information.">Commonly referenced attributes</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../common/rel-atts.html" title="Relational attributes (&lt;%rel-atts;&gt;) is a parameter entity declaration in the topic DTD that includes attributes whose values may be used for representing navigational relationships. These attributes occur only on elements that represent relationships between topics.">%rel-atts;</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../common/localization-atts.html" title="Localization attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%localization-atts;</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="%id-atts;" />
+<meta name="abstract" content="ID attributes (%id-atts;) is a parameter entity declaration in the topic DTD that includes attributes that enable the naming and referencing of elements in a DITA topic: id and conref." />
+<meta name="description" content="ID attributes (%id-atts;) is a parameter entity declaration in the topic DTD that includes attributes that enable the naming and referencing of elements in a DITA topic: id and conref." />
+<meta content="%id-atts, Commonly referenced attribute descriptions" name="DC.subject" />
+<meta content="%id-atts, Commonly referenced attribute descriptions" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/comrfet.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/global-atts.html" />
+<meta scheme="URI" name="DC.Relation" content="../common/rel-atts.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="id-atts" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>%id-atts;</title>
+</head>
+<body id="id-atts"><a name="id-atts"><!-- --></a>
+
+
+<h1 class="topictitle1"><span class="keyword">%id-atts;</span></h1>
+
+
+
+<div><p>ID attributes (%id-atts;) is a parameter entity declaration in
+the topic DTD that includes attributes that enable the naming and referencing
+of elements in a DITA topic: <em><span class="keyword">id</span></em> and <em><span class="keyword">conref</span></em>.</p>
+
+
+
+<div class="section"><h2 class="sectiontitle">Attributes</h2><a name="id-atts__id-atts_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="id-atts__id-atts_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N1009A" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N100A0" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N100A6" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N100AC" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N100B2" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1009A">id</td>
+
+<td valign="top" headers="N100A0">An anchor point. This ID is the target for references by href and
+conref attributes, and for external applications that refer to DITA content.</td>
+
+<td valign="top" headers="N100A6">NMTOKEN</td>
+
+<td valign="top" headers="N100AC">#IMPLIED</td>
+
+<td valign="top" headers="N100B2">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1009A">conref </td>
+
+<td valign="top" headers="N100A0">This attribute is used to reference an ID on content that can be
+reused. See <a href="theconrefattribute.html" title="This attribute is used to reference an ID on content that can be reused. It allows reuse of DITA components from phrases to topics, as well as maps and pieces of maps.">The conref attribute</a> for examples and
+details about the syntax.</td>
+
+<td valign="top" headers="N100A6">CDATA</td>
+
+<td valign="top" headers="N100AC">#IMPLIED</td>
+
+<td valign="top" headers="N100B2"> No </td>
+
+</tr>
+
+</table>
+</div>
+
+<div class="example"><h2 class="sectiontitle">Example</h2>          <p>The %id-atts; parameter entity
+is used within the DITA dtds as a common definition for attributes available
+to most elements that enable you to name or reference (link to or fetch) the
+content of particular elements. Some typical examples include:</p>
+       
+   <pre class="codeblock">&lt;p id="mainpara"&gt;The war cry of Kudzu University, &lt;q id="warcry"&gt;To the victor 
+go the spoils!&lt;/q&gt;, is often heard on campus during freshman orientation.&lt;/p&gt;
+&lt;p id="dullpara"&gt;One often hears the cry, &lt;q conref="#topicid/warcry"/&gt;, when 
+students are competing in intramural sports.&lt;/p&gt;</pre>
+       </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/comrfet.html" title="Several parts of a language reference are common between many locations, such as the descriptions for the selection and property attributes of DITA elements. These are described as sets to reduce unnecessary duplication of common information.">Commonly referenced attributes</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../common/rel-atts.html" title="Relational attributes (&lt;%rel-atts;&gt;) is a parameter entity declaration in the topic DTD that includes attributes whose values may be used for representing navigational relationships. These attributes occur only on elements that represent relationships between topics.">%rel-atts;</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

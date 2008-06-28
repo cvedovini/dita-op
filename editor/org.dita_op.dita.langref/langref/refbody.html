@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="refbody" />
+<meta name="abstract" content="The &lt;refbody&gt; element is a container for the main content of the reference topic. Reference topics limit the body structure to tables (both simple and standard), property lists, syntax sections, and generic sections and examples, in any sequence or number." />
+<meta name="description" content="The &lt;refbody&gt; element is a container for the main content of the reference topic. Reference topics limit the body structure to tables (both simple and standard), property lists, syntax sections, and generic sections and examples, in any sequence or number." />
+<meta content="refbody (reference body), Reference elements, refbody" name="DC.subject" />
+<meta content="refbody (reference body), Reference elements, refbody" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/reference2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/reference.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/refsyn.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="refbody" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>refbody</title>
+</head>
+<body id="refbody"><a name="refbody"><!-- --></a>
+
+
+<h1 class="topictitle1">refbody</h1>
+
+
+
+<div><p>The &lt;<span class="keyword">refbody</span>&gt; element is a container for
+the main content of the reference topic. Reference topics limit the body structure
+to tables (both simple and standard), property lists, syntax sections, and
+generic sections and examples, in any sequence or number. </p>
+
+<div class="section"><p>Reference topics represent the kind of information that users
+typically consult to understand programming objects, statements, commands,
+configuration file options, recipes, terminological descriptions, and so forth. </p>
+</div>
+
+<div class="example"><h2 class="sectiontitle">Example</h2>See <a href="reference.html" title="The &lt;reference&gt; element defines a top-level container for a reference topic. Reference topics document programming constructs or facts about a product. Examples of reference topics include language elements, class descriptions, commands, functions, statements, protocols, types, declarators, operands, and API information, which provide quick access to facts, but no explanation of concepts or procedures. Reference topics have the same high-level structure as any other topic type, with a title, short description, and body. Within the body, reference topics are typically organized into one or more sections, property lists, and tables. The reference topic type provides general rules that apply to all kinds of reference information, using elements like &lt;refsyn&gt; for syntax or signatures, and &lt;properties&gt; for lists of properties and values.">reference</a>.</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100B8" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100BD" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100C7" headers="N100B8"><strong>ditabase, reference</strong></td>
+<td valign="top" headers="N100BD N100C7"> ( (
+<a href="../common/../langref/section.html" title="The &lt;section&gt; element represents an organizational division in a topic. Sections are used to organize subsets of information that are directly related to the topic. For example, the titles Reference Syntax, Example and Properties might represent section-level discourse within a topic about a command-line process—the content in each section relates uniquely to the subject of that topic. Multiple sections within a single topic do not represent a hierarchy, but rather peer divisions of that topic. Sections cannot be nested. A section may have an optional title.">section</a> or 
+<a href="../common/../langref/refsyn.html" title="The &lt;refsyn&gt; element is a special section inside a reference topic. The section often contains syntax or signature content (for example, a command-line utility's calling syntax, or an API's signature). The &lt;refsyn&gt; contains a brief, possibly diagrammatic description of the subject's interface or high-level structure.">refsyn</a> or 
+<a href="../common/../langref/example.html" title="The &lt;example&gt; element is a section with the specific role of containing examples that illustrate or support the current topic. The &lt;example&gt; element has the same content model as &lt;section&gt;.">example</a> or 
+<a href="../common/../langref/table.html" title="The &lt;table&gt; element organizes arbitrarily complex relationships of tabular information. This standard table markup allows column or row spanning and table captions or descriptions. An optional title allowed inside the table element provides a caption to describe the table.">table</a> or 
+<a href="../common/../langref/simpletable.html" title="The &lt;simpletable&gt; element is used for tables that are regular in structure and do not need a caption. Choose the simple table element when you want to show information in regular rows and columns. For example, multi-column tabular data such as phone directory listings or parts lists are good candidates for simpletable. Another good use of simpletable is for information that seems to beg for a &quot;three-part definition list&quot;—just use the keycol attribute to indicate which column represents the &quot;key&quot; or term-like column of your structure.">simpletable</a> or 
+<a href="../common/../langref/properties.html" title="The &lt;properties&gt; element gives a list of properties for the subject of the current topic, for example whether a class is public or protected. Each property can include the type, value, and a description. The typical rendering is usually in a table-like format. To represent multiple values for a type, just create additional property elements and use only the &lt;propvalue&gt; element (and &lt;propdesc&gt; when needed) for each successive value.">properties</a> or 
+<a href="../common/../langref/data.html" title="The &lt;data&gt; element represents a property within a DITA topic or map. While the &lt;data&gt; element can be used directly to capture properties, it is particularly useful as a basis for specialization. Default processing treats the property values as an unknown kind of metadata, but custom processing can match the name attribute or specialized element to format properties as sidebars or other adornments or to harvest properties for automated processing.">data</a> or <a href="../common/../langref/data-about.html" title="The &lt;data-about&gt; element identifies the subject of a property when the subject isn't associated with the context in which the property is specified. The property itself is expressed by the &lt;data&gt; element. The &lt;data-about&gt; element handles exception cases where a property must be expressed somewhere other than inside the actual subject of the property. The &lt;data-about&gt; element is particularly useful as a basis for specialization in combination with the &lt;data&gt; element.">data-about</a> or 
+<a href="../common/../langref/foreign.html" title="The &lt;foreign&gt; element is an open extension that allows information architects to incorporate existing standard vocabularies for non-textual content. like MathML and SVG, as inline objects. If &lt;foreign&gt; contains more than one alternative content element, they will all be processed. Specialization of &lt;foreign&gt; should be implemented as a domain, but for those looking for more control over the content can implement foreign vocabulary as an element specialization.">foreign</a> or <a href="../common/../langref/unknown.html" title="The &lt;unknown&gt; element is an open extension that allows information architects to incorporate xml fragments that do not necessarily fit into an existing DITA use case. The base processing for &lt;unknown&gt; is to suppress unless otherwise instructed.">unknown</a>) <em> (any number) </em>) </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N101DE" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N101E3" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N101ED" headers="N101DE"><strong>ditabase, reference</strong></td>
+<td valign="top" headers="N101E3 N101ED"><a href="../common/../langref/reference.html" title="The &lt;reference&gt; element defines a top-level container for a reference topic. Reference topics document programming constructs or facts about a product. Examples of reference topics include language elements, class descriptions, commands, functions, statements, protocols, types, declarators, operands, and API information, which provide quick access to facts, but no explanation of concepts or procedures. Reference topics have the same high-level structure as any other topic type, with a title, short description, and body. Within the body, reference topics are typically organized into one or more sections, property lists, and tables. The reference topic type provides general rules that apply to all kinds of reference information, using elements like &lt;refsyn&gt; for syntax or signatures, and &lt;properties&gt; for lists of properties and values.">reference</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- topic/body        reference/refbody </p>
+</div>
+
+<div class="section" id="refbody__attrs"><a name="refbody__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="refbody__refbody_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="refbody__refbody_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N1023A" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N10240" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N10246" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N1024C" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N10252" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1023A">base</td>
+
+<td valign="top" headers="N10240">A generic attribute that has no specific purpose, but is intended
+to act as a base for specialized attributes that have a simple value syntax
+like the conditional processing attributes (one or more alphanumeric values
+separated by whitespace). <span>The attribute takes a space delimited set of
+values. However, when acting as a container for generalized attributes, the
+content model will be more complex; that model is documented in the "attribute
+generalization" section of the DITA architectural specification.</span></td>
+
+<td valign="top" headers="N10246">CDATA</td>
+
+<td valign="top" headers="N1024C">#IMPLIED</td>
+
+<td valign="top" headers="N10252">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1023A">%id-atts; (id, conref)</td>
+
+<td valign="top" headers="N10240">A set of related attributes, described at <a href="../common/id-atts.html" title="ID attributes (%id-atts;) is a parameter entity declaration in the topic DTD that includes attributes that enable the naming and referencing of elements in a DITA topic: id and conref.">%id-atts;</a></td>
+
+<td valign="top" headers="N10246">parameter entity</td>
+
+<td valign="top" headers="N1024C">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10252">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1023A">%localization-atts; (translate, xml:lang, dir)</td>
+
+<td valign="top" headers="N10240"> A set of related attributes, described at <a href="../common/localization-atts.html" title="Localization attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%localization-atts;</a>.
+</td>
+
+<td valign="top" headers="N10246">parameter entity</td>
+
+<td valign="top" headers="N1024C">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10252">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1023A">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N10240">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N10246">parameter entity</td>
+
+<td valign="top" headers="N1024C">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10252">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1023A">class, outputclass</td>
+
+<td valign="top" headers="N10240">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N10246">&#xA0;</td>
+<td valign="top" headers="N1024C">&#xA0;</td>
+<td valign="top" headers="N10252">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/reference2.html" title="Use the reference elements to describe regular features of sets of things, most commonly the commands in a programming language. However, this format is also suitable for recipes, bibliographies, catalogues, and similar collections of structured descriptive prose. For more details on when to use reference and other information types, please refer to the DITA architectural specification.">Reference elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/reference.html" title="The &lt;reference&gt; element defines a top-level container for a reference topic. Reference topics document programming constructs or facts about a product. Examples of reference topics include language elements, class descriptions, commands, functions, statements, protocols, types, declarators, operands, and API information, which provide quick access to facts, but no explanation of concepts or procedures. Reference topics have the same high-level structure as any other topic type, with a title, short description, and body. Within the body, reference topics are typically organized into one or more sections, property lists, and tables. The reference topic type provides general rules that apply to all kinds of reference information, using elements like &lt;refsyn&gt; for syntax or signatures, and &lt;properties&gt; for lists of properties and values.">reference</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/refsyn.html" title="The &lt;refsyn&gt; element is a special section inside a reference topic. The section often contains syntax or signature content (for example, a command-line utility's calling syntax, or an API's signature). The &lt;refsyn&gt; contains a brief, possibly diagrammatic description of the subject's interface or high-level structure.">refsyn</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

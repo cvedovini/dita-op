@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="style-conflict" />
+<meta name="abstract" content="The style-conflict element declares behavior to be used when one or more flagging methods collide on a single content element." />
+<meta name="description" content="The style-conflict element declares behavior to be used when one or more flagging methods collide on a single content element." />
+<meta content="DITAVAL elements, style-conflict" name="DC.subject" />
+<meta content="DITAVAL elements, style-conflict" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/about-ditaval.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/ditaval-val.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/ditaval-prop.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="ditaval-style-conflict" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>style-conflict</title>
+</head>
+<body id="ditaval-style-conflict"><a name="ditaval-style-conflict"><!-- --></a>
+
+
+<h1 class="topictitle1">style-conflict</h1>
+
+
+
+<div><p>The style-conflict element declares behavior to be used when one
+or more flagging methods collide on a single content element. </p>
+
+<div class="section"><p>In case of conflicts between flagging methods at different levels
+(for example, a section is flagged green and a paragraph within the section
+is flagged red) the most deeply nested flagging method applies. </p>
+<div class="p">In
+case of conflicts between flagging methods on the same element (for example,
+a single element is being flagged with both green and red color) it is recommended
+that the conflicts be resolved as follows:<dl>
+
+<dt><strong>Flagging method</strong></dt>
+<dd><strong>Conflict behavior</strong></dd>
+
+
+
+<dt class="dlterm">startflag/endflag</dt>
+
+<dd>Add all flags that apply.</dd>
+
+
+<dt class="dlterm">color</dt>
+
+<dd>Follow the style-conflict @foreground-conflict-color setting, or use an
+output-appropriate default color if no conflict color is set.</dd>
+
+
+<dt class="dlterm">backcolor</dt>
+
+<dd>Follow the style-conflict @background-conflict-color setting, or use an
+output-appropriate default color if no conflict color is set</dd>
+
+
+<dt class="dlterm">style</dt>
+
+<dd>Add all font styles that apply. If two different kinds of underline are
+used, default to the heaviest (double underline) and use the foreground-conflict-color.</dd>
+
+
+<dt class="dlterm">changebar</dt>
+
+<dd>Add all change bars that apply.</dd>
+
+</dl>
+</div>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><p><em>(empty)</em></p>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><p><a href="ditaval-val.html" title="&lt;val&gt; is the root element of a ditaval file.">val</a></p>
+</div>
+
+<div class="section" id="ditaval-style-conflict__attrs"><a name="ditaval-style-conflict__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="ditaval-style-conflict__abstract_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="ditaval-style-conflict__abstract_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10127" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N1012D" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N10133" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N10139" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N1013F" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10127">foreground-conflict-color</td>
+
+<td valign="top" headers="N1012D">The color to be used when more than one flagging
+color applies to a single content element.</td>
+
+<td valign="top" headers="N10133">CDATA</td>
+
+<td valign="top" headers="N10139">#IMPLIED</td>
+
+<td valign="top" headers="N1013F">no</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10127">background-conflict-color</td>
+
+<td valign="top" headers="N1012D">The color to be used when more than one flagging background color
+applies to a single content element.</td>
+
+<td valign="top" headers="N10133">CDATA</td>
+
+<td valign="top" headers="N10139">#IMPLIED</td>
+
+<td valign="top" headers="N1013F">no</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/about-ditaval.html" title="You can create a conditional processing profile to identify which values you want to conditionally process for a particular output, build, or other purpose. The profile has the extension .ditaval to identify it to conditional processing systems.">DITAVAL elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/ditaval-val.html" title="&lt;val&gt; is the root element of a ditaval file.">val</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/ditaval-prop.html" title="Identifies an attribute, and usually values in the attribute, to take an action on. The attribute must be a conditional processing attribute: platform, product, audience, props. and otheprops; or a specialization of the props attribute. There can be at most one occurrence of a &quot;prop&quot; element with no attribute specified (setting a default action for every prop element), at most one for each attribute with no value specified (setting the default action for a specific attribute), and at most one with each attribute value specification (to avoid conflicting actions for the same attribute value).">prop</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

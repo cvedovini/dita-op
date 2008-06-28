@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="DITA Open Platform User Guide" topic="topics/about.html">
+<topic label="About" href="topics/about.html"/>
+<topic label="Getting started">
+<topic label="Creating a DITA Project" href="tasks/creating_project.html"/>
+<topic label="Creating DITA Files" href="tasks/creating_files.html"/>
+<topic label="Setting up the DITA Open Toolkit" href="tasks/toolkit_preferences.html"/>
+<topic label="Creating a DITA Open Toolkit launch configuration" href="tasks/toolkit_launch_configuration.html"/>
+</topic>
+<topic label="Tasks">
+<topic label="Creating a DITA Project" href="tasks/creating_project.html"/>
+<topic label="Creating DITA Files" href="tasks/creating_files.html"/>
+<topic label="Setting up the DITA Open Toolkit" href="tasks/toolkit_preferences.html"/>
+<topic label="Creating a DITA Open Toolkit launch configuration" href="tasks/toolkit_launch_configuration.html"/>
+</topic>
+</toc>

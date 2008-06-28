@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Specializing foreign or unknown content" />
+<meta name="abstract" content="Specializing &lt;foreign&gt; or &lt;unknown&gt; elements is an open extension to the DITA Architecture that allows DITA adopters to incorporate new or existing standard vocabularies for non-textual content, like MathML and SVG, as in-line objects." />
+<meta name="description" content="Specializing &lt;foreign&gt; or &lt;unknown&gt; elements is an open extension to the DITA Architecture that allows DITA adopters to incorporate new or existing standard vocabularies for non-textual content, like MathML and SVG, as in-line objects." />
+<meta scheme="URI" name="DC.Relation" content="ditaspecialization.html" />
+<meta scheme="URI" name="DC.Relation" content="infodom.html" />
+<meta scheme="URI" name="DC.Relation" content="dataextend.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="concept-1" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Specializing foreign or unknown content</title>
+</head>
+<body id="concept-1"><a name="concept-1"><!-- --></a>
+
+
+<h1 class="topictitle1">Specializing foreign or unknown content</h1>
+
+
+<div><p>Specializing &lt;foreign&gt; or &lt;unknown&gt; elements is an
+open extension to the DITA Architecture that allows DITA adopters to incorporate
+new or existing standard vocabularies for non-textual content, like MathML
+and SVG, as in-line objects.</p>
+
+<dl>
+<dt class="dlterm">Incorporating foreign or unknown content</dt>
+
+<dd>           <div class="p">There are three methods in which a DITA adopter can incorporate
+foreign content into DITA. <br /><ul>
+<li>Implement &lt;foreign&gt; or &lt;unknown&gt; as a domain specialization.</li>
+
+<li>Implement &lt;foreign&gt; or &lt;unknown&gt; as part of a structural specialization.</li>
+
+<li>Do nothing; simply embed the foreign content within &lt;foreign&gt; or &lt;unknown&gt;.</li>
+
+</ul>
+</div>
+           <p>Specialization of &lt;foreign&gt; or &lt;unknown&gt;
+should usually be implemented as a domain, but for those looking for more
+control over the content can implement foreign vocabulary as part of a structural
+specialization. </p>
+           <p>Embedding the content within an unspecialized &lt;foreign&gt;
+or &lt;unknown&gt; element, because of the ANY content model, offers the least
+amount of control over the content and hinders interoperability.</p>
+     
+               
+       </dd>
+
+
+<dt class="dlterm">Foreign or unknown content and the architectural class attribute</dt>
+
+<dd>           <p>The class attribute is used for a specific purpose in DITA.
+It identifies the specialization module for the element type as well as the
+ancestor element types and the specialization modules to which they belong.
+Every DITA element has to have a class attribute. Since the elements defined
+within the foreign vocabulary are non-DITA elements, there is no requirement
+for those elements to have an architectural class attribute. Elements that
+specialize &lt;foreign&gt; or &lt;unknown&gt;, therefore a DITA element, are
+required to have a class attribute.</p>
+         </dd>
+
+
+<dt class="dlterm">Specializing foreign or unknown content using DTDs.</dt>
+
+<dd>           <p>For more specific information on specializing DTDs, see <a href="dtdmod.html#mod_dtd" title="To support extensibility and pluggability, DITA requires that a DTD implementation of structural and domain specialization modules conform to well-defined design patterns.">Modularization in DTDs</a></p>
+           <pre class="pre">&lt;!-- declaration for the specialized wrapper --&gt;
+&lt;!ENTITY % svg "svg"&gt;
+
+&lt;!-- included SVG document type --&gt;
+&lt;!ENTITY % SVG.prefix "svg" &gt;
+&lt;!ENTITY % svg-qname.mod
+    PUBLIC "-//W3C//ENTITIES SVG 1.1 Qualified Name//EN"
+           "svg-qname.mod" &gt;
+
+&lt;!-- definition for the specialized wrapper  --&gt;
+&lt;!ELEMENT svg ((%SVG.svg.qname;)&gt;
+&lt;!ATTLIST svg %global-atts;
+          class CDATA "+ topic/foreign svg-d/svg "
+&gt; </pre>
+         </dd>
+
+
+<dt class="dlterm"><span class="keyword">An SVG</span> example within a paragraph element </dt>
+
+<dd>           <div class="p">             <pre class="pre">&lt;p&gt;This is an ellipse.
+  &lt;svg&gt;
+    &lt;svg:svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg"&gt;
+
+&lt;ellipse cx="300" cy="150" rx="200" ry="80"
+style="fill:rgb(200,100,50);
+stroke:rgb(0,0,100);stroke-width:2"/&gt;
+
+    &lt;/svg:svg&gt;    
+  &lt;/svg&gt;.
+&lt;/p&gt; </pre>
+           </div>
+         </dd>
+
+
+<dt class="dlterm">Specializing foreign content using XML Schemas</dt>
+
+<dd>For more specific information on specializing XML Schemas, see <a href="schemamod.html#modSchema" title="To support extensibility and pluggability, DITA requires that an XML schema implementation of structural and domain specialization modules conform to well-defined design patterns.">Modularization
+in schemas</a><div class="p">             <pre class="pre">&lt;!-- importing MathML document type --&gt; 
+&lt;xs:import namespace="http://www.w3.org/1998/Math/MathML" schemaLocation="mathml2.xsd"&gt;
+ 
+&lt;!-- definition for the specialized wrapper  --&gt;
+&lt;xs:element name="mathML" type="mathML.class" /&gt;
+&lt;xs:complexType name="mathML.class"&gt;
+  &lt;xs:choice&gt;
+      &lt;xs:element ref="mml:math" /&gt;
+  &lt;/xs:choice&gt;
+  &lt;xs:attribute name="outputclass" type="xs:string"/&gt;
+    &lt;xs:attributeGroup ref="univ-atts"/&gt;
+    &lt;xs:attributeGroup ref="global-atts"/&gt;
+    &lt;xs:attribute ref="class" default="+ topic/foreign mathML/mathML"/&gt;
+&lt;/xs:complexType&gt;
+
+&lt;!-- definition for each element extended by the domain  --&gt;    
+&lt;xs:group name="ma-d-foreign"&gt;
+  &lt;xs:choice&gt;
+     &lt;xs:element ref="mathML" /&gt;
+  &lt;/xs:choice&gt;
+&lt;/xs:group&gt;
+  
+&lt;!-- definition for the named model groups  --&gt;
+&lt;xs:group name="foreign"&gt;
+   &lt;xs:choice&gt;
+     &lt;xs:group ref="foreign"/&gt;
+     &lt;xs:group ref="ma-d-foreign"/&gt;
+   &lt;/xs:choice&gt;
+&lt;/xs:group&gt;  </pre>
+           </div>
+</dd>
+
+
+<dt class="dlterm">An<span class="keyword"> XML Schema</span><span class="keyword"> MathML</span> specialization
+example </dt>
+
+<dd> Use of a specialized <span class="keyword">&lt;foreign&gt;</span> element with
+a <span class="keyword">&lt;object&gt;</span> element using <span class="keyword">MathML</span>. <div class="p"> 
+           <pre class="pre">&lt;p&gt;... as in the formula 
+&lt;object&gt;
+  &lt;desc&gt;4 + x&lt;/desc&gt;
+  &lt;mathML&gt;
+    &lt;mml:math display="block"&gt;
+      &lt;mml:mrow&gt;
+        &lt;mml:mo&gt;&amp;sum;&lt;/mml:mo&gt;
+        &lt;mml:mn&gt;4&lt;/mml:mn&gt;
+        &lt;mml:mo&gt;+&lt;/mml:mo&gt;
+        &lt;mml:mi&gt;x&lt;/mml:mi&gt;
+      &lt;/mml:mrow&gt;
+    &lt;/mml:math&gt;    
+  &lt;/mathML&gt;
+ &lt;object&gt;.
+&lt;/p&gt; </pre>
+           </div>
+</dd>
+
+</dl>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="ditaspecialization.html" title="Specialization is the process by which new designs are created based off existing designs, allowing new kinds of content to be processed using existing processing rules.">DITA specialization</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="infodom.html" title="Structural specialization defines new types of structured information, such as new topic types or new map types. Domain specialization creates new markup that can be useful in multiple structural types, such as new kinds of keywords, tables, or lists, or new attributes such as conditional processing attributes.">Structural versus domain specialization</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="dataextend.html" title="The &lt;data&gt; element represents properties ranging from simple values to complex structures. Processes can harvest the &lt;data&gt; element for automated manipulation or to format data associated with the body flow. The &lt;data&gt; element is primarily intended for use in creating specializations.">Data extensibility</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

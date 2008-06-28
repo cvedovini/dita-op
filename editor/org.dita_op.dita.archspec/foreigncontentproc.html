@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Processing foreign content" />
+<meta name="abstract" content="The default behavior for &lt;foreign&gt; is to try to display the content. If the processor cannot render the content, it may emit a warning. The default processing behavior for &lt;unknown&gt; is to suppress." />
+<meta name="description" content="The default behavior for &lt;foreign&gt; is to try to display the content. If the processor cannot render the content, it may emit a warning. The default processing behavior for &lt;unknown&gt; is to suppress." />
+<meta scheme="URI" name="DC.Relation" content="specproc.html" />
+<meta scheme="URI" name="DC.Relation" content="procspecatt.html" />
+<meta scheme="URI" name="DC.Relation" content="modintproc.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="concept-1" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Processing foreign content</title>
+</head>
+<body id="concept-1"><a name="concept-1"><!-- --></a>
+
+
+<h1 class="topictitle1">Processing foreign content</h1>
+
+
+<div><p>The default behavior for &lt;foreign&gt; is to try to display the
+content. If the processor cannot render the content, it may emit a warning.
+The default processing behavior for &lt;unknown&gt; is to suppress. </p>
+
+<p>This section describes processing behaviour of specialized foreign content
+based on existing standard vocabularies for non-textual content.</p>
+
+<dl>
+<dt class="dlterm">Default processing for &lt;foreign&gt;</dt>
+
+<dd>           <div class="p">The enabler of the foreign vocabulary must provide the processing
+by overriding the base processing for &lt;foreign&gt;. <br /><ul>
+<li>If &lt;foreign&gt; contains more than one alternative content element,
+they will all be processed. In the case of &lt;desc&gt; they will be concatenated
+in a similar way to &lt;section&gt; but no title (similar to &lt;div&gt; in
+HTML). </li>
+
+<li>Where appropriate, the specializer may specialize a nested &lt;desc&gt;
+element to provide alternate content that is valid in the contexts for the &lt;foreign&gt;
+specialization. If an instance of the &lt;foreign&gt; element doesn't
+contain a &lt;desc&gt;, &lt;object&gt;, or &lt;image&gt; element, the base
+processing may emit a warning about the absence of processable content.</li>
+
+<li>If the instance of the &lt;foreign&gt; element doesn't contain a &lt;desc&gt;, &lt;object&gt;,
+or &lt;image&gt; element, the base processing may emit a warning about the
+absence of processable content.</li>
+
+<li>The base processing for &lt;object&gt; can emit the content of &lt;foreign&gt;
+as a file at the location specified by the data attribute of the &lt;object&gt;
+element. The &lt;object&gt; element should have a data attribute or an &lt;foreign&gt;
+sub-element but not both. In the event that an &lt;object&gt; element contains
+both a data attribute and an &lt;foreign&gt; sub-element the processing system
+will ignore one of them.</li>
+
+</ul>
+</div>
+         </dd>
+
+
+<dt class="dlterm">Default processing for &lt;unknown&gt;</dt>
+
+<dd>           <p>The base processing for &lt;unknown&gt; is to suppress unless
+otherwise instructed.</p>
+         </dd>
+
+</dl>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="specproc.html" title="Specialized processing is not necessary for every specialized element, only for those elements which do not have appropriate default behavior based on their ancestors.">Specialization in processing</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="procspecatt.html" title="There are two kinds of specialized attributes: those specialized from props for conditional processing, and those specialized from base for other purposes.">Processing specialized attributes</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="modintproc.html" title="Processing should be divided into modules based on the structural types or domains they support, and can be integrated together into transforms or stylesheets in the same way that structural type and domain modules can be integrated into document types.">Modularization and integration of processing</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="Using the -dita-use-conref-target value" />
+<meta name="abstract" content="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target." />
+<meta name="description" content="The value -dita-use-conref-target is available on enumerated attributes, and may also be specified manually on other attributes. It indicates that when the element uses conref to pull in content, the attribute with a value of &quot;-dita-use-conref-target&quot; should also be pulled in from the target." />
+<meta content="-dita-use-conref-target attribute value" name="DC.subject" />
+<meta content="-dita-use-conref-target attribute value" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/theconrefattribute.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="usingthe-dita-use-conref-targetvalue" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Using the -dita-use-conref-target value</title>
+</head>
+<body id="usingthe-dita-use-conref-targetvalue"><a name="usingthe-dita-use-conref-targetvalue"><!-- --></a>
+
+
+<h1 class="topictitle1">Using the -dita-use-conref-target value</h1>
+
+
+
+<div><p>The value -dita-use-conref-target is available on enumerated attributes,
+and may also be specified manually on other attributes. It indicates that
+when the element uses conref to pull in content, the attribute with a value
+of "-dita-use-conref-target" should also be pulled in from the target.</p>
+
+<div class="section"><p>Ordinarily, when an element uses conref, any other attributes
+specified locally will be preserved. This feature can be used to override
+settings on the conref target that may not be appropriate in the new context.
+This causes problems when attributes are required. For example, the topichead
+element requires the navtitle attribute. Because the attribute is required,
+any topichead that uses conref must also provide a navtitle attribute – even
+if it is empty. Standard DITA processing rules would cause this value to override
+the navtitle on the target, even though the target navtitle is probably desired.</p>
+<p>This
+example shows a map where the topichead element uses conref. It specifies
+the required navtitle attribute, as well as the toc attribute. In the resolved
+element, navtitle is not preserved, because it uses -dita-use-conref-target;
+the toc attribute is preserved using normal rules.</p>
+<pre class="pre">Pre-resolution:
+&lt;map&gt;&lt;title&gt;Conref demonstration&lt;/title&gt;
+  &lt;topichead id="heading"
+             navtitle="This is a heading"
+             toc="yes"
+             print="yes"&gt;
+    &lt;topicref href="topic.dita" navtitle="content"/&gt;
+  &lt;/topichead&gt;
+  &lt;topichead conref="#heading"
+             navtitle="-dita-use-conref-target"
+             toc="no"&gt;
+  &lt;/topichead&gt;
+&lt;/map&gt;
+
+Post-resolution:
+&lt;map&gt;&lt;title&gt;Conref demonstration&lt;/title&gt;
+  &lt;topichead id="heading"
+             navtitle="This is a heading"
+             toc="yes"
+             print="yes"&gt;
+    &lt;topicref href="topic.dita" navtitle="content"/&gt;
+  &lt;/topichead&gt;
+  &lt;topichead navtitle="This is a heading"
+             toc="no"
+             print="yes"&gt;
+    &lt;topicref href="topic.dita" navtitle="content"/&gt;
+  &lt;/topichead&gt;
+&lt;/map&gt;
+</pre>
+<p>More information on this and other conref rules can be found in the
+DITA Architectural specification.</p>
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/theconrefattribute.html" title="This attribute is used to reference an ID on content that can be reused. It allows reuse of DITA components from phrases to topics, as well as maps and pieces of maps.">The conref attribute</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

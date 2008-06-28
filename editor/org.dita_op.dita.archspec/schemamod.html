@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Modularization in schemas" />
+<meta name="abstract" content="To support extensibility and pluggability, DITA requires that an XML schema implementation of structural and domain specialization modules conform to well-defined design patterns." />
+<meta name="description" content="To support extensibility and pluggability, DITA requires that an XML schema implementation of structural and domain specialization modules conform to well-defined design patterns." />
+<meta scheme="URI" name="DC.Relation" content="specdesign.html" />
+<meta scheme="URI" name="DC.Relation" content="dtdmod.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="modSchema" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Modularization in schemas</title>
+</head>
+<body id="modSchema"><a name="modSchema"><!-- --></a>
+
+
+<h1 class="topictitle1">Modularization in schemas</h1>
+
+
+<div><p>To support extensibility and pluggability, DITA requires that an
+XML schema implementation of structural and domain specialization modules
+conform to well-defined design patterns.</p>
+
+<div class="section" id="modSchema__section_BCF87DD7B17B4496B41DD9CC35754482"><a name="modSchema__section_BCF87DD7B17B4496B41DD9CC35754482"><!-- --></a>       <p>This section
+describes those design patterns. These design patterns realize the specialization
+architecture with the capabilities and within the limitations of the XML schema
+grammar.</p>
+     </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="specdesign.html" title="Specialization in design enables reuse of design elements, just as specialization in content allows reuse of processing rules. These rules involve the creation and management of markup modules as separate reusable units.">Specialization in design</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="dtdmod.html" title="To support extensibility and pluggability, DITA requires that a DTD implementation of structural and domain specialization modules conform to well-defined design patterns.">Modularization in DTDs</a></div>
+</div>
+</div>
+<div class="nested1" id="newSpecialization"><a name="newSpecialization"><!-- --></a>
+<h2 class="topictitle2">Structural specialization pattern</h2>
+
+<div>
+<div class="section">         <div class="p">For each structural type, the document type shell document
+collects the schema documents, parent structural type modules, domain type
+modules, and content models needed to implement new topic type specializations.
+Each new structural type requires three files. To see an example, look at
+the <span class="filepath">concept.xsd</span> document type shell document for the
+concept topic type. <br /><a name="newSpecialization__ol_22EACC49B9314A788EC6073F0FE970E7"><!-- --></a><ol id="newSpecialization__ol_22EACC49B9314A788EC6073F0FE970E7">
+<li id="newSpecialization__li_DB4ACDC3098D430EAA67E7A4BE09D77F"><a name="newSpecialization__li_DB4ACDC3098D430EAA67E7A4BE09D77F"><!-- --></a>Each structural type must define
+a separate module schema document with a name consisting of the root structural
+element name and <span class="filepath">Mod.xsd</span></li>
+
+<li id="newSpecialization__li_6536F1BEA2C5430993F3659F98DD2F48"><a name="newSpecialization__li_6536F1BEA2C5430993F3659F98DD2F48"><!-- --></a>Each structural type must define
+a separate model group definition schema document with a name consisting of
+the root structural element name and <span class="filepath">Grp.xsd</span></li>
+
+</ol>
+</div>
+         <div class="p">The module schema document must define an info-type model
+group that is named with a prefix of the topic element name and a suffix of <samp class="codeph">-info-types.</samp> Here
+is an example of a info-types model group that is defined in <span class="filepath">conceptMod.xsd</span>: <pre class="codeblock" id="newSpecialization__topicinfotype"><a name="newSpecialization__topicinfotype"><!-- --></a>&lt;xs:group name="concept-info-types"&gt;
+  &lt;xs:choice&gt;
+     &lt;xs:group ref="concept"minOccurs="0"/&gt;
+     &lt;xs:group ref="info-types" minOccurs="0"/&gt;
+  &lt;/xs:choice&gt;
+&lt;/xs:group&gt;</pre>
+</div>
+         <p>The module schema document defines
+every specialized element used as substructure within the structural type.
+The specialized elements must follow the rules of the architecture in defining
+content models and attributes. The naming convention for content models must
+use the root structural element name and<span class="filepath">.class</span></p>
+  
+               <div class="p">As with all specializations, the root
+element of a structural specialization must have a content model that restricts
+or conserves the content model of the element it specializes. The root element
+must also reference the <samp class="codeph">DITAArchVersion</samp> attribute and <samp class="codeph">domains</samp> attribute.
+For the schemas, the <samp class="codeph">domains</samp> attribute value is set in the
+document type shell. See <a href="#topicShellPattern">Document type shell
+pattern</a> for more information on how to set the values for the <samp class="codeph">domains</samp> attibute.
+In addition the last position in the content model must be the nested topics
+entity as in the following example:<pre class="codeblock">&lt;xs:complexType name="concept.class"&gt;
+   &lt;xs:sequence&gt;
+      &lt;xs:group ref="title"/&gt;
+      &lt;xs:group ref="titlealts" minOccurs="0"/&gt;
+      &lt;xs:choice minOccurs="0"&gt;
+        &lt;xs:group ref="shortdesc" /&gt;
+        &lt;xs:group ref="abstract" /&gt;
+      &lt;/xs:choice&gt;
+      &lt;xs:group ref="prolog" minOccurs="0"/&gt;
+      &lt;xs:group ref="conbody" minOccurs="0"/&gt;
+      &lt;xs:group ref="related-links" minOccurs="0"/&gt;
+      &lt;xs:group ref="concept-info-types" minOccurs="0" maxOccurs="unbounded"/&gt;
+   &lt;/xs:sequence&gt;
+   ....
+&lt;/xs:complexType&gt;
+</pre>
+</div>
+                
+ <p>These attributes give processes a reliable way to check the architecture
+version and look up the list of domains available in the document type.</p>
+ 
+       <pre class="codeblock">&lt;xs:attribute name="id" type="xs:ID" use="required"/&gt;
+&lt;xs:attribute ref="ditaarch:DITAArchVersion" /&gt;</pre>
+ 
+     </div>
+
+<div class="section" id="newSpecialization__section_90F10961347A4BCAA7456638C1F6B7F0"><a name="newSpecialization__section_90F10961347A4BCAA7456638C1F6B7F0"><!-- --></a>         <div class="p">The new
+file <var class="varname">topictypeGrp.xsd</var>is needed to mimic substitutionGroups
+in XML Schema without using the inheritance model in W3C XML Schema 1.0 specification.
+The process is very similar to the DITA DTD design pattern. For a structural
+type the name of the schema document consists of the root structural element
+name and <span class="filepath">Grp.xsd</span> extension. To see an example of a model
+group schema document, look at the file <span class="filepath">conceptGrp.xsd</span> : <pre class="codeblock">&lt;xs:group name="concept"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element ref="concept"/&gt;
+    &lt;/xs:sequence&gt;  
+&lt;/xs:group&gt;</pre>
+</div>
+         <p>The model group schema document
+defines model groups for each new specialized element in a structural type.
+Each structural type and domain must have a model group schema document .
+The model group schema document is an essential part of the specialization. </p>
+ 
+     </div>
+
+</div>
+
+<div class="nested2" id="classAttrDesign"><a name="classAttrDesign"><!-- --></a>
+<h3 class="topictitle3">Binding the class attribute to an element</h3>
+
+<div>
+<div class="section">            
+         <p>The class attribute must include the value of the class attribute
+of the base element and append the element name qualified by the root structural
+element name or domain name with at least one leading and trailing space.
+The class attribute starts with a ″-″ if it is declared in a structural module,
+or a ″+″ if it is declared in a domain module.</p>
+           <p>This attribute
+provides a mapping between the element’s current name and its more general
+equivalents. It must be bound the elements declaration, and not in the complexType
+referenced by the element. To see an example, look at the <span class="filepath">reference.xsd</span> schema
+document. </p>
+           <pre class="pre">&lt;xs:element name="reference"&gt;
+  &lt;xs:complexType&gt;
+    &lt;xs:complexContent&gt;
+      &lt;xs:extension base="reference.class"&gt;
+        &lt;xs:attribute ref="class" default="- topic/topic reference/reference "/&gt;
+      &lt;/xs:extension&gt;
+    &lt;/xs:complexContent&gt;
+  &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;</pre>
+         </div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="nested1" id="newDomain"><a name="newDomain"><!-- --></a>
+<h2 class="topictitle2">Domain specialization pattern</h2>
+
+<div>
+<div class="section" id="newDomain__section_04EBD53C7C3B43B0AC495952905D4EF1"><a name="newDomain__section_04EBD53C7C3B43B0AC495952905D4EF1"><!-- --></a>         <p>A domain
+type schema document with a name consisting of the domain name and the <span class="filepath">Domain.xsd</span> extension.</p>
+ 
+       <p>As in a structural module, the domain module must define each specialized
+element, its attributes and its model groups. As with any specialization,
+the domain element must restrict the base element. The class attribute of
+the domain element must start with a plus sign but, otherwise, follows the
+same rules as the class attribute for an element introduced by a topic specialization. </p>
+ 
+       <p>For each element extended by one or more domains, the domain type
+schema document defines a model group for the base element to a list of alternatives
+including the literal name of the element and the element extension entity
+from each domain that is providing specializations. </p>
+         <div class="p">The schema
+document must define an a model group for each element extended by the domain.
+The contents of the model group must be the list of specialized elements for
+the extended element. The name of the model group has a prefix of the abbreviation
+for the domain and an extension of the name of the extended element. In the
+following example, the user interface domain (abbreviated as <samp class="codeph">ui-d</samp>)
+extends the <samp class="codeph">ph</samp> element.<pre class="codeblock">&lt;xs:group name="ui-d-ph"&gt;
+  &lt;xs:choice&gt;
+     &lt;xs:element ref="uicontrol" /&gt;
+     &lt;xs:element ref="menucascade" /&gt;
+  &lt;/xs:choice&gt; 
+&lt;/xs:group&gt;</pre>
+</div>
+       </div>
+
+</div>
+
+</div>
+
+<div class="nested1" id="topicShellPattern"><a name="topicShellPattern"><!-- --></a>
+<h2 class="topictitle2">Document type shell pattern</h2>
+
+<div>
+<div class="section">         <div class="p">For each document shell type, the following named model
+group <var class="varname">info-types</var>must be defined. This model group can define
+a list of default subordinate topics. If the topic type does not have default
+subordinate topics, then the default value for the<var class="varname">info-types</var> model
+group must be defined as an empty group.<pre class="codeblock">&lt;xs:group name="info-types"&gt;
+   &lt;xs:sequence/&gt;
+&lt;/xs:group&gt;</pre>
+</div>
+         <div class="p">The default values for the <samp class="codeph">domains</samp> attributes
+in the base root structural element and the specialized root structural elements
+must be defined using the schema &lt;redefine&gt; mechanism to populate the <samp class="codeph">domains</samp> attribute.
+It identifies the domains used in the structural type. This attribute give
+processes a reliable way to look up the list of domains available in the document
+type. The list the domains is included in the document type as in the following
+example:<pre class="codeblock">&lt;xs:redefine schemaLocation="topicMod.xsd" &gt;
+  &lt;xs:complexType name="topic.class"&gt;
+     &lt;xs:complexContent&gt;
+      &lt;xs:extension base="topic.class"&gt;
+          &lt;xs:attribute
+name="domains" type="xs:string" default="(topic ui-d)
+(topic hi-d) (topic sw-d) (topic pr-d) (topic ut-d) (topic indexing-d)"/&gt;
+       &lt;/xs:extension&gt;
+     &lt;/xs:complexContent&gt;
+   &lt;/xs:complexType&gt; 
+&lt;/xs:redefine&gt; </pre>
+</div>
+         <div class="p">For each element extended
+by one or more domains, the document type shell redefines the model group
+for the element to a list of alternatives including the literal name of the
+element and the element extension model group from each domain that is providing
+specializations. To integrate a new domain in the document type shell use
+the schema &lt;redefine&gt; mechanism to manage the number of domains used
+by the document type shell. The model group requires a reference to itself
+to extend the base model group. To see an example, look at the <span class="filepath">topic.xsd</span> schema
+document. <pre class="codeblock">&lt;xs:group name="pre"&gt;   
+  &lt;xs:choice&gt;       
+    &lt;xs:group ref="pre" /&gt;
+    &lt;xs:group ref="pr-d-pre" /&gt;
+    &lt;xs:group ref="ui-d-pre" /&gt;
+    &lt;xs:group ref="sw-d-pre" /&gt;
+  &lt;/xs:choice&gt;
+&lt;/xs:group&gt;</pre>
+</div>
+         <div class="p">To add domains to a new structural
+type you can copy the contents of the parent structural type domains schema
+document into the document type shell. Add or remove the model group from
+the new domain to the appropriate named group.<pre class="codeblock">&lt;xs:group name="pre"&gt;
+ &lt;xs:choice&gt;
+   &lt;xs:group ref="pre"/&gt;
+   &lt;xs:group ref="pr-d-pre" /&gt;
+   &lt;xs:group ref="domainName-d-element"/&gt;
+ &lt;/xs:choice&gt; 
+&lt;/xs:group&gt;</pre>
+</div>
+         <div class="p">For each attribute extended by
+one or more domains, the document type shell redefines the attribute extension
+model group for the attribute to a list of alternatives including the literal
+name of the attribute and the attribute extension model group from each domain
+that is providing specializations. Attributes can only be specialized from
+props or base in DITA 1.1. To integrate a new attribute domain in the document
+type shell use the schema &lt;redefine&gt; mechanism to manage the number
+of attribute domains used by the document type shell.<pre class="codeblock">&lt;xs:attributeGroup name="props-attribute-extensions"&gt;
+   &lt;xs:attributeGroup ref="props-attribute-extensions"/&gt;
+   &lt;xs:attributeGroup ref="newAtt-d-attribute"/&gt;
+   &lt;xs:attributeGroup ref="othernewAtt-d-attribute"/&gt;
+&lt;/xs:attributeGroup&gt;
+    
+&lt;xs:attributeGroup name="base-attribute-extensions"&gt;
+    &lt;xs:attributeGroup ref="base-attribute-extensions"/&gt;
+    &lt;xs:attributeGroup ref="newfrombaseAtt-d-attribute"/&gt;
+    &lt;xs:attributeGroup ref="othernewfrombaseAtt-d-attribute"/&gt;
+&lt;/xs:attributeGroup&gt;
+</pre>
+</div>
+       </div>
+
+</div>
+
+</div>
+
+<div class="nested1" id="schemaattdomain"><a name="schemaattdomain"><!-- --></a>
+<h2 class="topictitle2">Attribute domain specialization pattern </h2>
+
+<div>
+<div class="section">         <p>The attribute domain pattern is a special case of the
+domain specialization pattern, which allows the creation of new attributes
+specialized from the props or base attribute.</p>
+         <p>Create one module
+entity file per attribute, for example newAttDomain.xsd. Each module should
+contain the following:</p>
+       </div>
+
+<div class="section">         <div class="p">The entity which holds the actual declaration of the
+attribute in entity form. This entity can then be used in document type shells
+to add the new attribute. For example: <pre class="codeblock">&lt;xs:attributeGroup name="newAtt-d-attribute"&gt;
+    &lt;xs:attribute name="new" type="xs:string"/&gt;
+&lt;/xs:attributeGroup&gt;</pre>
+</div>
+         <div class="p">This attribute domain
+declaration value can then be used in document type shells to signal the availability
+of the attribute to DITA-aware processes. It uses the same syntax as a regular
+domain declaration value but with the addition of a leading "a"
+to signal that it is in attribute domain. For example: <pre class="codeblock">&lt;xs:attribute name="domains" type="xs:string" default="... a(props new)"/&gt;</pre>
+</div>
+       </div>
+
+</div>
+
+</div>
+
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="glossentry" />
+<meta name="abstract" content="The &lt;glossentry&gt; element defines a single sense of a glossary term. The expected book processing is to sort and group the glossary entries based on the localized term so a back-of-the-book glossary can contain a collated list of terms with the definitions of the senses of the terms indented under the terms. The glossary can have a different organization in different languages depending on the translation of the terms. One possible online processing is to associate a hotspot for mentions of terms in &lt;term&gt; elements and display the definition on hover or click. Glossary entries for different term senses can be reused independently of one another." />
+<meta name="description" content="The &lt;glossentry&gt; element defines a single sense of a glossary term. The expected book processing is to sort and group the glossary entries based on the localized term so a back-of-the-book glossary can contain a collated list of terms with the definitions of the senses of the terms indented under the terms. The glossary can have a different organization in different languages depending on the translation of the terms. One possible online processing is to associate a hotspot for mentions of terms in &lt;term&gt; elements and display the definition on hover or click. Glossary entries for different term senses can be reused independently of one another." />
+<meta content="glossentry, Glossentry" name="DC.subject" />
+<meta content="glossentry, Glossentry" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/glossary2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/glossdef.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="glossentry" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>glossentry</title>
+</head>
+<body id="glossentry"><a name="glossentry"><!-- --></a>
+
+
+<h1 class="topictitle1">glossentry</h1>
+
+
+
+<div><p>The &lt;<span class="keyword">glossentry</span>&gt; element defines a single
+sense of a glossary term. The expected book processing is to sort and group
+the glossary entries based on the localized term so a back-of-the-book glossary
+can contain a collated list of terms with the definitions of the senses of
+the terms indented under the terms. The glossary can have a different organization
+in different languages depending on the translation of the terms. One possible
+online processing is to associate a hotspot for mentions of terms in &lt;<span class="keyword">term</span>&gt;
+elements and display the definition on hover or click. Glossary entries for
+different term senses can be reused independently of one another.</p>
+
+<div class="example"><h2 class="sectiontitle">Example</h2><pre class="codeblock">&lt;glossentry id="ddl"&gt;
+    &lt;glossterm&gt;Data Definition Language&lt;/glossterm&gt;
+    &lt;glossdef&gt;A formal language used for defining database schemas....&lt;/glossdef&gt;
+&lt;/glossentry&gt;</pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N1009E" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100A3" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100AD" headers="N1009E"><strong>ditabase, glossary</strong></td>
+<td valign="top" headers="N100A3 N100AD"> ( (
+<a href="../common/../langref/glossterm.html" title="The &lt;glossterm&gt; element specifies the preferred term associated with a definition of a sense. If the same term has multiple senses, create a separate &lt;glossentry&gt; topic for each sense.">glossterm</a>)  then  (
+<a href="../common/../langref/glossdef.html" title="The &lt;glossdef&gt; element specifies the definition of one sense of a term. If a term has multiple senses, create a separate &lt;glossentry&gt; topic to define each sense.">glossdef</a>)  then  (
+<a href="../common/../langref/related-links.html" title="The related information links of a topic (&lt;related-links&gt; element) are stored in a special section following the body of the topic. After a topic is processed into it final output form, the related links are usually displayed at the end of the topic, although some Web-based help systems might display them in a separate navigation frame.">related-links</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/no-topic-nesting.html" title="The &lt;no-topic-nesting&gt; element is a placeholder in the DITA architecture. It is not actually used by the default DITA document types; it is for use only when creating a validly customized document type where the information designer wants to eliminate the ability to nest topics. Not intended for use by authors, and has no associated output processing.">no-topic-nesting</a>) <em> (any number) </em>) </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N10128" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N1012D" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N10137" headers="N10128"><strong>ditabase</strong></td>
+<td valign="top" headers="N1012D N10137"><a href="../common/../langref/dita.html" title="The &lt;dita&gt; element provides a top-level container for multiple topics when you create documents using the ditabase document type. The &lt;dita&gt; element lets you create any sequence of concept, task, and reference topics, and the ditabase document type lets you further nest these topic types inside each other. The &lt;dita&gt; element has no particular output implications; it simply allows you to create multiple topics of different types at the same level in a single document.">dita</a>, <a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a>, <a href="../common/../langref/concept.html" title="The &lt;concept&gt; element is the top-level element for a topic that answers the question what is? Concepts provide background information that users must know before they can successfully work with a product or interface. Often, a concept is an extended definition of a major abstraction such as a process or function. It might also have an example or a graphic, but generally the structure of a concept is fairly simple.">concept</a>, <a href="../common/../langref/task.html" title="The &lt;task&gt; element is the top-level element for a task topic. Tasks are the main building blocks for task-oriented user assistance. They generally provide step-by-step instructions that will enable a user to perform a task. A task answers the question of &quot;how to?&quot; by telling the user precisely what to do and the order in which to do it. Tasks have the same high-level structure as other topics, with a title, short description and body.">task</a>, <a href="../common/../langref/reference.html" title="The &lt;reference&gt; element defines a top-level container for a reference topic. Reference topics document programming constructs or facts about a product. Examples of reference topics include language elements, class descriptions, commands, functions, statements, protocols, types, declarators, operands, and API information, which provide quick access to facts, but no explanation of concepts or procedures. Reference topics have the same high-level structure as any other topic type, with a title, short description, and body. Within the body, reference topics are typically organized into one or more sections, property lists, and tables. The reference topic type provides general rules that apply to all kinds of reference information, using elements like &lt;refsyn&gt; for syntax or signatures, and &lt;properties&gt; for lists of properties and values.">reference</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- topic/topic concept/concept glossentry/glossentry </p>
+</div>
+
+<div class="section" id="glossentry__attrs"><a name="glossentry__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="glossentry__glossentry_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="glossentry__glossentry_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N101F4" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N101FA" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N10200" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N10206" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N1020C" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101F4">id</td>
+
+<td valign="top" headers="N101FA">This ID enables topics to be referenced uniquely by topicrefs in
+DITA maps.</td>
+
+<td valign="top" headers="N10200">ID</td>
+
+<td valign="top" headers="N10206">  </td>
+
+<td valign="top" headers="N1020C">Yes</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101F4">conref </td>
+
+<td valign="top" headers="N101FA">This attribute is used to reference an ID on a topic that can be
+reused. See <a href="../common/theconrefattribute.html" title="This attribute is used to reference an ID on content that can be reused. It allows reuse of DITA components from phrases to topics, as well as maps and pieces of maps.">The conref attribute</a> for examples and
+details about the syntax.</td>
+
+<td valign="top" headers="N10200">CDATA</td>
+
+<td valign="top" headers="N10206">#IMPLIED</td>
+
+<td valign="top" headers="N1020C"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101F4">xmlns:ditaarch</td>
+
+<td valign="top" headers="N101FA">Declares the default DITA namespace.</td>
+
+<td valign="top" headers="N10200">CDATA</td>
+
+<td valign="top" headers="N10206">#FIXED http://dita.oasis-open.org/architecture/2005/</td>
+
+<td valign="top" headers="N1020C">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101F4">DITAArchVersion</td>
+
+<td valign="top" headers="N101FA">Designates the version of the architecture that is in use.</td>
+
+<td valign="top" headers="N10200">CDATA</td>
+
+<td valign="top" headers="N10206"><span class="q">"1.1"</span> (version dependent; will increase)</td>
+
+<td valign="top" headers="N1020C">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101F4">domains</td>
+
+<td valign="top" headers="N101FA">Indicates the specialized domains that are included in the DTD or
+Schema.</td>
+
+<td valign="top" headers="N10200">CDATA</td>
+
+<td valign="top" headers="N10206">(topic ui-d) (topic hi-d) (topic pr-d) (topic sw-d) (topic ut-d)
+(topic indexing-d)</td>
+
+<td valign="top" headers="N1020C">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101F4">%select-atts; (props, base, platform, product, audience, otherprops,
+importance, rev, status)</td>
+
+<td valign="top" headers="N101FA">A set of related attributes, described at <a href="../common/select-atts.html" title="Attributes that support both filtering and flagging include props , platform , product , audience , and otherprops . Attribute base is a generic attribute that is available for specialization; it can be specialized for values that have a simple value syntax like the filter attributes, but is not itself a filtering or flagging attribute. Attribute rev only lets you flag information that matches a run-time parameter. Attribute importance provides a range of values for applications to use as needed. The %select-atts; entity also includes additional entities that allow it to include specializations of the props and base attribute. See the DITA Architectural Specification for more information on filtering or flagging with attributes, as well as for information on specialization the base and props attributes.">%select-atts;</a></td>
+
+<td valign="top" headers="N10200">parameter entity</td>
+
+<td valign="top" headers="N10206">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1020C">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101F4">%localization-atts; (translate, xml:lang, dir)</td>
+
+<td valign="top" headers="N101FA"> A set of related attributes, described at <a href="../common/localization-atts.html" title="Localization attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%localization-atts;</a>.
+</td>
+
+<td valign="top" headers="N10200">parameter entity</td>
+
+<td valign="top" headers="N10206">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1020C">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101F4">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N101FA">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N10200">parameter entity</td>
+
+<td valign="top" headers="N10206">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1020C">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101F4">class, outputclass</td>
+
+<td valign="top" headers="N101FA">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N10200">&#xA0;</td>
+<td valign="top" headers="N10206">&#xA0;</td>
+<td valign="top" headers="N1020C">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/glossary2.html" title="Use the glossentry topic type to define glossary terms. Each glossentry topic should define a single sense of a term. The current OASIS glossentry type is an initial implementation intended to support minimal terminology information; more terminology management capabilities may be added in future releases.">Glossentry elements</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/glossdef.html" title="The &lt;glossdef&gt; element specifies the definition of one sense of a term. If a term has multiple senses, create a separate &lt;glossentry&gt; topic to define each sense.">glossdef</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

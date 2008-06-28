@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="choicetable" />
+<meta name="abstract" content="The &lt;choicetable&gt; element contains a series of optional choices available within a step of a task." />
+<meta name="description" content="The &lt;choicetable&gt; element contains a series of optional choices available within a step of a task." />
+<meta content="choicetable, Task elements" name="DC.subject" />
+<meta content="choicetable, Task elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/task2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/stepxmp.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/chhead.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="choicetable" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>choicetable</title>
+</head>
+<body id="choicetable"><a name="choicetable"><!-- --></a>
+
+
+<h1 class="topictitle1">choicetable</h1>
+
+
+
+<div><p>The &lt;<span class="keyword">choicetable</span>&gt; element contains a series
+of optional choices available within a step of a task.</p>
+
+<div class="section"><p>By default, the highlighting of the choice column
+is bold. To change the highlighting, set the keycol attribute of the ChoiceTable
+tag to 0 (zero).</p>
+</div>
+
+<div class="example"><pre class="pre">&lt;step&gt;&lt;cmd&gt;Then this&lt;/cmd&gt;
+&lt;substeps&gt;
+&lt;substep importance="optional"&gt;&lt;cmd&gt;which is done by doing this&lt;/cmd&gt;&lt;/substep&gt;
+&lt;substep importance="required"&gt;&lt;cmd&gt;and then this.&lt;/cmd&gt;&lt;/substep&gt;
+&lt;/substeps&gt;
+<strong>&lt;choicetable&gt;</strong>
+&lt;chhead&gt;
+&lt;choptionhd&gt;Do something&lt;/choptionhd&gt;
+&lt;chdeschd&gt;Or Else this&lt;/chdeschd&gt;
+&lt;/chhead&gt;
+&lt;chrow&gt;&lt;choption&gt;Do this&lt;/choption&gt;
+&lt;chdesc&gt;and this will happen&lt;/chdesc&gt;&lt;/chrow&gt;
+&lt;chrow&gt;&lt;choption&gt;Do that&lt;/choption&gt;
+&lt;chdesc&gt;and that will happen&lt;/chdesc&gt;&lt;/chrow&gt;
+<strong>&lt;/choicetable&gt;</strong>
+&lt;/step&gt;</pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100A9" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100AE" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100B8" headers="N100A9"><strong>ditabase, task</strong></td>
+<td valign="top" headers="N100AE N100B8"> ( (
+<a href="../common/../langref/chhead.html" title="The &lt;chhead&gt; element is a container inside the &lt;choicetable&gt; element that provides specific heading text to override the default Options and Description headings. The &lt;chhead&gt; element contains both a &lt;choptionhd&gt; and &lt;chdeschd&gt; element as a pair.">chhead</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/chrow.html" title="The &lt;chrow&gt; element is a container inside the &lt;choicetable&gt; element. The &lt;chrow&gt; element contains both a &lt;choption&gt; and &lt;chdesc&gt; element as a pair.">chrow</a>) <em> (one or more) </em>) </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N10141" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N10146" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N10150" headers="N10141"><strong>ditabase, task</strong></td>
+<td valign="top" headers="N10146 N10150"><a href="../common/../langref/step.html" title="The &lt;step&gt; element represents an action that a user must follow to accomplish a task. Each step in a task must contain a command &lt;cmd&gt; element which describes the particular action the user must do to accomplish the overall task. The step element can also contain information &lt;info&gt;, substeps &lt;substeps&gt;, tutorial information &lt;tutorialinfo&gt;, a step example &lt;stepxmp&gt;, choices &lt;choices&gt; or a stepresult &lt;stepresult&gt;, although these are optional.">step</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- topic/simpletable task/choicetable </p>
+</div>
+
+<div class="section" id="choicetable__attrs"><a name="choicetable__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="choicetable__choicetable_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="choicetable__choicetable_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N101BB" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N101C1" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N101C7" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N101CD" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N101D3" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101BB">relcolwidth</td>
+
+<td valign="top" headers="N101C1">A relative value to specify the width of a column in relationship
+to the width of the other columns. The values are totaled and made a percent.
+For example: <pre class="codeblock">relcolwidth="1* 2* 3*"</pre>
+ causes
+widths of 16.7%, 33.3%, and 66.7%. <pre class="codeblock">relcolwidth="90* 150*"</pre>
+ causes
+width of 37.5% and 62.5%.</td>
+
+<td valign="top" headers="N101C7">CDATA</td>
+
+<td valign="top" headers="N101CD">#IMPLIED</td>
+
+<td valign="top" headers="N101D3">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101BB">keycol</td>
+
+<td valign="top" headers="N101C1">Defines the column that will be used for row headings. By default,
+the first column is used. To indicate that no column in the table
+is the key column, set the attribute to 0.</td>
+
+<td valign="top" headers="N101C7">NMTOKEN</td>
+
+<td valign="top" headers="N101CD">1</td>
+
+<td valign="top" headers="N101D3">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101BB">refcols</td>
+
+<td valign="top" headers="N101C1">Designates columns that contain references, and are candidates for
+automated linking. Columns are identified by a space-delimited list of numbers
+(for example: <samp class="codeph">1 3</samp>).</td>
+
+<td valign="top" headers="N101C7">NMTOKENS</td>
+
+<td valign="top" headers="N101CD">#IMPLIED</td>
+
+<td valign="top" headers="N101D3"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101BB">spectitle</td>
+
+<td valign="top" headers="N101C1">The specialized title attribute allows architects of specialized
+types to define a fixed or default title for a specialized element. Not intended
+for direct use by authors.</td>
+
+<td valign="top" headers="N101C7">CDATA</td>
+
+<td valign="top" headers="N101CD">#IMPLIED</td>
+
+<td valign="top" headers="N101D3">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101BB">%display-atts; (scale, frame, expanse)</td>
+
+<td valign="top" headers="N101C1">A set of related attributes, described at <a href="../common/display-atts.html" title="Display attributes is a parameter entity declaration in the topic DTD that includes attributes whose values may be used for affecting the display of a topic or its selection by search tools.">%display-atts;</a></td>
+
+<td valign="top" headers="N101C7">parameter entity</td>
+
+<td valign="top" headers="N101CD">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N101D3">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101BB">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N101C1">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N101C7">parameter entity</td>
+
+<td valign="top" headers="N101CD">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N101D3">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101BB">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N101C1">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N101C7">parameter entity</td>
+
+<td valign="top" headers="N101CD">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N101D3">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101BB">class, outputclass</td>
+
+<td valign="top" headers="N101C1">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N101C7">&#xA0;</td>
+<td valign="top" headers="N101CD">&#xA0;</td>
+<td valign="top" headers="N101D3">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/task2.html" title="Task topics answer &quot;How do I?&quot; questions, and have a well-defined structure that describes how to complete a procedure to accomplish a specific goal. Use the task topic to describe the steps of a particular task, or to provide an overview of a higher-level task. The task topic includes sections for describing the context, prerequisites, actual steps, expected results, example, and expected next steps for a task. For more details on when to use task and other information types, please refer to the DITA architectural specification.">Task elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/stepxmp.html" title="The step example (&lt;stepxmp&gt;) element is used to illustrate a step of a task. The example can be a couple of words, or an entire paragraph.">stepxmp</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/chhead.html" title="The &lt;chhead&gt; element is a container inside the &lt;choicetable&gt; element that provides specific heading text to override the default Options and Description headings. The &lt;chhead&gt; element contains both a &lt;choptionhd&gt; and &lt;chdeschd&gt; element as a pair.">chhead</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

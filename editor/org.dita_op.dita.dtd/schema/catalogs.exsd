@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.dita_op.dita.dtd">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="org.dita_op.dita.dtd" id="catalogs" name="DITA DTD"/>
+      </appInfo>
+      <documentation>
+         This extension point enables to register an XML catalog for a specific version of the DITA DTD or schemas.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <complexType>
+         <sequence minOccurs="1" maxOccurs="unbounded">
+            <element ref="catalog"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="catalog">
+      <annotation>
+         <documentation>
+            Defines an XML catalog to use for a specific version of the DITA DTDs
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The identifier of this catalog.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="uri" type="string">
+            <annotation>
+               <documentation>
+                  The location of the catalog relative to the plugin.xml file. Either this or a resolver class must be provided.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="resource"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string" use="required">
+            <annotation>
+               <documentation>
+                  A user readable name for his catalog
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="class" type="string">
+            <annotation>
+               <documentation>
+                  The fully qualified name of class implementing the org.xml.sax.ext.EntityResolver2 interface. Either this or a catalog uri must be provided, if both are provided the class will take precedence.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":org.xml.sax.ext.EntityResolver2"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         1.0.0
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         &lt;extension
+       point=&quot;org.dita_op.dita.dtd&quot;&gt;
+    &lt;catalog
+          id=&quot;org.dita_op.dita.dtd10&quot;
+          uri=&quot;dtd10/catalog-dita.xml&quot;
+          version=&quot;1.0&quot;&gt;
+    &lt;/catalog&gt;
+&lt;/extension&gt;
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiInfo"/>
+      </appInfo>
+      <documentation>
+         
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="implementation"/>
+      </appInfo>
+      <documentation>
+         
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         &lt;p&gt;Copyright (C) 2008 &lt;a href=&quot;http://vedovini.net/&quot;&gt;Claude Vedovini&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This file is part of the &lt;a href=&quot;http://www.dita-op.org/&quot;&gt;DITA Open Platform&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The DITA Open Platform is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.&lt;/p&gt;
+
+&lt;p&gt;The DITA Open Platform is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.&lt;/p&gt;
+
+&lt;p&gt;You should have received a copy of the GNU General Public License
+along with The DITA Open Platform.  If not, see &lt;a href=&quot;http://www.gnu.org/licenses/&quot;&gt;http://www.gnu.org/licenses/&lt;/a&gt;.&lt;/p&gt;
+      </documentation>
+   </annotation>
+
+</schema>

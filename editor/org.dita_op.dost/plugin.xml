@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!--
+    Copyright (C) 2008 Claude Vedovini <http://vedovini.net/>.
+    
+    This file is part of the DITA Open Platform <http://www.dita-op.org/>.
+
+    The DITA Open Platform is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    The DITA Open Platform is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with The DITA Open Platform.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<plugin>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="org.dita_op.core.ui.preferences.DITAPreferencePage"
+            class="org.dita_op.dost.launcher.internal.ui.preferences.GeneralPreferencePage"
+            id="org.dita_op.dost.preferences.general"
+            name="%GeneralPreferencePage.name">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="org.dita_op.dost.launcher.internal.DOSTLaunchDelegate"
+            delegateDescription="%launchConfigurationType.delegateDescription.0"
+            delegateName="%launchConfigurationType.delegateName.0"
+            id="org.dita_op.dost.launcher.DOSTLaunchConfigurationType"
+            name="%launchConfigurationType.name.0"
+            category="org.eclipse.ui.externaltools"
+            modes="run, debug"
+            sourceLocatorId="org.eclipse.ant.ui.debug.sourceLookupDirector"
+            sourcePathComputerId="org.eclipse.ant.ui.debug.sourcePathComputer">
+            >
+      </launchConfigurationType>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+      <launchConfigurationTypeImage
+            configTypeID="org.dita_op.dost.launcher.DOSTLaunchConfigurationType"
+            icon="$nl$/icons/book_go.png"
+            id="org.dita_op.dost.launcher.DOSTLaunchConfigurationTypeImage">
+      </launchConfigurationTypeImage>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+      <launchConfigurationTabGroup
+            class="org.dita_op.dost.launcher.internal.ui.launchConfiguration.DOSTLaunchConfigurationTabGroup"
+            id="org.dita_op.dost.launcher.launchConfigurationTabGroup"
+            type="org.dita_op.dost.launcher.DOSTLaunchConfigurationType">
+      </launchConfigurationTabGroup>
+   </extension>
+</plugin>

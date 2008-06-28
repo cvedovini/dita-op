@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="topic" />
+<meta name="abstract" content="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;." />
+<meta name="description" content="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;." />
+<meta content="topic, Topic elements" name="DC.subject" />
+<meta content="topic, Topic elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/topic2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/title.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="topic" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>topic</title>
+</head>
+<body id="topic"><a name="topic"><!-- --></a>
+
+
+<h1 class="topictitle1">topic</h1>
+
+
+
+<div><p>The &lt;<span class="keyword">topic</span>&gt; element is the top-level DITA
+element for a single-subject topic or article. Other top-level DITA elements
+that are more content-specific are &lt;<span class="keyword">concept</span>&gt;, &lt;<span class="keyword">task</span>&gt;, &lt;<span class="keyword">reference</span>&gt;,
+and &lt;<span class="keyword">glossary</span>&gt;.</p>
+
+<div class="section">       <div class="p">To support applications that are namespace-aware, DITA
+DTDs and Schemas provide the following namespaced declarations for topic,
+and for topic-level elements derived from topic: <pre class="pre">
+ditaarch:DITAArchVersion="1.0" 
+xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" 
+</pre>
+ In DTDs, the <span class="q">"ditaarch"</span> prefix is parameterized to enable future
+specialization.</div>
+     </div>
+
+<div class="example"><h2 class="sectiontitle">Example</h2>              <pre class="codeblock">&lt;topic id="topic"&gt;
+ &lt;title&gt;Some little topic&lt;/title&gt;
+ &lt;body&gt;
+  &lt;p&gt;Here's a &lt;b&gt;&lt;i&gt;cute&lt;/i&gt;&lt;/b&gt;,
+  &lt;b&gt;little&lt;/b&gt; topic.&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;Some item&lt;/li&gt;
+   &lt;li&gt;Another item&lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/body&gt;
+&lt;/topic&gt;</pre>
+     </div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100CB" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100D0" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100DA" headers="N100CB"><strong>ditabase</strong></td>
+<td valign="top" headers="N100D0 N100DA"> ( (
+<a href="../common/../langref/title.html" title="The &lt;title&gt; element contains a heading or label for the main parts of a topic, including the topic as a whole, its sections and examples, and its labelled content, such as figures and tables. Beginning with DITA 1.1, the element may also be used to provide a title for a map.">title</a>)  then  (
+<a href="../common/../langref/titlealts.html" title="The alternate title element (&lt;titlealts&gt;) is optional, but can occur after the topic title. Two elements can be inserted as sub-elements of &lt;titlealts&gt;: navigation title &lt;navtitle&gt; and search title &lt;searchtitle&gt;.">titlealts</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/shortdesc.html" title="The short description (&lt;shortdesc&gt;) element occurs between the topic title and the topic body, as the initial paragraph-like content of a topic, or it can be embedded in an abstract element. The short description, which represents the purpose or theme of the topic, is also intended to be used as a link preview and for searching. When used within a DITA map, the short description of the &lt;topicref&gt; can be used to override the short description in the topic.">shortdesc</a> or 
+<a href="../common/../langref/abstract.html" title="The abstract element occurs between the topic title and the topic body, as the initial content of a topic. It can contain paragraph-level content as well as one or more shortdesc elements which can be used for providing link previews or summaries. The &lt;abstract&gt; element cannot be overridden by maps, but its contained &lt;shortdesc&gt; elements can be, for the purpose of creating link summaries or previews.">abstract</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/prolog.html" title="The &lt;prolog&gt; element contains information about the topic as an whole (for example, author information or subject category) that is either entered by the author or machine-maintained. Much of the metadata inside the &lt;prolog&gt; will not be displayed with the topic on output, but may be used by processes that generate search indexes or customize navigation.">prolog</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/body.html" title="The &lt;body&gt; element is the container for the main content of a &lt;topic&gt;.">body</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/related-links.html" title="The related information links of a topic (&lt;related-links&gt; element) are stored in a special section following the body of the topic. After a topic is processed into it final output form, the related links are usually displayed at the end of the topic, although some Web-based help systems might display them in a separate navigation frame.">related-links</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a> or <a href="../common/../langref/concept.html" title="The &lt;concept&gt; element is the top-level element for a topic that answers the question what is? Concepts provide background information that users must know before they can successfully work with a product or interface. Often, a concept is an extended definition of a major abstraction such as a process or function. It might also have an example or a graphic, but generally the structure of a concept is fairly simple.">concept</a> or <a href="../common/../langref/task.html" title="The &lt;task&gt; element is the top-level element for a task topic. Tasks are the main building blocks for task-oriented user assistance. They generally provide step-by-step instructions that will enable a user to perform a task. A task answers the question of &quot;how to?&quot; by telling the user precisely what to do and the order in which to do it. Tasks have the same high-level structure as other topics, with a title, short description and body.">task</a> or <a href="../common/../langref/reference.html" title="The &lt;reference&gt; element defines a top-level container for a reference topic. Reference topics document programming constructs or facts about a product. Examples of reference topics include language elements, class descriptions, commands, functions, statements, protocols, types, declarators, operands, and API information, which provide quick access to facts, but no explanation of concepts or procedures. Reference topics have the same high-level structure as any other topic type, with a title, short description, and body. Within the body, reference topics are typically organized into one or more sections, property lists, and tables. The reference topic type provides general rules that apply to all kinds of reference information, using elements like &lt;refsyn&gt; for syntax or signatures, and &lt;properties&gt; for lists of properties and values.">reference</a> or <a href="../common/../langref/glossentry.html" title="The &lt;glossentry&gt; element defines a single sense of a glossary term. The expected book processing is to sort and group the glossary entries based on the localized term so a back-of-the-book glossary can contain a collated list of terms with the definitions of the senses of the terms indented under the terms. The glossary can have a different organization in different languages depending on the translation of the terms. One possible online processing is to associate a hotspot for mentions of terms in &lt;term&gt; elements and display the definition on hover or click. Glossary entries for different term senses can be reused independently of one another.">glossentry</a>) <em> (any number) </em>) </td>
+</tr>
+
+<tr><td valign="top" id="N10225" headers="N100CB"><strong>topic</strong></td>
+<td valign="top" headers="N100D0 N10225"> ( (
+<a href="../common/../langref/title.html" title="The &lt;title&gt; element contains a heading or label for the main parts of a topic, including the topic as a whole, its sections and examples, and its labelled content, such as figures and tables. Beginning with DITA 1.1, the element may also be used to provide a title for a map.">title</a>)  then  (
+<a href="../common/../langref/titlealts.html" title="The alternate title element (&lt;titlealts&gt;) is optional, but can occur after the topic title. Two elements can be inserted as sub-elements of &lt;titlealts&gt;: navigation title &lt;navtitle&gt; and search title &lt;searchtitle&gt;.">titlealts</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/shortdesc.html" title="The short description (&lt;shortdesc&gt;) element occurs between the topic title and the topic body, as the initial paragraph-like content of a topic, or it can be embedded in an abstract element. The short description, which represents the purpose or theme of the topic, is also intended to be used as a link preview and for searching. When used within a DITA map, the short description of the &lt;topicref&gt; can be used to override the short description in the topic.">shortdesc</a> or 
+<a href="../common/../langref/abstract.html" title="The abstract element occurs between the topic title and the topic body, as the initial content of a topic. It can contain paragraph-level content as well as one or more shortdesc elements which can be used for providing link previews or summaries. The &lt;abstract&gt; element cannot be overridden by maps, but its contained &lt;shortdesc&gt; elements can be, for the purpose of creating link summaries or previews.">abstract</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/prolog.html" title="The &lt;prolog&gt; element contains information about the topic as an whole (for example, author information or subject category) that is either entered by the author or machine-maintained. Much of the metadata inside the &lt;prolog&gt; will not be displayed with the topic on output, but may be used by processes that generate search indexes or customize navigation.">prolog</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/body.html" title="The &lt;body&gt; element is the container for the main content of a &lt;topic&gt;.">body</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/related-links.html" title="The related information links of a topic (&lt;related-links&gt; element) are stored in a special section following the body of the topic. After a topic is processed into it final output form, the related links are usually displayed at the end of the topic, although some Web-based help systems might display them in a separate navigation frame.">related-links</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a>) <em> (any number) </em>) </td>
+</tr>
+
+<tr><td valign="top" id="N10312" headers="N100CB"><strong>task</strong></td>
+<td valign="top" headers="N100D0 N10312"> ( (
+<a href="../common/../langref/title.html" title="The &lt;title&gt; element contains a heading or label for the main parts of a topic, including the topic as a whole, its sections and examples, and its labelled content, such as figures and tables. Beginning with DITA 1.1, the element may also be used to provide a title for a map.">title</a>)  then  (
+<a href="../common/../langref/titlealts.html" title="The alternate title element (&lt;titlealts&gt;) is optional, but can occur after the topic title. Two elements can be inserted as sub-elements of &lt;titlealts&gt;: navigation title &lt;navtitle&gt; and search title &lt;searchtitle&gt;.">titlealts</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/shortdesc.html" title="The short description (&lt;shortdesc&gt;) element occurs between the topic title and the topic body, as the initial paragraph-like content of a topic, or it can be embedded in an abstract element. The short description, which represents the purpose or theme of the topic, is also intended to be used as a link preview and for searching. When used within a DITA map, the short description of the &lt;topicref&gt; can be used to override the short description in the topic.">shortdesc</a> or 
+<a href="../common/../langref/abstract.html" title="The abstract element occurs between the topic title and the topic body, as the initial content of a topic. It can contain paragraph-level content as well as one or more shortdesc elements which can be used for providing link previews or summaries. The &lt;abstract&gt; element cannot be overridden by maps, but its contained &lt;shortdesc&gt; elements can be, for the purpose of creating link summaries or previews.">abstract</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/prolog.html" title="The &lt;prolog&gt; element contains information about the topic as an whole (for example, author information or subject category) that is either entered by the author or machine-maintained. Much of the metadata inside the &lt;prolog&gt; will not be displayed with the topic on output, but may be used by processes that generate search indexes or customize navigation.">prolog</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/body.html" title="The &lt;body&gt; element is the container for the main content of a &lt;topic&gt;.">body</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/related-links.html" title="The related information links of a topic (&lt;related-links&gt; element) are stored in a special section following the body of the topic. After a topic is processed into it final output form, the related links are usually displayed at the end of the topic, although some Web-based help systems might display them in a separate navigation frame.">related-links</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a>) <em> (any number) </em>) </td>
+</tr>
+
+<tr><td valign="top" id="N103FF" headers="N100CB"><strong>reference</strong></td>
+<td valign="top" headers="N100D0 N103FF"> ( (
+<a href="../common/../langref/title.html" title="The &lt;title&gt; element contains a heading or label for the main parts of a topic, including the topic as a whole, its sections and examples, and its labelled content, such as figures and tables. Beginning with DITA 1.1, the element may also be used to provide a title for a map.">title</a>)  then  (
+<a href="../common/../langref/titlealts.html" title="The alternate title element (&lt;titlealts&gt;) is optional, but can occur after the topic title. Two elements can be inserted as sub-elements of &lt;titlealts&gt;: navigation title &lt;navtitle&gt; and search title &lt;searchtitle&gt;.">titlealts</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/shortdesc.html" title="The short description (&lt;shortdesc&gt;) element occurs between the topic title and the topic body, as the initial paragraph-like content of a topic, or it can be embedded in an abstract element. The short description, which represents the purpose or theme of the topic, is also intended to be used as a link preview and for searching. When used within a DITA map, the short description of the &lt;topicref&gt; can be used to override the short description in the topic.">shortdesc</a> or 
+<a href="../common/../langref/abstract.html" title="The abstract element occurs between the topic title and the topic body, as the initial content of a topic. It can contain paragraph-level content as well as one or more shortdesc elements which can be used for providing link previews or summaries. The &lt;abstract&gt; element cannot be overridden by maps, but its contained &lt;shortdesc&gt; elements can be, for the purpose of creating link summaries or previews.">abstract</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/prolog.html" title="The &lt;prolog&gt; element contains information about the topic as an whole (for example, author information or subject category) that is either entered by the author or machine-maintained. Much of the metadata inside the &lt;prolog&gt; will not be displayed with the topic on output, but may be used by processes that generate search indexes or customize navigation.">prolog</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/body.html" title="The &lt;body&gt; element is the container for the main content of a &lt;topic&gt;.">body</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/related-links.html" title="The related information links of a topic (&lt;related-links&gt; element) are stored in a special section following the body of the topic. After a topic is processed into it final output form, the related links are usually displayed at the end of the topic, although some Web-based help systems might display them in a separate navigation frame.">related-links</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a>) <em> (any number) </em>) </td>
+</tr>
+
+<tr><td valign="top" id="N104EC" headers="N100CB"><strong>concept</strong></td>
+<td valign="top" headers="N100D0 N104EC"> ( (
+<a href="../common/../langref/title.html" title="The &lt;title&gt; element contains a heading or label for the main parts of a topic, including the topic as a whole, its sections and examples, and its labelled content, such as figures and tables. Beginning with DITA 1.1, the element may also be used to provide a title for a map.">title</a>)  then  (
+<a href="../common/../langref/titlealts.html" title="The alternate title element (&lt;titlealts&gt;) is optional, but can occur after the topic title. Two elements can be inserted as sub-elements of &lt;titlealts&gt;: navigation title &lt;navtitle&gt; and search title &lt;searchtitle&gt;.">titlealts</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/shortdesc.html" title="The short description (&lt;shortdesc&gt;) element occurs between the topic title and the topic body, as the initial paragraph-like content of a topic, or it can be embedded in an abstract element. The short description, which represents the purpose or theme of the topic, is also intended to be used as a link preview and for searching. When used within a DITA map, the short description of the &lt;topicref&gt; can be used to override the short description in the topic.">shortdesc</a> or 
+<a href="../common/../langref/abstract.html" title="The abstract element occurs between the topic title and the topic body, as the initial content of a topic. It can contain paragraph-level content as well as one or more shortdesc elements which can be used for providing link previews or summaries. The &lt;abstract&gt; element cannot be overridden by maps, but its contained &lt;shortdesc&gt; elements can be, for the purpose of creating link summaries or previews.">abstract</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/prolog.html" title="The &lt;prolog&gt; element contains information about the topic as an whole (for example, author information or subject category) that is either entered by the author or machine-maintained. Much of the metadata inside the &lt;prolog&gt; will not be displayed with the topic on output, but may be used by processes that generate search indexes or customize navigation.">prolog</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/body.html" title="The &lt;body&gt; element is the container for the main content of a &lt;topic&gt;.">body</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/related-links.html" title="The related information links of a topic (&lt;related-links&gt; element) are stored in a special section following the body of the topic. After a topic is processed into it final output form, the related links are usually displayed at the end of the topic, although some Web-based help systems might display them in a separate navigation frame.">related-links</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a>) <em> (any number) </em>) </td>
+</tr>
+
+<tr><td valign="top" id="N105D9" headers="N100CB"><strong>glossary</strong></td>
+<td valign="top" headers="N100D0 N105D9"> ( (
+<a href="../common/../langref/title.html" title="The &lt;title&gt; element contains a heading or label for the main parts of a topic, including the topic as a whole, its sections and examples, and its labelled content, such as figures and tables. Beginning with DITA 1.1, the element may also be used to provide a title for a map.">title</a>)  then  (
+<a href="../common/../langref/titlealts.html" title="The alternate title element (&lt;titlealts&gt;) is optional, but can occur after the topic title. Two elements can be inserted as sub-elements of &lt;titlealts&gt;: navigation title &lt;navtitle&gt; and search title &lt;searchtitle&gt;.">titlealts</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/shortdesc.html" title="The short description (&lt;shortdesc&gt;) element occurs between the topic title and the topic body, as the initial paragraph-like content of a topic, or it can be embedded in an abstract element. The short description, which represents the purpose or theme of the topic, is also intended to be used as a link preview and for searching. When used within a DITA map, the short description of the &lt;topicref&gt; can be used to override the short description in the topic.">shortdesc</a> or 
+<a href="../common/../langref/abstract.html" title="The abstract element occurs between the topic title and the topic body, as the initial content of a topic. It can contain paragraph-level content as well as one or more shortdesc elements which can be used for providing link previews or summaries. The &lt;abstract&gt; element cannot be overridden by maps, but its contained &lt;shortdesc&gt; elements can be, for the purpose of creating link summaries or previews.">abstract</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/prolog.html" title="The &lt;prolog&gt; element contains information about the topic as an whole (for example, author information or subject category) that is either entered by the author or machine-maintained. Much of the metadata inside the &lt;prolog&gt; will not be displayed with the topic on output, but may be used by processes that generate search indexes or customize navigation.">prolog</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/body.html" title="The &lt;body&gt; element is the container for the main content of a &lt;topic&gt;.">body</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/related-links.html" title="The related information links of a topic (&lt;related-links&gt; element) are stored in a special section following the body of the topic. After a topic is processed into it final output form, the related links are usually displayed at the end of the topic, although some Web-based help systems might display them in a separate navigation frame.">related-links</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a>) <em> (any number) </em>) </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N106D6" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N106DB" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N106E5" headers="N106D6"><strong>ditabase</strong></td>
+<td valign="top" headers="N106DB N106E5"><a href="../common/../langref/dita.html" title="The &lt;dita&gt; element provides a top-level container for multiple topics when you create documents using the ditabase document type. The &lt;dita&gt; element lets you create any sequence of concept, task, and reference topics, and the ditabase document type lets you further nest these topic types inside each other. The &lt;dita&gt; element has no particular output implications; it simply allows you to create multiple topics of different types at the same level in a single document.">dita</a>, <a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a>, <a href="../common/../langref/concept.html" title="The &lt;concept&gt; element is the top-level element for a topic that answers the question what is? Concepts provide background information that users must know before they can successfully work with a product or interface. Often, a concept is an extended definition of a major abstraction such as a process or function. It might also have an example or a graphic, but generally the structure of a concept is fairly simple.">concept</a>, <a href="../common/../langref/task.html" title="The &lt;task&gt; element is the top-level element for a task topic. Tasks are the main building blocks for task-oriented user assistance. They generally provide step-by-step instructions that will enable a user to perform a task. A task answers the question of &quot;how to?&quot; by telling the user precisely what to do and the order in which to do it. Tasks have the same high-level structure as other topics, with a title, short description and body.">task</a>, <a href="../common/../langref/reference.html" title="The &lt;reference&gt; element defines a top-level container for a reference topic. Reference topics document programming constructs or facts about a product. Examples of reference topics include language elements, class descriptions, commands, functions, statements, protocols, types, declarators, operands, and API information, which provide quick access to facts, but no explanation of concepts or procedures. Reference topics have the same high-level structure as any other topic type, with a title, short description, and body. Within the body, reference topics are typically organized into one or more sections, property lists, and tables. The reference topic type provides general rules that apply to all kinds of reference information, using elements like &lt;refsyn&gt; for syntax or signatures, and &lt;properties&gt; for lists of properties and values.">reference</a></td>
+</tr>
+
+<tr><td valign="top" id="N1077F" headers="N106D6"><strong>topic</strong></td>
+<td valign="top" headers="N106DB N1077F"><a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a></td>
+</tr>
+
+<tr><td valign="top" id="N107B5" headers="N106D6"><strong>task</strong></td>
+<td valign="top" headers="N106DB N107B5"><a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a></td>
+</tr>
+
+<tr><td valign="top" id="N107EB" headers="N106D6"><strong>concept</strong></td>
+<td valign="top" headers="N106DB N107EB"><a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a></td>
+</tr>
+
+<tr><td valign="top" id="N10821" headers="N106D6"><strong>reference</strong></td>
+<td valign="top" headers="N106DB N10821"><a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a></td>
+</tr>
+
+<tr><td valign="top" id="N10857" headers="N106D6"><strong>glossary</strong></td>
+<td valign="top" headers="N106DB N10857"><a href="../common/../langref/topic.html" title="The &lt;topic&gt; element is the top-level DITA element for a single-subject topic or article. Other top-level DITA elements that are more content-specific are &lt;concept&gt;, &lt;task&gt;, &lt;reference&gt;, and &lt;glossary&gt;.">topic</a>, <a href="../common/../langref/concept.html" title="The &lt;concept&gt; element is the top-level element for a topic that answers the question what is? Concepts provide background information that users must know before they can successfully work with a product or interface. Often, a concept is an extended definition of a major abstraction such as a process or function. It might also have an example or a graphic, but generally the structure of a concept is fairly simple.">concept</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- topic/topic </p>
+</div>
+
+<div class="section" id="topic__attrs"><a name="topic__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2>              <a name="topic__topic_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="topic__topic_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N108CA" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N108D0" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N108D6" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N108DC" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N108E2" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N108CA">id</td>
+
+<td valign="top" headers="N108D0">This ID enables topics to be referenced uniquely by topicrefs in
+DITA maps.</td>
+
+<td valign="top" headers="N108D6">ID</td>
+
+<td valign="top" headers="N108DC">  </td>
+
+<td valign="top" headers="N108E2">Yes</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N108CA">conref </td>
+
+<td valign="top" headers="N108D0">This attribute is used to reference an ID on a topic that can be
+reused. See <a href="../common/theconrefattribute.html" title="This attribute is used to reference an ID on content that can be reused. It allows reuse of DITA components from phrases to topics, as well as maps and pieces of maps.">The conref attribute</a> for examples and
+details about the syntax.</td>
+
+<td valign="top" headers="N108D6">CDATA</td>
+
+<td valign="top" headers="N108DC">#IMPLIED</td>
+
+<td valign="top" headers="N108E2"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N108CA">xmlns:ditaarch</td>
+
+<td valign="top" headers="N108D0">Declares the default DITA namespace.</td>
+
+<td valign="top" headers="N108D6">CDATA</td>
+
+<td valign="top" headers="N108DC">#FIXED http://dita.oasis-open.org/architecture/2005/</td>
+
+<td valign="top" headers="N108E2">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N108CA">DITAArchVersion</td>
+
+<td valign="top" headers="N108D0">Designates the version of the architecture that is in use.</td>
+
+<td valign="top" headers="N108D6">CDATA</td>
+
+<td valign="top" headers="N108DC"><span class="q">"1.1"</span> (version dependent; will increase)</td>
+
+<td valign="top" headers="N108E2">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N108CA">domains</td>
+
+<td valign="top" headers="N108D0">Indicates the specialized domains that are included in the DTD or
+Schema.</td>
+
+<td valign="top" headers="N108D6">CDATA</td>
+
+<td valign="top" headers="N108DC">(topic ui-d) (topic hi-d) (topic pr-d) (topic sw-d) (topic ut-d)
+(topic indexing-d)</td>
+
+<td valign="top" headers="N108E2">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N108CA">%select-atts; (props, base, platform, product, audience, otherprops,
+importance, rev, status)</td>
+
+<td valign="top" headers="N108D0">A set of related attributes, described at <a href="../common/select-atts.html" title="Attributes that support both filtering and flagging include props , platform , product , audience , and otherprops . Attribute base is a generic attribute that is available for specialization; it can be specialized for values that have a simple value syntax like the filter attributes, but is not itself a filtering or flagging attribute. Attribute rev only lets you flag information that matches a run-time parameter. Attribute importance provides a range of values for applications to use as needed. The %select-atts; entity also includes additional entities that allow it to include specializations of the props and base attribute. See the DITA Architectural Specification for more information on filtering or flagging with attributes, as well as for information on specialization the base and props attributes.">%select-atts;</a></td>
+
+<td valign="top" headers="N108D6">parameter entity</td>
+
+<td valign="top" headers="N108DC">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N108E2">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N108CA">%localization-atts; (translate, xml:lang, dir)</td>
+
+<td valign="top" headers="N108D0"> A set of related attributes, described at <a href="../common/localization-atts.html" title="Localization attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%localization-atts;</a>.
+</td>
+
+<td valign="top" headers="N108D6">parameter entity</td>
+
+<td valign="top" headers="N108DC">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N108E2">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N108CA">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N108D0">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N108D6">parameter entity</td>
+
+<td valign="top" headers="N108DC">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N108E2">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N108CA">class, outputclass</td>
+
+<td valign="top" headers="N108D0">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N108D6">&#xA0;</td>
+<td valign="top" headers="N108DC">&#xA0;</td>
+<td valign="top" headers="N108E2">&#xA0;</td>
+
+</tr>
+
+</table>
+     </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/topic2.html" title="Use the generic topic structure for untyped topics. While much of the DITA architecture is built upon generic topics, it is generally better to use more specific information types (such as concept, task, or reference) when they are available. For an answer to the question &quot;What are topics?&quot; and more details on when to use different information types, please refer to the DITA architectural specification.">Topic elements</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/title.html" title="The &lt;title&gt; element contains a heading or label for the main parts of a topic, including the topic as a whole, its sections and examples, and its labelled content, such as figures and tables. Beginning with DITA 1.1, the element may also be used to provide a title for a map.">title</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

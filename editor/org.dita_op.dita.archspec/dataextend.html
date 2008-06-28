@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="Data extensibility" />
+<meta name="abstract" content="The &lt;data&gt; element represents properties ranging from simple values to complex structures. Processes can harvest the &lt;data&gt; element for automated manipulation or to format data associated with the body flow. The &lt;data&gt; element is primarily intended for use in creating specializations." />
+<meta name="description" content="The &lt;data&gt; element represents properties ranging from simple values to complex structures. Processes can harvest the &lt;data&gt; element for automated manipulation or to format data associated with the body flow. The &lt;data&gt; element is primarily intended for use in creating specializations." />
+<meta scheme="URI" name="DC.Relation" content="ditaspecialization.html" />
+<meta scheme="URI" name="DC.Relation" content="foreigncontentspec.html" />
+<meta scheme="URI" name="DC.Relation" content="speclimits.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="dataextend" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Data extensibility</title>
+</head>
+<body id="dataextend"><a name="dataextend"><!-- --></a>
+
+
+<h1 class="topictitle1">Data extensibility</h1>
+
+
+<div><p>The &lt;data&gt; element represents properties ranging from simple
+values to complex structures. Processes can harvest the &lt;data&gt; element
+for automated manipulation or to format data associated with the body flow.
+The &lt;data&gt; element is primarily intended for use in creating specializations.</p>
+
+<p>You
+can nest &lt;data&gt; elements for structures. You can use the name attribute
+to indicate the semantic of instances of the &lt;data&gt; element such as addresses,
+times, amounts, and so on. In many cases, however, you may prefer to specialize
+the &lt;data&gt; element for more precise semantics and for constraints on
+structures and values. For instance, a specialization can specify an enumeration
+for the value attribute. </p>
+
+<p>In some cases, it isn't possible or convenient to maintain a property as
+part of the content of its subject. For instance, you might prefer to maintain
+extensive data in the &lt;prolog&gt; that applies to a note or example within
+the body. To handle such exceptions, you can use the &lt;data-about&gt; element
+to identify the subject of the property.</p>
+
+<p>A process can harvest the data values for a machine-processable representation
+such as RDF. The default formatting ignores the &lt;data&gt; element within
+the &lt;body&gt; element. Understanding whether and how the properties should
+display, customized or specialized processing can extend formatting to include
+data values in some formatted outputs.</p>
+
+<div class="cautiontitle">CAUTION:</div><div class="caution">It is an abuse of the DITA architecture to specialize &lt;data&gt;
+element for text that is part of the body flow, particularly to escape the
+constraints of the base content models. For example, a special kind of paragraph
+must specialize the base &lt;p&gt; element rather than the &lt;data&gt; element.
+When exchanging content with others or retiring a specialization, a paragraph
+specialized from the &lt;data&gt; element will be generalized and thus skipped
+by the base formatting, mangling the discourse flow and resulting in invalid
+content. </div>
+
+<div class="section"><h2 class="sectiontitle">Applications</h2><p>Uses of the &lt;data&gt; element include
+the following:</p>
+<br /><ul>
+<li>Complex metadata properties such as bibliographic records corresponding
+to citations.</li>
+
+<li>Hybrid documents with data values as part of the content. (Word processor
+formats using form fields provide an example of such hybrid documents.) </li>
+
+<li>Messages in which the payload includes human-readable content. Such applications
+can use the &lt;data&gt; element to define the addressing on the message envelope.
+For instance, a topic could model an email by representing the address with
+specialized &lt;data&gt; elements in the &lt;prolog&gt; element and the content
+with the &lt;body&gt; element.</li>
+
+<li>Transactional documents in which the values are processed but also displayed
+with human-readable content. In particular, a library of building blocks for
+transaction documents can be implemented through a DITA domain as specialized &lt;data&gt;
+elements including those from the UN/CEFACT Core Components Technical Specification
+(<a href="http://www.unece.org/cefact/" target="_blank">http://www.unece.org/cefact/</a>). </li>
+
+</ul>
+</div>
+
+<div class="example"><p>The following example specifies the delimited source code for
+a code fragment so an automated process can refresh the code fragment. The &lt;fragmentSource&gt;, &lt;sourceFile&gt;, &lt;startDelimiter&gt;,
+and &lt;endDelimiter&gt; elements are specialized from &lt;data&gt; but the &lt;codeFragment&gt;
+is specialized from &lt;codeblock&gt;. These properties wouldn't appear in
+the formatted output (except perhaps for debugging problems in the refresh): </p>
+<pre class="codeblock">&lt;example&gt;
+    &lt;title&gt;An important coding technique&lt;/title&gt;
+    &lt;codeFragment&gt;
+        &lt;fragmentSource&gt;
+            &lt;sourceFile     value="helloWorld.java"/&gt;
+            &lt;startDelimiter value="FRAGMENT_START_1"/&gt;
+            &lt;endDelimiter   value="FRAGMENT_END_1"/&gt;
+        &lt;/fragmentSource&gt;
+        ...
+    &lt;/codeFragment&gt;
+&lt;/example&gt;
+</pre>
+<p>The following example identifies a real estate property
+as part of a house description. The &lt;realEstateProperty&gt; element and
+everything it contains are specialized from &lt;data&gt;. The &lt;houseDescription&gt;
+element is specialized from &lt;section&gt;. A specialized process can format
+the values to identify the lot if appropriate for the brochure.</p>
+<pre class="codeblock">&lt;houseDescription&gt;
+  &lt;title&gt;A great home for sale&lt;/title&gt;
+  &lt;realEstateProperty&gt;
+    &lt;realEstateBlock value="B7"/&gt;
+    &lt;realEstateLot   value="4003"/&gt;
+    ...
+  &lt;/realEstateProperty&gt;
+  &lt;p&gt;This elegant....&lt;/p&gt;
+  &lt;object data="B7_4003_tour360Degrees.swf"/&gt;
+&lt;/houseDescription&gt;
+</pre>
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="ditaspecialization.html" title="Specialization is the process by which new designs are created based off existing designs, allowing new kinds of content to be processed using existing processing rules.">DITA specialization</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="foreigncontentspec.html" title="Specializing &lt;foreign&gt; or &lt;unknown&gt; elements is an open extension to the DITA Architecture that allows DITA adopters to incorporate new or existing standard vocabularies for non-textual content, like MathML and SVG, as in-line objects.">Specializing foreign or unknown content</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="speclimits.html" title="There are times when a new structural or domain type appears not to fit into the existing hierarchy, based on the semantics of the existing types and the restrictions of the specialization process. In these cases there are a variety of options to consider.">Limits of specialization</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

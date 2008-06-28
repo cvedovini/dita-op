@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="Metadata inheritance between maps and topics" />
+<meta name="abstract" content="The topicmeta element in maps contains numerous elements for the declaration of metadata. In general, specifying metadata in a topicmeta element is equivalent to specifying it in the topic, while allowing that topic to be reused in other maps where the metadata does not apply. Many items in the metadata also cascade to nested topic references within the map." />
+<meta name="description" content="The topicmeta element in maps contains numerous elements for the declaration of metadata. In general, specifying metadata in a topicmeta element is equivalent to specifying it in the topic, while allowing that topic to be reused in other maps where the metadata does not apply. Many items in the metadata also cascade to nested topic references within the map." />
+<meta scheme="URI" name="DC.Relation" content="topicMapMeta.html" />
+<meta scheme="URI" name="DC.Relation" content="dita_spec_23_mapinher.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="topicmetainheritance" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Metadata inheritance between maps and topics</title>
+</head>
+<body id="topicmetainheritance"><a name="topicmetainheritance"><!-- --></a>
+
+
+<h1 class="topictitle1">Metadata inheritance between maps and topics</h1>
+
+
+<div><p>The topicmeta element in maps contains numerous elements for the
+declaration of metadata. In general, specifying metadata in a topicmeta element
+is equivalent to specifying it in the topic, while allowing that topic to
+be reused in other maps where the metadata does not apply. Many items in the
+metadata also cascade to nested topic references within the map. </p>
+
+<div class="section"><p>For
+each element in the topicmeta, the following table provides three different
+behaviors.</p>
+<br /><ul>
+<li><strong>How does it apply to the topic?</strong> This describes how the metadata
+in a topicref interacts with the specified topic. In most cases, the properties
+are additive, <em>within the current context</em>. For example, when an audience
+is set to "user" within a topicref, this means that the audience for the specified
+topic is "user" when viewed within this context. This is in addition to any
+audience values specified within the topic, and does not apply to the topic
+when it is viewed in other contexts.</li>
+
+<li><strong>Does it cascade to other topics in the map?</strong> This indicates whether
+the specified meta value cascades to nested topicrefs. For example, setting
+an audience to "user" implicitly means that other topicrefs within that branch
+of the map also have an audience of "user". Elements like linktext, which
+can apply only to the specified target, do not cascade.</li>
+
+<li><strong>What is the purpose when specified at the map level?</strong> The map element
+allows for metadata to be specified for the entire map. This column describes
+what effect, if any, each element has when specified at this level.</li>
+
+</ul>
+</div>
+
+
+<div class="tablenoborder"><table summary="" cellspacing="0" cellpadding="4" frame="border" border="1" rules="all"><caption><span class="tablecap">Table 1. Topicmeta elements and their properties</span></caption>
+<thead align="left">
+<tr valign="bottom">
+<th class="cellrowborder" valign="bottom" width="25%" id="N100BF">Element</th>
+
+<th class="cellrowborder" valign="bottom" width="25%" id="N100C6">How does it apply to the topic (in this context)?</th>
+
+<th class="cellrowborder" valign="bottom" width="25%" id="N100CD">Does it cascade to other topics in the map?</th>
+
+<th class="cellrowborder" valign="bottom" width="25%" id="N100D4">What is the purpose when specified at the map level?</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+<tr>
+<td class="cellrowborder" valign="top" width="25%" headers="N100BF ">audience</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100C6 ">Add to the topic</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100CD ">Yes</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100D4 ">Specify an audience for the entire map</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" width="25%" headers="N100BF ">author</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100C6 ">Add to the topic</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100CD ">Yes</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100D4 ">Specify an author for the entire map</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" width="25%" headers="N100BF ">category</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100C6 ">Add to the topic</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100CD ">Yes</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100D4 ">Specify a category for the entire map</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" width="25%" headers="N100BF ">copyright</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100C6 ">Add to the topic</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100CD ">Yes</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100D4 ">Specify a copyright for the entire map</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" width="25%" headers="N100BF ">critdates</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100C6 ">Add to the topic</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100CD ">Yes</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100D4 ">Specify critical dates for the entire map</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" width="25%" headers="N100BF ">data</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100C6 ">Add to the topic</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100CD ">No, unless specialized for a purpose that inherits</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100D4 ">No stated purpose, until the element is specified</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" width="25%" headers="N100BF ">data-about</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100C6 ">Add the property to the specified target</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100CD ">No, unless specialized for a purpose that inherits</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100D4 ">No stated purpose, until the element is specified</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" width="25%" headers="N100BF ">foreign</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100C6 ">Add to the topic</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100CD ">No, unless specialized for a purpose that inherits</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100D4 ">No stated purpose, until the element is specified</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" width="25%" headers="N100BF ">keywords</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100C6 ">Add to the topic</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100CD ">No</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100D4 ">No stated purpose</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" width="25%" headers="N100BF ">linktext</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100C6 ">Not added to the topic; applies to links created based
+on this occurrence in the map</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100CD ">No</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100D4 ">No stated purpose</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" width="25%" headers="N100BF ">othermeta</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100C6 ">Add to the topic</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100CD ">No</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100D4 ">Define metadata for the entire map</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" width="25%" headers="N100BF ">permissions</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100C6 ">Add to the topic</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100CD ">Yes</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100D4 ">Specify permissions for the entire map</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" width="25%" headers="N100BF ">prodinfo</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100C6 ">Add to the topic</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100CD ">Yes</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100D4 ">Specify product info for the entire map</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" width="25%" headers="N100BF ">publisher</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100C6 ">Add to the topic</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100CD ">Yes</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100D4 ">Specify a publisher for the map</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" width="25%" headers="N100BF ">resourceid</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100C6 ">Add to the topic</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100CD ">No</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100D4 ">Specify a resource ID for the map</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" width="25%" headers="N100BF ">searchtitle</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100C6 ">Replace the one in the topic. If multiple searchtitles
+are given for one target, processors may choose to issue a warning.</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100CD ">No</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100D4 ">No stated purpose</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" width="25%" headers="N100BF ">shortdesc</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100C6 ">Not added to the topic; applies to links created based
+on this occurrence in the map</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100CD ">No</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100D4 ">Provide a description of the map</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" width="25%" headers="N100BF ">source</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100C6 ">Add to the topic</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100CD ">No</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100D4 ">Specify a source for the map</td>
+
+</tr>
+
+<tr>
+<td class="cellrowborder" valign="top" width="25%" headers="N100BF ">unknown</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100C6 ">Add to the topic</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100CD ">No, unless specialized for a purpose that cascades</td>
+
+<td class="cellrowborder" valign="top" width="25%" headers="N100D4 ">No stated purpose, until the element is specified</td>
+
+</tr>
+
+</tbody>
+
+</table>
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="topicMapMeta.html" title="The properties of a topic (including metadata attributes and metadata elements) can be specified in the topic itself or in references to the topic within maps.">Topic properties in topics and maps</a></div>
+</div>
+<div class="relconcepts"><strong>Related concepts</strong><br />
+<div><a href="dita_spec_23_mapinher.html" title="Some of the attributes and metadata in a map can be inherited based on the structures in the map.">Inheritance of attributes and metadata in maps</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

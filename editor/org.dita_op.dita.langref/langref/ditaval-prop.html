@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="prop" />
+<meta name="abstract" content="Identifies an attribute, and usually values in the attribute, to take an action on. The attribute must be a conditional processing attribute: platform, product, audience, props. and otheprops; or a specialization of the props attribute. There can be at most one occurrence of a &quot;prop&quot; element with no attribute specified (setting a default action for every prop element), at most one for each attribute with no value specified (setting the default action for a specific attribute), and at most one with each attribute value specification (to avoid conflicting actions for the same attribute value)." />
+<meta name="description" content="Identifies an attribute, and usually values in the attribute, to take an action on. The attribute must be a conditional processing attribute: platform, product, audience, props. and otheprops; or a specialization of the props attribute. There can be at most one occurrence of a &quot;prop&quot; element with no attribute specified (setting a default action for every prop element), at most one for each attribute with no value specified (setting the default action for a specific attribute), and at most one with each attribute value specification (to avoid conflicting actions for the same attribute value)." />
+<meta content="DITAVAL elements, prop" name="DC.subject" />
+<meta content="DITAVAL elements, prop" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/about-ditaval.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/ditaval-style-conflict.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/ditaval-revprop.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="ditaval-prop" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>prop</title>
+</head>
+<body id="ditaval-prop"><a name="ditaval-prop"><!-- --></a>
+
+
+<h1 class="topictitle1">prop</h1>
+
+
+
+<div><p>Identifies an attribute, and usually values in the attribute, to
+take an action on. The attribute must be a conditional processing attribute:
+platform, product, audience, props. and otheprops; or a specialization of
+the props attribute. There can be at most one occurrence of a "prop" element
+with no attribute specified (setting a default action for every prop element),
+at most one for each attribute with  no value specified (setting the default
+action for a specific attribute), and at most one with each attribute value
+specification (to avoid conflicting actions for the same attribute value).</p>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><p><a href="ditaval-startflag.html" title="The startflag takes an optional image reference and an optional alt-text element for identifying the beginning of flagged content. If an image is specified, the specified image will be used to flag the beginning of the content, with the alt-text contents as alternative text. If alt-text is specified without an image, that text will be used to flag the content instead of an image. If no image and no alt-text are specified, then this element has no defined purpose. The startflag element is allowed inside either prop or revprop.">startflag</a> (<em>optional</em>)
+then <a href="ditaval-endflag.html" title="The endflag takes an optional image reference and an optional alt-text element for identifying the end of flagged content. If an image is specified, the specified image will be used to flag the end of the content, with the alt-text contents as alternative text. If alt-text is specified without an image, that text will be used to flag the content instead of an image. If no image and no alt-text are specified, then this element has no defined purpose. The endflag element is allowed inside either prop or revprop.">endflag</a> (<em>optional</em>)</p>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><p><a href="ditaval-val.html" title="&lt;val&gt; is the root element of a ditaval file.">val</a></p>
+</div>
+
+<div class="section" id="ditaval-prop__attrs"><a name="ditaval-prop__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="ditaval-prop__abstract_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="ditaval-prop__abstract_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N100CA" width="14.285714285714286%">Name</th>
+
+<th valign="bottom" align="left" id="N100D0" width="42.85714285714286%">Description</th>
+
+<th valign="bottom" align="left" id="N100D6" width="14.285714285714286%">Data Type</th>
+
+<th valign="bottom" align="left" id="N100DC" width="14.285714285714286%">Default Value</th>
+
+<th valign="bottom" align="left" id="N100E2" width="14.285714285714286%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100CA">att</td>
+
+<td valign="top" headers="N100D0">The attribute to be acted upon. Must be one of props, audience, platform,
+product, otherprops, or a specialization of props. If the att attribute
+is absent, then the prop element declares a default behavior for any conditional
+processing attribute.</td>
+
+<td valign="top" headers="N100D6">CDATA</td>
+
+<td valign="top" headers="N100DC">#IMPLIED</td>
+
+<td valign="top" headers="N100E2">no</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100CA">val</td>
+
+<td valign="top" headers="N100D0">The value to be acted upon. If the val attribute is absent, then
+the prop element declares a default behavior for any value in the specified
+attribute.</td>
+
+<td valign="top" headers="N100D6">CDATA</td>
+
+<td valign="top" headers="N100DC">#IMPLIED</td>
+
+<td valign="top" headers="N100E2">no</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100CA">action</td>
+
+<td valign="top" headers="N100D0">The action to be taken. The options are:<dl>
+<dt class="dlterm"><kbd class="userinput">include</kbd></dt>
+
+<dd>Include the content in output. This is the default behavior unless otherwise
+set.</dd>
+
+
+<dt class="dlterm"><kbd class="userinput">exclude</kbd></dt>
+
+<dd>Exclude the content from output (if all values in the particular attribute
+are excluded).</dd>
+
+
+<dt class="dlterm"><kbd class="userinput">passthrough</kbd></dt>
+
+<dd>Include the content in output, and preserve the attribute value as part
+of the output stream for further processing by a runtime engine, for example
+runtime filtering based on individual user settings. The value should be preserved
+in whatever syntax is required by the target runtime. Values that are not
+explicitly passed through should be removed from the output stream, even though
+the content is still included.</dd>
+
+
+<dt class="dlterm"><kbd class="userinput">flag</kbd></dt>
+
+<dd>Include and flag the content on output (if the content has not been excluded).</dd>
+
+</dl>
+</td>
+
+<td valign="top" headers="N100D6">(include | exclude | passthrough | flag)</td>
+
+<td valign="top" headers="N100DC">#IMPLIED</td>
+
+<td valign="top" headers="N100E2">yes</td>
+
+</tr>
+
+<tr id="ditaval-prop__color">
+<td valign="top" headers="N100CA">color</td>
+
+<td valign="top" headers="N100D0">If flag has been set, the color to use to flag text. Colors may be
+entered by name or code. Processor support is recommended for  the color names
+listed in <a href="http://www.w3.org/TR/2001/REC-xsl-20011015/slice5.html#section-N8794-Property-Datatypes" target="_blank">http://www.w3.org/TR/2001/REC-xsl-20011015/slice5.html#section-N8794-Property-Datatypes</a> and for the 6 digit hex code form (#rrggbb, case
+insensitive). If flag has not been set this attribute is ignored.</td>
+
+<td valign="top" headers="N100D6">CDATA</td>
+
+<td valign="top" headers="N100DC">#IMPLIED</td>
+
+<td valign="top" headers="N100E2">no</td>
+
+</tr>
+
+<tr id="ditaval-prop__backcolor">
+<td valign="top" headers="N100CA">backcolor</td>
+
+<td valign="top" headers="N100D0">If flag has been set, the color to use as background for flagged
+text. Colors may be entered by name or code. Processor support is recommended
+for  the color names listed in <a href="http://www.w3.org/TR/2001/REC-xsl-20011015/slice5.html#section-N8794-Property-Datatypes" target="_blank">http://www.w3.org/TR/2001/REC-xsl-20011015/slice5.html#section-N8794-Property-Datatypes</a> and for the 6 digit hex code form (#rrggbb, case
+insensitive). If flag has not been set this attribute is ignored.</td>
+
+<td valign="top" headers="N100D6">CDATA</td>
+
+<td valign="top" headers="N100DC">#IMPLIED</td>
+
+<td valign="top" headers="N100E2">no</td>
+
+</tr>
+
+<tr id="ditaval-prop__style">
+<td valign="top" headers="N100CA">style</td>
+
+<td valign="top" headers="N100D0">If flag has been set, the text style to use for flagged text. The
+following values are enumerated:<br /><ul>
+<li>underline</li>
+
+<li>double-underline</li>
+
+<li>italics</li>
+
+<li>overline</li>
+
+<li>bold</li>
+
+</ul>
+ If flag has not been set this attribute is ignored.</td>
+
+<td valign="top" headers="N100D6">(underline | double-underline | italics | overline | bold)</td>
+
+<td valign="top" headers="N100DC">#IMPLIED</td>
+
+<td valign="top" headers="N100E2">no</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/about-ditaval.html" title="You can create a conditional processing profile to identify which values you want to conditionally process for a particular output, build, or other purpose. The profile has the extension .ditaval to identify it to conditional processing systems.">DITAVAL elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/ditaval-style-conflict.html" title="The style-conflict element declares behavior to be used when one or more flagging methods collide on a single content element.">style-conflict</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/ditaval-revprop.html" title="Identifies a value in the rev attribute that should be flagged in some manner. Unlike the other conditional processing attributes, which can be used for both filtering and flagging, the rev attribute can only be used for flagging. There can be at most one occurrence of a &quot;revprop&quot; element for each attribute value specification (to avoid conflicting actions for the same attribute value).">revprop</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

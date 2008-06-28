@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="index-see-also" />
+<meta name="abstract" content="An &lt;index-see-also&gt; element within an &lt;indexterm&gt; redirects the reader to another index entry that the reader should reference in addition to the current one." />
+<meta name="description" content="An &lt;index-see-also&gt; element within an &lt;indexterm&gt; redirects the reader to another index entry that the reader should reference in addition to the current one." />
+<meta content="index-see-also, Indexing domain elements" name="DC.subject" />
+<meta content="index-see-also, Indexing domain elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/indexing-d.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/index-see.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/index-sort-as.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="index-see-also" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>index-see-also</title>
+</head>
+<body id="index-see-also"><a name="index-see-also"><!-- --></a>
+
+
+<h1 class="topictitle1">index-see-also</h1>
+
+
+
+<div><p>An &lt;index-see-also&gt; element within an &lt;indexterm&gt; redirects
+the reader to another index entry that the reader should reference in addition
+to the current one.</p>
+
+<div class="section"><p>The &lt;index-see&gt; and &lt;index-see-also&gt;
+elements allow a form of redirection to another index entry within the generated
+index. The &lt;index-see&gt; element refers to an index entry that the reader
+should use <em>instead of</em> the current one, whereas the &lt;index-see-also&gt;
+element refers to an index entry that the reader should use <em>in addition
+to</em> the current one. </p>
+<p>The &lt;index-see&gt; and &lt;index-see-also&gt;
+elements are ignored if their parent indexterm element contains any indexterm
+children.</p>
+</div>
+
+<div class="section"><p>In addition to its "see also" redirection, an index-see-also functions
+as a pointwise indexterm, thereby typically generating a page reference as
+well as the "see also" indication.</p>
+<p>It is not an error for there to be
+multiple index-see-also elements for a single index entry.</p>
+</div>
+
+<div class="example"><p>The following example illustrates the use of an &lt;index-see-also&gt;
+redirection element within an &lt;indexterm&gt;:</p>
+<pre class="codeblock">&lt;indexterm&gt;Carp
+   &lt;index-see-also&gt;Goldfish&lt;/index-see-also&gt;
+&lt;/indexterm&gt;</pre>
+<div class="p">This will typically generate a page reference
+to "Carp" and a redirection: <br /><ul>
+<li id="index-see-also__WS31ee95e0b0c9e7e91643e4b10c8d987a95-7ff5"><a name="index-see-also__WS31ee95e0b0c9e7e91643e4b10c8d987a95-7ff5"><!-- --></a>Carp, 56<br /><ul>
+<li id="index-see-also__WS31ee95e0b0c9e7e91643e4b10c8d987a95-7ff4"><a name="index-see-also__WS31ee95e0b0c9e7e91643e4b10c8d987a95-7ff4"><!-- --></a><em>see also</em> Goldfish</li>
+
+</ul>
+</li>
+
+</ul>
+</div>
+<p>The following example illustrates the use of an &lt;index-see-also&gt;
+redirection element to a more complex (multilevel) &lt;indexterm&gt;:</p>
+<pre class="codeblock">&lt;indexterm&gt;Feeding
+   &lt;index-see-also&gt;Goldfish &lt;indexterm&gt;feeding&lt;/indexterm&gt;&lt;/index-see-also&gt;
+&lt;/indexterm&gt;</pre>
+<p>This is part of the indexing markup that
+might generate index entries such as:</p>
+<br /><ul>
+<li>Feeding, 348<br /><ul>
+<li><em>see also</em> Goldfish feeding</li>
+
+</ul>
+</li>
+
+<li>Goldfish<br /><ul>
+<li>feeding, 56</li>
+
+<li>flushing, 128, 345</li>
+
+</ul>
+</li>
+
+</ul>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N1011F" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N10124" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N1012E" headers="N1011F"><strong>ditabase, topic, task, reference, concept</strong></td>
+<td valign="top" headers="N10124 N1012E"> (
+ text data  or <a href="../common/../langref/keyword.html" title="The &lt;keyword&gt; element identifies a keyword or token, such as a single value from an enumerated list, the name of a command or parameter, product name, or a lookup key for a message.">keyword</a> or <a href="../common/../langref/option.html" title="The &lt;option&gt; element describes an option that can be used to modify a command (or something else, like a configuration). This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">option</a> or <a href="../common/../langref/parmname.html" title="When referencing the name of an application programming interface parameter within the text flow of your topic, use the parameter name (&lt;parmname&gt;) element to markup the parameter. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">parmname</a> or <a href="../common/../langref/apiname.html" title="The &lt;apiname&gt; element provides the name of an application programming interface (API) such as a Java class name or method name. This element is part of the DITA programming domain, a special set of DITA elements designed to document programming tasks, concepts and reference information.">apiname</a> or <a href="../common/../langref/cmdname.html" title="The command name (&lt;cmdname&gt;) element specifies the name of a command when it is part of a software discussion. This element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">cmdname</a> or <a href="../common/../langref/msgnum.html" title="The message number (&lt;msgnum&gt;) element contains the number of a message produced by an application or program. This element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">msgnum</a> or <a href="../common/../langref/varname.html" title="The variable name (&lt;varname&gt;) element defines a variable that must be supplied to a software application. The variable name element is very similar to the variable (var) element, but variable name is used outside of syntax diagrams. This element is part of the DITA software domain, a special set of DITA elements designed to document software tasks, concepts and reference information.">varname</a> or <a href="../common/../langref/wintitle.html" title="The window title &lt;wintitle&gt; element can be used to mark up names of windows or dialogs, or other user interface elements at the same level of grouping, including wizard titles, wizard page titles, and window pane titles. This element is part of the DITA user interface domain, a special set of DITA elements designed to document user interface tasks, concepts and reference information.">wintitle</a> or <a href="../common/../langref/term.html" title="The &lt;term&gt; element identifies words that may have or require extended definitions or explanations. In future development of DITA, for example, terms might provide associative linking to matching glossary entries.">term</a> or <a href="../common/../langref/data.html" title="The &lt;data&gt; element represents a property within a DITA topic or map. While the &lt;data&gt; element can be used directly to capture properties, it is particularly useful as a basis for specialization. Default processing treats the property values as an unknown kind of metadata, but custom processing can match the name attribute or specialized element to format properties as sidebars or other adornments or to harvest properties for automated processing.">data</a> or <a href="../common/../langref/data-about.html" title="The &lt;data-about&gt; element identifies the subject of a property when the subject isn't associated with the context in which the property is specified. The property itself is expressed by the &lt;data&gt; element. The &lt;data-about&gt; element handles exception cases where a property must be expressed somewhere other than inside the actual subject of the property. The &lt;data-about&gt; element is particularly useful as a basis for specialization in combination with the &lt;data&gt; element.">data-about</a> or <a href="../common/../langref/foreign.html" title="The &lt;foreign&gt; element is an open extension that allows information architects to incorporate existing standard vocabularies for non-textual content. like MathML and SVG, as inline objects. If &lt;foreign&gt; contains more than one alternative content element, they will all be processed. Specialization of &lt;foreign&gt; should be implemented as a domain, but for those looking for more control over the content can implement foreign vocabulary as an element specialization.">foreign</a> or <a href="../common/../langref/unknown.html" title="The &lt;unknown&gt; element is an open extension that allows information architects to incorporate xml fragments that do not necessarily fit into an existing DITA use case. The base processing for &lt;unknown&gt; is to suppress unless otherwise instructed.">unknown</a> or 
+<a href="../common/../langref/indexterm.html" title="An &lt;indexterm&gt; element allows the author to indicate that a certain word or phrase should produce an index entry in the generated index.">indexterm</a>) <em> (any number) </em></td>
+</tr>
+
+<tr><td valign="top" id="N10242" headers="N1011F"><strong>map, bookmap</strong></td>
+<td valign="top" headers="N10124 N10242"> (
+ text data  or <a href="../common/../langref/keyword.html" title="The &lt;keyword&gt; element identifies a keyword or token, such as a single value from an enumerated list, the name of a command or parameter, product name, or a lookup key for a message.">keyword</a> or <a href="../common/../langref/term.html" title="The &lt;term&gt; element identifies words that may have or require extended definitions or explanations. In future development of DITA, for example, terms might provide associative linking to matching glossary entries.">term</a> or <a href="../common/../langref/data.html" title="The &lt;data&gt; element represents a property within a DITA topic or map. While the &lt;data&gt; element can be used directly to capture properties, it is particularly useful as a basis for specialization. Default processing treats the property values as an unknown kind of metadata, but custom processing can match the name attribute or specialized element to format properties as sidebars or other adornments or to harvest properties for automated processing.">data</a> or <a href="../common/../langref/data-about.html" title="The &lt;data-about&gt; element identifies the subject of a property when the subject isn't associated with the context in which the property is specified. The property itself is expressed by the &lt;data&gt; element. The &lt;data-about&gt; element handles exception cases where a property must be expressed somewhere other than inside the actual subject of the property. The &lt;data-about&gt; element is particularly useful as a basis for specialization in combination with the &lt;data&gt; element.">data-about</a> or <a href="../common/../langref/foreign.html" title="The &lt;foreign&gt; element is an open extension that allows information architects to incorporate existing standard vocabularies for non-textual content. like MathML and SVG, as inline objects. If &lt;foreign&gt; contains more than one alternative content element, they will all be processed. Specialization of &lt;foreign&gt; should be implemented as a domain, but for those looking for more control over the content can implement foreign vocabulary as an element specialization.">foreign</a> or <a href="../common/../langref/unknown.html" title="The &lt;unknown&gt; element is an open extension that allows information architects to incorporate xml fragments that do not necessarily fit into an existing DITA use case. The base processing for &lt;unknown&gt; is to suppress unless otherwise instructed.">unknown</a> or 
+<a href="../common/../langref/indexterm.html" title="An &lt;indexterm&gt; element allows the author to indicate that a certain word or phrase should produce an index entry in the generated index.">indexterm</a>) <em> (any number) </em></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N102F5" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N102FA" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N10304" headers="N102F5"><strong>bookmap, map, ditabase, topic, task, concept, reference, glossary</strong></td>
+<td valign="top" headers="N102FA N10304"><a href="../common/../langref/indexterm.html" title="An &lt;indexterm&gt; element allows the author to indicate that a certain word or phrase should produce an index entry in the generated index.">indexterm</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>+ topic/index-base indexing-d/index-see-also </p>
+</div>
+
+<div class="section" id="index-see-also__attrs"><a name="index-see-also__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="index-see-also__index-see-also_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="index-see-also__index-see-also_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10345" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N1034B" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N10351" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N10357" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N1035D" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10345">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N1034B">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N10351">parameter entity</td>
+
+<td valign="top" headers="N10357">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1035D">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10345">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N1034B">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N10351">parameter entity</td>
+
+<td valign="top" headers="N10357">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1035D">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10345">class, keyref</td>
+
+<td valign="top" headers="N1034B">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N10351">&#xA0;</td>
+<td valign="top" headers="N10357">&#xA0;</td>
+<td valign="top" headers="N1035D">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/indexing-d.html" title="The indexing domain provides several new elements for use with indexing. The new elements allow authors to define &quot;See&quot; and &quot;See also&quot; references, and to override the default sort order for a term.">Indexing group elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/index-see.html" title="An &lt;index-see&gt; element within an &lt;indexterm&gt; redirects the reader to another index entry that the reader should reference instead of the current one.">index-see</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/index-sort-as.html" title="The &lt;index-sort-as&gt; element specifies a sort phrase under which an index entry would be sorted.">index-sort-as</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

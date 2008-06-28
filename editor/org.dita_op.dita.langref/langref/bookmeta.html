@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="bookmeta" />
+<meta name="abstract" content="The &lt;bookmeta&gt; element contains information about the book that is not considered book content, such as copyright information, author information, and any classifications." />
+<meta name="description" content="The &lt;bookmeta&gt; element contains information about the book that is not considered book content, such as copyright information, author information, and any classifications." />
+<meta content="Bookmap elements, bookmeta" name="DC.subject" />
+<meta content="Bookmap elements, bookmeta" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/bookmap-meta.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/approved.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="bookmeta" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>bookmeta</title>
+</head>
+<body id="bookmeta"><a name="bookmeta"><!-- --></a>
+
+
+<h1 class="topictitle1">bookmeta</h1>
+
+
+
+<div><p>The &lt;bookmeta&gt; element contains information about the book
+that is not considered book content, such as copyright information, author
+information, and any classifications. </p>
+
+<div class="example"><h2 class="sectiontitle">Example</h2><div class="p">In this example:<br /><ul>
+<li>The &lt;authorinformation&gt; contains the content for a reader's comment
+form; the &lt;maintainer&gt; element references that author information to
+create the reader comment form.</li>
+
+<li>The &lt;prodinfo&gt; element contains the book's product information.
+This includes the product name, and the version, release, and modification
+information.</li>
+
+<li>The &lt;bookid&gt; element contains the book's form number and part number
+information. The &lt;maintainer&gt; element contains the reader comment information;
+point to the &lt;authorinformation&gt; element for a complete RCF.</li>
+
+<li>The &lt;bookrights&gt; element contains the book's copyright information.</li>
+
+</ul>
+</div>
+<pre class="codeblock">&lt;bookmeta&gt;
+ &lt;authorinformation id="rcf"&gt;
+  &lt;organizationinfo&gt;&lt;namedetails&gt;&lt;organizationnamedetails&gt;
+  &lt;organizationname&gt;IBM&lt;/organizationname&gt;
+  &lt;/organizationnamedetails&gt;&lt;/namedetails&gt;
+  &lt;addressdetails&gt;ATTN: Dept 542&lt;thoroughfare&gt;3905 37th Street NW&lt;/thoroughfare&gt;
+  &lt;locality&gt;Rochester, MN&lt;postalcode&gt;55901-6666&lt;/postalcode&gt;&lt;/locality&gt;
+  &lt;country&gt;USA&lt;/country&gt;&lt;/addressdetails&gt;
+  &lt;contactnumbers&gt;&lt;contactnumber type="telephone"&gt;800-555-1212&lt;/contactnumber&gt;
+  &lt;contactnumber type="fax"&gt;800-555-1213&lt;/contactnumber&gt;&lt;/contactnumbers&gt;
+  &lt;emailaddresses&gt;&lt;emailaddress&gt;phred@us.ibm.com&lt;/emailaddress&gt;&lt;/emailaddresses&gt;
+  &lt;urls&gt;&lt;url&gt;http://w3-03.ibm.com/ids/page/636&lt;/url&gt;&lt;/urls&gt;
+  &lt;/organizationinfo&gt;
+ &lt;/authorinformation&gt;
+ &lt;prodinfo&gt;
+  &lt;prodname&gt;My Product&lt;/prodname&gt;
+  &lt;vrmlist&gt;&lt;vrm release="Release 1" version="Version 3"/&gt;&lt;/vrmlist&gt;
+ &lt;/prodinfo&gt;
+ &lt;bookid&gt;&lt;bookpartno&gt;99F9999&lt;/bookpartno&gt;&lt;booknumber&gt;SC00-0000-00&lt;/booknumber&gt;
+ &lt;maintainer href="#rcf"&gt;&lt;/maintainer&gt;&lt;/bookid&gt;
+ &lt;bookrights&gt;&lt;copyrfirst&gt;&lt;year&gt;1996&lt;/year&gt;&lt;/copyrfirst&gt;&lt;copyrlast&gt;&lt;year&gt;2006&lt;/year&gt;
+ &lt;/copyrlast&gt;&lt;bookowner&gt;&lt;organization&gt;IBM&lt;/organization&gt;&lt;/bookowner&gt;&lt;/bookrights&gt;
+&lt;/bookmeta&gt;</pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100B3" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100B8" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100C2" headers="N100B3"><strong>bookmap</strong></td>
+<td valign="top" headers="N100B8 N100C2"> ( (
+<a href="../common/../langref/linktext.html" title="The &lt;linktext&gt; element provides the literal label or line of text for a link. In most cases, the text of a link can be resolved during processing by cross reference with the target resource. Use the &lt;linktext&gt; element only when the target cannot be reached, such as when it is a peer or external link, or the target is local but not in DITA format. When used inside a topic, it will be used as the text for the specified link; when used within a map, it will be used as the text for generated links that point to the specified topic.">linktext</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/searchtitle.html" title="When your DITA topic is transformed to XHTML, the &lt;searchtitle&gt; element is used to create a title element at the top of the resulting HTML file. This title is normally used in search result summaries by some search engines, such as that in Eclipse (http://eclipse.org); if not set, the XHTML's title element defaults to the source topic's title content (which may not be as well optimized for search summaries)">searchtitle</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/shortdesc.html" title="The short description (&lt;shortdesc&gt;) element occurs between the topic title and the topic body, as the initial paragraph-like content of a topic, or it can be embedded in an abstract element. The short description, which represents the purpose or theme of the topic, is also intended to be used as a link preview and for searching. When used within a DITA map, the short description of the &lt;topicref&gt; can be used to override the short description in the topic.">shortdesc</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/author.html" title="The &lt;author&gt; metadata element contains the name of the topic's author.">author</a> or <a href="../common/../langref/authorinformation.html" title="The &lt;authorinformation&gt; element contains detailed information about the author or authoring organization.">authorinformation</a>) <em> (any number) </em> then  (
+<a href="../common/../langref/source.html" title="The &lt;source&gt; element contains a reference to a resource from which the present topic is derived, either completely or in part. The element can contain a description of the resource; the href reference can be a string or a URL that points to it.">source</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/publisherinformation.html" title="The &lt;publisherinformation&gt; contains information about what group or person published the book, where it was published, and certain details about its publication history. Other publication history information is found in the &lt;bookchangehistory&gt; element.">publisherinformation</a>) <em> (any number) </em> then  (
+<a href="../common/../langref/critdates.html" title="The &lt;critdates&gt; element contains the critical dates in a document life cycle, such as the creation date and multiple revision dates.">critdates</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/permissions.html" title="The &lt;permissions&gt; prolog element can indicate any preferred controls for access to a topic. Topics can be filtered based on the permissions element. This capability depends on your output formatting process.">permissions</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/audience.html" title="The &lt;audience&gt; metadata element indicates, through the value of its type attribute, the intended audience for a topic. Since a topic can have multiple audiences, you can include multiple audience elements. For each audience you specify, you can identify the high-level task (job) they are trying to accomplish and the level of experience (experiencelevel) expected. The audience element may be used to provide a more detailed definition of values used throughout the map or topic on the audience attribute.">audience</a>) <em> (any number) </em> then  (
+<a href="../common/../langref/category.html" title="The &lt;category&gt; element can represent any category by which a topic might be classified for retrieval or navigation; for example, the categories could be used to group topics in a generated navigation bar. Topics can belong to multiple categories.">category</a>) <em> (any number) </em> then  (
+<a href="../common/../langref/keywords.html" title="The &lt;keywords&gt; element contains a list of key words (using &lt;indexterm&gt; or &lt;keyword&gt; markup) that can be used by a search engine.">keywords</a>) <em> (any number) </em> then  (
+<a href="../common/../langref/prodinfo.html" title="The &lt;prodinfo&gt; metadata element in the prolog contains information about the product or products that are the subject matter of the current topic. The prodinfo element may be used to provide a more detailed definition of values used throughout the map or topic on the product attribute.">prodinfo</a>) <em> (any number) </em> then  (
+<a href="../common/../langref/othermeta.html" title="The &lt;othermeta&gt; element can be used to identify properties not otherwise included in &lt;metadata&gt; and assign name/content values to those properties. The name attribute identifies the property and the content attribute specifies the property's value. The values in this attribute are output as HTML metadata elements, and have no defined meaning for other possible outputs such as PDF.">othermeta</a>) <em> (any number) </em> then  (
+<a href="../common/../langref/resourceid.html" title="The &lt;resourceid&gt; element provides an identifier for applications that require them in a particular format, when the normal id attribute of the topic can't be used. Each resourceid entry should be unique. It is one of the metadata elements that can be included within the prolog of a topic, along with document tracking and product information, etc. The element has no content, but takes an id attribute and an appname attribute.">resourceid</a>) <em> (any number) </em> then  (
+<a href="../common/../langref/bookid.html" title="The &lt;bookid&gt; element contains the publisher's identification information for the book, such as part number, edition number and ISBN number.">bookid</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/bookchangehistory.html" title="The &lt;bookchangehistory&gt; element contains information about the history of the book's creation and publishing lifecycle, who wrote, reviewed, edited, and tested the book, and when these events took place.">bookchangehistory</a>) <em> (any number) </em> then  (
+<a href="../common/../langref/bookrights.html" title="The &lt;bookrights&gt; element contains the information about the legal rights associated with the book, including copyright dates and owners.">bookrights</a>) <em> (any number) </em> then  (
+<a href="../common/../langref/data.html" title="The &lt;data&gt; element represents a property within a DITA topic or map. While the &lt;data&gt; element can be used directly to capture properties, it is particularly useful as a basis for specialization. Default processing treats the property values as an unknown kind of metadata, but custom processing can match the name attribute or specialized element to format properties as sidebars or other adornments or to harvest properties for automated processing.">data</a>) <em> (any number) </em>) </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N102EC" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N102F1" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N102FB" headers="N102EC"><strong>bookmap</strong></td>
+<td valign="top" headers="N102F1 N102FB"><a href="../common/../langref/bookmap.html" title="The &lt;bookmap&gt; element is a map file used to organize DITA content into a traditional book format.">bookmap</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- map/topicmeta bookmap/bookmeta </p>
+</div>
+
+<div class="section" id="bookmeta__attrs"><a name="bookmeta__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="bookmeta__bookmeta_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="bookmeta__bookmeta_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10336" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N1033C" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N10342" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N10348" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N1034E" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10336">lockmeta</td>
+
+<td valign="top" headers="N1033C">Indicates whether any of the meta information should be replaced
+by meta information in the referenced topic.</td>
+
+<td valign="top" headers="N10342">(yes | no | -dita-use-conref-target)</td>
+
+<td valign="top" headers="N10348">#IMPLIED</td>
+
+<td valign="top" headers="N1034E">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10336">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N1033C">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N10342">parameter entity</td>
+
+<td valign="top" headers="N10348">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1034E">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10336">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N1033C">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N10342">parameter entity</td>
+
+<td valign="top" headers="N10348">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N1034E">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10336">class</td>
+
+<td valign="top" headers="N1033C">A common attribute described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N10342">&#xA0;</td>
+<td valign="top" headers="N10348">&#xA0;</td>
+<td valign="top" headers="N1034E">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/bookmap-meta.html" title="The Bookmap specialization of ditamap supports standard book production for collections of DITA topics. This section contains the metadata elements used by bookmap to store book related metadata.">Bookmap metadata elements</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/approved.html" title="The &lt;approved&gt; element contains information about when and by whom the book was approved during its publication history.">approved</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

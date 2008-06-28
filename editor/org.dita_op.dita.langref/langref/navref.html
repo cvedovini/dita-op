@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="navref" />
+<meta name="abstract" content="The &lt;navref&gt; represents a pointer to another map which should be preserved as a transcluding link rather than resolved. Output formats that support such linking will integrate the target when displaying the referencing map to an end user." />
+<meta name="description" content="The &lt;navref&gt; represents a pointer to another map which should be preserved as a transcluding link rather than resolved. Output formats that support such linking will integrate the target when displaying the referencing map to an end user." />
+<meta content="navref, Map elements" name="DC.subject" />
+<meta content="navref, Map elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/map2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/anchor.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/reltable.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="navref" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>navref</title>
+</head>
+<body id="navref"><a name="navref"><!-- --></a>
+
+
+<h1 class="topictitle1">navref</h1>
+
+
+
+<div><p>The &lt;<span class="keyword">navref</span>&gt; represents a pointer to another map
+which should be preserved as a transcluding link rather than resolved. Output
+formats that support such linking will integrate the target when displaying
+the referencing map to an end user.  </p>
+
+<div class="section"><p>For example, if a map is converted to the
+Eclipse help system format, the DITA element <samp class="codeph">&lt;navref mapref="other.ditamap"/&gt;</samp> should
+be converted to the Eclipse element <samp class="codeph">&lt;link toc="other.xml"/&gt;</samp>.
+When Eclipse loads the referencing map, it will replace this link element
+with the contents of other.xml, provided that other.xml is available.</p>
+<div class="p">Note
+that not all output formats will support such linking. In order to include
+target maps directly without depending on the output format, you may reference
+the map with a topicref while setting the format attribute to "ditamap". For
+example, the following markup represents a literal inclusion of the map "other.ditamap"
+(similar to a conref):<pre class="codeblock">&lt;topicref href="other.ditamap" format="ditamap"/&gt;</pre>
+</div>
+</div>
+
+<div class="example"><h2 class="sectiontitle">Example</h2>In this example, the map titled "MyComponent
+tasks" references the maps "othermap2.ditamap" and "othermap3.ditamap".<pre class="codeblock">&lt;map title="MyComponent tasks"&gt;
+ &lt;navref mapref="../com.ibm.xml.doc/othermap1.ditamap"/&gt;
+ &lt;navref mapref="../com.ibm.xml.doc/othermap2.ditamap"/&gt;
+&lt;/map&gt;</pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100BB" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100C0" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100CA" headers="N100BB"><strong>map, bookmap</strong></td>
+<td valign="top" headers="N100C0 N100CA"> no content </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100E9" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100EE" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N100F8" headers="N100E9"><strong>bookmap, map</strong></td>
+<td valign="top" headers="N100EE N100F8"><a href="../common/../langref/map.html" title="The &lt;map&gt; element is used to define a map which describes the relationships among a set of resources, such as DITA topics. Maps consist of references to topics and other resources organized into hierarchies, groups, and tables. Maps provide a way to express these relationships in a single common format that can be used for different outputs.">map</a>, <a href="../common/../langref/topicref.html" title="The &lt;topicref&gt; element identifies a topic (such as a concept, task, or reference) or other resource. A &lt;topicref&gt; can contain other&lt;topicref&gt; elements, allowing you to express navigation or table-of-contents hierarchies, as well as implying relationships between the containing &lt;topicref&gt; and its children. You can set the collection-type of a container &lt;topicref&gt; to determine how its children are related to each other. You can also express relationships among &lt;topicref&gt;s using group and table structures (using &lt;topicgroup&gt; and &lt;reltable&gt;). Relationships end up expressed as links in the output (with each participant in a relationship having links to the other participants by default).">topicref</a>, <a href="../common/../langref/topichead.html" title="The &lt;topichead&gt; element provides a title-only entry in a navigation map, as an alternative to the fully-linked title provided by the &lt;topicref&gt; element.">topichead</a>, <a href="../common/../langref/topicgroup.html" title="The &lt;topicgroup&gt; element is for creating groups of &lt;topicref&gt; elements without affecting the hierarchy, as opposed to nested &lt;topicref&gt; elements within a &lt;topicref&gt;, which does imply a structural hierarchy. It is typically used outside a hierarchy to identify groups for linking without affecting the resulting toc/navigation output.">topicgroup</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- map/navref </p>
+</div>
+
+<div class="section" id="navref__attrs"><a name="navref__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="navref__navref_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="navref__navref_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N101AE" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N101B4" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N101BA" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N101C0" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N101C6" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101AE">mapref</td>
+
+<td valign="top" headers="N101B4">Specifies the URL (local filename, at least) of the map file to reference.  It may point to a DITA map,
+or to a file that is appropriate for your output format (such as XML TOC file for Eclipse
+output).</td>
+
+<td valign="top" headers="N101BA">CDATA</td>
+
+<td valign="top" headers="N101C0">#IMPLIED</td>
+
+<td valign="top" headers="N101C6"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101AE">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N101B4">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N101BA">parameter entity</td>
+
+<td valign="top" headers="N101C0">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N101C6">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101AE">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N101B4">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N101BA">parameter entity</td>
+
+<td valign="top" headers="N101C0">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N101C6">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N101AE">class, outputclass</td>
+
+<td valign="top" headers="N101B4">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N101BA">&#xA0;</td>
+<td valign="top" headers="N101C0">&#xA0;</td>
+<td valign="top" headers="N101C6">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/map2.html">Map elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/anchor.html" title="The &lt;anchor&gt; element is used for runtime integration of navigation. It provides an integration point that another map can point to in order to insert its navigation into the current navigation tree. For those familiar with Eclipse help systems, this serves the same purpose as the &lt;anchor&gt; element in that system. It may not be supported for all output formats.">anchor</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/reltable.html" title="The relationship table (&lt;reltable&gt;) defines relationships between topics, based on the familiar table model of rows (&lt;relrow&gt;), columns (&lt;relheader&gt;), and cells (&lt;relcell&gt;). The &lt;relcell&gt; elements can contain &lt;topicref&gt; elements, which are then related to other &lt;topicref&gt; elements in the same row (although not necessarily in the same cell). By default, the contents of a &lt;reltable&gt; element are not output for navigation or TOC purposes, and are used only to define relationships that can be expressed as topic-to-topic links.">reltable</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

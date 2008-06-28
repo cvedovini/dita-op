@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-Name
+Bundle-SymbolicName: org.dita_op.dita.dtd;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: %Bundle-Vendor
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.wst.common.uriresolver,
+ org.apache.xerces,
+ org.eclipse.ui
+Eclipse-LazyStart: true
+Bundle-Activator: org.dita_op.dita.dtd.internal.Activator
+Bundle-ClassPath: .

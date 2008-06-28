@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="choices" />
+<meta name="abstract" content="The &lt;choices&gt; element contains a list of &lt;choice&gt; elements. It is used when the user will need to choose one of several actions while performing the steps of a task." />
+<meta name="description" content="The &lt;choices&gt; element contains a list of &lt;choice&gt; elements. It is used when the user will need to choose one of several actions while performing the steps of a task." />
+<meta content="choices, Task elements" name="DC.subject" />
+<meta content="choices, Task elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/task2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/chdesc.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/choice.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="choices" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>choices</title>
+</head>
+<body id="choices"><a name="choices"><!-- --></a>
+
+
+<h1 class="topictitle1">choices</h1>
+
+
+
+<div><p>The &lt;<span class="keyword">choices</span>&gt; element contains a list
+of &lt;<span class="keyword">choice</span>&gt; elements. It is used when the user will
+need to choose one of several actions while performing the steps of a task. </p>
+
+<div class="example"><h2 class="sectiontitle">Example</h2><pre class="codeblock">&lt;step&gt;&lt;cmd&gt;Choose a server.&lt;/cmd&gt;
+<strong>&lt;choices&gt;</strong>
+&lt;choice&gt;If you have a remote server you want to test on, type the
+IP address or hostname of the server here.&lt;/choice&gt;
+&lt;choice&gt;If you want to do local testing, just type localhost.&lt;/choice&gt;
+<strong>&lt;/choices&gt;</strong>
+&lt;/step&gt;</pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100A9" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100AE" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100B8" headers="N100A9"><strong>ditabase, task</strong></td>
+<td valign="top" headers="N100AE N100B8"> ( (
+<a href="../common/../langref/choice.html" title="Each &lt;choice&gt; element describes one way that the user could accomplish the current step.">choice</a>) <em> (one or more) </em>) </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100EE" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100F3" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N100FD" headers="N100EE"><strong>ditabase, task</strong></td>
+<td valign="top" headers="N100F3 N100FD"><a href="../common/../langref/step.html" title="The &lt;step&gt; element represents an action that a user must follow to accomplish a task. Each step in a task must contain a command &lt;cmd&gt; element which describes the particular action the user must do to accomplish the overall task. The step element can also contain information &lt;info&gt;, substeps &lt;substeps&gt;, tutorial information &lt;tutorialinfo&gt;, a step example &lt;stepxmp&gt;, choices &lt;choices&gt; or a stepresult &lt;stepresult&gt;, although these are optional.">step</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- topic/ul task/choices </p>
+</div>
+
+<div class="section" id="choices__attrs"><a name="choices__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="choices__choices_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="choices__choices_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10168" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N1016E" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N10174" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N1017A" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N10180" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10168">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N1016E">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N10174">parameter entity</td>
+
+<td valign="top" headers="N1017A">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10180">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10168">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N1016E">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N10174">parameter entity</td>
+
+<td valign="top" headers="N1017A">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10180">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10168">class, outputclass</td>
+
+<td valign="top" headers="N1016E">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N10174">&#xA0;</td>
+<td valign="top" headers="N1017A">&#xA0;</td>
+<td valign="top" headers="N10180">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/task2.html" title="Task topics answer &quot;How do I?&quot; questions, and have a well-defined structure that describes how to complete a procedure to accomplish a specific goal. Use the task topic to describe the steps of a particular task, or to provide an overview of a higher-level task. The task topic includes sections for describing the context, prerequisites, actual steps, expected results, example, and expected next steps for a task. For more details on when to use task and other information types, please refer to the DITA architectural specification.">Task elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/chdesc.html" title="The &lt;chdesc&gt; element is a description of an option that a user chooses while performing a step to accomplish a task. It explains why the user would choose that option, and might explain the result of the choice when it is not immediately obvious.">chdesc</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../langref/choice.html" title="Each &lt;choice&gt; element describes one way that the user could accomplish the current step.">choice</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>

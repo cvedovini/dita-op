@@ -1,0 +1,5165 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="All elements with translation properties" />
+<meta name="abstract" content="This contains a list of all current TC-approved elements, divided up by module. It describes which are usually block elements and which are usually inline, and lists which elements should typically be translated by default." />
+<meta name="description" content="This contains a list of all current TC-approved elements, divided up by module. It describes which are usually block elements and which are usually inline, and lists which elements should typically be translated by default." />
+<meta scheme="URI" name="DC.Relation" content="translation.html" />
+<meta scheme="URI" name="DC.Relation" content="diratt.html" />
+<meta content="Robert D. Anderson" name="DC.Creator" />
+<meta content="Chris Wong" name="DC.Creator" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="elements" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>All elements with translation properties</title>
+</head>
+<body id="elements"><a name="elements"><!-- --></a>
+
+
+<h1 class="topictitle1">All elements with translation properties</h1>
+
+
+
+<div><p>This contains a list of all current TC-approved elements, divided
+up by module. It describes which are usually block elements and which are
+usually inline, and lists which elements should typically be translated by
+default.</p>
+
+<div class="section">Since the distinction between block and inline elements is ultimately
+controlled by the container of the element and the processing associated with
+it, the same element may be a block in one context and an inline element in
+another. Specializing document types may vary this behavior according to the
+needs of the document type being created, and the distinctions given below
+are provided only as a guide to known behavior with the base DITA document
+types.</div>
+
+<div class="section"><h2 class="sectiontitle">Notes on the tables below</h2><br /><ul>
+<li>For specializations, the second column gives the ancestor element, and
+the third column gives a quick yes/no guide to indicate whether all behavior
+is inherited. If something is not inherited, the change will appear in bold.</li>
+
+<li>For any specialization not listed below, the default should be to fall
+back to the closest listed ancestor.</li>
+
+<li>The block/inline presentation column indicates whether the element is
+formatted as a single block.</li>
+
+<li>The block/inline translation column indicates whether the element represents
+a complete translatable segment. For example, the element &lt;cmd&gt; is presented
+inline with other elements, but represents a complete translation segment.</li>
+
+<li>Items marked as block*** are blocks on their own, but may appear in the
+middle of a segment. They should not break the flow of the current segment.
+These are considered "subflow" elements for translation. We recommend that,
+when possible, these elements should only be placed at sentence boundaries
+to aid in translation.</li>
+
+<li>For all elements, the translate attribute will override the suggested
+default translation setting. So, a translation setting of "yes" or "no" in
+the table below does not guarantee that an element will always, or never,
+be translated.</li>
+
+<li>If an element has translatable attributes, they are listed in the last
+column. Note that the spectitle and specentry attributes are described with
+a footnote. </li>
+
+<li>The keyword element (as well as derivations of keyword) is an inline,
+phrase-like element when it appears in the body of a document. It may also
+appear in the keywords element in topicmeta (for maps) or in the prolog (for
+topic). When it appears in the &lt;keywords&gt; element, each keyword represents
+an individual segment, and is not part of a larger segment; in that location,
+keyword can be considered a "subflow" element. </li>
+
+</ul>
+</div>
+
+<div class="section"><h2 class="sectiontitle">topic elements</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="scale=80">
+<tr>
+<th valign="bottom" align="left" id="N100C1">Element name</th>
+
+<th valign="bottom" align="left" id="N100C7">Specialized from</th>
+
+<th valign="bottom" align="left" id="N100CD">Block/Inline (presentation)</th>
+
+<th valign="bottom" align="left" id="N100D3">Block/Inline (translation)</th>
+
+<th valign="bottom" align="left" id="N100D9">Translatable content?</th>
+
+<th valign="bottom" align="left" id="N100DF">Translatable attributes?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">abstract <em>(New in DITA 1.1)</em></td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF" />
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">alt</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block***<a href="#elements__subflow"><sup>1</sup></a></td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">audience</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">author</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">body</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">boolean</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">inline</td>
+
+<td valign="top" headers="N100D3">inline</td>
+
+<td valign="top" headers="N100D9">n/a</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">brand</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">category</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">cite</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">inline</td>
+
+<td valign="top" headers="N100D3">inline</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">colspec</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">n/a</td>
+
+<td valign="top" headers="N100D3">n/a</td>
+
+<td valign="top" headers="N100D9">n/a</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">component</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">copyrholder</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">copyright</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">copyryear</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">created</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">critdates</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">data <em>(New in DITA 1.1)</em></td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">N/A (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">no (likely to change for some specializations)</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">data-about <em>(New in DITA 1.1)</em></td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">N/A (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">no</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">dd</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">ddhd</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">desc</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">dl</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">@spectitle<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">dlentry</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">dlhead</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">draft-comment</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block***<a href="#elements__subflow"><sup>1</sup></a></td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9"><strong>no</strong></td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">dt</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">dthd</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">entry</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">example</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">@spectitle<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">featnum</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">fig</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">@spectitle<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">figgroup</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">fn</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block***<a href="#elements__subflow"><sup>1</sup></a></td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">foreign <em>(New in DITA 1.1)</em></td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block<a href="#elements__foreign"><sup>3</sup></a></td>
+
+<td valign="top" headers="N100D3">block<a href="#elements__foreign"><sup>3</sup></a></td>
+
+<td valign="top" headers="N100D9">no<a href="#elements__foreign-translate"><sup>4</sup></a></td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">image</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block when @placement= break, otherwise inline</td>
+
+<td valign="top" headers="N100D3">block when @placement= break, otherwise inline</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">@alt<a href="#elements__alt"><sup>5</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">index-base <em>(New in DITA 1.1)</em></td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block***<a href="#elements__subflow"><sup>1</sup></a></td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">indexterm</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block***<a href="#elements__subflow"><sup>1</sup></a></td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">indextermref</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">inline</td>
+
+<td valign="top" headers="N100D3">n/a</td>
+
+<td valign="top" headers="N100D9">n/a</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">itemgroup</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">inline</td>
+
+<td valign="top" headers="N100D3">inline</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">keyword</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">inline</td>
+
+<td valign="top" headers="N100D3">inline (except when within &lt;keywords&gt; – see note above the table)</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">keywords</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">li</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">lines</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">@spectitle<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">link</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">linkinfo</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">linklist</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">@spectitle<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">linkpool</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">linktext</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">lq</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">@reftitle</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">metadata</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">navtitle</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">no-topic-nesting</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">n/a</td>
+
+<td valign="top" headers="N100D3">n/a</td>
+
+<td valign="top" headers="N100D9">n/a</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">note</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">@othertype, @spectitle<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">object</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">@standby</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">ol</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">@spectitle<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">othermeta</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">@content</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">p</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">param</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">n/a</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">permissions</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">ph</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">inline</td>
+
+<td valign="top" headers="N100D3">inline</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">platform</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">pre</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">@spectitle<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">prodinfo</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">prodname</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">prognum</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">prolog</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">publisher</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">q</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">inline</td>
+
+<td valign="top" headers="N100D3">inline</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">related-links</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">required-cleanup</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block***<a href="#elements__subflow"><sup>1</sup></a></td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9"><strong>no</strong></td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">resourceid</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">revised</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">row</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">searchtitle</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">section</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">@spectitle<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">series</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">shortdesc</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">simpletable</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">@spectitle<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">sl</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">@spectitle<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">sli</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">source</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">state</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">inline</td>
+
+<td valign="top" headers="N100D3">inline</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">@value</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">stentry</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">@specentry<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">sthead</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">strow</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">table</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">tbody</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">term</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">inline</td>
+
+<td valign="top" headers="N100D3">inline</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">tgroup</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">thead</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">title</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">titlealts</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">tm</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">inline</td>
+
+<td valign="top" headers="N100D3">inline</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">topic</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">ul</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">@spectitle<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">unknown <em>(New in DITA 1.1)</em></td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">no</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">vrm</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">vrmlist</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">block (metadata)</td>
+
+<td valign="top" headers="N100D3">block</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N100C1">xref</td>
+
+<td valign="top" headers="N100C7">N/A</td>
+
+<td valign="top" headers="N100CD">inline</td>
+
+<td valign="top" headers="N100D3">inline</td>
+
+<td valign="top" headers="N100D9">yes</td>
+
+<td valign="top" headers="N100DF">&#xA0;</td>
+
+</tr>
+
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">map elements</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N111AF">Element name</th>
+
+<th valign="bottom" align="left" id="N111B5">Specialized from</th>
+
+<th valign="bottom" align="left" id="N111BB">Block/Inline (presentation)</th>
+
+<th valign="bottom" align="left" id="N111C1">Block/Inline (translation)</th>
+
+<th valign="bottom" align="left" id="N111C7">Translatable content?</th>
+
+<th valign="bottom" align="left" id="N111CD">Translatable attributes?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N111AF">anchor</td>
+
+<td valign="top" headers="N111B5">N/A</td>
+
+<td valign="top" headers="N111BB">n/a</td>
+
+<td valign="top" headers="N111C1">n/a</td>
+
+<td valign="top" headers="N111C7">n/a</td>
+
+<td valign="top" headers="N111CD">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N111AF">linktext</td>
+
+<td valign="top" headers="N111B5">N/A</td>
+
+<td valign="top" headers="N111BB">block</td>
+
+<td valign="top" headers="N111C1">block</td>
+
+<td valign="top" headers="N111C7">yes</td>
+
+<td valign="top" headers="N111CD">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N111AF">map</td>
+
+<td valign="top" headers="N111B5">N/A</td>
+
+<td valign="top" headers="N111BB">block</td>
+
+<td valign="top" headers="N111C1">block</td>
+
+<td valign="top" headers="N111C7">yes</td>
+
+<td valign="top" headers="N111CD">@title</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N111AF">navref</td>
+
+<td valign="top" headers="N111B5">N/A</td>
+
+<td valign="top" headers="N111BB">n/a</td>
+
+<td valign="top" headers="N111C1">n/a</td>
+
+<td valign="top" headers="N111C7">n/a</td>
+
+<td valign="top" headers="N111CD">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N111AF">relcell</td>
+
+<td valign="top" headers="N111B5">N/A</td>
+
+<td valign="top" headers="N111BB">block</td>
+
+<td valign="top" headers="N111C1">block</td>
+
+<td valign="top" headers="N111C7">yes</td>
+
+<td valign="top" headers="N111CD">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N111AF">relcolspec</td>
+
+<td valign="top" headers="N111B5">N/A</td>
+
+<td valign="top" headers="N111BB">block</td>
+
+<td valign="top" headers="N111C1">block</td>
+
+<td valign="top" headers="N111C7">yes</td>
+
+<td valign="top" headers="N111CD">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N111AF">relheader</td>
+
+<td valign="top" headers="N111B5">N/A</td>
+
+<td valign="top" headers="N111BB">block</td>
+
+<td valign="top" headers="N111C1">block</td>
+
+<td valign="top" headers="N111C7">yes</td>
+
+<td valign="top" headers="N111CD">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N111AF">relrow</td>
+
+<td valign="top" headers="N111B5">N/A</td>
+
+<td valign="top" headers="N111BB">block</td>
+
+<td valign="top" headers="N111C1">block</td>
+
+<td valign="top" headers="N111C7">yes</td>
+
+<td valign="top" headers="N111CD">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N111AF">reltable</td>
+
+<td valign="top" headers="N111B5">N/A</td>
+
+<td valign="top" headers="N111BB">block</td>
+
+<td valign="top" headers="N111C1">block</td>
+
+<td valign="top" headers="N111C7">yes</td>
+
+<td valign="top" headers="N111CD">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N111AF">searchtitle</td>
+
+<td valign="top" headers="N111B5">N/A</td>
+
+<td valign="top" headers="N111BB">block</td>
+
+<td valign="top" headers="N111C1">block</td>
+
+<td valign="top" headers="N111C7">yes</td>
+
+<td valign="top" headers="N111CD">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N111AF">shortdesc</td>
+
+<td valign="top" headers="N111B5">N/A</td>
+
+<td valign="top" headers="N111BB">block</td>
+
+<td valign="top" headers="N111C1">block</td>
+
+<td valign="top" headers="N111C7">yes</td>
+
+<td valign="top" headers="N111CD">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N111AF">topicmeta</td>
+
+<td valign="top" headers="N111B5">N/A</td>
+
+<td valign="top" headers="N111BB">block</td>
+
+<td valign="top" headers="N111C1">block</td>
+
+<td valign="top" headers="N111C7">yes</td>
+
+<td valign="top" headers="N111CD">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N111AF">topicref</td>
+
+<td valign="top" headers="N111B5">N/A</td>
+
+<td valign="top" headers="N111BB">block</td>
+
+<td valign="top" headers="N111C1">block</td>
+
+<td valign="top" headers="N111C7">yes</td>
+
+<td valign="top" headers="N111CD">@navtitle</td>
+
+</tr>
+
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">bookmap elements <em>(new in DITA 1.1)</em></h2><p>The bookmap
+specialization contains many phrase-based elements inside the bookmeta. These
+are metadata, and should not be translated.</p>
+<table summary="" cellspacing="0" cellpadding="4" border="1" class="scale=70">
+<tr>
+<th valign="bottom" align="left" id="N1140B" width="23.076923076923077%">Element name</th>
+
+<th valign="bottom" align="left" id="N11411" width="15.384615384615385%">Specialized from</th>
+
+<th valign="bottom" align="left" id="N11417" width="10.76923076923077%">Inherits everything from ancestor?</th>
+
+<th valign="bottom" align="left" id="N1141D" width="12.307692307692308%">Block/Inline (presentation)</th>
+
+<th valign="bottom" align="left" id="N11423" width="12.307692307692308%">Block/Inline (translation)</th>
+
+<th valign="bottom" align="left" id="N11429" width="10.76923076923077%">Translatable content?</th>
+
+<th valign="bottom" align="left" id="N1142F" width="15.384615384615385%">Translatable attributes?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">abbrevlist</td>
+
+<td valign="top" headers="N11411">topicref</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">@navtitle</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">amendments</td>
+
+<td valign="top" headers="N11411">topicref</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">@navtitle</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">appendix</td>
+
+<td valign="top" headers="N11411">topicref</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">@navtitle</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">approved</td>
+
+<td valign="top" headers="N11411">data</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">no</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">backmatter</td>
+
+<td valign="top" headers="N11411">topicref</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">bibliolist</td>
+
+<td valign="top" headers="N11411">topicref</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">@navtitle</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">bookabstract</td>
+
+<td valign="top" headers="N11411">topicref</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">@navtitle</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">bookchangehistory</td>
+
+<td valign="top" headers="N11411">data</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">no</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">bookevent</td>
+
+<td valign="top" headers="N11411">data</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">no</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">bookeventtype</td>
+
+<td valign="top" headers="N11411">data</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">no</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">bookid</td>
+
+<td valign="top" headers="N11411">data</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">no</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">booklibrary</td>
+
+<td valign="top" headers="N11411">ph</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">inline</td>
+
+<td valign="top" headers="N11423">inline</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">booklist</td>
+
+<td valign="top" headers="N11411">topicref</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">@navtitle</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">booklists</td>
+
+<td valign="top" headers="N11411">topicref</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">bookmap</td>
+
+<td valign="top" headers="N11411">map</td>
+
+<td valign="top" headers="N11417"><strong>no</strong></td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F"><em>removed title attribute</em></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">bookmeta</td>
+
+<td valign="top" headers="N11411">topicmeta</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">booknumber</td>
+
+<td valign="top" headers="N11411">data</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">no</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">bookowner</td>
+
+<td valign="top" headers="N11411">data</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">no</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">bookpartno</td>
+
+<td valign="top" headers="N11411">data</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">no</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">bookrestriction</td>
+
+<td valign="top" headers="N11411">data</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">no</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">bookrights</td>
+
+<td valign="top" headers="N11411">data</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">no</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">booktitle</td>
+
+<td valign="top" headers="N11411">title</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">booktitlealt</td>
+
+<td valign="top" headers="N11411">ph</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">inline</td>
+
+<td valign="top" headers="N11423">inline</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">chapter</td>
+
+<td valign="top" headers="N11411">topicref</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">@navtitle</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">colophon</td>
+
+<td valign="top" headers="N11411">topicref</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">@navtitle</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">completed</td>
+
+<td valign="top" headers="N11411">ph</td>
+
+<td valign="top" headers="N11417"><strong>no</strong></td>
+
+<td valign="top" headers="N1141D">inline</td>
+
+<td valign="top" headers="N11423">inline</td>
+
+<td valign="top" headers="N11429"><strong>no</strong></td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">copyrfirst</td>
+
+<td valign="top" headers="N11411">data</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">no</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">copyrlast</td>
+
+<td valign="top" headers="N11411">data</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">no</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">day</td>
+
+<td valign="top" headers="N11411">ph</td>
+
+<td valign="top" headers="N11417"><strong>no</strong></td>
+
+<td valign="top" headers="N1141D">inline</td>
+
+<td valign="top" headers="N11423">inline</td>
+
+<td valign="top" headers="N11429"><strong>no</strong></td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">dedication</td>
+
+<td valign="top" headers="N11411">topicref</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">@navtitle</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">draftintro</td>
+
+<td valign="top" headers="N11411">topicref</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">@navtitle</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">edited</td>
+
+<td valign="top" headers="N11411">data</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">no</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">edition</td>
+
+<td valign="top" headers="N11411">data</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">no</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">figurelist</td>
+
+<td valign="top" headers="N11411">topicref</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">@navtitle</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">frontmatter</td>
+
+<td valign="top" headers="N11411">topicref</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">@navtitle</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">glossarylist</td>
+
+<td valign="top" headers="N11411">topicref</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">@navtitle</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">indexlist</td>
+
+<td valign="top" headers="N11411">topicref</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">@navtitle</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">isbn</td>
+
+<td valign="top" headers="N11411">data</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">no</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">mainbooktitle</td>
+
+<td valign="top" headers="N11411">ph</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">inline</td>
+
+<td valign="top" headers="N11423">inline</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">maintainer</td>
+
+<td valign="top" headers="N11411">data</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">no</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">month</td>
+
+<td valign="top" headers="N11411">ph</td>
+
+<td valign="top" headers="N11417"><strong>no</strong></td>
+
+<td valign="top" headers="N1141D">inline</td>
+
+<td valign="top" headers="N11423">inline</td>
+
+<td valign="top" headers="N11429"><strong>no</strong></td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">notices</td>
+
+<td valign="top" headers="N11411">topicref</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">@navtitle</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">organization</td>
+
+<td valign="top" headers="N11411">data</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">no</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">part</td>
+
+<td valign="top" headers="N11411">topicref</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">@navtitle</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">person</td>
+
+<td valign="top" headers="N11411">data</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">no</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">preface</td>
+
+<td valign="top" headers="N11411">topicref</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">@navtitle</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">printlocation</td>
+
+<td valign="top" headers="N11411">data</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">no</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">published</td>
+
+<td valign="top" headers="N11411">data</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">no</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">publisherinformation</td>
+
+<td valign="top" headers="N11411">publisher</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">publishtype</td>
+
+<td valign="top" headers="N11411">data</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">no</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">reviewed</td>
+
+<td valign="top" headers="N11411">data</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">no</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">revisionid</td>
+
+<td valign="top" headers="N11411">ph</td>
+
+<td valign="top" headers="N11417"><strong>no</strong></td>
+
+<td valign="top" headers="N1141D">inline</td>
+
+<td valign="top" headers="N11423">inline</td>
+
+<td valign="top" headers="N11429"><strong>no</strong></td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">started</td>
+
+<td valign="top" headers="N11411">ph</td>
+
+<td valign="top" headers="N11417"><strong>no</strong></td>
+
+<td valign="top" headers="N1141D">inline</td>
+
+<td valign="top" headers="N11423">inline</td>
+
+<td valign="top" headers="N11429"><strong>no</strong></td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">summary</td>
+
+<td valign="top" headers="N11411">ph</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">inline</td>
+
+<td valign="top" headers="N11423">inline</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">tablelist</td>
+
+<td valign="top" headers="N11411">topicref</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">@navtitle</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">tested</td>
+
+<td valign="top" headers="N11411">data</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">no</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">toc</td>
+
+<td valign="top" headers="N11411">topicref</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">@navtitle</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">trademarklist</td>
+
+<td valign="top" headers="N11411">topicref</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">yes</td>
+
+<td valign="top" headers="N1142F">@navtitle</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">volume</td>
+
+<td valign="top" headers="N11411">data</td>
+
+<td valign="top" headers="N11417">yes</td>
+
+<td valign="top" headers="N1141D">block</td>
+
+<td valign="top" headers="N11423">block</td>
+
+<td valign="top" headers="N11429">no</td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1140B">year</td>
+
+<td valign="top" headers="N11411">ph</td>
+
+<td valign="top" headers="N11417"><strong>no</strong></td>
+
+<td valign="top" headers="N1141D">inline</td>
+
+<td valign="top" headers="N11423">inline</td>
+
+<td valign="top" headers="N11429"><strong>no</strong></td>
+
+<td valign="top" headers="N1142F">&#xA0;</td>
+
+</tr>
+
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">concept elements</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="scale=80">
+<tr>
+<th valign="bottom" align="left" id="N11F9C">Element name</th>
+
+<th valign="bottom" align="left" id="N11FA2">Specialized from</th>
+
+<th valign="bottom" align="left" id="N11FA8">Inherits everything from ancestor?</th>
+
+<th valign="bottom" align="left" id="N11FAE">Block/Inline (presentation)</th>
+
+<th valign="bottom" align="left" id="N11FB4">Block/Inline (translation)</th>
+
+<th valign="bottom" align="left" id="N11FBA">Translatable content?</th>
+
+<th valign="bottom" align="left" id="N11FC0">Translatable attributes?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N11F9C">conbody</td>
+
+<td valign="top" headers="N11FA2">body</td>
+
+<td valign="top" headers="N11FA8">yes</td>
+
+<td valign="top" headers="N11FAE">block</td>
+
+<td valign="top" headers="N11FB4">block</td>
+
+<td valign="top" headers="N11FBA">yes</td>
+
+<td valign="top" headers="N11FC0">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N11F9C">concept</td>
+
+<td valign="top" headers="N11FA2">topic</td>
+
+<td valign="top" headers="N11FA8">yes</td>
+
+<td valign="top" headers="N11FAE">block</td>
+
+<td valign="top" headers="N11FB4">block</td>
+
+<td valign="top" headers="N11FBA">yes</td>
+
+<td valign="top" headers="N11FC0">&#xA0;</td>
+
+</tr>
+
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">glossary elements <em>(new in DITA 1.1)</em></h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="scale=80">
+<tr>
+<th valign="bottom" align="left" id="N1203F">Element name</th>
+
+<th valign="bottom" align="left" id="N12045">Specialized from</th>
+
+<th valign="bottom" align="left" id="N1204B">Inherits everything from ancestor?</th>
+
+<th valign="bottom" align="left" id="N12051">Block/Inline (presentation)</th>
+
+<th valign="bottom" align="left" id="N12057">Block/Inline (translation)</th>
+
+<th valign="bottom" align="left" id="N1205D">Translatable content?</th>
+
+<th valign="bottom" align="left" id="N12063">Translatable attributes?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1203F">glossdef</td>
+
+<td valign="top" headers="N12045">abstract</td>
+
+<td valign="top" headers="N1204B">yes</td>
+
+<td valign="top" headers="N12051">block</td>
+
+<td valign="top" headers="N12057">block</td>
+
+<td valign="top" headers="N1205D">yes</td>
+
+<td valign="top" headers="N12063">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1203F">glossentry</td>
+
+<td valign="top" headers="N12045">topic</td>
+
+<td valign="top" headers="N1204B">yes</td>
+
+<td valign="top" headers="N12051">block</td>
+
+<td valign="top" headers="N12057">block</td>
+
+<td valign="top" headers="N1205D">yes</td>
+
+<td valign="top" headers="N12063">&#xA0;</td>
+
+</tr>
+
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">reference elements</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="scale=80">
+<tr>
+<th valign="bottom" align="left" id="N120DD">Element name</th>
+
+<th valign="bottom" align="left" id="N120E3">Specialized from</th>
+
+<th valign="bottom" align="left" id="N120E9">Inherits everything from ancestor?</th>
+
+<th valign="bottom" align="left" id="N120EF">Block/Inline (presentation)</th>
+
+<th valign="bottom" align="left" id="N120F5">Block/Inline (translation)</th>
+
+<th valign="bottom" align="left" id="N120FB">Translatable content?</th>
+
+<th valign="bottom" align="left" id="N12101">Translatable attributes?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N120DD">propdesc</td>
+
+<td valign="top" headers="N120E3">stentry</td>
+
+<td valign="top" headers="N120E9">yes</td>
+
+<td valign="top" headers="N120EF">block</td>
+
+<td valign="top" headers="N120F5">block</td>
+
+<td valign="top" headers="N120FB">yes</td>
+
+<td valign="top" headers="N12101">@specentry<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N120DD">propdeschd</td>
+
+<td valign="top" headers="N120E3">stentry</td>
+
+<td valign="top" headers="N120E9">yes</td>
+
+<td valign="top" headers="N120EF">block</td>
+
+<td valign="top" headers="N120F5">block</td>
+
+<td valign="top" headers="N120FB">yes</td>
+
+<td valign="top" headers="N12101">@specentry<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N120DD">properties</td>
+
+<td valign="top" headers="N120E3">simpletable</td>
+
+<td valign="top" headers="N120E9">yes</td>
+
+<td valign="top" headers="N120EF">block</td>
+
+<td valign="top" headers="N120F5">block</td>
+
+<td valign="top" headers="N120FB">yes</td>
+
+<td valign="top" headers="N12101">@spectitle<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N120DD">property</td>
+
+<td valign="top" headers="N120E3">strow</td>
+
+<td valign="top" headers="N120E9">yes</td>
+
+<td valign="top" headers="N120EF">block</td>
+
+<td valign="top" headers="N120F5">block</td>
+
+<td valign="top" headers="N120FB">yes</td>
+
+<td valign="top" headers="N12101">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N120DD">prophead</td>
+
+<td valign="top" headers="N120E3">sthead</td>
+
+<td valign="top" headers="N120E9">yes</td>
+
+<td valign="top" headers="N120EF">block</td>
+
+<td valign="top" headers="N120F5">block</td>
+
+<td valign="top" headers="N120FB">yes</td>
+
+<td valign="top" headers="N12101">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N120DD">proptype</td>
+
+<td valign="top" headers="N120E3">stentry</td>
+
+<td valign="top" headers="N120E9">yes</td>
+
+<td valign="top" headers="N120EF">block</td>
+
+<td valign="top" headers="N120F5">block</td>
+
+<td valign="top" headers="N120FB">yes</td>
+
+<td valign="top" headers="N12101">@specentry<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N120DD">proptypehd</td>
+
+<td valign="top" headers="N120E3">stentry</td>
+
+<td valign="top" headers="N120E9">yes</td>
+
+<td valign="top" headers="N120EF">block</td>
+
+<td valign="top" headers="N120F5">block</td>
+
+<td valign="top" headers="N120FB">yes</td>
+
+<td valign="top" headers="N12101">@specentry<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N120DD">propvalue</td>
+
+<td valign="top" headers="N120E3">stentry</td>
+
+<td valign="top" headers="N120E9">yes</td>
+
+<td valign="top" headers="N120EF">block</td>
+
+<td valign="top" headers="N120F5">block</td>
+
+<td valign="top" headers="N120FB">yes</td>
+
+<td valign="top" headers="N12101">@specentry<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N120DD">propvaluehd</td>
+
+<td valign="top" headers="N120E3">stentry</td>
+
+<td valign="top" headers="N120E9">yes</td>
+
+<td valign="top" headers="N120EF">block</td>
+
+<td valign="top" headers="N120F5">block</td>
+
+<td valign="top" headers="N120FB">yes</td>
+
+<td valign="top" headers="N12101">@specentry<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N120DD">refbody</td>
+
+<td valign="top" headers="N120E3">body</td>
+
+<td valign="top" headers="N120E9">yes</td>
+
+<td valign="top" headers="N120EF">block</td>
+
+<td valign="top" headers="N120F5">block</td>
+
+<td valign="top" headers="N120FB">yes</td>
+
+<td valign="top" headers="N12101">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N120DD">reference</td>
+
+<td valign="top" headers="N120E3">topic</td>
+
+<td valign="top" headers="N120E9">yes</td>
+
+<td valign="top" headers="N120EF">block</td>
+
+<td valign="top" headers="N120F5">block</td>
+
+<td valign="top" headers="N120FB">yes</td>
+
+<td valign="top" headers="N12101">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N120DD">refsyn</td>
+
+<td valign="top" headers="N120E3">section</td>
+
+<td valign="top" headers="N120E9">yes</td>
+
+<td valign="top" headers="N120EF">block</td>
+
+<td valign="top" headers="N120F5">block</td>
+
+<td valign="top" headers="N120FB">yes</td>
+
+<td valign="top" headers="N12101">@spectitle<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">task elements</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="scale=80">
+<tr>
+<th valign="bottom" align="left" id="N12391">Element name</th>
+
+<th valign="bottom" align="left" id="N12397">Specialized from</th>
+
+<th valign="bottom" align="left" id="N1239D">Inherits everything from ancestor?</th>
+
+<th valign="bottom" align="left" id="N123A3">Block/Inline (presentation)</th>
+
+<th valign="bottom" align="left" id="N123A9">Block/Inline (translation)</th>
+
+<th valign="bottom" align="left" id="N123AF">Translatable content?</th>
+
+<th valign="bottom" align="left" id="N123B5">Translatable attributes?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">chdesc</td>
+
+<td valign="top" headers="N12397">stentry</td>
+
+<td valign="top" headers="N1239D">yes</td>
+
+<td valign="top" headers="N123A3">block</td>
+
+<td valign="top" headers="N123A9">block</td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5">@specentry<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">chdeschd</td>
+
+<td valign="top" headers="N12397">stentry</td>
+
+<td valign="top" headers="N1239D">yes</td>
+
+<td valign="top" headers="N123A3">block</td>
+
+<td valign="top" headers="N123A9">block</td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5">@specentry<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">chhead</td>
+
+<td valign="top" headers="N12397">sthead</td>
+
+<td valign="top" headers="N1239D">yes</td>
+
+<td valign="top" headers="N123A3">block</td>
+
+<td valign="top" headers="N123A9">block</td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">choice</td>
+
+<td valign="top" headers="N12397">li</td>
+
+<td valign="top" headers="N1239D">yes</td>
+
+<td valign="top" headers="N123A3">block</td>
+
+<td valign="top" headers="N123A9">block</td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">choices</td>
+
+<td valign="top" headers="N12397">ul</td>
+
+<td valign="top" headers="N1239D">yes</td>
+
+<td valign="top" headers="N123A3">block</td>
+
+<td valign="top" headers="N123A9">block</td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5"><em>removes @spectitle</em></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">choicetable</td>
+
+<td valign="top" headers="N12397">simpletable</td>
+
+<td valign="top" headers="N1239D">yes</td>
+
+<td valign="top" headers="N123A3">block</td>
+
+<td valign="top" headers="N123A9">block</td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5">@spectitle<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">choption</td>
+
+<td valign="top" headers="N12397">stentry</td>
+
+<td valign="top" headers="N1239D">yes</td>
+
+<td valign="top" headers="N123A3">block</td>
+
+<td valign="top" headers="N123A9">block</td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5">@specentry<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">choptionhd</td>
+
+<td valign="top" headers="N12397">stentry</td>
+
+<td valign="top" headers="N1239D">yes</td>
+
+<td valign="top" headers="N123A3">block</td>
+
+<td valign="top" headers="N123A9">block</td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5">@specentry<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">chrow</td>
+
+<td valign="top" headers="N12397">strow</td>
+
+<td valign="top" headers="N1239D">yes</td>
+
+<td valign="top" headers="N123A3">block</td>
+
+<td valign="top" headers="N123A9">block</td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">cmd</td>
+
+<td valign="top" headers="N12397">ph</td>
+
+<td valign="top" headers="N1239D"><strong>NO</strong></td>
+
+<td valign="top" headers="N123A3">inline</td>
+
+<td valign="top" headers="N123A9"><strong>block</strong></td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">context</td>
+
+<td valign="top" headers="N12397">section</td>
+
+<td valign="top" headers="N1239D">yes</td>
+
+<td valign="top" headers="N123A3">block</td>
+
+<td valign="top" headers="N123A9">block</td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5"><em>removes @spectitle</em></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">info</td>
+
+<td valign="top" headers="N12397">itemgroup</td>
+
+<td valign="top" headers="N1239D"><strong>NO</strong></td>
+
+<td valign="top" headers="N123A3">inline</td>
+
+<td valign="top" headers="N123A9"><strong>block</strong></td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">postreq</td>
+
+<td valign="top" headers="N12397">section</td>
+
+<td valign="top" headers="N1239D">yes</td>
+
+<td valign="top" headers="N123A3">block</td>
+
+<td valign="top" headers="N123A9">block</td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5"><em>removes @spectitle</em></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">prereq</td>
+
+<td valign="top" headers="N12397">section</td>
+
+<td valign="top" headers="N1239D">yes</td>
+
+<td valign="top" headers="N123A3">block</td>
+
+<td valign="top" headers="N123A9">block</td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5"><em>removes @spectitle</em></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">result</td>
+
+<td valign="top" headers="N12397">section</td>
+
+<td valign="top" headers="N1239D">yes</td>
+
+<td valign="top" headers="N123A3">block</td>
+
+<td valign="top" headers="N123A9">block</td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5"><em>removes @spectitle</em></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">step</td>
+
+<td valign="top" headers="N12397">li</td>
+
+<td valign="top" headers="N1239D">yes</td>
+
+<td valign="top" headers="N123A3">block</td>
+
+<td valign="top" headers="N123A9">block</td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">stepresult</td>
+
+<td valign="top" headers="N12397">itemgroup</td>
+
+<td valign="top" headers="N1239D"><strong>NO</strong></td>
+
+<td valign="top" headers="N123A3">inline</td>
+
+<td valign="top" headers="N123A9"><strong>block</strong></td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">steps</td>
+
+<td valign="top" headers="N12397">ol</td>
+
+<td valign="top" headers="N1239D">yes</td>
+
+<td valign="top" headers="N123A3">block</td>
+
+<td valign="top" headers="N123A9">block</td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5"><em>removes @spectitle</em></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">steps-unordered</td>
+
+<td valign="top" headers="N12397">ul</td>
+
+<td valign="top" headers="N1239D">yes</td>
+
+<td valign="top" headers="N123A3">block</td>
+
+<td valign="top" headers="N123A9">block</td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5"><em>removes @spectitle</em></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">stepxmp</td>
+
+<td valign="top" headers="N12397">itemgroup</td>
+
+<td valign="top" headers="N1239D"><strong>NO</strong></td>
+
+<td valign="top" headers="N123A3">inline</td>
+
+<td valign="top" headers="N123A9"><strong>block</strong></td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">substep</td>
+
+<td valign="top" headers="N12397">li</td>
+
+<td valign="top" headers="N1239D">yes</td>
+
+<td valign="top" headers="N123A3">block</td>
+
+<td valign="top" headers="N123A9">block</td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">substeps</td>
+
+<td valign="top" headers="N12397">ol</td>
+
+<td valign="top" headers="N1239D">yes</td>
+
+<td valign="top" headers="N123A3">block</td>
+
+<td valign="top" headers="N123A9">block</td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5"><em>removes @spectitle</em></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">task</td>
+
+<td valign="top" headers="N12397">topic</td>
+
+<td valign="top" headers="N1239D">yes</td>
+
+<td valign="top" headers="N123A3">block</td>
+
+<td valign="top" headers="N123A9">block</td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">taskbody</td>
+
+<td valign="top" headers="N12397">body</td>
+
+<td valign="top" headers="N1239D">yes</td>
+
+<td valign="top" headers="N123A3">block</td>
+
+<td valign="top" headers="N123A9">block</td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12391">tutorialinfo</td>
+
+<td valign="top" headers="N12397">itemgroup</td>
+
+<td valign="top" headers="N1239D"><strong>NO</strong></td>
+
+<td valign="top" headers="N123A3">inline</td>
+
+<td valign="top" headers="N123A9"><strong>block</strong></td>
+
+<td valign="top" headers="N123AF">yes</td>
+
+<td valign="top" headers="N123B5">&#xA0;</td>
+
+</tr>
+
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">hi-d elements (highlight domain)</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="scale=80">
+<tr>
+<th valign="bottom" align="left" id="N128E0">Element name</th>
+
+<th valign="bottom" align="left" id="N128E6">Specialized from</th>
+
+<th valign="bottom" align="left" id="N128EC">Inherits everything from ancestor?</th>
+
+<th valign="bottom" align="left" id="N128F2">Block/Inline (presentation)</th>
+
+<th valign="bottom" align="left" id="N128F8">Block/Inline (translation)</th>
+
+<th valign="bottom" align="left" id="N128FE">Translatable content?</th>
+
+<th valign="bottom" align="left" id="N12904">Translatable attributes?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N128E0">b</td>
+
+<td valign="top" headers="N128E6">ph</td>
+
+<td valign="top" headers="N128EC">yes</td>
+
+<td valign="top" headers="N128F2">inline</td>
+
+<td valign="top" headers="N128F8">inline</td>
+
+<td valign="top" headers="N128FE">yes</td>
+
+<td valign="top" headers="N12904">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N128E0">i</td>
+
+<td valign="top" headers="N128E6">ph</td>
+
+<td valign="top" headers="N128EC">yes</td>
+
+<td valign="top" headers="N128F2">inline</td>
+
+<td valign="top" headers="N128F8">inline</td>
+
+<td valign="top" headers="N128FE">yes</td>
+
+<td valign="top" headers="N12904">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N128E0">sub</td>
+
+<td valign="top" headers="N128E6">ph</td>
+
+<td valign="top" headers="N128EC">yes</td>
+
+<td valign="top" headers="N128F2">inline</td>
+
+<td valign="top" headers="N128F8">inline</td>
+
+<td valign="top" headers="N128FE">yes</td>
+
+<td valign="top" headers="N12904">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N128E0">sup</td>
+
+<td valign="top" headers="N128E6">ph</td>
+
+<td valign="top" headers="N128EC">yes</td>
+
+<td valign="top" headers="N128F2">inline</td>
+
+<td valign="top" headers="N128F8">inline</td>
+
+<td valign="top" headers="N128FE">yes</td>
+
+<td valign="top" headers="N12904">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N128E0">tt</td>
+
+<td valign="top" headers="N128E6">ph</td>
+
+<td valign="top" headers="N128EC">yes</td>
+
+<td valign="top" headers="N128F2">inline</td>
+
+<td valign="top" headers="N128F8">inline</td>
+
+<td valign="top" headers="N128FE">yes</td>
+
+<td valign="top" headers="N12904">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N128E0">u</td>
+
+<td valign="top" headers="N128E6">ph</td>
+
+<td valign="top" headers="N128EC">yes</td>
+
+<td valign="top" headers="N128F2">inline</td>
+
+<td valign="top" headers="N128F8">inline</td>
+
+<td valign="top" headers="N128FE">yes</td>
+
+<td valign="top" headers="N12904">&#xA0;</td>
+
+</tr>
+
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">indexing-d elements (indexing domain)  <em>(new in DITA 1.1)</em></h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="scale=80">
+<tr>
+<th valign="bottom" align="left" id="N12A3F">Element name</th>
+
+<th valign="bottom" align="left" id="N12A45">Specialized from</th>
+
+<th valign="bottom" align="left" id="N12A4B">Inherits everything from ancestor?</th>
+
+<th valign="bottom" align="left" id="N12A51">Block/Inline (presentation)</th>
+
+<th valign="bottom" align="left" id="N12A57">Block/Inline (translation)</th>
+
+<th valign="bottom" align="left" id="N12A5D">Translatable content?</th>
+
+<th valign="bottom" align="left" id="N12A63">Translatable attributes?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12A3F">index-see</td>
+
+<td valign="top" headers="N12A45">index-base</td>
+
+<td valign="top" headers="N12A4B">yes</td>
+
+<td valign="top" headers="N12A51">block***<a href="#elements__subflow"><sup>1</sup></a></td>
+
+<td valign="top" headers="N12A57">block</td>
+
+<td valign="top" headers="N12A5D">yes</td>
+
+<td valign="top" headers="N12A63">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12A3F">index-see-also</td>
+
+<td valign="top" headers="N12A45">index-base</td>
+
+<td valign="top" headers="N12A4B">yes</td>
+
+<td valign="top" headers="N12A51">block***<a href="#elements__subflow"><sup>1</sup></a></td>
+
+<td valign="top" headers="N12A57">block</td>
+
+<td valign="top" headers="N12A5D">yes</td>
+
+<td valign="top" headers="N12A63">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12A3F">index-sort-as</td>
+
+<td valign="top" headers="N12A45">index-base</td>
+
+<td valign="top" headers="N12A4B">yes</td>
+
+<td valign="top" headers="N12A51">block***<a href="#elements__subflow"><sup>1</sup></a></td>
+
+<td valign="top" headers="N12A57">block</td>
+
+<td valign="top" headers="N12A5D">yes</td>
+
+<td valign="top" headers="N12A63">&#xA0;</td>
+
+</tr>
+
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">pr-d elements (programming domain)</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="scale=80">
+<tr>
+<th valign="bottom" align="left" id="N12B22" width="18.571428571428573%">Element name</th>
+
+<th valign="bottom" align="left" id="N12B28" width="14.285714285714286%">Specialized from</th>
+
+<th valign="bottom" align="left" id="N12B2E" width="11.428571428571429%">Inherits everything from ancestor?</th>
+
+<th valign="bottom" align="left" id="N12B34" width="14.285714285714286%">Block/Inline (presentation)</th>
+
+<th valign="bottom" align="left" id="N12B3A" width="14.285714285714286%">Block/Inline (translation)</th>
+
+<th valign="bottom" align="left" id="N12B40" width="12.857142857142858%">Translatable content?</th>
+
+<th valign="bottom" align="left" id="N12B46" width="14.285714285714286%">Translatable attributes?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">apiname</td>
+
+<td valign="top" headers="N12B28">keyword</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">inline</td>
+
+<td valign="top" headers="N12B3A">inline</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">codeblock</td>
+
+<td valign="top" headers="N12B28">pre</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">block</td>
+
+<td valign="top" headers="N12B3A">block</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46">@spectitle<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">codeph</td>
+
+<td valign="top" headers="N12B28">ph</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">inline</td>
+
+<td valign="top" headers="N12B3A">inline</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">delim</td>
+
+<td valign="top" headers="N12B28">ph</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">inline</td>
+
+<td valign="top" headers="N12B3A">inline</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">fragment</td>
+
+<td valign="top" headers="N12B28">figgroup</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">block</td>
+
+<td valign="top" headers="N12B3A">block</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">fragref</td>
+
+<td valign="top" headers="N12B28">xref</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">inline</td>
+
+<td valign="top" headers="N12B3A">inline</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">groupchoice</td>
+
+<td valign="top" headers="N12B28">figgroup</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">block</td>
+
+<td valign="top" headers="N12B3A">block</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">groupcomp</td>
+
+<td valign="top" headers="N12B28">figgroup</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">block</td>
+
+<td valign="top" headers="N12B3A">block</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">groupseq</td>
+
+<td valign="top" headers="N12B28">figgroup</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">block</td>
+
+<td valign="top" headers="N12B3A">block</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">kwd</td>
+
+<td valign="top" headers="N12B28">keyword</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">inline</td>
+
+<td valign="top" headers="N12B3A">inline</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">oper</td>
+
+<td valign="top" headers="N12B28">ph</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">inline</td>
+
+<td valign="top" headers="N12B3A">inline</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">option</td>
+
+<td valign="top" headers="N12B28">keyword</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">inline</td>
+
+<td valign="top" headers="N12B3A">inline</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">parml</td>
+
+<td valign="top" headers="N12B28">dl</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">block</td>
+
+<td valign="top" headers="N12B3A">block</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46">@spectitle<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">parmname</td>
+
+<td valign="top" headers="N12B28">keyword</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">inline</td>
+
+<td valign="top" headers="N12B3A">inline</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">pd</td>
+
+<td valign="top" headers="N12B28">dd</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">block</td>
+
+<td valign="top" headers="N12B3A">block</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">plentry</td>
+
+<td valign="top" headers="N12B28">dlentry</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">block</td>
+
+<td valign="top" headers="N12B3A">block</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">pt</td>
+
+<td valign="top" headers="N12B28">dt</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">block</td>
+
+<td valign="top" headers="N12B3A">block</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">repsep</td>
+
+<td valign="top" headers="N12B28">ph</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">inline</td>
+
+<td valign="top" headers="N12B3A">inline</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">sep</td>
+
+<td valign="top" headers="N12B28">ph</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">inline</td>
+
+<td valign="top" headers="N12B3A">inline</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">synblk</td>
+
+<td valign="top" headers="N12B28">figgroup</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">block</td>
+
+<td valign="top" headers="N12B3A">block</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">synnote</td>
+
+<td valign="top" headers="N12B28">fn</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">block</td>
+
+<td valign="top" headers="N12B3A">block</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">synnoteref</td>
+
+<td valign="top" headers="N12B28">xref</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">inline</td>
+
+<td valign="top" headers="N12B3A">inline</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">synph</td>
+
+<td valign="top" headers="N12B28">ph</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">inline</td>
+
+<td valign="top" headers="N12B3A">inline</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">syntaxdiagram</td>
+
+<td valign="top" headers="N12B28">fig</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">block</td>
+
+<td valign="top" headers="N12B3A">block</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46"><em>removes @spectitle</em></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N12B22">var</td>
+
+<td valign="top" headers="N12B28">ph</td>
+
+<td valign="top" headers="N12B2E">yes</td>
+
+<td valign="top" headers="N12B34">inline</td>
+
+<td valign="top" headers="N12B3A">inline</td>
+
+<td valign="top" headers="N12B40">yes</td>
+
+<td valign="top" headers="N12B46">&#xA0;</td>
+
+</tr>
+
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">sw-d elements (software domain)</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="scale=80">
+<tr>
+<th valign="bottom" align="left" id="N1300E">Element name</th>
+
+<th valign="bottom" align="left" id="N13014">Specialized from</th>
+
+<th valign="bottom" align="left" id="N1301A">Inherits everything from ancestor?</th>
+
+<th valign="bottom" align="left" id="N13020">Block/Inline (presentation)</th>
+
+<th valign="bottom" align="left" id="N13026">Block/Inline (translation)</th>
+
+<th valign="bottom" align="left" id="N1302C">Translatable content?</th>
+
+<th valign="bottom" align="left" id="N13032">Translatable attributes?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1300E">cmdname</td>
+
+<td valign="top" headers="N13014">keyword</td>
+
+<td valign="top" headers="N1301A">yes</td>
+
+<td valign="top" headers="N13020">inline</td>
+
+<td valign="top" headers="N13026">inline</td>
+
+<td valign="top" headers="N1302C">yes</td>
+
+<td valign="top" headers="N13032">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1300E">filepath</td>
+
+<td valign="top" headers="N13014">ph</td>
+
+<td valign="top" headers="N1301A">yes</td>
+
+<td valign="top" headers="N13020">inline</td>
+
+<td valign="top" headers="N13026">inline</td>
+
+<td valign="top" headers="N1302C">yes</td>
+
+<td valign="top" headers="N13032">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1300E">msgblock</td>
+
+<td valign="top" headers="N13014">pre</td>
+
+<td valign="top" headers="N1301A">yes</td>
+
+<td valign="top" headers="N13020">block</td>
+
+<td valign="top" headers="N13026">block</td>
+
+<td valign="top" headers="N1302C">yes</td>
+
+<td valign="top" headers="N13032">@spectitle<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1300E">msgnum</td>
+
+<td valign="top" headers="N13014">keyword</td>
+
+<td valign="top" headers="N1301A">yes</td>
+
+<td valign="top" headers="N13020">inline</td>
+
+<td valign="top" headers="N13026">inline</td>
+
+<td valign="top" headers="N1302C">yes</td>
+
+<td valign="top" headers="N13032">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1300E">msgph</td>
+
+<td valign="top" headers="N13014">ph</td>
+
+<td valign="top" headers="N1301A">yes</td>
+
+<td valign="top" headers="N13020">inline</td>
+
+<td valign="top" headers="N13026">inline</td>
+
+<td valign="top" headers="N1302C">yes</td>
+
+<td valign="top" headers="N13032">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1300E">systemoutput</td>
+
+<td valign="top" headers="N13014">ph</td>
+
+<td valign="top" headers="N1301A">yes</td>
+
+<td valign="top" headers="N13020">inline</td>
+
+<td valign="top" headers="N13026">inline</td>
+
+<td valign="top" headers="N1302C">yes</td>
+
+<td valign="top" headers="N13032">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1300E">userinput</td>
+
+<td valign="top" headers="N13014">ph</td>
+
+<td valign="top" headers="N1301A">yes</td>
+
+<td valign="top" headers="N13020">inline</td>
+
+<td valign="top" headers="N13026">inline</td>
+
+<td valign="top" headers="N1302C">yes</td>
+
+<td valign="top" headers="N13032">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N1300E">varname</td>
+
+<td valign="top" headers="N13014">keyword</td>
+
+<td valign="top" headers="N1301A">yes</td>
+
+<td valign="top" headers="N13020">inline</td>
+
+<td valign="top" headers="N13026">inline</td>
+
+<td valign="top" headers="N1302C">yes</td>
+
+<td valign="top" headers="N13032">&#xA0;</td>
+
+</tr>
+
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">ui-d elements (UI domain)</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="scale=80">
+<tr>
+<th valign="bottom" align="left" id="N131CE">Element name</th>
+
+<th valign="bottom" align="left" id="N131D4">Specialized from</th>
+
+<th valign="bottom" align="left" id="N131DA">Inherits everything from ancestor?</th>
+
+<th valign="bottom" align="left" id="N131E0">Block/Inline (presentation)</th>
+
+<th valign="bottom" align="left" id="N131E6">Block/Inline (translation)</th>
+
+<th valign="bottom" align="left" id="N131EC">Translatable content?</th>
+
+<th valign="bottom" align="left" id="N131F2">Translatable attributes?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N131CE">menucascade</td>
+
+<td valign="top" headers="N131D4">ph</td>
+
+<td valign="top" headers="N131DA">yes</td>
+
+<td valign="top" headers="N131E0">inline</td>
+
+<td valign="top" headers="N131E6">inline</td>
+
+<td valign="top" headers="N131EC">yes</td>
+
+<td valign="top" headers="N131F2">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N131CE">screen</td>
+
+<td valign="top" headers="N131D4">pre</td>
+
+<td valign="top" headers="N131DA">yes</td>
+
+<td valign="top" headers="N131E0">block</td>
+
+<td valign="top" headers="N131E6">block</td>
+
+<td valign="top" headers="N131EC">yes</td>
+
+<td valign="top" headers="N131F2">@spectitle<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N131CE">shortcut</td>
+
+<td valign="top" headers="N131D4">keyword</td>
+
+<td valign="top" headers="N131DA">yes</td>
+
+<td valign="top" headers="N131E0">inline</td>
+
+<td valign="top" headers="N131E6">inline</td>
+
+<td valign="top" headers="N131EC">yes</td>
+
+<td valign="top" headers="N131F2">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N131CE">uicontrol</td>
+
+<td valign="top" headers="N131D4">ph</td>
+
+<td valign="top" headers="N131DA">yes</td>
+
+<td valign="top" headers="N131E0">inline</td>
+
+<td valign="top" headers="N131E6">inline</td>
+
+<td valign="top" headers="N131EC">yes</td>
+
+<td valign="top" headers="N131F2">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N131CE">wintitle</td>
+
+<td valign="top" headers="N131D4">keyword</td>
+
+<td valign="top" headers="N131DA">yes</td>
+
+<td valign="top" headers="N131E0">inline</td>
+
+<td valign="top" headers="N131E6">inline</td>
+
+<td valign="top" headers="N131EC">yes</td>
+
+<td valign="top" headers="N131F2">&#xA0;</td>
+
+</tr>
+
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">ut-d elements (Utilities domain)</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="scale=80">
+<tr>
+<th valign="bottom" align="left" id="N13301">Element name</th>
+
+<th valign="bottom" align="left" id="N13307">Specialized from</th>
+
+<th valign="bottom" align="left" id="N1330D">Inherits everything from ancestor?</th>
+
+<th valign="bottom" align="left" id="N13313">Block/Inline (presentation)</th>
+
+<th valign="bottom" align="left" id="N13319">Block/Inline (translation)</th>
+
+<th valign="bottom" align="left" id="N1331F">Translatable content?</th>
+
+<th valign="bottom" align="left" id="N13325">Translatable attributes?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N13301">area</td>
+
+<td valign="top" headers="N13307">figgroup</td>
+
+<td valign="top" headers="N1330D">yes</td>
+
+<td valign="top" headers="N13313">block</td>
+
+<td valign="top" headers="N13319">block</td>
+
+<td valign="top" headers="N1331F">yes</td>
+
+<td valign="top" headers="N13325">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N13301">coords</td>
+
+<td valign="top" headers="N13307">ph</td>
+
+<td valign="top" headers="N1330D"><strong>NO</strong></td>
+
+<td valign="top" headers="N13313">inline</td>
+
+<td valign="top" headers="N13319">inline</td>
+
+<td valign="top" headers="N1331F"><strong>no</strong></td>
+
+<td valign="top" headers="N13325">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N13301">imagemap</td>
+
+<td valign="top" headers="N13307">fig</td>
+
+<td valign="top" headers="N1330D">yes</td>
+
+<td valign="top" headers="N13313">block</td>
+
+<td valign="top" headers="N13319">block</td>
+
+<td valign="top" headers="N1331F">yes (can contain translatable alternate text)</td>
+
+<td valign="top" headers="N13325">@spectitle<a href="#elements__spectitle"><sup>2</sup></a></td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N13301">shape</td>
+
+<td valign="top" headers="N13307">keyword</td>
+
+<td valign="top" headers="N1330D"><strong>NO</strong></td>
+
+<td valign="top" headers="N13313">inline</td>
+
+<td valign="top" headers="N13319">inline</td>
+
+<td valign="top" headers="N1331F"><strong>no</strong></td>
+
+<td valign="top" headers="N13325">&#xA0;</td>
+
+</tr>
+
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">mapgroup-d elements (mapgroup domain)</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="scale=80">
+<tr>
+<th valign="bottom" align="left" id="N13415">Element name</th>
+
+<th valign="bottom" align="left" id="N1341B">Specialized from</th>
+
+<th valign="bottom" align="left" id="N13421">Inherits everything from ancestor?</th>
+
+<th valign="bottom" align="left" id="N13427">Block/Inline (presentation)</th>
+
+<th valign="bottom" align="left" id="N1342D">Block/Inline (translation)</th>
+
+<th valign="bottom" align="left" id="N13433">Translatable content?</th>
+
+<th valign="bottom" align="left" id="N13439">Translatable attributes?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N13415">topicgroup</td>
+
+<td valign="top" headers="N1341B">topicref</td>
+
+<td valign="top" headers="N13421">yes</td>
+
+<td valign="top" headers="N13427">block</td>
+
+<td valign="top" headers="N1342D">block</td>
+
+<td valign="top" headers="N13433">yes</td>
+
+<td valign="top" headers="N13439">@navtitle</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N13415">topichead</td>
+
+<td valign="top" headers="N1341B">topicref</td>
+
+<td valign="top" headers="N13421">yes</td>
+
+<td valign="top" headers="N13427">block</td>
+
+<td valign="top" headers="N1342D">block</td>
+
+<td valign="top" headers="N13433">yes</td>
+
+<td valign="top" headers="N13439">@navtitle</td>
+
+</tr>
+
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">xnal-d elements (XNAL domain) <em>(new in DITA 1.1)</em></h2><p>The
+XNAL information is all metadata, so it generally does not need to be translated.
+Exceptions may be needed when selections from this metadata are used for display
+purposes. The standard behavior may need to change based on local business
+rules. For example, in some cases it may be appropriate to translate the honorific,
+country, or organizationname elements.</p>
+<table summary="" cellspacing="0" cellpadding="4" border="1" class="scale=70">
+<tr>
+<th valign="bottom" align="left" id="N134C0" width="24%">Element name</th>
+
+<th valign="bottom" align="left" id="N134C6" width="12%">Specialized from</th>
+
+<th valign="bottom" align="left" id="N134CC" width="12%">Inherits everything from ancestor?</th>
+
+<th valign="bottom" align="left" id="N134D2" width="14%">Block/Inline (presentation)</th>
+
+<th valign="bottom" align="left" id="N134D8" width="14%">Block/Inline (translation)</th>
+
+<th valign="bottom" align="left" id="N134DE" width="12%">Translatable content?</th>
+
+<th valign="bottom" align="left" id="N134E4" width="12%">Translatable attributes?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">addressdetails</td>
+
+<td valign="top" headers="N134C6">ph</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2"><em>block</em></td>
+
+<td valign="top" headers="N134D8"><em>block</em></td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">administrativearea</td>
+
+<td valign="top" headers="N134C6">ph</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2"><em>block</em></td>
+
+<td valign="top" headers="N134D8"><em>block</em></td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">authorinformation</td>
+
+<td valign="top" headers="N134C6">author</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2">block</td>
+
+<td valign="top" headers="N134D8">block</td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">contactnumber</td>
+
+<td valign="top" headers="N134C6">data</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2">block</td>
+
+<td valign="top" headers="N134D8">block</td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">contactnumbers</td>
+
+<td valign="top" headers="N134C6">data</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2">block</td>
+
+<td valign="top" headers="N134D8">block</td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">country</td>
+
+<td valign="top" headers="N134C6">ph</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2"><em>block</em></td>
+
+<td valign="top" headers="N134D8"><em>block</em></td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">emailaddress</td>
+
+<td valign="top" headers="N134C6">data</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2">block</td>
+
+<td valign="top" headers="N134D8">block</td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">emailaddresses</td>
+
+<td valign="top" headers="N134C6">data</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2">block</td>
+
+<td valign="top" headers="N134D8">block</td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">firstname</td>
+
+<td valign="top" headers="N134C6">data</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2">block</td>
+
+<td valign="top" headers="N134D8">block</td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">generationidentifier</td>
+
+<td valign="top" headers="N134C6">data</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2">block</td>
+
+<td valign="top" headers="N134D8">block</td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">honorific</td>
+
+<td valign="top" headers="N134C6">data</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2">block</td>
+
+<td valign="top" headers="N134D8">block</td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">lastname</td>
+
+<td valign="top" headers="N134C6">data</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2">block</td>
+
+<td valign="top" headers="N134D8">block</td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">locality</td>
+
+<td valign="top" headers="N134C6">ph</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2"><em>block</em></td>
+
+<td valign="top" headers="N134D8"><em>block</em></td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">localityname</td>
+
+<td valign="top" headers="N134C6">ph</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2"><em>block</em></td>
+
+<td valign="top" headers="N134D8"><em>block</em></td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">middlename</td>
+
+<td valign="top" headers="N134C6">data</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2">block</td>
+
+<td valign="top" headers="N134D8">block</td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">namedetails</td>
+
+<td valign="top" headers="N134C6">data</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2">block</td>
+
+<td valign="top" headers="N134D8">block</td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">organizationinfo</td>
+
+<td valign="top" headers="N134C6">data</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2">block</td>
+
+<td valign="top" headers="N134D8">block</td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">organizationname</td>
+
+<td valign="top" headers="N134C6">ph</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2"><em>block</em></td>
+
+<td valign="top" headers="N134D8"><em>block</em></td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">organizationnamedetails</td>
+
+<td valign="top" headers="N134C6">ph</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2"><em>block</em></td>
+
+<td valign="top" headers="N134D8"><em>block</em></td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">otherinfo</td>
+
+<td valign="top" headers="N134C6">data</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2">block</td>
+
+<td valign="top" headers="N134D8">block</td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">personinfo</td>
+
+<td valign="top" headers="N134C6">data</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2">block</td>
+
+<td valign="top" headers="N134D8">block</td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">personname</td>
+
+<td valign="top" headers="N134C6">data</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2">block</td>
+
+<td valign="top" headers="N134D8">block</td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">postalcode</td>
+
+<td valign="top" headers="N134C6">ph</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2"><em>block</em></td>
+
+<td valign="top" headers="N134D8"><em>block</em></td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">thoroughfare</td>
+
+<td valign="top" headers="N134C6">ph</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2"><em>block</em></td>
+
+<td valign="top" headers="N134D8"><em>block</em></td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">url</td>
+
+<td valign="top" headers="N134C6">data</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2">block</td>
+
+<td valign="top" headers="N134D8">block</td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N134C0">urls</td>
+
+<td valign="top" headers="N134C6">data</td>
+
+<td valign="top" headers="N134CC"><strong>no</strong></td>
+
+<td valign="top" headers="N134D2">block</td>
+
+<td valign="top" headers="N134D8">block</td>
+
+<td valign="top" headers="N134DE"><strong>no</strong></td>
+
+<td valign="top" headers="N134E4">&#xA0;</td>
+
+</tr>
+
+</table>
+</div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="translation.html" title="DITA has specific capabilities for preparing content for translation and working with multilingual content, including the xml:lang attribute, the dir attribute, and the translate attribute.">Translation</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="diratt.html" title="While most languages are written in text where characters flow from left to right, Hebrew and many Arabic languages are written from right to left. In some languages, including Hebrew and Arabic, numbers and other content is written left to right. Also, a multilingual document containing, for example, English and Hebrew, contains some text that flows left to right and other text that flows right to left.">The dir attribute</a></div>
+</div>
+</div>
+<div class="p"><a id="elements__subflow"><sup>1</sup></a>  This element is considered a "subflow"
+element for translation. If it is located in the middle of a translation segment,
+it should not be translated as part of that segment. For example, indexterm,
+fn, and draft-comment may divide a sentence in two, but should be treated
+as blocks, and should not interrupt the sentence. </div><div class="p"><a id="elements__spectitle"><sup>2</sup></a>  The spectitle and specentry attributes can
+contain translatable text.  The direct use of fixed-in-the-DTD text by tools
+is discouraged, in favor of using the value as a lookup string to find the
+translation outside of the file, using accepted localization methods for generated
+text.  </div><div class="p"><a id="elements__foreign"><sup>3</sup></a>  The block vs. inline designation for the foreign element is likely
+to change for some specializations</div><div class="p"><a id="elements__foreign-translate"><sup>4</sup></a>  The desc,
+object, and image elements inside &lt;foreign&gt; should still be translatable;
+they provide an alternative display if the foreign content cannot be processed</div><div class="p"><a id="elements__alt"><sup>5</sup></a>  The use of the alt attribute is deprecated in favor of the alt element.</div><div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

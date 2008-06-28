@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="topic" name="DC.Type" />
+<meta name="DC.Title" content="Terminology" />
+<meta name="abstract" content="DITA uses a number of terms in particular or unique ways. Within the scope of this specification, the following terms are used when talking about DITA models, DITA declarations, and DITA instances." />
+<meta name="description" content="DITA uses a number of terms in particular or unique ways. Within the scope of this specification, the following terms are used when talking about DITA models, DITA declarations, and DITA instances." />
+<meta scheme="URI" name="DC.Relation" content="definitions.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="terminology" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>Terminology</title>
+</head>
+<body id="terminology"><a name="terminology"><!-- --></a>
+
+
+<h1 class="topictitle1">Terminology</h1>
+
+
+<div><p>DITA uses a number of terms in particular or unique ways. Within
+the scope of this specification, the following terms are used when talking
+about DITA models, DITA declarations, and DITA instances.</p>
+
+<p>When particular attributes are listed together with elements, attribute
+names may be preceded by @ to distinguish them from elements. For example:
+@props, @class.</p>
+
+<p>When particular elements are named outside of a list, they may be delimited
+with &lt; and &gt; to distinguish them from surrounding text. For example: &lt;keyword&gt;, &lt;prolog&gt;. </p>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="definitions.html" title="The following terms have specific meanings in DITA which should be understood before reading either the DITA markup specification or the DITA specialization specification.">Definitions and background concepts</a></div>
+</div>
+</div>
+<div class="nested1" xml:lang="en-us" id="modelterminology"><a name="modelterminology"><!-- --></a>
+<h2 class="topictitle2">Model terminology</h2>
+
+
+<div><p>DITA can be understood at the level of an abstract model without
+reference to particular DTDs, schemas, or actual XML documents. When discussing
+DITA concepts at this level, the following terminology is used.</p>
+
+<dl>
+<dt class="dlterm">Element type </dt>
+
+<dd>Defines the structure and semantics for a fragment of content. </dd>
+
+
+<dt class="dlterm">Specialized element type</dt>
+
+<dd>Defines an element type as a semantic refinement of another element type.
+The content allowed by the specialized element type must be a subset of or
+identical to the content allowed by the original element type.</dd>
+
+
+<dt class="dlterm">Attribute type</dt>
+
+<dd>Defines the structure and semantics for an attribute. </dd>
+
+
+<dt class="dlterm">Specialized attribute type</dt>
+
+<dd>Defines an attribute type as a semantic refinement of another attribute
+type. The attribute must specialize the base or props attribute, and its content
+must be a subset of or identical to the content allowed by the original attribute
+type.</dd>
+
+
+<dt class="dlterm">Topic type</dt>
+
+<dd>An element type that defines a complete unit of content. The topic type
+provides the root element for the topic and, through contained element types,
+substructure for the topic instances. The root element of the topic type is
+not necessarily the same as the root element of a document type: document
+types may nest multiple topic types, and may also declare non-DITA wrapper
+elements as the root element for compatibility with other processes.</dd>
+
+
+<dt class="dlterm">Map type</dt>
+
+<dd>An element type that defines a set of relationships for topic instances.
+The map type provides the root element and, through contained element types,
+substructure for the map instances. The map substructure provides hierarchy,
+group, and matrix organization of references to topic instances.</dd>
+
+
+<dt class="dlterm">Structural type</dt>
+
+<dd>A topic type or map type.</dd>
+
+
+<dt class="dlterm">Domain</dt>
+
+<dd>A set of elements or an attribute that supports a specific subject area.
+Elements or attributes in a domain can be integrated with topic or map types
+to enhance their semantic support for particular kinds of content. For example,
+the structural type &lt;topic&gt; declares the &lt;keyword&gt; element; when integrated
+with a domain for describing user interfaces, new keyword specializations
+(such as &lt;wintitle&gt;) become available wherever &lt;keyword&gt; was allowed
+in the original structural type.</dd>
+
+
+<dt class="dlterm">Document type</dt>
+
+<dd>The full set of element types and attribute types defined in the modules
+that are integrated by the document type shell. A DITA document type may support
+authoring multiple topic types or multiple map types, but not a mix of the
+two. The structural types can be augmented with elements from domains. The
+term "document type" is used for compatibility with existing standards, since
+this is the point at which DITA's set of topic, domain, and map types are
+assembled into a document type that is functionally equivalent to a traditional
+non-modularized document type. </dd>
+
+</dl>
+
+</div>
+
+</div>
+
+<div class="nested1" xml:lang="en-us" id="declarationterminology"><a name="declarationterminology"><!-- --></a>
+<h2 class="topictitle2">Declaration terminology</h2>
+
+
+<div><p>When the model is expressed in a DTD or schema, the various element
+types are declared. When referring to these declarations, the following terminology
+is used.</p>
+
+<dl>
+<dt class="dlterm">Element declaration</dt>
+
+<dd> The representation within a schema technology (such as DTD, XML Schema,
+or Relax NG) for an element type.</dd>
+
+
+<dt class="dlterm">Attribute declaration</dt>
+
+<dd> The representation within a schema technology (such as DTD, XML Schema,
+or Relax NG) for an attribute type.</dd>
+
+
+<dt class="dlterm">Type module</dt>
+
+<dd>The representation within a schema technology for the element and attribute
+types uniquely defined by a topic type, map type, or domain.</dd>
+
+
+<dt class="dlterm">Topic module</dt>
+
+<dd>The representation within a schema technology for the element types uniquely
+defined by a topic type.</dd>
+
+
+<dt class="dlterm">Map module</dt>
+
+<dd>The representation within a schema technology for the element types uniquely
+defined by a map type.</dd>
+
+
+<dt class="dlterm">Structural module</dt>
+
+<dd>A topic or map module.</dd>
+
+
+<dt class="dlterm">Domain module</dt>
+
+<dd>The representation within a schema technology for the element types or
+attribute type uniquely defined by a domain.</dd>
+
+
+<dt class="dlterm">Document type shell, head schema</dt>
+
+<dd> The representation within a schema technology for a DTD shell or head
+schema that declares no element or attribute types itself (except potentially
+for a &lt;dita&gt; root element that allows multiple peer topic types in the
+same document type) but points to and assembles topic and domain modules or
+map and domain modules.</dd>
+
+
+<dt class="dlterm">Document type declaration</dt>
+
+<dd> The representation within a schema technology for a document type. The
+document type declaration includes the declaration modules assembled by the
+document declaration shell.</dd>
+
+</dl>
+
+</div>
+
+</div>
+
+<div class="nested1" xml:lang="en-us" id="instanceterminology"><a name="instanceterminology"><!-- --></a>
+<h2 class="topictitle2">Instance terminology</h2>
+
+
+<div><p>When actual documents, topics, and elements are created based on
+a DITA document type, the following terminology is used.</p>
+
+<dl>
+<dt class="dlterm">Element instance</dt>
+
+<dd>An occurrence of an element type in a document. </dd>
+
+
+<dt class="dlterm">Attribute instance</dt>
+
+<dd>An occurrence of an attribute type in a document. </dd>
+
+
+<dt class="dlterm"> Topic instance </dt>
+
+<dd>An occurrence of a topic type in a document.</dd>
+
+
+<dt class="dlterm">Map instance </dt>
+
+<dd>An occurrence of a map type in a document.</dd>
+
+
+<dt class="dlterm">Structural type instance</dt>
+
+<dd>An occurrence of a topic type or a map type in a document.</dd>
+
+
+<dt class="dlterm">Document instance </dt>
+
+<dd>A document whose meaning and validity are determined by a document type
+declaration.</dd>
+
+</dl>
+
+</div>
+
+</div>
+
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

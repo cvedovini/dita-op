@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="copyright" content="(C) Copyright 2005" />
+<meta name="DC.rights.owner" content="(C) Copyright 2005" />
+<meta content="concept" name="DC.Type" />
+<meta name="DC.Title" content="The xNAL domain" />
+<meta name="abstract" content="Book metadata has many commonalities with other metadata standards, in particular those for addressing persons and places. The OASIS xNAL Standard (extensible Name and Address Language) was selected to represent close mappings from the DITA bookmap metadata content model to an existing standard." />
+<meta name="description" content="Book metadata has many commonalities with other metadata standards, in particular those for addressing persons and places. The OASIS xNAL Standard (extensible Name and Address Language) was selected to represent close mappings from the DITA bookmap metadata content model to an existing standard." />
+<meta scheme="URI" name="DC.Relation" content="mapdomains.html" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="concept-1" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>The xNAL domain</title>
+</head>
+<body id="concept-1"><a name="concept-1"><!-- --></a>
+
+
+<h1 class="topictitle1">The xNAL domain</h1>
+
+
+<div><p>Book metadata has many commonalities with other metadata standards,
+in particular those for addressing persons and places. The OASIS xNAL Standard
+(extensible Name and Address Language) was selected to represent close mappings
+from the DITA bookmap metadata content model to an existing standard.</p>
+
+<p>The OASIS CIQ standard for global customer information management contains
+the definition of the <a href="http://www.oasis-open.org/committees/ciq/ciq.html#4">OASIS
+extensible Name and Address Language (xNAL)</a> metadata elements. Version
+2 of the standard states:</p>
+
+<blockquote>       <p>The objective of xNAL is to describe a common structure for
+Personal/Organization Names and Addresses that would enable any applications
+that want to represent customer names and addresses in a common standard format.
+The applications could be CRM/e-CRM, Customer Information Systems, Data Quality
+(Parsing, Matching, Validation, Verification, etc), Customer Data Warehouses,
+Postal services, etc.</p>
+       <p>However, any party for its own purposes
+and applications may use xNAL grammar or parts of it.</p>
+     </blockquote>
+
+<p>The metadata elements defined for bookmap naturally include structures
+that identify the authors and content owners. Although it was not possible
+to subset the xNAL standard definitions directly into DITA due to differences
+between the two processing architectures, OASIS DITA Technical Committee
+members determined that there was value in having at least a transformational
+equivalence between bookmap and xNAL definitions for names and addresses.
+This equivalence enables XML-aware tools in workflow systems to capture and
+manipulate DITA bookmap names and addresses in a standard way.</p>
+
+<p>For DITA 1.1, the xNAL domain is part of the bookmap specialization. This
+means that the xNAL elements appear any place that bookmap allows the &lt;<span class="keyword">author</span>&gt;
+element - within bookmeta and topicmeta. </p>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="mapdomains.html" title="The following domains provide expanded functionality for map document types that incorporate them.">Map domains</a></div>
+</div>
+</div>
+<div>
+    <p>OASIS DITA Version 1.1 Architectural Specification  -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.</p>
+</div>
+</body>
+</html>

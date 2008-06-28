@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="reference" name="DC.Type" />
+<meta name="DC.Title" content="topicref" />
+<meta name="abstract" content="The &lt;topicref&gt; element identifies a topic (such as a concept, task, or reference) or other resource. A &lt;topicref&gt; can contain other&lt;topicref&gt; elements, allowing you to express navigation or table-of-contents hierarchies, as well as implying relationships between the containing &lt;topicref&gt; and its children. You can set the collection-type of a container &lt;topicref&gt; to determine how its children are related to each other. You can also express relationships among &lt;topicref&gt;s using group and table structures (using &lt;topicgroup&gt; and &lt;reltable&gt;). Relationships end up expressed as links in the output (with each participant in a relationship having links to the other participants by default)." />
+<meta name="description" content="The &lt;topicref&gt; element identifies a topic (such as a concept, task, or reference) or other resource. A &lt;topicref&gt; can contain other&lt;topicref&gt; elements, allowing you to express navigation or table-of-contents hierarchies, as well as implying relationships between the containing &lt;topicref&gt; and its children. You can set the collection-type of a container &lt;topicref&gt; to determine how its children are related to each other. You can also express relationships among &lt;topicref&gt;s using group and table structures (using &lt;topicgroup&gt; and &lt;reltable&gt;). Relationships end up expressed as links in the output (with each participant in a relationship having links to the other participants by default)." />
+<meta content="topicref, Map elements" name="DC.subject" />
+<meta content="topicref, Map elements" name="keywords" />
+<meta scheme="URI" name="DC.Relation" content="../common/map2.html" />
+<meta scheme="URI" name="DC.Relation" content="../langref/topicmeta.html" />
+<meta name="copyright" content="IBM 2001 2004" type="primary" />
+<meta name="DC.Rights.Owner" content="IBM 2001 2004" type="primary" />
+<meta name="copyright" content="OASIS 2005 2007" type="primary" />
+<meta name="DC.Rights.Owner" content="OASIS 2005 2007" type="primary" />
+<meta content="XHTML" name="DC.Format" />
+<meta content="topicref" name="DC.Identifier" />
+<meta content="en-us" name="DC.Language" />
+<link href="../css/commonltr.css" type="text/css" rel="stylesheet" />
+<title>topicref</title>
+</head>
+<body id="topicref"><a name="topicref"><!-- --></a>
+
+
+<h1 class="topictitle1">topicref</h1>
+
+
+
+<div><p>The &lt;<span class="keyword">topicref</span>&gt; element identifies a topic
+(such as a concept, task, or reference) or other resource. A &lt;<span class="keyword">topicref</span>&gt;
+can contain other&lt;<span class="keyword">topicref</span>&gt; elements, allowing you
+to express navigation or table-of-contents hierarchies, as well as implying
+relationships between the containing &lt;<span class="keyword">topicref</span>&gt; and
+its children. You can set the collection-type of a container &lt;<span class="keyword">topicref</span>&gt;
+to determine how its children are related to each other. You can also express
+relationships among &lt;<span class="keyword">topicref</span>&gt;s using group and table
+structures (using &lt;<span class="keyword">topicgroup</span>&gt; and &lt;<span class="keyword">reltable</span>&gt;).
+Relationships end up expressed as links in the output (with each participant
+in a relationship having links to the other participants by default). </p>
+
+<div class="section"><p>You can fine tune the output from your map by setting different
+attributes on topicrefs: for example, the <em><span class="keyword">linking</span></em> attribute
+controls how its relationships to other topicrefs are expressed as links,
+and the <em><span class="keyword">toc</span></em> attribute controls whether the topicref
+shows up in TOC or navigation output.</p>
+</div>
+
+<div class="example"><h2 class="sectiontitle">Example</h2>In this example, there are six topicrefs. They
+are nested and have a hierarchical relationship. Bats.dita is the parent topic
+and the other topics are its children.<pre class="codeblock">&lt;map title="Bats"&gt;
+ &lt;topicref href="bats.dita" type="topic"&gt;
+  &lt;topicref href="batcaring.dita" type="task"&gt;&lt;/topicref&gt;
+  &lt;topicref href="batfeeding.dita" type="task"&gt;&lt;/topicref&gt;
+  &lt;topicref href="batsonar.dita" type="concept"&gt;&lt;/topicref&gt;
+  &lt;topicref href="batguano.dita" type="reference"&gt;&lt;/topicref&gt;
+  &lt;topicref href="bathistory.dita" type="reference"&gt;&lt;/topicref&gt;
+ &lt;/topicref&gt;
+&lt;/map&gt;</pre>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contains</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N100E0" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N100E5" width="88%">Content model</th>
+</tr>
+
+<tr><td valign="top" id="N100EF" headers="N100E0"><strong>map</strong></td>
+<td valign="top" headers="N100E5 N100EF"> ( (
+<a href="../common/../langref/topicmeta.html" title="The &lt;topicmeta&gt; element defines the metadata that applies to a topic when it appears in a map, and to the other topics in the map that are contained by the same element that contains the &lt;topicmeta&gt; element. When creating links, it can also be used to override the title and short description of the topic. In addition, it can be used to add index entries to referenced content using the &lt;keywords&gt; element.">topicmeta</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/topicref.html" title="The &lt;topicref&gt; element identifies a topic (such as a concept, task, or reference) or other resource. A &lt;topicref&gt; can contain other&lt;topicref&gt; elements, allowing you to express navigation or table-of-contents hierarchies, as well as implying relationships between the containing &lt;topicref&gt; and its children. You can set the collection-type of a container &lt;topicref&gt; to determine how its children are related to each other. You can also express relationships among &lt;topicref&gt;s using group and table structures (using &lt;topicgroup&gt; and &lt;reltable&gt;). Relationships end up expressed as links in the output (with each participant in a relationship having links to the other participants by default).">topicref</a> or  <a href="../common/../langref/topichead.html" title="The &lt;topichead&gt; element provides a title-only entry in a navigation map, as an alternative to the fully-linked title provided by the &lt;topicref&gt; element.">topichead</a> or <a href="../common/../langref/topicgroup.html" title="The &lt;topicgroup&gt; element is for creating groups of &lt;topicref&gt; elements without affecting the hierarchy, as opposed to nested &lt;topicref&gt; elements within a &lt;topicref&gt;, which does imply a structural hierarchy. It is typically used outside a hierarchy to identify groups for linking without affecting the resulting toc/navigation output.">topicgroup</a>  or 
+<a href="../common/../langref/navref.html" title="The &lt;navref&gt; represents a pointer to another map which should be preserved as a transcluding link rather than resolved. Output formats that support such linking will integrate the target when displaying the referencing map to an end user.">navref</a> or 
+<a href="../common/../langref/anchor.html" title="The &lt;anchor&gt; element is used for runtime integration of navigation. It provides an integration point that another map can point to in order to insert its navigation into the current navigation tree. For those familiar with Eclipse help systems, this serves the same purpose as the &lt;anchor&gt; element in that system. It may not be supported for all output formats.">anchor</a> or 
+<a href="../common/../langref/data.html" title="The &lt;data&gt; element represents a property within a DITA topic or map. While the &lt;data&gt; element can be used directly to capture properties, it is particularly useful as a basis for specialization. Default processing treats the property values as an unknown kind of metadata, but custom processing can match the name attribute or specialized element to format properties as sidebars or other adornments or to harvest properties for automated processing.">data</a> or <a href="../common/../langref/data-about.html" title="The &lt;data-about&gt; element identifies the subject of a property when the subject isn't associated with the context in which the property is specified. The property itself is expressed by the &lt;data&gt; element. The &lt;data-about&gt; element handles exception cases where a property must be expressed somewhere other than inside the actual subject of the property. The &lt;data-about&gt; element is particularly useful as a basis for specialization in combination with the &lt;data&gt; element.">data-about</a>) <em> (any number) </em>) </td>
+</tr>
+
+<tr><td valign="top" id="N101FF" headers="N100E0"><strong>bookmap</strong></td>
+<td valign="top" headers="N100E5 N101FF"> ( (
+<a href="../common/../langref/topicmeta.html" title="The &lt;topicmeta&gt; element defines the metadata that applies to a topic when it appears in a map, and to the other topics in the map that are contained by the same element that contains the &lt;topicmeta&gt; element. When creating links, it can also be used to override the title and short description of the topic. In addition, it can be used to add index entries to referenced content using the &lt;keywords&gt; element.">topicmeta</a>) <em> (optional) </em> then  (
+<a href="../common/../langref/topicref.html" title="The &lt;topicref&gt; element identifies a topic (such as a concept, task, or reference) or other resource. A &lt;topicref&gt; can contain other&lt;topicref&gt; elements, allowing you to express navigation or table-of-contents hierarchies, as well as implying relationships between the containing &lt;topicref&gt; and its children. You can set the collection-type of a container &lt;topicref&gt; to determine how its children are related to each other. You can also express relationships among &lt;topicref&gt;s using group and table structures (using &lt;topicgroup&gt; and &lt;reltable&gt;). Relationships end up expressed as links in the output (with each participant in a relationship having links to the other participants by default).">topicref</a> or <a href="../common/../langref/topichead.html" title="The &lt;topichead&gt; element provides a title-only entry in a navigation map, as an alternative to the fully-linked title provided by the &lt;topicref&gt; element.">topichead</a> or <a href="../common/../langref/topicgroup.html" title="The &lt;topicgroup&gt; element is for creating groups of &lt;topicref&gt; elements without affecting the hierarchy, as opposed to nested &lt;topicref&gt; elements within a &lt;topicref&gt;, which does imply a structural hierarchy. It is typically used outside a hierarchy to identify groups for linking without affecting the resulting toc/navigation output.">topicgroup</a> or 
+<a href="../common/../langref/navref.html" title="The &lt;navref&gt; represents a pointer to another map which should be preserved as a transcluding link rather than resolved. Output formats that support such linking will integrate the target when displaying the referencing map to an end user.">navref</a> or 
+<a href="../common/../langref/anchor.html" title="The &lt;anchor&gt; element is used for runtime integration of navigation. It provides an integration point that another map can point to in order to insert its navigation into the current navigation tree. For those familiar with Eclipse help systems, this serves the same purpose as the &lt;anchor&gt; element in that system. It may not be supported for all output formats.">anchor</a> or 
+<a href="../common/../langref/data.html" title="The &lt;data&gt; element represents a property within a DITA topic or map. While the &lt;data&gt; element can be used directly to capture properties, it is particularly useful as a basis for specialization. Default processing treats the property values as an unknown kind of metadata, but custom processing can match the name attribute or specialized element to format properties as sidebars or other adornments or to harvest properties for automated processing.">data</a> or <a href="../common/../langref/data-about.html" title="The &lt;data-about&gt; element identifies the subject of a property when the subject isn't associated with the context in which the property is specified. The property itself is expressed by the &lt;data&gt; element. The &lt;data-about&gt; element handles exception cases where a property must be expressed somewhere other than inside the actual subject of the property. The &lt;data-about&gt; element is particularly useful as a basis for specialization in combination with the &lt;data&gt; element.">data-about</a>) <em> (any number) </em>) </td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Contained by</h2><table summary="" cellspacing="0" cellpadding="4" border="1" class="simpletableborder"><tr><th valign="bottom" align="left" id="N1031F" width="12%">Doctype</th>
+<th valign="bottom" align="left" id="N10324" width="88%">Parents</th>
+</tr>
+
+<tr><td valign="top" id="N1032E" headers="N1031F"><strong>bookmap</strong></td>
+<td valign="top" headers="N10324 N1032E"><a href="../common/../langref/map.html" title="The &lt;map&gt; element is used to define a map which describes the relationships among a set of resources, such as DITA topics. Maps consist of references to topics and other resources organized into hierarchies, groups, and tables. Maps provide a way to express these relationships in a single common format that can be used for different outputs.">map</a>, <a href="../common/../langref/topicref.html" title="The &lt;topicref&gt; element identifies a topic (such as a concept, task, or reference) or other resource. A &lt;topicref&gt; can contain other&lt;topicref&gt; elements, allowing you to express navigation or table-of-contents hierarchies, as well as implying relationships between the containing &lt;topicref&gt; and its children. You can set the collection-type of a container &lt;topicref&gt; to determine how its children are related to each other. You can also express relationships among &lt;topicref&gt;s using group and table structures (using &lt;topicgroup&gt; and &lt;reltable&gt;). Relationships end up expressed as links in the output (with each participant in a relationship having links to the other participants by default).">topicref</a>, <a href="../common/../langref/relcell.html" title="A &lt;relcell&gt; element is a cell in the relationship table. The &lt;topicref&gt; elements it contains will be related to topicrefs in other cells of the same row. By default, topicrefs in the same cell are not related to each other, unless you change the relcell's collection-type attribute to indicate that they are related.">relcell</a>, <a href="../common/../langref/frontmatter.html" title="The &lt;frontmatter&gt; element contains the material that precedes the main body of a document. It may include items such as an abstract, a preface, and various types of book lists such as a &lt;toc&gt;, &lt;tablelist&gt;, or &lt;figurelist&gt;.">frontmatter</a>, <a href="../common/../langref/backmatter.html" title="The &lt;backmatter&gt; element contains the material that follows the main body of a document and any appendixes. It may include items such as a colophon, legal notices, and various types of book lists such as a glossary or an index.">backmatter</a>, <a href="../common/../langref/draftintro.html" title="The &lt;draftintro&gt; element references a topic used as an introduction to the draft of this book.">draftintro</a>, <a href="../common/../langref/preface.html" title="The &lt;preface&gt; element references introductory information about a book, such as the purpose and structure of the document.">preface</a>, <a href="../common/../langref/chapter.html" title="The &lt;chapter&gt; element references a topic as a chapter within a book.">chapter</a>, <a href="../common/../langref/part.html" title="The &lt;part&gt; element references a part topic for the book. A new part is started. Use &lt;part&gt; to divide a document's chapters into logical groupings. For example, in a document that contains both guide and reference information, you can define two parts, one containing the guide information and the other containing the reference information.">part</a>, <a href="../common/../langref/appendix.html" title="The &lt;appendix&gt; element references a topic as a appendix within a book.">appendix</a>, <a href="../common/../langref/notices.html" title="The &lt;notices&gt; element references special notice information, for example, legal notices about supplementary copyrights and trademarks associated with the book. .">notices</a>, <a href="../common/../langref/glossarylist.html" title="The &lt;glossarylist&gt; element references a list of glossary entries within the book. It indicates to the processing software that the author wants a glossary list generated at the particular location.">glossarylist</a>, <a href="../common/../langref/topichead.html" title="The &lt;topichead&gt; element provides a title-only entry in a navigation map, as an alternative to the fully-linked title provided by the &lt;topicref&gt; element.">topichead</a>, <a href="../common/../langref/topicgroup.html" title="The &lt;topicgroup&gt; element is for creating groups of &lt;topicref&gt; elements without affecting the hierarchy, as opposed to nested &lt;topicref&gt; elements within a &lt;topicref&gt;, which does imply a structural hierarchy. It is typically used outside a hierarchy to identify groups for linking without affecting the resulting toc/navigation output.">topicgroup</a></td>
+</tr>
+
+<tr><td valign="top" id="N1043B" headers="N1031F"><strong>map</strong></td>
+<td valign="top" headers="N10324 N1043B"><a href="../common/../langref/map.html" title="The &lt;map&gt; element is used to define a map which describes the relationships among a set of resources, such as DITA topics. Maps consist of references to topics and other resources organized into hierarchies, groups, and tables. Maps provide a way to express these relationships in a single common format that can be used for different outputs.">map</a>, <a href="../common/../langref/topicref.html" title="The &lt;topicref&gt; element identifies a topic (such as a concept, task, or reference) or other resource. A &lt;topicref&gt; can contain other&lt;topicref&gt; elements, allowing you to express navigation or table-of-contents hierarchies, as well as implying relationships between the containing &lt;topicref&gt; and its children. You can set the collection-type of a container &lt;topicref&gt; to determine how its children are related to each other. You can also express relationships among &lt;topicref&gt;s using group and table structures (using &lt;topicgroup&gt; and &lt;reltable&gt;). Relationships end up expressed as links in the output (with each participant in a relationship having links to the other participants by default).">topicref</a>, <a href="../common/../langref/relcell.html" title="A &lt;relcell&gt; element is a cell in the relationship table. The &lt;topicref&gt; elements it contains will be related to topicrefs in other cells of the same row. By default, topicrefs in the same cell are not related to each other, unless you change the relcell's collection-type attribute to indicate that they are related.">relcell</a>, <a href="../common/../langref/topichead.html" title="The &lt;topichead&gt; element provides a title-only entry in a navigation map, as an alternative to the fully-linked title provided by the &lt;topicref&gt; element.">topichead</a>, <a href="../common/../langref/topicgroup.html" title="The &lt;topicgroup&gt; element is for creating groups of &lt;topicref&gt; elements without affecting the hierarchy, as opposed to nested &lt;topicref&gt; elements within a &lt;topicref&gt;, which does imply a structural hierarchy. It is typically used outside a hierarchy to identify groups for linking without affecting the resulting toc/navigation output.">topicgroup</a></td>
+</tr>
+</table>
+</div>
+
+<div class="section"><h2 class="sectiontitle">Inheritance:</h2><p>- map/topicref </p>
+</div>
+
+<div class="section" id="topicref__attrs"><a name="topicref__attrs"><!-- --></a><h2 class="sectiontitle">Attributes</h2> <a name="topicref__topicref_attr"><!-- --></a><table summary="" cellspacing="0" cellpadding="4" id="topicref__topicref_attr" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="N10508" width="25%">Name</th>
+
+<th valign="bottom" align="left" id="N1050E" width="37.5%">Description</th>
+
+<th valign="bottom" align="left" id="N10514" width="12.5%">Data Type</th>
+
+<th valign="bottom" align="left" id="N1051A" width="12.5%">Default Value</th>
+
+<th valign="bottom" align="left" id="N10520" width="12.5%">Required?</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10508">navtitle</td>
+
+<td valign="top" headers="N1050E">Specifies the title of the topic as it will appear in navigation
+or tables of contents generated from the map.</td>
+
+<td valign="top" headers="N10514">CDATA</td>
+
+<td valign="top" headers="N1051A">#IMPLIED</td>
+
+<td valign="top" headers="N10520">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10508">href</td>
+
+<td valign="top" headers="N1050E">A pointer to the resource represented by the &lt;topicref&gt;. References
+to DITA content cannot be below the topic level: that is, you cannot reference
+individual elements inside a topic. <span id="topicref__N90F11"><a name="topicref__N90F11"><!-- --></a>References to content
+other than DITA topics should use the format attribute to identify the kind
+of resource being referenced.</span></td>
+
+<td valign="top" headers="N10514">CDATA</td>
+
+<td valign="top" headers="N1051A">#IMPLIED</td>
+
+<td valign="top" headers="N10520"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10508">query</td>
+
+<td valign="top" headers="N1050E">This attribute is deprecated. It may be removed
+in the future.</td>
+
+<td valign="top" headers="N10514">CDATA</td>
+
+<td valign="top" headers="N1051A">#IMPLIED</td>
+
+<td valign="top" headers="N10520">No</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10508">copy-to</td>
+
+<td valign="top" headers="N1050E">Use the copy-to attribute on the &lt;<span class="keyword">topicref</span>&gt;
+element to provide a different file name for a particular instance of the
+topic in the map (for example, to separate out the different versions of the
+topic, rather than combining them on output). The links and navigation associated
+with that instance will point to a copy of the topic with the file name you
+specified. <p>Use the &lt;<span class="keyword">linktext</span>&gt; and &lt;<span class="keyword">shortdesc</span>&gt;
+in the &lt;<span class="keyword">topicref</span>&gt;'s &lt;<span class="keyword">topicmeta</span>&gt;
+to provide a unique name and short description for the new copy.</p>
+</td>
+
+<td valign="top" headers="N10514">CDATA</td>
+
+<td valign="top" headers="N1051A">#IMPLIED</td>
+
+<td valign="top" headers="N10520"> No </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10508">%topicref-atts; (collection-type, type, scope, locktitle, format,
+linking, toc, print, search, chunk)</td>
+
+<td valign="top" headers="N1050E">A set of related attributes. See <a href="../common/topicref-atts.html" title="The %topicref-atts; parameter entity represents a group of attributes used in numerous map elements, such as map, topicref, relcolspec, relcell, topichead, and topicgroup. The set is identical to those in the topicref-atts-no-toc attribute set, except that %topicref-atts; does not provide a default for the toc attribute.">%topicref-atts; and %topicref-atts-no-toc;</a>.</td>
+
+<td valign="top" headers="N10514">parameter entity</td>
+
+<td valign="top" headers="N1051A">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10520">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10508">%univ-atts; (%select-atts;, %id-atts;, %localization-atts;)</td>
+
+<td valign="top" headers="N1050E">A set of related attributes, described at <a href="../common/univ-atts.html" title="Universal attributes is a parameter entity declaration in the topic DTD, which defines a set of common attributes available on most DITA elements.">%univ-atts;</a></td>
+
+<td valign="top" headers="N10514">parameter entity</td>
+
+<td valign="top" headers="N1051A">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10520">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10508">%global-atts; (xtrf, xtrc)</td>
+
+<td valign="top" headers="N1050E">A set of related attributes, described at <a href="../common/global-atts.html" title="Debugging attributes, normally hidden from authoring view.">%global-atts;</a></td>
+
+<td valign="top" headers="N10514">parameter entity</td>
+
+<td valign="top" headers="N1051A">             <span>               <em>                 <span class="keyword">PE not
+applicable</span>               </em>             </span>           </td>
+
+<td valign="top" headers="N10520">Not applicable </td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="N10508">class, outputclass, keyref</td>
+
+<td valign="top" headers="N1050E">Common attributes described in <a href="../common/othercommon.html" title="The following attributes are not part of an entity group but are common to many elements.">Other common DITA attributes</a></td>
+
+<td valign="top" headers="N10514">&#xA0;</td>
+<td valign="top" headers="N1051A">&#xA0;</td>
+<td valign="top" headers="N10520">&#xA0;</td>
+
+</tr>
+
+</table>
+ </div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../common/map2.html">Map elements</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../langref/topicmeta.html" title="The &lt;topicmeta&gt; element defines the metadata that applies to a topic when it appears in a map, and to the other topics in the map that are contained by the same element that contains the &lt;topicmeta&gt; element. When creating links, it can also be used to override the title and short description of the topic. In addition, it can be used to add index entries to referenced content using the &lt;keywords&gt; element.">topicmeta</a></div>
+</div>
+</div>
+<div>
+  <p>OASIS DITA Version 1.1 Language Specification -- OASIS Standard, 1 August 2007 <br />
+Copyright © OASIS Open 2005, 2007. All Rights Reserved.	</p>
+</div>
+</body>
+</html>
