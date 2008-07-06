@@ -24,7 +24,10 @@
             <step>
                 <cmd>
                     Select the
-                    <uicontrol>DITA Open Toolkit</uicontrol>
+                    <menucascade>
+                        <uicontrol>DITA</uicontrol>
+                        <uicontrol>Open Toolkit</uicontrol>
+                    </menucascade>
                     preference page
                 </cmd>
             </step>
