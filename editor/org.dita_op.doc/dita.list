@@ -1,10 +1,10 @@
-#Sat Jun 28 20:21:12 CEST 2008
+#Sun Jul 06 17:58:03 CEST 2008
 hrefditatopiclist=topics/about.dita,tasks/toolkit_preferences.dita,tasks/creating_project.dita
 subtargetslist=
 conreflist=
 fullditatopiclist=topics/about.dita,tasks/toolkit_preferences.dita,tasks/creating_project.dita,tasks/creating_files.dita,tasks/toolkit_launch_configuration.dita
 conreftargetslist=
-user.input.dir=/Users/claude/Workspaces/DITA-OP/documentation
+user.input.dir=/Users/claude/Projects/dita-op/trunk/documentation
 htmllist=
 copytosourcelist=
 imagelist=

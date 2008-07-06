@@ -128,6 +128,7 @@ along with The DITA Open Platform.  If not, see &lt;http://www.gnu.org/licenses/
          id="org.dita_op.doc"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>

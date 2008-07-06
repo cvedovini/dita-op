@@ -71,8 +71,8 @@
 </mapAttribute>
 <stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="/Users/claude/Projects/DITA-OP/DITA-OT1.4.2.1/build.xml"/>
 <mapAttribute key="other.args">
-<mapEntry key="dita.extname" value=".dita"/>
 <mapEntry key="dita.eclipse.plugin" value="no"/>
+<mapEntry key="dita.extname" value=".dita"/>
 <mapEntry key="args.csspath" value="style"/>
 </mapAttribute>
 <stringAttribute key="output.dir" value="${workspace_loc:/org.dita_op.doc}"/>

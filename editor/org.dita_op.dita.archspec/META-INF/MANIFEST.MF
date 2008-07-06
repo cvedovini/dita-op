@@ -4,3 +4,4 @@ Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: org.dita_op.dita.archspec;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: %Bundle-Vendor
+Bundle-Localization: plugin
