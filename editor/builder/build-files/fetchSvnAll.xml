@@ -3,37 +3,49 @@
     <antcall target="svn.co">
       <param name="target" value="features"/>
       <param name="element.id" value="org.dita_op.feature"/>
-      <param name="project.name" value="/client/trunk/org.dita_op.feature"/>
+      <param name="project.name" value="/trunk/editor/org.dita_op.feature"/>
       <param name="url" value="https://dita-op.svn.sourceforge.net/svnroot/dita-op"/>
     </antcall>
     <antcall target="svn.co">
       <param name="target" value="plugins"/>
       <param name="element.id" value="org.dita_op.editor"/>
-      <param name="project.name" value="/client/trunk/org.dita_op.editor"/>
+      <param name="project.name" value="/trunk/editor/org.dita_op.editor"/>
       <param name="url" value="https://dita-op.svn.sourceforge.net/svnroot/dita-op"/>
     </antcall>
     <antcall target="svn.co">
       <param name="target" value="plugins"/>
       <param name="element.id" value="org.dita_op.dita.archspec"/>
-      <param name="project.name" value="/client/trunk/org.dita_op.dita.archspec"/>
+      <param name="project.name" value="/trunk/editor/org.dita_op.dita.archspec"/>
       <param name="url" value="https://dita-op.svn.sourceforge.net/svnroot/dita-op"/>
     </antcall>
     <antcall target="svn.co">
       <param name="target" value="plugins"/>
       <param name="element.id" value="org.dita_op.dita.dtd"/>
-      <param name="project.name" value="/client/trunk/org.dita_op.dita.dtd"/>
+      <param name="project.name" value="/trunk/editor/org.dita_op.dita.dtd"/>
       <param name="url" value="https://dita-op.svn.sourceforge.net/svnroot/dita-op"/>
     </antcall>
     <antcall target="svn.co">
       <param name="target" value="plugins"/>
       <param name="element.id" value="org.dita_op.dita.langref"/>
-      <param name="project.name" value="/client/trunk/org.dita_op.dita.langref"/>
+      <param name="project.name" value="/trunk/editor/org.dita_op.dita.langref"/>
       <param name="url" value="https://dita-op.svn.sourceforge.net/svnroot/dita-op"/>
     </antcall>
     <antcall target="svn.co">
       <param name="target" value="plugins"/>
       <param name="element.id" value="org.dita_op.dost.launcher"/>
-      <param name="project.name" value="/client/trunk/org.dita_op.dost"/>
+      <param name="project.name" value="/trunk/editor/org.dita_op.dost"/>
+      <param name="url" value="https://dita-op.svn.sourceforge.net/svnroot/dita-op"/>
+    </antcall>
+    <antcall target="svn.co">
+      <param name="target" value="plugins"/>
+      <param name="element.id" value="org.dita_op.core.ui"/>
+      <param name="project.name" value="/trunk/editor/org.dita_op.core.ui"/>
+      <param name="url" value="https://dita-op.svn.sourceforge.net/svnroot/dita-op"/>
+    </antcall>
+    <antcall target="svn.co">
+      <param name="target" value="plugins"/>
+      <param name="element.id" value="org.dita_op.doc"/>
+      <param name="project.name" value="/trunk/editor/org.dita_op.doc"/>
       <param name="url" value="https://dita-op.svn.sourceforge.net/svnroot/dita-op"/>
     </antcall>
   </target>

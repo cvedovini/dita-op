@@ -1,0 +1,8 @@
+feature@org.dita_op.feature=COPY,/Users/claude/Projects/dita-op/trunk/editor,org.dita_op.feature
+plugin@org.dita_op.editor=COPY,/Users/claude/Projects/dita-op/trunk/editor,org.dita_op.editor
+plugin@org.dita_op.dita.archspec=COPY,/Users/claude/Projects/dita-op/trunk/editor,org.dita_op.dita.archspec
+plugin@org.dita_op.dita.dtd=COPY,/Users/claude/Projects/dita-op/trunk/editor,org.dita_op.dita.dtd
+plugin@org.dita_op.dita.langref=COPY,/Users/claude/Projects/dita-op/trunk/editor,org.dita_op.dita.langref
+plugin@org.dita_op.dost.launcher=COPY,/Users/claude/Projects/dita-op/trunk/editor,org.dita_op.dost
+plugin@org.dita_op.core.ui=COPY,/Users/claude/Projects/dita-op/trunk/editor,org.dita_op.core.ui
+plugin@org.dita_op.doc=COPY,/Users/claude/Projects/dita-op/trunk/editor,org.dita_op.doc
