@@ -23,12 +23,13 @@ import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.dita_op.editor.internal.ui.editors.ActionConstants;
 import org.eclipse.swt.graphics.RGB;
 
 public abstract class AbstractProp {
 
 	private String value;
-	private String action;
+	private String action = ActionConstants.FLAG;
 	private RGB color;
 	private RGB backColor;
 	private String style;

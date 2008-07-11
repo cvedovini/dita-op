@@ -21,15 +21,19 @@ package org.dita_op.editor.internal.ui.editors;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.lang.reflect.InvocationTargetException;
+import java.net.URI;
 
 import org.dita_op.editor.internal.Activator;
 import org.dita_op.editor.internal.ImageConstants;
 import org.dita_op.editor.internal.ui.editors.model.ProfileModel;
+import org.eclipse.core.filesystem.EFS;
+import org.eclipse.core.filesystem.IFileStore;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceChangeListener;
-import org.eclipse.core.resources.IStorage;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.IWorkspaceRunnable;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -37,6 +41,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.jface.action.Action;
@@ -51,8 +56,6 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorSite;
-import org.eclipse.ui.IFileEditorInput;
-import org.eclipse.ui.IStorageEditorInput;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
@@ -60,6 +63,7 @@ import org.eclipse.ui.dialogs.SaveAsDialog;
 import org.eclipse.ui.forms.ManagedForm;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
+import org.eclipse.ui.ide.FileStoreEditorInput;
 import org.eclipse.ui.part.EditorPart;
 import org.eclipse.ui.part.FileEditorInput;
 
@@ -69,8 +73,6 @@ public class ProfileEditor extends EditorPart implements
 
 	private ManagedForm mform;
 	private ProfileModel model;
-	private IFile location;
-	boolean readonly = true;
 
 	public ProfileEditor() {
 		super();
@@ -80,24 +82,27 @@ public class ProfileEditor extends EditorPart implements
 	@Override
 	public void init(IEditorSite site, IEditorInput editorInput)
 			throws PartInitException {
-		if (!(editorInput instanceof IStorageEditorInput)) {
-			throw new PartInitException(
-					Messages.getString("ProcessingProfileEditor.invalidInput")); //$NON-NLS-1$
-		}
-
-		if (editorInput instanceof IFileEditorInput) {
-			location = ((IFileEditorInput) editorInput).getFile();
-			readonly = false;
-		}
-
-		setSite(site);
-		setInput(editorInput);
 		setPartName(editorInput.getName());
 		setTitleToolTip(editorInput.getToolTipText());
+		InputStream in;
 
 		try {
-			IStorage storage = ((IStorageEditorInput) editorInput).getStorage();
-			model = ProfileModel.loadModel(storage.getContents());
+			if (editorInput instanceof FileEditorInput) {
+				in = ((FileEditorInput) editorInput).getFile().getContents();
+			} else if (editorInput instanceof FileStoreEditorInput) {
+				URI uri = ((FileStoreEditorInput) editorInput).getURI();
+				in = EFS.getStore(uri).openInputStream(EFS.NONE,
+						new NullProgressMonitor());
+			} else {
+				throw new PartInitException(
+						Messages.getString("ProcessingProfileEditor.invalidInput")); //$NON-NLS-1$
+
+			}
+
+			setSite(site);
+			setInput(editorInput);
+
+			model = ProfileModel.loadModel(in);
 		} catch (CoreException e) {
 			throw new PartInitException(e.getStatus());
 		} catch (IOException e) {
@@ -189,7 +194,7 @@ public class ProfileEditor extends EditorPart implements
 
 	@Override
 	public boolean isDirty() {
-		return !readonly && mform.isDirty();
+		return mform.isDirty();
 	}
 
 	@Override
@@ -207,65 +212,51 @@ public class ProfileEditor extends EditorPart implements
 	 */
 	@Override
 	public void doSave(IProgressMonitor monitor) {
-		SubMonitor progress = SubMonitor.convert(monitor, 3);
+		boolean readonly = true;
+		IEditorInput input = getEditorInput();
 
-		try {
-			mform.commit(true);
-			progress.worked(1);
-
-			ByteArrayOutputStream out = new ByteArrayOutputStream();
-			ProfileModel.saveModel(model, out);
-
-			final ByteArrayInputStream in = new ByteArrayInputStream(
-					out.toByteArray());
-
-			IWorkspaceRunnable action = new IWorkspaceRunnable() {
-				public void run(IProgressMonitor monitor) throws CoreException {
-					if (location.exists()) {
-						location.setContents(in, false, true, monitor);
-					} else {
-						location.create(in, false, monitor);
-					}
-				}
-			};
-
-			ResourcesPlugin.getWorkspace().run(action, location,
-					IWorkspace.AVOID_UPDATE, progress.newChild(1));
-
-			firePropertyChange(PROP_DIRTY);
-		} catch (CoreException e) {
-			reportError(e);
-		} catch (IOException e) {
-			reportError(e);
-		} finally {
-			progress.done();
+		if (input instanceof FileEditorInput) {
+			readonly = ((FileEditorInput) input).getFile().isReadOnly();
+		} else if (input instanceof FileStoreEditorInput) {
+			URI uri = ((FileStoreEditorInput) input).getURI();
+			try {
+				readonly = EFS.getStore(uri).fetchInfo().getAttribute(
+						EFS.ATTRIBUTE_READ_ONLY);
+			} catch (CoreException e) {
+				reportError(e);
+				return;
+			}
+		} else {
+			throw new RuntimeException("Invalid editor input: " + input); //$NON-NLS-1$
 		}
 
-	}
-
-	private void reportError(Exception e) {
-		IStatus status = Activator.getDefault().newStatus(IStatus.ERROR, e);
-		Activator.getDefault().getLog().log(status);
-		ErrorDialog.openError(getSite().getShell(),
-				Messages.getString("ProfileEditor.errorDialog.title"), //$NON-NLS-1$
-				e.getLocalizedMessage(), status);
+		if (readonly) {
+			doSaveAs();
+		} else {
+			performSave(monitor);
+		}
 	}
 
 	@Override
 	public void doSaveAs() {
 		SaveAsDialog dialog = new SaveAsDialog(getSite().getShell());
+		IEditorInput input = getEditorInput();
 
-		if (location != null) {
-			dialog.setOriginalFile(location);
+		if (input instanceof FileEditorInput) {
+			dialog.setOriginalFile(((FileEditorInput) input).getFile());
 		}
 
 		if (dialog.open() == Dialog.OK) {
 			IPath path = dialog.getResult();
-			location = ResourcesPlugin.getWorkspace().getRoot().getFile(path);
+			input = new FileEditorInput(
+					ResourcesPlugin.getWorkspace().getRoot().getFile(path));
+			setPartName(input.getName());
+			setTitleToolTip(input.getToolTipText());
+			setInputWithNotify(input);
 
 			IRunnableWithProgress op = new IRunnableWithProgress() {
 				public void run(IProgressMonitor monitor) {
-					doSave(monitor);
+					performSave(monitor);
 				}
 			};
 
@@ -285,6 +276,67 @@ public class ProfileEditor extends EditorPart implements
 	@Override
 	public boolean isSaveAsAllowed() {
 		return true;
+	}
+
+	private void reportError(Exception e) {
+		IStatus status = Activator.getDefault().newStatus(IStatus.ERROR, e);
+		Activator.getDefault().getLog().log(status);
+		ErrorDialog.openError(getSite().getShell(),
+				Messages.getString("ProfileEditor.errorDialog.title"), //$NON-NLS-1$
+				e.getLocalizedMessage(), status);
+	}
+
+	private void performSave(IProgressMonitor monitor) {
+		SubMonitor progress = SubMonitor.convert(monitor, 3);
+		IEditorInput input = getEditorInput();
+
+		try {
+			mform.commit(true);
+			progress.worked(1);
+
+			if (input instanceof FileEditorInput) {
+				final IFile file = ((FileEditorInput) input).getFile();
+				ByteArrayOutputStream out = new ByteArrayOutputStream();
+				ProfileModel.saveModel(model, out);
+
+				final ByteArrayInputStream in = new ByteArrayInputStream(
+						out.toByteArray());
+
+				IWorkspaceRunnable action = new IWorkspaceRunnable() {
+					public void run(IProgressMonitor monitor)
+							throws CoreException {
+						if (file.exists()) {
+							file.setContents(in, false, true, monitor);
+						} else {
+							file.create(in, false, monitor);
+						}
+					}
+				};
+
+				ResourcesPlugin.getWorkspace().run(action, file,
+						IWorkspace.AVOID_UPDATE, progress.newChild(1));
+			} else {
+				URI uri = ((FileStoreEditorInput) input).getURI();
+				IFileStore file = EFS.getStore(uri);
+				OutputStream out = file.openOutputStream(EFS.OVERWRITE,
+						progress.newChild(1));
+
+				try {
+					ProfileModel.saveModel(model, out);
+				} finally {
+					out.close();
+				}
+			}
+
+			firePropertyChange(PROP_DIRTY);
+		} catch (CoreException e) {
+			reportError(e);
+		} catch (IOException e) {
+			reportError(e);
+		} finally {
+			progress.done();
+		}
+
 	}
 
 }

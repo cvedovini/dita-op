@@ -32,7 +32,6 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.dita_op.editor.internal.Activator;
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceChangeListener;
@@ -52,7 +51,7 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorSite;
-import org.eclipse.ui.IFileEditorInput;
+import org.eclipse.ui.IURIEditorInput;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.ide.IDE;
@@ -69,7 +68,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
-@SuppressWarnings("restriction") //$NON-NLS-1$
+@SuppressWarnings("restriction")//$NON-NLS-1$
 abstract class XMLEditorWithHTMLPreview extends MultiPageEditorPart implements
 		IResourceChangeListener, EntityResolver {
 
@@ -132,16 +131,16 @@ abstract class XMLEditorWithHTMLPreview extends MultiPageEditorPart implements
 	@Override
 	public void init(IEditorSite site, IEditorInput editorInput)
 			throws PartInitException {
-		if (!(editorInput instanceof IFileEditorInput)) {
-			throw new PartInitException(
-					Messages.getString("CommonMultiPageEditor.invalidInput")); //$NON-NLS-1$
-		}
-
 		setPartName(editorInput.getName());
 		setTitleToolTip(editorInput.getToolTipText());
 
-		IFile file = ((IFileEditorInput) editorInput).getFile();
-		baseLocation = file.getLocationURI().toString();
+		if (editorInput instanceof IURIEditorInput) {
+			baseLocation = ((IURIEditorInput) editorInput).getURI().toString();
+		} else {
+			throw new PartInitException(
+					Messages.getString("XMLEditorWithHTMLPreview.invalidInput")); //$NON-NLS-1$
+
+		}
 
 		super.init(site, editorInput);
 	}
