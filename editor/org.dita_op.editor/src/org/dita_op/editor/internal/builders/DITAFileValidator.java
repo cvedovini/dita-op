@@ -66,7 +66,7 @@ public class DITAFileValidator extends IncrementalProjectBuilder {
 	 *      java.util.Map, org.eclipse.core.runtime.IProgressMonitor)
 	 */
 	@Override
-	@SuppressWarnings("unchecked") //$NON-NLS-1$
+	@SuppressWarnings("unchecked")//$NON-NLS-1$
 	protected IProject[] build(int kind, Map args, IProgressMonitor monitor)
 			throws CoreException {
 		if (kind == FULL_BUILD) {
@@ -116,10 +116,18 @@ public class DITAFileValidator extends IncrementalProjectBuilder {
 	}
 
 	protected boolean isDITAFile(IResource resource) {
-		IContentTypeManager ctm = Platform.getContentTypeManager();
-		IContentType actualContent = ctm.findContentTypeFor(resource.getName());
-		return (actualContent != null)
-				&& actualContent.isKindOf(ditaContentType);
+		if (resource.getType() == IResource.FILE) {
+			IContentTypeManager ctm = Platform.getContentTypeManager();
+			IContentType[] actualContentTypes = ctm.findContentTypesFor(resource.getName());
+
+			for (IContentType actualContentType : actualContentTypes) {
+				if (actualContentType.isKindOf(ditaContentType)) {
+					return true;
+				}
+			}
+		}
+
+		return false;
 	}
 
 	protected void validate(final IFile file, IProgressMonitor monitor) {
@@ -193,6 +201,12 @@ public class DITAFileValidator extends IncrementalProjectBuilder {
 			parserFactory = SAXParserFactory.newInstance();
 			parserFactory.setValidating(true);
 			parserFactory.setNamespaceAware(false);
+			parserFactory.setFeature(
+					"http://apache.org/xml/features/validation/dynamic",
+					Boolean.TRUE);
+			parserFactory.setFeature(
+					"http://apache.org/xml/features/validation/schema",
+					Boolean.TRUE);
 		}
 
 		return parserFactory.newSAXParser();

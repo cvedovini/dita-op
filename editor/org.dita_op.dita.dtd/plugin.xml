@@ -21,8 +21,11 @@
 <plugin>
 	<extension-point id="org.dita_op.dita.dtd.catalogs" name="DITA DTD Catalogs" schema="schema/catalogs.exsd"/>
 	<extension point="org.eclipse.core.contenttype.contentTypes">
-		<content-type base-type="org.eclipse.core.runtime.xml"
-			id="org.dita_op.dita" name="%DITAContentType.name">
+		<content-type
+        base-type="org.eclipse.core.runtime.xml"
+        file-extensions="xml, dita, ditamap, ditaval"
+        id="org.dita_op.dita"
+        name="%DITAContentType.name">
 		</content-type>
 		<content-type base-type="org.dita_op.dita"
 			file-extensions="dita, xml" id="org.dita_op.dita.topic"
