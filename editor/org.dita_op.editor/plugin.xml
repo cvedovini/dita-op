@@ -206,6 +206,23 @@
             name="%IdResolver.name"
             type="id">
       </resolver>
+      <resolver
+            class="org.dita_op.editor.internal.ui.templates.IdVariableResolver"
+            contextTypeId="xml_attribute"
+            description="%IdResolver.description"
+            name="%IdResolver.name"
+            type="id">
+      </resolver>
+      <template
+            autoinsert="true"
+            contextTypeId="xml_attribute"
+            description="%IdResolver.description"
+            id="org.dita_op.editor.template1"
+            name="%IdResolver.name">
+         <pattern>
+            id="${id}"
+         </pattern>
+      </template>
    </extension>
    <extension
          point="org.eclipse.ui.newWizards">
