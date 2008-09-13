@@ -1,0 +1,344 @@
+/*  
+Theme Name: Monterrey
+Theme URI: http://www.ochocuartos.com/monterrey/
+Description: Easy to on the eyes, two column layout.
+Version: 0.9
+Author: Sosa
+Author URI: http://nolimit-studio.com
+*/
+
+/*
+ *  dog.gif from http://flickr.com/photos/monkeyc/131215496/
+ *  luuna.jpg from http://flickr.com/photos/bookenligne/123821867/
+ *   (license CC by-nc-sa)
+ *  
+ */
+
+*{
+margin:0;
+padding:0;
+}
+
+html{
+height:100%;
+}
+
+body{
+font-family:verdana,helvetica,arial,sans-serif;
+font-size:76%;
+text-align:center;
+height:100%;
+}
+
+p,blockquote{
+margin-bottom:1em;
+}
+
+blockquote{
+padding:15px;
+margin:15px;
+}
+
+#container{
+width:700px;
+margin:0 auto;
+text-align:left;
+position:relative;
+min-height:100%;
+}
+
+#header{
+height:150px;
+position:relative;
+}
+
+#header h1{
+position:absolute;
+line-height:150px;
+padding-left:25px;
+z-index:5;
+}
+
+#header .description{
+position:absolute;
+line-height:150px;
+padding-left:25px;
+padding-top:25px;
+}
+
+#navigation{
+height:30px;
+}
+
+#navigation ul{
+list-style-type:none;
+height:30px;
+}
+
+#navigation ul li{
+display:inline;
+}
+
+#navigation ul li a{
+display:block;
+float:left;
+height:25px;
+line-height:25px;
+padding:0 10px;
+margin-top:5px;
+}
+
+#entries{
+padding:10px;
+margin:15px;
+margin-right:200px;
+}
+
+.entry{
+margin-bottom:25px;
+padding-bottom:25px;
+position:relative;
+}
+
+.entry h2{
+margin-right:75px;
+}
+
+.entry .posted{
+margin-bottom:12px;			 
+}
+
+.entry .body{
+padding:5px;
+}
+
+.entry .comments{
+position:absolute;
+right:10px;
+top:0;
+width:50px;
+height:50px;
+line-height:50px;
+text-align:center;
+}
+
+.aside{
+padding:10px;
+padding-left:30px;
+margin:10px;
+margin-left:0;
+}
+
+#sidebar{
+position:absolute;
+top:225px;
+right:25px;
+width:150px;
+}
+
+#sidebar .section, #sidebar ul{
+margin-bottom:15px;
+}
+
+#sidebar li{
+list-style-type:none;
+}
+
+#sidebar ul li a{
+display:block;
+padding:0.125em 0;
+border-bottom:1px solid #eee;
+}
+
+
+#footer{
+padding:25px;
+border-top:1px solid #eee;
+}
+
+/*
+ * Comments
+ */
+
+#comments{
+padding-top:50px;
+} 
+
+#comments h3{
+margin-bottom:15px;
+}
+
+
+#comments .comment{
+position:relative;
+min-height:75px;
+margin-bottom:10px;
+}
+ 
+#comments .comment .posted{
+position:absolute;
+left:0;
+top:0;
+width:80px;
+padding:10px;
+}
+ 
+#comments .comment .posted .author{
+display:block;
+} 
+#comments .comment .body{
+padding:10px;
+padding-left:100px;
+} 
+
+
+/****************************************************************/ 
+
+/*
+ *  Colors!!
+ */
+ 
+body{
+color:#444;
+background:#898;
+}
+
+blockquote{
+background:#f9fff3;
+}
+
+a{
+color:#39f;
+text-decoration:none;
+}
+
+a:hover{
+color:#e00;
+}
+
+strong{
+color:#000;
+}
+
+em{
+background:#fffff6;
+}
+
+#container{
+background:#fff;
+}
+
+#header{
+background:#333;
+}
+
+#header h1{
+color:#fff;
+}
+
+#header .description{
+color:#fff;
+}
+
+#navigation{
+background:#111;
+}
+
+#navigation ul li a:hover{
+background:#670;
+color:#fff;
+}
+
+#navigation ul li a.active{
+background:#fff;
+color:#666;
+cursor:default;
+}
+
+#entries{
+border-right:1px dotted #bcb;
+}
+
+.entry{
+border-bottom:1px solid #670;
+}
+
+.entry h2{
+border-bottom:1px dotted #eee;
+}
+
+.entry h2 a{
+color:#ab0;
+}
+
+.entry .posted{
+font-size:85%;
+color:#777;
+}
+
+.entry .comments{
+background:#efc;
+}
+
+.aside{
+background:#fff6cf url("images/aside_bg.gif") repeat-y ;
+}
+
+#comments h3{
+color:#a90;
+}
+
+#comments .even{
+background:#efc;
+}
+
+#comments .odd{
+background:#feffec;
+}
+
+/**
+ * feedicon
+ */
+.feedicon {
+	width: 20px;
+	height: 20px;
+}
+
+
+#navigation .feedicon {
+		background: url("images/feedicon.gif") no-repeat;
+		display: block;
+		display: inline; /* IE */
+		float: right;
+		margin: -24px 10px 0 0;
+}
+
+/*
+ * images
+ */
+
+
+ 
+body{
+background-image:url('images/body_bg.gif');
+background-repeat:repeat-y;
+background-position:center;
+}
+ 
+#header{
+background-image:url('images/luuna.jpg');
+background-repeat:no-repeat;
+background-position:center;
+} 
+
+.entry .comments{
+background-image:url('images/comment_globe_bg.gif');
+background-repeat:no-repeat;
+background-position:center;
+}
+
+#comments .comment{
+background-image:url('images/comment_bg.gif');
+background-repeat:no-repeat;
+background-position:top left;
+}

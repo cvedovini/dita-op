@@ -1,0 +1,117 @@
+
+/* Can change this */
+#adsensem_dbx fieldset {
+	margin-bottom: 1em;
+}
+
+#adsensem_dbx h3 {
+	padding: 3px;
+	font-weight: normal;
+	font-size: 13px;
+}
+
+#adsensem_dbx div {
+	margin-top: .5em;
+}
+
+#adsensem_dbx h3.dbx-handle {
+	margin-left: 7px;
+	margin-bottom: -7px;
+	padding: 6px 1em 0 3px;
+	height: 19px;
+	font-size: 12px;
+	background: #2685af url(../../../../wp-admin/images/box-head-right.gif) no-repeat top right;
+}
+
+#adsensem_dbx div.dbx-handle-wrapper {
+	margin: 0 0 0 -7px;
+	background: #fff url(../../../../wp-admin/images/box-head-left.gif) no-repeat top left;
+}
+
+#adsensem_dbx div.dbx-content {
+	margin-left: 8px;
+	background: url(../../../../wp-admin/images/box-bg-right.gif) repeat-y right;
+	padding: 10px 10px 15px 0;
+}
+
+#adsensem_dbx div.dbx-content-wrapper {
+	margin-left: -7px;
+	margin-right: 0;
+	background: url(../../../../wp-admin/images/box-bg-left.gif) repeat-y left;
+}
+
+#adsensem_dbx fieldset.dbx-box {
+	padding-bottom: 9px;
+	margin-left: 6px;
+	background: url(../../../../wp-admin/images/box-butt-right.gif) no-repeat bottom right;
+}
+
+#adsensem_dbx div.dbx-box-wrapper {
+	background: url(../../../../wp-admin/images/box-butt-left.gif) no-repeat bottom left;
+}
+
+#adsensem_dbx .dbx-box-closed div.dbx-content-wrapper {
+	padding-bottom: 2px;
+	background: url(../../../../wp-admin/images/box-butt-left.gif) no-repeat bottom left;
+}
+
+#adsensem_dbx .dbx-box {
+	background: url(../../../../wp-admin/images/box-butt-right.gif) no-repeat bottom right;
+}
+
+#adsensem_dbx a.dbx-toggle, #adsensem_dbx a.dbx-toggle-open:visited {
+	height: 22px;
+	width: 22px;
+	top: 3px;
+	right: 5px;
+	background-position: 0 -3px;
+}
+
+#adsensem_dbx a.dbx-toggle-open, #adsensem_dbx a.dbx-toggle-open:visited {
+	height: 22px;
+	width: 22px;
+	top: 3px;
+	right: 5px;
+	background-position: 0 -28px;
+}
+
+#adsensem_dbx .adsensem_label{
+	text-align:right;
+	width:10em;
+}
+
+th {border-bottom:2px solid #000;font-size:smaller;}
+#default-options td{border-bottom:1px solid #000;}
+#manage-ads {}
+#manage-ads td {padding: 2px 5px; vertical-align:middle;}
+
+.network_blanking {height:20px;}
+.network_header td {border-top:1px solid #000;font-weight:bold;background-color:#ddd;}
+.network_admin * {font-weight:normal; text-align:center;}
+.adrow td { border-bottom:1px dotted #888 }
+.adrow_name { padding-left:25px;}
+
+.disabled { background-color:#e5e5e5;}
+
+.shade_0 {background-color:#eee;}
+.shade_1 {background-color:#f5f5f5;}
+
+#adsensem_dbx { width:100%; }
+#adsensem_dbx .formlayoutsection { vertical-align:top; width:33% }
+
+.network_header a {border-bottom:none;text-decoration:underline;}
+
+.ad_adbrite {padding-left: 25px; background: transparent url(http://files.adbrite.com/mb/images/favicon.ico) no-repeat center left; }
+.ad_adgridwork {padding-left: 25px; background: transparent url(http://www.adgridwork.com/favicon.ico) no-repeat center left; }
+.ad_adpinion {padding-left:25px;background:url(http://www.adpinion.com/static/images/logo_small.gif) left no-repeat;}
+.ad_adroll {padding-left:25px;background:url(http://www.adroll.com/i/favicon.ico) left no-repeat;}
+.ad_adsense {padding-left:25px;background:url(http://www.google.com/favicon.ico) left no-repeat;}
+.ad_adsense_classic {padding-left:25px;background:url(http://www.google.com/favicon.ico) left no-repeat;}
+.ad_cj {padding-left:25px;background:url(http://www.cj.com/favicon.ico) left no-repeat;}
+.ad_code {padding-left:25px;background:url(./images/code.png) left no-repeat;}
+.ad_crispads {padding-left:25px;background:url(http://www.crispads.com/favicon.ico) left no-repeat;}
+.ad_widgetbucks {padding-left:25px;background:url(http://www.widgetbucks.com/favicon.ico) left no-repeat;}
+.ad_shoppingads {padding-left:25px;background:url(./images/shoppingads.png) left no-repeat;}
+.ad_ypn {padding-left:25px;background:url(http://www.yahoo.com/favicon.ico) left no-repeat;}
+
+.default_note {padding-left:20px;background:url(./images/default.png) left no-repeat;width:16px;height:16px;}

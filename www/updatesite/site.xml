@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description url="http://www.dita-op.org/updatesite">
+      DITA Open Platform update site
+   </description>
+   <feature url="features/org.dita_op.feature_1.0.0.M1-20080618.jar" id="org.dita_op.feature" version="1.0.0.M1-20080618"/>
+</site>
