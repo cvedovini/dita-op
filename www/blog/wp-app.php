@@ -1,26 +1,60 @@
 <?php
-/*
- * wp-app.php - Atom Publishing Protocol support for WordPress
- * Original code by: Elias Torres, http://torrez.us/archives/2006/08/31/491/
- * Modified by: Dougal Campbell, http://dougal.gunters.org/
+/**
+ * Atom Publishing Protocol support for WordPress
  *
- * Version: 1.0.5-dc
+ * @author Original by Elias Torres <http://torrez.us/archives/2006/08/31/491/>
+ * @author Modified by Dougal Campbell <http://dougal.gunters.org/>
+ * @version 1.0.5-dc
  */
 
+/**
+ * WordPress is handling an Atom Publishing Protocol request.
+ *
+ * @var bool
+ */
 define('APP_REQUEST', true);
 
-require_once('./wp-config.php');
+/** Set up WordPress environment */
+require_once('./wp-load.php');
+
+/** Post Template API */
 require_once(ABSPATH . WPINC . '/post-template.php');
+
+/** Atom Publishing Protocol Class */
 require_once(ABSPATH . WPINC . '/atomlib.php');
+
+/** Feed Handling API */
 require_once(ABSPATH . WPINC . '/feed.php');
 
 $_SERVER['PATH_INFO'] = preg_replace( '/.*\/wp-app\.php/', '', $_SERVER['REQUEST_URI'] );
 
+/**
+ * Whether to enable Atom Publishing Protocol Logging.
+ *
+ * @name app_logging
+ * @var int|bool
+ */
 $app_logging = 0;
 
-// TODO: Should be an option somewhere
+/**
+ * Whether to always authenticate user. Permanently set to true.
+ *
+ * @name always_authenticate
+ * @var int|bool
+ * @todo Should be an option somewhere
+ */
 $always_authenticate = 1;
 
+/**
+ * log_app() - Writes logging info to a file.
+ *
+ * @uses $app_logging
+ * @package WordPress
+ * @subpackage Logging
+ *
+ * @param string $label Type of logging
+ * @param string $msg Information describing logging reason.
+ */
 function log_app($label,$msg) {
 	global $app_logging;
 	if ($app_logging) {
@@ -32,6 +66,18 @@ function log_app($label,$msg) {
 }
 
 if ( !function_exists('wp_set_current_user') ) :
+/**
+ * wp_set_current_user() - Sets the current WordPress User
+ *
+ * Pluggable function which is also found in pluggable.php.
+ *
+ * @see wp-includes/pluggable.php Documentation for this function.
+ * @uses $current_user Global of current user to test whether $id is the same.
+ *
+ * @param int $id The user's ID
+ * @param string $name Optional. The username of the user.
+ * @return WP_User Current user's User object
+ */
 function wp_set_current_user($id, $name = '') {
 	global $current_user;
 
@@ -44,13 +90,26 @@ function wp_set_current_user($id, $name = '') {
 }
 endif;
 
+/**
+ * wa_posts_where_include_drafts_filter() - Filter to add more post statuses
+ *
+ * @param string $where SQL statement to filter
+ * @return string Filtered SQL statement with added post_status for where clause
+ */
 function wa_posts_where_include_drafts_filter($where) {
-        $where = str_replace("post_status = 'publish'","post_status = 'publish' OR post_status = 'future' OR post_status = 'draft' OR post_status = 'inherit'", $where);
-        return $where;
+	$where = str_replace("post_status = 'publish'","post_status = 'publish' OR post_status = 'future' OR post_status = 'draft' OR post_status = 'inherit'", $where);
+	return $where;
 
 }
 add_filter('posts_where', 'wa_posts_where_include_drafts_filter');
 
+/**
+ * @internal
+ * Left undocumented to work on later. If you want to finish, then please do so.
+ *
+ * @package WordPress
+ * @subpackage Publishing
+ */
 class AtomServer {
 
 	var $ATOM_CONTENT_TYPE = 'application/atom+xml';
@@ -113,7 +172,11 @@ class AtomServer {
 	function handle_request() {
 		global $always_authenticate;
 
-		$path = $_SERVER['PATH_INFO'];
+		if( !empty( $_SERVER['ORIG_PATH_INFO'] ) )
+			$path = $_SERVER['ORIG_PATH_INFO'];
+		else
+			$path = $_SERVER['PATH_INFO']; 
+
 		$method = $_SERVER['REQUEST_METHOD'];
 
 		log_app('REQUEST',"$method $path\n================");
@@ -132,6 +195,10 @@ class AtomServer {
 			$this->redirect($this->get_service_url());
 		}
 
+		// check to see if AtomPub is enabled
+		if( !get_option( 'enable_app' ) )
+			$this->forbidden( sprintf( __( 'AtomPub services are disabled on this blog.  An admin user can enable them at %s' ), admin_url('options-writing.php') ) );
+
 		// dispatch
 		foreach($this->selectors as $regex => $funcs) {
 			if(preg_match($regex, $path, $matches)) {
@@ -139,9 +206,7 @@ class AtomServer {
 
 				// authenticate regardless of the operation and set the current
 				// user. each handler will decide if auth is required or not.
-				$this->authenticate();
-				$u = wp_get_current_user();
-				if(!isset($u) || $u->ID == 0) {
+				if(!$this->authenticate()) {
 					if ($always_authenticate) {
 						$this->auth_required('Credentials required.');
 					}
@@ -170,9 +235,9 @@ class AtomServer {
 		$entries_url = attribute_escape($this->get_entries_url());
 		$categories_url = attribute_escape($this->get_categories_url());
 		$media_url = attribute_escape($this->get_attachments_url());
-                foreach ($this->media_content_types as $med) {
-                  $accepted_media_types = $accepted_media_types . "<accept>" . $med . "</accept>";
-                }
+		foreach ($this->media_content_types as $med) {
+			$accepted_media_types = $accepted_media_types . "<accept>" . $med . "</accept>";
+		}
 		$atom_prefix="atom";
 		$atom_blogname=get_bloginfo('name');
 		$service_doc = <<<EOD
@@ -327,6 +392,7 @@ EOD;
 			$this->auth_required(__('Sorry, you do not have the right to edit this post.'));
 
 		$publish = (isset($parsed->draft) && trim($parsed->draft) == 'yes') ? false : true;
+		$post_status = ($publish) ? 'publish' : 'draft';
 
 		extract($entry);
 
@@ -339,13 +405,6 @@ EOD;
 		$pubtimes = $this->get_publish_time($parsed->updated);
 		$post_modified = $pubtimes[0];
 		$post_modified_gmt = $pubtimes[1];
-
-		// let's not go backwards and make something draft again.
-		if(!$publish && $post_status == 'draft') {
-			$post_status = ($publish) ? 'publish' : 'draft';
-		} elseif($publish) {
-			$post_status = 'publish';
-		}
 
 		$postdata = compact('ID', 'post_content', 'post_title', 'post_category', 'post_status', 'post_excerpt', 'post_date', 'post_date_gmt', 'post_modified', 'post_modified_gmt');
 		$this->escape($postdata);
@@ -872,6 +931,14 @@ list($content_type, $content) = prep_atom_text_construct(get_the_content()); ?>
 		exit;
 	}
 
+	function forbidden($reason='') {
+		log_app('Status','403: Forbidden');
+		header('Content-Type: text/plain');
+		status_header('403');
+		echo $reason;
+		exit;
+	}
+
 	function not_found() {
 		log_app('Status','404: Not Found');
 		header('Content-Type: text/plain');
@@ -995,9 +1062,6 @@ EOD;
 	 * Access credential through various methods and perform login
 	 */
 	function authenticate() {
-		$login_data = array();
-		$already_md5 = false;
-
 		log_app("authenticate()",print_r($_ENV, true));
 
 		// if using mod_rewrite/ENV hack
@@ -1009,22 +1073,16 @@ EOD;
 
 		// If Basic Auth is working...
 		if(isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW'])) {
-			$login_data = array('login' => $_SERVER['PHP_AUTH_USER'],	'password' => $_SERVER['PHP_AUTH_PW']);
-			log_app("Basic Auth",$login_data['login']);
-		} else {
-			// else, do cookie-based authentication
-			if (function_exists('wp_get_cookie_login')) {
-				$login_data = wp_get_cookie_login();
-				$already_md5 = true;
+			log_app("Basic Auth",$_SERVER['PHP_AUTH_USER']);
+			$user = wp_authenticate($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']);
+			if ( $user && !is_wp_error($user) ) {
+				wp_set_current_user($user->ID);
+				log_app("authenticate()", $_SERVER['PHP_AUTH_USER']);
+				return true;
 			}
 		}
 
-		// call wp_login and set current user
-		if (!empty($login_data) && wp_login($login_data['login'], $login_data['password'], $already_md5)) {
-			 $current_user = new WP_User(0, $login_data['login']);
-			 wp_set_current_user($current_user->ID);
-			log_app("authenticate()",$login_data['login']);
-		}
+		return false;
 	}
 
 	function get_accepted_content_type($types = NULL) {

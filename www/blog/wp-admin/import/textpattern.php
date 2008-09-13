@@ -8,7 +8,7 @@ if(!function_exists('get_comment_count'))
 	function get_comment_count($post_ID)
 	{
 		global $wpdb;
-		return $wpdb->get_var('SELECT count(*) FROM '.$wpdb->comments.' WHERE comment_post_ID = '.$post_ID);
+		return $wpdb->get_var( $wpdb->prepare("SELECT count(*) FROM $wpdb->comments WHERE comment_post_ID = %d", $post_ID) );
 	}
 }
 
@@ -17,7 +17,7 @@ if(!function_exists('link_exists'))
 	function link_exists($linkname)
 	{
 		global $wpdb;
-		return $wpdb->get_var('SELECT link_id FROM '.$wpdb->links.' WHERE link_name = "'.$wpdb->escape($linkname).'"');
+		return $wpdb->get_var( $wpdb->prepare("SELECT link_id FROM $wpdb->links WHERE link_name = %s", $linkname) );
 	}
 }
 
@@ -333,7 +333,7 @@ class Textpattern_Import {
 				$category1 = get_category_by_slug($Category1);
 				$category1 = $category1->term_id;
 				$category2 = get_category_by_slug($Category2);
-				$category2 = $category1->term_id;
+				$category2 = $category2->term_id;
 				if($cat1 = $category1) { $cats[1] = $cat1; }
 				if($cat2 = $category2) { $cats[2] = $cat2; }
 
