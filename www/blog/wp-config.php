@@ -3,7 +3,7 @@
 define('DB_NAME', 'd228491_wp');    // The name of the database
 define('DB_USER', 'd228491admin');     // Your MySQL username
 define('DB_PASSWORD', 'chEswew4'); // ...and password
-define('DB_HOST', 'mysql4-d');    // 99% chance you won't need to change this value
+define('DB_HOST', 'mysql-d');    // 99% chance you won't need to change this value
 define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
