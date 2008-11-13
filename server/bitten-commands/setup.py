@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 ##
 #  Copyright (C) 2008 Claude Vedovini <http://vedovini.net/>.
 #
