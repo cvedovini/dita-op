@@ -75,7 +75,7 @@
 <mapEntry key="dita.extname" value=".dita"/>
 <mapEntry key="args.csspath" value="style"/>
 </mapAttribute>
-<stringAttribute key="output.dir" value="${workspace_loc:/org.dita_op.doc}"/>
+<stringAttribute key="output.dir" value="/Users/claude/temp/dita-op"/>
 <stringAttribute key="process_factory_id" value="org.eclipse.ant.ui.remoteAntProcessFactory"/>
-<stringAttribute key="transtype" value="eclipsehelp"/>
+<stringAttribute key="transtype" value="pdf"/>
 </launchConfiguration>

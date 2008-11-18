@@ -73,7 +73,7 @@
             </step>
             <step importance="optional">
                 <cmd>
-                    Provide additional processing agruments
+                    Provide additional processing arguments
                 </cmd>
             </step>
             <step>
