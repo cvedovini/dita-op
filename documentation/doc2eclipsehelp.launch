@@ -2,82 +2,18 @@
 <launchConfiguration type="org.dita_op.dost.launcher.DOSTLaunchConfigurationType">
 <stringAttribute key="args.input" value="${workspace_loc:/documentation/toc.ditamap}"/>
 <booleanAttribute key="org.eclipse.ant.ui.DEFAULT_VM_INSTALL" value="true"/>
+<stringAttribute key="org.eclipse.debug.core.ATTR_REFRESH_SCOPE" value="${working_set:&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;launchConfigurationWorkingSet editPageId=&quot;org.eclipse.ui.resourceWorkingSetPage&quot; factoryID=&quot;org.eclipse.ui.internal.WorkingSetFactory&quot; label=&quot;working set&quot; name=&quot;working set&quot;&gt;&#10;&lt;item factoryID=&quot;org.eclipse.ui.internal.model.ResourceFactory&quot; path=&quot;/org.dita_op.doc&quot; type=&quot;4&quot;/&gt;&#10;&lt;/launchConfigurationWorkingSet&gt;}"/>
 <booleanAttribute key="org.eclipse.debug.core.appendEnvironmentVariables" value="true"/>
-<listAttribute key="org.eclipse.jdt.launching.CLASSPATH">
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Users/claude/Projects/DITA-OP/DITA-OT1.4.2.1/lib/avalon-framework-cvs-20020806.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Users/claude/Projects/DITA-OP/DITA-OT1.4.2.1/lib/batik.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Users/claude/Projects/DITA-OP/DITA-OT1.4.2.1/lib/dost.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Users/claude/Projects/DITA-OP/DITA-OT1.4.2.1/lib/fop.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Users/claude/Projects/DITA-OP/DITA-OT1.4.2.1/lib/icu4j.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Users/claude/Projects/DITA-OP/DITA-OT1.4.2.1/lib/resolver.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Users/claude/Projects/DITA-OP/DITA-OT1.4.2.1/lib/xalan.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Users/claude/Projects/DITA-OP/DITA-OT1.4.2.1/lib/xercesImpl.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Users/claude/Projects/DITA-OP/DITA-OT1.4.2.1/lib/xml-apis.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.apache.ant_1.7.0.v200706080842/lib/ant.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.apache.ant_1.7.0.v200706080842/lib/ant-antlr.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.apache.ant_1.7.0.v200706080842/lib/ant-apache-bcel.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.apache.ant_1.7.0.v200706080842/lib/ant-apache-bsf.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.apache.ant_1.7.0.v200706080842/lib/ant-apache-log4j.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.apache.ant_1.7.0.v200706080842/lib/ant-apache-oro.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.apache.ant_1.7.0.v200706080842/lib/ant-apache-regexp.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.apache.ant_1.7.0.v200706080842/lib/ant-apache-resolver.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.apache.ant_1.7.0.v200706080842/lib/ant-commons-logging.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.apache.ant_1.7.0.v200706080842/lib/ant-commons-net.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.apache.ant_1.7.0.v200706080842/lib/ant-jai.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.apache.ant_1.7.0.v200706080842/lib/ant-javamail.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.apache.ant_1.7.0.v200706080842/lib/ant-jdepend.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.apache.ant_1.7.0.v200706080842/lib/ant-jmf.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.apache.ant_1.7.0.v200706080842/lib/ant-jsch.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.apache.ant_1.7.0.v200706080842/lib/ant-junit.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.apache.ant_1.7.0.v200706080842/lib/ant-launcher.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.apache.ant_1.7.0.v200706080842/lib/ant-netrexx.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.apache.ant_1.7.0.v200706080842/lib/ant-nodeps.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.apache.ant_1.7.0.v200706080842/lib/ant-starteam.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.apache.ant_1.7.0.v200706080842/lib/ant-stylebook.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.apache.ant_1.7.0.v200706080842/lib/ant-swing.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.apache.ant_1.7.0.v200706080842/lib/ant-trax.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.apache.ant_1.7.0.v200706080842/lib/ant-weblogic.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/configuration/org.eclipse.osgi/bundles/41/1/.cp/ant_tasks/resources-ant.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/configuration/org.eclipse.osgi/bundles/130/1/.cp/ant_tasks/emf.ant.tasks.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/configuration/org.eclipse.osgi/bundles/149/1/.cp/ant_tasks/importer.ecore.tasks.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/configuration/org.eclipse.osgi/bundles/150/1/.cp/ant_tasks/importer.java.tasks.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/configuration/org.eclipse.osgi/bundles/151/1/.cp/ant_tasks/importer.rose.tasks.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/configuration/org.eclipse.osgi/bundles/175/1/.cp/ant_tasks/helpbase-ant.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/configuration/org.eclipse.osgi/bundles/185/1/.cp/jdtCompilerAdapter.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.eclipse.pde.build_3.3.2.v20071019/lib/pdebuild-ant.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/configuration/org.eclipse.osgi/bundles/323/1/.cp/ant_tasks/pde-ant.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/plugins/org.eclipse.wst.command.env_1.0.205.v200710161954/ant-lib/anttasks.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/configuration/org.eclipse.osgi/bundles/738/1/.cp/ant_tasks/xsd.ecore.importer.tasks.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/configuration/org.eclipse.osgi/bundles/26/1/.cp/lib/antsupportlib.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/configuration/org.eclipse.osgi/bundles/27/1/.cp/lib/antrunner.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Applications/europa/configuration/org.eclipse.osgi/bundles/27/1/.cp/lib/remoteAnt.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
-</listAttribute>
-<stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.ant.ui.AntClasspathProvider"/>
-<booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="true"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.eclipse.ant.internal.ui.antsupport.InternalAntRunner"/>
 <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.ant.ui.AntClasspathProvider"/>
 <stringAttribute key="org.eclipse.jdt.launching.VM_INSTALL_NAME" value="JVM 1.5.0 (MacOS X Default)"/>
 <stringAttribute key="org.eclipse.jdt.launching.VM_INSTALL_TYPE_ID" value="org.eclipse.jdt.internal.launching.macosx.MacOSXType"/>
-<mapAttribute key="org.eclipse.ui.externaltools.ATTR_ANT_PROPERTIES">
-<mapEntry key="dita.extname" value=".dita"/>
-<mapEntry key="args.eclipsehelp.toc" value="toc"/>
-<mapEntry key="dita.dir" value="/Users/claude/Projects/DITA-OP/DITA-OT1.4.2.1"/>
-<mapEntry key="args.csspath" value="css"/>
-<mapEntry key="args.eclipse.provider" value="dita-op.org"/>
-<mapEntry key="args.eclipsecontent.toc" value="toc"/>
-<mapEntry key="dita.temp.dir" value="/Users/claude/Workspaces/dita-op/.metadata/.plugins/org.dita_op.dost.launcher/temp"/>
-<mapEntry key="transtype" value="pdf2"/>
-<mapEntry key="args.input" value="/Users/claude/Projects/dita-op/trunk/documentation/toc.ditamap"/>
-<mapEntry key="args.eclipse.version" value="1.0.0.qualifier"/>
-<mapEntry key="clean.temp" value="yes"/>
-<mapEntry key="output.dir" value="/Users/claude/temp"/>
-</mapAttribute>
-<stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="/Users/claude/Projects/DITA-OP/DITA-OT1.4.2.1/build.xml"/>
 <mapAttribute key="other.args">
 <mapEntry key="args.eclipsehelp.toc" value="toc"/>
 <mapEntry key="dita.extname" value=".dita"/>
 <mapEntry key="args.eclipse.version" value="1.0.0.qualifier"/>
 <mapEntry key="args.csspath" value="css"/>
+<mapEntry key="dita.eclipse.plugin" value="no"/>
 <mapEntry key="args.eclipse.provider" value="dita-op.org"/>
 <mapEntry key="args.eclipsecontent.toc" value="toc"/>
 </mapAttribute>
