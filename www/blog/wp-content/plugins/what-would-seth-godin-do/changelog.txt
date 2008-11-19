@@ -1,0 +1,17 @@
+CHANGELOG
+
+"What Would Seth Godin Do" WordPress Plugin by Richard K Miller
+http://richardkmiller.com/wordpress-plugin-what-would-seth-godin-do
+
+=== Version 1.6 (2008-11-17) ===
+- Added option to exclude welcome message from Pages. Default is to show on both Posts and Pages.
+- No "welcome back" message by default.
+
+=== Version 1.5 (2008-06-10) ===
+- Added "welcome back" message for return visitors.
+- Welcome message is shown only once on pages with multiple posts.
+- Added nonces for improved security.
+- Improved security against XSS attacks.
+
+=== Version 1.0 (2008-12-12) ===
+- Initial release.

@@ -4,7 +4,7 @@ Donate link: http://richardkmiller.com/
 Tags: marketing, segmentation, cookies, Seth Godin, GPL
 Requires at least: 2.0
 Tested up to: 2.6.3
-Stable tag: 1.5
+Stable tag: 1.6
 
 Displays a custom welcome message to new visitors and another to return visitors.
 
@@ -16,7 +16,7 @@ Seth Godin advocates using [cookies](http://en.wikipedia.org/wiki/HTTP_cookie) t
 
 I built this WordPress plugin to implement Seth Godin’s idea. For WordPress users it reduces the "work at first" to almost nothing.
 
-By default, new visitors to your blog will see a small box above each post containing the words "If you’re new here, you may want to subscribe to my RSS feed. Thanks for visiting!" After 5 visits the message disappears. You can customize this message, its lifespan, and its location.
+By default, new visitors to your blog will see a small box above each post containing the words "If you’re new here, you may want to subscribe to my RSS feed. Thanks for visiting!" After 5 visits the message disappears. You can customize this message, its lifespan, and its location. The message can be excluded from Pages if desired.
 
 You can also specify a message for return visitors.
 
@@ -29,10 +29,18 @@ I can be reached at richard AT richardkmiller DOT com. I appreciate comments and
 
 == Installation ==
 
+Installation is easy:
 1. Download the WWSGD WordPress plugin and unzip it.
 1. Copy `what_would_seth_godin_do.php` to your WordPress plugins (`/wp-content/plugins/`) folder.
 1. Activate the plugin on the *Plugin Management* page.
 1. Customize settings on the *Settings* page.
+
+That's it!
+
+
+Subversion (SVN) users can check out the plugin directly from the WordPress.org repository:
+
+[http://svn.wp-plugins.org/what-would-seth-godin-do/](http://svn.wp-plugins.org/what-would-seth-godin-do/)
 
 
 == Frequently Asked Questions ==

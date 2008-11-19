@@ -2,11 +2,11 @@
 
 /*
 Plugin Name: What Would Seth Godin Do
-Plugin URI: http://www.richardkmiller.com/blog/wordpress-plugin-what-would-seth-godin-do
+Plugin URI: http://richardkmiller.com/wordpress-plugin-what-would-seth-godin-do
 Description: Displays a custom welcome message to new visitors and another to return visitors.
-Version: 1.5
+Version: 1.6
 Author: Richard K Miller
-Author URI: http://www.richardkmiller.com/blog/
+Author URI: http://richardkmiller.com/
 
 Copyright (c) 2006-2008 Richard K Miller
 Released under the GNU General Public License (GPL)
@@ -26,8 +26,9 @@ function wwsgd_initialize_and_get_settings()
 {
 	$defaults = array(
 		'new_visitor_message' => "<p style=\"border:thin dotted black; padding:3mm;\">If you're new here, you may want to subscribe to my <a href=\"".get_option("home")."/feed/\">RSS feed</a>. Thanks for visiting!</p>",
-		'return_visitor_message' => "<p style=\"border:thin dotted black; padding:3mm;\">Welcome back!</p>",
+		'return_visitor_message' => '',
 		'message_location' => 'before_post',
+		'include_pages' => 'yes',
 		'repetition' => '5'
 		);
 
@@ -53,6 +54,7 @@ function wwsgd_options_subpanel()
 		$wwsgd_settings['new_visitor_message'] = stripslashes($_POST['wwsgd_new_visitor_message']);
 		$wwsgd_settings['return_visitor_message'] = stripslashes($_POST['wwsgd_return_visitor_message']);
 		$wwsgd_settings['message_location'] = stripslashes($_POST['wwsgd_message_location']);
+		$wwsgd_settings['include_pages'] = stripslashes($_POST['wwsgd_message_include_pages']);
 		$wwsgd_settings['repetition'] = stripslashes($_POST['wwsgd_repetition']);
 		
 		update_option('wwsgd_settings', $wwsgd_settings);
@@ -76,9 +78,11 @@ function wwsgd_options_subpanel()
 			<h3>Message to Return Visitors:</h3>
 			<textarea rows="3" cols="80" name="wwsgd_return_visitor_message"><?php echo attribute_escape($wwsgd_settings['return_visitor_message']); ?></textarea>
 			<h3>Location of Message</h3>
-			<p><input type="radio" name="wwsgd_message_location" value="before_post" <?php if ($wwsgd_settings['message_location'] == 'before_post') echo 'checked="checked"'; ?> /> Before Post</p>
-			<p><input type="radio" name="wwsgd_message_location" value="after_post" <?php if ($wwsgd_settings['message_location'] == 'after_post') echo 'checked="checked"'; ?> /> After Post</p>
-			<p><input type="submit" name="submit" value="Save Settings" /></p>
+			<p><input type="radio" name="wwsgd_message_location" value="before_post" <?php if ($wwsgd_settings['message_location'] == 'before_post') echo 'checked="checked"'; ?> /> Before Post
+			<input type="radio" name="wwsgd_message_location" value="after_post" <?php if ($wwsgd_settings['message_location'] == 'after_post') echo 'checked="checked"'; ?> /> After Post</p>
+			<p><input type="radio" name="wwsgd_message_include_pages" value="yes" <?php if ($wwsgd_settings['include_pages'] == 'yes') echo 'checked="checked"'; ?> /> On Posts and Pages
+			<input type="radio" name="wwsgd_message_include_pages" value="no" <?php if ($wwsgd_settings['include_pages'] == 'no') echo 'checked="checked"'; ?> /> On Posts Only</p>
+			<p><input type="submit" name="submit" value="Save Settings" /></p><a href="../../../Desktop/what_would_seth_godin_do.php" id="" title="what_would_seth_godin_do">what_would_seth_godin_do</a>
 			<?php
 			if (function_exists('wp_nonce_field'))
 				wp_nonce_field('wwsgd_update_options');
@@ -124,7 +128,7 @@ function wwsgd_message_filter($content = '')
 {
 	global $wwsgd_visits, $wwsgd_settings, $wwsgd_messagedisplayed;
 	
-	if ($wwsgd_messagedisplayed || is_feed())
+	if ($wwsgd_messagedisplayed || is_feed() || ($wwsgd_settings['include_pages'] == 'no' && is_page()))
 	{
 		return $content;
 	}
