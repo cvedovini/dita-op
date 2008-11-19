@@ -24,6 +24,7 @@ import org.eclipse.debug.ui.AbstractLaunchConfigurationTabGroup;
 import org.eclipse.debug.ui.CommonTab;
 import org.eclipse.debug.ui.ILaunchConfigurationDialog;
 import org.eclipse.debug.ui.ILaunchConfigurationTab;
+import org.eclipse.debug.ui.RefreshTab;
 
 @SuppressWarnings("restriction")//$NON-NLS-1$
 public class DOSTLaunchConfigurationTabGroup extends
@@ -34,8 +35,8 @@ public class DOSTLaunchConfigurationTabGroup extends
 
 	public void createTabs(ILaunchConfigurationDialog dialog, String mode) {
 		ILaunchConfigurationTab[] tabs = new ILaunchConfigurationTab[] {
-				new DOSTMainTab(), new AntJRETab(), new AntEnvironmentTab(),
-				new CommonTab() };
+				new DOSTMainTab(), new RefreshTab(), new AntJRETab(),
+				new AntEnvironmentTab(), new CommonTab() };
 		setTabs(tabs);
 	}
 

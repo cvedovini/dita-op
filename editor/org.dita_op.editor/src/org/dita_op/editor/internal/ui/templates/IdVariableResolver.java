@@ -18,13 +18,14 @@
  */
 package org.dita_op.editor.internal.ui.templates;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Random;
 
 import org.eclipse.jface.text.templates.TemplateContext;
 import org.eclipse.jface.text.templates.TemplateVariableResolver;
 
 public class IdVariableResolver extends TemplateVariableResolver {
+
+	private static final Random RND = new Random(System.currentTimeMillis());
 
 	public IdVariableResolver() {
 	}
@@ -38,8 +39,7 @@ public class IdVariableResolver extends TemplateVariableResolver {
 	 */
 	@Override
 	protected String resolve(TemplateContext context) {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss"); //$NON-NLS-1$
-		return "id" + sdf.format(new Date()); //$NON-NLS-1$
+		return Long.toHexString(RND.nextLong());
 	}
 
 	/**

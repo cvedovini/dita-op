@@ -41,26 +41,51 @@ import org.eclipse.core.variables.VariablesPlugin;
 import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
+import org.eclipse.debug.core.model.LaunchConfigurationDelegate;
+import org.eclipse.debug.internal.core.LaunchConfiguration;
+import org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy;
 import org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants;
 import org.eclipse.jdt.launching.IRuntimeClasspathEntry;
 import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.ui.externaltools.internal.model.IExternalToolConstants;
 
 @SuppressWarnings("restriction")//$NON-NLS-1$
-public class DOSTLaunchDelegate extends AntLaunchDelegate {
+public class DOSTLaunchDelegate extends LaunchConfigurationDelegate {
 
-	public DOSTLaunchDelegate() {
+	private static final class TransientLaunchConfigurationWorkingCopy extends
+			LaunchConfigurationWorkingCopy {
+
+		public TransientLaunchConfigurationWorkingCopy(
+				LaunchConfiguration original) throws CoreException {
+			super(original);
+		}
+
+		/**
+		 * @see org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy#doSave(org.eclipse.core.runtime.IProgressMonitor)
+		 */
+		@Override
+		public synchronized ILaunchConfiguration doSave(IProgressMonitor monitor)
+				throws CoreException {
+			return this;
+		}
+
 	}
 
-	@Override
+	private final AntLaunchDelegate antdelegate;
+
+	public DOSTLaunchDelegate() {
+		antdelegate = new AntLaunchDelegate();
+	}
+
 	@SuppressWarnings("unchecked")//$NON-NLS-1$
 	public void launch(ILaunchConfiguration configuration, String mode,
 			ILaunch launch, IProgressMonitor monitor) throws CoreException {
-		ILaunchConfigurationWorkingCopy wc = configuration.getWorkingCopy();
+		ILaunchConfigurationWorkingCopy wc = new TransientLaunchConfigurationWorkingCopy(
+				(LaunchConfiguration) configuration);
 
 		Map antProperties = new HashMap();
-		Map args = configuration.getAttribute(
-				DOSTLaunchConfigurationConstants.OTHER_ARGS, (Map) null);
+		Map args = wc.getAttribute(DOSTLaunchConfigurationConstants.OTHER_ARGS,
+				(Map) null);
 
 		if (args != null) {
 			antProperties.putAll(args);
@@ -73,18 +98,19 @@ public class DOSTLaunchDelegate extends AntLaunchDelegate {
 		File ditabuild = new File(ditadir, "build.xml"); //$NON-NLS-1$
 
 		if (!ditabuild.exists() || !ditabuild.canRead()) {
-			IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID,
+			IStatus status = new Status(
+					IStatus.ERROR,
+					Activator.PLUGIN_ID,
 					Messages.getString("DOSTLaunchDelegate.couldNotFindBuildScripts")); //$NON-NLS-1$
 			throw new CoreException(status);
 		}
 
-		String ditamap = configuration.getAttribute(DOSTParameters.ARGS_INPUT,
-				""); //$NON-NLS-1$
+		String ditamap = wc.getAttribute(DOSTParameters.ARGS_INPUT, ""); //$NON-NLS-1$
 		ditamap = resolve(ditamap);
 
-		String outdir = configuration.getAttribute(DOSTParameters.OUTPUT_DIR,
-				new File(ditamap).getParent());
-		String transtype = configuration.getAttribute(DOSTParameters.TRANSTYPE,
+		String outdir = wc.getAttribute(DOSTParameters.OUTPUT_DIR, new File(
+				ditamap).getParent());
+		String transtype = wc.getAttribute(DOSTParameters.TRANSTYPE,
 				DOSTParameters.DEFAULT_TRANSTYPE);
 
 		File tempdir = new File(
@@ -105,7 +131,7 @@ public class DOSTLaunchDelegate extends AntLaunchDelegate {
 
 		configureClasspath(ditadir, wc);
 
-		super.launch(wc, mode, launch, monitor);
+		antdelegate.launch(wc, mode, launch, monitor);
 	}
 
 	private String resolve(String value) throws CoreException {
@@ -118,6 +144,9 @@ public class DOSTLaunchDelegate extends AntLaunchDelegate {
 			ILaunchConfigurationWorkingCopy configuration) {
 		IRuntimeClasspathEntry[] classpath = getCurrentClasspath(ditadir);
 
+		configuration.setAttribute(
+				IJavaLaunchConfigurationConstants.ATTR_CLASSPATH_PROVIDER,
+				"org.eclipse.ant.ui.AntClasspathProvider"); //$NON-NLS-1$
 		configuration.setAttribute(
 				IJavaLaunchConfigurationConstants.ATTR_DEFAULT_CLASSPATH, false);
 		try {
