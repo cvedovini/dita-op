@@ -20,6 +20,12 @@
     </antcall>
     <antcall target="svn.co">
       <param name="target" value="plugins"/>
+      <param name="element.id" value="org.dita_op.dita.dtd"/>
+      <param name="project.name" value="/trunk/editor/org.dita_op.dita.dtd"/>
+      <param name="url" value="https://dita-op.svn.sourceforge.net/svnroot/dita-op"/>
+    </antcall>
+    <antcall target="svn.co">
+      <param name="target" value="plugins"/>
       <param name="element.id" value="org.dita_op.dita.langref"/>
       <param name="project.name" value="/trunk/editor/org.dita_op.dita.langref"/>
       <param name="url" value="https://dita-op.svn.sourceforge.net/svnroot/dita-op"/>
