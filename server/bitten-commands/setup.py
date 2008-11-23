@@ -34,7 +34,7 @@ setup(
     url = 'http://www.dita-op.org/',
     download_url = 'http://www.dita-op.org/download',
     zip_safe = False,
-
+    packages = find_packages(exclude=['*.tests*']),
     entry_points = {
         'bitten.recipe_commands': [
             'http://dita-op.org/tools#dita = dita_op.tools:dita'

@@ -21,9 +21,9 @@
 from glob import glob
 import logging
 import os
-from bitten.tools.javatools import ant
+from bitten.build.javatools import ant
 
-def dita(ctx, ditamap, transtype='xhtml', output_dir=None, keep_going=False, args=None):
+def dita(ctx, ditamap, transtype='xhtml', keep_going=False, args=None):
     """Run a DITA-OT transformation.
     
     :param ctx: the build context
@@ -35,18 +35,18 @@ def dita(ctx, ditamap, transtype='xhtml', output_dir=None, keep_going=False, arg
     :param args: additional arguments to pass to the toolkit (optional)
     """
     dita_home = os.environ['DITA_HOME']
+    dita_lib = os.path.join(dita_home, 'lib')
     build_file = os.path.join(dita_home, 'build.xml')
     
     if not args:    
         args = ''
         
-    args += ' -Dargs.input=' + ctx.resolve(ditamap)
+    args += ' -Ddita.dir=' + dita_home
+    args += ' -Dargs.input=' + os.path.join(ctx.basedir, ditamap)
     args += ' -Dtranstype=' + transtype
-    args += ' -Ddita.temp.dir=' + os.tempnam()
-    
-    if output_dir:
-        args += ' -Doutput.dir=' + ctx.resolve(output_dir)
-    else:
-        args += ' -Doutput.dir=' + ctx.resolve(transtype + '_output')
-    
+    args += ' -Ddita.temp.dir=' + os.path.join(ctx.basedir, 'temp')
+    args += ' -Doutput.dir=' + 'output_' + transtype
+    args += ' -lib ' + dita_lib
+    args = args.replace('\\', '/')
+
     ant(ctx, build_file, 'init', keep_going, args)
