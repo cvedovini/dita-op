@@ -1,6 +1,6 @@
 @echo off
 setlocal
 call setenv.cmd
-cd apache2
+cd %APACHE_HOME%
 httpd
 endlocal

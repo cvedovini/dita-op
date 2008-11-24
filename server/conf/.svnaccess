@@ -1,0 +1,4 @@
+# Everyone has read access to any repository, only the admin can write
+[/]
+admin = rw
+* = r
