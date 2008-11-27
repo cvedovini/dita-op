@@ -61,41 +61,41 @@
                 organizations, projects or individuals which is
                 distributed under their own copyrights and license
                 terms.
+                <ul>
+                    <li>
+                        The
+                        <xref scope="external"
+                            href="http://www.oasis-open.org/committees/dita">
+                            OASIS DITA Technical Committee.
+                        </xref>
+                    </li>
+                    <li>
+                        The
+                        <xref scope="external"
+                            href="http://dita-ot.sourceforge.net/">
+                            DITA Open Toolkit Project
+                        </xref>
+                        (under the
+                        <xref scope="external"
+                            href="http://www.opensource.org/licenses/cpl1.0.php">
+                            Common Public License
+                        </xref>
+                        ).
+                    </li>
+                    <li>
+                        <xref scope="external"
+                            href="http://www.famfamfam.com/">
+                            Mark James
+                        </xref>
+                        (under the
+                        <xref scope="external"
+                            href="http://creativecommons.org/licenses/by/2.5/">
+                            Creative Commons Attribution 2.5 License
+                        </xref>
+                        ).
+                    </li>
+                </ul>
             </p>
-            <ul>
-                <li>
-                    The
-                    <xref scope="external"
-                        href="http://www.oasis-open.org/committees/dita">
-                        OASIS DITA Technical Committee.
-                    </xref>
-                </li>
-                <li>
-                    The
-                    <xref scope="external"
-                        href="http://dita-ot.sourceforge.net/">
-                        DITA Open Toolkit Project
-                    </xref>
-                    (under the
-                    <xref scope="external"
-                        href="http://www.opensource.org/licenses/cpl1.0.php">
-                        Common Public License
-                    </xref>
-                    ).
-                </li>
-                <li>
-                    <xref scope="external"
-                        href="http://www.famfamfam.com/">
-                        Mark James
-                    </xref>
-                    (under the
-                    <xref scope="external"
-                        href="http://creativecommons.org/licenses/by/2.5/">
-                        Creative Commons Attribution 2.5 License
-                    </xref>
-                    ).
-                </li>
-            </ul>
         </section>
     </body>
 </topic>

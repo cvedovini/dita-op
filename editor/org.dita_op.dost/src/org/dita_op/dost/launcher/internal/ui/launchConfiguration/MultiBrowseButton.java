@@ -84,19 +84,22 @@ public class MultiBrowseButton {
 		this.browseFolder = browseFolder;
 
 		menuManager = new MenuManager();
-		menuManager.add(new Action(Messages.getString("MultiBrowseButton.browseWorkspace")) { //$NON-NLS-1$
+		menuManager.add(new Action(
+				Messages.getString("MultiBrowseButton.browseWorkspace")) { //$NON-NLS-1$
 			@Override
 			public void run() {
 				browseWorkspace();
 			}
 		});
-		menuManager.add(new Action(Messages.getString("MultiBrowseButton.browseFileSystem")) { //$NON-NLS-1$
+		menuManager.add(new Action(
+				Messages.getString("MultiBrowseButton.browseFileSystem")) { //$NON-NLS-1$
 			@Override
 			public void run() {
 				browseFileSystem();
 			}
 		});
-		menuManager.add(new Action(Messages.getString("MultiBrowseButton.browseVariables")) { //$NON-NLS-1$
+		menuManager.add(new Action(
+				Messages.getString("MultiBrowseButton.browseVariables")) { //$NON-NLS-1$
 			@Override
 			public void run() {
 				browseVariables();
@@ -118,7 +121,7 @@ public class MultiBrowseButton {
 		this.description = description;
 	}
 
-	@SuppressWarnings("restriction") //$NON-NLS-1$
+	@SuppressWarnings("restriction")//$NON-NLS-1$
 	private void browseWorkspace() {
 		if (browseFolder) {
 			ContainerSelectionDialog containerDialog;
@@ -132,7 +135,7 @@ public class MultiBrowseButton {
 			if (resource != null && resource.length > 0) {
 				IPath path = (IPath) resource[0];
 				textField.setText(newVariableExpression(
-						"workspace_loc", path.toString())); //$NON-NLS-1$
+						"resource_loc", path.toString())); //$NON-NLS-1$
 			}
 		} else {
 			FileSelectionDialog dialog;
@@ -148,7 +151,7 @@ public class MultiBrowseButton {
 				if (file instanceof IFile) {
 					IPath path = ((IFile) file).getFullPath();
 					textField.setText(newVariableExpression(
-							"workspace_loc", path.toString())); //$NON-NLS-1$
+							"resource_loc", path.toString())); //$NON-NLS-1$
 				}
 			}
 		}

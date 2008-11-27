@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launchConfiguration type="org.dita_op.dost.launcher.DOSTLaunchConfigurationType">
-<stringAttribute key="args.input" value="${workspace_loc:/documentation/toc.ditamap}"/>
+<stringAttribute key="args.input" value="${resource_loc:/documentation/toc.ditamap}"/>
 <booleanAttribute key="org.eclipse.ant.ui.DEFAULT_VM_INSTALL" value="true"/>
+<stringAttribute key="org.eclipse.debug.core.ATTR_REFRESH_SCOPE" value="${working_set:&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;launchConfigurationWorkingSet editPageId=&quot;org.eclipse.ui.resourceWorkingSetPage&quot; factoryID=&quot;org.eclipse.ui.internal.WorkingSetFactory&quot; label=&quot;working set&quot; name=&quot;working set&quot;&gt;&#10;&lt;item factoryID=&quot;org.eclipse.ui.internal.model.ResourceFactory&quot; path=&quot;/wwwdoc&quot; type=&quot;4&quot;/&gt;&#10;&lt;/launchConfigurationWorkingSet&gt;}"/>
 <booleanAttribute key="org.eclipse.debug.core.appendEnvironmentVariables" value="true"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.eclipse.ant.internal.ui.antsupport.InternalAntRunner"/>
 <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.ant.ui.AntClasspathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xmx1024m"/>
 <stringAttribute key="org.eclipse.jdt.launching.VM_INSTALL_NAME" value="JVM 1.5.0 (MacOS X Default)"/>
 <stringAttribute key="org.eclipse.jdt.launching.VM_INSTALL_TYPE_ID" value="org.eclipse.jdt.internal.launching.macosx.MacOSXType"/>
 <mapAttribute key="other.args">
 <mapEntry key="dita.extname" value=".dita"/>
-<mapEntry key="args.csspath" value="css"/>
+<mapEntry key="args.xhtml.toc" value="toc"/>
+<mapEntry key="args.csspath" value="style"/>
 </mapAttribute>
-<stringAttribute key="output.dir" value="/Users/claude/temp/dita-op"/>
+<stringAttribute key="output.dir" value="${workspace_loc:/wwwdoc}"/>
 <stringAttribute key="process_factory_id" value="org.eclipse.ant.ui.remoteAntProcessFactory"/>
 <stringAttribute key="transtype" value="xhtml"/>
 </launchConfiguration>

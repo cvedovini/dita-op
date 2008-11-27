@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launchConfiguration type="org.dita_op.dost.launcher.DOSTLaunchConfigurationType">
-<stringAttribute key="args.input" value="${workspace_loc:/documentation/toc.ditamap}"/>
+<stringAttribute key="args.input" value="${resource_loc:/documentation/toc.ditamap}"/>
 <booleanAttribute key="org.eclipse.ant.ui.DEFAULT_VM_INSTALL" value="true"/>
 <stringAttribute key="org.eclipse.debug.core.ATTR_REFRESH_SCOPE" value="${working_set:&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;launchConfigurationWorkingSet editPageId=&quot;org.eclipse.ui.resourceWorkingSetPage&quot; factoryID=&quot;org.eclipse.ui.internal.WorkingSetFactory&quot; label=&quot;working set&quot; name=&quot;working set&quot;&gt;&#10;&lt;item factoryID=&quot;org.eclipse.ui.internal.model.ResourceFactory&quot; path=&quot;/org.dita_op.doc&quot; type=&quot;4&quot;/&gt;&#10;&lt;/launchConfigurationWorkingSet&gt;}"/>
 <booleanAttribute key="org.eclipse.debug.core.appendEnvironmentVariables" value="true"/>
@@ -11,13 +11,10 @@
 <mapAttribute key="other.args">
 <mapEntry key="args.eclipsehelp.toc" value="toc"/>
 <mapEntry key="dita.extname" value=".dita"/>
-<mapEntry key="args.eclipse.version" value="1.0.0.qualifier"/>
-<mapEntry key="args.csspath" value="css"/>
+<mapEntry key="args.csspath" value="style"/>
 <mapEntry key="dita.eclipse.plugin" value="no"/>
-<mapEntry key="args.eclipse.provider" value="dita-op.org"/>
-<mapEntry key="args.eclipsecontent.toc" value="toc"/>
 </mapAttribute>
-<stringAttribute key="output.dir" value="${workspace_loc:/org.dita_op.doc}"/>
+<stringAttribute key="output.dir" value="${resource_loc:/org.dita_op.doc}"/>
 <stringAttribute key="process_factory_id" value="org.eclipse.ant.ui.remoteAntProcessFactory"/>
 <stringAttribute key="transtype" value="eclipsehelp"/>
 </launchConfiguration>
