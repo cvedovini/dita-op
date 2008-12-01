@@ -1,20 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en-us" xml:lang="en-us">
-<head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<meta name="copyright" content="(C) Copyright 2005" />
-<meta name="DC.rights.owner" content="(C) Copyright 2005" />
-<meta content="task" name="DC.Type" />
-<meta name="DC.Title" content="Creating DITA Files" />
-<meta content="claude" name="DC.Creator" />
-<meta content="claude" name="DC.Creator" />
-<meta content="XHTML" name="DC.Format" />
-<meta content="creating_files" name="DC.Identifier" />
-<meta content="en-US" name="DC.Language" />
-<link href="../style/commonltr.css" type="text/css" rel="stylesheet" />
-<title>Creating DITA Files</title>
-</head>
-<body id="creating_files"><a name="creating_files"><!-- --></a>
+<?php
+      define('WP_USE_THEMES', false);
+      require('../../blog//wp-blog-header.php');
+    ?>
+<?php
+      get_header();
+    ?>
+<div class="content span-16" lang="en-us" xml:lang="en-us">
+<a name="creating_files"><!-- --></a>
 
 
     <h1 class="topictitle1">Creating DITA Files</h1>
@@ -75,5 +67,8 @@
     </div>
 
 
-</body>
-</html>
+
+</div><?php
+      get_sidebar();
+      get_footer();
+    ?>

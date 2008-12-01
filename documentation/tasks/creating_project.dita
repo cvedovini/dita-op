@@ -52,8 +52,8 @@
                 You can then import existing DITA files from your file
                 system,
                 <xref
-                    href="/org.eclipse.platform.doc.user/gettingStarted/qs-31a.htm"
-                    scope="peer">
+                    href="http://help.eclipse.org/help33/topic/org.eclipse.platform.doc.user/gettingStarted/qs-31a.htm"
+                    scope="external" format="html">
                     using the file import wizard or drag and dropping
                 </xref>
                 them from your Windows Explorer window into your DITA
