@@ -1,10 +1,11 @@
 <?php
-      define('WP_USE_THEMES', false);
-      require('../../blog//wp-blog-header.php');
-    ?>
-<?php
-      get_header();
-    ?>
+    define('WP_USE_THEMES', false);
+    if ( !isset($wp_did_header) ) {
+        $wp_did_header = true;
+        require_once( '../../blog//wp-load.php' );
+        wp('pagename=Documentation');
+        get_header();
+    }?>
 <div class="content span-16" lang="en-us" xml:lang="en-us">
 <a name="about"><!-- --></a>
 

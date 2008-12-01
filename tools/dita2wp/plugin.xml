@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="org.dita_op.dita2wp">
+  <feature extension="dita.conductor.transtype.check" value="wordpress" type="txt"/>
+  <feature extension="dita.conductor.target" value="conductor.xml" type="file"/>
+</plugin>

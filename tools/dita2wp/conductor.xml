@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="dita2wp" default="dita2wp">
+    <import file="plugins${file.separator}dita2wp${file.separator}build_dita2wp.xml"></import>
+</project>
