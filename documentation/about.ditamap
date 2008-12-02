@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd" >
+<map xml:lang="en-US">
+    <title>About the DITA Open Platform</title>
+    <topicmeta>
+        <author>claude</author>
+    </topicmeta>
+    <topicref href="topics/about.dita">
+        <topicref href="topics/license.dita" />
+        <topicref href="topics/copyright.dita" />
+        <topicref href="topics/credits.dita" />
+    </topicref>
+</map>

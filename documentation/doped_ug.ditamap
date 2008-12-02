@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd" >
+<map xml:lang="en-US">
+    <title>DITA-OP Editor User Guide</title>
+    <topicmeta>
+        <author>claude</author>
+    </topicmeta>
+    <topicref href="topics/about.dita">
+        <topicref href="topics/license.dita" />
+        <topicref href="topics/copyright.dita" />
+        <topicref href="topics/credits.dita" />
+    </topicref>
+    <topichead navtitle="Getting started">
+        <topicref href="tasks/creating_project.dita" />
+        <topicref href="tasks/creating_files.dita" />
+        <topicref href="tasks/toolkit_preferences.dita" />
+        <topicref href="tasks/toolkit_launch_configuration.dita" />
+    </topichead>
+    <topichead navtitle="Tasks">
+        <topicref href="tasks/creating_project.dita" />
+        <topicref href="tasks/creating_files.dita" />
+        <topicref href="tasks/toolkit_preferences.dita" />
+        <topicref href="tasks/toolkit_launch_configuration.dita" />
+    </topichead>
+</map>

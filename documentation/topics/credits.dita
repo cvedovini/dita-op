@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="about" xml:lang="en-US">
+    <title>Credits</title>
+    <prolog>
+        <author>claude</author>
+    </prolog>
+    <body>
+        <p>
+            This product includes work produced by the following
+            organizations, projects or individuals which is distributed
+            under their own copyrights and license terms.
+            <ul>
+                <li>
+                    The
+                    <xref scope="external"
+                        href="http://www.oasis-open.org/committees/dita"
+                        type="html">
+                        OASIS DITA Technical Committee.
+                    </xref>
+                </li>
+                <li>
+                    The
+                    <xref scope="external"
+                        href="http://dita-ot.sourceforge.net/"
+                        type="html">
+                        DITA Open Toolkit Project
+                    </xref>
+                    (under the
+                    <xref scope="external"
+                        href="http://www.opensource.org/licenses/cpl1.0.php"
+                        type="html">
+                        Common Public License
+                    </xref>
+                    ).
+                </li>
+                <li>
+                    <xref scope="external"
+                        href="http://www.famfamfam.com/" type="html">
+                        Mark James
+                    </xref>
+                    (under the
+                    <xref scope="external"
+                        href="http://creativecommons.org/licenses/by/2.5/"
+                        type="html">
+                        Creative Commons Attribution 2.5 License
+                    </xref>
+                    ).
+                </li>
+            </ul>
+        </p>
+    </body>
+</topic>

@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd" >
+<task id="d3f666f9edad82a" xml:lang="en-US">
+    <title>Downloading the DITA-OP Editor</title>
+    <prolog>
+        <author>claude</author>
+    </prolog>
+    <taskbody>
+        <context>
+            To download the DITA-OP Editor plugins you may choose one of
+            the following options.
+        </context>
+    </taskbody>
+    <task id="bf3e678e623b8427">
+        <title>Downloading the full package</title>
+        <taskbody>
+            <context>
+                <p>
+                    This package includes the Eclipse IDE for windows,
+                    the DITA-OP plugins (and their dependencies), the
+                    CVS plugin and
+                    <xref href="http://subclipse.tigris.org/"
+                        scope="external" type="html">
+                        Subclipse, the SVN team plugin.
+                    </xref>
+                </p>
+                <p>
+                    Work is still needed on this package to remove
+                    things that are not becessary to a typical technical
+                    writer but it is a good start if you do not use
+                    Eclipse already and want to evaluate the editor.
+                </p>
+                <p>
+                    Also, it is only available for windows and if demand
+                    is high enough for other platforms we will build
+                    other packages. In the mean time, if you are using
+                    another platform please
+                    <xref scope="external" type="html"
+                        href="http://www.eclipse.org/downloads/">
+                        download the Eclipse IDE for your platform
+                    </xref>
+                    and use one the other download methods.
+                </p>
+            </context>
+            <steps>
+                <step>
+                    <cmd>
+                        Go to the
+                        <xref scope="external" type="html"
+                            href="http://sourceforge.net/project/showfiles.php?group_id=228491&amp;package_id=276725">
+                            project's download page.
+                        </xref>
+                    </cmd>
+                </step>
+                <step>
+                    <cmd>
+                        Choose the
+                        <filepath>
+                            doped-1.0.0.M1-20080618-win32.zip
+                        </filepath>
+                        zip file.
+                    </cmd>
+                </step>
+                <step>
+                    <cmd>
+                        Unzip the file anywhere on your file system and
+                        run the
+                        <filepath>eclipse.exe</filepath>
+                        file contained in the newly created
+                        <filepath>doped-1.0.0.M1-20080618</filepath>
+                        folder.
+                    </cmd>
+                </step>
+            </steps>
+        </taskbody>
+    </task>
+    <task id="a718ad80b006935">
+        <title>Downloading the plugins zip file</title>
+        <taskbody>
+            <context>
+                If you are already using Eclipse 3.3 (Europa) you can
+                download the plugins zip file.
+            </context>
+            <steps>
+                <step>
+                    <cmd>
+                        Go to the
+                        <xref scope="external" type="html"
+                            href="http://sourceforge.net/project/showfiles.php?group_id=228491&amp;package_id=276725">
+                            project's download page.
+                        </xref>
+                    </cmd>
+                </step>
+                <step>
+                    <cmd>
+                        Choose the
+                        <filepath>
+                            org.dita_op_1.0.0.M1-20080618-bin.zip
+                        </filepath>
+                        zip file.
+                    </cmd>
+                </step>
+                <step>
+                    <cmd>
+                        Once downloaded, unzip the file in the Eclipse
+                        folder (the one which contains the
+                        <filepath>features</filepath>
+                        and
+                        <filepath>plugins</filepath>
+                        folders).
+                    </cmd>
+                </step>
+                <step>
+                    <cmd>If necessary, restart Eclipse.</cmd>
+                </step>
+            </steps>
+        </taskbody>
+    </task>
+    <task id="b1571f23a914bd39">
+        <title>Using the update site</title>
+        <task id="d221538040e5a9d0">
+            <title>Eclipse 3.3 (Europa)</title>
+            <taskbody>
+                <context>
+                    If you are already using Eclipse 3.3 you can use the
+                    Update Manager to download and install the plugins
+                    for you.
+                </context>
+                <steps>
+                    <step>
+                        <cmd>
+                            Open Eclipse, go to
+                            <menucascade>
+                                <uicontrol>Help</uicontrol>
+                                <uicontrol>Software Updates</uicontrol>
+                                <uicontrol>
+                                    Find and Install...
+                                </uicontrol>
+                            </menucascade>
+                        </cmd>
+                    </step>
+                    <step>
+                        <cmd>
+                            Choose
+                            <uicontrol>
+                                Search for new features to install.
+                            </uicontrol>
+                        </cmd>
+                    </step>
+                    <step>
+                        <cmd>
+                            Click on the
+                            <uicontrol>"New Remote Site..."</uicontrol>
+                            button.
+                        </cmd>
+                    </step>
+                    <step>
+                        <cmd>
+                            Enter
+                            <userinput>DITA-OP Update Site</userinput>
+                            in the
+                            <uicontrol>name</uicontrol>
+                            field.
+                        </cmd>
+                    </step>
+                    <step>
+                        <cmd>
+                            Enter
+                            <userinput>
+                                http://www.dita-op.org/updatesite
+                            </userinput>
+                            in the
+                            <uicontrol>URL</uicontrol>
+                            field.
+                        </cmd>
+                    </step>
+                    <step>
+                        <cmd>
+                            Click on the
+                            <uicontrol>OK</uicontrol>
+                            button.
+                        </cmd>
+                    </step>
+                    <step>
+                        <cmd>
+                            Make sure the
+                            <uicontrol>DITA-OP Update Site</uicontrol>
+                            check box is selected (you may have to
+                            select the
+                            <uicontrol>Europa Discovery Site</uicontrol>
+                            as well to fetch dependencies).
+                        </cmd>
+                    </step>
+                    <step>
+                        <cmd>
+                            Click on the
+                            <uicontrol>Finish</uicontrol>
+                            button.
+                        </cmd>
+                    </step>
+                    <step>
+                        <cmd>
+                            Select the
+                            <uicontrol>DITA-OP Update Site</uicontrol>
+                            check box (if an error appears about missing
+                            dependencies click on the
+                            <uicontrol>Select Required</uicontrol>
+                            button).
+                        </cmd>
+                    </step>
+                    <step>
+                        <cmd>
+                            Click on the
+                            <uicontrol>Next</uicontrol>
+                            button.
+                        </cmd>
+                    </step>
+                    <step>
+                        <cmd>
+                            Choose the
+                            <uicontrol>
+                                I accept the terms in the license
+                                agreement
+                            </uicontrol>
+                            radio button.
+                        </cmd>
+                    </step>
+                    <step>
+                        <cmd>
+                            Click on the
+                            <uicontrol>Next</uicontrol>
+                            button.
+                        </cmd>
+                    </step>
+                    <step>
+                        <cmd>
+                            Click on the
+                            <uicontrol>Finish</uicontrol>
+                            button.
+                        </cmd>
+                    </step>
+                    <step>
+                        <cmd>Wait for the download to complete.</cmd>
+                    </step>
+                    <step>
+                        <cmd>
+                            Click on the
+                            <uicontrol>Install</uicontrol>
+                            button.
+                        </cmd>
+                    </step>
+                    <step>
+                        <cmd>
+                            Click on the
+                            <uicontrol>Yes</uicontrol>
+                            button to restart Eclipse.
+                        </cmd>
+                    </step>
+                </steps>
+            </taskbody>
+        </task>
+        <task id="a10ef80e8958cc03">
+            <title>Eclipse 3.4 (Ganymede)</title>
+            <prolog>
+                <author>Richard Pineger</author>
+            </prolog>
+            <taskbody>
+                <context>
+                    Eclipse 3.4 has an updated Update Manager called P2
+                    and so the process is slightly different. Thanks to
+                    Richard Pineger for the following install
+                    instructions.
+                </context>
+                <steps>
+                    <step>
+                        <cmd>
+                            Open Eclipse, go to
+                            <menucascade>
+                                <uicontrol>Help</uicontrol>
+                                <uicontrol>
+                                    Software Updates...
+                                </uicontrol>
+                            </menucascade>
+                        </cmd>
+                    </step>
+                    <step>
+                        <cmd>
+                            Select the
+                            <uicontrol>Available Software</uicontrol>
+                            tab.
+                        </cmd>
+                    </step>
+                    <step>
+                        <cmd>
+                            Click
+                            <uicontrol>Add Site...</uicontrol>
+                        </cmd>
+                    </step>
+                    <step>
+                        <cmd>
+                            In the
+                            <uicontrol>Add Site</uicontrol>
+                            dialog, enter
+                            <userinput>
+                                http://www.dita-op.org/updatesite
+                            </userinput>
+                            in the
+                            <uicontrol>Location</uicontrol>
+                            field.
+                        </cmd>
+                    </step>
+                    <step>
+                        <cmd>
+                            Click the
+                            <uicontrol>OK</uicontrol>
+                            button.
+                        </cmd>
+                    </step>
+                    <step>
+                        <cmd>
+                            Make sure the
+                            <uicontrol>
+                                http://www.dita-op.org/updatesite
+                            </uicontrol>
+                            check box and
+                            <uicontrol>Uncategorized</uicontrol>
+                            check boxes are selected.
+                        </cmd>
+                    </step>
+                    <step>
+                        <cmd>
+                            Click the
+                            <uicontrol>Install...</uicontrol>
+                            button.
+                        </cmd>
+                    </step>
+                    <step>
+                        <cmd>
+                            Wait for the Update Manager to resolves
+                            dependencies.
+                        </cmd>
+                    </step>
+                    <step>
+                        <cmd>
+                            Read and accept the necessary license
+                            agreements.
+                        </cmd>
+                    </step>
+                    <step>
+                        <cmd>
+                            Wait for the download and install to
+                            complete.
+                        </cmd>
+                    </step>
+                    <step>
+                        <cmd>
+                            Click on the
+                            <uicontrol>Yes</uicontrol>
+                            button to restart Eclipse.
+                        </cmd>
+                    </step>
+                </steps>
+            </taskbody>
+        </task>
+    </task>
+    <task id="ea4a36c1690532b3">
+        <title>Nightly builds</title>
+        <taskbody>
+            <context>
+                Nightly builds are available at
+                <xref scope="external" type="html"
+                    href="http://www.pluginbuilder.org">
+                    pluginbuilder.org
+                </xref>
+                you can either download the latest plugins zip file
+                <xref scope="external" type="html"
+                    href="http://dita-op.pluginbuilder.org/latest">
+                    here
+                </xref>
+                or use the nightly builds' update site:
+                <xref scope="external" type="html"
+                    href="http://dita-op.pluginbuilder.org/nightly/updateSite">
+                    http://dita-op.pluginbuilder.org/nightly/updateSite
+                </xref>
+            </context>
+        </taskbody>
+    </task>
+    <task id="f499a3bdd3773136">
+        <title>Downloading the sources</title>
+        <taskbody>
+            <context>
+                <p>
+                    To download the sources you can go to the
+                    <xref scope="external" type="html"
+                        href="http://sourceforge.net/project/showfiles.php?group_id=228491&amp;package_id=276725">
+                        project's download page
+                    </xref>
+                    and choose the
+                    <filepath>
+                        org.dita_op_1.0.0.M1-20080618-src.zip
+                    </filepath>
+                    zip file which contains both the binaries and the
+                    sources.
+                </p>
+                <p>
+                    Or you can download the sources from the SVN source
+                    repository. The repository URL is
+                    <xref scope="external" type="html"
+                        href="http://svn.dita-op.org/svnroot/dita-op/">
+                        http://svn.dita-op.org/svnroot/dita-op/
+                    </xref>
+                    and is anonymously accessible.
+                </p>
+                <p>
+                    You can refer to this sourceforge page for detailed
+                    information about SVN:
+                    <xref scope="external" type="html"
+                        href="http://alexandria.wiki.sourceforge.net/Subversion+-+Version+Control+for+Source+Code">
+                        Subversion - Version Control for Source Code.
+                    </xref>
+                </p>
+            </context>
+        </taskbody>
+    </task>
+</task>

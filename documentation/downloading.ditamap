@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd" >
+<map xml:lang="en-US">
+    <title>Downloading the DITA Open Platform</title>
+    <topicmeta>
+        <author>claude</author>
+    </topicmeta>
+    <topicref href="tasks/downloading_doped.dita" />
+</map>
