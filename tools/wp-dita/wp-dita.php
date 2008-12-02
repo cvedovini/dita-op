@@ -1,5 +1,4 @@
 <?php
-
 /*
 Plugin Name: wp-dita
 Plugin URI: http://www.dita-op.org
@@ -41,7 +40,6 @@ function include_handler($atts, $content=null) {
 		$path = ABSPATH . $content;
 	}
 	
-	echo "<!-- $path -->";
 	$result = @file_get_contents($path);
 	return wptexturize($result);
 }
