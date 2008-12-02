@@ -24,7 +24,7 @@
          point="org.eclipse.help.toc">
       <toc
             category="org.dita_op"
-            file="toc.xml"
+            file="doped_ug.xml"
             primary="true">
       </toc>
    </extension>
