@@ -39,7 +39,14 @@ public class IdVariableResolver extends TemplateVariableResolver {
 	 */
 	@Override
 	protected String resolve(TemplateContext context) {
-		return Long.toHexString(RND.nextLong());
+		String id = Long.toString(RND.nextLong(), Character.MAX_RADIX);
+
+		// Make sure the first digit is always a letter
+		while (!Character.isLetter(id.charAt(0))) {
+			id = Long.toString(RND.nextLong(), Character.MAX_RADIX);
+		}
+
+		return id;
 	}
 
 	/**
