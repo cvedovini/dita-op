@@ -22,17 +22,15 @@
 <!-- =========== OTHER STYLESHEET INCLUDES/IMPORTS =========== -->
 <xsl:import href="../../../../xsl/common/output-message.xsl"/>
 <xsl:import href="../../../../xsl/common/dita-utilities.xsl"/>
-<xsl:import href="flag-old.xsl"/>
-<xsl:include href="get-meta.xsl"/>
-<xsl:include href="rel-links.xsl"/>
-<xsl:include href="flag.xsl"/>
+<xsl:import href="../../../../xsl/xslhtml/flag-old.xsl"/>
+<xsl:include href="../../../../xsl/xslhtml/get-meta.xsl"/>
+<xsl:include href="../../../../xsl/xslhtml/rel-links.xsl"/>
+<xsl:include href="../../../../xsl/xslhtml/flag.xsl"/>
 
 <!-- =========== OUTPUT METHOD =========== -->
 
 <!-- XHTML output with XML syntax -->
-<xsl:output method="html"
-            encoding="utf-8"
-            indent="no"/>
+<xsl:output method="html" encoding="UTF-8" indent="no"/>
 
 
 <!-- =========== DEFAULT VALUES FOR EXTERNALLY MODIFIABLE PARAMETERS =========== -->
@@ -40,6 +38,7 @@
 <!-- default Wordpress path, relative to the project path -->
 <xsl:param name="WPPATH" select="'./'"/>
 <xsl:param name="WPPAGE" />
+<xsl:param name="WPCONTENTCLASS" select="'widecolumn'"/>
 
 <!-- the file name containing XHTML to be placed in the HEAD area
      (file name and extension only - no path). -->
@@ -69,7 +68,7 @@
 <xsl:param name="YEAR" select="'2005'"/>
 
 <!-- default "output extension" processing parameter ('.html')-->
-<xsl:param name="OUTEXT" select="'.html'"/><!-- "htm" and "html" are valid values -->
+<xsl:param name="OUTEXT" select="'.php'"/><!-- "htm" and "html" are valid values -->
 
 <!-- the working directory that contains the document being transformed.
      Needed as a directory prefix for the @conref "document()" function calls.
@@ -4505,25 +4504,26 @@
 
 <xsl:template name="chapter-setup">
     <xsl:text disable-output-escaping="yes"><![CDATA[<?php
-    define('WP_USE_THEMES', false);
-    if ( !isset($wp_did_header) ) {
-        $wp_did_header = true;
+        define('WP_USE_THEMES', false);
         require_once( ']]></xsl:text>
-        <xsl:value-of select="concat($PATH2PROJ, $WPPATH)" />
-        <xsl:text disable-output-escaping="yes"><![CDATA[wp-load.php' );
+        <xsl:value-of select="concat($PATH2PROJ, $WPPATH, 'wp-load.php')" />
+        <xsl:text disable-output-escaping="yes"><![CDATA[' );
         wp('pagename=]]></xsl:text>
         <xsl:value-of select="$WPPAGE" />
         <xsl:text disable-output-escaping="yes"><![CDATA[');
         get_header();
-    }?>]]></xsl:text><xsl:value-of select="$newline"/>
-    <div class="content span-16">
-    <xsl:call-template name="setTopicLanguage"/>
-    <xsl:value-of select="$newline"/>
-    <xsl:call-template name="chapterBody"/>
+    ?>]]></xsl:text>
+    <div id="content">
+        <xsl:attribute name="class">
+          <xsl:value-of select="$WPCONTENTCLASS"/>
+        </xsl:attribute>
+        <xsl:call-template name="setTopicLanguage"/>
+        <xsl:value-of select="$newline"/>
+        <xsl:call-template name="chapterBody"/>
     </div>
     <xsl:text disable-output-escaping="yes"><![CDATA[<?php
-      get_sidebar();
-      get_footer();
+        get_sidebar();
+        get_footer();
     ?>]]></xsl:text>
 </xsl:template>
 

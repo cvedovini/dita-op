@@ -37,7 +37,7 @@
 <xsl:param name="FILEREF" select="'file://'"/>
 <xsl:param name="WPPATH" select="'./'"/>
 <xsl:param name="WPPAGE" />
-<xsl:param name="OUTPUTCLASS"/>   <!-- class to put on body element. -->
+<xsl:param name="WPCONTENTCLASS" select="'widecolumn'"/>
 <!-- the path back to the project. Used for c.gif, delta.gif, css to allow user's to have
   these files in 1 location. -->
 <xsl:param name="PATH2PROJ">
@@ -69,30 +69,27 @@
      ********************************************************************************* -->
 <xsl:template match="/">
     <xsl:text disable-output-escaping="yes"><![CDATA[<?php
-    define('WP_USE_THEMES', false);
-    if ( !isset($wp_did_header) ) {
-        $wp_did_header = true;
+        define('WP_USE_THEMES', false);
         require_once( ']]></xsl:text>
-        <xsl:value-of select="concat($PATH2PROJ, $WPPATH)" />
-        <xsl:text disable-output-escaping="yes"><![CDATA[wp-load.php' );
+        <xsl:value-of select="concat($PATH2PROJ, $WPPATH, 'wp-load.php')" />
+        <xsl:text disable-output-escaping="yes"><![CDATA[' );
         wp('pagename=]]></xsl:text>
         <xsl:value-of select="$WPPAGE" />
         <xsl:text disable-output-escaping="yes"><![CDATA[');
         get_header();
-    }?>]]></xsl:text><xsl:value-of select="$newline"/>
-    <div class="content span-16">
-    <xsl:if test="string-length($OUTPUTCLASS) &gt; 0">
-      <xsl:attribute name="class">
-        <xsl:value-of select="$OUTPUTCLASS"/>
-      </xsl:attribute>
-    </xsl:if>
-    <xsl:value-of select="$newline"/>
-    <h1><xsl:value-of select="$title"/></h1><xsl:value-of select="$newline"/>
-    <xsl:apply-templates/>
+    ?>]]></xsl:text>
+    <div id="content">
+        <xsl:attribute name="class">
+          <xsl:value-of select="$WPCONTENTCLASS"/>
+        </xsl:attribute>
+        <xsl:value-of select="$newline"/>
+        <h1><xsl:value-of select="$title"/></h1>
+        <xsl:value-of select="$newline"/>
+        <xsl:apply-templates/>
     </div>
     <xsl:text disable-output-escaping="yes"><![CDATA[<?php
-      get_sidebar();
-      get_footer();
+        get_sidebar();
+        get_footer();
     ?>]]></xsl:text>
 </xsl:template>
 

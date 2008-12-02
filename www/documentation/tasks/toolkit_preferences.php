@@ -1,12 +1,9 @@
 <?php
-    define('WP_USE_THEMES', false);
-    if ( !isset($wp_did_header) ) {
-        $wp_did_header = true;
+        define('WP_USE_THEMES', false);
         require_once( '../../blog//wp-load.php' );
         wp('pagename=Documentation');
         get_header();
-    }?>
-<div class="content span-16" lang="en-us" xml:lang="en-us">
+    ?><div id="content" class="content span-16" lang="en-us" xml:lang="en-us">
 <a name="toolkit_preferences"><!-- --></a>
 
 
@@ -88,6 +85,6 @@
 
 
 </div><?php
-      get_sidebar();
-      get_footer();
+        get_sidebar();
+        get_footer();
     ?>

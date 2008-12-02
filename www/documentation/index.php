@@ -1,12 +1,9 @@
 <?php
-    define('WP_USE_THEMES', false);
-    if ( !isset($wp_did_header) ) {
-        $wp_did_header = true;
+        define('WP_USE_THEMES', false);
         require_once( '../blog//wp-load.php' );
         wp('pagename=Documentation');
         get_header();
-    }?>
-<div class="content span-16">
+    ?><div id="content" class="content span-16">
 <h1>DITA Open Platform User Guide</h1>
 <ul>
 <li><a href="topics/about.php">About</a></li>
@@ -28,6 +25,6 @@
 </li>
 </ul>
 </div><?php
-      get_sidebar();
-      get_footer();
+        get_sidebar();
+        get_footer();
     ?>
