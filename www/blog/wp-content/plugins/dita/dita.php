@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: wp-dita
+Plugin Name: DITA
 Plugin URI: http://www.dita-op.org
 Description: Embed default DITA CSS into Wordpress templates
 Version: 1.0
@@ -25,10 +25,8 @@ You should have received a copy of the GNU General Public License
 along with The DITA Open Platform.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-define('DITADIR', '/' . PLUGINDIR . "/wp-dita/");
-
 function dita_head() {
-	$csspath = get_option('siteurl') . DITADIR . 'commonltr.css';
+	$csspath = get_option('siteurl') . '/' . PLUGINDIR . "/" . plugin_basename(__FILE__) . '/dita.css';
 	echo "<link rel='stylesheet' href='$csspath' type='text/css' media='screen, projection, print' />";
 }
 
