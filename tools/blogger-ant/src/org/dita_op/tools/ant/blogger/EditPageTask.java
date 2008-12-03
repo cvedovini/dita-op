@@ -33,6 +33,9 @@ import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
 
 public class EditPageTask extends Task {
 
+	private static final String KEY = "dita-op.org";
+	private static final int BLOG_ID = 1;
+
 	private Integer postid;
 	private String username;
 	private String password;
@@ -45,10 +48,6 @@ public class EditPageTask extends Task {
 	public void execute() throws BuildException {
 		if (url == null) {
 			throw new BuildException("Service url must be provided");
-		}
-
-		if (postid == null) {
-			throw new BuildException("Post ID must be provided");
 		}
 
 		if (username == null || password == null) {
@@ -68,19 +67,29 @@ public class EditPageTask extends Task {
 				content = content.replaceAll("\\s+", " ");
 			}
 
-			getProject().log("Posting page " + postid + " to " + url);
+			getProject().log("Posting to " + url + " with user " + username);
 			getProject().log(content, Project.MSG_VERBOSE);
+			Object[] params = null;
+			String methodName = null;
 
-			Object[] params = new Object[] { Integer.valueOf(1), postid,
-					username, password, content, publish };
+			if (postid != null) {
+				methodName = "blogger.editPost";
+				params = new Object[] { KEY, postid, username, password,
+						content, publish };
+			} else {
+				methodName = "blogger.newPost";
+				params = new Object[] { KEY, BLOG_ID, username, password,
+						content, publish };
+			}
 
 			XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
 			config.setServerURL(new URL(url));
 			XmlRpcClient client = new XmlRpcClient();
 			client.setConfig(config);
-			Object result = client.execute("blogger.editPost", params);
 
-			getProject().log("Return: " + result);
+			Object result = client.execute(methodName, params);
+
+			getProject().log("Returned: " + result);
 		} catch (XmlRpcException e) {
 			getProject().log(e.getMessage(), Project.MSG_ERR);
 			throw new BuildException(e);
