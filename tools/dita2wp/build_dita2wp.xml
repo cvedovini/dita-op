@@ -26,21 +26,7 @@
 
 	<target name="dita2wordpress" depends="build-init, preprocess, dita.map.wp, copy-revflag, dita2blogger" />
 
-	<target name="wp.init">
-		<condition property="out.ext" value=".inc">
-			<not>
-				<isset property="out.ext" />
-			</not>
-		</condition>
-
-		<condition property="args.wp.toc" value="${dita.map.filename.root}">
-			<not>
-				<isset property="args.wp.toc" />
-			</not>
-		</condition>
-	</target>
-	
-	<target name="dita.map.wp" description="Build WP file" depends="wp.init">
+	<target name="dita.map.wp" description="Build WP file">
 		<dirname file="${dita.temp.dir}${file.separator}${user.input.file}" 
 			property="dita.merged.dir" />
 
@@ -53,7 +39,7 @@
 
 		<xslt processor="trax" basedir="${dita.temp.dir}" 
 			in="${dita.merged.dir}${file.separator}${dita.map.filename.root}_MERGED.xml" 
-			out="${dita.map.output.dir}${file.separator}${args.wp.toc}${out.ext}" 
+			out="${dita.merged.dir}${file.separator}${dita.map.filename.root}_COMPILED.html" 
 			style="plugins${file.separator}dita2wp${file.separator}xsl${file.separator}map2wppage.xsl" classpathref="dost.class.path">
 			<param name="DITAEXT" expression="${dita.ext}" if="dita.ext" />
 			<param name="OUTEXT" expression="${out.ext}" />
@@ -61,7 +47,7 @@
 
 	</target>
 
-	<target name="dita2blogger" description="Publish the result output to blogger" if="args.wp.xmlrpc" depends="wp.init">
+	<target name="dita2blogger" description="Publish the result output to blogger">
 		<taskdef name="publish" classname="org.dita_op.tools.ant.blogger.EditPageTask">
 			<classpath>
 				<fileset dir="plugins${file.separator}dita2wp${file.separator}lib" includes="*.jar" />
@@ -84,7 +70,7 @@
 			postid="${args.wp.postid}" publish="${args.wp.publish}" 
 			stripspaces="${args.wp.stripspaces}" 
 			username="${args.wp.username}" password="${args.wp.password}" 
-			contentsrc="${dita.map.output.dir}${file.separator}${args.wp.toc}${out.ext}" />
+			contentsrc="${dita.merged.dir}${file.separator}${dita.map.filename.root}_COMPILED.html" />
 	</target>
 
 </project>

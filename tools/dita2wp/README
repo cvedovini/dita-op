@@ -15,15 +15,20 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with The DITA Open Platform.  If not, see <http://www.gnu.org/licenses/>.
 
+
+INTRODUCTION
+
 This is a DITA Open Toolkit plugin that enables the transformation
-of a ditamap into a single HTML page fragment that can optionally be posted
+of a ditamap into a single HTML page fragment eventually posted
 to a blogging platform that supports the xmlrpc Blogger API.
+
 
 INSTALLATION
 
 	Unzip the plugin in the "plugins" folder of your DITA-OT installation.
 	At the root of your DITA-OT installation run the following command:
 		anf -f integrate.xml 
+
 
 USAGE
 
@@ -33,15 +38,6 @@ USAGE
 	args.input (/path/to/my/map.ditamap):
 		Path to the ditamap to transform
 	
-	out.ext (.inc): 
-		Extension of the output file, defaults to ".inc"
-		
-	args.wp.toc (index):
-		Root file name of the output file, defaults to the ditamap file name
-		
-	dita.extname (.xml):
-		File extention of the DITA topic files, defaults to ".xml"
-		
 	args.wp.xmlrpc (http://myblog.com/xmlrpc.php):
 		The url to the blog's xmlrpc API.
 		if not set the transformation will not post to the post.
@@ -65,6 +61,7 @@ USAGE
 		If set to "yes" consecutive whitespaces in the transformed content will be
 		reduced to a unique whitespace. Usefull when your blog transforms newlines 
 		in <br> when posting. Defaults to "yes".
+
 
 CREDITS
 
