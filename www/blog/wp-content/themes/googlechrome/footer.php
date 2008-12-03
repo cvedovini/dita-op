@@ -1,5 +1,6 @@
 </div> <!-- container -->
 <div class="footerpush"></div>
+<div style="text-align:center"><a href="http://sourceforge.net"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=228491&amp;type=2" width="125" height="37" border="0" alt="SourceForge.net Logo" /></a></div>
 </div> <!--wrapper -->
 
 <div class='footer'>
