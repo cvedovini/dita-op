@@ -33,7 +33,7 @@ import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
 
 public class EditPageTask extends Task {
 
-	private Integer pageid;
+	private Integer postid;
 	private String username;
 	private String password;
 	private String url;
@@ -47,8 +47,8 @@ public class EditPageTask extends Task {
 			throw new BuildException("Service url must be provided");
 		}
 
-		if (pageid == null) {
-			throw new BuildException("Page ID must be provided");
+		if (postid == null) {
+			throw new BuildException("Post ID must be provided");
 		}
 
 		if (username == null || password == null) {
@@ -68,10 +68,10 @@ public class EditPageTask extends Task {
 				content = content.replaceAll("\\s+", " ");
 			}
 
-			getProject().log("Posting page " + pageid + " to " + url);
+			getProject().log("Posting page " + postid + " to " + url);
 			getProject().log(content, Project.MSG_INFO);
 
-			Object[] params = new Object[] { Integer.valueOf(1), pageid,
+			Object[] params = new Object[] { Integer.valueOf(1), postid,
 					username, password, content, publish };
 
 			XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
@@ -108,12 +108,12 @@ public class EditPageTask extends Task {
 		return builder.toString();
 	}
 
-	public Integer getPageid() {
-		return pageid;
+	public Integer getPostid() {
+		return postid;
 	}
 
-	public void setPageid(Integer pageid) {
-		this.pageid = pageid;
+	public void setPostid(int postid) {
+		this.postid = Integer.valueOf(postid);
 	}
 
 	public String getUsername() {
