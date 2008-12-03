@@ -4,6 +4,7 @@
     <title>Getting Started</title>
     <topicmeta>
         <author>claude</author>
+        <category>documentation</category>
     </topicmeta>
     <topicref href="tasks/creating_project.dita" />
     <topicref href="tasks/creating_files.dita" />

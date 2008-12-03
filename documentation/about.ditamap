@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd" >
 <map xml:lang="en-US">
-    <title>About the DITA Open Platform</title>
+    <title>About</title>
     <topicmeta>
         <author>claude</author>
+        <category>documentation</category>
     </topicmeta>
     <topicref href="topics/about.dita">
         <topicref href="topics/license.dita" />

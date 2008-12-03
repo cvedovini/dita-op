@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd" >
 <map xml:lang="en-US">
-    <title>Downloading the DITA Open Platform</title>
+    <title>Download</title>
     <topicmeta>
         <author>claude</author>
+        <category>documentation</category>
     </topicmeta>
     <topicref href="tasks/downloading_doped.dita" />
 </map>
