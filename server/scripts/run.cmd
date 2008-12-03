@@ -1,6 +1,5 @@
 @echo off
 setlocal
 call setenv.cmd
-cd %APACHE_HOME%
-httpd
+httpd -f %DOP_CONF%httpd.conf
 endlocal
