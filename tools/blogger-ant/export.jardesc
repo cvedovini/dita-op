@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="MacRoman"?>
+<jardesc>
+<jar path="/Users/claude/Projects/dita-op/trunk/tools/dita2wp/lib/blogger-ant.jar"/>
+<options buildIfNeeded="true" compress="true" descriptionLocation="/blogger-ant/export.jardesc" exportErrors="false" exportWarnings="true" includeDirectoryEntries="false" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+<storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+<selectedProjects/>
+<manifest generateManifest="false" manifestLocation="/blogger-ant/MANIFEST.MF" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+<sealing sealJar="false">
+<packagesToSeal/>
+<packagesToUnSeal/>
+</sealing>
+</manifest>
+<selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
+<file path="/blogger-ant/README"/>
+<file path="/blogger-ant/COPYING"/>
+<javaElement handleIdentifier="=blogger-ant/src"/>
+</selectedElements>
+</jardesc>
