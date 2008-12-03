@@ -15,15 +15,51 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with The DITA Open Platform.  If not, see <http://www.gnu.org/licenses/>.
 
+This is a DITA Open Toolkit plugin that enables the transformation
+of a ditamap into a single HTML page fragment that can optionally be posted
+to a blogging platform that supports the xmlrpc Blogger API.
 
+Installation:
+	Unzip the plugin in the "plugins" folder of your DITA-OT installation.
+	At the root of your DITA-OT installation run the following command:
+		anf -f integrate.xml 
 
-CREDITS
-
-This product includes work produced by the following organizations, projects or individuals 
-which is distributed under their own copyrights and license terms:
-
- - The OASIS DITA Technical Committee <http://www.oasis-open.org/committees/dita>.
- - The DITA Open Toolkit Project <http://dita-ot.sourceforge.net/>
-       under the Common Public License <http://www.opensource.org/licenses/cpl1.0.php>.
- - Mark James <http://www.famfamfam.com/>
-       under the Creative Commons Attribution 2.5 License <http://creativecommons.org/licenses/by/2.5/>
+Supportes properties:
+	Following are the supported transformation options, those must be provided to 
+	the DITA-OT build process when invoking the "wordpress" transtype.
+	
+	args.input (/path/to/my/map.ditamap):
+		Path to the ditamap to transform
+	
+	out.ext (.inc): 
+		Extension of the output file, defaults to ".inc"
+		
+	args.wp.toc (index):
+		Root file name of the output file, defaults to the ditamap file name
+		
+	dita.extname (.xml):
+		File extention of the DITA topic files, defaults to ".xml"
+		
+	args.wp.xmlrpc (http://myblog.com/xmlrpc.php):
+		The url to the blog's xmlrpc API.
+		if not set the transformation will not post to the post.
+		
+	args.wp.username (admin):
+		Username used to post
+		
+	args.wp.password (password):
+		Password used to post
+		
+	args.wp.postid (2):
+		The id of the post. There must already be an existing post on the blog to 
+		support this transformation, the post will be updated with the transformed
+		content.
+		
+	args.wp.publish (yes|no):
+		Indicates whether or not the post should be published, defaults to "yes".
+		If set to "no" the post will be left draft, unless already published.
+		
+	args.wp.stripspaces (yes|no):
+		If set to "yes" consecutive whitespaces in the transformed content will be
+		reduced to a unique whitespace. Usefull when your blog transforms newlines 
+		in <br> when posting. Defaults to "yes".
