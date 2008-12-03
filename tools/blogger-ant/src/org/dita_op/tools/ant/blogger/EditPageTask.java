@@ -69,7 +69,7 @@ public class EditPageTask extends Task {
 			}
 
 			getProject().log("Posting page " + postid + " to " + url);
-			getProject().log(content, Project.MSG_INFO);
+			getProject().log(content, Project.MSG_VERBOSE);
 
 			Object[] params = new Object[] { Integer.valueOf(1), postid,
 					username, password, content, publish };

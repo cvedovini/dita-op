@@ -18,50 +18,73 @@
     along with The DITA Open Platform.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <project name="dita2wp" default="dita2wordpress">
-    <property name="transtype" value="wordpress" />
+	<property name="transtype" value="wordpress" />
 
-    <import file="../../build_init.xml" />
-    <import file="../../build_preprocess.xml" />
-    <import file="../../build_general.xml" />
+	<import file="../../build_init.xml" />
+	<import file="../../build_preprocess.xml" />
+	<import file="../../build_general.xml" />
 
-    <target name="dita2wordpress"
-        depends="build-init, preprocess, dita.map.wp, copy-revflag">
-    </target>
+	<target name="dita2wordpress" depends="build-init, preprocess, dita.map.wp, copy-revflag, dita2blogger" />
 
-    <target name="dita.map.wp" description="Build WP file">
-        <condition property="out.ext" value=".inc">
-            <not>
-                <isset property="out.ext" />
-            </not>
-        </condition>
+	<target name="wp.init">
+		<condition property="out.ext" value=".inc">
+			<not>
+				<isset property="out.ext" />
+			</not>
+		</condition>
 
-        <condition property="args.wp.toc"
-            value="${dita.map.filename.root}">
-            <not>
-                <isset property="args.wp.toc" />
-            </not>
-        </condition>
+		<condition property="args.wp.toc" value="${dita.map.filename.root}">
+			<not>
+				<isset property="args.wp.toc" />
+			</not>
+		</condition>
+	</target>
+	
+	<target name="dita.map.wp" description="Build WP file" depends="wp.init">
+		<dirname file="${dita.temp.dir}${file.separator}${user.input.file}" 
+			property="dita.merged.dir" />
 
-        <dirname
-            file="${dita.temp.dir}${file.separator}${user.input.file}"
-            property="dita.merged.dir" />
+		<xslt processor="trax" 
+			in="${dita.temp.dir}${file.separator}${user.input.file}" 
+			out="${dita.merged.dir}${file.separator}${dita.map.filename.root}_MERGED.xml" 
+			style="${dita.script.dir}${file.separator}topicmerge.xsl">
+			<xmlcatalog refid="dita.catalog" />
+		</xslt>
 
-        <xslt processor="trax"
-            in="${dita.temp.dir}${file.separator}${user.input.file}"
-            out="${dita.merged.dir}${file.separator}${dita.map.filename.root}_MERGED.xml"
-            style="${dita.script.dir}${file.separator}topicmerge.xsl">
-            <xmlcatalog refid="dita.catalog" />
-        </xslt>
+		<xslt processor="trax" basedir="${dita.temp.dir}" 
+			in="${dita.merged.dir}${file.separator}${dita.map.filename.root}_MERGED.xml" 
+			out="${dita.map.output.dir}${file.separator}${args.wp.toc}${out.ext}" 
+			style="plugins${file.separator}dita2wp${file.separator}xsl${file.separator}map2wppage.xsl" classpathref="dost.class.path">
+			<param name="DITAEXT" expression="${dita.ext}" if="dita.ext" />
+			<param name="OUTEXT" expression="${out.ext}" />
+		</xslt>
 
-        <xslt processor="trax" basedir="${dita.temp.dir}"
-            in="${dita.merged.dir}${file.separator}${dita.map.filename.root}_MERGED.xml"
-            out="${dita.map.output.dir}${file.separator}${args.wp.toc}${out.ext}"
-            style="plugins${file.separator}dita2wp${file.separator}xsl${file.separator}map2wppage.xsl"
-            classpathref="dost.class.path">
-            <param name="DITAEXT" expression="${dita.ext}"
-                if="dita.ext" />
-            <param name="OUTEXT" expression="${out.ext}" />
-        </xslt>
-    </target>
+	</target>
+
+	<target name="dita2blogger" description="Publish the result output to blogger" if="args.wp.xmlrpc" depends="wp.init">
+		<taskdef name="publish" classname="org.dita_op.tools.ant.blogger.EditPageTask">
+			<classpath>
+				<fileset dir="plugins${file.separator}dita2wp${file.separator}lib" includes="*.jar" />
+			</classpath>
+		</taskdef>
+
+		<condition property="args.wp.publish" value="yes">
+			<not>
+				<isset property="args.wp.publish" />
+			</not>
+		</condition>
+
+		<condition property="args.wp.stripspaces" value="yes">
+			<not>
+				<isset property="args.wp.stripspaces" />
+			</not>
+		</condition>
+
+		<publish url="${args.wp.xmlrpc}" 
+			postid="${args.wp.postid}" publish="${args.wp.publish}" 
+			stripspaces="${args.wp.stripspaces}" 
+			username="${args.wp.username}" password="${args.wp.password}" 
+			contentsrc="${dita.map.output.dir}${file.separator}${args.wp.toc}${out.ext}" />
+	</target>
 
 </project>

@@ -18,7 +18,11 @@
     along with The DITA Open Platform.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <xsl:stylesheet version="1.0"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:saxon="http://icl.com/saxon"
+                xmlns:xt="http://www.jclark.com/xt"
+                extension-element-prefixes="saxon xt">
+
                 
 <!-- map2wppage.xsl   main stylesheet
      Merge topics from a DITA map to produce an HTML fragment suitable for inclusion in a Worpress Page.
@@ -32,10 +36,7 @@
                    Default is './'
 -->
 
-<!-- Include error message template -->
-<xsl:import href="../../../xsl/common/output-message.xsl"/>
-
-<xsl:import href="../../../xsl/xslhtml/dita2htmlImpl.xsl"></xsl:import>
+<xsl:import href="dita2wpImpl.xsl"></xsl:import>
 <xsl:import href="../../../xsl/xslhtml/taskdisplay.xsl"></xsl:import>
 <xsl:import href="../../../xsl/xslhtml/refdisplay.xsl"></xsl:import>
 <xsl:import href="../../../xsl/xslhtml/ut-d.xsl"></xsl:import>
@@ -44,16 +45,10 @@
 <xsl:import href="../../../xsl/xslhtml/ui-d.xsl"></xsl:import>
 <xsl:import href="../../../xsl/xslhtml/hi-d.xsl"></xsl:import>
 
-<xsl:output method="html" encoding="UTF-8" indent="no"/>
-
-<!-- Set the prefix for error message numbers -->
-<xsl:variable name="msgprefix">DOTX</xsl:variable>
+<xsl:output method="html" encoding="UTF-8" indent="no" />
 
 <!-- *************************** Command line parameters *********************** -->
 <xsl:param name="OUTEXT" select="'.inc'"/><!-- "htm" and "html" are valid values -->
-<xsl:param name="WORKDIR" select="'./'"/>
-<xsl:param name="DITAEXT" select="'.xml'"/>
-<xsl:param name="FILEREF" select="'file://'"/>
 <!-- the path back to the project. Used for c.gif, delta.gif, css to allow user's to have
   these files in 1 location. -->
 <xsl:param name="PATH2PROJ">
@@ -77,12 +72,25 @@
 </xsl:template>
 
 <xsl:template match="*[contains(@class, ' map/map ')]/*[contains(@class,' topic/title ')]">
+    <title><xsl:value-of select="text()" /></title><xsl:value-of select="$newline" />
+</xsl:template>
+
+<xsl:template match="*[contains(@class, ' map/map ')]/@title">
+    <title><xsl:value-of select="." /></title><xsl:value-of select="$newline" />
 </xsl:template>
 
 <xsl:template match="*[contains(@class, ' map/map ')]/*[contains(@class,' map/topicmeta ')]">
+    <xsl:apply-templates mode="wpmeta"/>
 </xsl:template>
 
-<xsl:template match="*[contains(@class,' topic/related-links ')]" name="topic.related-links">
+<xsl:template match="category" mode="wpmeta">
+    <category><xsl:value-of select="text()" /></category><xsl:value-of select="$newline" />
 </xsl:template>
+
+<!-- Ignore other meta info -->
+<xsl:template match="*" mode="wpmeta" />
+
+<!-- Ignore related links -->
+<xsl:template match="*[contains(@class,' topic/related-links ')]" name="topic.related-links" />
 
 </xsl:stylesheet>
