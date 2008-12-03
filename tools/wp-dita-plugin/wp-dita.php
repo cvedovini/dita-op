@@ -2,7 +2,7 @@
 /*
 Plugin Name: wp-dita
 Plugin URI: http://www.dita-op.org
-Description: Embed default DITA CSS
+Description: Embed default DITA CSS into Wordpress templates
 Version: 1.0
 Author: Claude Vedovini
 Author URI: http://www.dita-op.org
@@ -31,18 +31,5 @@ function dita_head() {
 	$csspath = get_option('siteurl') . DITADIR . 'commonltr.css';
 	echo "<link rel='stylesheet' href='$csspath' type='text/css' media='screen, projection, print' />";
 }
-function include_handler($atts, $content=null) {
-	extract(shortcode_atts(array('path' => ''), $atts));
-	
-	if (is_null($content)) {
-		$path = ABSPATH . $path;
-	} else {
-		$path = ABSPATH . $content;
-	}
-	
-	$result = @file_get_contents($path);
-	return wptexturize($result);
-}
 
 add_action('wp_head', 'dita_head');
-add_shortcode('include', 'include_handler');
