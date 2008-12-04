@@ -23,8 +23,9 @@
          point="org.eclipse.ui.editors">
       <editor
             class="org.dita_op.editor.internal.ui.editors.TopicEditor"
-			contributorClass="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorActionBarContributor"
+            contributorClass="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorActionBarContributor"
             default="true"
+            extensions="dita"
             icon="$nl$/icons/page_code.png"
             id="org.dita_op.editor.TopicEditor"
             name="%TopicEditor.name">
@@ -33,9 +34,10 @@
          </contentTypeBinding>
       </editor>
       <editor
-			class="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart"
-			contributorClass="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorActionBarContributor"
+            class="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart"
+            contributorClass="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorActionBarContributor"
             default="true"
+            extensions="ditamap"
             icon="$nl$/icons/book.png"
             id="org.dita_op.editor.MapEditor"
             name="%MapEditor.name">
@@ -44,9 +46,10 @@
          </contentTypeBinding>
       </editor>
       <editor
-			class="org.dita_op.editor.internal.ui.editors.ProfileEditor"
-			contributorClass="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorActionBarContributor"
+            class="org.dita_op.editor.internal.ui.editors.ProfileEditor"
+            contributorClass="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorActionBarContributor"
             default="true"
+            extensions="ditaval"
             icon="$nl$/icons/page_gear.png"
             id="org.dita_op.editor.ProfileEditor"
             name="%ProfileEditor.name">
