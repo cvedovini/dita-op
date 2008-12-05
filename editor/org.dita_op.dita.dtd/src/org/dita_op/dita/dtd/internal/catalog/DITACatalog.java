@@ -78,7 +78,7 @@ public class DITACatalog implements URIResolverExtension {
 			}
 
 			// Hack to resolve the ditaval.dtd when not in the catalog
-			if (systemId.endsWith("ditaval.dtd")) { //$NON-NLS-1$
+			if (systemId != null && systemId.endsWith("ditaval.dtd")) { //$NON-NLS-1$
 				Bundle bundle = Activator.getDefault().getBundle();
 				URL location = bundle.getEntry("/etc/ditaval.dtd"); //$NON-NLS-1$
 
