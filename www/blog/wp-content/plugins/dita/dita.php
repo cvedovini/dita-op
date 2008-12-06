@@ -25,8 +25,10 @@ You should have received a copy of the GNU General Public License
 along with The DITA Open Platform.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+define ('DITADIR', PLUGINDIR . '/' . basename(dirname(__FILE__)));
+
 function dita_head() {
-	$csspath = get_option('siteurl') . '/' . PLUGINDIR . '/dita/dita.css';
+	$csspath = get_option('siteurl') . '/' . DITADIR . '/dita.css';
 	echo "<link rel='stylesheet' href='$csspath' type='text/css' media='screen, projection, print' />";
 }
 
