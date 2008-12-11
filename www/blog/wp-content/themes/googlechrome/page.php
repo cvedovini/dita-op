@@ -1,7 +1,7 @@
 <?php get_header() ?>    
     <div class='content span-16'>
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<h1><?php the_time('d M y'); ?> <a id="post-<?php the_ID(); ?>" href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h1>       
+			<h1><?php the_time(get_option('date_format')); ?> <a id="post-<?php the_ID(); ?>" href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h1>       
 			<?php the_content(); ?>
 			<?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 			<?php if (function_exists('the_tags')) { ?>
