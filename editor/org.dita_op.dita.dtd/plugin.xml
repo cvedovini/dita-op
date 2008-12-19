@@ -67,6 +67,11 @@
           uri="dtd11/catalog-dita.xml"
           name="%DITACatalog11.name">
     </catalog>
+    <catalog
+          id="org.dita_op.dita.dtd12"
+          name="%DITACatalog12.name"
+          uri="dtd12/catalog-dita.xml">
+    </catalog>
  </extension>
  <extension
        point="org.eclipse.core.runtime.preferences">

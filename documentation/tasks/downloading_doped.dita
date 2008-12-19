@@ -56,7 +56,7 @@
                     <cmd>
                         Choose the
                         <filepath>
-                            doped-1.0.0.M1-20080618-win32.zip
+                            doped-1.0.0.M2-20081218-win32.zip
                         </filepath>
                         zip file.
                     </cmd>
@@ -67,7 +67,7 @@
                         run the
                         <filepath>eclipse.exe</filepath>
                         file contained in the newly created
-                        <filepath>doped-1.0.0.M1-20080618</filepath>
+                        <filepath>doped-1.0.0.M2-20081218</filepath>
                         folder.
                     </cmd>
                 </step>
@@ -390,24 +390,11 @@
         <taskbody>
             <context>
                 <p>
-                    To download the sources you can go to the
-                    <xref scope="external" type="html"
-                        href="http://sourceforge.net/project/showfiles.php?group_id=228491&amp;package_id=276725">
-                        project's download page
-                    </xref>
-                    and choose the
-                    <filepath>
-                        org.dita_op_1.0.0.M1-20080618-src.zip
-                    </filepath>
-                    zip file which contains both the binaries and the
-                    sources.
-                </p>
-                <p>
-                    Or you can download the sources from the SVN source
+                    To download the sources use the SVN source
                     repository. The repository URL is
                     <xref scope="external" type="html"
-                        href="http://svn.dita-op.org/svnroot/dita-op/">
-                        http://svn.dita-op.org/svnroot/dita-op/
+                        href="https://svn.dita-op.org/svnroot/dita-op/">
+                        https://svn.dita-op.org/svnroot/dita-op/
                     </xref>
                     and is anonymously accessible.
                 </p>
