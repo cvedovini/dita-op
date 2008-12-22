@@ -58,8 +58,8 @@
 			<input type="image" src="<?php bloginfo('template_url') ?>/images/transparent.gif" id="searchsubmit" />
 			</form>
             </div>
-	        <a class="menubookmark" href="http://www.addthis.com/bookmark.php" title="Bookmark and Share"></a>&nbsp;
-            <a class="menufeed" href="<?php bloginfo('rss2_url'); ?>" title="Subscribe Feed"></a>&nbsp; 
+	        <a class="menubookmark" href="http://www.addthis.com/bookmark.php" title="Bookmark and Share"></a>
+            <a class="menufeed" href="<?php bloginfo('rss2_url'); ?>" title="Subscribe Feed"></a>
         </div>
         <a class="menuhome" href="<?php bloginfo('url') ?>" title="Home"></a>&nbsp;
         <span class="blogtitle"><a href="<?php bloginfo('url') ?>" title="Home"><?php bloginfo('name') ?></a></span>

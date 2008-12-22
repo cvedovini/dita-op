@@ -2,7 +2,7 @@
     <div class='content span-16'>
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
    			<div <?php if (function_exists('post_class')) { post_class(); } else { echo 'class="post"'; } ?> id="post-<?php the_ID(); ?>">
-                <h1><?php the_time(get_option('date_format')); ?> <a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h1>       
+                <h1><?php the_time('d M y'); ?> <a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h1>       
                 <?php the_content(); ?>
                 <?php if (function_exists('the_tags')) { ?>
                 <?php the_tags('<p>Tags: ', ', ', '</p>'); ?>

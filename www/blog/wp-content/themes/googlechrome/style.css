@@ -2,7 +2,7 @@
 Theme Name: GoogleChrome
 Theme URI: http://ericulous.com/2008/09/09/wp-theme-google-chrome
 Description: Based on Google Chrome Browser
-Version: 1.1
+Version: 1.1.1
 Author: Genkisan
 Author URI: http://ericulous.com/
 Tags: white, blue, fixed width, two columns, widgets
@@ -137,7 +137,7 @@ color: #000;
 
 a.menuhome {
 background: url(images/menuhome.png) no-repeat;
-display: inline-block;
+float: left;
 height: 27px;
 width: 29px;
 }
@@ -148,7 +148,7 @@ background: url(images/menuhome.png) no-repeat 0 -27px;
 
 a.menubookmark {
 background: url(images/menubookmark.png) no-repeat;
-display: inline-block;
+float: left;
 height: 27px;
 width: 29px;
 }
@@ -159,7 +159,8 @@ background: url(images/menubookmark.png) no-repeat 0 -27px;
 
 a.menufeed {
 background: url(images/menufeed.png) no-repeat;
-display: inline-block;
+float: left;
+margin-left: 6px;
 height: 27px;
 width: 29px;
 }
@@ -236,6 +237,10 @@ color: #555;
 
 .content a {
 text-decoration: underline;
+}
+
+.content ul, .content ol {
+padding-left: 1em;
 }
 
 .postmeta {

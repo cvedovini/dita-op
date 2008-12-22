@@ -19,7 +19,7 @@
         <div class='sidebarbox'>
 			<?php if (function_exists('wp_tag_cloud')) { ?>
             <h3>Tag Cloud</h3>
-            <? wp_tag_cloud(); ?>
+            <?php wp_tag_cloud(); ?>
             <?php } ?>
         </div>
         <div class='sidebarboxbottom'><img src="<?php bloginfo('template_url') ?>/images/sidebarbottom.gif" alt="sidebarbottom" /></div>
