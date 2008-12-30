@@ -27,7 +27,7 @@ INSTALLATION
 
 	Unzip the plugin in the "plugins" folder of your DITA-OT installation.
 	At the root of your DITA-OT installation run the following command:
-		anf -f integrate.xml 
+		ant -f integrator.xml 
 
 
 USAGE
