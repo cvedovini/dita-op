@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd" >
+<map id="bi3u5mdctjm2" xml:lang="en-US">
+    <title>Getting started with EasyTrac</title>
+    <topicmeta>
+        <author>claude</author>
+        <category>documentation</category>
+    </topicmeta>
+    <topicref href="tasks/running_the_server.dita" />
+    <topicref href="tasks/verifying_your_installation.dita" />
+    <topicref href="tasks/configuring_the_server.dita" />
+    <topicref href="tasks/creating_a_trac_project.dita" />
+    <topicref href="tasks/adding_users.dita" />
+    <topicref href="tasks/creating_a_build_recipe.dita" />
+    <topicref href="tasks/running_the_build_slave.dita" />
+</map>

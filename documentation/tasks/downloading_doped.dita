@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd" >
 <task id="d3f666f9edad82a" xml:lang="en-US">
-    <title>Downloading the DITA-OP Editor</title>
+    <title>Downloading the Editor</title>
     <prolog>
         <author>claude</author>
     </prolog>
@@ -20,9 +20,8 @@
                     the DITA-OP plugins (and their dependencies), the
                     CVS plugin and
                     <xref href="http://subclipse.tigris.org/"
-                        scope="external" type="html">
-                        Subclipse, the SVN team plugin.
-                    </xref>
+                        scope="external" type="html">Subclipse, 
+                        the SVN team plugin.</xref>
                 </p>
                 <p>
                     Work is still needed on this package to remove
@@ -36,9 +35,8 @@
                     other packages. In the mean time, if you are using
                     another platform please
                     <xref scope="external" type="html"
-                        href="http://www.eclipse.org/downloads/">
-                        download the Eclipse IDE for your platform
-                    </xref>
+                        href="http://www.eclipse.org/downloads/">download 
+                        the Eclipse IDE for your platform</xref>
                     and use one the other download methods.
                 </p>
             </context>
@@ -46,10 +44,9 @@
                 <step>
                     <cmd>
                         Go to the
-                        <xref scope="external" type="html"
-                            href="http://sourceforge.net/project/showfiles.php?group_id=228491&amp;package_id=276725">
-                            project's download page.
-                        </xref>
+                        <xref href="http://sourceforge.net/project/showfiles.php?group_id=228491&amp;package_id=276725"
+                            scope="external" type="html">project's 
+                            download page.</xref>
                     </cmd>
                 </step>
                 <step>
@@ -85,10 +82,9 @@
                 <step>
                     <cmd>
                         Go to the
-                        <xref scope="external" type="html"
-                            href="http://sourceforge.net/project/showfiles.php?group_id=228491&amp;package_id=276725">
-                            project's download page.
-                        </xref>
+                        <xref href="http://sourceforge.net/project/showfiles.php?group_id=228491&amp;package_id=276725"
+                            scope="external" type="html">project's 
+                            download page.</xref>
                     </cmd>
                 </step>
                 <step>
@@ -368,20 +364,14 @@
         <taskbody>
             <context>
                 Nightly builds are available at
-                <xref scope="external" type="html"
-                    href="http://www.pluginbuilder.org">
-                    pluginbuilder.org
-                </xref>
+                <xref href="http://www.pluginbuilder.org" scope="external" 
+                    type="html">pluginbuilder.org</xref>
                 you can either download the latest plugins zip file
-                <xref scope="external" type="html"
-                    href="http://dita-op.pluginbuilder.org/latest">
-                    here
-                </xref>
+                <xref href="http://dita-op.pluginbuilder.org/latest"
+                    scope="external" type="html">here</xref>
                 or use the nightly builds' update site:
-                <xref scope="external" type="html"
-                    href="http://dita-op.pluginbuilder.org/nightly/updateSite">
-                    http://dita-op.pluginbuilder.org/nightly/updateSite
-                </xref>
+                <xref href="http://dita-op.pluginbuilder.org/nightly/updateSite" 
+                    scope="external" type="html">http://dita-op.pluginbuilder.org/nightly/updateSite</xref>
             </context>
         </taskbody>
     </task>
@@ -392,19 +382,16 @@
                 <p>
                     To download the sources use the SVN source
                     repository. The repository URL is
-                    <xref scope="external" type="html"
-                        href="https://svn.dita-op.org/svnroot/dita-op/">
-                        https://svn.dita-op.org/svnroot/dita-op/
-                    </xref>
+                    <xref href="https://svn.dita-op.org/svnroot/dita-op/"
+                        scope="external" type="html">https://svn.dita-op.org/svnroot/dita-op/</xref>
                     and is anonymously accessible.
                 </p>
                 <p>
                     You can refer to this sourceforge page for detailed
                     information about SVN:
-                    <xref scope="external" type="html"
-                        href="http://alexandria.wiki.sourceforge.net/Subversion+-+Version+Control+for+Source+Code">
-                        Subversion - Version Control for Source Code.
-                    </xref>
+                    <xref href="http://alexandria.wiki.sourceforge.net/Subversion+-+Version+Control+for+Source+Code" 
+                        scope="external" type="html">Subversion&nbsp;- 
+                        Version Control for Source Code.</xref>
                 </p>
             </context>
         </taskbody>

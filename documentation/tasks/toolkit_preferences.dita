@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd" >
-<task id="toolkit_preferences" xml:lang="en-US">
+<task id="fasnrq2xdd" xml:lang="en-US">
     <title>Setting up the DITA Open Toolkit</title>
     <prolog>
         <author>claude</author>
@@ -61,9 +61,8 @@
         </steps>
         <result>
             You can now
-            <xref href="toolkit_launch_configuration.dita">
-                create a DITA-OT launch configuration.
-            </xref>
+            <xref href="toolkit_launch_configuration.dita">create a DITA-OT 
+                launch configuration.</xref>
         </result>
     </taskbody>
 </task>

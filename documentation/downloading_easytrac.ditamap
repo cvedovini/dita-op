@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd" >
+<map id="tzis0acuaixl" xml:lang="en-US">
+    <title>Downloading EasyTrac</title>
+    <topicmeta>
+        <author>claude</author>
+        <category>documentation</category>
+    </topicmeta>
+    <topicref href="tasks/downloading_easytrac.dita" />
+</map>

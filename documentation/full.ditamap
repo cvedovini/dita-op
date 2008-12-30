@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd" >
-<map xml:lang="en-US">
+<map id="gqpj4br2a8wt" xml:lang="en-US">
     <title>DITA Open Platform Documentation</title>
     <topicmeta>
         <author>claude</author>
@@ -10,17 +10,20 @@
         <topicref href="topics/copyright.dita" />
         <topicref href="topics/credits.dita" />
     </topicref>
-    <topicref href="tasks/downloading_doped.dita" />
-    <topichead navtitle="Getting started">
+    <topichead navtitle="The Editor">
+        <topicref href="tasks/downloading_doped.dita" />
         <topicref href="tasks/creating_project.dita" />
         <topicref href="tasks/creating_files.dita" />
         <topicref href="tasks/toolkit_preferences.dita" />
         <topicref href="tasks/toolkit_launch_configuration.dita" />
     </topichead>
-    <topichead navtitle="Tasks">
-        <topicref href="tasks/creating_project.dita" />
-        <topicref href="tasks/creating_files.dita" />
-        <topicref href="tasks/toolkit_preferences.dita" />
-        <topicref href="tasks/toolkit_launch_configuration.dita" />
+    <topichead navtitle="EasyTrac">
+        <topicref href="tasks/running_the_server.dita" />
+        <topicref href="tasks/verifying_your_installation.dita" />
+        <topicref href="tasks/configuring_the_server.dita" />
+        <topicref href="tasks/creating_a_trac_project.dita" />
+        <topicref href="tasks/adding_users.dita" />
+        <topicref href="tasks/creating_a_build_recipe.dita" />
+        <topicref href="tasks/running_the_build_slave.dita" />
     </topichead>
 </map>

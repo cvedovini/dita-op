@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd" >
+<task id="bsre4vlvbg4a" xml:lang="en-US">
+    <title>Creating a Trac project</title>
+    <prolog>
+        <author>claude</author>
+    </prolog>
+    <taskbody>
+        <context>
+            Besides the
+            <q>example</q>
+            project that comes with the EasyTrac package you will need
+            to create your own projects to manage your documentation.
+        </context>
+        <steps>
+            <step>
+                <cmd>
+                    Open a Windows command line and go to the
+                    <filepath>C:\dita-op</filepath>
+                    folder.
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Type the
+                    <userinput>
+                        addproject
+                        <varname>projname</varname>
+                    </userinput>
+                    command where
+                    <varname>projname</varname>
+                    is the name of the project you want to create.
+                </cmd>
+            </step>
+        </steps>
+        <result>
+            Once the new project is created, the associated Subversion
+            repository is accessible at <b>http://localhost:8181/svn/<varname>projname</varname></b>
+            and the Trac project is accessible at <b>http://localhost:8181/projects/<varname>projname</varname></b>
+        </result>
+    </taskbody>
+</task>

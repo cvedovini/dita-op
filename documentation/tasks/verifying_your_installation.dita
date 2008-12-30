@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd" >
+<task id="jcmyrt4a3bep" xml:lang="en-US">
+    <title>Verifying your installation</title>
+    <prolog>
+        <author>claude</author>
+    </prolog>
+    <taskbody>
+        <context>
+            <p>
+                Once the server is started it is available on port 8181,
+                it comes with a pre-configured project named
+                <q>example</q>
+                that enables you to test the installation and see how
+                things are working.
+            </p>
+            <p>
+                The following steps will enable you to verify that all
+                the components are properly working.
+            </p>
+        </context>
+    </taskbody>
+    <task id="uyo4e8geouz5">
+        <title>Subversion and the Trac server</title>
+        <taskbody>
+            <steps-unordered>
+                <step>
+                    <cmd>
+                        Open your favorite Internet browser and go to
+                        <xref href="http://locahost:8181" format="html"
+                            scope="external">http://locahost:8181</xref>.
+                    </cmd>
+                    <stepresult>
+                        If you get a page with
+                        <q>It works!</q>
+                        written on it, the HTTP server is properly
+                        working.
+                    </stepresult>
+                </step>
+                <step>
+                    <cmd>
+                        Go to
+                        <xref
+                            href="http://locahost:8181/svn/example/trunk/"
+                            scope="external" 
+                            format="html">http://locahost:8181/svn/example/trunk/</xref>.
+                    </cmd>
+                    <stepresult>
+                        You should get a page titled
+                        <q>Revision 3: /trunk</q>
+                        which lists the sources for the DITA
+                        Architectural Specification and Language
+                        Reference that are used in the
+                        <q>example</q>
+                        project. This indicates the Subversion
+                        installation is properly working.
+                    </stepresult>
+                </step>
+                <step>
+                    <cmd>
+                        Go to
+                        <xref
+                            href="http://locahost:8181/projects/example"
+                            scope="external" format="html">http://locahost:8181/projects/example</xref>.
+                    </cmd>
+                    <stepresult>
+                        This is the Trac project page for the
+                        <q>example</q>
+                        project. From there you can create wiki pages
+                        and browse the project sources using the Trac
+                        source browser (more information on
+                        <xref
+                            href="http://trac.edgewall.org/wiki/TracGuide"
+                            scope="external"
+                            format="html">The Trac User and Administration Guide</xref>)
+                    </stepresult>
+                </step>
+            </steps-unordered>
+        </taskbody>
+    </task>
+    <task id="qn9wqu0ma62w">
+        <title>The continuous integration build</title>
+        <taskbody>
+            <context>
+                <p>
+                    The DITA-OP EasyTrac package is coming with the
+                    <xref href="http://bitten.edgewall.org/"
+                        scope="external" format="html">Bitten Trac plugin</xref>
+                    installed and everything necessary to launch build
+                    configurations produced by the DITA-OP Editor.
+                </p>
+                <p>
+                    The installation already contains the result of a
+                    successful build, the output of this build is
+                    available at
+                    <xref
+                        href="http://localhost:8181/builds/build_ditadoc_1/"
+                        scope="external" 
+                        format="html">http://localhost:8181/builds/build_ditadoc_1/</xref>
+                    but, since Bitten will not build the documentation
+                    again if nothing has changed in Subversion, we have
+                    to invalidate this build before launching the Bitten
+                    slave that will re-build the documentation.
+                </p>
+            </context>
+            <steps>
+                <step>
+                    <cmd>Invalidate the build result.</cmd>
+                    <substeps>
+                        <substep>
+                            <cmd>
+                                Click on the
+                                <menucascade>
+                                    <uicontrol>login</uicontrol>
+                                </menucascade>
+                                link in the upper-right corner of the
+                                project page.
+                            </cmd>
+                            <stepresult>
+                                The browser asks you for your username
+                                and password
+                            </stepresult>
+                        </substep>
+                        <substep>
+                            <cmd>
+                                Enter
+                                <userinput>admin</userinput>
+                                as username and password and validate.
+                            </cmd>
+                        </substep>
+                        <substep>
+                            <cmd>
+                                Click on the
+                                <menucascade>
+                                    <uicontrol>Build Status</uicontrol>
+                                </menucascade>
+                                button in the menu bar.
+                            </cmd>
+                            <stepresult>
+                                This page displays the results of the
+                                continuous integration builds. The one
+                                we need to invalidate should be listed
+                                here, in a green box.
+                            </stepresult>
+                        </substep>
+                        <substep>
+                            <cmd>
+                                Click on the title of the green box.
+                            </cmd>
+                            <stepresult>
+                                You are directed to the details page of
+                                this particular build.
+                            </stepresult>
+                        </substep>
+                        <substep>
+                            <cmd>
+                                Click on the
+                                <uicontrol>Invalidate build</uicontrol>
+                                button.
+                            </cmd>
+                            <stepresult>
+                                No build result should be listed
+                                anymore.
+                            </stepresult>
+                        </substep>
+                    </substeps>
+                </step>
+                <step>
+                    <cmd>
+                        Open a Windows command line and go to the
+                        <filepath>C:\dita-op</filepath>
+                        folder.
+                    </cmd>
+                </step>
+                <step>
+                    <cmd>
+                        Enter the
+                        <userinput>slave example</userinput>
+                        command.
+                    </cmd>
+                    <stepresult>
+                        The console output should log that the slave is
+                        contacting the Trac server then checkout the
+                        files from Subversion and launch the DITA Open
+                        Toolkit builds.
+                    </stepresult>
+                </step>
+                <step>
+                    <cmd>
+                        You can check the progress of the build on the
+                        <wintitle>Build Status</wintitle>
+                        page.
+                    </cmd>
+                </step>
+            </steps>
+        </taskbody>
+    </task>
+</task>

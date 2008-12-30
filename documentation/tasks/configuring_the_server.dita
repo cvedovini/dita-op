@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd" >
+<task id="nhwxs1bu15cn" xml:lang="en-US">
+    <title>Configuring the server</title>
+    <prolog>
+        <author>claude</author>
+    </prolog>
+    <taskbody>
+        <context>
+            There is not much room for configuration, however, in order
+            for the server to be accessible from other computers, the
+            server must be given a public name.
+        </context>
+        <steps>
+            <step>
+                <cmd>
+                    Using your favorite text editor, open the
+                    <filepath>C:\dita-op\setenv.cmd</filepath>
+                    file.
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Locate the line
+                    <codeph>set DOP_HOST=localhost</codeph>
+                    and replace
+                    <codeph>localhost</codeph>
+                    with the public name of your server.
+                </cmd>
+            </step>
+            <step importance="optional">
+                <cmd>
+                    You can also change the port the server is using. In
+                    the
+                    <filepath>C:\dita-op\setenv.cmd</filepath>
+                    file locate the line
+                    <codeph>set DOP_PORT=8181</codeph>
+                    and replace the port
+                    <codeph>8181</codeph>
+                    with the port number of your liking.
+                </cmd>
+            </step>
+            <step>
+                <cmd>Restart the server.</cmd>
+            </step>
+        </steps>
+    </taskbody>
+</task>

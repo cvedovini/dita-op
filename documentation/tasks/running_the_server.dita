@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd" >
+<task id="vefm27u9165j" xml:lang="en-US">
+    <title>Running the server</title>
+    <prolog>
+        <author>claude</author>
+    </prolog>
+    <taskbody>
+        <steps>
+            <step>
+                <cmd>
+                    Open a Windows command line and go to the
+                    <filepath>C:\dita-op</filepath>
+                    folder.
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Enter the
+                    <userinput>run</userinput>
+                    command.
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    To stop the server you will have to type the
+                    <userinput>Ctrl-C</userinput>
+                    key combination.
+                </cmd>
+            </step>
+        </steps>
+        <result>
+            You can now
+            <xref href="verifying_your_installation.dita">verify your 
+                installation.</xref>
+        </result>
+    </taskbody>
+</task>

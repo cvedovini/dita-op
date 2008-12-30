@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd" >
-<task id="creating_project" xml:lang="en-US">
+<task id="p71mf8st5ru" xml:lang="en-US">
     <title>Creating a DITA Project</title>
     <prolog>
         <author>claude</author>
@@ -53,18 +53,15 @@
                 system,
                 <xref
                     href="http://help.eclipse.org/help33/topic/org.eclipse.platform.doc.user/gettingStarted/qs-31a.htm"
-                    scope="external" format="html">
-                    using the file import wizard or drag and dropping
-                </xref>
+                    scope="external" format="html">using 
+                    the file import wizard or drag and dropping</xref>
                 them from your Windows Explorer window into your DITA
                 project.
             </p>
 
             <p>
                 You can also start
-                <xref href="creating_files.dita">
-                    creating new DITA Files
-                </xref>
+                <xref href="creating_files.dita">creating new DITA Files</xref>
                 into your DITA Project.
             </p>
         </result>

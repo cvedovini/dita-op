@@ -10,9 +10,7 @@
             The DITA Open Platform is free software: you can
             redistribute it and/or modify it under the terms of the
             <xref href="http://www.gnu.org/licenses/" scope="external"
-                type="html">
-                GNU General Public License
-            </xref>
+                type="html">GNU General Public License</xref>
             as published by the Free Software Foundation, either version
             3 of the License, or (at your option) any later version.
         </p>
@@ -28,9 +26,7 @@
         <p>
             A copy of the
             <xref href="http://www.gnu.org/licenses/" scope="external"
-                type="html">
-                GNU General Public License
-            </xref>
+                type="html">GNU General Public License</xref>
             is distributed along with The DITA Open Platform.
         </p>
     </body>

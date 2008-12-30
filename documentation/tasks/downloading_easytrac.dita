@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd" >
+<task id="gtwtrbga3yqc" xml:lang="en-US">
+    <title>Downloading EasyTrac</title>
+    <prolog>
+        <author>claude</author>
+    </prolog>
+    <taskbody>
+        <prereq>
+            The DITA-OP EasyTrac requires the Windows operating system
+            and the Java Runtime Environment.
+        </prereq>
+        <context>
+            <p>
+                This package includes everything necessary to run the
+                <xref href="http://trac.edgewall.org/" type="html"
+                    scope="external">Trac open source issue tracking 
+                    system</xref>
+                and the
+                <xref href="http://subversion.tigris.org/" type="html"
+                    scope="external">Subversion open source version control 
+                    system.</xref>
+            </p>
+            <p>
+                It also contains the
+                <xref href="http://dita-ot.sourceforge.net/" type="html"
+                    scope="external">DITA Open Toolkit</xref>
+                to enable continuous building of the documentation.
+            </p>
+        </context>
+        <steps>
+            <step>
+                <cmd>
+                    Go to the
+                    <xref href="https://sourceforge.net/project/showfiles.php?group_id=228491&amp;package_id=280765"
+                        scope="external" type="html">project's download 
+                        page.</xref>
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Choose the
+                    <filepath>
+                        dita-op.easyTrac-1.0.0.M2-20081218-win32.zip
+                    </filepath>
+                    zip file.
+                </cmd>
+            </step>
+            <step>
+                <cmd importance="required">
+                    Unzip the file at the root of your
+                    <filepath>C:</filepath>
+                    drive.
+                </cmd>
+                <stepresult>
+                    You should now have a
+                    <filepath>C:\dita-op</filepath>
+                    folder.
+                </stepresult>
+            </step>
+        </steps>
+    </taskbody>
+</task>

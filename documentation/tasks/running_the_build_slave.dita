@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd" >
+<task id="tq05vlnfgxqs" xml:lang="en-US">
+    <title>Running the build slave</title>
+    <prolog>
+        <author>claude</author>
+    </prolog>
+    <taskbody>
+        <steps>
+            <step>
+                <cmd>
+                    Open a Windows command line and go to the
+                    <filepath>C:\dita-op</filepath>
+                    folder.
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Enter the
+                    <userinput>
+                        slave
+                        <varname>projname</varname>
+                    </userinput>
+                    command where
+                    <varname>projname</varname>
+                    is the name of the project for which you want the
+                    build to run.
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    To stop the slave you will have to type the
+                    <userinput>Ctrl-C</userinput>
+                    key combination.
+                </cmd>
+            </step>
+        </steps>
+        <result>
+            The build slave will run periodically whenever something
+            changed in the Subversion repository. See
+            <xref href="http://bitten.edgewall.org/" format="html"
+                scope="external">The Bitten project</xref>
+            for more information about Bitten and the build slave.
+        </result>
+    </taskbody>
+</task>

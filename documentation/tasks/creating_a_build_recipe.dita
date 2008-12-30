@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd" >
+<task id="qeafsdlh73r4" xml:lang="en-US">
+    <title>Creating a build recipe</title>
+    <prolog>
+        <author>claude</author>
+    </prolog>
+    <taskbody>
+        <context>
+            In order to enable continuous building of your documentation
+            you need to configure a Bitten build recipe. The
+            <q>example</q>
+            project contains one recipe that you can use as an example.
+            Once logged in as an administrator you can see it here:
+            <xref
+                href="http://localhost:8181/projects/example/admin/bitten/configs"
+                scope="external" format="html">
+                http://localhost:8181/projects/example/admin/bitten/configs
+            </xref>
+        </context>
+        <steps>
+            <step>
+                <cmd>
+                    First you need to create a
+                    <xref href="toolkit_launch_configuration.dita">
+                        DITA-OT launch configuration
+                    </xref>
+                    and commit it in Subversion.
+                </cmd>
+                <info>
+                    <p>
+                        There is one limitation though, references to
+                        files cannot be absolute, they must be relative
+                        to the Eclipse workspace. You must use the
+                        <varname>${resource_loc}</varname>
+                        variable to reference files in the workspace.
+                    </p>
+                    <p>
+                        The
+                        <q>example</q>
+                        Subversion repository contains two Eclipse
+                        projects, archspec and langref, that both
+                        contain an example of launch configuration
+                        suitable for continuous integration.
+                    </p>
+                    <p>
+                        You can check them out in Eclipse from the
+                        following Subversion repository URL:
+                        <xref
+                            href="http://localhost:8181/svn/example/trunk/"
+                            scope="external" format="html">
+                            http://localhost:8181/svn/example/trunk/
+                        </xref>
+                    </p>
+                </info>
+            </step>
+            <step>
+                <cmd>
+                    Go to your Trac project page and login as
+                    administrator.
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Open the
+                    <uicontrol>Admin</uicontrol>
+                    panel and select the
+                    <menucascade>
+                        <uicontrol>Builds</uicontrol>
+                        <uicontrol>Configurations</uicontrol>
+                    </menucascade>
+                    section.
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    In the
+                    <uicontrol>Add Configuration</uicontrol>
+                    panel on the right of the page enter a name, a label
+                    and the relative path of the Eclipse workspace in
+                    the Subversion repository (if you follow standard
+                    conventions, this should be
+                    <userinput>trunk</userinput>
+                    )
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Press the
+                    <uicontrol>Add</uicontrol>
+                    button.
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    In the recipe textarea enter the XML build recipe.
+                </cmd>
+                <info>
+                    See
+                    <xref
+                        href="http://bitten.edgewall.org/wiki/Documentation/recipes.html"
+                        format="html" scope="external">
+                        Bitten Build Recipes
+                    </xref>
+                    for more information on build recipes.
+                </info>
+                <stepxmp>
+                    Following is an example:
+                    <codeblock>&lt;build xmlns:dop="http://dita-op.org/tools" 
+    xmlns:svn="http://bitten.cmlenz.net/tools/svn"&gt;
+    &lt;step id="checkout" 
+        description="Checkout source from repository"&gt;
+        &lt;svn:checkout url="http://localhost:8181/svn/projname" 
+            path="${path}" revision="${revision}" /&gt;
+    &lt;/step&gt;
+    &lt;step id="build" 
+        description="Builds the DITA sources"&gt;
+        &lt;dop:dita config="project/dita2html.launch" quiet="true" /&gt;
+    &lt;/step&gt;
+&lt;/build&gt;</codeblock>
+                    A recipe is made of steps, the first step checks out
+                    the DITA sources from the Subversion repository. The
+                    following step uses a DITA-OP recipe command that
+                    executes an Eclipse launch configurations.
+                </stepxmp>
+            </step>
+            <step>
+                <cmd>
+                    Click on the
+                    <uicontrol>Add platform</uicontrol>
+                    button.
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Enter a target platform name but do not add any
+                    rule.
+                </cmd>
+                <info>
+                    This indicates that this build configuration is
+                    valid for any platform, you can call it
+                    <q>Any</q>
+                    or
+                    <q>All</q>
+                    as you like.
+                </info>
+            </step>
+            <step>
+                <cmd>
+                    Press the
+                    <uicontrol>Add</uicontrol>
+                    button.
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Press the
+                    <uicontrol>Save</uicontrol>
+                    button.
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Finally select the
+                    <uicontrol>Active</uicontrol>
+                    checkbox corresponding to the newly created
+                    configuration and finally press the
+                    <uicontrol>Apply changes</uicontrol>
+                    button.
+                </cmd>
+            </step>
+        </steps>
+        <result>
+            Your build configuration is now ready to be executed, you
+            can now
+            <xref href="running_the_build_slave.dita">
+                start the build slave.
+            </xref>
+        </result>
+    </taskbody>
+</task>

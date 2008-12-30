@@ -15,37 +15,27 @@
                     The
                     <xref scope="external"
                         href="http://www.oasis-open.org/committees/dita"
-                        type="html">
-                        OASIS DITA Technical Committee.
-                    </xref>
+                        type="html">OASIS DITA Technical Committee</xref>.
                 </li>
                 <li>
                     The
                     <xref scope="external"
                         href="http://dita-ot.sourceforge.net/"
-                        type="html">
-                        DITA Open Toolkit Project
-                    </xref>
+                        type="html">DITA Open Toolkit Project</xref>
                     (under the
                     <xref scope="external"
                         href="http://www.opensource.org/licenses/cpl1.0.php"
-                        type="html">
-                        Common Public License
-                    </xref>
-                    ).
+                        type="html">Common Public License</xref>).
                 </li>
                 <li>
                     <xref scope="external"
-                        href="http://www.famfamfam.com/" type="html">
-                        Mark James
-                    </xref>
+                        href="http://www.famfamfam.com/" type="html">Mark
+                        James</xref>
                     (under the
                     <xref scope="external"
                         href="http://creativecommons.org/licenses/by/2.5/"
-                        type="html">
-                        Creative Commons Attribution 2.5 License
-                    </xref>
-                    ).
+                        type="html">Creative Commons Attribution 2.5 
+                        License</xref>).
                 </li>
             </ul>
         </p>

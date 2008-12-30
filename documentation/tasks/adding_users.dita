@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd" >
+<task id="ikth7eu6w5e7" xml:lang="en-US">
+    <title>Adding users</title>
+    <prolog>
+        <author>claude</author>
+    </prolog>
+    <taskbody>
+        <context>
+            <p>
+                The Subversion repositories and Trac projects are
+                anonymously accessible in read-only mode. To be able to
+                write into the repositories, edit wiki pages or work
+                Trac tickets, users must be added and given access
+                rights.
+            </p>
+            <p>
+                By default the DITA-OP EasyTrac package comes with only
+                one administrative user whose user name is
+                <q>admin</q>
+                and password is
+                <q>admin</q>.
+            </p>
+        </context>
+        <steps>
+            <step>
+                <cmd>
+                    Open a Windows command line and go to the
+                    <filepath>C:\dita-op</filepath>
+                    folder.
+                </cmd>
+            </step>
+            <step>
+                <cmd>
+                    Type the
+                    <userinput>
+                        adduser
+                        <varname>username</varname>
+                    </userinput>
+                    command where
+                    <varname>username</varname>
+                    is the name of the user you want to create.
+                </cmd>
+                <stepresult>
+                    The system will ask you twice for the user's
+                    password.
+                </stepresult>
+            </step>
+            <step>
+                <cmd>
+                    Go to the Trac project page and login as admin.
+                </cmd>
+            </step>
+            <step importance="optional">
+                <cmd>
+                    By default any authenticated user will have the
+                    necessary rights to use the wiki and work Trac
+                    tickets, however, follow those steps if you want to
+                    give them additional rights.
+                </cmd>
+                <substeps>
+                    <substep>
+                        <cmd>
+                            Click on the
+                            <menucascade>
+                                <uicontrol>Admin</uicontrol>
+                            </menucascade>
+                            menu
+                        </cmd>
+                    </substep>
+                    <substep>
+                        <cmd>
+                            Select the
+                            <menucascade>
+                                <uicontrol>Permission</uicontrol>
+                            </menucascade>
+                            menu on the left-hand side bar and then add
+                            permissions as necessary. See the
+                            <xref format="html" scope="external"
+                                href="http://trac.edgewall.org/wiki/TracPermissions">Trac 
+                                Permissions page</xref>
+                            for more information.
+                        </cmd>
+                    </substep>
+                </substeps>
+            </step>
+        </steps>
+    </taskbody>
+</task>
