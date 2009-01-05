@@ -8,7 +8,11 @@
     <taskbody>
         <context>
             To create DITA-OT launch configurations you first need to
-            specify where the toolkit is installed.
+            specify where the toolkit is installed. If you do not have
+            already a working installation of the toolkit, we recommend
+            you install the
+            <q>full and easy</q>
+            package.
         </context>
         <steps>
             <step>
@@ -41,7 +45,10 @@
             <step>
                 <cmd>
                     Navigate the folder where your installation of the
-                    DITA-OT is located
+                    DITA-OT is located (the
+                    <q>full and easy</q>
+                    package is recommended if you do not have already a
+                    working installation)
                 </cmd>
             </step>
             <step>
@@ -61,8 +68,9 @@
         </steps>
         <result>
             You can now
-            <xref href="toolkit_launch_configuration.dita">create a DITA-OT 
-                launch configuration.</xref>
+            <xref href="toolkit_launch_configuration.dita">
+                create a DITA-OT launch configuration.
+            </xref>
         </result>
     </taskbody>
 </task>
