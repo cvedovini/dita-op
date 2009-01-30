@@ -27,8 +27,8 @@
                 <step>
                     <cmd>
                         Open your favorite Internet browser and go to
-                        <xref href="http://locahost:8181" format="html"
-                            scope="external">http://locahost:8181</xref>.
+                        <xref href="http://localhost:8181" format="html"
+                            scope="external">http://localhost:8181</xref>.
                     </cmd>
                     <stepresult>
                         If you get a page with
@@ -41,9 +41,9 @@
                     <cmd>
                         Go to
                         <xref
-                            href="http://locahost:8181/svn/example/trunk/"
+                            href="http://localhost:8181/svn/example/trunk/"
                             scope="external" 
-                            format="html">http://locahost:8181/svn/example/trunk/</xref>.
+                            format="html">http://localhost:8181/svn/example/trunk/</xref>.
                     </cmd>
                     <stepresult>
                         You should get a page titled
@@ -60,8 +60,8 @@
                     <cmd>
                         Go to
                         <xref
-                            href="http://locahost:8181/projects/example"
-                            scope="external" format="html">http://locahost:8181/projects/example</xref>.
+                            href="http://localhost:8181/projects/example"
+                            scope="external" format="html">http://localhost:8181/projects/example</xref>.
                     </cmd>
                     <stepresult>
                         This is the Trac project page for the
