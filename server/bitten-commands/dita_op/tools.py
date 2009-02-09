@@ -65,7 +65,7 @@ def dita(ctx, config, output_dir=None, quiet=False, keep_going=False):
         if node.attributes['key'].value == 'other.args':
             for entry in node.getElementsByTagName('mapEntry'):
                 value = workspace_resolve(ctx, entry.getAttribute('value'))
-                args.append('-D%s=%s' % ( entry.getAttribute('key'), ctx.resolve(value) ))
+                args.append('-D%s=%s' % ( entry.getAttribute('key'), value ))
 
     if not ditamap:
         ctx.error('No ditamap provided')
@@ -84,7 +84,7 @@ def workspace_resolve(ctx, path):
     m = re.match('^\${resource_loc:/(.*)}$', path)
 
     if m:
-        result = m.group(1)
+        result = ctx.resolve(m.group(1))
     
     return result
 
@@ -116,7 +116,7 @@ def dita2(ctx, ditamap, output_dir, transtype='xhtml', ditaval=None, tempdir=Non
             args += ['-quiet']
 
     if ditaval:
-        args += ['-Ddita.input.valfile=%s' % ditaval]
+        args += ['-Ddita.input.valfile=%s' % ctx.resolve(ditaval)]
 
     args += ['-Ddita.dir=%s' % dita_home]
     args += ['-Dargs.input=%s' % ctx.resolve(ditamap)]
