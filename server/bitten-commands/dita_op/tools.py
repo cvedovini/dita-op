@@ -46,6 +46,7 @@ def dita(ctx, config, output_dir=None, quiet=False, keep_going=False):
         return
     
     ditamap = None
+    ditaval = None
     transtype = 'xhtml'
     args = []
     vmargs = None
@@ -54,45 +55,47 @@ def dita(ctx, config, output_dir=None, quiet=False, keep_going=False):
         if node.getAttribute('key') == 'transtype':
             transtype = node.getAttribute('value')
         elif node.getAttribute('key') == 'args.input':
-            ditamap = node.getAttribute('value')
+            ditamap = workspace_resolve(ctx, node.getAttribute('value'))
+        elif node.getAttribute('key') == 'dita.input.valfile':
+            ditaval = workspace_resolve(ctx, node.getAttribute('value'))
         elif node.getAttribute('key') == 'org.eclipse.jdt.launching.VM_ARGUMENTS':
             vmargs = node.getAttribute('value')
     
     for node in root.getElementsByTagName('mapAttribute'):
         if node.attributes['key'].value == 'other.args':
             for entry in node.getElementsByTagName('mapEntry'):
-                args.append('-D%s=%s' % ( entry.getAttribute('key'), workspace_resolve(ctx, entry.getAttribute('value')) ))
+                value = workspace_resolve(ctx, entry.getAttribute('value'))
+                args.append('-D%s=%s' % ( entry.getAttribute('key'), ctx.resolve(value) ))
 
     if not ditamap:
         ctx.error('No ditamap provided')
         return
 
-    ditamap = workspace_resolve(ctx, ditamap)
-    args = ' '.join(args)
     configname = os.path.basename(os.path.splitext(config)[0])
     tempdir = os.path.join(os.getenv('TEMP', 'C:\\temp'), 'dop', configname)
 
     if not output_dir:
         output_dir = os.path.join(os.environ['DOP_HOME'], 'output', os.path.basename(ctx.basedir), configname)
 
-    dita2(ctx, ditamap, output_dir, transtype, tempdir, quiet, keep_going, args, vmargs)
+    dita2(ctx, ditamap, output_dir, transtype, ditaval, tempdir, quiet, keep_going, args, vmargs)
 
 def workspace_resolve(ctx, path):
     result = path
     m = re.match('^\${resource_loc:/(.*)}$', path)
 
     if m:
-        result = ctx.resolve(m.group(1))
+        result = m.group(1)
     
     return result
 
-def dita2(ctx, ditamap, output_dir, transtype='xhtml', tempdir=None, quiet=False, keep_going=False, args=None, vmargs=None):
+def dita2(ctx, ditamap, output_dir, transtype='xhtml', ditaval=None, tempdir=None, quiet=False, keep_going=False, args=None, vmargs=None):
     """Runs a DITA-OT transformation.
     
     :param ctx: the build context
     :type ctx: `Context`
-    :param ditamap: name of the ditamap file
+    :param ditamap: path to the ditamap file
     :param transtype: name of the transformation that should be run (optional, defaults to 'xhtml')
+    :param ditaval: path to the processing profile (optional)
     :param output_dir: destination of the output (optional)
     :param keep_going: whether the toolkit should keep going when errors are encountered (optional, defaults to False)
     :param args: additional arguments to pass to the toolkit (optional)
@@ -105,22 +108,26 @@ def dita2(ctx, ditamap, output_dir, transtype='xhtml', tempdir=None, quiet=False
         tempdir = 'temp'
         
     if not args:    
-        args = ''
+        args = []
 
     if quiet:
-        args += ' -quiet'
+        quiet = quiet.lower()
+        if quiet == 'true' or quiet == 'yes':
+            args += ['-quiet']
 
-    args += ' -Ddita.dir=%s' % dita_home
-    args += ' -Dargs.input=%s' % ctx.resolve(ditamap)
-    args += ' -Dtranstype=%s' % transtype
-    args += ' -Ddita.temp.dir=%s' % ctx.resolve(tempdir)
-    args += ' -Dclean.temp=yes'
-    args += ' -Doutput.dir=%s' % ctx.resolve(output_dir)
-    args += ' -lib ' + dita_lib
-    args = args.replace('\\', '/')
+    if ditaval:
+        args += ['-Ddita.input.valfile=%s' % ditaval]
+
+    args += ['-Ddita.dir=%s' % dita_home]
+    args += ['-Dargs.input=%s' % ctx.resolve(ditamap)]
+    args += ['-Dtranstype=%s' % transtype]
+    args += ['-Ddita.temp.dir=%s' % ctx.resolve(tempdir)]
+    args += ['-Dclean.temp=yes']
+    args += ['-Doutput.dir=%s' % ctx.resolve(output_dir)]
+    args += ['-lib', dita_lib]
 
     os.environ['ANT_OPTS'] = vmargs or ''
-    ant(ctx, build_file, 'init', keep_going, str(args))
+    ant(ctx, build_file, 'init', keep_going, args)
     del os.environ['ANT_OPTS']
 
 
@@ -139,19 +146,20 @@ def ant(ctxt, file_=None, target=None, keep_going=False, args=None):
     if ant_home:
         executable = os.path.join(ant_home, 'bin', 'ant')
 
-    if args:
-        args = shlex.split(args)
-    else:
+    if not args:
         args = []
         
     args += ['-noinput']
+    
     if file_:
         args += ['-buildfile', ctxt.resolve(file_)]
+        
     if keep_going:
-        args.append('-keep-going')
-    if target:
-        args.append(target)
+        args += ['-keep-going']
 
-    returncode = shtools.execute(ctxt, file_='ant', args=args)
+    if target:
+        args += [target]
+
+    returncode = shtools.execute(ctxt, file_=executable, args=args)
     if returncode != 0:
         ctxt.error('Ant failed (%s)' % returncode)
