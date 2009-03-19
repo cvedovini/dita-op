@@ -16,6 +16,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.wst.sse.ui,
  org.eclipse.wst.common.uriresolver,
  org.eclipse.ui.forms,
- org.eclipse.core.filesystem
+ org.eclipse.core.filesystem,
+ org.eclipse.wst.validation,
+ org.dita_op.core.ui,
+ com.ibm.icu
 Eclipse-LazyStart: true
 Bundle-Localization: plugin

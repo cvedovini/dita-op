@@ -168,23 +168,25 @@ public class DOSTLaunchDelegate extends LaunchConfigurationDelegate {
 	private IRuntimeClasspathEntry[] getCurrentClasspath(File ditadir) {
 		List<IRuntimeClasspathEntry> fullClasspath = new ArrayList<IRuntimeClasspathEntry>();
 
-		File[] ditalibs = new File(ditadir, "lib") //$NON-NLS-1$
-		.listFiles(new FilenameFilter() {
-
+		File ditalibfolder = new File(ditadir, "lib"); //$NON-NLS-1$
+		File[] ditalibs = ditalibfolder.listFiles(new FilenameFilter() {
 			public boolean accept(File file, String name) {
 				return (name.endsWith(".jar") || name.endsWith(".zip")); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 		});
 
+		IPath path = new Path(ditalibfolder.getAbsolutePath());
+		fullClasspath.add(JavaRuntime.newArchiveRuntimeClasspathEntry(path));
+
 		for (File ditalib : ditalibs) {
-			IPath path = new Path(ditalib.getAbsolutePath());
+			path = new Path(ditalib.getAbsolutePath());
 			fullClasspath.add(JavaRuntime.newArchiveRuntimeClasspathEntry(path));
 		}
 
 		AntCorePreferences preferences = AntCorePlugin.getPlugin().getPreferences();
 
 		for (URL url : preferences.getURLs()) {
-			IPath path = new Path(url.getPath());
+			path = new Path(url.getPath());
 			fullClasspath.add(JavaRuntime.newArchiveRuntimeClasspathEntry(path));
 		}
 

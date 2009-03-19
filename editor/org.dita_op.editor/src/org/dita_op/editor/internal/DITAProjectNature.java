@@ -18,7 +18,6 @@
  */
 package org.dita_op.editor.internal;
 
-import org.dita_op.editor.internal.builders.DITAFileValidator;
 import org.eclipse.core.resources.ICommand;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
@@ -27,6 +26,8 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 
 public class DITAProjectNature implements IProjectNature {
+
+	private static final String WST_VALIDATIONBUILDER_ID = "org.eclipse.wst.validation.validationbuilder"; //$NON-NLS-1$
 
 	/**
 	 * ID of this project nature
@@ -44,8 +45,7 @@ public class DITAProjectNature implements IProjectNature {
 		ICommand[] commands = desc.getBuildSpec();
 
 		for (int i = 0; i < commands.length; ++i) {
-			if (commands[i].getBuilderName().equals(
-					DITAFileValidator.BUILDER_ID)) {
+			if (commands[i].getBuilderName().equals(WST_VALIDATIONBUILDER_ID)) {
 				return;
 			}
 		}
@@ -53,7 +53,7 @@ public class DITAProjectNature implements IProjectNature {
 		ICommand[] newCommands = new ICommand[commands.length + 1];
 		System.arraycopy(commands, 0, newCommands, 0, commands.length);
 		ICommand command = desc.newCommand();
-		command.setBuilderName(DITAFileValidator.BUILDER_ID);
+		command.setBuilderName(WST_VALIDATIONBUILDER_ID);
 		newCommands[newCommands.length - 1] = command;
 		desc.setBuildSpec(newCommands);
 		project.setDescription(desc, null);
@@ -65,9 +65,9 @@ public class DITAProjectNature implements IProjectNature {
 	public void deconfigure() throws CoreException {
 		IProjectDescription description = getProject().getDescription();
 		ICommand[] commands = description.getBuildSpec();
+
 		for (int i = 0; i < commands.length; ++i) {
-			if (commands[i].getBuilderName().equals(
-					DITAFileValidator.BUILDER_ID)) {
+			if (commands[i].getBuilderName().equals(WST_VALIDATIONBUILDER_ID)) {
 				ICommand[] newCommands = new ICommand[commands.length - 1];
 				System.arraycopy(commands, 0, newCommands, 0, i);
 				System.arraycopy(commands, i + 1, newCommands, i,
@@ -124,5 +124,26 @@ public class DITAProjectNature implements IProjectNature {
 		newNatures[natures.length] = DITAProjectNature.NATURE_ID;
 		description.setNatureIds(newNatures);
 		project.setDescription(description, monitor);
+	}
+
+	public static void migrate(IProject project, IProgressMonitor monitor)
+			throws CoreException {
+		IProjectDescription description = project.getDescription();
+		ICommand[] commands = description.getBuildSpec();
+
+		for (int i = 0; i < commands.length; ++i) {
+			if (commands[i].getBuilderName().equals(
+					"org.dita_op.editor.DITAFileValidator")) { //$NON-NLS-1$
+				ICommand[] newCommands = new ICommand[commands.length];
+				System.arraycopy(commands, 0, newCommands, 0, commands.length);
+
+				newCommands[i] = description.newCommand();
+				newCommands[i].setBuilderName(WST_VALIDATIONBUILDER_ID);
+
+				description.setBuildSpec(newCommands);
+				project.setDescription(description, monitor);
+				return;
+			}
+		}
 	}
 }

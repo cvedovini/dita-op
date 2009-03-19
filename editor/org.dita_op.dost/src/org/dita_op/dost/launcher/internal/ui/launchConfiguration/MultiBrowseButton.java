@@ -18,6 +18,7 @@
  */
 package org.dita_op.dost.launcher.internal.ui.launchConfiguration;
 
+import org.dita_op.core.ui.dialogs.FileSelectionDialog;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IPath;
@@ -40,7 +41,6 @@ import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.dialogs.ContainerSelectionDialog;
-import org.eclipse.ui.externaltools.internal.ui.FileSelectionDialog;
 
 public class MultiBrowseButton {
 

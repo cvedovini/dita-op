@@ -32,7 +32,7 @@
 			name="%TopicContentType.name">
 		</content-type>
 		<content-type base-type="org.dita_op.dita"
-			file-extensions="ditamap" id="org.dita_op.dita.map"
+			file-extensions="ditamap, bookmap" id="org.dita_op.dita.map"
 			name="%MapContentType.name">
 		</content-type>
       <content-type

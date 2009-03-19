@@ -18,7 +18,7 @@
  */
 package org.dita_op.editor.internal;
 
-import org.dita_op.editor.internal.ui.editors.PreviewTemplates;
+import org.dita_op.editor.internal.ui.editors.topic.PreviewTemplates;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.resource.ImageDescriptor;
@@ -79,6 +79,10 @@ public class Activator extends AbstractUIPlugin {
 
 	public void log(int severity, Exception e) {
 		getLog().log(newStatus(severity, e));
+	}
+
+	public void log(IStatus status) {
+		getLog().log(status);
 	}
 
 	public void log(int severity, String message) {

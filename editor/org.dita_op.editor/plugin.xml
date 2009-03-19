@@ -22,7 +22,7 @@
    <extension
          point="org.eclipse.ui.editors">
       <editor
-            class="org.dita_op.editor.internal.ui.editors.TopicEditor"
+            class="org.dita_op.editor.internal.ui.editors.topic.TopicEditor"
             contributorClass="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorActionBarContributor"
             default="true"
             extensions="dita"
@@ -34,10 +34,10 @@
          </contentTypeBinding>
       </editor>
       <editor
-            class="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart"
+            class="org.dita_op.editor.internal.ui.editors.map.MapEditor"
             contributorClass="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorActionBarContributor"
             default="true"
-            extensions="ditamap"
+            extensions="ditamap, bookmap"
             icon="$nl$/icons/book.png"
             id="org.dita_op.editor.MapEditor"
             name="%MapEditor.name">
@@ -46,7 +46,7 @@
          </contentTypeBinding>
       </editor>
       <editor
-            class="org.dita_op.editor.internal.ui.editors.ProfileEditor"
+            class="org.dita_op.editor.internal.ui.editors.profile.ProfileEditor"
             contributorClass="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorActionBarContributor"
             default="true"
             extensions="ditaval"
@@ -59,17 +59,6 @@
       </editor>
    </extension>
    <extension
-         id="DITAFileValidator"
-         name="DITA File Validator"
-         point="org.eclipse.core.resources.builders">
-      <builder
-            hasNature="true">
-         <run
-               class="org.dita_op.editor.internal.builders.DITAFileValidator">
-         </run>
-      </builder>
-   </extension>
-   <extension
          id="DITAProjectNature"
          name="DITA Project Nature"
          point="org.eclipse.core.resources.natures">
@@ -79,15 +68,37 @@
          </run>
       </runtime>
       <builder
-            id="org.dita_op.editor.DITAFileValidator">
+            id="org.eclipse.wst.validation.validationbuilder">
       </builder>
    </extension>
    <extension
-         id="DITAProblem"
+         id="problem"
          name="DITA Problem"
          point="org.eclipse.core.resources.markers">
       <super
-            type="org.eclipse.core.resources.problemmarker">
+            type="org.eclipse.wst.validation.problemmarker">
+      </super>
+      <persistent
+            value="true">
+      </persistent>
+   </extension>
+   <extension
+         id="invalidScope"
+         name="Invalid Scope"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.dita_op.editor.problem">
+      </super>
+      <persistent
+            value="true">
+      </persistent>
+   </extension>
+   <extension
+         id="missingTarget"
+         name="Missing referenced target"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.dita_op.editor.problem">
       </super>
       <persistent
             value="true">
@@ -102,14 +113,14 @@
             icon="$nl$/icons/book.png"
             id="org.dita_op.editor.template.map"
             name="%MapTemplate.name">
-         <pattern><![CDATA[<?xml version="1.0" encoding="${encoding}"?>
-<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd" >
-<map xml:lang="${lang}">
-	<title>${cursor}</title>
-	<topicmeta>
-		<author>${user}</author>
-	</topicmeta>
-</map>]]></pattern>
+         <pattern>&lt;?xml version=&quot;1.0&quot; encoding=&quot;${encoding}&quot;?&gt;
+&lt;!DOCTYPE map PUBLIC &quot;-//OASIS//DTD DITA Map//EN&quot; &quot;map.dtd&quot; &gt;
+&lt;map xml:lang=&quot;${lang}&quot;&gt;
+	&lt;title&gt;${cursor}&lt;/title&gt;
+	&lt;topicmeta&gt;
+		&lt;author&gt;${user}&lt;/author&gt;
+	&lt;/topicmeta&gt;
+&lt;/map&gt;</pattern>
       </template>
       <template
             autoinsert="true"
@@ -134,15 +145,15 @@
             icon="$nl$/icons/page_code.png"
             id="org.dita_op.editor.template.topic"
             name="%TopicTemplate.name">
-         <pattern><![CDATA[<?xml version="1.0" encoding="${encoding}"?>
-<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="${id}" xml:lang="${lang}">
-	<title>${cursor}</title>
-	<prolog>
-		<author>${user}</author>
-	</prolog>
-	<body></body>
-</topic>]]></pattern>
+         <pattern>&lt;?xml version=&quot;1.0&quot; encoding=&quot;${encoding}&quot;?&gt;
+&lt;!DOCTYPE topic PUBLIC &quot;-//OASIS//DTD DITA Topic//EN&quot; &quot;topic.dtd&quot;&gt;
+&lt;topic id=&quot;${id}&quot; xml:lang=&quot;${lang}&quot;&gt;
+	&lt;title&gt;${title}&lt;/title&gt;
+	&lt;prolog&gt;
+		&lt;author&gt;${user}&lt;/author&gt;
+	&lt;/prolog&gt;
+	&lt;body&gt;&lt;/body&gt;
+&lt;/topic&gt;</pattern>
       </template>
       <template
             autoinsert="true"
@@ -151,15 +162,15 @@
             icon="$nl$/icons/page_code.png"
             id="org.dita_op.editor.template.concept"
             name="%ConceptTemplate.name">
-         <pattern><![CDATA[<?xml version="1.0" encoding="${encoding}"?>
-<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="${id}" xml:lang="${lang}">
-	<title>${cursor}</title>
-	<prolog>
-		<author>${user}</author>
-	</prolog>
-	<conbody></conbody>
-</concept>]]></pattern>
+         <pattern>&lt;?xml version=&quot;1.0&quot; encoding=&quot;${encoding}&quot;?&gt;
+&lt;!DOCTYPE concept PUBLIC &quot;-//OASIS//DTD DITA Concept//EN&quot; &quot;concept.dtd&quot;&gt;
+&lt;concept id=&quot;${id}&quot; xml:lang=&quot;${lang}&quot;&gt;
+	&lt;title&gt;${title}&lt;/title&gt;
+	&lt;prolog&gt;
+		&lt;author&gt;${user}&lt;/author&gt;
+	&lt;/prolog&gt;
+	&lt;conbody&gt;&lt;/conbody&gt;
+&lt;/concept&gt;</pattern>
       </template>
       <template
             autoinsert="true"
@@ -168,15 +179,15 @@
             icon="$nl$/icons/page_code.png"
             id="org.dita_op.editor.template.task"
             name="%TaskTemplate.name">
-         <pattern><![CDATA[<?xml version="1.0" encoding="${encoding}"?>
-<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd" >
-<task id="${id}" xml:lang="${lang}">
-	<title>${cursor}</title>
-	<prolog>
-		<author>${user}</author>
-	</prolog>
-	<taskbody></taskbody>
-</task>]]></pattern>
+         <pattern>&lt;?xml version=&quot;1.0&quot; encoding=&quot;${encoding}&quot;?&gt;
+&lt;!DOCTYPE task PUBLIC &quot;-//OASIS//DTD DITA Task//EN&quot; &quot;task.dtd&quot; &gt;
+&lt;task id=&quot;${id}&quot; xml:lang=&quot;${lang}&quot;&gt;
+	&lt;title&gt;${title}&lt;/title&gt;
+	&lt;prolog&gt;
+		&lt;author&gt;${user}&lt;/author&gt;
+	&lt;/prolog&gt;
+	&lt;taskbody&gt;&lt;/taskbody&gt;
+&lt;/task&gt;</pattern>
       </template>
       <template
             autoinsert="true"
@@ -185,15 +196,15 @@
             icon="$nl$/icons/page_code.png"
             id="org.dita_op.editor.template.reference"
             name="%ReferenceTemplate.name">
-         <pattern><![CDATA[<?xml version="1.0" encoding="${encoding}"?>
-<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd" >
-<reference id="${id}" xml:lang="${lang}">
-	<title>${cursor}</title>
-	<prolog>
-		<author>${user}</author>
-	</prolog>
-	<refbody></refbody>
-</reference>]]></pattern>
+         <pattern>&lt;?xml version=&quot;1.0&quot; encoding=&quot;${encoding}&quot;?&gt;
+&lt;!DOCTYPE reference PUBLIC &quot;-//OASIS//DTD DITA Reference//EN&quot; &quot;reference.dtd&quot; &gt;
+&lt;reference id=&quot;${id}&quot; xml:lang=&quot;${lang}&quot;&gt;
+	&lt;title&gt;${title}&lt;/title&gt;
+	&lt;prolog&gt;
+		&lt;author&gt;${user}&lt;/author&gt;
+	&lt;/prolog&gt;
+	&lt;refbody&gt;&lt;/refbody&gt;
+&lt;/reference&gt;</pattern>
       </template>
       <resolver
             class="org.dita_op.editor.internal.ui.templates.LocaleVariableResolver"
@@ -294,9 +305,139 @@
    <extension
          point="org.eclipse.wst.sse.ui.editorConfiguration">
       <sourceViewerConfiguration
-            class="org.dita_op.editor.internal.ui.editors.TopicSourceViewerConfiguration"
+            class="org.dita_op.editor.internal.ui.editors.DITASourceViewerConfiguration"
             target="org.dita_op.dita.topic, org.dita_op.dita.map">
       </sourceViewerConfiguration>
+   </extension>
+   <extension
+         point="org.eclipse.ui.ide.markerResolution">
+      <markerResolutionGenerator
+            class="org.dita_op.editor.ui.quickfix.MissingTargetResolutionGenerator"
+            markerType="org.dita_op.editor.missingTarget">
+      </markerResolutionGenerator>
+   </extension>
+   <extension
+         id="ScopeValidator"
+         name="%ScopeValidator.name"
+         point="org.eclipse.wst.validation.validator">
+      <validator>
+         <run
+               async="true"
+               class="org.dita_op.editor.internal.validation.ScopeValidator"
+               enabled="true"
+               fullBuild="true"
+               incremental="true">
+         </run>
+         <contentTypeBinding
+               contentTypeId="org.dita_op.dita">
+         </contentTypeBinding>
+         <projectNature
+               id="org.dita_op.editor.DITAProjectNature"
+               include="true">
+         </projectNature>
+         <markerId
+               markerIdValue="invalidScope">
+         </markerId>
+         <dependentValidator
+               depValValue="true">
+         </dependentValidator>
+         <helper
+               class="org.eclipse.wst.xml.core.internal.validation.core.Helper">
+         </helper>
+      </validator>
+   </extension>
+   <extension
+         point="org.eclipse.wst.sse.ui.sourcevalidation">
+      <validator
+            class="org.dita_op.editor.internal.validation.ScopeValidator"
+            id="org.dita_op.editor.internal.validation.ScopeValidator"
+            scope="total">
+         <contentTypeIdentifier
+               id="org.dita_op.dita">
+            <partitionType
+                  id="org.eclipse.wst.xml.XML_DEFAULT">
+            </partitionType></contentTypeIdentifier>
+      </validator>
+   </extension>
+   <extension
+         id="TargetValidator"
+         name="%TargetValidator.name"
+         point="org.eclipse.wst.validation.validator">
+      <validator>
+         <run
+               async="true"
+               class="org.dita_op.editor.internal.validation.TargetValidator"
+               enabled="true"
+               fullBuild="true"
+               incremental="true">
+         </run>
+         <contentTypeBinding
+               contentTypeId="org.dita_op.dita">
+         </contentTypeBinding>
+         <projectNature
+               id="org.dita_op.editor.DITAProjectNature"
+               include="true">
+         </projectNature>
+         <markerId
+               markerIdValue="missingTarget">
+         </markerId>
+         <dependentValidator
+               depValValue="true">
+         </dependentValidator>
+         <helper
+               class="org.eclipse.wst.xml.core.internal.validation.core.Helper">
+         </helper>
+      </validator>
+   </extension>
+   <extension
+         id="MarkupValidator"
+         name="%MarkupValidator.name"
+         point="org.eclipse.wst.validation.validator">
+      <validator>
+         <run
+               async="true"
+               class="org.dita_op.editor.internal.validation.MarkupValidator"
+               enabled="true"
+               fullBuild="true"
+               incremental="true">
+         </run>
+         <contentTypeBinding
+               contentTypeId="org.dita_op.dita">
+         </contentTypeBinding>
+         <projectNature
+               id="org.dita_op.editor.DITAProjectNature"
+               include="true">
+         </projectNature>
+         <dependentValidator
+               depValValue="true">
+         </dependentValidator>
+         <helper
+               class="org.eclipse.wst.xml.core.internal.validation.core.Helper">
+         </helper>
+      </validator>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="org.dita_op.editor.contribution1"
+            objectClass="org.eclipse.core.resources.IProject">
+         <menu
+               id="org.dita_op.editor.menu"
+               label="%menu.label"
+               path="additions">
+            <separator
+                  name="additions">
+            </separator>
+         </menu>
+         <action
+               class="org.dita_op.editor.actions.MigrateToM3"
+               enablesFor="1"
+               id="org.dita_op.editor.newAction"
+               label="%action.migrate.label"
+               menubarPath="org.dita_op.editor.menu/additions"
+               tooltip="%action.migrate.tooltip">
+         </action>
+      </objectContribution>
    </extension>
 
 </plugin>

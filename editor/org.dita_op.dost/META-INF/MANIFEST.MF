@@ -15,7 +15,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui.ide,
  org.eclipse.jdt.launching,
  org.dita_op.dita.dtd;resolution:=optional,
- org.apache.xerces
+ org.apache.xerces,
+ org.dita_op.core.ui
 Eclipse-LazyStart: true
 Bundle-ClassPath: .
 Bundle-Activator: org.dita_op.dost.launcher.internal.Activator

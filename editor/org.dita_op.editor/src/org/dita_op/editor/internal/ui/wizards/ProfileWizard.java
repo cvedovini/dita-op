@@ -26,7 +26,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.text.MessageFormat;
 
 import org.dita_op.editor.internal.Activator;
-import org.dita_op.editor.internal.ui.editors.model.ProfileModel;
+import org.dita_op.editor.internal.ui.editors.profile.model.ProfileModel;
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;

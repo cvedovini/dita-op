@@ -69,8 +69,8 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
 @SuppressWarnings("restriction")//$NON-NLS-1$
-abstract class XMLEditorWithHTMLPreview extends MultiPageEditorPart implements
-		IResourceChangeListener, EntityResolver {
+public abstract class XMLEditorWithHTMLPreview extends MultiPageEditorPart
+		implements IResourceChangeListener, EntityResolver {
 
 	/** The xml sourceEditor used in page 0. */
 	private StructuredTextEditor sourceEditor;
