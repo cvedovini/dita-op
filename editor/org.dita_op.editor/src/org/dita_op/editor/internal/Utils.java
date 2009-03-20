@@ -28,7 +28,7 @@ public class Utils {
 		sl = 0;
 		for (i = baseLen = baseStr.length(); --i >= 0;) {
 			if (baseStr.charAt(i) == '/') {
-				sbuf.append("../");
+				sbuf.append("../"); //$NON-NLS-1$
 			}
 		}
 
@@ -40,9 +40,9 @@ public class Utils {
 		// First is unicode canonical decomposition
 		s = Normalizer.normalize(s, Normalizer.NFD);
 		// Then remove non-ascii characters
-		s = s.replaceAll("[^\\p{ASCII}]", "");
+		s = s.replaceAll("[^\\p{ASCII}]", ""); //$NON-NLS-1$ //$NON-NLS-2$
 		// replace whitespaces
-		s = s.replaceAll("\\s", "_");
+		s = s.replaceAll("\\s", "_"); //$NON-NLS-1$ //$NON-NLS-2$
 		// finally lower case
 		return s.toLowerCase();
 	}

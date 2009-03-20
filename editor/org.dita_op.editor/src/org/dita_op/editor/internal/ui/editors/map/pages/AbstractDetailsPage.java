@@ -16,9 +16,10 @@
  * You should have received a copy of the GNU General Public License along with
  * The DITA Open Platform. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.dita_op.editor.internal.ui.editors.map;
+package org.dita_op.editor.internal.ui.editors.map.pages;
 
 import org.dita_op.editor.internal.ui.editors.FormLayoutFactory;
+import org.dita_op.editor.internal.ui.editors.map.MasterSection;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.events.ModifyEvent;
@@ -41,10 +42,15 @@ public abstract class AbstractDetailsPage extends AbstractFormPart implements
 	private Element model;
 	private final String title;
 	private boolean initialized = false;
+	protected MasterSection masterSection;
 
 	public AbstractDetailsPage(String title) {
 		super();
 		this.title = title;
+	}
+
+	public void setMasterSection(MasterSection masterSection) {
+		this.masterSection = masterSection;
 	}
 
 	/**

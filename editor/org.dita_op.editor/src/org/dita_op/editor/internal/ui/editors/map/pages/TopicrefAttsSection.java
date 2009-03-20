@@ -16,7 +16,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with The DITA Open Platform.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.dita_op.editor.internal.ui.editors.map;
+package org.dita_op.editor.internal.ui.editors.map.pages;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -51,7 +51,8 @@ class TopicrefAttsSection extends AbstractAttsSection {
 		container.setLayout(new GridLayout(2, false));
 		container.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 
-		toolkit.createLabel(container, Messages.getString("TopicrefAttsSection.collectionType.label")); //$NON-NLS-1$
+		toolkit.createLabel(container,
+				Messages.getString("TopicrefAttsSection.collectionType.label")); //$NON-NLS-1$
 		collectionTypeCombo = new Combo(container, SWT.DROP_DOWN
 				| SWT.READ_ONLY);
 		toolkit.adapt(collectionTypeCombo, true, true);
@@ -64,7 +65,8 @@ class TopicrefAttsSection extends AbstractAttsSection {
 		collectionTypeCombo.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		collectionTypeCombo.addSelectionListener(this);
 
-		toolkit.createLabel(container, Messages.getString("TopicrefAttsSection.type.label")); //$NON-NLS-1$
+		toolkit.createLabel(container,
+				Messages.getString("TopicrefAttsSection.type.label")); //$NON-NLS-1$
 		targetTypeCombo = new Combo(container, SWT.DROP_DOWN);
 		toolkit.adapt(targetTypeCombo, true, true);
 		targetTypeCombo.add("topic"); //$NON-NLS-1$
@@ -79,7 +81,8 @@ class TopicrefAttsSection extends AbstractAttsSection {
 		targetTypeCombo.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		targetTypeCombo.addSelectionListener(this);
 
-		toolkit.createLabel(container, Messages.getString("TopicrefAttsSection.scope.label")); //$NON-NLS-1$
+		toolkit.createLabel(container,
+				Messages.getString("TopicrefAttsSection.scope.label")); //$NON-NLS-1$
 		targetScopeCombo = new Combo(container, SWT.DROP_DOWN | SWT.READ_ONLY);
 		toolkit.adapt(targetScopeCombo, true, true);
 		targetScopeCombo.add(ModelUtils.UNSPECIFIED);
@@ -90,7 +93,8 @@ class TopicrefAttsSection extends AbstractAttsSection {
 		targetScopeCombo.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		targetScopeCombo.addSelectionListener(this);
 
-		toolkit.createLabel(container, Messages.getString("TopicrefAttsSection.locktitle.label")); //$NON-NLS-1$
+		toolkit.createLabel(container,
+				Messages.getString("TopicrefAttsSection.locktitle.label")); //$NON-NLS-1$
 		lockTitleCombo = new Combo(container, SWT.DROP_DOWN | SWT.READ_ONLY);
 		toolkit.adapt(lockTitleCombo, true, true);
 		lockTitleCombo.add(ModelUtils.UNSPECIFIED);
@@ -100,7 +104,8 @@ class TopicrefAttsSection extends AbstractAttsSection {
 		lockTitleCombo.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		lockTitleCombo.addSelectionListener(this);
 
-		toolkit.createLabel(container, Messages.getString("TopicrefAttsSection.format.label")); //$NON-NLS-1$
+		toolkit.createLabel(container,
+				Messages.getString("TopicrefAttsSection.format.label")); //$NON-NLS-1$
 		targetFormatCombo = new Combo(container, SWT.DROP_DOWN);
 		toolkit.adapt(targetFormatCombo, true, true);
 		targetFormatCombo.add("dita"); //$NON-NLS-1$
@@ -110,7 +115,8 @@ class TopicrefAttsSection extends AbstractAttsSection {
 		targetFormatCombo.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		targetFormatCombo.addSelectionListener(this);
 
-		toolkit.createLabel(container, Messages.getString("TopicrefAttsSection.linking.label")); //$NON-NLS-1$
+		toolkit.createLabel(container,
+				Messages.getString("TopicrefAttsSection.linking.label")); //$NON-NLS-1$
 		targetLinkingCombo = new Combo(container, SWT.DROP_DOWN | SWT.READ_ONLY);
 		toolkit.adapt(targetLinkingCombo, true, true);
 		targetLinkingCombo.add(ModelUtils.UNSPECIFIED);
@@ -122,7 +128,8 @@ class TopicrefAttsSection extends AbstractAttsSection {
 		targetLinkingCombo.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		targetLinkingCombo.addSelectionListener(this);
 
-		toolkit.createLabel(container, Messages.getString("TopicrefAttsSection.toc.label")); //$NON-NLS-1$
+		toolkit.createLabel(container,
+				Messages.getString("TopicrefAttsSection.toc.label")); //$NON-NLS-1$
 		tocCombo = new Combo(container, SWT.DROP_DOWN | SWT.READ_ONLY);
 		toolkit.adapt(tocCombo, true, true);
 		tocCombo.add(ModelUtils.UNSPECIFIED);
@@ -132,7 +139,8 @@ class TopicrefAttsSection extends AbstractAttsSection {
 		tocCombo.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		tocCombo.addSelectionListener(this);
 
-		toolkit.createLabel(container, Messages.getString("TopicrefAttsSection.print.label")); //$NON-NLS-1$
+		toolkit.createLabel(container,
+				Messages.getString("TopicrefAttsSection.print.label")); //$NON-NLS-1$
 		printCombo = new Combo(container, SWT.DROP_DOWN | SWT.READ_ONLY);
 		toolkit.adapt(printCombo, true, true);
 		printCombo.add(ModelUtils.UNSPECIFIED);
@@ -143,7 +151,8 @@ class TopicrefAttsSection extends AbstractAttsSection {
 		printCombo.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		printCombo.addSelectionListener(this);
 
-		toolkit.createLabel(container, Messages.getString("TopicrefAttsSection.search.label")); //$NON-NLS-1$
+		toolkit.createLabel(container,
+				Messages.getString("TopicrefAttsSection.search.label")); //$NON-NLS-1$
 		targetSearchCombo = new Combo(container, SWT.DROP_DOWN | SWT.READ_ONLY);
 		toolkit.adapt(targetSearchCombo, true, true);
 		targetSearchCombo.add(ModelUtils.UNSPECIFIED);
@@ -153,8 +162,10 @@ class TopicrefAttsSection extends AbstractAttsSection {
 		targetSearchCombo.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		targetSearchCombo.addSelectionListener(this);
 
-		toolkit.createLabel(container, Messages.getString("TopicrefAttsSection.chunk.label")); //$NON-NLS-1$
-		chunkText = toolkit.createText(container, Messages.getString("TopicrefAttsSection.chunk.default")); //$NON-NLS-1$
+		toolkit.createLabel(container,
+				Messages.getString("TopicrefAttsSection.chunk.label")); //$NON-NLS-1$
+		chunkText = toolkit.createText(container,
+				Messages.getString("TopicrefAttsSection.chunk.default")); //$NON-NLS-1$
 		chunkText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		chunkText.addModifyListener(this);
 

@@ -105,7 +105,7 @@ public class DOSTCatalog implements EntityResolver2 {
 			return catalog;
 		} else {
 			IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID,
-					"Could not find DOST Catalog: " + catalogFile);
+					Messages.getString("DOSTCatalog.cannot_find_catalog") + catalogFile); //$NON-NLS-1$
 			Activator.getDefault().getLog().log(status);
 			return null;
 		}

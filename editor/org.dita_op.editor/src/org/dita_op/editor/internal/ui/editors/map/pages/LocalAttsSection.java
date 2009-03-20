@@ -16,7 +16,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with The DITA Open Platform.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.dita_op.editor.internal.ui.editors.map;
+package org.dita_op.editor.internal.ui.editors.map.pages;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -44,7 +44,8 @@ class LocalAttsSection extends AbstractAttsSection {
 		container.setLayout(new GridLayout(2, false));
 		container.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 
-		toolkit.createLabel(container, Messages.getString("LocalAttsSection.translate.label")); //$NON-NLS-1$
+		toolkit.createLabel(container,
+				Messages.getString("LocalAttsSection.translate.label")); //$NON-NLS-1$
 		translateCombo = new Combo(container, SWT.DROP_DOWN | SWT.READ_ONLY);
 		toolkit.adapt(translateCombo, true, true);
 		translateCombo.add(ModelUtils.UNSPECIFIED);
@@ -54,12 +55,15 @@ class LocalAttsSection extends AbstractAttsSection {
 		translateCombo.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		translateCombo.addSelectionListener(this);
 
-		toolkit.createLabel(container, Messages.getString("LocalAttsSection.lang.label")); //$NON-NLS-1$
-		langText = toolkit.createText(container, Messages.getString("LocalAttsSection.lang.defaut")); //$NON-NLS-1$
+		toolkit.createLabel(container,
+				Messages.getString("LocalAttsSection.lang.label")); //$NON-NLS-1$
+		langText = toolkit.createText(container,
+				Messages.getString("LocalAttsSection.lang.defaut")); //$NON-NLS-1$
 		langText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		langText.addModifyListener(this);
 
-		toolkit.createLabel(container, Messages.getString("LocalAttsSection.dir.label")); //$NON-NLS-1$
+		toolkit.createLabel(container,
+				Messages.getString("LocalAttsSection.dir.label")); //$NON-NLS-1$
 		dirCombo = new Combo(container, SWT.DROP_DOWN | SWT.READ_ONLY);
 		toolkit.adapt(dirCombo, true, true);
 		dirCombo.add(ModelUtils.UNSPECIFIED);

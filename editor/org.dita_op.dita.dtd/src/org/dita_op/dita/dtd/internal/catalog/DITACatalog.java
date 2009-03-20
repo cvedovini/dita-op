@@ -127,7 +127,7 @@ public class DITACatalog implements URIResolverExtension {
 			if (version.equals(element.getAttribute("id"))) { //$NON-NLS-1$
 				String className = element.getAttribute("class"); //$NON-NLS-1$
 				IStatus status = new Status(IStatus.INFO, Activator.PLUGIN_ID,
-						"Loading catalog: " + element.getAttribute("name")); //$NON-NLS-1$
+						Messages.getString("DITACatalog.loading") + element.getAttribute("name")); //$NON-NLS-1$ //$NON-NLS-2$
 				Activator.getDefault().getLog().log(status);
 
 				if (className != null) {

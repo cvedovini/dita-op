@@ -16,7 +16,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with The DITA Open Platform.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.dita_op.editor.internal.ui.editors.map;
+package org.dita_op.editor.internal.ui.editors.map.pages;
 
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.swt.layout.GridData;
@@ -26,22 +26,21 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.w3c.dom.Element;
 
-class TopicheadDetails extends AbstractDetailsPage {
+public class MapDetails extends AbstractDetailsPage {
 
-	private Text navTitleText;
+	private Text titleText;
+	private Text anchorRefText;
 	private IdAttsSection idAttsSection;
 	private AbstractAttsSection topicRefAttsSection;
 	private SelectionAttsSection selectionAttsSection;
 	private LocalAttsSection localAttsSection;
-	private final MasterSection masterSection;
 
-	public TopicheadDetails(MasterSection masterSection) {
-		super(Messages.getString("TopicheadDetails.title")); //$NON-NLS-1$
-		this.masterSection = masterSection;
+	public MapDetails() {
+		super(Messages.getString("MapDetails.title")); //$NON-NLS-1$
 	}
 
 	/**
-	 * @see org.dita_op.editor.internal.ui.editors.map.AbstractDetailsPage#createClientArea(org.eclipse.swt.widgets.Composite,
+	 * @see org.dita_op.editor.internal.ui.editors.map.pages.AbstractDetailsPage#createClientArea(org.eclipse.swt.widgets.Composite,
 	 *      org.eclipse.ui.forms.widgets.FormToolkit)
 	 */
 	@Override
@@ -49,22 +48,29 @@ class TopicheadDetails extends AbstractDetailsPage {
 		parent.setLayout(new GridLayout(2, false));
 
 		toolkit.createLabel(parent,
-				Messages.getString("TopicheadDetails.title.label")); //$NON-NLS-1$
-		navTitleText = toolkit.createText(parent,
-				Messages.getString("TopicheadDetails.title.default")); //$NON-NLS-1$
-		navTitleText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		navTitleText.addModifyListener(this);
+				Messages.getString("MapDetails.title.label")); //$NON-NLS-1$
+		titleText = toolkit.createText(parent,
+				Messages.getString("MapDetails.title.default")); //$NON-NLS-1$
+		titleText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+		titleText.addModifyListener(this);
+
+		toolkit.createLabel(parent,
+				Messages.getString("MapDetails.anchorref.label")); //$NON-NLS-1$
+		anchorRefText = toolkit.createText(parent,
+				Messages.getString("MapDetails.anchorref.default")); //$NON-NLS-1$
+		anchorRefText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+		anchorRefText.addModifyListener(this);
 	}
 
 	/**
-	 * @see org.dita_op.editor.internal.ui.editors.map.AbstractDetailsPage#addSections(org.eclipse.swt.widgets.Composite,
+	 * @see org.dita_op.editor.internal.ui.editors.map.pages.AbstractDetailsPage#addSections(org.eclipse.swt.widgets.Composite,
 	 *      org.eclipse.ui.forms.widgets.FormToolkit)
 	 */
 	@Override
 	protected void addSections(Composite parent, FormToolkit toolkit) {
 		GridData data = new GridData(GridData.FILL_HORIZONTAL);
-		idAttsSection = new IdAttsSection(parent, masterSection.getBaseLocation(),
-				this);
+		idAttsSection = new IdAttsSection(parent,
+				masterSection.getBaseLocation(), this);
 		idAttsSection.getSection().setLayoutData(data);
 
 		topicRefAttsSection = new TopicrefAttsSection(parent, this);
@@ -81,7 +87,8 @@ class TopicheadDetails extends AbstractDetailsPage {
 	}
 
 	protected void load(Element model) {
-		ModelUtils.loadText(model, navTitleText, "navtitle"); //$NON-NLS-1$
+		ModelUtils.loadText(model, titleText, "title"); //$NON-NLS-1$
+		ModelUtils.loadText(model, anchorRefText, "anchorref"); //$NON-NLS-1$
 		idAttsSection.load(model);
 		topicRefAttsSection.load(model);
 		selectionAttsSection.load(model);
@@ -89,7 +96,8 @@ class TopicheadDetails extends AbstractDetailsPage {
 	}
 
 	protected void save(Element model) {
-		ModelUtils.saveText(model, navTitleText, "navtitle"); //$NON-NLS-1$
+		ModelUtils.saveText(model, titleText, "title"); //$NON-NLS-1$
+		ModelUtils.saveText(model, anchorRefText, "anchorref"); //$NON-NLS-1$
 		idAttsSection.save(model);
 		topicRefAttsSection.save(model);
 		selectionAttsSection.save(model);
@@ -101,7 +109,7 @@ class TopicheadDetails extends AbstractDetailsPage {
 	 */
 	@Override
 	public void setFocus() {
-		navTitleText.setFocus();
+		titleText.setFocus();
 	}
 
 }

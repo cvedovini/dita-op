@@ -23,6 +23,8 @@ import java.net.URI;
 import org.dita_op.editor.internal.Activator;
 import org.dita_op.editor.internal.ImageConstants;
 import org.dita_op.editor.internal.ui.editors.FormLayoutFactory;
+import org.dita_op.editor.internal.ui.editors.map.model.Descriptor;
+import org.dita_op.editor.internal.ui.editors.map.pages.AbstractDetailsPage;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.swt.SWT;
@@ -105,26 +107,18 @@ class MasterDetailsBlock extends org.eclipse.ui.forms.MasterDetailsBlock {
 	class DetailsPageProvider implements IDetailsPageProvider {
 
 		public IDetailsPage getPage(Object key) {
-			if ("topicgroup".equals(key)) { //$NON-NLS-1$
-				return new TopicgroupDetails(masterSection);
-			} else if ("topichead".equals(key)) { //$NON-NLS-1$
-				return new TopicheadDetails(masterSection);
-			} else if ("topicref".equals(key)) { //$NON-NLS-1$
-				return new TopicrefDetails(masterSection);
-			} else if ("navref".equals(key)) { //$NON-NLS-1$
-				return new NavrefDetails(masterSection);
-			} else if ("anchor".equals(key)) { //$NON-NLS-1$
-				return new AnchorDetails(masterSection);
-			} else if ("map".equals(key)) { //$NON-NLS-1$
-				return new MapDetails(masterSection);
-			} else {
-				return null;
+			Descriptor desc = (Descriptor) key;
+			IDetailsPage page = desc.getDetailsPage();
+
+			if (page instanceof AbstractDetailsPage) {
+				((AbstractDetailsPage) page).setMasterSection(masterSection);
 			}
+
+			return page;
 		}
 
 		public Object getPageKey(Object object) {
-			Element element = (Element) object;
-			return element.getLocalName();
+			return Descriptor.getDescriptor((Element) object);
 		}
 
 	}

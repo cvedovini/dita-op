@@ -16,7 +16,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with The DITA Open Platform.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.dita_op.editor.internal.ui.editors.map;
+package org.dita_op.editor.internal.ui.editors.map.pages;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -48,27 +48,36 @@ class SelectionAttsSection extends AbstractAttsSection {
 		container.setLayout(new GridLayout(2, false));
 		container.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 
-		toolkit.createLabel(container, Messages.getString("SelectionAttsSection.platform.label")); //$NON-NLS-1$
-		platformText = toolkit.createText(container, Messages.getString("SelectionAttsSection.platform.default")); //$NON-NLS-1$
+		toolkit.createLabel(container,
+				Messages.getString("SelectionAttsSection.platform.label")); //$NON-NLS-1$
+		platformText = toolkit.createText(container,
+				Messages.getString("SelectionAttsSection.platform.default")); //$NON-NLS-1$
 		platformText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		platformText.addModifyListener(this);
 
-		toolkit.createLabel(container, Messages.getString("SelectionAttsSection.product.label")); //$NON-NLS-1$
-		productText = toolkit.createText(container, Messages.getString("SelectionAttsSection.product.default")); //$NON-NLS-1$
+		toolkit.createLabel(container,
+				Messages.getString("SelectionAttsSection.product.label")); //$NON-NLS-1$
+		productText = toolkit.createText(container,
+				Messages.getString("SelectionAttsSection.product.default")); //$NON-NLS-1$
 		productText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		productText.addModifyListener(this);
 
-		toolkit.createLabel(container, Messages.getString("SelectionAttsSection.audience.label")); //$NON-NLS-1$
-		audienceText = toolkit.createText(container, Messages.getString("SelectionAttsSection.audience.default")); //$NON-NLS-1$
+		toolkit.createLabel(container,
+				Messages.getString("SelectionAttsSection.audience.label")); //$NON-NLS-1$
+		audienceText = toolkit.createText(container,
+				Messages.getString("SelectionAttsSection.audience.default")); //$NON-NLS-1$
 		audienceText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		audienceText.addModifyListener(this);
 
-		toolkit.createLabel(container, Messages.getString("SelectionAttsSection.others.label")); //$NON-NLS-1$
-		otherPropsText = toolkit.createText(container, Messages.getString("SelectionAttsSection.others.default")); //$NON-NLS-1$
+		toolkit.createLabel(container,
+				Messages.getString("SelectionAttsSection.others.label")); //$NON-NLS-1$
+		otherPropsText = toolkit.createText(container,
+				Messages.getString("SelectionAttsSection.others.default")); //$NON-NLS-1$
 		otherPropsText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		otherPropsText.addModifyListener(this);
 
-		toolkit.createLabel(container, Messages.getString("SelectionAttsSection.importance.label")); //$NON-NLS-1$
+		toolkit.createLabel(container,
+				Messages.getString("SelectionAttsSection.importance.label")); //$NON-NLS-1$
 		importanceCombo = new Combo(container, SWT.DROP_DOWN | SWT.READ_ONLY);
 		toolkit.adapt(importanceCombo, true, true);
 		importanceCombo.add(ModelUtils.UNSPECIFIED);
@@ -86,12 +95,15 @@ class SelectionAttsSection extends AbstractAttsSection {
 		importanceCombo.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		importanceCombo.addSelectionListener(this);
 
-		toolkit.createLabel(container, Messages.getString("SelectionAttsSection.revision.label")); //$NON-NLS-1$
-		revText = toolkit.createText(container, Messages.getString("SelectionAttsSection.revision.default")); //$NON-NLS-1$
+		toolkit.createLabel(container,
+				Messages.getString("SelectionAttsSection.revision.label")); //$NON-NLS-1$
+		revText = toolkit.createText(container,
+				Messages.getString("SelectionAttsSection.revision.default")); //$NON-NLS-1$
 		revText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		revText.addModifyListener(this);
 
-		toolkit.createLabel(container, Messages.getString("SelectionAttsSection.status.label")); //$NON-NLS-1$
+		toolkit.createLabel(container,
+				Messages.getString("SelectionAttsSection.status.label")); //$NON-NLS-1$
 		statusCombo = new Combo(container, SWT.DROP_DOWN | SWT.READ_ONLY);
 		toolkit.adapt(statusCombo, true, true);
 		statusCombo.add(ModelUtils.UNSPECIFIED);

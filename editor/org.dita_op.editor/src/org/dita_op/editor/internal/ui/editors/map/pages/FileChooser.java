@@ -1,4 +1,4 @@
-package org.dita_op.editor.internal.ui.editors.map;
+package org.dita_op.editor.internal.ui.editors.map.pages;
 
 import java.net.URI;
 
@@ -25,7 +25,7 @@ public class FileChooser {
 	private final Text text;
 	private final Button button;
 	private final URI baseLocation;
-	private String description = "";
+	private String description = ""; //$NON-NLS-1$
 
 	public FileChooser(Composite parent, URI baseLocation, FormToolkit toolkit) {
 		this.baseLocation = baseLocation;
@@ -35,10 +35,10 @@ public class FileChooser {
 		control = toolkit.createComposite(parent);
 		control.setLayout(layout);
 
-		text = toolkit.createText(control, "");
+		text = toolkit.createText(control, ""); //$NON-NLS-1$
 		text.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 
-		button = toolkit.createButton(control, "...", SWT.NONE);
+		button = toolkit.createButton(control, "...", SWT.NONE); //$NON-NLS-1$
 		button.addSelectionListener(new SelectionAdapter() {
 
 			/**

@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License along with
  * The DITA Open Platform. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.dita_op.editor.internal.ui.editors.map;
+package org.dita_op.editor.internal.ui.editors.map.pages;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Combo;

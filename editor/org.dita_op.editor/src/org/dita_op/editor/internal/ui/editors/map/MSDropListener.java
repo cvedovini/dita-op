@@ -21,10 +21,12 @@ package org.dita_op.editor.internal.ui.editors.map;
 import java.net.URI;
 
 import org.dita_op.editor.internal.Utils;
+import org.dita_op.editor.internal.ui.editors.map.model.Descriptor;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.content.IContentType;
 import org.eclipse.core.runtime.content.IContentTypeManager;
+import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerDropAdapter;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DropTargetEvent;
@@ -34,14 +36,14 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
-class MasterSectionDropListener extends ViewerDropAdapter {
+class MSDropListener extends ViewerDropAdapter {
 
 	private final MasterSection section;
 	private final IContentTypeManager ctm;
 	private final IContentType dmct;
 
-	public MasterSectionDropListener(MasterSection section) {
-		super(section.getViewer());
+	public MSDropListener(Viewer viewer, MasterSection section) {
+		super(viewer);
 		this.section = section;
 		ctm = Platform.getContentTypeManager();
 		dmct = ctm.getContentType("org.dita_op.dita.map"); //$NON-NLS-1$
@@ -61,20 +63,20 @@ class MasterSectionDropListener extends ViewerDropAdapter {
 	@Override
 	public boolean validateDrop(Object target, int operation,
 			TransferData transferType) {
-		Node parent = null;
+		Element parent = null;
 
 		if (target == null) {
-			parent = ((Document) section.getViewer().getInput()).getDocumentElement();
+			parent = section.getDocument().getDocumentElement();
 		} else if (target instanceof Node) {
-			parent = (Node) target;
+			parent = (Element) target;
 			int loc = getCurrentLocation();
 
 			if (loc == LOCATION_BEFORE || loc == LOCATION_AFTER) {
-				parent = parent.getParentNode();
+				parent = (Element) parent.getParentNode();
 			}
 		}
 
-		if (parent != null && section.acceptChildren(parent)) {
+		if (parent != null) {
 			if (ResourceTransfer.getInstance().isSupportedType(transferType)) {
 				return true;
 			} else if (NodeTransfer.getInstance().isSupportedType(transferType)) {
@@ -89,16 +91,16 @@ class MasterSectionDropListener extends ViewerDropAdapter {
 	public boolean performDrop(Object data) {
 		boolean performed = false;
 		Node sibling = null;
-		Node parent = (Node) getCurrentTarget();
+		Element parent = (Element) getCurrentTarget();
 
 		if (parent == null) {
-			parent = ((Document) section.getViewer().getInput()).getDocumentElement();
+			parent = section.getDocument().getDocumentElement();
 		} else {
 			int loc = getCurrentLocation();
 
 			if (loc == LOCATION_BEFORE || loc == LOCATION_AFTER) {
 				sibling = parent;
-				parent = parent.getParentNode();
+				parent = (Element) parent.getParentNode();
 
 				if (loc == LOCATION_AFTER) {
 					sibling = sibling.getNextSibling();
@@ -116,30 +118,30 @@ class MasterSectionDropListener extends ViewerDropAdapter {
 			performed = performDrop(doc, parent, sibling, data);
 		}
 
-		section.getViewer().refresh();
 		return performed;
 	}
 
-	private boolean performDrop(Document doc, Node parent, Node sibling,
+	private boolean performDrop(Document doc, Element parent, Node sibling,
 			Object data) {
+		Descriptor desc = Descriptor.getDescriptor(parent);
 		Node newChild = null;
 
 		if (data instanceof IResource) {
 			IResource res = (IResource) data;
 
 			if (isDitamap(res)) {
-				newChild = doc.createElement("navref");
-				((Element) newChild).setAttribute("mapref",
+				newChild = doc.createElement("navref"); //$NON-NLS-1$
+				((Element) newChild).setAttribute("mapref", //$NON-NLS-1$
 						getRelativePath(res));
 			} else {
-				newChild = doc.createElement("topicref");
-				((Element) newChild).setAttribute("href", getRelativePath(res));
+				newChild = doc.createElement("topicref"); //$NON-NLS-1$
+				((Element) newChild).setAttribute("href", getRelativePath(res)); //$NON-NLS-1$
 			}
 		} else if (data instanceof Node) {
 			newChild = doc.importNode((Node) data, true);
 		}
 
-		if (newChild != null) {
+		if (newChild != null && desc.accept(newChild)) {
 			if (sibling != null) {
 				parent.insertBefore(newChild, sibling);
 			} else {
@@ -168,8 +170,7 @@ class MasterSectionDropListener extends ViewerDropAdapter {
 		URI targetURI = res.getLocationURI();
 
 		if (section.getBaseLocation() != null) {
-			targetURI = Utils.relativize(targetURI,
-					section.getBaseLocation());
+			targetURI = Utils.relativize(targetURI, section.getBaseLocation());
 		}
 
 		return targetURI.toString();

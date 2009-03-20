@@ -36,13 +36,13 @@ public interface ImageConstants {
 
 	public static final String IMG_VERTICAL = "icons/th_vertical.gif"; //$NON-NLS-1$
 
-	public static final String ICON_GROUP = "icons/folder.png"; //$NON-NLS-1$
+	public static final String ICON_TOPICGROUP = "icons/folder.png"; //$NON-NLS-1$
 
 	public static final String ICON_ANCHOR = "icons/anchor.png"; //$NON-NLS-1$
 
 	public static final String ICON_NAVREF = "icons/book_link.png"; //$NON-NLS-1$
 
-	public static final String ICON_HEAD = "icons/tag_blue.png"; //$NON-NLS-1$
+	public static final String ICON_TOPICHEAD = "icons/tag_blue.png"; //$NON-NLS-1$
 
 	public static final String ICON_FILE = "icons/page_white.png"; //$NON-NLS-1$
 
@@ -59,5 +59,7 @@ public interface ImageConstants {
 	public static final String ICON_COPY = "icons/page_copy.png"; //$NON-NLS-1$
 
 	public static final String ICON_PASTE = "icons/page_white_paste.png"; //$NON-NLS-1$
+
+	public static final String ICON_RELTABLE = "icons/table.png"; //$NON-NLS-1$
 
 }

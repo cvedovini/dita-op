@@ -16,7 +16,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with The DITA Open Platform.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.dita_op.editor.internal.ui.editors.map;
+package org.dita_op.editor.internal.ui.editors.map.pages;
 
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.swt.layout.GridData;
@@ -25,21 +25,19 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.w3c.dom.Element;
 
-class NavrefDetails extends AbstractDetailsPage {
+public class NavrefDetails extends AbstractDetailsPage {
 
 	private FileChooser maprefText;
 	private IdAttsSection idAttsSection;
 	private SelectionAttsSection selectionAttsSection;
 	private LocalAttsSection localAttsSection;
-	private final MasterSection masterSection;
 
-	public NavrefDetails(MasterSection masterSection) {
+	public NavrefDetails() {
 		super(Messages.getString("NavrefDetails.title")); //$NON-NLS-1$
-		this.masterSection = masterSection;
 	}
 
 	/**
-	 * @see org.dita_op.editor.internal.ui.editors.map.AbstractDetailsPage#createClientArea(org.eclipse.swt.widgets.Composite,
+	 * @see org.dita_op.editor.internal.ui.editors.map.pages.AbstractDetailsPage#createClientArea(org.eclipse.swt.widgets.Composite,
 	 *      org.eclipse.ui.forms.widgets.FormToolkit)
 	 */
 	@Override
@@ -56,14 +54,14 @@ class NavrefDetails extends AbstractDetailsPage {
 	}
 
 	/**
-	 * @see org.dita_op.editor.internal.ui.editors.map.AbstractDetailsPage#addSections(org.eclipse.swt.widgets.Composite,
+	 * @see org.dita_op.editor.internal.ui.editors.map.pages.AbstractDetailsPage#addSections(org.eclipse.swt.widgets.Composite,
 	 *      org.eclipse.ui.forms.widgets.FormToolkit)
 	 */
 	@Override
 	protected void addSections(Composite parent, FormToolkit toolkit) {
 		GridData data = new GridData(GridData.FILL_HORIZONTAL);
-		idAttsSection = new IdAttsSection(parent, masterSection.getBaseLocation(),
-				this);
+		idAttsSection = new IdAttsSection(parent,
+				masterSection.getBaseLocation(), this);
 		idAttsSection.getSection().setLayoutData(data);
 
 		selectionAttsSection = new SelectionAttsSection(parent, this);

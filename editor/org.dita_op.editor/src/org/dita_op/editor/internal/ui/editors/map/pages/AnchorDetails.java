@@ -16,7 +16,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with The DITA Open Platform.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.dita_op.editor.internal.ui.editors.map;
+package org.dita_op.editor.internal.ui.editors.map.pages;
 
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.swt.layout.GridData;
@@ -24,33 +24,26 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.w3c.dom.Element;
 
-class TopicgroupDetails extends AbstractDetailsPage {
+public class AnchorDetails extends AbstractDetailsPage {
 
 	private IdAttsSection idAttsSection;
-	private AbstractAttsSection topicRefAttsSection;
 	private SelectionAttsSection selectionAttsSection;
 	private LocalAttsSection localAttsSection;
-	private MasterSection masterSection;
 
-	public TopicgroupDetails(MasterSection masterSection) {
-		super(Messages.getString("TopicgroupDetails.title")); //$NON-NLS-1$
-		this.masterSection = masterSection;
+	public AnchorDetails() {
+		super(Messages.getString("AnchorDetails.title")); //$NON-NLS-1$
 	}
 
 	/**
-	 * @see org.dita_op.editor.internal.ui.editors.map.AbstractDetailsPage#addSections(org.eclipse.swt.widgets.Composite,
+	 * @see org.dita_op.editor.internal.ui.editors.map.pages.AbstractDetailsPage#addSections(org.eclipse.swt.widgets.Composite,
 	 *      org.eclipse.ui.forms.widgets.FormToolkit)
 	 */
 	@Override
 	protected void addSections(Composite parent, FormToolkit toolkit) {
 		GridData data = new GridData(GridData.FILL_HORIZONTAL);
-		idAttsSection = new IdAttsSection(parent, masterSection.getBaseLocation(),
-				this);
+		idAttsSection = new IdAttsSection(parent,
+				masterSection.getBaseLocation(), this);
 		idAttsSection.getSection().setLayoutData(data);
-
-		topicRefAttsSection = new TopicrefAttsSection(parent, this);
-		topicRefAttsSection.getSection().setLayoutData(
-				GridDataFactory.copyData(data));
 
 		selectionAttsSection = new SelectionAttsSection(parent, this);
 		selectionAttsSection.getSection().setLayoutData(
@@ -63,14 +56,12 @@ class TopicgroupDetails extends AbstractDetailsPage {
 
 	protected void load(Element model) {
 		idAttsSection.load(model);
-		topicRefAttsSection.load(model);
 		selectionAttsSection.load(model);
 		localAttsSection.load(model);
 	}
 
 	protected void save(Element model) {
 		idAttsSection.save(model);
-		topicRefAttsSection.save(model);
 		selectionAttsSection.save(model);
 		localAttsSection.save(model);
 	}

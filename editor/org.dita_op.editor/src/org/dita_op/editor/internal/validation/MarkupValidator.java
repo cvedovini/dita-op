@@ -15,7 +15,7 @@ import org.eclipse.wst.validation.internal.provisional.core.IValidationContext;
 import org.eclipse.wst.validation.internal.provisional.core.IValidator;
 import org.eclipse.wst.xml.core.internal.validation.core.Helper;
 
-@SuppressWarnings( { "restriction", "unchecked" })
+@SuppressWarnings( { "restriction", "unchecked" }) //$NON-NLS-1$ //$NON-NLS-2$
 public class MarkupValidator extends
 		org.eclipse.wst.xml.ui.internal.validation.MarkupValidator {
 

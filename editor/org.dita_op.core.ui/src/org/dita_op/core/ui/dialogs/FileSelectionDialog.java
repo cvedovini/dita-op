@@ -79,8 +79,8 @@ public class FileSelectionDialog extends MessageDialog {
 	 */
 	public FileSelectionDialog(Shell parentShell, IAdaptable rootElement,
 			String message) {
-		super(parentShell, "Choose Location", null, message,
-				MessageDialog.NONE, new String[] { "Ok", "Cancel" }, 0);
+		super(parentShell, Messages.getString("FileSelectionDialog.title"), null, message, //$NON-NLS-1$
+				MessageDialog.NONE, new String[] { Messages.getString("FileSelectionDialog.okButton"), Messages.getString("FileSelectionDialog.cancelButton") }, 0); //$NON-NLS-1$ //$NON-NLS-2$
 		root = rootElement;
 		setShellStyle(getShellStyle() | SWT.RESIZE);
 	}
