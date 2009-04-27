@@ -19,7 +19,6 @@
 package org.dita_op.dost.launcher.internal;
 
 import java.io.File;
-import java.io.FilenameFilter;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -142,7 +141,7 @@ public class DOSTLaunchDelegate extends LaunchConfigurationDelegate {
 	@SuppressWarnings("unchecked")//$NON-NLS-1$
 	private void configureClasspath(File ditadir,
 			ILaunchConfigurationWorkingCopy configuration) {
-		IRuntimeClasspathEntry[] classpath = getCurrentClasspath(ditadir);
+		IRuntimeClasspathEntry[] classpath = getFullClasspath(ditadir);
 
 		configuration.setAttribute(
 				IJavaLaunchConfigurationConstants.ATTR_CLASSPATH_PROVIDER,
@@ -165,15 +164,11 @@ public class DOSTLaunchDelegate extends LaunchConfigurationDelegate {
 
 	}
 
-	private IRuntimeClasspathEntry[] getCurrentClasspath(File ditadir) {
+	private IRuntimeClasspathEntry[] getFullClasspath(File ditadir) {
 		List<IRuntimeClasspathEntry> fullClasspath = new ArrayList<IRuntimeClasspathEntry>();
 
 		File ditalibfolder = new File(ditadir, "lib"); //$NON-NLS-1$
-		File[] ditalibs = ditalibfolder.listFiles(new FilenameFilter() {
-			public boolean accept(File file, String name) {
-				return (name.endsWith(".jar") || name.endsWith(".zip")); //$NON-NLS-1$ //$NON-NLS-2$
-			}
-		});
+		List<File> ditalibs = getDOTKLibraries(ditalibfolder);
 
 		IPath path = new Path(ditalibfolder.getAbsolutePath());
 		fullClasspath.add(JavaRuntime.newArchiveRuntimeClasspathEntry(path));
@@ -183,6 +178,7 @@ public class DOSTLaunchDelegate extends LaunchConfigurationDelegate {
 			fullClasspath.add(JavaRuntime.newArchiveRuntimeClasspathEntry(path));
 		}
 
+		// Add libraries from Ant preferences
 		AntCorePreferences preferences = AntCorePlugin.getPlugin().getPreferences();
 
 		for (URL url : preferences.getURLs()) {
@@ -191,5 +187,27 @@ public class DOSTLaunchDelegate extends LaunchConfigurationDelegate {
 		}
 
 		return fullClasspath.toArray(new IRuntimeClasspathEntry[0]);
+	}
+
+	private List<File> getDOTKLibraries(File ditadir) {
+		return addLibsInFolder(ditadir, new ArrayList<File>());
+	}
+
+	private List<File> addLibsInFolder(File folder, List<File> libs) {
+		File[] children = folder.listFiles();
+
+		for (File child : children) {
+			if (!child.isHidden()) {
+				if (child.isFile()) {
+					if (child.getName().endsWith(".jar")) { //$NON-NLS-1$
+						libs.add(child);
+					}
+				} else {
+					addLibsInFolder(child, libs);
+				}
+			}
+		}
+
+		return libs;
 	}
 }
