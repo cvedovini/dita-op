@@ -23,7 +23,7 @@ import org.dita_op.editor.internal.ui.editors.map.pages.TopicheadDetails;
 import org.eclipse.ui.forms.IDetailsPage;
 import org.w3c.dom.Element;
 
-class TopicHeadDescriptor extends Descriptor {
+public class TopicHeadDescriptor extends Descriptor {
 
 	TopicHeadDescriptor() {
 		super("topichead", ImageConstants.ICON_TOPICHEAD); //$NON-NLS-1$

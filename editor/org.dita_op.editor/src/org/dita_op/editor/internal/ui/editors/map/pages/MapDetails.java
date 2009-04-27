@@ -18,6 +18,7 @@
  */
 package org.dita_op.editor.internal.ui.editors.map.pages;
 
+import org.dita_op.editor.internal.ui.editors.map.model.MapDescriptor;
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -87,7 +88,9 @@ public class MapDetails extends AbstractDetailsPage {
 	}
 
 	protected void load(Element model) {
-		ModelUtils.loadText(model, titleText, "title"); //$NON-NLS-1$
+		String title = MapDescriptor.getTitle(model);
+		titleText.setText(title == null ? ModelUtils.BLANK : title);
+
 		ModelUtils.loadText(model, anchorRefText, "anchorref"); //$NON-NLS-1$
 		idAttsSection.load(model);
 		topicRefAttsSection.load(model);
@@ -97,6 +100,14 @@ public class MapDetails extends AbstractDetailsPage {
 
 	protected void save(Element model) {
 		ModelUtils.saveText(model, titleText, "title"); //$NON-NLS-1$
+		String title = titleText.getText().trim();
+
+		if (ModelUtils.BLANK.equals(title)) {
+			MapDescriptor.removeTitle(model);
+		} else {
+			MapDescriptor.setTitle(model, title);
+		}
+
 		ModelUtils.saveText(model, anchorRefText, "anchorref"); //$NON-NLS-1$
 		idAttsSection.save(model);
 		topicRefAttsSection.save(model);

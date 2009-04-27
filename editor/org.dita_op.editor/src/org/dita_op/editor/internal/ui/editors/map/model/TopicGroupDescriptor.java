@@ -22,7 +22,7 @@ import org.dita_op.editor.internal.ImageConstants;
 import org.dita_op.editor.internal.ui.editors.map.pages.TopicgroupDetails;
 import org.eclipse.ui.forms.IDetailsPage;
 
-class TopicGroupDescriptor extends Descriptor {
+public class TopicGroupDescriptor extends Descriptor {
 
 	TopicGroupDescriptor() {
 		super("topicgroup", ImageConstants.ICON_TOPICGROUP); //$NON-NLS-1$

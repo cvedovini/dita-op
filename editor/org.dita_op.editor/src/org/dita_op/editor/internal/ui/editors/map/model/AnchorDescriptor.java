@@ -22,7 +22,7 @@ import org.dita_op.editor.internal.ImageConstants;
 import org.dita_op.editor.internal.ui.editors.map.pages.AnchorDetails;
 import org.eclipse.ui.forms.IDetailsPage;
 
-class AnchorDescriptor extends Descriptor {
+public class AnchorDescriptor extends Descriptor {
 
 	AnchorDescriptor() {
 		super("anchor", ImageConstants.ICON_ANCHOR); //$NON-NLS-1$

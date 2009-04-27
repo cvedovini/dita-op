@@ -22,7 +22,7 @@ import org.dita_op.editor.internal.ImageConstants;
 import org.eclipse.ui.forms.IDetailsPage;
 import org.w3c.dom.Element;
 
-class RelTableDescriptor extends Descriptor {
+public class RelTableDescriptor extends Descriptor {
 
 	RelTableDescriptor() {
 		super("reltable", ImageConstants.ICON_RELTABLE); //$NON-NLS-1$

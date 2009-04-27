@@ -23,7 +23,7 @@ import org.dita_op.editor.internal.ui.editors.map.pages.TopicrefDetails;
 import org.eclipse.ui.forms.IDetailsPage;
 import org.w3c.dom.Element;
 
-class TopicRefDescriptor extends Descriptor {
+public class TopicRefDescriptor extends Descriptor {
 
 	TopicRefDescriptor() {
 		super("topicref", ImageConstants.ICON_TOPIC); //$NON-NLS-1$

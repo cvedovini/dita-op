@@ -23,7 +23,7 @@ import org.dita_op.editor.internal.ui.editors.map.pages.NavrefDetails;
 import org.eclipse.ui.forms.IDetailsPage;
 import org.w3c.dom.Element;
 
-class NavRefDescriptor extends Descriptor {
+public class NavRefDescriptor extends Descriptor {
 
 	NavRefDescriptor() {
 		super("navref", ImageConstants.ICON_NAVREF); //$NON-NLS-1$
