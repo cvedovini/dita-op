@@ -4549,6 +4549,11 @@
       <xsl:call-template name="gen-user-scripts" /> <!-- include user's XSL javascripts here -->
       <xsl:call-template name="gen-user-styles" />  <!-- include user's XSL style element and content here -->
       <xsl:call-template name="processHDF"/>        <!-- Add user HDF file, if specified -->
+      <base>
+        <xsl:attribute name="href">
+            <xsl:value-of select="$WORKDIR"/>
+        </xsl:attribute>
+      </base>
     </head>
     <xsl:value-of select="$newline"/>
   </xsl:template>
