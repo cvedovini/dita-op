@@ -46,8 +46,7 @@ public class NavrefDetails extends AbstractDetailsPage {
 
 		toolkit.createLabel(parent,
 				Messages.getString("NavrefDetails.mapref.label")); //$NON-NLS-1$
-		maprefText = new FileChooser(parent, masterSection.getBaseLocation(),
-				toolkit);
+		maprefText = new FileChooser(parent, getBaseLocation(), toolkit);
 		maprefText.getControl().setLayoutData(
 				new GridData(GridData.FILL_HORIZONTAL));
 		maprefText.addModifyListener(this);
@@ -60,8 +59,7 @@ public class NavrefDetails extends AbstractDetailsPage {
 	@Override
 	protected void addSections(Composite parent, FormToolkit toolkit) {
 		GridData data = new GridData(GridData.FILL_HORIZONTAL);
-		idAttsSection = new IdAttsSection(parent,
-				masterSection.getBaseLocation(), this);
+		idAttsSection = new IdAttsSection(parent, this);
 		idAttsSection.getSection().setLayoutData(data);
 
 		selectionAttsSection = new SelectionAttsSection(parent, this);

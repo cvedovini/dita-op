@@ -24,7 +24,6 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.forms.AbstractFormPart;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.w3c.dom.Element;
 
@@ -41,7 +40,7 @@ class TopicrefAttsSection extends AbstractAttsSection {
 	private Combo printCombo;
 	private Text chunkText;
 
-	public TopicrefAttsSection(Composite parent, AbstractFormPart form) {
+	public TopicrefAttsSection(Composite parent, AbstractDetailsPage form) {
 		super(parent, form);
 		getSection().setText(Messages.getString("TopicrefAttsSection.title")); //$NON-NLS-1$
 	}

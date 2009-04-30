@@ -32,7 +32,7 @@ public class MapDetails extends AbstractDetailsPage {
 	private Text titleText;
 	private Text anchorRefText;
 	private IdAttsSection idAttsSection;
-	private AbstractAttsSection topicRefAttsSection;
+	private TopicrefAttsSection topicRefAttsSection;
 	private SelectionAttsSection selectionAttsSection;
 	private LocalAttsSection localAttsSection;
 
@@ -70,8 +70,7 @@ public class MapDetails extends AbstractDetailsPage {
 	@Override
 	protected void addSections(Composite parent, FormToolkit toolkit) {
 		GridData data = new GridData(GridData.FILL_HORIZONTAL);
-		idAttsSection = new IdAttsSection(parent,
-				masterSection.getBaseLocation(), this);
+		idAttsSection = new IdAttsSection(parent, this);
 		idAttsSection.getSection().setLayoutData(data);
 
 		topicRefAttsSection = new TopicrefAttsSection(parent, this);

@@ -24,7 +24,6 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.forms.AbstractFormPart;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.w3c.dom.Element;
 
@@ -38,7 +37,7 @@ class SelectionAttsSection extends AbstractAttsSection {
 	private Text revText;
 	private Combo statusCombo;
 
-	public SelectionAttsSection(Composite parent, AbstractFormPart form) {
+	public SelectionAttsSection(Composite parent, AbstractDetailsPage form) {
 		super(parent, form);
 		getSection().setText(Messages.getString("SelectionAttsSection.title")); //$NON-NLS-1$
 	}

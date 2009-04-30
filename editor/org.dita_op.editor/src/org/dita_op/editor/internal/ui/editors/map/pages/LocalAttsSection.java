@@ -24,7 +24,6 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.forms.AbstractFormPart;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.w3c.dom.Element;
 
@@ -34,7 +33,7 @@ class LocalAttsSection extends AbstractAttsSection {
 	private Text langText;
 	private Combo dirCombo;
 
-	public LocalAttsSection(Composite parent, AbstractFormPart form) {
+	public LocalAttsSection(Composite parent, AbstractDetailsPage form) {
 		super(parent, form);
 		getSection().setText(Messages.getString("LocalAttsSection.title")); //$NON-NLS-1$
 	}

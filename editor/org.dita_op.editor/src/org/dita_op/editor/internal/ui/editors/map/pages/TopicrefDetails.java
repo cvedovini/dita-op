@@ -50,8 +50,7 @@ public class TopicrefDetails extends AbstractDetailsPage {
 
 		toolkit.createLabel(parent,
 				Messages.getString("TopicrefDetails.href.label")); //$NON-NLS-1$
-		hrefText = new FileChooser(parent, masterSection.getBaseLocation(),
-				toolkit);
+		hrefText = new FileChooser(parent, getBaseLocation(), toolkit);
 		hrefText.getControl().setLayoutData(
 				new GridData(GridData.FILL_HORIZONTAL));
 		hrefText.addModifyListener(this);
@@ -78,8 +77,7 @@ public class TopicrefDetails extends AbstractDetailsPage {
 	@Override
 	protected void addSections(Composite parent, FormToolkit toolkit) {
 		GridData data = new GridData(GridData.FILL_HORIZONTAL);
-		idAttsSection = new IdAttsSection(parent,
-				masterSection.getBaseLocation(), this);
+		idAttsSection = new IdAttsSection(parent, this);
 		idAttsSection.getSection().setLayoutData(data);
 
 		topicRefAttsSection = new TopicrefAttsSection(parent, this);

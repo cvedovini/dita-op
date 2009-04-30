@@ -18,13 +18,10 @@
  */
 package org.dita_op.editor.internal.ui.editors.map.pages;
 
-import java.net.URI;
-
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.forms.AbstractFormPart;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.w3c.dom.Element;
 
@@ -32,12 +29,9 @@ class IdAttsSection extends AbstractAttsSection {
 
 	private Text idText;
 	private FileChooser conrefText;
-	private final URI baseLocation;
 
-	public IdAttsSection(Composite parent, URI baseLocation,
-			AbstractFormPart form) {
+	public IdAttsSection(Composite parent, AbstractDetailsPage form) {
 		super(parent, form);
-		this.baseLocation = baseLocation;
 		getSection().setText(Messages.getString("IdAttsSection.title")); //$NON-NLS-1$
 	}
 
@@ -55,7 +49,7 @@ class IdAttsSection extends AbstractAttsSection {
 
 		toolkit.createLabel(container,
 				Messages.getString("IdAttsSection.conref.label")); //$NON-NLS-1$
-		conrefText = new FileChooser(container, baseLocation, toolkit);
+		conrefText = new FileChooser(container, getBaseLocation(), toolkit);
 		conrefText.getControl().setLayoutData(
 				new GridData(GridData.FILL_HORIZONTAL));
 		conrefText.addModifyListener(this);

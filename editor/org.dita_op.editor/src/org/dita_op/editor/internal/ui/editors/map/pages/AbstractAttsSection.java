@@ -18,6 +18,8 @@
  */
 package org.dita_op.editor.internal.ui.editors.map.pages;
 
+import java.net.URI;
+
 import org.dita_op.editor.internal.ui.editors.FormLayoutFactory;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
@@ -26,7 +28,6 @@ import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
-import org.eclipse.ui.forms.AbstractFormPart;
 import org.eclipse.ui.forms.events.ExpansionAdapter;
 import org.eclipse.ui.forms.events.ExpansionEvent;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -35,13 +36,13 @@ import org.w3c.dom.Element;
 
 abstract class AbstractAttsSection implements ModifyListener, SelectionListener {
 
-	private Section section;
-	private AbstractFormPart form;
+	private final Section section;
+	private final AbstractDetailsPage page;
 
-	public AbstractAttsSection(Composite parent, AbstractFormPart form,
+	public AbstractAttsSection(Composite parent, AbstractDetailsPage page,
 			int style) {
-		this.form = form;
-		FormToolkit toolkit = form.getManagedForm().getToolkit();
+		this.page = page;
+		FormToolkit toolkit = page.getManagedForm().getToolkit();
 		section = toolkit.createSection(parent, style);
 		hookListeners();
 
@@ -51,13 +52,17 @@ abstract class AbstractAttsSection implements ModifyListener, SelectionListener 
 		section.setClient(createClient(section, toolkit));
 	}
 
-	public AbstractAttsSection(Composite parent, AbstractFormPart form) {
+	public AbstractAttsSection(Composite parent, AbstractDetailsPage form) {
 		this(parent, form, Section.TITLE_BAR | Section.TWISTIE
 				| Section.EXPANDED | Section.COMPACT);
 	}
 
 	public Section getSection() {
 		return section;
+	}
+
+	protected URI getBaseLocation() {
+		return page.getBaseLocation();
 	}
 
 	protected void hookListeners() {
@@ -68,7 +73,7 @@ abstract class AbstractAttsSection implements ModifyListener, SelectionListener 
 				}
 
 				public void expansionStateChanged(ExpansionEvent e) {
-					form.getManagedForm().getForm().reflow(false);
+					page.getManagedForm().getForm().reflow(false);
 				}
 			});
 		}
@@ -82,7 +87,7 @@ abstract class AbstractAttsSection implements ModifyListener, SelectionListener 
 	protected abstract void save(Element model);
 
 	public void markDirty() {
-		form.markDirty();
+		page.markDirty();
 	}
 
 	public void modifyText(ModifyEvent e) {

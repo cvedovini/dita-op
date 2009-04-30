@@ -18,6 +18,8 @@
  */
 package org.dita_op.editor.internal.ui.editors.map.pages;
 
+import java.net.URI;
+
 import org.dita_op.editor.internal.ui.editors.FormLayoutFactory;
 import org.dita_op.editor.internal.ui.editors.map.MasterSection;
 import org.eclipse.jface.viewers.ISelection;
@@ -42,7 +44,7 @@ public abstract class AbstractDetailsPage extends AbstractFormPart implements
 	private Element model;
 	private final String title;
 	private boolean initialized = false;
-	protected MasterSection masterSection;
+	private MasterSection masterSection;
 
 	public AbstractDetailsPage(String title) {
 		super();
@@ -51,6 +53,10 @@ public abstract class AbstractDetailsPage extends AbstractFormPart implements
 
 	public void setMasterSection(MasterSection masterSection) {
 		this.masterSection = masterSection;
+	}
+
+	protected URI getBaseLocation() {
+		return (masterSection == null) ? null : masterSection.getBaseLocation();
 	}
 
 	/**

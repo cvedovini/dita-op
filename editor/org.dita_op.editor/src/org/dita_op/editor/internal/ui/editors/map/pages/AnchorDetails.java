@@ -41,8 +41,7 @@ public class AnchorDetails extends AbstractDetailsPage {
 	@Override
 	protected void addSections(Composite parent, FormToolkit toolkit) {
 		GridData data = new GridData(GridData.FILL_HORIZONTAL);
-		idAttsSection = new IdAttsSection(parent,
-				masterSection.getBaseLocation(), this);
+		idAttsSection = new IdAttsSection(parent, this);
 		idAttsSection.getSection().setLayoutData(data);
 
 		selectionAttsSection = new SelectionAttsSection(parent, this);
