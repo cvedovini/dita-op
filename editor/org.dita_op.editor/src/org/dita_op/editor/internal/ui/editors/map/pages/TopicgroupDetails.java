@@ -32,7 +32,7 @@ public class TopicgroupDetails extends AbstractDetailsPage {
 	private LocalAttsSection localAttsSection;
 
 	public TopicgroupDetails() {
-		super(Messages.getString("TopicgroupDetails.title")); //$NON-NLS-1$
+		super();
 	}
 
 	/**

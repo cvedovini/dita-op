@@ -18,29 +18,22 @@
  */
 package org.dita_op.editor.internal.ui.editors.map.model;
 
-import org.dita_op.editor.internal.ImageConstants;
-import org.dita_op.editor.internal.ui.editors.map.pages.TopicgroupDetails;
-import org.eclipse.ui.forms.IDetailsPage;
+import java.util.MissingResourceException;
+import java.util.ResourceBundle;
 
-public class TopicGroupDescriptor extends Descriptor {
+class Messages {
+	private static final String BUNDLE_NAME = "org.dita_op.editor.internal.ui.editors.map.model.messages"; //$NON-NLS-1$
 
-	TopicGroupDescriptor() {
-		this("topicgroup"); //$NON-NLS-1$
+	private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME);
+
+	private Messages() {
 	}
 
-	protected TopicGroupDescriptor(String tagName) {
-		super(tagName, ImageConstants.ICON_TOPICGROUP);
+	public static String getString(String key) {
+		try {
+			return RESOURCE_BUNDLE.getString(key);
+		} catch (MissingResourceException e) {
+			return '!' + key + '!';
+		}
 	}
-
-	@Override
-	protected Descriptor[] getChildren() {
-		return new Descriptor[] { Descriptor.TOPICREF, Descriptor.TOPICHEAD,
-				Descriptor.TOPICGROUP, Descriptor.NAVREF, Descriptor.ANCHOR };
-	}
-
-	@Override
-	public IDetailsPage getDetailsPage() {
-		return new TopicgroupDetails();
-	}
-
 }

@@ -22,6 +22,7 @@ import java.net.URI;
 
 import org.dita_op.editor.internal.ui.editors.FormLayoutFactory;
 import org.dita_op.editor.internal.ui.editors.map.MasterSection;
+import org.dita_op.editor.internal.ui.editors.map.model.Descriptor;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.events.ModifyEvent;
@@ -42,13 +43,12 @@ public abstract class AbstractDetailsPage extends AbstractFormPart implements
 		IDetailsPage, ModifyListener, SelectionListener {
 
 	private Element model;
-	private final String title;
 	private boolean initialized = false;
 	private MasterSection masterSection;
+	private Section section;
 
-	public AbstractDetailsPage(String title) {
+	public AbstractDetailsPage() {
 		super();
-		this.title = title;
 	}
 
 	public void setMasterSection(MasterSection masterSection) {
@@ -59,19 +59,11 @@ public abstract class AbstractDetailsPage extends AbstractFormPart implements
 		return (masterSection == null) ? null : masterSection.getBaseLocation();
 	}
 
-	/**
-	 * @return the title
-	 */
-	public String getTitle() {
-		return title;
-	}
-
 	public void createContents(Composite parent) {
 		FormToolkit toolkit = getManagedForm().getToolkit();
 		parent.setLayout(FormLayoutFactory.createDetailsGridLayout(false, 1));
 
-		Section section = toolkit.createSection(parent, Section.TITLE_BAR);
-		section.setText(title);
+		section = toolkit.createSection(parent, Section.TITLE_BAR);
 		section.clientVerticalSpacing = FormLayoutFactory.SECTION_HEADER_VERTICAL_SPACING;
 		section.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		section.setLayout(new GridLayout());
@@ -93,15 +85,8 @@ public abstract class AbstractDetailsPage extends AbstractFormPart implements
 	 *      org.eclipse.jface.viewers.ISelection)
 	 */
 	public final void selectionChanged(IFormPart part, ISelection selection) {
-		initialized = false;
-		model = null;
-
-		try {
-			model = (Element) ((IStructuredSelection) selection).getFirstElement();
-			load(model);
-		} finally {
-			initialized = true;
-		}
+		model = (Element) ((IStructuredSelection) selection).getFirstElement();
+		refresh();
 	}
 
 	/**
@@ -113,7 +98,11 @@ public abstract class AbstractDetailsPage extends AbstractFormPart implements
 
 		try {
 			if (model != null) {
+				Descriptor desc = Descriptor.getDescriptor(model);
+				section.setText(desc.getLabel());
 				load(model);
+			} else {
+				section.setText("");
 			}
 		} finally {
 			initialized = true;

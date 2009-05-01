@@ -21,12 +21,23 @@ package org.dita_op.editor.internal.ui.editors.map.model;
 import org.dita_op.editor.internal.ImageConstants;
 import org.dita_op.editor.internal.ui.editors.map.pages.MapDetails;
 import org.eclipse.ui.forms.IDetailsPage;
+import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 public class MapDescriptor extends Descriptor {
 
 	MapDescriptor() {
 		super("map", ImageConstants.ICON_DITAMAP); //$NON-NLS-1$
+	}
+
+	protected MapDescriptor(String tagName) {
+		super(tagName, ImageConstants.ICON_DITAMAP);
+	}
+
+	@Override
+	public boolean isMap() {
+		return true;
 	}
 
 	@Override
@@ -48,16 +59,13 @@ public class MapDescriptor extends Descriptor {
 	}
 
 	public static String getTitle(Element elt) {
-		String title = elt.getAttribute("title"); //$NON-NLS-1$
+		NodeList nl = elt.getElementsByTagName("title"); //$NON-NLS-1$
 
-		/*
-		 * NodeList nl = elt.getElementsByTagName("title"); //$NON-NLS-1$
-		 * 
-		 * if (nl.getLength() > 0) { title =
-		 * nl.item(0).getFirstChild().getTextContent(); }
-		 */
+		if (nl.getLength() > 0) {
+			return toString((Element) nl.item(0));
+		}
 
-		return title;
+		return elt.getAttribute("title"); //$NON-NLS-1$;
 	}
 
 	public static void setTitle(Element elt, String title) {
@@ -67,28 +75,28 @@ public class MapDescriptor extends Descriptor {
 			elt.setAttribute("title", title); //$NON-NLS-1$
 		}
 
-		/*
-		 * // Make sure to remove "title" attribute if any, they are deprecated!
-		 * elt.removeAttribute("title"); //$NON-NLS-1$ NodeList nl =
-		 * elt.getElementsByTagName("title"); //$NON-NLS-1$
-		 * 
-		 * Document doc = elt.getOwnerDocument(); Element newChild =
-		 * doc.createElement("title"); //$NON-NLS-1$
-		 * newChild.appendChild(doc.createTextNode(title));
-		 * 
-		 * if (nl.getLength() > 0) { elt.replaceChild(newChild, nl.item(0)); }
-		 * else { elt.insertBefore(newChild, elt.getFirstChild()); }
-		 */
+		// Make sure to remove "title" attribute if any, they are deprecated!
+		elt.removeAttribute("title"); //$NON-NLS-1$ 
+		NodeList nl = elt.getElementsByTagName("title"); //$NON-NLS-1$
+
+		Document doc = elt.getOwnerDocument();
+		Element newChild = doc.createElement("title"); //$NON-NLS-1$
+		newChild.appendChild(doc.createTextNode(title));
+
+		if (nl.getLength() > 0) {
+			elt.replaceChild(newChild, nl.item(0));
+		} else {
+			elt.insertBefore(newChild, elt.getFirstChild());
+		}
 	}
 
 	public static void removeTitle(Element elt) {
 		elt.removeAttribute("title"); //$NON-NLS-1$
+		NodeList nl = elt.getElementsByTagName("title"); //$NON-NLS-1$
 
-		/*
-		 * NodeList nl = elt.getElementsByTagName("title"); //$NON-NLS-1$
-		 * 
-		 * for (int i = 0; i < nl.getLength(); i++) {
-		 * elt.removeChild(nl.item(i)); }
-		 */
+		for (int i = 0; i < nl.getLength(); i++) {
+			elt.removeChild(nl.item(i));
+		}
 	}
+
 }

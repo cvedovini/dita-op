@@ -33,7 +33,7 @@ public class NavrefDetails extends AbstractDetailsPage {
 	private LocalAttsSection localAttsSection;
 
 	public NavrefDetails() {
-		super(Messages.getString("NavrefDetails.title")); //$NON-NLS-1$
+		super();
 	}
 
 	/**

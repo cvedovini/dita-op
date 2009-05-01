@@ -72,7 +72,7 @@ public class MapContentProvider implements ITreeContentProvider,
 	}
 
 	public void addChildNode(Node parent, Descriptor desc) {
-		Element child = document.createElement(desc.getTagName());
+		Element child = desc.createElement(document);
 		parent.appendChild(child);
 
 		viewer.add(parent, child);
@@ -82,7 +82,7 @@ public class MapContentProvider implements ITreeContentProvider,
 	public void addSiblingNode(Node sibling, Descriptor desc) {
 		Node parent = sibling.getParentNode();
 
-		Element child = document.createElement(desc.getTagName());
+		Element child = desc.createElement(document);
 		Node anchor = sibling.getNextSibling();
 
 		if (anchor == null) {

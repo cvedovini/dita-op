@@ -18,44 +18,17 @@
  */
 package org.dita_op.editor.internal.ui.editors.map.model;
 
-import org.dita_op.editor.internal.ImageConstants;
-import org.dita_op.editor.internal.ui.editors.map.pages.TopicrefDetails;
-import org.eclipse.ui.forms.IDetailsPage;
-import org.w3c.dom.Element;
 
-public class TopicRefDescriptor extends Descriptor {
+public class PartDescriptor extends TopicRefDescriptor {
 
-	TopicRefDescriptor() {
-		this("topicref"); //$NON-NLS-1$
-	}
-
-	protected TopicRefDescriptor(String tagName) {
-		super(tagName, ImageConstants.ICON_TOPIC);
-	}
-
-	@Override
-	public String getText(Element elt) {
-		String title = elt.getAttribute("navtitle"); //$NON-NLS-1$
-		String href = elt.getAttribute("href"); //$NON-NLS-1$
-
-		if (title != null) {
-			return title;
-		} else if (href != null) {
-			return href;
-		}
-
-		return super.getText(elt);
+	PartDescriptor() {
+		super("part"); //$NON-NLS-1$
 	}
 
 	@Override
 	protected Descriptor[] getChildren() {
 		return new Descriptor[] { Descriptor.TOPICREF, Descriptor.TOPICHEAD,
-				Descriptor.TOPICGROUP, Descriptor.NAVREF, Descriptor.ANCHOR };
-	}
-
-	@Override
-	public IDetailsPage getDetailsPage() {
-		return new TopicrefDetails();
+				Descriptor.TOPICGROUP, Descriptor.CHAPTER };
 	}
 
 }

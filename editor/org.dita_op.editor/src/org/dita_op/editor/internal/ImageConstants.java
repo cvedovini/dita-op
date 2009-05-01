@@ -61,5 +61,4 @@ public interface ImageConstants {
 	public static final String ICON_PASTE = "icons/page_white_paste.png"; //$NON-NLS-1$
 
 	public static final String ICON_RELTABLE = "icons/table.png"; //$NON-NLS-1$
-
 }

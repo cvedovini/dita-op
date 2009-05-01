@@ -36,7 +36,7 @@ class MSDragSourceListener implements DragSourceListener {
 
 	public void dragStart(DragSourceEvent event) {
 		Element elt = modelProvider.getSelection();
-		event.doit = Descriptor.MAP.instanceOf(elt);
+		event.doit = !Descriptor.getDescriptor(elt).isMap();
 	}
 
 	public void dragFinished(DragSourceEvent event) {

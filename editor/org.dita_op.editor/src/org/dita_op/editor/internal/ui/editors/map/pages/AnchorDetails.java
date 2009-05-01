@@ -31,7 +31,7 @@ public class AnchorDetails extends AbstractDetailsPage {
 	private LocalAttsSection localAttsSection;
 
 	public AnchorDetails() {
-		super(Messages.getString("AnchorDetails.title")); //$NON-NLS-1$
+		super();
 	}
 
 	/**

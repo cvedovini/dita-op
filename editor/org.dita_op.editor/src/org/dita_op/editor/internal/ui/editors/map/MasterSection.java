@@ -133,7 +133,7 @@ public class MasterSection extends SectionPart implements IMenuListener {
 		}
 
 		manager.add(new Separator("edit")); //$NON-NLS-1$
-		boolean ismap = Descriptor.MAP.instanceOf(elt);
+		boolean ismap = Descriptor.getDescriptor(elt).isMap();
 
 		if (!ismap) {
 			manager.add(new Action(

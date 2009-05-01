@@ -54,7 +54,7 @@ class MSDropListener extends ViewerDropAdapter {
 		if (ResourceTransfer.getInstance().isSupportedType(
 				event.currentDataType)
 				&& event.detail == DND.DROP_DEFAULT) {
-			event.detail = DND.DROP_LINK;
+			event.detail = DND.DROP_COPY;
 		}
 
 		super.dragEnter(event);
@@ -67,7 +67,7 @@ class MSDropListener extends ViewerDropAdapter {
 
 		if (target == null) {
 			parent = section.getDocument().getDocumentElement();
-		} else if (target instanceof Node) {
+		} else if (target instanceof Element) {
 			parent = (Element) target;
 			int loc = getCurrentLocation();
 
@@ -167,7 +167,7 @@ class MSDropListener extends ViewerDropAdapter {
 	}
 
 	private String getRelativePath(IResource res) {
-		URI targetURI = res.getLocationURI();
+		URI targetURI = URI.create(res.getFullPath().toString());
 
 		if (section.getBaseLocation() != null) {
 			targetURI = Utils.relativize(targetURI, section.getBaseLocation());

@@ -18,27 +18,23 @@
  */
 package org.dita_op.editor.internal.ui.editors.map.pages;
 
-import org.dita_op.editor.internal.ui.editors.map.model.MapDescriptor;
 import org.eclipse.jface.layout.GridDataFactory;
-import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.w3c.dom.Element;
 
-public class MapDetails extends AbstractDetailsPage {
+public class RelTableDetails extends AbstractDetailsPage {
 
 	private Text titleText;
-	private Text anchorRefText;
 	private IdAttsSection idAttsSection;
 	private TopicrefAttsSection topicRefAttsSection;
 	private SelectionAttsSection selectionAttsSection;
 	private LocalAttsSection localAttsSection;
 
-	public MapDetails() {
+	public RelTableDetails() {
 		super();
 	}
 
@@ -50,27 +46,12 @@ public class MapDetails extends AbstractDetailsPage {
 	protected void createClientArea(Composite parent, FormToolkit toolkit) {
 		parent.setLayout(new GridLayout(2, false));
 
-		Label label = toolkit.createLabel(parent,
-				Messages.getString("MapDetails.title.label")); //$NON-NLS-1$
-		GridData data = new GridData(GridData.VERTICAL_ALIGN_BEGINNING);
-		data.horizontalSpan = 2;
-		label.setLayoutData(data);
-
-		titleText = toolkit.createText(parent,
-				Messages.getString("MapDetails.title.default"), //$NON-NLS-1$
-				SWT.MULTI | SWT.WRAP | SWT.V_SCROLL);
-		data = new GridData(GridData.FILL_BOTH);
-		data.heightHint = 3 * (titleText.getLineHeight() + titleText.getBorderWidth());
-		data.horizontalSpan = 2;
-		titleText.setLayoutData(data);
-		titleText.addModifyListener(this);
-
 		toolkit.createLabel(parent,
-				Messages.getString("MapDetails.anchorref.label")); //$NON-NLS-1$
-		anchorRefText = toolkit.createText(parent,
-				Messages.getString("MapDetails.anchorref.default")); //$NON-NLS-1$
-		anchorRefText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		anchorRefText.addModifyListener(this);
+				Messages.getString("RelTableDetails.title.label")); //$NON-NLS-1$
+		titleText = toolkit.createText(parent,
+				Messages.getString("RelTableDetails.title.default")); //$NON-NLS-1$
+		titleText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+		titleText.addModifyListener(this);
 	}
 
 	/**
@@ -97,10 +78,8 @@ public class MapDetails extends AbstractDetailsPage {
 	}
 
 	protected void load(Element model) {
-		String title = MapDescriptor.getTitle(model);
-		titleText.setText(title == null ? ModelUtils.BLANK : title);
+		ModelUtils.loadText(model, titleText, "title"); //$NON-NLS-1$
 
-		ModelUtils.loadText(model, anchorRefText, "anchorref"); //$NON-NLS-1$
 		idAttsSection.load(model);
 		topicRefAttsSection.load(model);
 		selectionAttsSection.load(model);
@@ -109,15 +88,7 @@ public class MapDetails extends AbstractDetailsPage {
 
 	protected void save(Element model) {
 		ModelUtils.saveText(model, titleText, "title"); //$NON-NLS-1$
-		String title = titleText.getText().trim();
 
-		if (ModelUtils.BLANK.equals(title)) {
-			MapDescriptor.removeTitle(model);
-		} else {
-			MapDescriptor.setTitle(model, title);
-		}
-
-		ModelUtils.saveText(model, anchorRefText, "anchorref"); //$NON-NLS-1$
 		idAttsSection.save(model);
 		topicRefAttsSection.save(model);
 		selectionAttsSection.save(model);

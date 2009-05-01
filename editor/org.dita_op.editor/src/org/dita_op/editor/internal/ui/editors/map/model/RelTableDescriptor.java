@@ -19,6 +19,7 @@
 package org.dita_op.editor.internal.ui.editors.map.model;
 
 import org.dita_op.editor.internal.ImageConstants;
+import org.dita_op.editor.internal.ui.editors.map.pages.RelTableDetails;
 import org.eclipse.ui.forms.IDetailsPage;
 import org.w3c.dom.Element;
 
@@ -41,7 +42,7 @@ public class RelTableDescriptor extends Descriptor {
 
 	@Override
 	public IDetailsPage getDetailsPage() {
-		return null;
+		return new RelTableDetails();
 	}
 
 }

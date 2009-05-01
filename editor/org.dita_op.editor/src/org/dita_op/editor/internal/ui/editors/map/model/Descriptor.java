@@ -18,15 +18,20 @@
  */
 package org.dita_op.editor.internal.ui.editors.map.model;
 
+import java.io.IOException;
+import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.xml.serialize.TextSerializer;
 import org.dita_op.editor.internal.Activator;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.forms.IDetailsPage;
+import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
@@ -38,13 +43,36 @@ public abstract class Descriptor {
 		return REGISTRY.get(elt.getLocalName());
 	}
 
-	public static Descriptor MAP = new MapDescriptor();
-	public static Descriptor TOPICREF = new TopicRefDescriptor();
-	public static Descriptor TOPICGROUP = new TopicGroupDescriptor();
-	public static Descriptor TOPICHEAD = new TopicHeadDescriptor();
-	public static Descriptor NAVREF = new NavRefDescriptor();
-	public static Descriptor ANCHOR = new AnchorDescriptor();
-	public static Descriptor RELTABLE = new RelTableDescriptor();
+	public static final Descriptor MAP = new MapDescriptor();
+	public static final Descriptor TOPICREF = new TopicRefDescriptor();
+	public static final Descriptor TOPICGROUP = new TopicGroupDescriptor();
+	public static final Descriptor TOPICHEAD = new TopicHeadDescriptor();
+	public static final Descriptor NAVREF = new NavRefDescriptor();
+	public static final Descriptor ANCHOR = new AnchorDescriptor();
+	public static final Descriptor RELTABLE = new RelTableDescriptor();
+
+	public static final Descriptor BOOKMAP = new BookmapDescriptor();
+	public static final Descriptor FRONTMATTER = new FrontMatterDescriptor();
+	public static final Descriptor CHAPTER = new ChapterDescriptor();
+	public static final Descriptor PART = new PartDescriptor();
+	public static final Descriptor APPENDIX = new AppendixDescriptor();
+	public static final Descriptor BACKMATTER = new BackMatterDescriptor();
+	public static final Descriptor BOOKLISTS = new BookListsDescriptor();
+	public static final Descriptor NOTICES = new NoticesDescriptor();
+	public static final Descriptor DEDICATION = new DedicationDescriptor();
+	public static final Descriptor COLOPHON = new ColophonDescriptor();
+	public static final Descriptor BOOKABSTRACT = new BookAbstractDescriptor();
+	public static final Descriptor DRAFTINTRO = new DraftInfoDescriptor();
+	public static final Descriptor PREFACE = new PrefaceDescriptor();
+	public static final Descriptor AMENDMENTS = new AmendmentsDescriptor();
+	public static final Descriptor TOC = new TOCDescriptor();
+	public static final Descriptor FIGURELIST = new FigureListDescriptor();
+	public static final Descriptor ABBREVLIST = new AbbrevListDescriptor();
+	public static final Descriptor TRADEMARKLIST = new TradeMarkListDescriptor();
+	public static final Descriptor GLOSSARYLIST = new GlossaryListDescriptor();
+	public static final Descriptor BIBLIOLIST = new BiblioListDescriptor();
+	public static final Descriptor INDEXLIST = new IndexListDescriptor();
+	public static final Descriptor BOOKLIST = new BookListDescriptor();
 
 	private final String tagName;
 	private final String imagePath;
@@ -55,8 +83,12 @@ public abstract class Descriptor {
 		REGISTRY.put(tagName, this);
 	}
 
-	public String getTagName() {
-		return tagName;
+	public String getLabel() {
+		return Messages.getString(tagName);
+	}
+
+	public boolean isMap() {
+		return false;
 	}
 
 	public Image getImage() {
@@ -69,11 +101,15 @@ public abstract class Descriptor {
 
 	public String getText(Element elt) {
 		String id = elt.getAttribute("id"); //$NON-NLS-1$
-		return (id != null) ? id : elt.getLocalName();
+		return (id != null) ? id : getLabel();
 	}
 
 	public boolean instanceOf(Element elt) {
 		return tagName.equals(elt.getLocalName());
+	}
+
+	public Element createElement(Document document) {
+		return document.createElement(tagName);
 	}
 
 	public void contributeMenuItems(IMenuManager manager,
@@ -83,7 +119,7 @@ public abstract class Descriptor {
 		Descriptor[] children = getChildren();
 
 		for (final Descriptor desc : children) {
-			menu.add(new Action(desc.getTagName(), desc.getImageDescriptor()) {
+			menu.add(new Action(desc.getLabel(), desc.getImageDescriptor()) {
 
 				@Override
 				public void run() {
@@ -102,7 +138,7 @@ public abstract class Descriptor {
 				children = pd.getChildren();
 
 				for (final Descriptor desc : children) {
-					menu.add(new Action(desc.getTagName(),
+					menu.add(new Action(desc.getLabel(),
 							desc.getImageDescriptor()) {
 
 						@Override
@@ -134,4 +170,19 @@ public abstract class Descriptor {
 	protected abstract Descriptor[] getChildren();
 
 	public abstract IDetailsPage getDetailsPage();
+
+	protected static String toString(Element elt) {
+		StringWriter out = new StringWriter();
+		TextSerializer serializer = new TextSerializer();
+		serializer.setOutputCharStream(out);
+
+		try {
+			serializer.serialize(elt);
+		} catch (IOException e) {
+			Activator.getDefault().log(IStatus.WARNING, e);
+		}
+
+		return out.toString();
+	}
+
 }

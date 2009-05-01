@@ -35,7 +35,7 @@ public class TopicheadDetails extends AbstractDetailsPage {
 	private LocalAttsSection localAttsSection;
 
 	public TopicheadDetails() {
-		super(Messages.getString("TopicheadDetails.title")); //$NON-NLS-1$
+		super();
 	}
 
 	/**
