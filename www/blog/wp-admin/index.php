@@ -30,7 +30,7 @@ $today = current_time('mysql', 1);
 
 <div class="wrap">
 <?php screen_icon(); ?>
-<h2><?php echo wp_specialchars( $title ); ?></h2>
+<h2><?php echo esc_html( $title ); ?></h2>
 
 <div id="dashboard-widgets-wrap">
 
@@ -41,4 +41,4 @@ $today = current_time('mysql', 1);
 
 </div><!-- wrap -->
 
-<?php require('./admin-footer.php'); ?>
+<?php require(ABSPATH . 'wp-admin/admin-footer.php'); ?>

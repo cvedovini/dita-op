@@ -1,6 +1,6 @@
 </div> <!-- container -->
 <div class="footerpush"></div>
-<div style="text-align:center"><a href="http://sourceforge.net"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=228491&amp;type=2" width="125" height="37" border="0" alt="SourceForge.net Logo" /></a></div>
+<div style="text-align:center"><a href="http://sourceforge.net/projects/dita-op"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=228491&type=12" width="120" height="30" border="0" alt="Get DITA Open Platform at SourceForge.net. Fast, secure and Free Open Source software downloads" /></a></div>
 </div> <!--wrapper -->
 
 <div class='footer'>

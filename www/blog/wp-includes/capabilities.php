@@ -533,10 +533,10 @@ class WP_User {
 		//Build $allcaps from role caps, overlay user's $caps
 		$this->allcaps = array();
 		foreach ( (array) $this->roles as $role ) {
-			$role = $wp_roles->get_role( $role );
-			$this->allcaps = array_merge( $this->allcaps, $role->capabilities );
+			$role =& $wp_roles->get_role( $role );
+			$this->allcaps = array_merge( (array) $this->allcaps, (array) $role->capabilities );
 		}
-		$this->allcaps = array_merge( $this->allcaps, $this->caps );
+		$this->allcaps = array_merge( (array) $this->allcaps, (array) $this->caps );
 	}
 
 	/**
@@ -905,7 +905,7 @@ function map_meta_cap( $cap, $user_id ) {
 		$caps[] = $cap;
 	}
 
-	return $caps;
+	return apply_filters('map_meta_cap', $caps, $cap, $user_id, $args);
 }
 
 /**
