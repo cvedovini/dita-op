@@ -85,12 +85,14 @@ public class TopicheadDetails extends AbstractDetailsPage {
 		localAttsSection.load(model);
 	}
 
-	protected void save(Element model) {
+	protected Element save(Element model) {
 		ModelUtils.saveText(model, navTitleText, "navtitle"); //$NON-NLS-1$
 		idAttsSection.save(model);
 		topicRefAttsSection.save(model);
 		selectionAttsSection.save(model);
 		localAttsSection.save(model);
+
+		return model;
 	}
 
 	/**

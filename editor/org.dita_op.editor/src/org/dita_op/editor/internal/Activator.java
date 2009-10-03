@@ -23,6 +23,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.forms.FormColors;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
@@ -106,6 +107,8 @@ public class Activator extends AbstractUIPlugin {
 		if (formColors == null) {
 			formColors = new FormColors(display);
 			formColors.markShared();
+			formColors.createColor("labelex_selection_backgound", new RGB(181,
+					213, 255));
 		}
 		return formColors;
 	}

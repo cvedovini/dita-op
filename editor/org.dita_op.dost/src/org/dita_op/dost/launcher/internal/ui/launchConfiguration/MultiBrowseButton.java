@@ -56,7 +56,6 @@ public class MultiBrowseButton {
 		/**
 		 * @see org.eclipse.swt.events.SelectionAdapter#widgetSelected(org.eclipse.swt.events.SelectionEvent)
 		 */
-		@SuppressWarnings("unchecked")//$NON-NLS-1$
 		@Override
 		public void widgetSelected(SelectionEvent e) {
 			menuManager.update(true);
@@ -121,7 +120,6 @@ public class MultiBrowseButton {
 		this.description = description;
 	}
 
-	@SuppressWarnings("restriction")//$NON-NLS-1$
 	private void browseWorkspace() {
 		if (browseFolder) {
 			ContainerSelectionDialog containerDialog;

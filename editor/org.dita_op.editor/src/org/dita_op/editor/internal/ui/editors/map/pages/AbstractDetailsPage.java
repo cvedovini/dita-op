@@ -78,7 +78,7 @@ public abstract class AbstractDetailsPage extends AbstractFormPart implements
 
 	protected abstract void load(Element model);
 
-	protected abstract void save(Element model);
+	protected abstract Element save(Element model);
 
 	/**
 	 * @see org.eclipse.ui.forms.IPartSelectionListener#selectionChanged(org.eclipse.ui.forms.IFormPart,
@@ -114,7 +114,7 @@ public abstract class AbstractDetailsPage extends AbstractFormPart implements
 	 */
 	@Override
 	public final void commit(boolean onSave) {
-		save(model);
+		model = save(model);
 		super.commit(onSave);
 	}
 

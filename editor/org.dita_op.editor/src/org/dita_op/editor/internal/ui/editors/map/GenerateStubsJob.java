@@ -25,6 +25,7 @@ import java.util.Properties;
 import org.dita_op.editor.internal.Activator;
 import org.dita_op.editor.internal.Utils;
 import org.dita_op.editor.internal.ui.templates.DITATemplateContext;
+import org.dita_op.editor.internal.utils.DOMUtils;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -97,7 +98,8 @@ class GenerateStubsJob extends Job {
 		}
 
 		String navtitle = n.getAttribute("navtitle"); //$NON-NLS-1$
-		IFile target = this.masterSection.getTargetFile(ref);
+		IFile target = DOMUtils.getTargetFile(masterSection.getBaseLocation(),
+				ref);
 
 		if (!target.exists()) {
 			String templateId = "org.dita_op.editor.template.topic"; //$NON-NLS-1$
@@ -125,7 +127,8 @@ class GenerateStubsJob extends Job {
 			n.setAttribute("mapref", ref); //$NON-NLS-1$
 		}
 
-		IFile target = this.masterSection.getTargetFile(ref);
+		IFile target = DOMUtils.getTargetFile(masterSection.getBaseLocation(),
+				ref);
 
 		if (!target.exists()) {
 			target.create(openContentStream("org.dita_op.editor.template.map", //$NON-NLS-1$
@@ -150,12 +153,14 @@ class GenerateStubsJob extends Job {
 		}
 
 		String filename = prefix.concat(".dita"); //$NON-NLS-1$
-		IFile target = this.masterSection.getTargetFile(filename);
+		IFile target = DOMUtils.getTargetFile(masterSection.getBaseLocation(),
+				filename);
 
 		for (int i = 1; target.exists(); i++) {
 			filename = prefix.concat("_").concat(Integer.toString(i)).concat( //$NON-NLS-1$
 					".dita"); //$NON-NLS-1$
-			target = this.masterSection.getTargetFile(filename);
+			target = DOMUtils.getTargetFile(masterSection.getBaseLocation(),
+					filename);
 		}
 
 		return filename;
@@ -172,12 +177,14 @@ class GenerateStubsJob extends Job {
 		}
 
 		String filename = prefix.concat(".ditamap"); //$NON-NLS-1$
-		IFile target = this.masterSection.getTargetFile(filename);
+		IFile target = DOMUtils.getTargetFile(masterSection.getBaseLocation(),
+				filename);
 
 		for (int i = 1; target.exists(); i++) {
 			filename = prefix.concat("_").concat(Integer.toString(i)).concat( //$NON-NLS-1$
 					".ditamap"); //$NON-NLS-1$
-			target = this.masterSection.getTargetFile(filename);
+			target = DOMUtils.getTargetFile(masterSection.getBaseLocation(),
+					filename);
 		}
 
 		return filename;

@@ -72,11 +72,15 @@ class TopicrefAttsSection extends AbstractAttsSection {
 		targetTypeCombo.add("concept"); //$NON-NLS-1$
 		targetTypeCombo.add("task"); //$NON-NLS-1$
 		targetTypeCombo.add("reference"); //$NON-NLS-1$
+
+		/* Those types are for xrefs only
 		targetTypeCombo.add("fig"); //$NON-NLS-1$
 		targetTypeCombo.add("table"); //$NON-NLS-1$
 		targetTypeCombo.add("li"); //$NON-NLS-1$
 		targetTypeCombo.add("fn"); //$NON-NLS-1$
 		targetTypeCombo.add("section"); //$NON-NLS-1$
+		*/
+
 		targetTypeCombo.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		targetTypeCombo.addSelectionListener(this);
 

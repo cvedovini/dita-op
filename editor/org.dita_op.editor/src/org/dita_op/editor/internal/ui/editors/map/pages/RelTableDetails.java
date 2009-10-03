@@ -18,7 +18,14 @@
  */
 package org.dita_op.editor.internal.ui.editors.map.pages;
 
+import java.util.Iterator;
+
+import org.dita_op.editor.internal.utils.DOMUtils;
 import org.eclipse.jface.layout.GridDataFactory;
+import org.eclipse.jface.viewers.IOpenListener;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.OpenEvent;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -33,6 +40,8 @@ public class RelTableDetails extends AbstractDetailsPage {
 	private TopicrefAttsSection topicRefAttsSection;
 	private SelectionAttsSection selectionAttsSection;
 	private LocalAttsSection localAttsSection;
+	private Element workingCopy;
+	private RelTableViewer viewer;
 
 	public RelTableDetails() {
 		super();
@@ -52,6 +61,27 @@ public class RelTableDetails extends AbstractDetailsPage {
 				Messages.getString("RelTableDetails.title.default")); //$NON-NLS-1$
 		titleText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		titleText.addModifyListener(this);
+
+		viewer = new RelTableViewer(parent, SWT.BORDER, getBaseLocation());
+		viewer.setContentProvider(new RelTableContentProvider());
+		viewer.setLabelProvider(new RelCellLabelProvider());
+
+		GridData data = new GridData(GridData.FILL_BOTH);
+		data.horizontalSpan = 2;
+		data.minimumHeight = 200;
+		viewer.getControl().setLayoutData(data);
+
+		viewer.addOpenListener(new IOpenListener() {
+
+			public void open(OpenEvent event) {
+				IStructuredSelection sel = (IStructuredSelection) event.getSelection();
+				Iterator it = sel.iterator();
+
+				while (it.hasNext()) {
+					DOMUtils.open(getBaseLocation(), (Element) it.next());
+				}
+			}
+		});
 	}
 
 	/**
@@ -78,21 +108,27 @@ public class RelTableDetails extends AbstractDetailsPage {
 	}
 
 	protected void load(Element model) {
-		ModelUtils.loadText(model, titleText, "title"); //$NON-NLS-1$
+		workingCopy = (Element) model.cloneNode(true);
+		ModelUtils.loadText(workingCopy, titleText, "title"); //$NON-NLS-1$
 
-		idAttsSection.load(model);
-		topicRefAttsSection.load(model);
-		selectionAttsSection.load(model);
-		localAttsSection.load(model);
+		idAttsSection.load(workingCopy);
+		topicRefAttsSection.load(workingCopy);
+		selectionAttsSection.load(workingCopy);
+		localAttsSection.load(workingCopy);
+
+		viewer.setInput(workingCopy);
 	}
 
-	protected void save(Element model) {
-		ModelUtils.saveText(model, titleText, "title"); //$NON-NLS-1$
+	protected Element save(Element model) {
+		ModelUtils.saveText(workingCopy, titleText, "title"); //$NON-NLS-1$
 
-		idAttsSection.save(model);
-		topicRefAttsSection.save(model);
-		selectionAttsSection.save(model);
-		localAttsSection.save(model);
+		idAttsSection.save(workingCopy);
+		topicRefAttsSection.save(workingCopy);
+		selectionAttsSection.save(workingCopy);
+		localAttsSection.save(workingCopy);
+
+		model.getParentNode().replaceChild(workingCopy, model);
+		return workingCopy;
 	}
 
 	/**

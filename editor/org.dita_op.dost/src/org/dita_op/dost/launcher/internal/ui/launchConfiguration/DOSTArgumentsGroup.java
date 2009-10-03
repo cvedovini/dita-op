@@ -53,7 +53,7 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.ui.PlatformUI;
 
-@SuppressWarnings( { "unchecked", "restriction" })//$NON-NLS-1$ //$NON-NLS-2$
+@SuppressWarnings( { "unchecked" })//$NON-NLS-1$ //$NON-NLS-2$
 public abstract class DOSTArgumentsGroup {
 
 	private final Composite group;
@@ -297,7 +297,6 @@ public abstract class DOSTArgumentsGroup {
 			return null;
 		}
 
-		@SuppressWarnings("unchecked")//$NON-NLS-1$
 		public String getColumnText(Object element, int columnIndex) {
 			Map.Entry entry = (Map.Entry) element;
 			return (columnIndex == 0) ? entry.getKey().toString()

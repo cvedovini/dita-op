@@ -18,14 +18,10 @@
  */
 package org.dita_op.editor.internal.ui.editors.map.model;
 
-import java.io.IOException;
-import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.xml.serialize.TextSerializer;
 import org.dita_op.editor.internal.Activator;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.resource.ImageDescriptor;
@@ -49,7 +45,7 @@ public abstract class Descriptor {
 	public static final Descriptor TOPICHEAD = new TopicHeadDescriptor();
 	public static final Descriptor NAVREF = new NavRefDescriptor();
 	public static final Descriptor ANCHOR = new AnchorDescriptor();
-	public static final Descriptor RELTABLE = new RelTableDescriptor();
+	// public static final Descriptor RELTABLE = new RelTableDescriptor();
 
 	public static final Descriptor BOOKMAP = new BookmapDescriptor();
 	public static final Descriptor FRONTMATTER = new FrontMatterDescriptor();
@@ -170,19 +166,5 @@ public abstract class Descriptor {
 	protected abstract Descriptor[] getChildren();
 
 	public abstract IDetailsPage getDetailsPage();
-
-	protected static String toString(Element elt) {
-		StringWriter out = new StringWriter();
-		TextSerializer serializer = new TextSerializer();
-		serializer.setOutputCharStream(out);
-
-		try {
-			serializer.serialize(elt);
-		} catch (IOException e) {
-			Activator.getDefault().log(IStatus.WARNING, e);
-		}
-
-		return out.toString();
-	}
 
 }

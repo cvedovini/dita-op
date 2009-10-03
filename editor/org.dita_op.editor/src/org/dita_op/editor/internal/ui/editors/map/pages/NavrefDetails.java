@@ -78,11 +78,13 @@ public class NavrefDetails extends AbstractDetailsPage {
 		localAttsSection.load(model);
 	}
 
-	protected void save(Element model) {
+	protected Element save(Element model) {
 		ModelUtils.saveFile(model, maprefText, "mapref"); //$NON-NLS-1$
 		idAttsSection.save(model);
 		selectionAttsSection.save(model);
 		localAttsSection.save(model);
+
+		return model;
 	}
 
 	/**

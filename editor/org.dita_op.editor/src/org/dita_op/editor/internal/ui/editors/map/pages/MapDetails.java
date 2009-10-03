@@ -107,7 +107,7 @@ public class MapDetails extends AbstractDetailsPage {
 		localAttsSection.load(model);
 	}
 
-	protected void save(Element model) {
+	protected Element save(Element model) {
 		ModelUtils.saveText(model, titleText, "title"); //$NON-NLS-1$
 		String title = titleText.getText().trim();
 
@@ -122,6 +122,8 @@ public class MapDetails extends AbstractDetailsPage {
 		topicRefAttsSection.save(model);
 		selectionAttsSection.save(model);
 		localAttsSection.save(model);
+
+		return model;
 	}
 
 	/**

@@ -20,6 +20,7 @@ package org.dita_op.editor.internal.ui.editors.map.model;
 
 import org.dita_op.editor.internal.ImageConstants;
 import org.dita_op.editor.internal.ui.editors.map.pages.MapDetails;
+import org.dita_op.editor.internal.utils.DOMUtils;
 import org.eclipse.ui.forms.IDetailsPage;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -50,7 +51,7 @@ public class MapDescriptor extends Descriptor {
 	protected Descriptor[] getChildren() {
 		return new Descriptor[] { Descriptor.TOPICREF, Descriptor.TOPICHEAD,
 				Descriptor.TOPICGROUP, Descriptor.NAVREF, Descriptor.ANCHOR,
-				Descriptor.RELTABLE };
+		/* Descriptor.RELTABLE */};
 	}
 
 	@Override
@@ -62,7 +63,7 @@ public class MapDescriptor extends Descriptor {
 		NodeList nl = elt.getElementsByTagName("title"); //$NON-NLS-1$
 
 		if (nl.getLength() > 0) {
-			return toString((Element) nl.item(0));
+			return DOMUtils.toString((Element) nl.item(0));
 		}
 
 		return elt.getAttribute("title"); //$NON-NLS-1$;

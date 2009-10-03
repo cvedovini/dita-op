@@ -10,7 +10,7 @@ public class BookmapDescriptor extends MapDescriptor {
 	protected Descriptor[] getChildren() {
 		return new Descriptor[] { Descriptor.FRONTMATTER, Descriptor.CHAPTER,
 				Descriptor.PART, Descriptor.APPENDIX, Descriptor.BACKMATTER,
-				Descriptor.RELTABLE };
+		/* Descriptor.RELTABLE */};
 	}
 
 }

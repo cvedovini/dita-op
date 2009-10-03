@@ -18,10 +18,8 @@
  */
 package org.dita_op.editor.internal.ui.editors.map;
 
-import java.net.URI;
-
-import org.dita_op.editor.internal.Utils;
 import org.dita_op.editor.internal.ui.editors.map.model.Descriptor;
+import org.dita_op.editor.internal.utils.DOMUtils;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.content.IContentType;
@@ -131,11 +129,14 @@ class MSDropListener extends ViewerDropAdapter {
 
 			if (isDitamap(res)) {
 				newChild = doc.createElement("navref"); //$NON-NLS-1$
-				((Element) newChild).setAttribute("mapref", //$NON-NLS-1$
-						getRelativePath(res));
+				((Element) newChild).setAttribute(
+						"mapref", //$NON-NLS-1$
+						DOMUtils.getRelativePath(section.getBaseLocation(), res));
 			} else {
 				newChild = doc.createElement("topicref"); //$NON-NLS-1$
-				((Element) newChild).setAttribute("href", getRelativePath(res)); //$NON-NLS-1$
+				((Element) newChild).setAttribute(
+						"href", //$NON-NLS-1$
+						DOMUtils.getRelativePath(section.getBaseLocation(), res));
 			}
 		} else if (data instanceof Node) {
 			newChild = doc.importNode((Node) data, true);
@@ -164,15 +165,5 @@ class MSDropListener extends ViewerDropAdapter {
 		}
 
 		return false;
-	}
-
-	private String getRelativePath(IResource res) {
-		URI targetURI = URI.create(res.getFullPath().toString());
-
-		if (section.getBaseLocation() != null) {
-			targetURI = Utils.relativize(targetURI, section.getBaseLocation());
-		}
-
-		return targetURI.toString();
 	}
 }

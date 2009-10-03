@@ -25,11 +25,8 @@ import org.dita_op.editor.internal.ImageConstants;
 import org.dita_op.editor.internal.ui.editors.FormLayoutFactory;
 import org.dita_op.editor.internal.ui.editors.map.model.Descriptor;
 import org.dita_op.editor.internal.ui.editors.map.model.MapContentProvider;
+import org.dita_op.editor.internal.utils.DOMUtils;
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IWorkspaceRoot;
-import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.GroupMarker;
@@ -52,13 +49,9 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.Tree;
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.PartInitException;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.forms.SectionPart;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
-import org.eclipse.ui.ide.IDE;
 import org.eclipse.ui.part.ResourceTransfer;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -120,13 +113,13 @@ public class MasterSection extends SectionPart implements IMenuListener {
 		newSibing.add(new GroupMarker("addition")); //$NON-NLS-1$
 		manager.add(newSibing);
 
-		if (getReference(elt) != null) {
+		if (DOMUtils.getReference(elt) != null) {
 			manager.add(new Action(
 					Messages.getString("MasterSection.menu.open")) { //$NON-NLS-1$
 
 				@Override
 				public void run() {
-					MasterSection.this.open(elt);
+					DOMUtils.open(baseLocation, elt);
 				}
 
 			});
@@ -241,19 +234,6 @@ public class MasterSection extends SectionPart implements IMenuListener {
 		return modelProvider.getDocument();
 	}
 
-	IFile getTargetFile(String ref) {
-		URI targetURI = URI.create(ref);
-
-		if (baseLocation != null && !targetURI.isAbsolute()) {
-			targetURI = baseLocation.resolve(targetURI);
-
-			IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-			return root.getFile(new Path(targetURI.toString()));
-		}
-
-		return null;
-	}
-
 	public URI getBaseLocation() {
 		return baseLocation;
 	}
@@ -267,10 +247,10 @@ public class MasterSection extends SectionPart implements IMenuListener {
 
 		if (Descriptor.TOPICREF.instanceOf(elt)
 				|| Descriptor.NAVREF.instanceOf(elt)) {
-			String ref = getReference(elt);
+			String ref = DOMUtils.getReference(elt);
 
 			if (ref != null) {
-				IFile target = getTargetFile(ref);
+				IFile target = DOMUtils.getTargetFile(baseLocation, ref);
 
 				if (target == null || !target.exists()) {
 					count++;
@@ -322,19 +302,9 @@ public class MasterSection extends SectionPart implements IMenuListener {
 		viewer.addOpenListener(new IOpenListener() {
 
 			public void open(OpenEvent event) {
-				MasterSection.this.open(modelProvider.getSelection());
+				DOMUtils.open(baseLocation, modelProvider.getSelection());
 			}
 		});
-	}
-
-	private String getReference(Element elt) {
-		String href = elt.getAttribute("href"); //$NON-NLS-1$
-
-		if (href == null) {
-			href = elt.getAttribute("mapref"); //$NON-NLS-1$
-		}
-
-		return href;
 	}
 
 	private void setupDNDSupport() {
@@ -347,23 +317,6 @@ public class MasterSection extends SectionPart implements IMenuListener {
 		viewer.addDragSupport(ops,
 				new Transfer[] { NodeTransfer.getInstance() },
 				new MSDragSourceListener(modelProvider));
-	}
-
-	private void open(Element elt) {
-		String ref = getReference(elt);
-
-		if (ref != null) {
-			IFile target = getTargetFile(ref);
-
-			if (target != null && target.exists()) {
-				try {
-					IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-					IDE.openEditor(page, target, true);
-				} catch (PartInitException e) {
-					Activator.getDefault().log(IStatus.WARNING, e);
-				}
-			}
-		}
 	}
 
 }

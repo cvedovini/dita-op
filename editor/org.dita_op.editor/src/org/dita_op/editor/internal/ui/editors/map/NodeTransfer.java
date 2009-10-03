@@ -5,7 +5,7 @@ import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.TransferData;
 import org.w3c.dom.Node;
 
-class NodeTransfer extends ByteArrayTransfer {
+public class NodeTransfer extends ByteArrayTransfer {
 
 	private static NodeTransfer instance = new NodeTransfer();
 	private static final String TYPE_NAME = NodeTransfer.class.getName();

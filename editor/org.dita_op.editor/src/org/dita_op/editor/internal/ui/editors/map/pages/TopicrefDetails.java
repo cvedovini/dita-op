@@ -32,7 +32,7 @@ public class TopicrefDetails extends AbstractDetailsPage {
 	private FileChooser hrefText;
 	private Text copyToText;
 	private IdAttsSection idAttsSection;
-	private AbstractAttsSection topicRefAttsSection;
+	private TopicrefAttsSection topicRefAttsSection;
 	private SelectionAttsSection selectionAttsSection;
 	private LocalAttsSection localAttsSection;
 
@@ -103,7 +103,7 @@ public class TopicrefDetails extends AbstractDetailsPage {
 		localAttsSection.load(model);
 	}
 
-	protected void save(Element model) {
+	protected Element save(Element model) {
 		ModelUtils.saveFile(model, hrefText, "href"); //$NON-NLS-1$
 		ModelUtils.saveText(model, navTitleText, "navtitle"); //$NON-NLS-1$
 		ModelUtils.saveText(model, copyToText, "copy-to"); //$NON-NLS-1$
@@ -111,6 +111,8 @@ public class TopicrefDetails extends AbstractDetailsPage {
 		topicRefAttsSection.save(model);
 		selectionAttsSection.save(model);
 		localAttsSection.save(model);
+
+		return model;
 	}
 
 	/**

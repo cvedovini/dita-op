@@ -59,10 +59,12 @@ public class AnchorDetails extends AbstractDetailsPage {
 		localAttsSection.load(model);
 	}
 
-	protected void save(Element model) {
+	protected Element save(Element model) {
 		idAttsSection.save(model);
 		selectionAttsSection.save(model);
 		localAttsSection.save(model);
+
+		return model;
 	}
 
 	/**
