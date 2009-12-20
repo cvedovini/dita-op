@@ -4,17 +4,13 @@ Plugin Name: WordPress.com Stats
 Plugin URI: http://wordpress.org/extend/plugins/stats/
 Description: Tracks views, post/page views, referrers, and clicks. Requires a WordPress.com API key.
 Author: Andy Skelton
-Version: 1.3.5
+Version: 1.6
+License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
-Requires WordPress 2.1 or later. Not for use with WPMU.
+Requires WordPress 2.7 or later. Not for use with WPMU.
 
 Looking for a way to hide the gif? Put this in your stylesheet:
 img#wpstats{display:none}
-
-Recent changes:
-1.3.5 - Compatibility with WordPress 2.7
-1.3.4 - Compatibility with WordPress 2.7
-1.3.3 - wpStats.update_postinfo no longer triggered by revision saves (post_type test)
 
 */
 
@@ -35,11 +31,8 @@ function stats_set_api_key($api_key) {
 function stats_get_options() {
 	$options = get_option( 'stats_options' );
 
-	if ( !isset( $options['version'] ) || $options['version'] < STATS_VERSION ) {
+	if ( !isset( $options['version'] ) || $options['version'] < STATS_VERSION )
 		$options = stats_upgrade_options( $options );
-
-		stats_set_options( $options );
-	}
 
 	return $options;
 }
@@ -55,9 +48,9 @@ function stats_get_option( $option ) {
 
 function stats_set_option( $option, $value ) {
 	$options = stats_get_options();
-	
+
 	$options[$option] = $value;
-	
+
 	stats_set_options($options);
 }
 
@@ -77,7 +70,16 @@ function stats_upgrade_options( $options ) {
 	else
 		$options = $defaults;
 
+	// Send new bloginfo with gmt_offset
+	if ( $options['version'] < 3 )
+		$update_bloginfo = true;
+
 	$options['version'] = STATS_VERSION;
+
+	stats_set_options( $options );
+
+	if ( $update_bloginfo )
+		stats_update_bloginfo();
 
 	return $options;
 }
@@ -118,7 +120,7 @@ function stats_array($kvs) {
 
 function stats_admin_menu() {
 	if ( stats_get_option('blog_id') ) {
-		$hook = add_submenu_page('index.php', __('Blog Stats'), __('Blog Stats'), 'manage_options', 'stats', 'stats_reports_page');
+		$hook = add_submenu_page('index.php', __('Site Stats'), __('Site Stats'), 'publish_posts', 'stats', 'stats_reports_page');
 		add_action("load-$hook", 'stats_reports_load');
 	}
 	$hook = add_submenu_page('plugins.php', __('WordPress.com Stats Plugin'), __('WordPress.com Stats'), 'manage_options', 'wpstats', 'stats_admin_page');
@@ -141,11 +143,109 @@ function stats_reports_head() {
 }
 
 function stats_reports_page() {
-	if ( isset( $_GET['noheader'] ) )
+	if ( isset( $_GET['dashboard'] ) )
 		return stats_dashboard_widget_content();
 	$blog_id = stats_get_option('blog_id');
-	$day = isset( $_GET['day'] ) && preg_match( '/^\d{4}-\d{2}-\d{2}$/', $_GET['day'] ) ? "&day=$_GET[day]" : '';
-	echo "<iframe id='statsreport' frameborder='0' src='http://dashboard.wordpress.com/wp-admin/index.php?page=estats&blog=$blog_id&noheader=true$day'></iframe>";
+	$key = stats_get_api_key();
+	$day = isset( $_GET['day'] ) && preg_match( '/^\d{4}-\d{2}-\d{2}$/', $_GET['day'] ) ? $_GET['day'] : false;
+	$q = array(
+		'noheader' => 'true',
+		'proxy' => '',
+		'page' => 'stats',
+		'key' => $key,
+		'day' => $day,
+		'blog' => $blog_id,
+		'charset' => get_option('blog_charset'),
+	);
+	$args = array(
+		'view' => array('referrers', 'postviews', 'searchterms', 'clicks', 'post', 'table'),
+		'numdays' => 'int',
+		'day' => 'date',
+		'unit' => array(1, 7, 31),
+		'summarize' => null,
+		'post' => 'int',
+		'width' => 'int',
+		'height' => 'int',
+		'data' => 'data',
+	);
+	foreach ( $args as $var => $vals ) {
+		if ( ! isset($_GET[$var]) )
+			continue;
+		if ( is_array($vals) ) {
+			if ( in_array($_GET[$var], $vals) )
+				$q[$var] = $_GET[$var];
+		} elseif ( $vals == 'int' ) {
+			$q[$var] = intval($_GET[$var]);
+		} elseif ( $vals == 'date' ) {
+			if ( preg_match('/^\d{4}-\d{2}-\d{2}$/', $_GET[$var]) )
+				$q[$var] = $_GET[$var];
+		} elseif ( $vals == null ) {
+			$q[$var] = '';
+		} elseif ( $vals == 'data' ) {
+			if ( substr($_GET[$var], 0, 9) == 'index.php' )
+				$q[$var] = $_GET[$var];
+		}
+	}
+
+	if ( isset( $_GET['chart'] ) ) {
+		if ( preg_match('/^[a-z0-9-]+$/', $_GET['chart']) )
+			$url = "https://dashboard.wordpress.com/wp-includes/charts/{$_GET['chart']}.php";
+	} else {
+		$url = "https://dashboard.wordpress.com/wp-admin/index.php";
+	}
+
+	$url = add_query_arg($q, $url);
+
+	$get = wp_remote_get($url, array('timeout'=>300));
+
+	if ( is_wp_error($get) || empty($get['body']) ) {
+		$http = $_SERVER['https'] ? 'https' : 'http';
+		$day = $day ? "&amp;day=$day" : '';
+		echo "<iframe id='statsreport' frameborder='0' src='$http://dashboard.wordpress.com/wp-admin/index.php?page=estats&amp;blog=$blog_id&amp;noheader=true$day'></iframe>";
+	} else {
+		$body = convert_post_titles($get['body']);
+		$body = convert_swf_urls($body);
+		echo $body;
+	}
+	if ( isset( $_GET['noheader'] ) )
+		die;
+}
+
+function convert_swf_urls($html) {
+	if ( version_compare($wp_version, '2.8', '<') ) {
+		$path = dirname(plugin_basename(__FILE__));
+		if ( $path == '.' )
+			$path = '';
+		$swf_url = trailingslashit( plugins_url( $path ) ) . 'open-flash-chart.swf?data=';
+	} else {
+		$swf_url = trailingslashit( plugins_url( '', __FILE__) ) . 'open-flash-chart.swf?data=';
+	}
+	$html = preg_replace('!(<param name="movie" value="|<embed src=")(.+?)&data=!', "$1$swf_url", $html);
+	return $html;
+}
+
+function convert_post_titles($html) {
+	global $wpdb, $stats_posts;
+	$pattern = "<span class='post-(\d+)-link'>.*?</span>";
+	if ( ! preg_match_all("!$pattern!", $html, $matches) )
+		return $html;
+	$posts = get_posts(array(
+		'include' => implode(',', $matches[1]),
+		'post_type' => 'any',
+		'numberposts' => -1,
+	));
+	foreach ( $posts as $post )
+		$stats_posts[$post->ID] = $post;
+	$html = preg_replace_callback("!$pattern!", 'convert_post_title', $html);
+	return $html;
+}
+
+function convert_post_title($matches) {
+	global $stats_posts;
+	$post_id = $matches[1];
+	if ( isset($stats_posts[$post_id]) )
+		return '<a href="'.get_permalink($post_id).'" target="_blank">'.get_the_title($post_id).'</a>';
+	return sprintf(__("Post #%d"), $post_id);
 }
 
 function stats_admin_load() {
@@ -181,7 +281,8 @@ function stats_admin_load() {
 					stats_set_options($options);
 					stats_update_bloginfo();
 				}
-				stats_set_option('key_check', false);
+				if ( stats_get_option('blog_id') )
+					stats_set_option('key_check', false);
 				wp_redirect( "plugins.php?page=$plugin_page" );
 				exit;
 		}
@@ -189,7 +290,7 @@ function stats_admin_load() {
 
 	$options = stats_get_options();
 	if ( empty( $options['blog_id']) && empty( $options['key_check'] ) && stats_get_api_key() )
-		stats_check_key( $stats_get_api_key );
+		stats_check_key( stats_get_api_key() );
 }
 
 function stats_admin_notices() {
@@ -288,7 +389,7 @@ function stats_admin_page() {
 <?php else : ?>
 			<p><?php _e('The WordPress.com Stats Plugin is configured and working.'); ?></p>
 			<p><?php _e('Visitors who are logged in are not counted. (This means you.)'); ?></p>
-			<p><?php printf(__('Visit <a href="%s">your Dashboard</a> to see your blog stats. If you are asked to log in, use your WordPress.com username and password.'), 'index.php?page=stats'); ?></p>
+			<p><?php printf(__('Visit <a href="%s">your Dashboard</a> to see your site stats. If you are asked to log in, use your WordPress.com username and password.'), 'index.php?page=stats'); ?></p>
 <?php endif; ?>
 
 		</div>
@@ -323,26 +424,29 @@ function stats_get_posts( $args ) {
 
 function stats_get_blog( ) {
 	$home = parse_url( get_option('home') );
-	return array(
+	$blog = array(
 		'host' => $home['host'],
 		'path' => $home['path'],
 		'name' => get_option('blogname'),
 		'description' => get_option('blogdescription'),
 		'siteurl' => get_option('siteurl'),
+		'gmt_offset' => get_option('gmt_offset'),
 		'version' => STATS_VERSION
 	);
+	return array_map('wp_specialchars', $blog);
 }
 
 function stats_get_post( $post_id ) {
 	$post = get_post( $post_id );
 	if ( empty( $post ) )
 		$post = get_page( $post_id );
-	return array(
+	$_post = array(
 		'id' => $post->ID,
 		'permalink' => get_permalink($post->ID),
 		'title' => $post->post_title,
 		'type' => $post->post_type
 	);
+	return array_map('wp_specialchars', $_post);
 }
 
 function stats_client() {
@@ -409,8 +513,8 @@ function stats_activity() {
 
 	if ( $options['blog_id'] ) {
 		?>
-		<h3><?php _e('WordPress.com Blog Stats'); ?></h3>
-		<p><?php printf(__('Visit %s to see your blog stats.'), '<a href="http://dashboard.wordpress.com/wp-admin/index.php?page=stats&blog=' . $options['blog_id'] . '">' . __('your Global Dashboard') . '</a>'); ?></p>
+		<h3><?php _e('WordPress.com Site Stats'); ?></h3>
+		<p><?php printf(__('Visit %s to see your site stats.'), '<a href="http://dashboard.wordpress.com/wp-admin/index.php?page=stats&blog=' . $options['blog_id'] . '">' . __('your Global Dashboard') . '</a>'); ?></p>
 		<?php
 	}
 }
@@ -513,7 +617,7 @@ function stats_register_dashboard_widget() {
 }
 
 function stats_dashboard_widget_options() {
-	$defaults = array( 'chart' => 1, 'top' => -1, 'search' => 7, 'active' => 7 );
+	$defaults = array( 'chart' => 1, 'top' => 7, 'search' => 7, 'active' => 7 );
 	if ( ( !$options = get_option( 'stats_dashboard_widget' ) ) || !is_array($options) )
 		$options = array();
 	return array_merge( $defaults, $options );
@@ -600,7 +704,7 @@ jQuery( function($) {
 		var args = 'width=' + ( dashStats.prev().width() * 2 ).toString();
 	}
 
-	dashStats.not( '.dashboard-widget-control' ).load('index.php?page=stats&noheader&' + args );
+	dashStats.not( '.dashboard-widget-control' ).load('index.php?page=stats&noheader&dashboard&' + args );
 } );
 /* ]]> */
 </script>
@@ -736,15 +840,14 @@ function stats_get_remote_csv( $url ) {
 	// Yay!
 	if ( ini_get('allow_url_fopen') ) {
 		$fp = @fopen($url, 'r');
-		if ( !$fp )
-			return false;
-
-		//stream_set_timeout($fp, $timeout); // Requires php 4.3
-		$data = array();
-		while ( $remote_read = fgetcsv($fp, 1000) )
-			$data[] = $remote_read;
-		fclose($fp);
-		return $data;
+		if ( $fp ) {
+			//stream_set_timeout($fp, $timeout); // Requires php 4.3
+			$data = array();
+			while ( $remote_read = fgetcsv($fp, 1000) )
+				$data[] = $remote_read;
+			fclose($fp);
+			return $data;
+		}
 	}
 
 	// Boo - we need to use wp_remote_fopen for maximium compatibility
@@ -782,9 +885,32 @@ function stats_dashboard_widget_content() {
 
 	$options = stats_dashboard_widget_options();
 
-	$src = clean_url( "http://dashboard.wordpress.com/wp-admin/index.php?page=estats&blog=$blog_id&noheader=true&chart&unit=$options[chart]&width=$_width&height=$_height" );
+	$q = array(
+		'noheader' => 'true',
+		'proxy' => '',
+		'page' => 'stats',
+		'blog' => $blog_id,
+		'key' => stats_get_api_key(),
+		'chart' => '',
+		'unit' => $options['chart'],
+		'width' => $_width,
+		'height' => $_height,
+	);
 
-	echo "<iframe id='stats-graph' class='stats-section' frameborder='0' style='width: {$width}px; height: {$height}px; overflow: hidden' src='$src'></iframe>";
+	$url = 'https://dashboard.wordpress.com/wp-admin/index.php';
+
+	$url = add_query_arg($q, $url);
+
+	$get = wp_remote_get($url, array('timeout'=>300));
+
+	if ( is_wp_error($get) || empty($get['body']) ) {
+		$http = $_SERVER['https'] ? 'https' : 'http';
+		$src = clean_url( "$http://dashboard.wordpress.com/wp-admin/index.php?page=estats&blog=$blog_id&noheader=true&chart&unit=$options[chart]&width=$_width&height=$_height" );
+		echo "<iframe id='stats-graph' class='stats-section' frameborder='0' style='width: {$width}px; height: {$height}px; overflow: hidden' src='$src'></iframe>";
+	} else {
+		$body = convert_swf_urls($get['body']);
+		echo $body;
+	}
 
 	$post_ids = array();
 
@@ -855,6 +981,89 @@ if ( !function_exists('number_format_i18n') ) {
 	function number_format_i18n( $number, $decimals = null ) { return number_format( $number, $decimals ); }
 }
 
+if ( !function_exists('dec2sixtwo') ) {
+	function dec2sixtwo( $num ) {
+		$index = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		$out = "";
+
+		for ( $t = floor( log10( $num ) / log10( 62 ) ); $t >= 0; $t-- ) {
+			$a = floor( $num / pow( 62, $t ) );
+			$out = $out . substr( $index, $a, 1 );
+			$num = $num - ( $a * pow( 62, $t ) );
+		}
+
+		return $out;
+	}
+}
+
+if ( ! function_exists('get_shortlink') ) :
+function get_shortlink( $post_id, $force_numeric = false ) {
+	$blog_id = stats_get_option('blog_id');
+
+	// Return link to blog home if no post id
+	if ( empty($post_id) )
+		return 'http://wp.me/' . dec2sixtwo($blog_id);
+
+	$post = get_post($post_id);
+	$type = '';
+
+	if ( !$force_numeric && 'publish' == $post->post_status && 'post' == $post->post_type && strlen($post->post_name) <= 8 && false === strpos($post->post_name, '%')
+		&& false === strpos($post->post_name, '-') ) {
+		$id = $post->post_name;
+		$type = 's';
+	} else {
+		$id = dec2sixtwo($post_id);
+		if ( 'page' == $post->post_type )
+			$type = 'P';
+		elseif ( 'post' == $post->post_type )
+			$type = 'p';
+		elseif ( 'attachment' == $post->post_type )
+			$type = 'a';
+	}
+
+	if ( empty($type) )
+		return '';
+
+	return 'http://wp.me/' . $type . dec2sixtwo($blog_id) . '-' . $id;
+}
+
+function shortlink_wp_head() {
+	global $wp_query;
+
+	if ( ! ( is_singular() || is_front_page() ) )
+		return;
+
+	$shortlink = get_shortlink($wp_query->get_queried_object_id());
+	echo '<link rel="shortlink" href="' . $shortlink . '" />';
+}
+
+function shortlink_header() {
+	global $wp_query;
+
+	if ( headers_sent() )
+		return;
+
+	if ( ! ( is_singular() || is_front_page() ) )
+		return;
+
+	$shortlink = get_shortlink($wp_query->get_queried_object_id());
+
+	header('Link: <' . $shortlink . '>; rel=shortlink');
+}
+
+add_action('wp_head', 'shortlink_wp_head');
+add_action('wp', 'shortlink_header');
+
+function get_shortlink_html($html, $post_id) {
+	$url = get_shortlink($post_id);
+	$html .= '<input id="shortlink" type="hidden" value="' . $url . '" /><a href="#" class="button" onclick="prompt(&#39;URL:&#39;, jQuery(\'#shortlink\').val()); return false;">' . __('Get Shortlink') . '</a>';
+	return $html;
+}
+
+add_filter( 'get_sample_permalink_html', 'get_shortlink_html', 10, 2 );
+
+endif;
+
 add_action( 'wp_dashboard_setup', 'stats_register_dashboard_widget' );
 add_filter( 'wp_dashboard_widgets', 'stats_add_dashboard_widget' );
 
@@ -873,6 +1082,9 @@ add_action( 'update_option_home', 'stats_update_bloginfo' );
 add_action( 'update_option_siteurl', 'stats_update_bloginfo' );
 add_action( 'update_option_blogname', 'stats_update_bloginfo' );
 add_action( 'update_option_blogdescription', 'stats_update_bloginfo' );
+add_action( 'update_option_timezone_string', 'stats_update_bloginfo' );
+add_action( 'add_option_timezone_string', 'stats_update_bloginfo' );
+add_action( 'update_option_gmt_offset', 'stats_update_bloginfo' );
 
 // Tell HQ about changed posts
 add_action( 'save_post', 'stats_update_post', 10, 1 );
@@ -883,5 +1095,5 @@ add_action( 'update_option_permalink_structure', 'stats_flush_posts' );
 // Teach the XMLRPC server how to dance properly
 add_filter( 'xmlrpc_methods', 'stats_xmlrpc_methods' );
 
-define( 'STATS_VERSION', '2' );
+define( 'STATS_VERSION', '3' );
 define( 'STATS_XMLRPC_SERVER', 'http://wordpress.com/xmlrpc.php' );

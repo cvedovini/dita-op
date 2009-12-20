@@ -3,8 +3,8 @@ Contributors: richardkmiller
 Donate link: http://richardkmiller.com/
 Tags: marketing, segmentation, cookies, Seth Godin, GPL
 Requires at least: 2.0
-Tested up to: 2.6.3
-Stable tag: 1.6
+Tested up to: 2.7.1
+Stable tag: 1.7
 
 Displays a custom welcome message to new visitors and another to return visitors.
 
@@ -30,26 +30,26 @@ I can be reached at richard AT richardkmiller DOT com. I appreciate comments and
 == Installation ==
 
 Installation is easy:
+
 1. Download the WWSGD WordPress plugin and unzip it.
-1. Copy `what_would_seth_godin_do.php` to your WordPress plugins (`/wp-content/plugins/`) folder.
-1. Activate the plugin on the *Plugin Management* page.
-1. Customize settings on the *Settings* page.
+2. Copy `what_would_seth_godin_do.php` to your WordPress plugins (`/wp-content/plugins/`) folder.
+3. Activate the plugin on the *Plugin Management* page.
+4. Customize settings on the *Settings* page.
 
 That's it!
 
 
 Subversion (SVN) users can check out the plugin directly from the WordPress.org repository:
 
-[http://svn.wp-plugins.org/what-would-seth-godin-do/](http://svn.wp-plugins.org/what-would-seth-godin-do/)
+[http://plugins.svn.wordpress.org/what-would-seth-godin-do/](http://plugins.svn.wordpress.org/what-would-seth-godin-do/)
 
 
 == Frequently Asked Questions ==
 
-someday...
-
+= Can I position the welcome message before the title or elsewhere on the page? =
+>You can position the welcome message in a specific location by using the template tag `<?php wwsgd_the_message(); ?>` in your theme.
 
 == Screenshots ==
 
 1. After activating *What Would Seth Godin Do*, you can configure settings in the Settings -> WWSGD menu.  You can customize the message, its lifespan, and its location. You can also display a message for return visitors.
 2. Your welcome message appears before (or after) each post for the specified length of time.
-

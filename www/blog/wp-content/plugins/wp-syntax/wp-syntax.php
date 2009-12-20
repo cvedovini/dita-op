@@ -4,12 +4,12 @@ Plugin Name: WP-Syntax
 Plugin URI: http://wordpress.org/extend/plugins/wp-syntax/
 Description: Syntax highlighting using <a href="http://qbnz.com/highlighter/">GeSHi</a> supporting a wide range of popular languages.  Wrap code blocks with <code>&lt;pre lang="LANGUAGE" line="1"&gt;</code> and <code>&lt;/pre&gt;</code> where <code>LANGUAGE</code> is a geshi supported language syntax.  The <code>line</code> attribute is optional.
 Author: Ryan McGeary
-Version: 0.9.1
+Version: 0.9.8
 Author URI: http://ryan.mcgeary.org/
 */
 
 #
-#  Copyright (c) 2007-2008 Ryan McGeary
+#  Copyright (c) 2007-2009 Ryan McGeary
 #
 #  This file is part of WP-Syntax.
 #
@@ -34,6 +34,7 @@ if (!CUSTOM_TAGS) {
   $allowedposttags['pre'] = array(
     'lang' => array(),
     'line' => array(),
+    'escaped' => array(),
     'style' => array(),
     'width' => array(),
   );
@@ -41,14 +42,18 @@ if (!CUSTOM_TAGS) {
   $allowedtags['pre'] = array(
     'lang' => array(),
     'line' => array(),
+    'escaped' => array(),
   );
 }
 
 include_once("geshi/geshi.php");
 
+if (!defined("WP_CONTENT_URL")) define("WP_CONTENT_URL", get_option("siteurl") . "/wp-content");
+if (!defined("WP_PLUGIN_URL"))  define("WP_PLUGIN_URL",  WP_CONTENT_URL        . "/plugins");
+
 function wp_syntax_head()
 {
-  $css_url = get_bloginfo("wpurl") . "/wp-content/plugins/wp-syntax/wp-syntax.css";
+  $css_url = WP_PLUGIN_URL . "/wp-syntax/wp-syntax.css";
   if (file_exists(TEMPLATEPATH . "/wp-syntax.css"))
   {
     $css_url = get_bloginfo("template_url") . "/wp-syntax.css";
@@ -95,7 +100,9 @@ function wp_syntax_highlight($match)
 
     $language = strtolower(trim($match[1]));
     $line = trim($match[2]);
-    $code = wp_syntax_code_trim($match[3]);
+    $escaped = trim($match[3]);
+    $code = wp_syntax_code_trim($match[4]);
+    if ($escaped == "true") $code = htmlspecialchars_decode($code);
 
     $geshi = new GeSHi($code, $language);
     $geshi->enable_keyword_links(false);
@@ -127,7 +134,7 @@ function wp_syntax_highlight($match)
 function wp_syntax_before_filter($content)
 {
     return preg_replace_callback(
-        "/\s*<pre(?:lang=[\"']([\w-]*)[\"']|line=[\"'](\d*)[\"']|\s)+>(.*)<\/pre>\s*/siU",
+        "/\s*<pre(?:lang=[\"']([\w-]+)[\"']|line=[\"'](\d*)[\"']|escaped=[\"'](true|false)?[\"']|\s)+>(.*)<\/pre>\s*/siU",
         "wp_syntax_substitute",
         $content
     );

@@ -2,17 +2,20 @@
 
 include("code.php");
 
-function test_lang($lang, $language = null, $line = null)
+function test_lang($lang, $language = null, $line = null, $escaped = null)
 {
   global $code;
   if (!isset($language)) $language = $lang;
   else $as = "as $language";
 
+  if (isset($escaped)) $c = htmlspecialchars($code[$lang]);
+  else { $c = $code[$lang]; $escaped = "false"; }
+
   $snippet = <<<EOF
 <h2>$lang $as</h2>
-<p>This *is* what some <code>$lang</code> code looks like:</p>
-<pre lang='$language' line="$line"> \t \r
-$code[$lang]
+<p>This *is* what some <code>$lang</code> code looks like (escaped:$escaped):</p>
+<pre lang='$language' line="$line" escaped="$escaped"> \t \r
+$c
 </pre>
 EOF;
 
@@ -26,8 +29,10 @@ function gather_content()
   $content .= test_lang('lisp', null, 1);
   $content .= test_lang('java', null, 1);
   $content .= test_lang('xml');
+  $content .= test_lang('xml', null, null, "true");
   $content .= test_lang('html', 'html4strict');
   $content .= test_lang('html', 'xml', 18);
+  $content .= test_lang('html', 'xml', 18, "true");
   $content .= test_lang('ocaml');
   $content .= test_lang('python');
   $content .= test_lang('ruby', null, 18);
@@ -111,6 +116,10 @@ function pre_killer($content)
  * === WORDPRESS STUBS ===
  */
 function get_bloginfo($arg) {
+    return "http://yourblog.com/blog";
+}
+
+function get_option($arg) {
     return "http://yourblog.com/blog";
 }
 

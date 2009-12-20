@@ -3,6 +3,9 @@ CHANGELOG
 "What Would Seth Godin Do" WordPress Plugin by Richard K Miller
 http://richardkmiller.com/wordpress-plugin-what-would-seth-godin-do
 
+=== Version 1.7 (2009-04-06) ===
+- Added template tag <?php wwsgd_the_message(); ?> which can be used in themes for positioning the message in any location.
+
 === Version 1.6 (2008-11-17) ===
 - Added option to exclude welcome message from Pages. Default is to show on both Posts and Pages.
 - No "welcome back" message by default.

@@ -49,6 +49,12 @@ header( 'Content-Type: text/html; charset=utf-8' );
 }//end function display_header();
 
 function display_setup_form( $error = null ) {
+	// Ensure that Blogs appear in search engines by default
+	$blog_public = 1;
+	if ( isset($_POST) && !empty($_POST) ) {
+		$blog_public = isset($_POST['blog_public']);
+	}
+
 	if ( ! is_null( $error ) ) {
 ?>
 <p><?php printf( __('<strong>ERROR</strong>: %s'), $error); ?></p>
@@ -62,10 +68,10 @@ function display_setup_form( $error = null ) {
 		<tr>
 			<th scope="row"><label for="admin_email"><?php _e('Your E-mail'); ?></label></th>
 			<td><input name="admin_email" type="text" id="admin_email" size="25" value="<?php echo ( isset($_POST['admin_email']) ? esc_attr($_POST['admin_email']) : '' ); ?>" /><br />
-			<?php _e('Double-check your email address before continuing.'); ?>
+			<?php _e('Double-check your email address before continuing.'); ?></td>
 		</tr>
 		<tr>
-			<td colspan="2"><label><input type="checkbox" name="blog_public" value="1"<?php if( isset($_POST) && ! empty($_POST) && isset( $_POST['blog_public'] ) ) : ?> checked="checked"<?php endif; ?> /> <?php _e('Allow my blog to appear in search engines like Google and Technorati.'); ?></label></td>
+			<td colspan="2"><label><input type="checkbox" name="blog_public" value="1" <?php checked($blog_public); ?> /> <?php _e('Allow my blog to appear in search engines like Google and Technorati.'); ?></label></td>
 		</tr>
 	</table>
 	<p class="step"><input type="submit" name="Submit" value="<?php esc_attr_e('Install WordPress'); ?>" class="button" /></p>

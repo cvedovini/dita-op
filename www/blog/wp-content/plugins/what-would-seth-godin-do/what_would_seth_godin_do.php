@@ -4,11 +4,11 @@
 Plugin Name: What Would Seth Godin Do
 Plugin URI: http://richardkmiller.com/wordpress-plugin-what-would-seth-godin-do
 Description: Displays a custom welcome message to new visitors and another to return visitors.
-Version: 1.6
+Version: 1.7
 Author: Richard K Miller
 Author URI: http://richardkmiller.com/
 
-Copyright (c) 2006-2008 Richard K Miller
+Copyright (c) 2006-2009 Richard K Miller
 Released under the GNU General Public License (GPL)
 http://www.gnu.org/licenses/gpl.txt
 */
@@ -79,10 +79,11 @@ function wwsgd_options_subpanel()
 			<textarea rows="3" cols="80" name="wwsgd_return_visitor_message"><?php echo attribute_escape($wwsgd_settings['return_visitor_message']); ?></textarea>
 			<h3>Location of Message</h3>
 			<p><input type="radio" name="wwsgd_message_location" value="before_post" <?php if ($wwsgd_settings['message_location'] == 'before_post') echo 'checked="checked"'; ?> /> Before Post
-			<input type="radio" name="wwsgd_message_location" value="after_post" <?php if ($wwsgd_settings['message_location'] == 'after_post') echo 'checked="checked"'; ?> /> After Post</p>
+			<input type="radio" name="wwsgd_message_location" value="after_post" <?php if ($wwsgd_settings['message_location'] == 'after_post') echo 'checked="checked"'; ?> /> After Post
+			<input type="radio" name="wwsgd_message_location" value="template_tag_only" <?php if ($wwsgd_settings['message_location'] == 'template_tag_only') echo 'checked="checked"'; ?> /> Only where I use the <code>&lt;?php wwsgd_the_message(); ?&gt;</code>template tag</p>
 			<p><input type="radio" name="wwsgd_message_include_pages" value="yes" <?php if ($wwsgd_settings['include_pages'] == 'yes') echo 'checked="checked"'; ?> /> On Posts and Pages
 			<input type="radio" name="wwsgd_message_include_pages" value="no" <?php if ($wwsgd_settings['include_pages'] == 'no') echo 'checked="checked"'; ?> /> On Posts Only</p>
-			<p><input type="submit" name="submit" value="Save Settings" /></p><a href="../../../Desktop/what_would_seth_godin_do.php" id="" title="what_would_seth_godin_do">what_would_seth_godin_do</a>
+			<p><input type="submit" name="submit" value="Save Settings" /></p>
 			<?php
 			if (function_exists('wp_nonce_field'))
 				wp_nonce_field('wwsgd_update_options');
@@ -128,32 +129,40 @@ function wwsgd_message_filter($content = '')
 {
 	global $wwsgd_visits, $wwsgd_settings, $wwsgd_messagedisplayed;
 	
-	if ($wwsgd_messagedisplayed || is_feed() || ($wwsgd_settings['include_pages'] == 'no' && is_page()))
+	if ($wwsgd_messagedisplayed || is_feed() || $wwsgd_settings['message_location'] == 'template_tag_only' || ($wwsgd_settings['include_pages'] == 'no' && is_page()))
 	{
 		return $content;
 	}
 	else
-	{
-		$wwsgd_messagedisplayed = true;
-		
-		if ($wwsgd_visits <= $wwsgd_settings['repetition'] || 0 == $wwsgd_settings['repetition'])
-		{
-			$wwsgd_message = $wwsgd_settings['new_visitor_message'];
-		}
-		else
-		{
-			$wwsgd_message = $wwsgd_settings['return_visitor_message'];
-		}
-
+	{		
 		if ($wwsgd_settings['message_location'] == 'before_post')
 		{
-			return $wwsgd_message . $content;
+			$wwsgd_messagedisplayed = true;
+			return wwsgd_get_the_message() . $content;
 		}
-		else
+		elseif ($wwsgd_settings['message_location'] == 'after_post')
 		{
-			return $content . $wwsgd_message;
+			$wwsgd_messagedisplayed = true;
+			return $content . wwsgd_get_the_message();
 		}
 	}
 }
 
-?>
+function wwsgd_get_the_message()
+{
+	global $wwsgd_visits, $wwsgd_settings;
+
+	if ($wwsgd_visits <= $wwsgd_settings['repetition'] || 0 == $wwsgd_settings['repetition'])
+	{
+		return $wwsgd_settings['new_visitor_message'];
+	}
+	else
+	{
+		return $wwsgd_settings['return_visitor_message'];
+	}
+}
+
+function wwsgd_the_message()
+{
+	echo wwsgd_get_the_message();
+}
